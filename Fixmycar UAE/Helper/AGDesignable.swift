@@ -14,7 +14,7 @@ class DesignableView: UIView {
 }
 
 @IBDesignable
-class DesignableTextView: UITextView {
+class AppTextView: UITextView {
 
     @IBInspectable var localizedKey: String = "" {
         didSet {
@@ -23,9 +23,19 @@ class DesignableTextView: UITextView {
     }
 }
 
+@IBDesignable
+class AppTextField: UITextField {
+
+    @IBInspectable var localizedKey: String = "" {
+        didSet {
+            placeholder = localizedKey.localized
+        }
+    }
+}
+
 
 @IBDesignable
-class DesignableButton: UIButton {
+class AppButton: UIButton {
 
     @IBInspectable var localizedKey: String = "" {
         didSet {
@@ -36,7 +46,7 @@ class DesignableButton: UIButton {
 
 
 @IBDesignable
-class DesignableLabel: UILabel {
+class AppLabel: UILabel {
 
     @IBInspectable var localizedKey: String = "" {
         didSet {

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUq-wU-lDF">
-                    <rect key="frame" x="0.0" y="443" width="393" height="409"/>
+                    <rect key="frame" x="0.0" y="438" width="393" height="414"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-pQ-qPA">
                             <rect key="frame" x="166.66666666666666" y="20" width="60" height="4"/>
@@ -47,45 +48,65 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-pK-Woj">
-                            <rect key="frame" x="29" y="50" width="335" height="78"/>
+                            <rect key="frame" x="29" y="50" width="335" height="80"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Your Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W9-Um-pSK">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Your Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W9-Um-pSK" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="verify_your_account"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wo have sent a 6 digit code to the number +971 5X XXX 5555" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-PS-NVi">
-                                    <rect key="frame" x="0.0" y="38" width="335" height="40"/>
-                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
-                                    <color key="textColor" name="app_gray"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kgg-bY-6et">
+                                    <rect key="frame" x="0.0" y="38" width="335" height="42"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wo have sent a 6 digit code to the number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-PS-NVi" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
+                                            <color key="textColor" name="app_gray"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="wo_sent_6_digit_code_the_code"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+971 5X XXX 5555" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTa-KQ-Z3X">
+                                            <rect key="frame" x="0.0" y="22" width="335" height="20"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
+                                            <color key="textColor" name="app_gray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tE-LG-4ci" customClass="OTPFieldView" customModule="Fixmycar_UAE" customModuleProvider="target">
-                            <rect key="frame" x="48" y="168" width="297" height="38"/>
+                            <rect key="frame" x="48" y="170" width="297" height="42"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="38" id="sgO-9S-KDu"/>
+                                <constraint firstAttribute="height" constant="42" id="sgO-9S-KDu"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:59" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOJ-GC-aia">
-                            <rect key="frame" x="176.33333333333334" y="226" width="40.333333333333343" height="17.666666666666657"/>
+                            <rect key="frame" x="176.33333333333334" y="232" width="40.333333333333343" height="17.666666666666657"/>
                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="x7h-UB-EP7">
-                            <rect key="frame" x="75" y="283.66666666666663" width="243" height="32"/>
+                            <rect key="frame" x="75" y="289.66666666666663" width="243" height="32"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t get the code?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-4R-sIo">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t get the code?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-4R-sIo" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="147" height="32"/>
                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
                                     <color key="textColor" name="app_gray"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="didnt_get_the_code"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-Dg-YFq">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-Dg-YFq" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
                                     <rect key="frame" x="149" y="0.0" width="94" height="32"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal">
@@ -99,6 +120,9 @@
                                             </fragment>
                                         </attributedString>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="resend_code"/>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="tappedResendCode:" destination="-1" eventType="touchUpInside" id="74P-aG-gky"/>
                                     </connections>
@@ -106,13 +130,13 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gjX-aR-ohe">
-                            <rect key="frame" x="20" y="335.66666666666663" width="353" height="38"/>
+                            <rect key="frame" x="20" y="341.66666666666663" width="353" height="42"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-ZJ-400">
-                                    <rect key="frame" x="0.0" y="0.0" width="353" height="38"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-ZJ-400" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="42"/>
                                     <color key="backgroundColor" name="primery"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="38" id="FrR-lv-am3"/>
+                                        <constraint firstAttribute="height" constant="42" id="FrR-lv-am3"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -121,8 +145,9 @@
                                     </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="19"/>
+                                            <real key="value" value="21"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="verify"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="tappedVerifu:" destination="-1" eventType="touchUpInside" id="pGz-lz-EPG"/>
@@ -147,7 +172,7 @@
                         <constraint firstAttribute="trailing" secondItem="gjX-aR-ohe" secondAttribute="trailing" constant="20" id="Yb1-NT-y4U"/>
                         <constraint firstAttribute="trailing" secondItem="6tE-LG-4ci" secondAttribute="trailing" constant="48" id="aZe-hY-vKj"/>
                         <constraint firstItem="gjX-aR-ohe" firstAttribute="leading" secondItem="wUq-wU-lDF" secondAttribute="leading" constant="20" id="b2y-2h-21t"/>
-                        <constraint firstAttribute="height" constant="409" id="iM7-dk-Zco"/>
+                        <constraint firstAttribute="height" constant="414" id="iM7-dk-Zco"/>
                         <constraint firstItem="gjX-aR-ohe" firstAttribute="top" secondItem="x7h-UB-EP7" secondAttribute="bottom" constant="20" id="kcD-I6-1Wj"/>
                     </constraints>
                 </view>

@@ -32,7 +32,7 @@ class LoginVC: UIViewController {
         )
         
         text.append(NSAttributedString(
-            string: "Toretto Recovery",
+            string: "Toretto Auto Care",
             attributes: [
                 .font: UIFont.AppFont.black(30),
                 .foregroundColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
@@ -64,23 +64,27 @@ class LoginVC: UIViewController {
     
     // MARK: - Action Method
     @IBAction func tappedContinue(_ sender: Any) {
-        /*let vc = VerifyOtp()
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: false)*/
-
         let vc = VerifyOtp()
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = self
+        vc.delegateVerify = self
         self.present(vc, animated: true)
-
-        
-
     }
     
      
 
 }
+// MARK: - didTapOnVerify
+extension LoginVC: didTapOnVerify {
+    func onCallTappedVerify() {
+        let vc = CreateAccountVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+}
 
+// MARK: - viewControllerDelegate
 extension LoginVC: UIViewControllerTransitioningDelegate {
     func presentationController(
            forPresented presented: UIViewController,

