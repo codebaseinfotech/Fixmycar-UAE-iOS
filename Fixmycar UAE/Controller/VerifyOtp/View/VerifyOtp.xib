@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyOtp" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <connections>
+                <outlet property="otpFieldView" destination="6tE-LG-4ci" id="RnM-pc-uez"/>
+                <outlet property="timeLabel" destination="dOJ-GC-aia" id="uep-wF-aOS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewMain" destination="wUq-wU-lDF" id="ykO-bE-W9v"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUq-wU-lDF">
+                    <rect key="frame" x="0.0" y="443" width="393" height="409"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-pQ-qPA">
+                            <rect key="frame" x="166.66666666666666" y="20" width="60" height="4"/>
+                            <color key="backgroundColor" name="#D9D9D9"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="TRO-Hd-tb2"/>
+                                <constraint firstAttribute="height" constant="4" id="X6t-Ka-dXp"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-pK-Woj">
+                            <rect key="frame" x="29" y="50" width="335" height="78"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Your Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W9-Um-pSK">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wo have sent a 6 digit code to the number +971 5X XXX 5555" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-PS-NVi">
+                                    <rect key="frame" x="0.0" y="38" width="335" height="40"/>
+                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
+                                    <color key="textColor" name="app_gray"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tE-LG-4ci" customClass="OTPFieldView" customModule="Fixmycar_UAE" customModuleProvider="target">
+                            <rect key="frame" x="48" y="168" width="297" height="38"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="sgO-9S-KDu"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:59" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOJ-GC-aia">
+                            <rect key="frame" x="176.33333333333334" y="226" width="40.333333333333343" height="17.666666666666657"/>
+                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="x7h-UB-EP7">
+                            <rect key="frame" x="75" y="283.66666666666663" width="243" height="32"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t get the code?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-4R-sIo">
+                                    <rect key="frame" x="0.0" y="0.0" width="147" height="32"/>
+                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
+                                    <color key="textColor" name="app_gray"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-Dg-YFq">
+                                    <rect key="frame" x="149" y="0.0" width="94" height="32"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Resend code">
+                                                <attributes>
+                                                    <color key="NSColor" name="primary_red"/>
+                                                    <font key="NSFont" size="16" name="Satoshi-Medium"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="tappedResendCode:" destination="-1" eventType="touchUpInside" id="74P-aG-gky"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gjX-aR-ohe">
+                            <rect key="frame" x="20" y="335.66666666666663" width="353" height="38"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-ZJ-400">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="38"/>
+                                    <color key="backgroundColor" name="primery"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="38" id="FrR-lv-am3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Verify">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="19"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tappedVerifu:" destination="-1" eventType="touchUpInside" id="pGz-lz-EPG"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="dOJ-GC-aia" firstAttribute="top" secondItem="6tE-LG-4ci" secondAttribute="bottom" constant="20" id="2iq-Zg-40O"/>
+                        <constraint firstItem="dcM-pK-Woj" firstAttribute="leading" secondItem="wUq-wU-lDF" secondAttribute="leading" constant="29" id="3Tq-JT-baO"/>
+                        <constraint firstItem="dOJ-GC-aia" firstAttribute="centerX" secondItem="wUq-wU-lDF" secondAttribute="centerX" id="5Rh-ou-0lQ"/>
+                        <constraint firstItem="NA2-pQ-qPA" firstAttribute="centerX" secondItem="wUq-wU-lDF" secondAttribute="centerX" id="DOJ-ag-qu4"/>
+                        <constraint firstItem="NA2-pQ-qPA" firstAttribute="top" secondItem="wUq-wU-lDF" secondAttribute="top" constant="20" id="Hcj-on-pWQ"/>
+                        <constraint firstItem="6tE-LG-4ci" firstAttribute="leading" secondItem="wUq-wU-lDF" secondAttribute="leading" constant="48" id="LlJ-Fm-9nx"/>
+                        <constraint firstItem="x7h-UB-EP7" firstAttribute="top" secondItem="dOJ-GC-aia" secondAttribute="bottom" constant="40" id="Qti-cm-Ha5"/>
+                        <constraint firstItem="6tE-LG-4ci" firstAttribute="top" secondItem="dcM-pK-Woj" secondAttribute="bottom" constant="40" id="UpL-t7-V0W"/>
+                        <constraint firstItem="x7h-UB-EP7" firstAttribute="centerX" secondItem="wUq-wU-lDF" secondAttribute="centerX" id="XAp-Mt-l44"/>
+                        <constraint firstItem="dcM-pK-Woj" firstAttribute="top" secondItem="NA2-pQ-qPA" secondAttribute="bottom" constant="26" id="XGX-Qv-JpA"/>
+                        <constraint firstAttribute="trailing" secondItem="dcM-pK-Woj" secondAttribute="trailing" constant="29" id="XUi-YD-022"/>
+                        <constraint firstAttribute="trailing" secondItem="gjX-aR-ohe" secondAttribute="trailing" constant="20" id="Yb1-NT-y4U"/>
+                        <constraint firstAttribute="trailing" secondItem="6tE-LG-4ci" secondAttribute="trailing" constant="48" id="aZe-hY-vKj"/>
+                        <constraint firstItem="gjX-aR-ohe" firstAttribute="leading" secondItem="wUq-wU-lDF" secondAttribute="leading" constant="20" id="b2y-2h-21t"/>
+                        <constraint firstAttribute="height" constant="409" id="iM7-dk-Zco"/>
+                        <constraint firstItem="gjX-aR-ohe" firstAttribute="top" secondItem="x7h-UB-EP7" secondAttribute="bottom" constant="20" id="kcD-I6-1Wj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wUq-wU-lDF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="42l-4v-tUt"/>
+                <constraint firstAttribute="bottom" secondItem="wUq-wU-lDF" secondAttribute="bottom" id="MoF-BO-Ozj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wUq-wU-lDF" secondAttribute="trailing" id="TKi-6S-rTH"/>
+            </constraints>
+            <point key="canvasLocation" x="98" y="115"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="#D9D9D9">
+            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="app_gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary_red">
+            <color red="0.81960784313725488" green="0.0" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
