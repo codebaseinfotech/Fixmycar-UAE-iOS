@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SenderChatTVCell" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lx-Da-UNX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czx-22-wyG">
+                                <rect key="frame" x="120" y="8" width="180" height="64"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Smy-xb-ulx">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="64"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nig-K3-RxG" customClass="AllSideCornerView" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="42"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1775 Sheikh Rashid Bin Saeed St - Al Muntazah - Zone 1 - Abu Dhabi - United Arab Emirates" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AV9-Gd-9c4">
+                                                        <rect key="frame" x="8" y="10" width="164" height="22"/>
+                                                        <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                                        <color key="textColor" name="White"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="primery_black"/>
+                                                <constraints>
+                                                    <constraint firstItem="AV9-Gd-9c4" firstAttribute="top" secondItem="nig-K3-RxG" secondAttribute="top" constant="10" id="6az-Xj-Xkj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="AV9-Gd-9c4" secondAttribute="trailing" constant="8" id="9Yj-xa-YvL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="AV9-Gd-9c4" secondAttribute="bottom" constant="10" id="GFP-qq-4rf"/>
+                                                    <constraint firstItem="AV9-Gd-9c4" firstAttribute="leading" secondItem="nig-K3-RxG" secondAttribute="leading" constant="8" id="s9s-Ip-PA0"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableLeftTopCorner" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableRightTopCorner" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableLeftBottomCorner" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusSide">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:37 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmG-rt-3t3">
+                                                <rect key="frame" x="0.0" y="48" width="180" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="oF9-Bk-owg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
+                                                <color key="textColor" name="Gray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Smy-xb-ulx" secondAttribute="trailing" id="MpQ-ki-3TY"/>
+                                    <constraint firstAttribute="bottom" secondItem="Smy-xb-ulx" secondAttribute="bottom" id="bsK-L3-88d"/>
+                                    <constraint firstItem="Smy-xb-ulx" firstAttribute="leading" secondItem="czx-22-wyG" secondAttribute="leading" id="pYH-gZ-EF3"/>
+                                    <constraint firstItem="Smy-xb-ulx" firstAttribute="top" secondItem="czx-22-wyG" secondAttribute="top" id="qlk-tr-SMA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="czx-22-wyG" firstAttribute="top" secondItem="9lx-Da-UNX" secondAttribute="top" constant="8" id="JYU-MO-por"/>
+                            <constraint firstItem="czx-22-wyG" firstAttribute="leading" secondItem="9lx-Da-UNX" secondAttribute="leading" constant="120" id="SKX-eE-rcS"/>
+                            <constraint firstAttribute="trailing" secondItem="czx-22-wyG" secondAttribute="trailing" constant="20" id="jUj-x8-5ra"/>
+                            <constraint firstAttribute="bottom" secondItem="czx-22-wyG" secondAttribute="bottom" constant="8" id="l7F-AA-Zj3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9lx-Da-UNX" secondAttribute="trailing" id="UXa-Kd-YUY"/>
+                    <constraint firstAttribute="bottom" secondItem="9lx-Da-UNX" secondAttribute="bottom" id="nVe-WH-1AX"/>
+                    <constraint firstItem="9lx-Da-UNX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oUM-Eo-ccj"/>
+                    <constraint firstItem="9lx-Da-UNX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="weH-vr-XWU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lblMessage" destination="AV9-Gd-9c4" id="L5S-4P-u3e"/>
+                <outlet property="lblTime" destination="xmG-rt-3t3" id="uUL-aE-7cC"/>
+            </connections>
+            <point key="canvasLocation" x="6" y="115"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

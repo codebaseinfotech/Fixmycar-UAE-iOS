@@ -66,6 +66,8 @@ class HomeVC: UIViewController {
     @IBAction func tappedTTrackLive(_ sender: Any) {
     }
     @IBAction func tappedTChat(_ sender: Any) {
+        let vc = ChatVC()
+        navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func tappedTSetting(_ sender: Any) {
     }

