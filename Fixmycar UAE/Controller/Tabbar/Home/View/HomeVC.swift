@@ -56,7 +56,11 @@ class HomeVC: UIViewController {
     @IBAction func tappedJumpStart(_ sender: Any) {
         let vc = JumpStartVC()
         if let sheet = vc.sheetPresentationController {
-            sheet.detents = [.medium()]
+            // Create a custom detent that returns a fixed height
+            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                return 300
+            }
+            sheet.detents = [fixedDetent]
             sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
         }
         vc.sheetPresentationController?.delegate = self

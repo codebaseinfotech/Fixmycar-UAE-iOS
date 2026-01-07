@@ -44,6 +44,11 @@ For immediate assistance, please contact our support team using one of the optio
                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                             <color key="textColor" name="Gray"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                    <real key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                 </stackView>
@@ -103,7 +108,7 @@ For immediate assistance, please contact our support team using one of the optio
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SaN-pB-Dn7">
                                     <rect key="frame" x="17.666666666666686" y="10" width="136" height="22"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chat" translatesAutoresizingMaskIntoConstraints="NO" id="EZ5-m7-lac">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_call_us" translatesAutoresizingMaskIntoConstraints="NO" id="EZ5-m7-lac">
                                             <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="0pe-l0-ND3"/>
@@ -164,6 +169,7 @@ For immediate assistance, please contact our support team using one of the optio
         </view>
     </objects>
     <resources>
+        <image name="ic_call_us" width="22" height="22"/>
         <image name="ic_chat" width="18" height="18"/>
         <namedColor name="Gray">
             <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

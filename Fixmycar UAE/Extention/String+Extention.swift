@@ -7,6 +7,26 @@
 
 import Foundation
 
+extension UILabel {
+    func setLineHeight(_ lineHeight: CGFloat) {
+        guard let text = self.text else { return }
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.minimumLineHeight = lineHeight
+        paragraphStyle.maximumLineHeight = lineHeight
+        paragraphStyle.alignment = self.textAlignment
+        
+        self.attributedText = NSAttributedString(
+            string: text,
+            attributes: [
+                .paragraphStyle: paragraphStyle,
+                .font: self.font!,
+                .foregroundColor: self.textColor!
+            ]
+        )
+    }
+}
+
 extension String {
     func convertHTMLToPlainText() -> String? {
         guard let data = self.data(using: .utf8) else {
