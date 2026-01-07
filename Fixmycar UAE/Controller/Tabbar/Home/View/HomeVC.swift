@@ -60,6 +60,8 @@ class HomeVC: UIViewController {
     
     // tabbar Action
     @IBAction func tappedTHistory(_ sender: Any) {
+        let vc = HistoryVC()
+        navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func tappedTTrackLive(_ sender: Any) {
     }

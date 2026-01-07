@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */; };
+		BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */; };
 		BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29D69A2F06A42C00DD3EB2 /* OTPTextField.swift */; };
 		BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6992F06A42C00DD3EB2 /* OTPFieldView.swift */; };
 		BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6B12F06A6CD00DD3EB2 /* FTAnimation+UIView.m */; };
@@ -58,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		BC29D6992F06A42C00DD3EB2 /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
 		BC29D69A2F06A42C00DD3EB2 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		BC29D6B12F06A6CD00DD3EB2 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
@@ -131,6 +135,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC1DE32C2F0E3415008BB044 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				BC1DE32D2F0E342C008BB044 /* View */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		BC1DE32D2F0E342C008BB044 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */,
+				BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BC29D6962F06A40400DD3EB2 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +413,7 @@
 		BCA894AD2F0E0F2900633E20 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				BC1DE32C2F0E3415008BB044 /* History */,
 				BCA894AE2F0E0F2D00633E20 /* Home */,
 			);
 			path = Tabbar;
@@ -503,6 +525,7 @@
 				BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */,
 				BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */,
 				BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */,
+				BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */,
 				BC7121972F067F800041E2F7 /* LaunchScreen.storyboard in Resources */,
 				BC7121982F067F800041E2F7 /* Main.storyboard in Resources */,
 			);
@@ -563,6 +586,7 @@
 				BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */,
 				BC7121B82F067F940041E2F7 /* AppConstants.swift in Sources */,
 				BC7121992F067F800041E2F7 /* AppDelegate.swift in Sources */,
+				BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */,
 				BC71219A2F067F800041E2F7 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,14 @@ class RecentBookingTVCell: UITableViewCell {
     
     @IBOutlet weak var lblLocaation: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
+    
+    @IBOutlet weak var svHisotyMain: UIStackView!
+    @IBOutlet weak var svLocation: UIStackView!
+    
+    @IBOutlet weak var lblPickLocation: UILabel!
+    @IBOutlet weak var lblDropLocation: UILabel!
+    
+    @IBOutlet weak var viewLineHistory: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,6 +35,20 @@ class RecentBookingTVCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func config(type: String = "recent_booking") {
+        if type == "recent_booking" {
+            svLocation.isHidden = false
+            svHisotyMain.isHidden = true
+            viewLineHistory.isHidden = true
+            
+        } else if type == "history_booking" {
+            svLocation.isHidden = true
+            svHisotyMain.isHidden = false
+            viewLineHistory.isHidden = false
+            
+        }
     }
     
 }

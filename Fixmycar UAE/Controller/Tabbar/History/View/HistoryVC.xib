@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryVC" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <connections>
+                <outlet property="tblViewBookingList" destination="7c8-zX-nsJ" id="VNv-IK-TsJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="N3H-PM-4IZ">
+                    <rect key="frame" x="20" y="128" width="353" height="694"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47O-3E-nXs" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="22.666666666666668"/>
+                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
+                            <color key="textColor" name="primery"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="booking_history"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7c8-zX-nsJ">
+                            <rect key="frame" x="0.0" y="36.666666666666686" width="353" height="657.33333333333326"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-Nz-GTA">
+                    <rect key="frame" x="0.0" y="742" width="393" height="110"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tabbar_back" translatesAutoresizingMaskIntoConstraints="NO" id="7A5-Ia-eYa">
+                            <rect key="frame" x="0.0" y="30" width="393" height="80"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="N8P-mB-Vge">
+                            <rect key="frame" x="227" y="30" width="166" height="80"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-hk-hGb">
+                                    <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7KD-FX-9ez">
+                                            <rect key="frame" x="26" y="18.666666666666625" width="31.333333333333329" height="42.666666666666657"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_chat" translatesAutoresizingMaskIntoConstraints="NO" id="Yp8-qo-gef">
+                                                    <rect key="frame" x="4.6666666666666856" y="0.0" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="BbA-Bk-5lN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWM-pc-d12" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="25" width="31.333333333333332" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <color key="textColor" name="app_gray"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="chat_tab"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqM-dp-1T9">
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="tappedTChat:" destination="-1" eventType="touchUpInside" id="0lT-F3-XPZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="XqM-dp-1T9" secondAttribute="trailing" id="7B1-s5-uW9"/>
+                                        <constraint firstItem="XqM-dp-1T9" firstAttribute="leading" secondItem="8Dw-hk-hGb" secondAttribute="leading" id="LGr-TU-MAi"/>
+                                        <constraint firstItem="XqM-dp-1T9" firstAttribute="top" secondItem="8Dw-hk-hGb" secondAttribute="top" id="PeJ-xQ-5bQ"/>
+                                        <constraint firstItem="7KD-FX-9ez" firstAttribute="centerY" secondItem="8Dw-hk-hGb" secondAttribute="centerY" id="bTP-2O-dVS"/>
+                                        <constraint firstAttribute="bottom" secondItem="XqM-dp-1T9" secondAttribute="bottom" id="d2u-kI-rfq"/>
+                                        <constraint firstItem="7KD-FX-9ez" firstAttribute="centerX" secondItem="8Dw-hk-hGb" secondAttribute="centerX" id="xv5-cw-2F9"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5PP-0k-YOD">
+                                    <rect key="frame" x="83" y="0.0" width="83" height="80"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zp1-qJ-pZh">
+                                            <rect key="frame" x="15.333333333333311" y="18.666666666666625" width="52.666666666666657" height="42.666666666666657"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_settings" translatesAutoresizingMaskIntoConstraints="NO" id="lsn-Fe-9Ph">
+                                                    <rect key="frame" x="15.333333333333371" y="0.0" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="63g-Ch-aEO"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xx1-Be-fKk" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="25" width="52.666666666666664" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <color key="textColor" name="app_gray"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="setting_tab"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wa-Fg-37w">
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="tappedTSettings:" destination="-1" eventType="touchUpInside" id="Dnr-9h-jPo"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Zp1-qJ-pZh" firstAttribute="centerX" secondItem="5PP-0k-YOD" secondAttribute="centerX" id="6Rk-UV-9ww"/>
+                                        <constraint firstAttribute="bottom" secondItem="6Wa-Fg-37w" secondAttribute="bottom" id="8Uc-JF-JqJ"/>
+                                        <constraint firstItem="6Wa-Fg-37w" firstAttribute="top" secondItem="5PP-0k-YOD" secondAttribute="top" id="WGi-cL-iON"/>
+                                        <constraint firstItem="Zp1-qJ-pZh" firstAttribute="centerY" secondItem="5PP-0k-YOD" secondAttribute="centerY" id="ZGU-wq-hsz"/>
+                                        <constraint firstItem="6Wa-Fg-37w" firstAttribute="leading" secondItem="5PP-0k-YOD" secondAttribute="leading" id="gi0-A6-tVe"/>
+                                        <constraint firstAttribute="trailing" secondItem="6Wa-Fg-37w" secondAttribute="trailing" id="q2D-b4-HA7"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqC-1z-ZWk">
+                            <rect key="frame" x="166" y="0.0" width="61" height="110"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TQx-fZ-zv3">
+                                    <rect key="frame" x="0.0" y="0.0" width="61" height="110"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_create_tab" translatesAutoresizingMaskIntoConstraints="NO" id="UQh-Ea-fBr">
+                                            <rect key="frame" x="0.0" y="0.0" width="61" height="62"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="62" id="dWH-Ul-01N"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOI-kq-SlU" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="62" width="61" height="48"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                            <color key="textColor" name="app_gray"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="track_live_tab"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eQ-ht-gca">
+                                    <rect key="frame" x="0.0" y="0.0" width="61" height="110"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="tappedTrackLive:" destination="-1" eventType="touchUpInside" id="HEh-3J-UqM"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="8eQ-ht-gca" firstAttribute="top" secondItem="HqC-1z-ZWk" secondAttribute="top" id="3J8-hK-go6"/>
+                                <constraint firstItem="TQx-fZ-zv3" firstAttribute="leading" secondItem="HqC-1z-ZWk" secondAttribute="leading" id="AoX-3q-ZaY"/>
+                                <constraint firstItem="8eQ-ht-gca" firstAttribute="leading" secondItem="HqC-1z-ZWk" secondAttribute="leading" id="VyH-DC-M2K"/>
+                                <constraint firstAttribute="bottom" secondItem="8eQ-ht-gca" secondAttribute="bottom" id="c7e-9Z-c7l"/>
+                                <constraint firstAttribute="trailing" secondItem="8eQ-ht-gca" secondAttribute="trailing" id="eMM-h6-CqN"/>
+                                <constraint firstAttribute="bottom" secondItem="TQx-fZ-zv3" secondAttribute="bottom" id="fGn-GM-nwQ"/>
+                                <constraint firstAttribute="trailing" secondItem="TQx-fZ-zv3" secondAttribute="trailing" id="pKF-Zs-Khn"/>
+                                <constraint firstItem="TQx-fZ-zv3" firstAttribute="top" secondItem="HqC-1z-ZWk" secondAttribute="top" id="sKl-PW-Pru"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bc0-cg-lNY">
+                            <rect key="frame" x="0.0" y="30" width="166" height="80"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RS2-3y-XlI">
+                                    <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="uWt-uM-nhE">
+                                            <rect key="frame" x="22" y="18.666666666666625" width="39" height="42.666666666666657"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_home" translatesAutoresizingMaskIntoConstraints="NO" id="XE5-JA-eN4">
+                                                    <rect key="frame" x="8.6666666666666679" y="0.0" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="Dao-98-9UN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utb-Rm-1Ly" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="25" width="39" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <color key="textColor" name="app_gray"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="home_tab"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L24-t7-Wdb">
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="tappedTHome:" destination="-1" eventType="touchUpInside" id="O61-Ii-HAA"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="L24-t7-Wdb" secondAttribute="bottom" id="OFY-LV-7ug"/>
+                                        <constraint firstItem="uWt-uM-nhE" firstAttribute="centerX" secondItem="RS2-3y-XlI" secondAttribute="centerX" id="QTA-Uk-I1X"/>
+                                        <constraint firstAttribute="trailing" secondItem="L24-t7-Wdb" secondAttribute="trailing" id="XXj-nf-BBb"/>
+                                        <constraint firstItem="L24-t7-Wdb" firstAttribute="top" secondItem="RS2-3y-XlI" secondAttribute="top" id="egm-no-Eke"/>
+                                        <constraint firstItem="uWt-uM-nhE" firstAttribute="centerY" secondItem="RS2-3y-XlI" secondAttribute="centerY" id="hXW-5D-5Us"/>
+                                        <constraint firstItem="L24-t7-Wdb" firstAttribute="leading" secondItem="RS2-3y-XlI" secondAttribute="leading" id="mCB-fC-als"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-Jr-B0K">
+                                    <rect key="frame" x="83" y="0.0" width="83" height="80"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="MCU-SU-Lg0">
+                                            <rect key="frame" x="18.333333333333325" y="18.666666666666625" width="46.666666666666657" height="42.666666666666657"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_s_history" translatesAutoresizingMaskIntoConstraints="NO" id="9RD-1i-0jU">
+                                                    <rect key="frame" x="12.333333333333343" y="0.0" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="D80-xO-TGj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xu-Ox-wUf" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="25" width="46.666666666666664" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="history_tab"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onz-36-Ul9">
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Onz-36-Ul9" firstAttribute="top" secondItem="Kge-Jr-B0K" secondAttribute="top" id="03k-wV-2Ct"/>
+                                        <constraint firstAttribute="trailing" secondItem="Onz-36-Ul9" secondAttribute="trailing" id="2eB-qM-ycB"/>
+                                        <constraint firstItem="MCU-SU-Lg0" firstAttribute="centerY" secondItem="Kge-Jr-B0K" secondAttribute="centerY" id="Exn-l0-Zfh"/>
+                                        <constraint firstAttribute="bottom" secondItem="Onz-36-Ul9" secondAttribute="bottom" id="Qjb-Fl-uRq"/>
+                                        <constraint firstItem="Onz-36-Ul9" firstAttribute="leading" secondItem="Kge-Jr-B0K" secondAttribute="leading" id="UhC-uI-6Mo"/>
+                                        <constraint firstItem="MCU-SU-Lg0" firstAttribute="centerX" secondItem="Kge-Jr-B0K" secondAttribute="centerX" id="WW3-B7-dBm"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="N8P-mB-Vge" secondAttribute="trailing" id="2IS-u0-IgK"/>
+                        <constraint firstItem="N8P-mB-Vge" firstAttribute="leading" secondItem="HqC-1z-ZWk" secondAttribute="trailing" id="7sD-nm-ayA"/>
+                        <constraint firstAttribute="trailing" secondItem="7A5-Ia-eYa" secondAttribute="trailing" id="80g-pY-etO"/>
+                        <constraint firstItem="HqC-1z-ZWk" firstAttribute="top" secondItem="NRo-Nz-GTA" secondAttribute="top" id="F7d-eJ-iVG"/>
+                        <constraint firstAttribute="bottom" secondItem="N8P-mB-Vge" secondAttribute="bottom" id="GRp-0c-WDS"/>
+                        <constraint firstAttribute="height" constant="110" id="HXA-eK-uyp"/>
+                        <constraint firstItem="HqC-1z-ZWk" firstAttribute="leading" secondItem="bc0-cg-lNY" secondAttribute="trailing" id="S5F-iy-Ubv"/>
+                        <constraint firstAttribute="bottom" secondItem="7A5-Ia-eYa" secondAttribute="bottom" id="STX-RR-OOA"/>
+                        <constraint firstItem="N8P-mB-Vge" firstAttribute="top" secondItem="7A5-Ia-eYa" secondAttribute="top" id="Uo0-Sy-J3h"/>
+                        <constraint firstItem="7A5-Ia-eYa" firstAttribute="leading" secondItem="NRo-Nz-GTA" secondAttribute="leading" id="dHP-fH-157"/>
+                        <constraint firstItem="bc0-cg-lNY" firstAttribute="top" secondItem="7A5-Ia-eYa" secondAttribute="top" id="dHq-KO-59f"/>
+                        <constraint firstItem="HqC-1z-ZWk" firstAttribute="centerX" secondItem="NRo-Nz-GTA" secondAttribute="centerX" id="f7I-AU-2Vq"/>
+                        <constraint firstAttribute="bottom" secondItem="bc0-cg-lNY" secondAttribute="bottom" id="gcW-wR-M59"/>
+                        <constraint firstItem="7A5-Ia-eYa" firstAttribute="top" secondItem="NRo-Nz-GTA" secondAttribute="top" constant="30" id="n8G-VF-7Wy"/>
+                        <constraint firstAttribute="bottom" secondItem="HqC-1z-ZWk" secondAttribute="bottom" id="rj6-1b-T9r"/>
+                        <constraint firstItem="bc0-cg-lNY" firstAttribute="leading" secondItem="NRo-Nz-GTA" secondAttribute="leading" id="ycA-4h-CLQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="NRo-Nz-GTA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="15x-yF-FuL"/>
+                <constraint firstItem="N3H-PM-4IZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="1YS-tH-XOE"/>
+                <constraint firstItem="NRo-Nz-GTA" firstAttribute="top" secondItem="N3H-PM-4IZ" secondAttribute="bottom" constant="-80" id="KRR-ST-oqH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N3H-PM-4IZ" secondAttribute="trailing" constant="20" id="MYn-4r-eWQ"/>
+                <constraint firstAttribute="bottom" secondItem="NRo-Nz-GTA" secondAttribute="bottom" id="NvD-3h-n4o"/>
+                <constraint firstItem="N3H-PM-4IZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="WHC-4o-AsV"/>
+                <constraint firstAttribute="trailing" secondItem="NRo-Nz-GTA" secondAttribute="trailing" id="bzB-Wr-nXd"/>
+            </constraints>
+            <point key="canvasLocation" x="105" y="132"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_create_tab" width="60" height="60"/>
+        <image name="ic_s_history" width="22" height="22"/>
+        <image name="ic_tabbar_back" width="375" height="80"/>
+        <image name="ic_un_chat" width="22" height="22"/>
+        <image name="ic_un_home" width="22" height="22"/>
+        <image name="ic_un_settings" width="22" height="22"/>
+        <namedColor name="app_gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
