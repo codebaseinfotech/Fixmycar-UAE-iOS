@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */; };
 		BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */; };
+		BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */; };
+		BC1DE3392F0E3E66008BB044 /* BookingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */; };
 		BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29D69A2F06A42C00DD3EB2 /* OTPTextField.swift */; };
 		BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6992F06A42C00DD3EB2 /* OTPFieldView.swift */; };
 		BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC29D6B12F06A6CD00DD3EB2 /* FTAnimation+UIView.m */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
+		BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVC.swift; sourceTree = "<group>"; };
+		BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingDetailsVC.xib; sourceTree = "<group>"; };
 		BC29D6992F06A42C00DD3EB2 /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
 		BC29D69A2F06A42C00DD3EB2 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		BC29D6B12F06A6CD00DD3EB2 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		BC1DE32C2F0E3415008BB044 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				BC1DE3322F0E3E31008BB044 /* SubVC */,
 				BC1DE32D2F0E342C008BB044 /* View */,
 			);
 			path = History;
@@ -148,6 +153,31 @@
 			children = (
 				BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */,
 				BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC1DE3322F0E3E31008BB044 /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				BC1DE3332F0E3E45008BB044 /* BookingDetails */,
+			);
+			path = SubVC;
+			sourceTree = "<group>";
+		};
+		BC1DE3332F0E3E45008BB044 /* BookingDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BC1DE3342F0E3E4D008BB044 /* View */,
+			);
+			path = BookingDetails;
+			sourceTree = "<group>";
+		};
+		BC1DE3342F0E3E4D008BB044 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */,
+				BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -524,6 +554,7 @@
 				BC4E178A2F06982200EDC9AE /* Satoshi-MediumItalic.otf in Resources */,
 				BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */,
 				BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */,
+				BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */,
 				BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */,
 				BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */,
 				BC7121972F067F800041E2F7 /* LaunchScreen.storyboard in Resources */,
@@ -566,6 +597,7 @@
 				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
 				BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
+				BC1DE3392F0E3E66008BB044 /* BookingDetailsVC.swift in Sources */,
 				BC7121AE2F067F940041E2F7 /* AGDesignable.swift in Sources */,
 				BC7121AF2F067F940041E2F7 /* VideoPicker.swift in Sources */,
 				BC7121B02F067F940041E2F7 /* PickerViewViewController.swift in Sources */,
