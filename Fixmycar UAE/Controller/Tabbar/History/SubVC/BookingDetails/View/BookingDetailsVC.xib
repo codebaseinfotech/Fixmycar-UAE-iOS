@@ -53,19 +53,71 @@
                         <constraint firstItem="1B8-UU-bn1" firstAttribute="centerY" secondItem="BqS-vc-19V" secondAttribute="centerY" id="v0k-uU-tJ1"/>
                     </constraints>
                 </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsT-Rf-TlI">
+                    <rect key="frame" x="0.0" y="99" width="393" height="753"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01w-uE-3UT">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="750"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZi-dG-rnG">
+                                    <rect key="frame" x="20" y="20" width="353" height="606"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="drL-7e-JLz">
+                                            <rect key="frame" x="15" y="15" width="323" height="576"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="gray_base_2"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="drL-7e-JLz" secondAttribute="trailing" constant="15" id="6aB-WY-6yw"/>
+                                        <constraint firstItem="drL-7e-JLz" firstAttribute="top" secondItem="EZi-dG-rnG" secondAttribute="top" constant="15" id="G8D-oM-a4M"/>
+                                        <constraint firstAttribute="height" constant="606" id="UNF-LZ-4Pw"/>
+                                        <constraint firstAttribute="bottom" secondItem="drL-7e-JLz" secondAttribute="bottom" constant="15" id="l65-ee-fDN"/>
+                                        <constraint firstItem="drL-7e-JLz" firstAttribute="leading" secondItem="EZi-dG-rnG" secondAttribute="leading" constant="15" id="yHz-q2-V9P"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="EZi-dG-rnG" firstAttribute="leading" secondItem="01w-uE-3UT" secondAttribute="leading" constant="20" id="1Ac-4D-LFH"/>
+                                <constraint firstItem="EZi-dG-rnG" firstAttribute="top" secondItem="01w-uE-3UT" secondAttribute="top" constant="20" id="PBD-7G-rKY"/>
+                                <constraint firstAttribute="height" constant="750" id="TXL-jN-Kid"/>
+                                <constraint firstAttribute="trailing" secondItem="EZi-dG-rnG" secondAttribute="trailing" constant="20" id="Xp8-iT-wEP"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="01w-uE-3UT" firstAttribute="top" secondItem="fsT-Rf-TlI" secondAttribute="top" id="7be-pp-hiV"/>
+                        <constraint firstAttribute="width" secondItem="01w-uE-3UT" secondAttribute="width" id="ZLu-rm-gyb"/>
+                        <constraint firstItem="01w-uE-3UT" firstAttribute="leading" secondItem="fsT-Rf-TlI" secondAttribute="leading" id="oLL-bs-adW"/>
+                        <constraint firstAttribute="trailing" secondItem="01w-uE-3UT" secondAttribute="trailing" id="sA0-Wx-ZTv"/>
+                        <constraint firstAttribute="bottom" secondItem="01w-uE-3UT" secondAttribute="bottom" id="wye-MK-jGt"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fsT-Rf-TlI" firstAttribute="top" secondItem="BqS-vc-19V" secondAttribute="bottom" id="0pp-X8-y4V"/>
+                <constraint firstAttribute="bottom" secondItem="fsT-Rf-TlI" secondAttribute="bottom" id="45b-sI-rwH"/>
                 <constraint firstItem="BqS-vc-19V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EuX-u9-0vK"/>
+                <constraint firstItem="fsT-Rf-TlI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rmw-wK-0k9"/>
+                <constraint firstItem="fsT-Rf-TlI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tZW-Qm-sg4"/>
                 <constraint firstItem="BqS-vc-19V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vE3-2z-Wwl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BqS-vc-19V" secondAttribute="trailing" id="whQ-9v-cZ5"/>
             </constraints>
-            <point key="canvasLocation" x="105" y="115"/>
+            <point key="canvasLocation" x="104.58015267175573" y="114.78873239436621"/>
         </view>
     </objects>
     <resources>
         <image name="ic_back_arrow" width="24" height="24"/>
+        <namedColor name="gray_base_2">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primery">
             <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
