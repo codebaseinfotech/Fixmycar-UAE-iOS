@@ -20,8 +20,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookingDetailsVC" customModule="Fixmycar_UAE" customModuleProvider="target">
             <connections>
+                <outlet property="imgRecovery" destination="AoF-2j-Sta" id="yBn-jr-Lnj"/>
+                <outlet property="imgUser" destination="Rwq-yP-OIr" id="lGl-DX-krT"/>
+                <outlet property="lblAmount" destination="Fjy-26-Gh7" id="TZF-bO-QKz"/>
+                <outlet property="lblBaseFare" destination="ydO-YF-Nhj" id="Joj-nM-m1u"/>
+                <outlet property="lblChat" destination="4W1-SV-uz6" id="btW-23-abg"/>
+                <outlet property="lblDescription" destination="N0O-tH-hd4" id="S3s-nv-dJw"/>
+                <outlet property="lblDiscount" destination="Smg-gA-929" id="GdM-hb-DZ2"/>
+                <outlet property="lblDrop" destination="r1k-vr-VE7" id="rGc-cu-Wq3"/>
+                <outlet property="lblGulfYear" destination="56V-2e-8kD" id="FCH-vn-Yeo"/>
+                <outlet property="lblGulfside" destination="KtB-Dr-hDh" id="Akw-QF-Hr9"/>
                 <outlet property="lblInvoiceName" destination="wa3-Qa-RxI" id="10k-33-jWI"/>
+                <outlet property="lblPickup" destination="CHz-uz-kDb" id="E64-K8-FA6"/>
+                <outlet property="lblPlatformFee" destination="PfW-if-402" id="401-LE-hx3"/>
+                <outlet property="lblRating" destination="mmt-ze-zET" id="V7I-9u-zHB"/>
+                <outlet property="lblServiceTitle" destination="aoi-1T-TMf" id="xeV-ZD-eUr"/>
+                <outlet property="lblStatus" destination="Uy9-JD-lnB" id="cbd-7X-8IY"/>
+                <outlet property="lblTax" destination="ceN-3W-hPA" id="aPL-vi-mD4"/>
+                <outlet property="lblTime" destination="oQ9-kW-imo" id="7U0-dg-XeS"/>
+                <outlet property="lblTotalAmount" destination="ph1-We-fZK" id="lGc-pd-v7p"/>
+                <outlet property="lblUserName" destination="6dA-2e-y76" id="Hvo-5i-8hT"/>
+                <outlet property="lblVehicleNum" destination="ZPZ-wc-8V1" id="Acb-ax-rKp"/>
+                <outlet property="lblVehicleNumTitle" destination="9cN-ED-fvV" id="Mxq-hL-IZe"/>
+                <outlet property="lblVehicleType" destination="NkJ-i8-Cbd" id="d5Y-8i-WsA"/>
+                <outlet property="lblVehicleTypeTitle" destination="ZJG-VU-zNt" id="ktT-h0-5sf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewGulfsideMain" destination="j4D-oj-CHv" id="abi-jl-Vh2"/>
+                <outlet property="viewStatus" destination="CcF-0z-xMb" id="f0b-qa-4bH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -132,13 +157,16 @@
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ldR-Sf-2jM">
                                                                                     <rect key="frame" x="54" y="0.0" width="153" height="44"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Recovery service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoi-1T-TMf">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovery service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoi-1T-TMf">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="153" height="25"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="height" constant="25" id="uru-Jf-OHf"/>
+                                                                                            </constraints>
                                                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                                                             <color key="textColor" name="primery_black"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="10 Aug, 2025 09:15 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ9-kW-imo">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Aug, 2025 09:15 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQ9-kW-imo">
                                                                                             <rect key="frame" x="0.0" y="29" width="153" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
                                                                                             <color key="textColor" name="Gray"/>
