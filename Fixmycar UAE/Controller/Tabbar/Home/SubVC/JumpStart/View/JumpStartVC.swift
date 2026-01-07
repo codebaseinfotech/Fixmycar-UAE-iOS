@@ -15,7 +15,13 @@ class JumpStartVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func tappedChatUs(_ sender: Any) {
+        
+    }
+    @IBAction func tappedCallUs(_ sender: Any) {
+        
+    }
+    
      
 
 }
