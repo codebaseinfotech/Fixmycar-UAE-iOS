@@ -54,6 +54,13 @@ class HomeVC: UIViewController {
     @IBAction func tappedRecovery(_ sender: Any) {
     }
     @IBAction func tappedJumpStart(_ sender: Any) {
+        let vc = JumpStartVC()
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+        }
+        vc.sheetPresentationController?.delegate = self
+        self.present(vc, animated: true)
     }
     @IBAction func tappedViewAllRecentBooking(_ sender: Any) {
     }
@@ -88,4 +95,17 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+extension HomeVC: UISheetPresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if let overlayView = view.viewWithTag(999) {
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
+                overlayView.alpha = 0
+            }, completion: { _ in
+                overlayView.removeFromSuperview()
+            })
+            
+        }
+    }
 }
