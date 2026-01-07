@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88D763AF2F0E5C01001116F2 /* RecentBookingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D763AD2F0E5C01001116F2 /* RecentBookingsView.swift */; };
+		88D763B02F0E5C01001116F2 /* RecentBookingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D763AE2F0E5C01001116F2 /* RecentBookingsView.xib */; };
 		BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */; };
 		BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */; };
 		BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */; };
@@ -62,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88D763AD2F0E5C01001116F2 /* RecentBookingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBookingsView.swift; sourceTree = "<group>"; };
+		88D763AE2F0E5C01001116F2 /* RecentBookingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentBookingsView.xib; sourceTree = "<group>"; };
 		BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVC.swift; sourceTree = "<group>"; };
@@ -139,6 +143,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88D763AB2F0E5BD1001116F2 /* Recent Bookings View */ = {
+			isa = PBXGroup;
+			children = (
+				88D763AC2F0E5BD9001116F2 /* View */,
+			);
+			path = "Recent Bookings View";
+			sourceTree = "<group>";
+		};
+		88D763AC2F0E5BD9001116F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88D763AD2F0E5C01001116F2 /* RecentBookingsView.swift */,
+				88D763AE2F0E5C01001116F2 /* RecentBookingsView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BC1DE32C2F0E3415008BB044 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +419,7 @@
 		BC7121EA2F06964F0041E2F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				88D763AB2F0E5BD1001116F2 /* Recent Bookings View */,
 				BCA894AD2F0E0F2900633E20 /* Tabbar */,
 				BC75E8742F0D2C9700947022 /* CreateAccount */,
 				BC4E178B2F06A13B00EDC9AE /* VerifyOtp */,
@@ -555,6 +577,7 @@
 				BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */,
 				BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */,
 				BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */,
+				88D763B02F0E5C01001116F2 /* RecentBookingsView.xib in Resources */,
 				BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */,
 				BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */,
 				BC7121972F067F800041E2F7 /* LaunchScreen.storyboard in Resources */,
@@ -595,6 +618,7 @@
 				BC7121AC2F067F940041E2F7 /* Constants.swift in Sources */,
 				BC7121AD2F067F940041E2F7 /* UIFont+Extention.swift in Sources */,
 				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
+				88D763AF2F0E5C01001116F2 /* RecentBookingsView.swift in Sources */,
 				BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
 				BC1DE3392F0E3E66008BB044 /* BookingDetailsVC.swift in Sources */,

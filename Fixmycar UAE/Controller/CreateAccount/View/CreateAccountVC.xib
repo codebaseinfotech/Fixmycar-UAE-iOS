@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,19 +35,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_logo" translatesAutoresizingMaskIntoConstraints="NO" id="lfT-DU-6vC">
-                    <rect key="frame" x="124.66666666666669" y="138" width="144" height="40"/>
+                    <rect key="frame" x="124.66666666666669" y="79" width="144" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="144" id="CR1-LJ-KSP"/>
                         <constraint firstAttribute="height" constant="40" id="rrM-9d-hhx"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LWF-Oh-Mp1">
-                    <rect key="frame" x="20" y="208" width="353" height="78"/>
+                    <rect key="frame" x="20" y="149" width="353" height="78"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdg-RA-XmO" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="30"/>
                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" name="primery_black"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="enter_your_details"/>
@@ -56,7 +56,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just a few details to get you road side help faster." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvY-HV-P2h" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="38" width="353" height="40"/>
                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
-                            <color key="textColor" name="app_gray"/>
+                            <color key="textColor" name="Gray"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="just_few_details_to_get_roadside"/>
@@ -65,7 +65,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Zk-cZ-9Q1">
-                    <rect key="frame" x="20" y="326" width="353" height="365"/>
+                    <rect key="frame" x="20" y="267" width="353" height="365"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Av-kA-hyw">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="71"/>
@@ -76,7 +76,7 @@
                                         <constraint firstAttribute="height" constant="19" id="Qk4-9Q-Z0j"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="primery_black"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="full_name"/>
@@ -90,17 +90,18 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUF-hX-FJq" customClass="AppTextField" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="14" y="0.0" width="325" height="42"/>
+                                                    <color key="textColor" name="primery_black"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                            <color key="value" name="app_gray"/>
+                                                            <color key="value" name="Gray"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="enter_full_name"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" name="app_gray_light"/>
+                                            <color key="backgroundColor" name="gray_base"/>
                                             <constraints>
                                                 <constraint firstItem="eUF-hX-FJq" firstAttribute="top" secondItem="J9j-Dg-t8t" secondAttribute="top" id="5hi-ex-O0U"/>
                                                 <constraint firstItem="eUF-hX-FJq" firstAttribute="leading" secondItem="J9j-Dg-t8t" secondAttribute="leading" constant="14" id="IWp-Jt-prv"/>
@@ -129,7 +130,7 @@
                                         <constraint firstAttribute="height" constant="19" id="WWi-ue-iF6"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="primery_black"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="mobile_number*"/>
@@ -163,7 +164,7 @@
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" name="app_gray_light"/>
+                                                    <color key="backgroundColor" name="gray_base"/>
                                                     <constraints>
                                                         <constraint firstItem="9YB-Co-WAP" firstAttribute="leading" secondItem="OnI-9B-asO" secondAttribute="leading" constant="6" id="3jB-Yh-0di"/>
                                                         <constraint firstAttribute="trailing" secondItem="9YB-Co-WAP" secondAttribute="trailing" constant="6" id="Fjf-J1-mKi"/>
@@ -186,17 +187,18 @@
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbm-aY-Xi1" customClass="AppTextField" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                             <rect key="frame" x="14" y="0.0" width="239" height="42"/>
+                                                            <color key="textColor" name="primery_black"/>
                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                                    <color key="value" name="app_gray"/>
+                                                                    <color key="value" name="Gray"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="enter_mobile_numbre"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                     </subviews>
-                                                    <color key="backgroundColor" name="app_gray_light"/>
+                                                    <color key="backgroundColor" name="gray_base"/>
                                                     <constraints>
                                                         <constraint firstItem="fbm-aY-Xi1" firstAttribute="top" secondItem="AlC-oe-Uhp" secondAttribute="top" id="5Fh-ao-hxd"/>
                                                         <constraint firstAttribute="bottom" secondItem="fbm-aY-Xi1" secondAttribute="bottom" id="W92-U0-Vn0"/>
@@ -214,7 +216,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This number will be used for all service updates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSC-6Y-nji" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="48" width="353" height="15"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
-                                            <color key="textColor" name="app_gray"/>
+                                            <color key="textColor" name="Gray"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="this_number_used_by_all_service"/>
@@ -239,7 +241,7 @@
                                                         <constraint firstAttribute="height" constant="19" id="YGe-4H-C9N"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="primery_black"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="email_address"/>
@@ -248,7 +250,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(optional)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qf0-pY-SrZ" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="94.333333333333343" y="2" width="90.333333333333343" height="15"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
-                                                    <color key="textColor" name="app_gray"/>
+                                                    <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="optional"/>
@@ -266,17 +268,18 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSe-tt-NdG" customClass="AppTextField" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="14" y="0.0" width="325" height="42"/>
+                                                    <color key="textColor" name="primery_black"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                            <color key="value" name="app_gray"/>
+                                                            <color key="value" name="Gray"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="enter_your_email_address"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" name="app_gray_light"/>
+                                            <color key="backgroundColor" name="gray_base"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="gSe-tt-NdG" secondAttribute="trailing" constant="14" id="BOO-IM-Eb0"/>
                                                 <constraint firstItem="gSe-tt-NdG" firstAttribute="top" secondItem="gIZ-Aa-3fj" secondAttribute="top" id="LOK-dq-Udm"/>
@@ -311,7 +314,7 @@
                                                         <constraint firstAttribute="height" constant="19" id="Vhf-Ag-BmY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="primery_black"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="referral_code"/>
@@ -320,7 +323,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(optional)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53x-mS-cn8" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="91.333333333333343" y="2" width="87.333333333333343" height="15"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
-                                                    <color key="textColor" name="app_gray"/>
+                                                    <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="optional"/>
@@ -338,17 +341,18 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your referral code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GR1-eK-fT9" customClass="AppTextField" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="14" y="0.0" width="325" height="42"/>
+                                                    <color key="textColor" name="primery_black"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                            <color key="value" name="app_gray"/>
+                                                            <color key="value" name="Gray"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="enter_your_referral_code"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" name="app_gray_light"/>
+                                            <color key="backgroundColor" name="gray_base"/>
                                             <constraints>
                                                 <constraint firstItem="GR1-eK-fT9" firstAttribute="top" secondItem="hyM-PR-WXu" secondAttribute="top" id="7A5-5i-Jbq"/>
                                                 <constraint firstAttribute="trailing" secondItem="GR1-eK-fT9" secondAttribute="trailing" constant="14" id="Ccb-Xo-kfS"/>
@@ -371,15 +375,15 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBu-rp-Tjn" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
-                    <rect key="frame" x="20" y="732" width="353" height="42"/>
-                    <color key="backgroundColor" name="primery"/>
+                    <rect key="frame" x="20" y="766" width="353" height="42"/>
+                    <color key="backgroundColor" name="primery_black"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="LMA-Au-t0I"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Continue">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" name="White"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -414,13 +418,16 @@
         <image name="ic-drop_down" width="20" height="20"/>
         <image name="ic_uae" width="26" height="26"/>
         <image name="top_logo" width="144" height="40"/>
-        <namedColor name="app_gray">
+        <namedColor name="Gray">
             <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="app_gray_light">
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_base">
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="primery">
+        <namedColor name="primery_black">
             <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">

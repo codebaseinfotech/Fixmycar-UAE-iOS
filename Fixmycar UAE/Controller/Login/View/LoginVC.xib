@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -34,14 +35,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_logo" translatesAutoresizingMaskIntoConstraints="NO" id="snu-CU-xaW">
-                    <rect key="frame" x="124.66666666666669" y="138" width="144" height="40"/>
+                    <rect key="frame" x="124.66666666666669" y="79" width="144" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="144" id="Fhl-d0-nnI"/>
                         <constraint firstAttribute="height" constant="40" id="rzN-u8-XKa"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="285-yG-yd6">
-                    <rect key="frame" x="20" y="208" width="353" height="128"/>
+                    <rect key="frame" x="20" y="149" width="353" height="128"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Welcome to Toretto Recovery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLg-Mx-4mC" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
@@ -55,7 +56,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fast &amp; reliable roadside assistance, anytime you need it." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jn-6l-9fh" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="88" width="353" height="40"/>
                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
-                            <color key="textColor" name="app_gray"/>
+                            <color key="textColor" name="Gray"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="fast_roadside_assistance"/>
@@ -67,7 +68,7 @@
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JrW-hQ-iTc">
-                    <rect key="frame" x="20" y="366" width="373" height="250"/>
+                    <rect key="frame" x="20" y="307" width="373" height="309"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xFY-FL-XTS">
                     <rect key="frame" x="20" y="624" width="353" height="133"/>
@@ -81,7 +82,7 @@
                                         <constraint firstAttribute="height" constant="19" id="B7g-OY-2xf"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="primery_black"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="mobile_number"/>
@@ -112,7 +113,7 @@
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" name="app_gray_light"/>
+                                            <color key="backgroundColor" name="gray_base"/>
                                             <constraints>
                                                 <constraint firstItem="6k5-do-WT6" firstAttribute="leading" secondItem="riJ-5h-Aey" secondAttribute="leading" constant="6" id="9yd-pw-3Nj"/>
                                                 <constraint firstItem="y2e-nV-mYg" firstAttribute="top" secondItem="riJ-5h-Aey" secondAttribute="top" id="D4c-k1-vyW"/>
@@ -139,13 +140,13 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                            <color key="value" name="app_gray"/>
+                                                            <color key="value" name="Gray"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="enter_mobile_numbre"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" name="app_gray_light"/>
+                                            <color key="backgroundColor" name="gray_base"/>
                                             <constraints>
                                                 <constraint firstItem="cGM-QM-txe" firstAttribute="top" secondItem="I0E-RC-MP8" secondAttribute="top" id="3eJ-KA-aQl"/>
                                                 <constraint firstItem="cGM-QM-txe" firstAttribute="leading" secondItem="I0E-RC-MP8" secondAttribute="leading" constant="14" id="5gf-oT-HLv"/>
@@ -164,7 +165,7 @@
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUx-W1-ODo" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="91" width="353" height="42"/>
-                            <color key="backgroundColor" name="primery"/>
+                            <color key="backgroundColor" name="primery_black"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="42" id="tb4-Oz-DYQ"/>
                             </constraints>
@@ -225,13 +226,13 @@
         <image name="ic_login_logo" width="1464" height="1076"/>
         <image name="ic_uae" width="26" height="26"/>
         <image name="top_logo" width="144" height="40"/>
-        <namedColor name="app_gray">
+        <namedColor name="Gray">
             <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="app_gray_light">
+        <namedColor name="gray_base">
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="primery">
+        <namedColor name="primery_black">
             <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">

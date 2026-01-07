@@ -51,7 +51,7 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecentBookingTVCell.identifier) as! RecentBookingTVCell
-        cell.config(type: "history_booking")
+        cell.viewRecentBooking.config(type: "history_booking")
         
         return cell
     }

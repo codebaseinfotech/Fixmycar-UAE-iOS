@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -53,7 +53,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Your Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W9-Um-pSK" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="primery_black"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="verify_your_account"/>
@@ -65,7 +65,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wo have sent a 6 digit code to the number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-PS-NVi" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
-                                            <color key="textColor" name="app_gray"/>
+                                            <color key="textColor" name="Gray"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="wo_sent_6_digit_code_the_code"/>
@@ -74,7 +74,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+971 5X XXX 5555" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTa-KQ-Z3X">
                                             <rect key="frame" x="0.0" y="22" width="335" height="20"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
-                                            <color key="textColor" name="app_gray"/>
+                                            <color key="textColor" name="Gray"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -91,30 +91,30 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:59" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOJ-GC-aia">
                             <rect key="frame" x="176.33333333333334" y="232" width="40.333333333333343" height="17.666666666666657"/>
                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" name="primery_black"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="x7h-UB-EP7">
-                            <rect key="frame" x="75" y="289.66666666666663" width="243" height="32"/>
+                            <rect key="frame" x="74.666666666666686" y="289.66666666666663" width="244" height="31"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t get the code?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-4R-sIo" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="147" height="32"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="147" height="31"/>
                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
-                                    <color key="textColor" name="app_gray"/>
+                                    <color key="textColor" name="Gray"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="didnt_get_the_code"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-Dg-YFq" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                    <rect key="frame" x="149" y="0.0" width="94" height="32"/>
+                                    <rect key="frame" x="149" y="0.0" width="95" height="31"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal">
                                         <attributedString key="attributedTitle">
                                             <fragment content="Resend code">
                                                 <attributes>
                                                     <color key="NSColor" name="primary_red"/>
-                                                    <font key="NSFont" size="16" name="Satoshi-Medium"/>
+                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                     <integer key="NSUnderline" value="1"/>
                                                 </attributes>
                                             </fragment>
@@ -130,11 +130,11 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gjX-aR-ohe">
-                            <rect key="frame" x="20" y="341.66666666666663" width="353" height="42"/>
+                            <rect key="frame" x="20" y="340.66666666666663" width="353" height="42"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-ZJ-400" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="42"/>
-                                    <color key="backgroundColor" name="primery"/>
+                                    <color key="backgroundColor" name="primery_black"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="42" id="FrR-lv-am3"/>
                                     </constraints>
@@ -191,13 +191,13 @@
         <namedColor name="#D9D9D9">
             <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="app_gray">
+        <namedColor name="Gray">
             <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary_red">
             <color red="0.81960784313725488" green="0.0" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="primery">
+        <namedColor name="primery_black">
             <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
