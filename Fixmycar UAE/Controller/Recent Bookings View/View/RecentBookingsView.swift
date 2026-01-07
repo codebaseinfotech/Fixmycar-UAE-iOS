@@ -25,6 +25,7 @@ class RecentBookingsView: UIView {
     
     @IBOutlet weak var viewBottomMain: UIView!
     @IBOutlet weak var viewLineAddress: UIView!
+    @IBOutlet weak var svPrice: UIStackView!
     
     private let nibName = String(describing: RecentBookingsView.self)
     
@@ -65,6 +66,11 @@ class RecentBookingsView: UIView {
             svHistoryMain.isHidden = false
             viewLineAddress.isHidden = false
             
+        } else if type == "booking_details" {
+            svLocation.isHidden = true
+            svHistoryMain.isHidden = false
+            viewLineAddress.isHidden = false
+            svPrice.isHidden = true
         }
     }
 }

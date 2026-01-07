@@ -60,4 +60,8 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = BookingDetailsVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

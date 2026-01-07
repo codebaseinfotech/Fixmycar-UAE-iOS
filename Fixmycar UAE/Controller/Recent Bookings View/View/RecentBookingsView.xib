@@ -30,6 +30,7 @@
                 <outlet property="lblType" destination="ovn-mk-weS" id="uMx-rb-5iF"/>
                 <outlet property="svHistoryMain" destination="1x9-hc-CHi" id="zsl-1r-MVh"/>
                 <outlet property="svLocation" destination="Hhe-Bo-OQl" id="jua-fG-Omj"/>
+                <outlet property="svPrice" destination="i4I-Be-cyJ" id="TBV-oB-amY"/>
                 <outlet property="viewBottomMain" destination="Hl8-E5-fjf" id="zN0-Xf-ons"/>
                 <outlet property="viewLineAddress" destination="EBr-aP-n8D" id="0Pg-02-HZT"/>
                 <outlet property="viewStatus" destination="xtB-mw-yjU" id="T1u-Bg-CAF"/>
