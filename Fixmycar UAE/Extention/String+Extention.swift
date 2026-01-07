@@ -56,3 +56,13 @@ extension NSMutableData {
         append(data!)
     }
 }
+
+extension UIView {
+    static var nib: UINib {
+        UINib(nibName: String(describing: self), bundle: nil)
+    }
+    
+    static var identifier: String {
+        String(describing: self)
+    }
+}

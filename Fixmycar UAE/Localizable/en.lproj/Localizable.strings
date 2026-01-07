@@ -1,36 +1,14 @@
-/* 
-  Localizable.strings
-  Fixmycar UAE
+"hello" = "Hello";
+"apply_code" = "Apply Code";
+"services" = "Services";
+"recovery" = "Recovery";
+"jump_start" = "Jump start";
+"recent_booking" = "Recent Bookings";
+"view_all" = "View All";
 
-  Created by Ankit on 01/01/26.
-  
-*/
-
-//MARK: -  login
-"welcome_to_toretto_auto_care" = "Welcome to\nToretto Auto Care";
-"fast_roadside_assistance" = "Fast & reliable roadside assistance, anytime you need it.";
-"mobile_number" = "Mobile number";
-"enter_mobile_numbre" = "Enter mobile number";
-"continue" = "Continue";
-"by_continueing_agree" = "By continuing, you agree to our Terms of Service & Privacy Policy";
-
-//MARK: - verify OTP
-"verify_your_account" = "Verify Your Account";
-"wo_sent_6_digit_code_the_code" = "Wo have sent a 6 digit code to the number";
-"didnt_get_the_code" = "Didn’t get the code?";
-"resend_code" = "Resend code";
-"verify" = "Verify";
-
-// MARK: - create account
-"enter_your_details" = "Enter your details";
-"just_few_details_to_get_roadside" = "Just a few details to get you road side help faster.";
-"full_name" = "Full name *";
-"enter_full_name" = "Enter full name";
-"mobile_number*" = "Mobile number *";
-"this_number_used_by_all_service" = "This number will be used for all service updates";
-"email_address" = "Email address";
-"optional" = "(optional)";
-"enter_your_email_address" = "Enter your email address";
-"referral_code" = "Referral code";
-"enter_your_referral_code" = "Enter your referral code";
-
+// MARK: - Tabbar
+"home_tab" = "Home";
+"history_tab" = "History";
+"track_live_tab" = "Track Live";
+"chat_tab" = "Chat";
+"setting_tab" = "Settings";

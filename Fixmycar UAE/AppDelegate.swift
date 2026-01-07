@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         
-        let home = LoginVC()
+        let home = HomeVC()
         let homeNavigation = UINavigationController(rootViewController: home)
         homeNavigation.navigationBar.isHidden = true
         self.window?.rootViewController = homeNavigation

