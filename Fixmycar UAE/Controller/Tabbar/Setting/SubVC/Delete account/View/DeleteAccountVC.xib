@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeleteAccountVC" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <connections>
+                <outlet property="heightConstTblView" destination="xb8-BU-Zzn" id="a8F-pr-gsI"/>
+                <outlet property="tblViewReasonList" destination="bhm-O4-t0Z" id="ytC-nL-ZcI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6g-Ul-TWf">
+                    <rect key="frame" x="0.0" y="59" width="393" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPD-OE-UFF">
+                            <rect key="frame" x="20" y="2.6666666666666643" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="AOT-P7-Wo8"/>
+                                <constraint firstAttribute="height" constant="35" id="yGg-Bb-GCH"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="ic_back_arrow"/>
+                            <connections>
+                                <action selector="tappedBack:" destination="-1" eventType="touchUpInside" id="X0G-VX-deI"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0q-Cs-BlX">
+                            <rect key="frame" x="133.33333333333334" y="8.6666666666666732" width="126.33333333333334" height="22.666666666666671"/>
+                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
+                            <color key="textColor" name="primery_black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="cPD-OE-UFF" firstAttribute="leading" secondItem="D6g-Ul-TWf" secondAttribute="leading" constant="20" id="Dh4-5j-bre"/>
+                        <constraint firstItem="z0q-Cs-BlX" firstAttribute="centerX" secondItem="D6g-Ul-TWf" secondAttribute="centerX" id="FPO-j2-bRq"/>
+                        <constraint firstItem="z0q-Cs-BlX" firstAttribute="centerY" secondItem="D6g-Ul-TWf" secondAttribute="centerY" id="KDC-9a-xgk"/>
+                        <constraint firstItem="cPD-OE-UFF" firstAttribute="centerY" secondItem="D6g-Ul-TWf" secondAttribute="centerY" id="KbQ-d3-kS5"/>
+                        <constraint firstAttribute="height" constant="40" id="P6m-17-auw"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’re sorry to see you go. Deleting your account will permanently remove your data from our platform." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvy-3e-7zT">
+                    <rect key="frame" x="20" y="124" width="353" height="30"/>
+                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
+                    <color key="textColor" name="Gray"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a reason for deleting your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwk-tf-kG8">
+                    <rect key="frame" x="20" y="174" width="353" height="20"/>
+                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                    <color key="textColor" name="primery_black"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okm-zb-WOX">
+                    <rect key="frame" x="0.0" y="214" width="393" height="552"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DwD-Se-Lms">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="248"/>
+                            <subviews>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvf-7a-ee7">
+                                    <rect key="frame" x="20" y="0.0" width="353" height="248"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bhm-O4-t0Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="248"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="248" id="xb8-BU-Zzn"/>
+                                            </constraints>
+                                        </tableView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="bhm-O4-t0Z" secondAttribute="bottom" id="68Z-5X-PyR"/>
+                                        <constraint firstItem="bhm-O4-t0Z" firstAttribute="leading" secondItem="Wvf-7a-ee7" secondAttribute="leading" id="8FJ-Sz-bdI"/>
+                                        <constraint firstAttribute="trailing" secondItem="bhm-O4-t0Z" secondAttribute="trailing" id="PtT-T4-CTc"/>
+                                        <constraint firstItem="bhm-O4-t0Z" firstAttribute="top" secondItem="Wvf-7a-ee7" secondAttribute="top" id="wbB-4h-NDc"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="Storke"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="Wvf-7a-ee7" firstAttribute="top" secondItem="DwD-Se-Lms" secondAttribute="top" id="Uzv-G9-un5"/>
+                                <constraint firstItem="Wvf-7a-ee7" firstAttribute="leading" secondItem="DwD-Se-Lms" secondAttribute="leading" constant="20" id="fpG-ax-GGl"/>
+                                <constraint firstAttribute="bottom" secondItem="Wvf-7a-ee7" secondAttribute="bottom" id="ofK-ew-S1f"/>
+                                <constraint firstAttribute="trailing" secondItem="Wvf-7a-ee7" secondAttribute="trailing" constant="20" id="sg0-VJ-nT8"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="DwD-Se-Lms" secondAttribute="width" id="USz-vb-LVI"/>
+                        <constraint firstItem="DwD-Se-Lms" firstAttribute="top" secondItem="okm-zb-WOX" secondAttribute="top" id="fGm-Wt-Uvd"/>
+                        <constraint firstAttribute="trailing" secondItem="DwD-Se-Lms" secondAttribute="trailing" id="gK0-Ps-WvW"/>
+                        <constraint firstAttribute="bottom" secondItem="DwD-Se-Lms" secondAttribute="bottom" id="jXX-uq-KPJ"/>
+                        <constraint firstItem="DwD-Se-Lms" firstAttribute="leading" secondItem="okm-zb-WOX" secondAttribute="leading" id="yUM-wz-j8t"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ3-9L-0xO" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
+                    <rect key="frame" x="20" y="776" width="353" height="42"/>
+                    <color key="backgroundColor" name="primery_black"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="5Zc-19-11n"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Delete account">
+                        <color key="titleColor" name="White"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="21"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tappedDeleteAcc:" destination="-1" eventType="touchUpInside" id="fTL-1j-2K1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zwk-tf-kG8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7rR-8G-4L0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fvy-3e-7zT" secondAttribute="trailing" constant="20" id="BYp-us-7yi"/>
+                <constraint firstItem="Fvy-3e-7zT" firstAttribute="top" secondItem="D6g-Ul-TWf" secondAttribute="bottom" constant="25" id="BrO-6b-NzP"/>
+                <constraint firstItem="okm-zb-WOX" firstAttribute="top" secondItem="zwk-tf-kG8" secondAttribute="bottom" constant="20" id="CUY-Ig-Fll"/>
+                <constraint firstItem="D6g-Ul-TWf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CWT-ZK-OxD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="D6g-Ul-TWf" secondAttribute="trailing" id="DeZ-h2-qZ0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CZ3-9L-0xO" secondAttribute="bottom" id="DwB-Ru-Far"/>
+                <constraint firstItem="CZ3-9L-0xO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="F5v-DA-SlR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zwk-tf-kG8" secondAttribute="trailing" constant="20" id="Ikm-1f-c0h"/>
+                <constraint firstItem="Fvy-3e-7zT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Q8g-h2-Bxt"/>
+                <constraint firstItem="CZ3-9L-0xO" firstAttribute="top" secondItem="okm-zb-WOX" secondAttribute="bottom" constant="10" id="ao4-Wn-XHA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CZ3-9L-0xO" secondAttribute="trailing" constant="20" id="qOF-Qd-PMz"/>
+                <constraint firstItem="D6g-Ul-TWf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rCf-YY-dDy"/>
+                <constraint firstItem="okm-zb-WOX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="w2E-p8-Isp"/>
+                <constraint firstItem="okm-zb-WOX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xfJ-Ao-DHK"/>
+                <constraint firstItem="zwk-tf-kG8" firstAttribute="top" secondItem="Fvy-3e-7zT" secondAttribute="bottom" constant="20" id="yJp-KM-1bm"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-32.394366197183103"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back_arrow" width="24" height="24"/>
+        <namedColor name="Gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Storke">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

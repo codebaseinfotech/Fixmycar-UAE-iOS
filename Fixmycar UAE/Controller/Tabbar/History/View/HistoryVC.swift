@@ -38,6 +38,8 @@ class HistoryVC: UIViewController {
     @IBAction func tappedTChat(_ sender: Any) {
     }
     @IBAction func tappedTSettings(_ sender: Any) {
+        let vc = SettingVC()
+        navigationController?.pushViewController(vc, animated: false)
     }
 
     

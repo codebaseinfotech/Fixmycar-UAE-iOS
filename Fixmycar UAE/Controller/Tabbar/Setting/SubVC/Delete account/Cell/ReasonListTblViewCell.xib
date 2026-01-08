@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="ReasonListTblViewCell" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6GG-BZ-GvX">
+                        <rect key="frame" x="10" y="6" width="300" height="38"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="DZL-P2-w9v">
+                                <rect key="frame" x="0.0" y="6" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="6O4-2Y-AaG"/>
+                                    <constraint firstAttribute="width" constant="18" id="NEL-st-uFi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmT-I9-55D">
+                                <rect key="frame" x="26" y="6.3333333333333339" width="266" height="17.666666666666664"/>
+                                <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                <color key="textColor" name="primery_black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6L-Sr-Ne5">
+                                <rect key="frame" x="0.0" y="37" width="300" height="1"/>
+                                <color key="backgroundColor" name="Storke"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="1rT-al-BZQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZmT-I9-55D" firstAttribute="centerY" secondItem="DZL-P2-w9v" secondAttribute="centerY" id="8ov-cN-ZFh"/>
+                            <constraint firstItem="DZL-P2-w9v" firstAttribute="leading" secondItem="6GG-BZ-GvX" secondAttribute="leading" id="DqG-B5-z1z"/>
+                            <constraint firstItem="s6L-Sr-Ne5" firstAttribute="leading" secondItem="6GG-BZ-GvX" secondAttribute="leading" id="Goi-hh-vxT"/>
+                            <constraint firstAttribute="trailing" secondItem="s6L-Sr-Ne5" secondAttribute="trailing" id="bOw-WH-gwV"/>
+                            <constraint firstAttribute="trailing" secondItem="ZmT-I9-55D" secondAttribute="trailing" constant="8" id="deU-Yr-gF9"/>
+                            <constraint firstAttribute="bottom" secondItem="s6L-Sr-Ne5" secondAttribute="bottom" id="kHc-f9-TgJ"/>
+                            <constraint firstItem="DZL-P2-w9v" firstAttribute="centerY" secondItem="6GG-BZ-GvX" secondAttribute="centerY" constant="-4" id="pTU-ay-y6E"/>
+                            <constraint firstItem="ZmT-I9-55D" firstAttribute="leading" secondItem="DZL-P2-w9v" secondAttribute="trailing" constant="8" id="yRi-lH-fXN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6GG-BZ-GvX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0fk-hp-Gw2"/>
+                    <constraint firstAttribute="bottom" secondItem="6GG-BZ-GvX" secondAttribute="bottom" constant="6" id="T2i-sL-1pO"/>
+                    <constraint firstItem="6GG-BZ-GvX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="cKu-PS-5ez"/>
+                    <constraint firstAttribute="trailing" secondItem="6GG-BZ-GvX" secondAttribute="trailing" constant="10" id="dnI-xr-l8u"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgCheckBox" destination="DZL-P2-w9v" id="dBE-8m-FdS"/>
+                <outlet property="lblBottomLine" destination="s6L-Sr-Ne5" id="urQ-r6-m4T"/>
+                <outlet property="lblReason" destination="ZmT-I9-55D" id="bU0-pT-mN2"/>
+            </connections>
+            <point key="canvasLocation" x="-26" y="-32"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_uncheck" width="20" height="20"/>
+        <namedColor name="Storke">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

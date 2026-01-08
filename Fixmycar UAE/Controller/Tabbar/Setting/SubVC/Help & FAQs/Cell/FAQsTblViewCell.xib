@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="FAQsTblViewCell" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbY-4L-hJk">
+                        <rect key="frame" x="20" y="5" width="280" height="110"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="FCI-hS-3hN">
+                                <rect key="frame" x="10" y="10" width="260" height="90"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvN-Rt-63F">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What services are available?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eA-wr-H6q">
+                                                <rect key="frame" x="0.0" y="6.3333333333333321" width="230" height="17.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                                <color key="textColor" name="primery_black"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plus" translatesAutoresizingMaskIntoConstraints="NO" id="gfv-n1-z3n">
+                                                <rect key="frame" x="240" y="5" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="Egu-yL-i6S"/>
+                                                    <constraint firstAttribute="height" constant="20" id="wYp-Kv-4Sp"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5tM-8H-4Mj"/>
+                                            <constraint firstItem="gfv-n1-z3n" firstAttribute="leading" secondItem="9eA-wr-H6q" secondAttribute="trailing" constant="10" id="GrA-Qm-PNM"/>
+                                            <constraint firstAttribute="trailing" secondItem="gfv-n1-z3n" secondAttribute="trailing" id="KzY-Ao-Igl"/>
+                                            <constraint firstItem="9eA-wr-H6q" firstAttribute="centerY" secondItem="dvN-Rt-63F" secondAttribute="centerY" id="Qk9-pf-SwO"/>
+                                            <constraint firstItem="gfv-n1-z3n" firstAttribute="centerY" secondItem="dvN-Rt-63F" secondAttribute="centerY" id="lf5-FW-83S"/>
+                                            <constraint firstItem="9eA-wr-H6q" firstAttribute="leading" secondItem="dvN-Rt-63F" secondAttribute="leading" id="wqs-Y5-KFR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtB-a3-L14">
+                                        <rect key="frame" x="0.0" y="37" width="260" height="1"/>
+                                        <color key="backgroundColor" name="Storke"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="ttn-7F-m0U"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eA-3k-RA8">
+                                        <rect key="frame" x="0.0" y="45" width="260" height="45"/>
+                                        <string key="text">Open the app, select the service you need (towing, jump start, fuel delivery, etc.), confirm your location, and submit your request. A nearby driver will be assigned instantly.</string>
+                                        <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
+                                        <color key="textColor" name="Gray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="gray_base_2"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="FCI-hS-3hN" secondAttribute="bottom" constant="10" id="7yz-DA-HO1"/>
+                            <constraint firstItem="FCI-hS-3hN" firstAttribute="leading" secondItem="dbY-4L-hJk" secondAttribute="leading" constant="10" id="HSk-gF-cgo"/>
+                            <constraint firstAttribute="trailing" secondItem="FCI-hS-3hN" secondAttribute="trailing" constant="10" id="he0-51-CLa"/>
+                            <constraint firstItem="FCI-hS-3hN" firstAttribute="top" secondItem="dbY-4L-hJk" secondAttribute="top" constant="10" id="ifU-ne-CqP"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="Storke"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="dbY-4L-hJk" secondAttribute="bottom" constant="5" id="4wD-8z-tOA"/>
+                    <constraint firstAttribute="trailing" secondItem="dbY-4L-hJk" secondAttribute="trailing" constant="20" id="7d3-pw-GkF"/>
+                    <constraint firstItem="dbY-4L-hJk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ZqJ-xL-fUj"/>
+                    <constraint firstItem="dbY-4L-hJk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="kPi-d0-SJL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgPlus" destination="gfv-n1-z3n" id="E4C-f5-Nag"/>
+                <outlet property="lblAnswer" destination="0eA-3k-RA8" id="ytM-Eg-QIR"/>
+                <outlet property="lblQuation" destination="9eA-wr-H6q" id="iYv-AB-qNx"/>
+                <outlet property="viewMain" destination="dbY-4L-hJk" id="aQ8-3T-BpL"/>
+                <outlet property="viewMiddelLine" destination="BtB-a3-L14" id="wBv-n7-jc5"/>
+            </connections>
+            <point key="canvasLocation" x="-27.480916030534349" y="-32.394366197183103"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_plus" width="20" height="20"/>
+        <namedColor name="Gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Storke">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray_base_2">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

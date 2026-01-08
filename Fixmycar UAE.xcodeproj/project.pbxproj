@@ -7,8 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880920352F0F82D400B55769 /* MyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880920342F0F82D400B55769 /* MyProfileVC.xib */; };
+		880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880920332F0F82D400B55769 /* MyProfileVC.swift */; };
+		8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8809203A2F0F9AE800B55769 /* EditProfileVC.xib */; };
+		8809203C2F0F9AE800B55769 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880920392F0F9AE800B55769 /* EditProfileVC.swift */; };
+		882B88702F0FAE7B008EFA5A /* HelpAndFAQsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882B886E2F0FAE7B008EFA5A /* HelpAndFAQsVC.swift */; };
+		882B88712F0FAE7B008EFA5A /* HelpAndFAQsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882B886F2F0FAE7B008EFA5A /* HelpAndFAQsVC.xib */; };
+		882B887A2F0FB454008EFA5A /* FAQsTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882B88782F0FB454008EFA5A /* FAQsTblViewCell.swift */; };
+		882B887B2F0FB454008EFA5A /* FAQsTblViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882B88792F0FB454008EFA5A /* FAQsTblViewCell.xib */; };
+		884481C72F0FC81B00A9D076 /* LogoutPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 884481C62F0FC81B00A9D076 /* LogoutPopUp.xib */; };
+		884481C82F0FC81B00A9D076 /* LogoutPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884481C52F0FC81B00A9D076 /* LogoutPopUp.swift */; };
+		884481CD2F0FCA2600A9D076 /* DeleteAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884481CB2F0FCA2600A9D076 /* DeleteAccountVC.swift */; };
+		884481CE2F0FCA2600A9D076 /* DeleteAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 884481CC2F0FCA2600A9D076 /* DeleteAccountVC.xib */; };
+		88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */; };
+		88B57DA42F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */; };
+		88D049DB2F0F67E500003B4C /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D049DA2F0F67E500003B4C /* SettingVC.xib */; };
+		88D049DC2F0F67E500003B4C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D049D92F0F67E500003B4C /* SettingVC.swift */; };
 		88D763AF2F0E5C01001116F2 /* RecentBookingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D763AD2F0E5C01001116F2 /* RecentBookingsView.swift */; };
 		88D763B02F0E5C01001116F2 /* RecentBookingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D763AE2F0E5C01001116F2 /* RecentBookingsView.xib */; };
+		88EAE3922F0FD02E008FBCFC /* ReasonListTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EAE3902F0FD02E008FBCFC /* ReasonListTblViewCell.swift */; };
+		88EAE3932F0FD02E008FBCFC /* ReasonListTblViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88EAE3912F0FD02E008FBCFC /* ReasonListTblViewCell.xib */; };
+		88F725B52F0FC26200AAFC2E /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F725B32F0FC26200AAFC2E /* FeedbackVC.swift */; };
+		88F725B62F0FC26200AAFC2E /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F725B42F0FC26200AAFC2E /* FeedbackVC.xib */; };
 		BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */; };
 		BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */; };
 		BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */; };
@@ -77,8 +97,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		880920332F0F82D400B55769 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		880920342F0F82D400B55769 /* MyProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileVC.xib; sourceTree = "<group>"; };
+		880920392F0F9AE800B55769 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		8809203A2F0F9AE800B55769 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
+		882B886E2F0FAE7B008EFA5A /* HelpAndFAQsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAndFAQsVC.swift; sourceTree = "<group>"; };
+		882B886F2F0FAE7B008EFA5A /* HelpAndFAQsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpAndFAQsVC.xib; sourceTree = "<group>"; };
+		882B88782F0FB454008EFA5A /* FAQsTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsTblViewCell.swift; sourceTree = "<group>"; };
+		882B88792F0FB454008EFA5A /* FAQsTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQsTblViewCell.xib; sourceTree = "<group>"; };
+		884481C52F0FC81B00A9D076 /* LogoutPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPopUp.swift; sourceTree = "<group>"; };
+		884481C62F0FC81B00A9D076 /* LogoutPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutPopUp.xib; sourceTree = "<group>"; };
+		884481CB2F0FCA2600A9D076 /* DeleteAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountVC.swift; sourceTree = "<group>"; };
+		884481CC2F0FCA2600A9D076 /* DeleteAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteAccountVC.xib; sourceTree = "<group>"; };
+		88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguagePopUp.swift; sourceTree = "<group>"; };
+		88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeLanguagePopUp.xib; sourceTree = "<group>"; };
+		88D049D92F0F67E500003B4C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		88D049DA2F0F67E500003B4C /* SettingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
 		88D763AD2F0E5C01001116F2 /* RecentBookingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBookingsView.swift; sourceTree = "<group>"; };
 		88D763AE2F0E5C01001116F2 /* RecentBookingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentBookingsView.xib; sourceTree = "<group>"; };
+		88EAE3902F0FD02E008FBCFC /* ReasonListTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonListTblViewCell.swift; sourceTree = "<group>"; };
+		88EAE3912F0FD02E008FBCFC /* ReasonListTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReasonListTblViewCell.xib; sourceTree = "<group>"; };
+		88F725B32F0FC26200AAFC2E /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
+		88F725B42F0FC26200AAFC2E /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
 		BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVC.swift; sourceTree = "<group>"; };
@@ -169,6 +209,151 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		880920312F0F82A400B55769 /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+				880920322F0F82BE00B55769 /* View */,
+			);
+			path = "My Profile";
+			sourceTree = "<group>";
+		};
+		880920322F0F82BE00B55769 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				880920332F0F82D400B55769 /* MyProfileVC.swift */,
+				880920342F0F82D400B55769 /* MyProfileVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		880920372F0F9A9E00B55769 /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				880920382F0F9AA900B55769 /* View */,
+			);
+			path = "Edit Profile";
+			sourceTree = "<group>";
+		};
+		880920382F0F9AA900B55769 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				880920392F0F9AE800B55769 /* EditProfileVC.swift */,
+				8809203A2F0F9AE800B55769 /* EditProfileVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		882B886C2F0FAE3B008EFA5A /* Help & FAQs */ = {
+			isa = PBXGroup;
+			children = (
+				882B88722F0FB03F008EFA5A /* Cell */,
+				882B886D2F0FAE3F008EFA5A /* View */,
+			);
+			path = "Help & FAQs";
+			sourceTree = "<group>";
+		};
+		882B886D2F0FAE3F008EFA5A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				882B886E2F0FAE7B008EFA5A /* HelpAndFAQsVC.swift */,
+				882B886F2F0FAE7B008EFA5A /* HelpAndFAQsVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		882B88722F0FB03F008EFA5A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				882B88782F0FB454008EFA5A /* FAQsTblViewCell.swift */,
+				882B88792F0FB454008EFA5A /* FAQsTblViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		884481C32F0FC80300A9D076 /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				884481C42F0FC80700A9D076 /* View */,
+			);
+			path = Logout;
+			sourceTree = "<group>";
+		};
+		884481C42F0FC80700A9D076 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				884481C52F0FC81B00A9D076 /* LogoutPopUp.swift */,
+				884481C62F0FC81B00A9D076 /* LogoutPopUp.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		884481C92F0FCA1100A9D076 /* Delete account */ = {
+			isa = PBXGroup;
+			children = (
+				88EAE38F2F0FD00F008FBCFC /* Cell */,
+				884481CA2F0FCA1700A9D076 /* View */,
+			);
+			path = "Delete account";
+			sourceTree = "<group>";
+		};
+		884481CA2F0FCA1700A9D076 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				884481CB2F0FCA2600A9D076 /* DeleteAccountVC.swift */,
+				884481CC2F0FCA2600A9D076 /* DeleteAccountVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88B57D9F2F0FA17E00D0CE84 /* Change language */ = {
+			isa = PBXGroup;
+			children = (
+				88B57DA02F0FA18400D0CE84 /* View */,
+			);
+			path = "Change language";
+			sourceTree = "<group>";
+		};
+		88B57DA02F0FA18400D0CE84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */,
+				88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88D049D62F0F679D00003B4C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				88D049D82F0F67CB00003B4C /* SubVC */,
+				88D049D72F0F67C500003B4C /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		88D049D72F0F67C500003B4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88D049D92F0F67E500003B4C /* SettingVC.swift */,
+				88D049DA2F0F67E500003B4C /* SettingVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88D049D82F0F67CB00003B4C /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				884481C92F0FCA1100A9D076 /* Delete account */,
+				884481C32F0FC80300A9D076 /* Logout */,
+				88F725B12F0FC21900AAFC2E /* Feedback */,
+				882B886C2F0FAE3B008EFA5A /* Help & FAQs */,
+				88B57D9F2F0FA17E00D0CE84 /* Change language */,
+				880920372F0F9A9E00B55769 /* Edit Profile */,
+				880920312F0F82A400B55769 /* My Profile */,
+			);
+			path = SubVC;
+			sourceTree = "<group>";
+		};
 		88D763AB2F0E5BD1001116F2 /* Recent Bookings View */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +367,32 @@
 			children = (
 				88D763AD2F0E5C01001116F2 /* RecentBookingsView.swift */,
 				88D763AE2F0E5C01001116F2 /* RecentBookingsView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88EAE38F2F0FD00F008FBCFC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				88EAE3902F0FD02E008FBCFC /* ReasonListTblViewCell.swift */,
+				88EAE3912F0FD02E008FBCFC /* ReasonListTblViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		88F725B12F0FC21900AAFC2E /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				88F725B22F0FC23900AAFC2E /* View */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		88F725B22F0FC23900AAFC2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88F725B32F0FC26200AAFC2E /* FeedbackVC.swift */,
+				88F725B42F0FC26200AAFC2E /* FeedbackVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -598,6 +809,7 @@
 		BCA894AD2F0E0F2900633E20 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				88D049D62F0F679D00003B4C /* Setting */,
 				BC23A4A92F0E6AAD005A8CE1 /* Chat */,
 				BC1DE32C2F0E3415008BB044 /* History */,
 				BCA894AE2F0E0F2D00633E20 /* Home */,
@@ -698,18 +910,27 @@
 				BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */,
 				BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */,
 				BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */,
+				88D049DB2F0F67E500003B4C /* SettingVC.xib in Resources */,
 				BC4E17812F06982200EDC9AE /* Satoshi-Black.otf in Resources */,
+				882B88712F0FAE7B008EFA5A /* HelpAndFAQsVC.xib in Resources */,
 				BC4E17822F06982200EDC9AE /* Satoshi-Light.otf in Resources */,
+				88B57DA42F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib in Resources */,
 				BC4E17832F06982200EDC9AE /* Satoshi-BoldItalic.otf in Resources */,
 				BC4E17842F06982200EDC9AE /* Satoshi-Medium.otf in Resources */,
+				882B887B2F0FB454008EFA5A /* FAQsTblViewCell.xib in Resources */,
 				BC4100AF2F0E81650062DC80 /* JumpStartVC.xib in Resources */,
+				88F725B62F0FC26200AAFC2E /* FeedbackVC.xib in Resources */,
 				BC4E17852F06982200EDC9AE /* Satoshi-Regular.otf in Resources */,
+				880920352F0F82D400B55769 /* MyProfileVC.xib in Resources */,
 				BC4E178F2F06A15100EDC9AE /* VerifyOtp.xib in Resources */,
 				BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */,
+				8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */,
 				BC4E17862F06982200EDC9AE /* Satoshi-LightItalic.otf in Resources */,
+				88EAE3932F0FD02E008FBCFC /* ReasonListTblViewCell.xib in Resources */,
 				BC4E17872F06982200EDC9AE /* Satoshi-Bold.otf in Resources */,
 				BC4E17882F06982200EDC9AE /* Satoshi-Italic.otf in Resources */,
 				BC4E17892F06982200EDC9AE /* Satoshi-BlackItalic.otf in Resources */,
+				884481C72F0FC81B00A9D076 /* LogoutPopUp.xib in Resources */,
 				BC23A4BB2F0E7444005A8CE1 /* UserChatVC.xib in Resources */,
 				BC4E178A2F06982200EDC9AE /* Satoshi-MediumItalic.otf in Resources */,
 				BC4100992F0E78630062DC80 /* ReciverChatTVCell.xib in Resources */,
@@ -717,6 +938,7 @@
 				BC41009D2F0E786C0062DC80 /* SenderChatTVCell.xib in Resources */,
 				BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */,
 				BC23A4B32F0E6E81005A8CE1 /* ChatListTVCell.xib in Resources */,
+				884481CE2F0FCA2600A9D076 /* DeleteAccountVC.xib in Resources */,
 				BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */,
 				88D763B02F0E5C01001116F2 /* RecentBookingsView.xib in Resources */,
 				BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */,
@@ -758,19 +980,24 @@
 			files = (
 				BC7121AC2F067F940041E2F7 /* Constants.swift in Sources */,
 				BC7121AD2F067F940041E2F7 /* UIFont+Extention.swift in Sources */,
+				882B887A2F0FB454008EFA5A /* FAQsTblViewCell.swift in Sources */,
 				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
 				BC23A4BC2F0E7444005A8CE1 /* UserChatVC.swift in Sources */,
+				88D049DC2F0F67E500003B4C /* SettingVC.swift in Sources */,
 				88D763AF2F0E5C01001116F2 /* RecentBookingsView.swift in Sources */,
 				BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */,
 				BC23A4B42F0E6E81005A8CE1 /* ChatListTVCell.swift in Sources */,
+				880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
 				BC41009C2F0E786C0062DC80 /* SenderChatTVCell.swift in Sources */,
+				884481CD2F0FCA2600A9D076 /* DeleteAccountVC.swift in Sources */,
 				BC1DE3392F0E3E66008BB044 /* BookingDetailsVC.swift in Sources */,
 				BC7121AE2F067F940041E2F7 /* AGDesignable.swift in Sources */,
 				BC7121AF2F067F940041E2F7 /* VideoPicker.swift in Sources */,
 				BC7121B02F067F940041E2F7 /* PickerViewViewController.swift in Sources */,
 				BC7121B12F067F940041E2F7 /* NetConnection.swift in Sources */,
 				BC7121B22F067F940041E2F7 /* ImagePicker.swift in Sources */,
+				884481C82F0FC81B00A9D076 /* LogoutPopUp.swift in Sources */,
 				BC7121B32F067F940041E2F7 /* UITextField+Extention.swift in Sources */,
 				BC7121B42F067F940041E2F7 /* String+Extention.swift in Sources */,
 				BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */,
@@ -779,10 +1006,14 @@
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
 				BC29D6C12F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m in Sources */,
 				BC29D6C22F06A6CD00DD3EB2 /* FTAnimationManager.m in Sources */,
+				882B88702F0FAE7B008EFA5A /* HelpAndFAQsVC.swift in Sources */,
+				8809203C2F0F9AE800B55769 /* EditProfileVC.swift in Sources */,
+				88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */,
 				BC4100B02F0E81650062DC80 /* JumpStartVC.swift in Sources */,
 				BC7121B52F067F940041E2F7 /* APIClient.swift in Sources */,
 				BC4E17732F0696DE00EDC9AE /* LoginVC.swift in Sources */,
 				BC7121B62F067F940041E2F7 /* UIColor+Extention.swift in Sources */,
+				88EAE3922F0FD02E008FBCFC /* ReasonListTblViewCell.swift in Sources */,
 				BC4E17902F06A15100EDC9AE /* VerifyOtp.swift in Sources */,
 				BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */,
 				BC23A4AD2F0E6B60005A8CE1 /* ChatVC.swift in Sources */,
@@ -792,6 +1023,7 @@
 				BC7121992F067F800041E2F7 /* AppDelegate.swift in Sources */,
 				BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */,
 				BC71219A2F067F800041E2F7 /* ViewController.swift in Sources */,
+				88F725B52F0FC26200AAFC2E /* FeedbackVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
