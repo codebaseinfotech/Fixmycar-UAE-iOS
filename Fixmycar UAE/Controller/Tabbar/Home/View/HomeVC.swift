@@ -52,6 +52,8 @@ class HomeVC: UIViewController {
     @IBAction func tappedApplyCode(_ sender: Any) {
     }
     @IBAction func tappedRecovery(_ sender: Any) {
+        let vc = RecoveryServiceVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func tappedJumpStart(_ sender: Any) {
         let vc = JumpStartVC()
@@ -69,12 +71,20 @@ class HomeVC: UIViewController {
     @IBAction func tappedViewAllRecentBooking(_ sender: Any) {
     }
     
-    // tabbar Action
+    @IBAction func tappedNotification(_ sender: Any) {
+        let vc = NotificationVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    //MARK: - tabbar Action
     @IBAction func tappedTHistory(_ sender: Any) {
         let vc = HistoryVC()
         navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func tappedTTrackLive(_ sender: Any) {
+        let vc = TrackLiveVC()
+        navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func tappedTChat(_ sender: Any) {
         let vc = ChatVC()

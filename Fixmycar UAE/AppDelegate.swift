@@ -7,6 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
+        
+        GMSServices.provideAPIKey("AIzaSyD4Fl5fv1u4g-96GrYYGCJmqCtTx6fs_CI")
         
         let home = HomeVC()
         let homeNavigation = UINavigationController(rootViewController: home)

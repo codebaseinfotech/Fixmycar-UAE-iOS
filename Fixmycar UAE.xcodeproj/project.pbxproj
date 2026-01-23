@@ -19,6 +19,12 @@
 		884481C82F0FC81B00A9D076 /* LogoutPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884481C52F0FC81B00A9D076 /* LogoutPopUp.swift */; };
 		884481CD2F0FCA2600A9D076 /* DeleteAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884481CB2F0FCA2600A9D076 /* DeleteAccountVC.swift */; };
 		884481CE2F0FCA2600A9D076 /* DeleteAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 884481CC2F0FCA2600A9D076 /* DeleteAccountVC.xib */; };
+		889AD77C2F23283000F2271A /* NotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889AD77B2F23283000F2271A /* NotificationVC.xib */; };
+		889AD77D2F23283000F2271A /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AD77A2F23283000F2271A /* NotificationVC.swift */; };
+		889AD7812F232AD600F2271A /* NotifivationTblViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889AD7802F232AD600F2271A /* NotifivationTblViewCell.xib */; };
+		889AD7822F232AD600F2271A /* NotifivationTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AD77F2F232AD600F2271A /* NotifivationTblViewCell.swift */; };
+		889AD7862F23325000F2271A /* NotificationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889AD7852F23325000F2271A /* NotificationHeaderView.xib */; };
+		889AD7872F23325000F2271A /* NotificationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AD7842F23325000F2271A /* NotificationHeaderView.swift */; };
 		88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */; };
 		88B57DA42F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */; };
 		88D049DB2F0F67E500003B4C /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D049DA2F0F67E500003B4C /* SettingVC.xib */; };
@@ -29,6 +35,14 @@
 		88EAE3932F0FD02E008FBCFC /* ReasonListTblViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88EAE3912F0FD02E008FBCFC /* ReasonListTblViewCell.xib */; };
 		88F725B52F0FC26200AAFC2E /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F725B32F0FC26200AAFC2E /* FeedbackVC.swift */; };
 		88F725B62F0FC26200AAFC2E /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F725B42F0FC26200AAFC2E /* FeedbackVC.xib */; };
+		88F8B9C22F235A76001C9282 /* RecoveryServiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F8B9C12F235A76001C9282 /* RecoveryServiceVC.xib */; };
+		88F8B9C32F235A76001C9282 /* RecoveryServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F8B9C02F235A76001C9282 /* RecoveryServiceVC.swift */; };
+		88FDACCC2F233B2D00983C39 /* TrackLiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FDACCA2F233B2D00983C39 /* TrackLiveVC.swift */; };
+		88FDACCD2F233B2D00983C39 /* TrackLiveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88FDACCB2F233B2D00983C39 /* TrackLiveVC.xib */; };
+		88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACCF2F23458200983C39 /* GoogleMaps */; };
+		88FDACD32F23459900983C39 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACD22F23459900983C39 /* Alamofire */; };
+		88FDACD62F2345B600983C39 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACD52F2345B600983C39 /* IQKeyboardManagerSwift */; };
+		88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACD82F2345C800983C39 /* SVProgressHUD */; };
 		BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */; };
 		BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */; };
 		BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */; };
@@ -84,8 +98,6 @@
 		BC7121B62F067F940041E2F7 /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7121A02F067F940041E2F7 /* UIColor+Extention.swift */; };
 		BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7121AA2F067F940041E2F7 /* AppUtilites.swift */; };
 		BC7121B82F067F940041E2F7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7121A92F067F940041E2F7 /* AppConstants.swift */; };
-		BC7121BB2F067FB90041E2F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BC7121BA2F067FB90041E2F7 /* Alamofire */; };
-		BC7121BE2F067FC60041E2F7 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = BC7121BD2F067FC60041E2F7 /* SVProgressHUD */; };
 		BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC7121C02F06804F0041E2F7 /* Localizable.strings */; };
 		BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */; };
 		BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */; };
@@ -93,7 +105,6 @@
 		BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98E7C72F0E229700426807 /* RecentBookingTVCell.swift */; };
 		BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA894B12F0E0F4200633E20 /* HomeVC.xib */; };
 		BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA894B02F0E0F4200633E20 /* HomeVC.swift */; };
-		BCFFF72B2F077482000361B2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCFFF72A2F077482000361B2 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +120,12 @@
 		884481C62F0FC81B00A9D076 /* LogoutPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutPopUp.xib; sourceTree = "<group>"; };
 		884481CB2F0FCA2600A9D076 /* DeleteAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountVC.swift; sourceTree = "<group>"; };
 		884481CC2F0FCA2600A9D076 /* DeleteAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteAccountVC.xib; sourceTree = "<group>"; };
+		889AD77A2F23283000F2271A /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		889AD77B2F23283000F2271A /* NotificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationVC.xib; sourceTree = "<group>"; };
+		889AD77F2F232AD600F2271A /* NotifivationTblViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifivationTblViewCell.swift; sourceTree = "<group>"; };
+		889AD7802F232AD600F2271A /* NotifivationTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifivationTblViewCell.xib; sourceTree = "<group>"; };
+		889AD7842F23325000F2271A /* NotificationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHeaderView.swift; sourceTree = "<group>"; };
+		889AD7852F23325000F2271A /* NotificationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationHeaderView.xib; sourceTree = "<group>"; };
 		88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguagePopUp.swift; sourceTree = "<group>"; };
 		88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeLanguagePopUp.xib; sourceTree = "<group>"; };
 		88D049D92F0F67E500003B4C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -119,6 +136,10 @@
 		88EAE3912F0FD02E008FBCFC /* ReasonListTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReasonListTblViewCell.xib; sourceTree = "<group>"; };
 		88F725B32F0FC26200AAFC2E /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		88F725B42F0FC26200AAFC2E /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
+		88F8B9C02F235A76001C9282 /* RecoveryServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryServiceVC.swift; sourceTree = "<group>"; };
+		88F8B9C12F235A76001C9282 /* RecoveryServiceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecoveryServiceVC.xib; sourceTree = "<group>"; };
+		88FDACCA2F233B2D00983C39 /* TrackLiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLiveVC.swift; sourceTree = "<group>"; };
+		88FDACCB2F233B2D00983C39 /* TrackLiveVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackLiveVC.xib; sourceTree = "<group>"; };
 		BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVC.swift; sourceTree = "<group>"; };
@@ -200,9 +221,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC7121BE2F067FC60041E2F7 /* SVProgressHUD in Frameworks */,
-				BC7121BB2F067FB90041E2F7 /* Alamofire in Frameworks */,
-				BCFFF72B2F077482000361B2 /* IQKeyboardManagerSwift in Frameworks */,
+				88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */,
+				88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */,
+				88FDACD32F23459900983C39 /* Alamofire in Frameworks */,
+				88FDACD62F2345B600983C39 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +327,43 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		889AD7782F23281300F2271A /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				889AD77E2F232A9400F2271A /* Cell */,
+				889AD7792F23281D00F2271A /* View */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		889AD7792F23281D00F2271A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				889AD77A2F23283000F2271A /* NotificationVC.swift */,
+				889AD77B2F23283000F2271A /* NotificationVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		889AD77E2F232A9400F2271A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				889AD7832F23321200F2271A /* Header */,
+				889AD77F2F232AD600F2271A /* NotifivationTblViewCell.swift */,
+				889AD7802F232AD600F2271A /* NotifivationTblViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		889AD7832F23321200F2271A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				889AD7842F23325000F2271A /* NotificationHeaderView.swift */,
+				889AD7852F23325000F2271A /* NotificationHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		88B57D9F2F0FA17E00D0CE84 /* Change language */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +452,40 @@
 			children = (
 				88F725B32F0FC26200AAFC2E /* FeedbackVC.swift */,
 				88F725B42F0FC26200AAFC2E /* FeedbackVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88F8B9BE2F235A3A001C9282 /* Recovery service */ = {
+			isa = PBXGroup;
+			children = (
+				88F8B9BF2F235A66001C9282 /* View */,
+			);
+			path = "Recovery service";
+			sourceTree = "<group>";
+		};
+		88F8B9BF2F235A66001C9282 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88F8B9C02F235A76001C9282 /* RecoveryServiceVC.swift */,
+				88F8B9C12F235A76001C9282 /* RecoveryServiceVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88FDACC82F233A7B00983C39 /* Track Live */ = {
+			isa = PBXGroup;
+			children = (
+				88FDACC92F233B0E00983C39 /* View */,
+			);
+			path = "Track Live";
+			sourceTree = "<group>";
+		};
+		88FDACC92F233B0E00983C39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88FDACCA2F233B2D00983C39 /* TrackLiveVC.swift */,
+				88FDACCB2F233B2D00983C39 /* TrackLiveVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -582,6 +675,8 @@
 		BC4100AA2F0E814A0062DC80 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				88F8B9BE2F235A3A001C9282 /* Recovery service */,
+				889AD7782F23281300F2271A /* Notification */,
 				BC4100AB2F0E81500062DC80 /* JumpStart */,
 			);
 			path = SubVC;
@@ -809,6 +904,7 @@
 		BCA894AD2F0E0F2900633E20 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				88FDACC82F233A7B00983C39 /* Track Live */,
 				88D049D62F0F679D00003B4C /* Setting */,
 				BC23A4A92F0E6AAD005A8CE1 /* Chat */,
 				BC1DE32C2F0E3415008BB044 /* History */,
@@ -854,9 +950,10 @@
 			);
 			name = "Fixmycar UAE";
 			packageProductDependencies = (
-				BC7121BA2F067FB90041E2F7 /* Alamofire */,
-				BC7121BD2F067FC60041E2F7 /* SVProgressHUD */,
-				BCFFF72A2F077482000361B2 /* IQKeyboardManagerSwift */,
+				88FDACCF2F23458200983C39 /* GoogleMaps */,
+				88FDACD22F23459900983C39 /* Alamofire */,
+				88FDACD52F2345B600983C39 /* IQKeyboardManagerSwift */,
+				88FDACD82F2345C800983C39 /* SVProgressHUD */,
 			);
 			productName = "Fixmycar UAE";
 			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
@@ -888,9 +985,10 @@
 			mainGroup = BC6773012F067F4500B15653;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				BC7121B92F067FB90041E2F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				BC7121BC2F067FC60041E2F7 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
-				BCFFF7292F077482000361B2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				88FDACCE2F23458200983C39 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				88FDACD12F23459900983C39 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				88FDACD42F2345B600983C39 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				88FDACD72F2345C800983C39 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BC67730B2F067F4500B15653 /* Products */;
@@ -925,15 +1023,20 @@
 				BC4E178F2F06A15100EDC9AE /* VerifyOtp.xib in Resources */,
 				BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */,
 				8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */,
+				88F8B9C22F235A76001C9282 /* RecoveryServiceVC.xib in Resources */,
 				BC4E17862F06982200EDC9AE /* Satoshi-LightItalic.otf in Resources */,
 				88EAE3932F0FD02E008FBCFC /* ReasonListTblViewCell.xib in Resources */,
+				88FDACCD2F233B2D00983C39 /* TrackLiveVC.xib in Resources */,
+				889AD77C2F23283000F2271A /* NotificationVC.xib in Resources */,
 				BC4E17872F06982200EDC9AE /* Satoshi-Bold.otf in Resources */,
 				BC4E17882F06982200EDC9AE /* Satoshi-Italic.otf in Resources */,
 				BC4E17892F06982200EDC9AE /* Satoshi-BlackItalic.otf in Resources */,
 				884481C72F0FC81B00A9D076 /* LogoutPopUp.xib in Resources */,
 				BC23A4BB2F0E7444005A8CE1 /* UserChatVC.xib in Resources */,
 				BC4E178A2F06982200EDC9AE /* Satoshi-MediumItalic.otf in Resources */,
+				889AD7812F232AD600F2271A /* NotifivationTblViewCell.xib in Resources */,
 				BC4100992F0E78630062DC80 /* ReciverChatTVCell.xib in Resources */,
+				889AD7862F23325000F2271A /* NotificationHeaderView.xib in Resources */,
 				BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */,
 				BC41009D2F0E786C0062DC80 /* SenderChatTVCell.xib in Resources */,
 				BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */,
@@ -978,8 +1081,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FDACCC2F233B2D00983C39 /* TrackLiveVC.swift in Sources */,
 				BC7121AC2F067F940041E2F7 /* Constants.swift in Sources */,
 				BC7121AD2F067F940041E2F7 /* UIFont+Extention.swift in Sources */,
+				889AD77D2F23283000F2271A /* NotificationVC.swift in Sources */,
 				882B887A2F0FB454008EFA5A /* FAQsTblViewCell.swift in Sources */,
 				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
 				BC23A4BC2F0E7444005A8CE1 /* UserChatVC.swift in Sources */,
@@ -1000,6 +1105,7 @@
 				884481C82F0FC81B00A9D076 /* LogoutPopUp.swift in Sources */,
 				BC7121B32F067F940041E2F7 /* UITextField+Extention.swift in Sources */,
 				BC7121B42F067F940041E2F7 /* String+Extention.swift in Sources */,
+				88F8B9C32F235A76001C9282 /* RecoveryServiceVC.swift in Sources */,
 				BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */,
 				BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
@@ -1008,6 +1114,7 @@
 				BC29D6C22F06A6CD00DD3EB2 /* FTAnimationManager.m in Sources */,
 				882B88702F0FAE7B008EFA5A /* HelpAndFAQsVC.swift in Sources */,
 				8809203C2F0F9AE800B55769 /* EditProfileVC.swift in Sources */,
+				889AD7822F232AD600F2271A /* NotifivationTblViewCell.swift in Sources */,
 				88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */,
 				BC4100B02F0E81650062DC80 /* JumpStartVC.swift in Sources */,
 				BC7121B52F067F940041E2F7 /* APIClient.swift in Sources */,
@@ -1017,6 +1124,7 @@
 				BC4E17902F06A15100EDC9AE /* VerifyOtp.swift in Sources */,
 				BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */,
 				BC23A4AD2F0E6B60005A8CE1 /* ChatVC.swift in Sources */,
+				889AD7872F23325000F2271A /* NotificationHeaderView.swift in Sources */,
 				BC4100982F0E78630062DC80 /* ReciverChatTVCell.swift in Sources */,
 				BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */,
 				BC7121B82F067F940041E2F7 /* AppConstants.swift in Sources */,
@@ -1269,7 +1377,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BC7121B92F067FB90041E2F7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		88FDACCE2F23458200983C39 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.7.0;
+			};
+		};
+		88FDACD12F23459900983C39 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1277,15 +1393,7 @@
 				minimumVersion = 5.11.0;
 			};
 		};
-		BC7121BC2F067FC60041E2F7 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.1;
-			};
-		};
-		BCFFF7292F077482000361B2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		88FDACD42F2345B600983C39 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -1293,23 +1401,36 @@
 				minimumVersion = 6.3.0;
 			};
 		};
+		88FDACD72F2345C800983C39 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BC7121BA2F067FB90041E2F7 /* Alamofire */ = {
+		88FDACCF2F23458200983C39 /* GoogleMaps */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BC7121B92F067FB90041E2F7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 88FDACCE2F23458200983C39 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		88FDACD22F23459900983C39 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88FDACD12F23459900983C39 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		BC7121BD2F067FC60041E2F7 /* SVProgressHUD */ = {
+		88FDACD52F2345B600983C39 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BC7121BC2F067FC60041E2F7 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
-			productName = SVProgressHUD;
-		};
-		BCFFF72A2F077482000361B2 /* IQKeyboardManagerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BCFFF7292F077482000361B2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 88FDACD42F2345B600983C39 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		88FDACD82F2345C800983C39 /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88FDACD72F2345C800983C39 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

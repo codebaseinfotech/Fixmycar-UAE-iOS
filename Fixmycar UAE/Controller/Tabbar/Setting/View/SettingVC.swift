@@ -43,9 +43,13 @@ class SettingVC: UIViewController {
     }
     
     @IBAction func clickedTTrackLive(_ sender: Any) {
+        let vc = TrackLiveVC()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     @IBAction func tappedTChat(_ sender: Any) {
+        let vc = ChatVC()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     @IBAction func tappedMyProfile(_ sender: Any) {

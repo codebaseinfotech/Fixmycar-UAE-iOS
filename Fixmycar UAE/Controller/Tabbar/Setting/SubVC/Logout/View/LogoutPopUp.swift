@@ -33,5 +33,11 @@ class LogoutPopUp: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func tappedCancel(_ sender: Any) {
+    }
+    
+    @IBAction func tappedLogout(_ sender: Any) {
+    }
+    
+    
 }

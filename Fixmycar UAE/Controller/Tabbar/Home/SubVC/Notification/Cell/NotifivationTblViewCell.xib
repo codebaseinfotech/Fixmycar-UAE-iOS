@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="NotifivationTblViewCell" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWv-AP-pj9">
+                        <rect key="frame" x="20" y="6" width="280" height="82"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQT-0F-FYg">
+                                <rect key="frame" x="12" y="19" width="44" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="J" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwF-sr-912" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="10.666666666666666" width="10" height="22.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
+                                        <color key="textColor" name="primary_red"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="White"/>
+                                <constraints>
+                                    <constraint firstItem="TwF-sr-912" firstAttribute="centerY" secondItem="bQT-0F-FYg" secondAttribute="centerY" id="CuC-eC-yol"/>
+                                    <constraint firstAttribute="height" constant="44" id="Esf-Gy-xAk"/>
+                                    <constraint firstAttribute="width" constant="44" id="GxA-6Y-zBS"/>
+                                    <constraint firstItem="TwF-sr-912" firstAttribute="centerX" secondItem="bQT-0F-FYg" secondAttribute="centerX" id="voa-J5-L1P"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dZ-8m-vej">
+                                <rect key="frame" x="46" y="19" width="10" height="10"/>
+                                <color key="backgroundColor" name="primary_red"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="RZa-21-U7C"/>
+                                    <constraint firstAttribute="width" constant="10" id="wTg-wm-EfF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="light_pink"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lorem Ipsum is simply." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsQ-BJ-PEd" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                <rect key="frame" x="66" y="12" width="97" height="20"/>
+                                <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                                <color key="textColor" name="primery_black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="12:15 PM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5Y-EJ-s7G" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                <rect key="frame" x="219.66666666666663" y="12" width="47.333333333333371" height="15"/>
+                                <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
+                                <color key="textColor" name="Gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBi-ww-Paz" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                <rect key="frame" x="66" y="36" width="201" height="30"/>
+                                <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
+                                <color key="textColor" name="Gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="light_pink"/>
+                        <constraints>
+                            <constraint firstItem="mBi-ww-Paz" firstAttribute="top" secondItem="CsQ-BJ-PEd" secondAttribute="bottom" constant="4" id="2Qh-mR-qFJ"/>
+                            <constraint firstItem="CsQ-BJ-PEd" firstAttribute="top" secondItem="yWv-AP-pj9" secondAttribute="top" constant="12" id="DCO-Ec-zhz"/>
+                            <constraint firstAttribute="trailing" secondItem="E5Y-EJ-s7G" secondAttribute="trailing" constant="13" id="DRA-nj-ck3"/>
+                            <constraint firstItem="bQT-0F-FYg" firstAttribute="centerY" secondItem="yWv-AP-pj9" secondAttribute="centerY" id="ERv-FJ-5Bl"/>
+                            <constraint firstItem="bQT-0F-FYg" firstAttribute="leading" secondItem="yWv-AP-pj9" secondAttribute="leading" constant="12" id="G6l-8v-uMz"/>
+                            <constraint firstItem="CsQ-BJ-PEd" firstAttribute="leading" secondItem="bQT-0F-FYg" secondAttribute="trailing" constant="10" id="JI5-nF-xuc"/>
+                            <constraint firstItem="mBi-ww-Paz" firstAttribute="leading" secondItem="bQT-0F-FYg" secondAttribute="trailing" constant="10" id="aHB-hu-LvE"/>
+                            <constraint firstItem="0dZ-8m-vej" firstAttribute="top" secondItem="bQT-0F-FYg" secondAttribute="top" id="hlO-O1-fLk"/>
+                            <constraint firstItem="E5Y-EJ-s7G" firstAttribute="top" secondItem="yWv-AP-pj9" secondAttribute="top" constant="12" id="iCh-ZU-LLt"/>
+                            <constraint firstItem="E5Y-EJ-s7G" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CsQ-BJ-PEd" secondAttribute="trailing" constant="10" id="lxt-uP-Pam"/>
+                            <constraint firstAttribute="trailing" secondItem="mBi-ww-Paz" secondAttribute="trailing" constant="13" id="m3s-NX-xqK"/>
+                            <constraint firstItem="0dZ-8m-vej" firstAttribute="trailing" secondItem="bQT-0F-FYg" secondAttribute="trailing" id="n9C-44-bv1"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="yWv-AP-pj9" secondAttribute="bottom" constant="6" id="257-TY-erq"/>
+                    <constraint firstAttribute="trailing" secondItem="yWv-AP-pj9" secondAttribute="trailing" constant="20" id="ACX-Bl-cTP"/>
+                    <constraint firstItem="yWv-AP-pj9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="EvZ-xB-9rt"/>
+                    <constraint firstItem="yWv-AP-pj9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="dPI-G5-twQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblFirstlatter" destination="TwF-sr-912" id="kKc-bt-4KS"/>
+                <outlet property="lblMessage" destination="mBi-ww-Paz" id="8Lh-uh-eQs"/>
+                <outlet property="lblTime" destination="E5Y-EJ-s7G" id="xfB-Sy-aA5"/>
+                <outlet property="lblTitle" destination="CsQ-BJ-PEd" id="AgK-1W-8g5"/>
+                <outlet property="viewFirstLatter" destination="bQT-0F-FYg" id="IjG-lr-r9z"/>
+                <outlet property="viewMain" destination="yWv-AP-pj9" id="rZ6-wm-Wuk"/>
+                <outlet property="viewUnRead" destination="0dZ-8m-vej" id="5lO-hL-ITc"/>
+            </connections>
+            <point key="canvasLocation" x="-38" y="-32"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_pink">
+            <color red="0.9882352941176471" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary_red">
+            <color red="0.81960784313725488" green="0.0" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

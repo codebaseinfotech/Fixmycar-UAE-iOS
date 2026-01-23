@@ -35,8 +35,12 @@ class ChatVC: UIViewController {
         navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func tappedTTrackLive(_ sender: Any) {
+        let vc = TrackLiveVC()
+        navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func tappedTSetting(_ sender: Any) {
+        let vc = SettingVC()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
 
