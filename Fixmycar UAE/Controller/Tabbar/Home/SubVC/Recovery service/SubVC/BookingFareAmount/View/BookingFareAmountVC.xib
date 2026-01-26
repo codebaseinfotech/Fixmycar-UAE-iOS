@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Black.otf">
+            <string>Satoshi-Black</string>
+        </array>
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookingFareAmountVC" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIm-3a-7GZ" customClass="AllSideCornerView" customModule="Fixmycar_UAE" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="536" width="393" height="316"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQe-pG-T4V">
+                            <rect key="frame" x="171.66666666666666" y="10" width="50" height="4"/>
+                            <color key="backgroundColor" name="#D9D9D9"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="aQ5-pI-fiK"/>
+                                <constraint firstAttribute="height" constant="4" id="t8g-03-5fQ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqs-b5-uXY">
+                            <rect key="frame" x="20" y="40" width="353" height="66"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₳113.22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP3-ZI-KdQ">
+                                    <rect key="frame" x="252.66666666666671" y="12" width="88.333333333333343" height="30"/>
+                                    <fontDescription key="fontDescription" name="Satoshi-Black" family="Satoshi" pointSize="24"/>
+                                    <color key="textColor" name="primery_black"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MI0-Sh-49P">
+                                    <rect key="frame" x="12" y="12" width="180.33333333333334" height="42"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance: 10.12 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-os-4qZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="180.33333333333334" height="23"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                                            <color key="textColor" name="primery_black"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Estimated time taken: 30 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qig-Db-GeJ">
+                                            <rect key="frame" x="0.0" y="27" width="180.33333333333334" height="15"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
+                                            <color key="textColor" name="Gray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="66" id="BNS-vY-pNH"/>
+                                <constraint firstItem="MI0-Sh-49P" firstAttribute="leading" secondItem="mqs-b5-uXY" secondAttribute="leading" constant="12" id="DBW-c2-YUL"/>
+                                <constraint firstItem="MI0-Sh-49P" firstAttribute="top" secondItem="mqs-b5-uXY" secondAttribute="top" constant="12" id="FnA-Lk-uyQ"/>
+                                <constraint firstAttribute="trailing" secondItem="AP3-ZI-KdQ" secondAttribute="trailing" constant="12" id="Reu-iy-9Rz"/>
+                                <constraint firstAttribute="bottom" secondItem="MI0-Sh-49P" secondAttribute="bottom" constant="12" id="VY2-5G-csq"/>
+                                <constraint firstItem="AP3-ZI-KdQ" firstAttribute="top" secondItem="mqs-b5-uXY" secondAttribute="top" constant="12" id="xee-kM-WeT"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="Storke"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="vQe-pG-T4V" firstAttribute="top" secondItem="hIm-3a-7GZ" secondAttribute="top" constant="10" id="DBC-10-CX8"/>
+                        <constraint firstItem="vQe-pG-T4V" firstAttribute="centerX" secondItem="hIm-3a-7GZ" secondAttribute="centerX" id="JyH-dk-T1E"/>
+                        <constraint firstAttribute="trailing" secondItem="mqs-b5-uXY" secondAttribute="trailing" constant="20" id="T9n-rS-BO8"/>
+                        <constraint firstItem="mqs-b5-uXY" firstAttribute="top" secondItem="vQe-pG-T4V" secondAttribute="bottom" constant="26" id="WCw-FV-kzK"/>
+                        <constraint firstAttribute="height" constant="316" id="bbc-c0-WwS"/>
+                        <constraint firstItem="mqs-b5-uXY" firstAttribute="leading" secondItem="hIm-3a-7GZ" secondAttribute="leading" constant="20" id="pPo-oF-xcw"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableLeftTopCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableRightTopCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusSide">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="hIm-3a-7GZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3yJ-5d-QZe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hIm-3a-7GZ" secondAttribute="trailing" id="qu5-5c-sQF"/>
+                <constraint firstAttribute="bottom" secondItem="hIm-3a-7GZ" secondAttribute="bottom" id="zJU-cQ-XVW"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="120"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="#D9D9D9">
+            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Storke">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

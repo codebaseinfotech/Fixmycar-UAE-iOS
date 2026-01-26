@@ -121,8 +121,15 @@ class RecoveryServiceVC: UIViewController {
     }
     
     @IBAction func tappedPickupLocation(_ sender: Any) {
+        let vc = BookingMapVC()
+        vc.delegateLocation = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func tappedDropLocation(_ sender: Any) {
+        let vc = BookingMapVC()
+        vc.delegateLocation = self
+        vc.isDropAddress = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - selectBookService
@@ -158,6 +165,19 @@ class RecoveryServiceVC: UIViewController {
         viewDateShedule.isHidden = false
     }
     
+    
+    
+}
+
+// MARK: - onTappedConfirmLocation
+extension RecoveryServiceVC: onTappedConfirmLocation {
+    func tappedConfirmLocation(isDropLocation: Bool, location: String, lat: Double, lang: Double) {
+        if isDropLocation {
+            txtDropLocation.text = location
+        } else {
+            txtPickupLocation.text = location
+        }
+    }
     
     
 }

@@ -1,0 +1,203 @@
+//
+//  BookingMapVC.swift
+//  Fixmycar UAE
+//
+//  Created by Ankit on 26/01/26.
+//
+
+import UIKit
+import GoogleMaps
+import GooglePlaces
+
+protocol onTappedConfirmLocation: AnyObject {
+    func tappedConfirmLocation(isDropLocation: Bool, location: String, lat: Double, lang: Double)
+}
+
+class BookingMapVC: UIViewController {
+
+    @IBOutlet weak var lblTitle: UILabel! {
+        didSet {
+            lblTitle.text = isDropAddress ? "Destination location".localized : "Pickup location".localized
+        }
+    }
+    @IBOutlet weak var txtLocation: UITextField! {
+        didSet {
+            txtLocation.placeholder = isDropAddress ? "Enter destination location" : "Enter pickup location"
+        }
+    }
+    @IBOutlet weak var btnClose: UIButton! {
+        didSet {
+            btnClose.isHidden = true
+        }
+    }
+    @IBOutlet weak var tblViewAddressList: UITableView! {
+        didSet {
+            tblViewAddressList.register(PopularLocationTVCell.nib, forCellReuseIdentifier: PopularLocationTVCell.identifier)
+            tblViewAddressList.delegate = self
+            tblViewAddressList.dataSource = self
+        }
+    }
+    @IBOutlet weak var btnConfirmLocation: UIButton! {
+        didSet {
+            let btnTitle = isDropAddress ? "Confirm destination location" : "Confirm vehical location"
+            btnConfirmLocation.setTitle(btnTitle.localized, for: [])
+        }
+    }
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var viewMainPopular: UIView! {
+        didSet {
+            viewMainPopular.isHidden = true
+        }
+    }
+    
+    private let locationManager = CLLocationManager()
+    private let placesClient = GMSPlacesClient.shared()
+    
+    private var predictions: [GMSAutocompletePrediction] = []
+    private var selectedCoordinate: CLLocationCoordinate2D?
+    
+    var isDropAddress: Bool = false
+    var delegateLocation: onTappedConfirmLocation?
+    
+    // MARK: - view Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupMap()
+        setupSearchField()
+
+        // Do any additional setup after loading the view.
+    }
+
+    // MARK: - Action Method
+    @IBAction func tappedBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func tappedClose(_ sender: Any) {
+        txtLocation.text = ""
+        predictions.removeAll()
+        tblViewAddressList.reloadData()
+        viewMainPopular.isHidden = true
+        btnClose.isHidden = true
+
+    }
+    @IBAction func tappedConfirm(_ sender: Any) {
+        guard let coordinate = selectedCoordinate else { return }
+        print("Confirmed Lat:", coordinate.latitude)
+        print("Confirmed Lng:", coordinate.longitude)
+        
+        delegateLocation?.tappedConfirmLocation(isDropLocation: isDropAddress, location: txtLocation.text ?? "", lat: coordinate.latitude, lang: coordinate.longitude)
+        tappedBack(self)
+    }
+    
+     
+
+}
+
+// MARK: - TV Delegate & DataSource
+extension BookingMapVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return predictions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PopularLocationTVCell.identifier) as! PopularLocationTVCell
+        
+        let item = predictions[indexPath.row]
+        cell.lblNam.text = item.attributedPrimaryText.string
+        cell.lblAddress.text = item.attributedSecondaryText?.string
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let prediction = predictions[indexPath.row]
+        
+        placesClient.fetchPlace(
+            fromPlaceID: prediction.placeID,
+            placeFields: [.coordinate, .formattedAddress],
+            sessionToken: nil
+        ) { place, error in
+            
+            guard let place = place else { return }
+            
+            self.selectedCoordinate = place.coordinate
+            self.txtLocation.text = place.formattedAddress
+            self.btnClose.isHidden = false
+            
+            self.mapView.clear()
+            let marker = GMSMarker(position: place.coordinate)
+            marker.map = self.mapView
+            
+            self.mapView.animate(
+                toLocation: place.coordinate
+            )
+        }
+    }
+    
+    
+}
+
+// MARK: - setUp MapView
+extension BookingMapVC: CLLocationManagerDelegate {
+
+    func setupMap() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+    }
+
+    func locationManager(_ manager: CLLocationManager,
+                         didUpdateLocations locations: [CLLocation]) {
+
+        guard let location = locations.first else { return }
+
+        let camera = GMSCameraPosition(
+            latitude: location.coordinate.latitude,
+            longitude: location.coordinate.longitude,
+            zoom: 15
+        )
+
+        mapView.animate(to: camera)
+        locationManager.stopUpdatingLocation()
+    }
+}
+
+// MARK: - textField Delegate
+extension BookingMapVC: UITextFieldDelegate {
+
+    func setupSearchField() {
+        txtLocation.delegate = self
+        txtLocation.addTarget(self,
+                              action: #selector(textDidChange),
+                              for: .editingChanged)
+    }
+
+    @objc func textDidChange() {
+        guard let text = txtLocation.text, !text.isEmpty else {
+            predictions.removeAll()
+            tblViewAddressList.reloadData()
+            viewMainPopular.isHidden = true
+            return
+        }
+
+        let filter = GMSAutocompleteFilter()
+        filter.type = .address
+
+        placesClient.findAutocompletePredictions(
+            fromQuery: text,
+            filter: filter,
+            sessionToken: nil
+        ) { results, error in
+
+            guard let results = results else { return }
+            self.predictions = results
+            self.viewMainPopular.isHidden = false
+            self.tblViewAddressList.reloadData()
+        }
+    }
+}
+
