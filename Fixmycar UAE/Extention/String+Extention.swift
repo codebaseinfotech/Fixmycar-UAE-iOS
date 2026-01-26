@@ -28,6 +28,15 @@ extension UILabel {
 }
 
 extension String {
+    var image: UIImage {
+        guard let image = UIImage(named: self) else {
+            return UIImage()
+        }
+
+        return image
+    }
+
+    
     func convertHTMLToPlainText() -> String? {
         guard let data = self.data(using: .utf8) else {
             return nil
@@ -55,7 +64,7 @@ extension String {
             
             return attributedString.string
         } catch {
-            print("Error converting HTML to String: \(error)")
+            debugPrint("Error converting HTML to String: \(error)")
             return nil
         }
     }

@@ -98,3 +98,20 @@ class GlassButton: UIButton {
         layer.cornerRadius = bounds.height / 2
     }
 }
+
+extension UITableView {
+
+    /// Check if indexPath is last row of last section
+    func isLastRow(at indexPath: IndexPath) -> Bool {
+        let lastSection = numberOfSections - 1
+        let lastRow = numberOfRows(inSection: indexPath.section) - 1
+
+        return indexPath.section == lastSection &&
+               indexPath.row == lastRow
+    }
+
+    /// Check if indexPath is last row of its section
+    func isLastRowInSection(_ indexPath: IndexPath) -> Bool {
+        return indexPath.row == numberOfRows(inSection: indexPath.section) - 1
+    }
+}

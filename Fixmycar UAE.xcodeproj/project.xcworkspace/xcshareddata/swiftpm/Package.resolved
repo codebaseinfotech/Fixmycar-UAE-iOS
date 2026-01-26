@@ -1,5 +1,5 @@
 {
-  "originHash" : "eb08180141ddcfdbf5636d0a621f550fe5f0ac79d083beff2cb75b3d5d20b459",
+  "originHash" : "7d3ed4a1f02e4582f36aea672d54e95f2b0559a3141a1cc2d6b4a896d157aef2",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -35,6 +35,15 @@
       "state" : {
         "revision" : "c33f7c775ba7feea6047a1fc3257f2e5863b44f7",
         "version" : "2.3.1"
+      }
+    },
+    {
+      "identity" : "uitextview-placeholder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/UITextView-Placeholder",
+      "state" : {
+        "revision" : "1844585d189f4c753b9bfc1e6a617baa34c66439",
+        "version" : "1.5.0"
       }
     }
   ],

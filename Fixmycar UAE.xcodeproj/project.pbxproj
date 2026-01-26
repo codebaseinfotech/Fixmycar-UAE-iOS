@@ -103,6 +103,11 @@
 		BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC75E8762F0D2CB500947022 /* CreateAccountVC.swift */; };
 		BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC98E7C82F0E229700426807 /* RecentBookingTVCell.xib */; };
 		BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC98E7C72F0E229700426807 /* RecentBookingTVCell.swift */; };
+		BCA305D72F275DCC0036E322 /* UITextView-Placeholder in Frameworks */ = {isa = PBXBuildFile; productRef = BCA305D62F275DCC0036E322 /* UITextView-Placeholder */; };
+		BCA305DC2F27601E0036E322 /* VehicleTypeCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA305DB2F27601E0036E322 /* VehicleTypeCVCell.xib */; };
+		BCA305DD2F27601E0036E322 /* VehicleTypeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA305DA2F27601E0036E322 /* VehicleTypeCVCell.swift */; };
+		BCA305E32F276C370036E322 /* ScheduleDateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA305E22F276C370036E322 /* ScheduleDateVC.xib */; };
+		BCA305E42F276C370036E322 /* ScheduleDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA305E12F276C370036E322 /* ScheduleDateVC.swift */; };
 		BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA894B12F0E0F4200633E20 /* HomeVC.xib */; };
 		BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA894B02F0E0F4200633E20 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
@@ -212,6 +217,10 @@
 		BC75E8772F0D2CB500947022 /* CreateAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountVC.xib; sourceTree = "<group>"; };
 		BC98E7C72F0E229700426807 /* RecentBookingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBookingTVCell.swift; sourceTree = "<group>"; };
 		BC98E7C82F0E229700426807 /* RecentBookingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentBookingTVCell.xib; sourceTree = "<group>"; };
+		BCA305DA2F27601E0036E322 /* VehicleTypeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTypeCVCell.swift; sourceTree = "<group>"; };
+		BCA305DB2F27601E0036E322 /* VehicleTypeCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleTypeCVCell.xib; sourceTree = "<group>"; };
+		BCA305E12F276C370036E322 /* ScheduleDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDateVC.swift; sourceTree = "<group>"; };
+		BCA305E22F276C370036E322 /* ScheduleDateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleDateVC.xib; sourceTree = "<group>"; };
 		BCA894B02F0E0F4200633E20 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BCA894B12F0E0F4200633E20 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +233,7 @@
 				88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */,
 				88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */,
 				88FDACD32F23459900983C39 /* Alamofire in Frameworks */,
+				BCA305D72F275DCC0036E322 /* UITextView-Placeholder in Frameworks */,
 				88FDACD62F2345B600983C39 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +469,8 @@
 		88F8B9BE2F235A3A001C9282 /* Recovery service */ = {
 			isa = PBXGroup;
 			children = (
+				BCA305DE2F276C160036E322 /* SubVC */,
+				BCA305D82F275FF20036E322 /* Cell */,
 				88F8B9BF2F235A66001C9282 /* View */,
 			);
 			path = "Recovery service";
@@ -901,6 +913,48 @@
 			path = RecentBookingTVCell;
 			sourceTree = "<group>";
 		};
+		BCA305D82F275FF20036E322 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCA305D92F275FF80036E322 /* VehicleTypeCVCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BCA305D92F275FF80036E322 /* VehicleTypeCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				BCA305DA2F27601E0036E322 /* VehicleTypeCVCell.swift */,
+				BCA305DB2F27601E0036E322 /* VehicleTypeCVCell.xib */,
+			);
+			path = VehicleTypeCVCell;
+			sourceTree = "<group>";
+		};
+		BCA305DE2F276C160036E322 /* SubVC */ = {
+			isa = PBXGroup;
+			children = (
+				BCA305DF2F276C1A0036E322 /* ScheduleDate */,
+			);
+			path = SubVC;
+			sourceTree = "<group>";
+		};
+		BCA305DF2F276C1A0036E322 /* ScheduleDate */ = {
+			isa = PBXGroup;
+			children = (
+				BCA305E02F276C250036E322 /* View */,
+			);
+			path = ScheduleDate;
+			sourceTree = "<group>";
+		};
+		BCA305E02F276C250036E322 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCA305E12F276C370036E322 /* ScheduleDateVC.swift */,
+				BCA305E22F276C370036E322 /* ScheduleDateVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BCA894AD2F0E0F2900633E20 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -954,6 +1008,7 @@
 				88FDACD22F23459900983C39 /* Alamofire */,
 				88FDACD52F2345B600983C39 /* IQKeyboardManagerSwift */,
 				88FDACD82F2345C800983C39 /* SVProgressHUD */,
+				BCA305D62F275DCC0036E322 /* UITextView-Placeholder */,
 			);
 			productName = "Fixmycar UAE";
 			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
@@ -989,6 +1044,7 @@
 				88FDACD12F23459900983C39 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				88FDACD42F2345B600983C39 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				88FDACD72F2345C800983C39 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				BCA305D52F275DCC0036E322 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BC67730B2F067F4500B15653 /* Products */;
@@ -1026,6 +1082,7 @@
 				88F8B9C22F235A76001C9282 /* RecoveryServiceVC.xib in Resources */,
 				BC4E17862F06982200EDC9AE /* Satoshi-LightItalic.otf in Resources */,
 				88EAE3932F0FD02E008FBCFC /* ReasonListTblViewCell.xib in Resources */,
+				BCA305DC2F27601E0036E322 /* VehicleTypeCVCell.xib in Resources */,
 				88FDACCD2F233B2D00983C39 /* TrackLiveVC.xib in Resources */,
 				889AD77C2F23283000F2271A /* NotificationVC.xib in Resources */,
 				BC4E17872F06982200EDC9AE /* Satoshi-Bold.otf in Resources */,
@@ -1040,6 +1097,7 @@
 				BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */,
 				BC41009D2F0E786C0062DC80 /* SenderChatTVCell.xib in Resources */,
 				BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */,
+				BCA305E32F276C370036E322 /* ScheduleDateVC.xib in Resources */,
 				BC23A4B32F0E6E81005A8CE1 /* ChatListTVCell.xib in Resources */,
 				884481CE2F0FCA2600A9D076 /* DeleteAccountVC.xib in Resources */,
 				BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */,
@@ -1106,10 +1164,12 @@
 				BC7121B32F067F940041E2F7 /* UITextField+Extention.swift in Sources */,
 				BC7121B42F067F940041E2F7 /* String+Extention.swift in Sources */,
 				88F8B9C32F235A76001C9282 /* RecoveryServiceVC.swift in Sources */,
+				BCA305E42F276C370036E322 /* ScheduleDateVC.swift in Sources */,
 				BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */,
 				BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
+				BCA305DD2F27601E0036E322 /* VehicleTypeCVCell.swift in Sources */,
 				BC29D6C12F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m in Sources */,
 				BC29D6C22F06A6CD00DD3EB2 /* FTAnimationManager.m in Sources */,
 				882B88702F0FAE7B008EFA5A /* HelpAndFAQsVC.swift in Sources */,
@@ -1409,6 +1469,14 @@
 				minimumVersion = 2.3.1;
 			};
 		};
+		BCA305D52F275DCC0036E322 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/UITextView-Placeholder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1431,6 +1499,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 88FDACD72F2345C800983C39 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
 			productName = SVProgressHUD;
+		};
+		BCA305D62F275DCC0036E322 /* UITextView-Placeholder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCA305D52F275DCC0036E322 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */;
+			productName = "UITextView-Placeholder";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

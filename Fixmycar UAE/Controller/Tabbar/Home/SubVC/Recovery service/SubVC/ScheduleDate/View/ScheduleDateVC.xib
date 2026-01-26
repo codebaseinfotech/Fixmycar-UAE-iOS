@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleDateVC" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="3ka-UU-apm" id="VqX-ah-piM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27o-4E-sey" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                    <rect key="frame" x="102.00000000000001" y="168" width="189.33333333333337" height="30"/>
+                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-UU-apm">
+                    <rect key="frame" x="20" y="238" width="353" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="4g5-sp-QBp"/>
+                    </constraints>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuR-lZ-bsG">
+                    <rect key="frame" x="20" y="398" width="353" height="42"/>
+                    <color key="backgroundColor" name="primery_black"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="ZNM-Y4-UNo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Confirm">
+                        <color key="titleColor" name="White"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="21"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tappedConfir:" destination="-1" eventType="touchUpInside" id="450-aJ-SzK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="27o-4E-sey" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ko-RR-CFU"/>
+                <constraint firstAttribute="trailing" secondItem="3ka-UU-apm" secondAttribute="trailing" constant="20" id="EAV-3f-5P9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yuR-lZ-bsG" secondAttribute="trailing" constant="20" id="EVq-tw-GEO"/>
+                <constraint firstItem="3ka-UU-apm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Q2E-u3-P1s"/>
+                <constraint firstItem="yuR-lZ-bsG" firstAttribute="top" secondItem="3ka-UU-apm" secondAttribute="bottom" constant="40" id="fm2-C3-NeC"/>
+                <constraint firstItem="3ka-UU-apm" firstAttribute="top" secondItem="27o-4E-sey" secondAttribute="bottom" constant="40" id="orY-ub-6lq"/>
+                <constraint firstItem="yuR-lZ-bsG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="xZD-ih-zB4"/>
+                <constraint firstItem="27o-4E-sey" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="xsX-ES-0rV"/>
+            </constraints>
+            <point key="canvasLocation" x="47" y="120"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
