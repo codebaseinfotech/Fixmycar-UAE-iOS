@@ -39,6 +39,31 @@ class BookingFareAmountVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func tappedContinue(_ sender: Any) {
+        if viewModel.isScheduleBooking {
+            let vc = FareBreakupVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        } else {
+            let vc = BookingConfirmationPopupVC()
+            if let sheet = vc.sheetPresentationController {
+                // Create a custom detent that returns a fixed height
+                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                    return 200
+                }
+                sheet.detents = [fixedDetent]
+                sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+            }
+            vc.sheetPresentationController?.delegate = self
+            vc.isConfirmSchedule = true
+            
+            vc.onTappedConfirmBooking = {
+                let vc = FareBreakupVC()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            self.present(vc, animated: true)
+        }
+        
     }
     
     // MARK: - setUp Map
@@ -126,4 +151,18 @@ class BookingFareAmountVC: UIViewController {
     
     
 
+}
+
+// MARK: - UISheetPresentationControllerDelegate
+extension BookingFareAmountVC: UISheetPresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if let overlayView = view.viewWithTag(999) {
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
+                overlayView.alpha = 0
+            }, completion: { _ in
+                overlayView.removeFromSuperview()
+            })
+            
+        }
+    }
 }

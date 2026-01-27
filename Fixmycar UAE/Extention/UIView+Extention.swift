@@ -99,6 +99,7 @@ class GlassButton: UIButton {
     }
 }
 
+// MARK: - get TabelView Last index
 extension UITableView {
 
     /// Check if indexPath is last row of last section
@@ -113,5 +114,66 @@ extension UITableView {
     /// Check if indexPath is last row of its section
     func isLastRowInSection(_ indexPath: IndexPath) -> Bool {
         return indexPath.row == numberOfRows(inSection: indexPath.section) - 1
+    }
+}
+
+// MARK: - InfoPopuopView
+class InfoPopupView: UIView {
+
+    private let container = UIView()
+    private let label = UILabel()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupUI()
+    }
+
+    private func setupUI() {
+
+        backgroundColor = UIColor.black.withAlphaComponent(0.2)
+
+        container.backgroundColor = .white
+        container.layer.cornerRadius = 10
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOpacity = 0.15
+        container.layer.shadowRadius = 6
+
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.textColor = .darkGray
+
+        container.addSubview(label)
+        addSubview(container)
+
+        container.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            container.widthAnchor.constraint(equalToConstant: 260),
+            container.topAnchor.constraint(equalTo: topAnchor, constant: 100),
+            container.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+            label.topAnchor.constraint(equalTo: container.topAnchor, constant: 12),
+            label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12),
+            label.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12),
+            label.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -12)
+        ])
+
+        // Dismiss on tap outside
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismiss))
+        addGestureRecognizer(tap)
+    }
+
+    func setText(_ text: NSAttributedString) {
+        label.attributedText = text
+    }
+
+    @objc private func dismiss() {
+        removeFromSuperview()
     }
 }

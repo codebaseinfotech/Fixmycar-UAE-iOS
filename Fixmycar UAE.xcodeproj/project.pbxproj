@@ -44,10 +44,14 @@
 		88FDACD62F2345B600983C39 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACD52F2345B600983C39 /* IQKeyboardManagerSwift */; };
 		88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACD82F2345C800983C39 /* SVProgressHUD */; };
 		BC07DDE02F2880720088D79F /* BookingFareAmountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07DDDF2F2880720088D79F /* BookingFareAmountVM.swift */; };
+		BC07DDE52F2887C40088D79F /* FareBreakupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07DDE32F2887C40088D79F /* FareBreakupVC.swift */; };
+		BC07DDE62F2887C40088D79F /* FareBreakupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC07DDE42F2887C40088D79F /* FareBreakupVC.xib */; };
 		BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */; };
 		BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */; };
 		BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */; };
 		BC1DE3392F0E3E66008BB044 /* BookingDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */; };
+		BC233D112F288ED700A633A6 /* BookingConfirmationPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC233D102F288ED700A633A6 /* BookingConfirmationPopupVC.xib */; };
+		BC233D122F288ED700A633A6 /* BookingConfirmationPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC233D0F2F288ED700A633A6 /* BookingConfirmationPopupVC.swift */; };
 		BC23A4AD2F0E6B60005A8CE1 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23A4AB2F0E6B60005A8CE1 /* ChatVC.swift */; };
 		BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC23A4AC2F0E6B60005A8CE1 /* ChatVC.xib */; };
 		BC23A4B32F0E6E81005A8CE1 /* ChatListTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC23A4B22F0E6E81005A8CE1 /* ChatListTVCell.xib */; };
@@ -81,6 +85,8 @@
 		BC4E178A2F06982200EDC9AE /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC4E177F2F06982200EDC9AE /* Satoshi-MediumItalic.otf */; };
 		BC4E178F2F06A15100EDC9AE /* VerifyOtp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4E178E2F06A15100EDC9AE /* VerifyOtp.xib */; };
 		BC4E17902F06A15100EDC9AE /* VerifyOtp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4E178D2F06A15100EDC9AE /* VerifyOtp.swift */; };
+		BC64B7EC2F28958D00A9D314 /* BookingPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64B7EA2F28958D00A9D314 /* BookingPaymentVC.swift */; };
+		BC64B7ED2F28958D00A9D314 /* BookingPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC64B7EB2F28958D00A9D314 /* BookingPaymentVC.xib */; };
 		BC7121952F067F800041E2F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC71218D2F067F800041E2F7 /* Assets.xcassets */; };
 		BC7121972F067F800041E2F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7121902F067F800041E2F7 /* LaunchScreen.storyboard */; };
 		BC7121982F067F800041E2F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7121922F067F800041E2F7 /* Main.storyboard */; };
@@ -155,10 +161,14 @@
 		88FDACCA2F233B2D00983C39 /* TrackLiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLiveVC.swift; sourceTree = "<group>"; };
 		88FDACCB2F233B2D00983C39 /* TrackLiveVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackLiveVC.xib; sourceTree = "<group>"; };
 		BC07DDDF2F2880720088D79F /* BookingFareAmountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFareAmountVM.swift; sourceTree = "<group>"; };
+		BC07DDE32F2887C40088D79F /* FareBreakupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareBreakupVC.swift; sourceTree = "<group>"; };
+		BC07DDE42F2887C40088D79F /* FareBreakupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FareBreakupVC.xib; sourceTree = "<group>"; };
 		BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVC.swift; sourceTree = "<group>"; };
 		BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingDetailsVC.xib; sourceTree = "<group>"; };
+		BC233D0F2F288ED700A633A6 /* BookingConfirmationPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmationPopupVC.swift; sourceTree = "<group>"; };
+		BC233D102F288ED700A633A6 /* BookingConfirmationPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingConfirmationPopupVC.xib; sourceTree = "<group>"; };
 		BC23A4AB2F0E6B60005A8CE1 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		BC23A4AC2F0E6B60005A8CE1 /* ChatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatVC.xib; sourceTree = "<group>"; };
 		BC23A4B12F0E6E81005A8CE1 /* ChatListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTVCell.swift; sourceTree = "<group>"; };
@@ -199,6 +209,8 @@
 		BC4E17802F06982200EDC9AE /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
 		BC4E178D2F06A15100EDC9AE /* VerifyOtp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOtp.swift; sourceTree = "<group>"; };
 		BC4E178E2F06A15100EDC9AE /* VerifyOtp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyOtp.xib; sourceTree = "<group>"; };
+		BC64B7EA2F28958D00A9D314 /* BookingPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPaymentVC.swift; sourceTree = "<group>"; };
+		BC64B7EB2F28958D00A9D314 /* BookingPaymentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingPaymentVC.xib; sourceTree = "<group>"; };
 		BC67730A2F067F4500B15653 /* Fixmycar UAE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fixmycar UAE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC71218C2F067F800041E2F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC71218D2F067F800041E2F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -529,6 +541,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BC07DDE12F2887AD0088D79F /* FareBreakup */ = {
+			isa = PBXGroup;
+			children = (
+				BC07DDE22F2887B00088D79F /* View */,
+			);
+			path = FareBreakup;
+			sourceTree = "<group>";
+		};
+		BC07DDE22F2887B00088D79F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC07DDE32F2887C40088D79F /* FareBreakupVC.swift */,
+				BC07DDE42F2887C40088D79F /* FareBreakupVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BC1DE32C2F0E3415008BB044 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +597,23 @@
 			children = (
 				BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */,
 				BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC233D0D2F288EC000A633A6 /* BookingConfirmationPopup */ = {
+			isa = PBXGroup;
+			children = (
+				BC233D0E2F288ECC00A633A6 /* View */,
+			);
+			path = BookingConfirmationPopup;
+			sourceTree = "<group>";
+		};
+		BC233D0E2F288ECC00A633A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC233D0F2F288ED700A633A6 /* BookingConfirmationPopupVC.swift */,
+				BC233D102F288ED700A633A6 /* BookingConfirmationPopupVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -806,6 +852,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BC64B7E82F28957600A9D314 /* BookingPayment */ = {
+			isa = PBXGroup;
+			children = (
+				BC64B7E92F28958100A9D314 /* View */,
+			);
+			path = BookingPayment;
+			sourceTree = "<group>";
+		};
+		BC64B7E92F28958100A9D314 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC64B7EA2F28958D00A9D314 /* BookingPaymentVC.swift */,
+				BC64B7EB2F28958D00A9D314 /* BookingPaymentVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BC6773012F067F4500B15653 = {
 			isa = PBXGroup;
 			children = (
@@ -1014,6 +1077,9 @@
 		BCA305DE2F276C160036E322 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				BC64B7E82F28957600A9D314 /* BookingPayment */,
+				BC233D0D2F288EC000A633A6 /* BookingConfirmationPopup */,
+				BC07DDE12F2887AD0088D79F /* FareBreakup */,
 				BC929D332F27863D00A730A9 /* BookingFareAmount */,
 				BC929D212F276FEC00A730A9 /* BookingMap */,
 				BCA305DF2F276C1A0036E322 /* ScheduleDate */,
@@ -1169,9 +1235,12 @@
 				8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */,
 				88F8B9C22F235A76001C9282 /* RecoveryServiceVC.xib in Resources */,
 				BC4E17862F06982200EDC9AE /* Satoshi-LightItalic.otf in Resources */,
+				BC07DDE62F2887C40088D79F /* FareBreakupVC.xib in Resources */,
 				88EAE3932F0FD02E008FBCFC /* ReasonListTblViewCell.xib in Resources */,
 				BCA305DC2F27601E0036E322 /* VehicleTypeCVCell.xib in Resources */,
+				BC64B7ED2F28958D00A9D314 /* BookingPaymentVC.xib in Resources */,
 				88FDACCD2F233B2D00983C39 /* TrackLiveVC.xib in Resources */,
+				BC233D112F288ED700A633A6 /* BookingConfirmationPopupVC.xib in Resources */,
 				BC929D252F27700000A730A9 /* BookingMapVC.xib in Resources */,
 				889AD77C2F23283000F2271A /* NotificationVC.xib in Resources */,
 				BC4E17872F06982200EDC9AE /* Satoshi-Bold.otf in Resources */,
@@ -1229,6 +1298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FDACCC2F233B2D00983C39 /* TrackLiveVC.swift in Sources */,
+				BC233D122F288ED700A633A6 /* BookingConfirmationPopupVC.swift in Sources */,
 				BC7121AC2F067F940041E2F7 /* Constants.swift in Sources */,
 				BC7121AD2F067F940041E2F7 /* UIFont+Extention.swift in Sources */,
 				889AD77D2F23283000F2271A /* NotificationVC.swift in Sources */,
@@ -1240,6 +1310,7 @@
 				BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */,
 				BC23A4B42F0E6E81005A8CE1 /* ChatListTVCell.swift in Sources */,
 				880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */,
+				BC64B7EC2F28958D00A9D314 /* BookingPaymentVC.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
 				BC41009C2F0E786C0062DC80 /* SenderChatTVCell.swift in Sources */,
 				884481CD2F0FCA2600A9D076 /* DeleteAccountVC.swift in Sources */,
@@ -1277,6 +1348,7 @@
 				BC4E17902F06A15100EDC9AE /* VerifyOtp.swift in Sources */,
 				BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */,
 				BC23A4AD2F0E6B60005A8CE1 /* ChatVC.swift in Sources */,
+				BC07DDE52F2887C40088D79F /* FareBreakupVC.swift in Sources */,
 				889AD7872F23325000F2271A /* NotificationHeaderView.swift in Sources */,
 				BC4100982F0E78630062DC80 /* ReciverChatTVCell.swift in Sources */,
 				BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */,
@@ -1347,7 +1419,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "codebaseinfotech.Fixmycar-UAE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CB.FixmycarUAE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Fixmycar UAE/Header-Fixmycar.h";
@@ -1382,7 +1454,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "codebaseinfotech.Fixmycar-UAE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CB.FixmycarUAE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Fixmycar UAE/Header-Fixmycar.h";

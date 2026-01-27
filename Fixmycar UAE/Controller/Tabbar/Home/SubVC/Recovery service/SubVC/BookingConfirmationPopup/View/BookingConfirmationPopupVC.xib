@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookingConfirmationPopupVC" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <connections>
+                <outlet property="lblMssage" destination="zLb-QP-b19" id="49t-Ih-p6c"/>
+                <outlet property="lblTitle" destination="5Qq-Ip-cz4" id="akd-DL-jrB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="96P-pw-ve9">
+                    <rect key="frame" x="20" y="144" width="353" height="82"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking confirmation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qq-Ip-cz4" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                            <rect key="frame" x="56.333333333333329" y="0.0" width="240.66666666666669" height="30"/>
+                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
+                            <color key="textColor" name="primery_black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please confirm your booking. Your service will be assigned to the nearest available driver shortly." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLb-QP-b19" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="42" width="353" height="40"/>
+                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
+                            <color key="textColor" name="Gray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pav-05-B6f">
+                    <rect key="frame" x="20" y="256" width="353" height="42"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTA-Zt-I6E" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="42"/>
+                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" name="primery_black"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="21"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="primery_black"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tappedCancel:" destination="-1" eventType="touchUpInside" id="Zak-jT-MTz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymx-cf-i6j" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
+                            <rect key="frame" x="181.66666666666663" y="0.0" width="171.33333333333337" height="42"/>
+                            <color key="backgroundColor" name="primery_black"/>
+                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Confirm">
+                                <color key="titleColor" name="White"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="21"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tappedConfirm:" destination="-1" eventType="touchUpInside" id="fhL-8F-iU0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="jMN-oh-2Cc"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="96P-pw-ve9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0pn-nu-mJY"/>
+                <constraint firstItem="Pav-05-B6f" firstAttribute="top" secondItem="96P-pw-ve9" secondAttribute="bottom" constant="30" id="Goz-kS-TLq"/>
+                <constraint firstItem="Pav-05-B6f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UGE-Tx-Psr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pav-05-B6f" secondAttribute="trailing" constant="20" id="cOu-1I-uMx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="96P-pw-ve9" secondAttribute="trailing" constant="20" id="yyG-6a-W55"/>
+                <constraint firstItem="96P-pw-ve9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="26" id="zSv-px-Vlz"/>
+            </constraints>
+            <point key="canvasLocation" x="141" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

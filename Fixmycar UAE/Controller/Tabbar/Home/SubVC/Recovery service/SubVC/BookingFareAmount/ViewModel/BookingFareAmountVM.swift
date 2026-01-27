@@ -17,4 +17,6 @@ class BookingFareAmountVM {
     
     var dropLatitude: Double = 0.0
     var dropLongitude: Double = 0.0
+    
+    var isScheduleBooking: Bool = false
 }

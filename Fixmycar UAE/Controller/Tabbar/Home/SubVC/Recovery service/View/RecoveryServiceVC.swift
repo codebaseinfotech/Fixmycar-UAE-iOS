@@ -59,6 +59,8 @@ class RecoveryServiceVC: UIViewController {
     var dropLatitude: Double = 0.0
     var dropLangitude: Double = 0.0
     
+    var isScheduleBooking: Bool = true
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,14 +126,44 @@ class RecoveryServiceVC: UIViewController {
         self.present(vc, animated: true)
     }
     @IBAction func tappedContinue(_ sender: Any) {
-        let vc = BookingFareAmountVC()
-        vc.viewModel.pickUpAddress = txtPickupLocation.text ?? ""
-        vc.viewModel.dropAddress = txtDropLocation.text ?? ""
-        vc.viewModel.pickUpLatitude = pickUpLatitude
-        vc.viewModel.pickUpLongitude = pickUpLangitude
-        vc.viewModel.dropLatitude = dropLatitude
-        vc.viewModel.dropLongitude = dropLangitude
-        navigationController?.pushViewController(vc, animated: true)
+        if isScheduleBooking {
+            let vc = BookingConfirmationPopupVC()
+            if let sheet = vc.sheetPresentationController {
+                // Create a custom detent that returns a fixed height
+                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                    return 200
+                }
+                sheet.detents = [fixedDetent]
+                sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+            }
+            vc.sheetPresentationController?.delegate = self
+            vc.isConfirmSchedule = true
+            
+            vc.onTappedConfirmBooking = { [self] in
+                let vc = BookingFareAmountVC()
+                vc.viewModel.pickUpAddress = txtPickupLocation.text ?? ""
+                vc.viewModel.dropAddress = txtDropLocation.text ?? ""
+                vc.viewModel.pickUpLatitude = pickUpLatitude
+                vc.viewModel.pickUpLongitude = pickUpLangitude
+                vc.viewModel.dropLatitude = dropLatitude
+                vc.viewModel.dropLongitude = dropLangitude
+                vc.viewModel.isScheduleBooking = isScheduleBooking
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            self.present(vc, animated: true)
+        } else {
+            let vc = BookingFareAmountVC()
+            vc.viewModel.pickUpAddress = txtPickupLocation.text ?? ""
+            vc.viewModel.dropAddress = txtDropLocation.text ?? ""
+            vc.viewModel.pickUpLatitude = pickUpLatitude
+            vc.viewModel.pickUpLongitude = pickUpLangitude
+            vc.viewModel.dropLatitude = dropLatitude
+            vc.viewModel.dropLongitude = dropLangitude
+            vc.viewModel.isScheduleBooking = isScheduleBooking
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
     @IBAction func tappedPickupLocation(_ sender: Any) {
@@ -161,6 +193,7 @@ class RecoveryServiceVC: UIViewController {
         lblLineScheduleLater.backgroundColor = #colorLiteral(red: 0.9215686275, green: 0.9215686275, blue: 0.9215686275, alpha: 1)
         
         viewDateShedule.isHidden = true
+        isScheduleBooking = false
     }
     
     func selectScheduleLater() {
@@ -177,6 +210,7 @@ class RecoveryServiceVC: UIViewController {
         lblLineScheduleLater.backgroundColor = #colorLiteral(red: 0.003921568627, green: 0.003921568627, blue: 0.003921568627, alpha: 1)
         
         viewDateShedule.isHidden = false
+        isScheduleBooking = true
     }
     
     
