@@ -53,6 +53,12 @@ class RecoveryServiceVC: UIViewController {
     // variabel
     var arrVehicleType: [VehicleTypeModel] = []
     
+    var pickUpLatitude: Double = 0.0
+    var pickUpLangitude: Double = 0.0
+    
+    var dropLatitude: Double = 0.0
+    var dropLangitude: Double = 0.0
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +124,14 @@ class RecoveryServiceVC: UIViewController {
         self.present(vc, animated: true)
     }
     @IBAction func tappedContinue(_ sender: Any) {
+        let vc = BookingFareAmountVC()
+        vc.viewModel.pickUpAddress = txtPickupLocation.text ?? ""
+        vc.viewModel.dropAddress = txtDropLocation.text ?? ""
+        vc.viewModel.pickUpLatitude = pickUpLatitude
+        vc.viewModel.pickUpLongitude = pickUpLangitude
+        vc.viewModel.dropLatitude = dropLatitude
+        vc.viewModel.dropLongitude = dropLangitude
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func tappedPickupLocation(_ sender: Any) {
@@ -174,8 +188,15 @@ extension RecoveryServiceVC: onTappedConfirmLocation {
     func tappedConfirmLocation(isDropLocation: Bool, location: String, lat: Double, lang: Double) {
         if isDropLocation {
             txtDropLocation.text = location
+            
+            dropLatitude = lat
+            dropLangitude = lang
+            
         } else {
             txtPickupLocation.text = location
+            
+            pickUpLatitude = lat
+            pickUpLangitude = lang
         }
     }
     

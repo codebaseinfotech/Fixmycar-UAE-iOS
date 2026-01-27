@@ -43,6 +43,7 @@
 		88FDACD32F23459900983C39 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACD22F23459900983C39 /* Alamofire */; };
 		88FDACD62F2345B600983C39 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACD52F2345B600983C39 /* IQKeyboardManagerSwift */; };
 		88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 88FDACD82F2345C800983C39 /* SVProgressHUD */; };
+		BC07DDE02F2880720088D79F /* BookingFareAmountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC07DDDF2F2880720088D79F /* BookingFareAmountVM.swift */; };
 		BC1DE3302F0E3442008BB044 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */; };
 		BC1DE3312F0E3442008BB044 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */; };
 		BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1DE3372F0E3E66008BB044 /* BookingDetailsVC.xib */; };
@@ -153,6 +154,7 @@
 		88F8B9C12F235A76001C9282 /* RecoveryServiceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecoveryServiceVC.xib; sourceTree = "<group>"; };
 		88FDACCA2F233B2D00983C39 /* TrackLiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLiveVC.swift; sourceTree = "<group>"; };
 		88FDACCB2F233B2D00983C39 /* TrackLiveVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackLiveVC.xib; sourceTree = "<group>"; };
+		BC07DDDF2F2880720088D79F /* BookingFareAmountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFareAmountVM.swift; sourceTree = "<group>"; };
 		BC1DE32E2F0E3442008BB044 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		BC1DE32F2F0E3442008BB044 /* HistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		BC1DE3362F0E3E66008BB044 /* BookingDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVC.swift; sourceTree = "<group>"; };
@@ -517,6 +519,14 @@
 				88FDACCB2F233B2D00983C39 /* TrackLiveVC.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BC07DDDE2F28805A0088D79F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC07DDDF2F2880720088D79F /* BookingFareAmountVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BC1DE32C2F0E3415008BB044 /* History */ = {
@@ -952,6 +962,7 @@
 		BC929D332F27863D00A730A9 /* BookingFareAmount */ = {
 			isa = PBXGroup;
 			children = (
+				BC07DDDE2F28805A0088D79F /* ViewModel */,
 				BC929D342F27865400A730A9 /* View */,
 			);
 			path = BookingFareAmount;
@@ -1246,6 +1257,7 @@
 				BC7121B42F067F940041E2F7 /* String+Extention.swift in Sources */,
 				88F8B9C32F235A76001C9282 /* RecoveryServiceVC.swift in Sources */,
 				BCA305E42F276C370036E322 /* ScheduleDateVC.swift in Sources */,
+				BC07DDE02F2880720088D79F /* BookingFareAmountVM.swift in Sources */,
 				BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */,
 				BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
