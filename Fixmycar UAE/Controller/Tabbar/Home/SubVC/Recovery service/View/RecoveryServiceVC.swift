@@ -160,7 +160,7 @@ class RecoveryServiceVC: UIViewController {
             vc.viewModel.pickUpLongitude = pickUpLangitude
             vc.viewModel.dropLatitude = dropLatitude
             vc.viewModel.dropLongitude = dropLangitude
-            vc.viewModel.isScheduleBooking = isScheduleBooking
+            vc.viewModel.isScheduleBooking = false
             navigationController?.pushViewController(vc, animated: true)
         }
         

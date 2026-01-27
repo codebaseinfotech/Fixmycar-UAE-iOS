@@ -54,7 +54,7 @@ class BookingFareAmountVC: UIViewController {
                 sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
             }
             vc.sheetPresentationController?.delegate = self
-            vc.isConfirmSchedule = true
+            vc.isConfirmSchedule = false
             
             vc.onTappedConfirmBooking = {
                 let vc = FareBreakupVC()

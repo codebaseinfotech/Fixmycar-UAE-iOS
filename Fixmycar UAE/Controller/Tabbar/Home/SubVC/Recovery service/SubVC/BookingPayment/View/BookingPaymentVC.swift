@@ -44,6 +44,18 @@ class BookingPaymentVC: UIViewController {
         btnPayFull.setImage("ic_uncheck".image, for: [])
     }
     @IBAction func tappedPayNow(_ sender: Any) {
+        let vc = BookingSuccessPopUpVC()
+        if let sheet = vc.sheetPresentationController {
+            // Create a custom detent that returns a fixed height
+            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                return 250
+            }
+            sheet.detents = [fixedDetent]
+            sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+        }
+        vc.sheetPresentationController?.delegate = self
+        vc.isScheduleBooking = false
+        self.present(vc, animated: true)
     }
     
     // MARK: - setUpText 30 PayNow
@@ -115,4 +127,18 @@ class BookingPaymentVC: UIViewController {
 
 
     
+}
+
+// MARK: - UISheetPresentationControllerDelegate
+extension BookingPaymentVC: UISheetPresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if let overlayView = view.viewWithTag(999) {
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
+                overlayView.alpha = 0
+            }, completion: { _ in
+                overlayView.removeFromSuperview()
+            })
+            
+        }
+    }
 }

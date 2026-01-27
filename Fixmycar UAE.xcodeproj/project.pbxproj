@@ -125,6 +125,8 @@
 		BCA305E42F276C370036E322 /* ScheduleDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA305E12F276C370036E322 /* ScheduleDateVC.swift */; };
 		BCA894B22F0E0F4200633E20 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA894B12F0E0F4200633E20 /* HomeVC.xib */; };
 		BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA894B02F0E0F4200633E20 /* HomeVC.swift */; };
+		BCC2B1632F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2B1612F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift */; };
+		BCC2B1642F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC2B1622F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -252,6 +254,8 @@
 		BCA305E22F276C370036E322 /* ScheduleDateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleDateVC.xib; sourceTree = "<group>"; };
 		BCA894B02F0E0F4200633E20 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BCA894B12F0E0F4200633E20 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		BCC2B1612F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSuccessPopUpVC.swift; sourceTree = "<group>"; };
+		BCC2B1622F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingSuccessPopUpVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1077,6 +1081,7 @@
 		BCA305DE2F276C160036E322 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				BCC2B15F2F28A8E700014CB5 /* BookingSuccessPopUp */,
 				BC64B7E82F28957600A9D314 /* BookingPayment */,
 				BC233D0D2F288EC000A633A6 /* BookingConfirmationPopup */,
 				BC07DDE12F2887AD0088D79F /* FareBreakup */,
@@ -1131,6 +1136,23 @@
 			children = (
 				BCA894B02F0E0F4200633E20 /* HomeVC.swift */,
 				BCA894B12F0E0F4200633E20 /* HomeVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCC2B15F2F28A8E700014CB5 /* BookingSuccessPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2B1602F28A8F300014CB5 /* View */,
+			);
+			path = BookingSuccessPopUp;
+			sourceTree = "<group>";
+		};
+		BCC2B1602F28A8F300014CB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2B1612F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift */,
+				BCC2B1622F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1258,6 +1280,7 @@
 				BCA305E32F276C370036E322 /* ScheduleDateVC.xib in Resources */,
 				BC23A4B32F0E6E81005A8CE1 /* ChatListTVCell.xib in Resources */,
 				884481CE2F0FCA2600A9D076 /* DeleteAccountVC.xib in Resources */,
+				BCC2B1642F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib in Resources */,
 				BC1DE3382F0E3E66008BB044 /* BookingDetailsVC.xib in Resources */,
 				88D763B02F0E5C01001116F2 /* RecentBookingsView.xib in Resources */,
 				BC7121C22F06804F0041E2F7 /* Localizable.strings in Resources */,
@@ -1349,6 +1372,7 @@
 				BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */,
 				BC23A4AD2F0E6B60005A8CE1 /* ChatVC.swift in Sources */,
 				BC07DDE52F2887C40088D79F /* FareBreakupVC.swift in Sources */,
+				BCC2B1632F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift in Sources */,
 				889AD7872F23325000F2271A /* NotificationHeaderView.swift in Sources */,
 				BC4100982F0E78630062DC80 /* ReciverChatTVCell.swift in Sources */,
 				BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */,

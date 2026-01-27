@@ -14,6 +14,12 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    static var appDelegate: AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,13 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(google_place_key)
         GMSPlacesClient.provideAPIKey(google_place_key)
 
+        setUpHome()
+        
+        return true
+    }
+    
+    // MARK: - setUp Home
+    func setUpHome() {
         let home = HomeVC()
         let homeNavigation = UINavigationController(rootViewController: home)
         homeNavigation.navigationBar.isHidden = true
         self.window?.rootViewController = homeNavigation
         self.window?.makeKeyAndVisible()
-        
-        return true
     }
 
 
