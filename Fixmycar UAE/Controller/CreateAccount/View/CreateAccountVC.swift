@@ -39,13 +39,58 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var txtMobileNumber: AppTextField!
     @IBOutlet weak var txtEmailAddress: AppTextField!
     @IBOutlet weak var txtReferralCode: AppTextField!
+    
+    var phoneNumber: String = ""
+    
+    var viewModel = CreateAccountVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtMobileNumber.text = phoneNumber
+        setupCallbacks()
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - Callbacks
+    func setupCallbacks() {
+        viewModel.successRegister = { [weak self] in
+            DispatchQueue.main.async {
+                AppDelegate.appDelegate.setUpHome()
+            }
+        }
+        
+        viewModel.failureRegister = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.setUpMakeToast(msg: message)
+            }
+        }
     }
 
     @IBAction func tappedContinue(_ sender: Any) {
+        guard isValidBankDetails() else {
+            return
+        }
+        
+        viewModel.callRegisterAPI(
+            phone: phoneNumber,
+            firstName: txtFullName.text ?? "",
+            lastName: "",
+            email: txtEmailAddress.text ?? "",
+            referralCode: txtReferralCode.text ?? "",
+            countryCode: "+971"
+        )
+    }
+    
+    // MARK: - validBankDetails
+    func isValidBankDetails() -> Bool {
+        
+        guard let fullName = txtFullName.text, !fullName.isEmpty else {
+            self.setUpMakeToast(msg: "Please enter full name")
+            return false
+        }
+                
+        return true
     }
     
 }

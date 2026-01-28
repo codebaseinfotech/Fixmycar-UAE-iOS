@@ -185,7 +185,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlC-oe-Uhp">
                                                     <rect key="frame" x="86" y="0.0" width="267" height="42"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbm-aY-Xi1" customClass="AppTextField" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbm-aY-Xi1" customClass="AppTextField" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                             <rect key="frame" x="14" y="0.0" width="239" height="42"/>
                                                             <color key="textColor" name="primery_black"/>
                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>

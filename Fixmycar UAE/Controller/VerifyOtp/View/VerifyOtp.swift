@@ -8,7 +8,7 @@
 import UIKit
 
 protocol didTapOnVerify: AnyObject {
-    func onCallTappedVerify()
+    func onCallTappedVerify(enteredOtp: String, phoneNumber: String)
 }
 
 class VerifyOtp: UIViewController {
@@ -23,7 +23,16 @@ class VerifyOtp: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var otpFieldView: OTPFieldView!
     
+    @IBOutlet weak var lblPhoneNumber: UILabel!
+    
     var delegateVerify: didTapOnVerify?
+    
+    var viewModel = VerifyOtpVM()
+    
+    var phoneNumber: String = ""
+    var otpDebug: String?
+    
+    var enteredOtp: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +52,8 @@ class VerifyOtp: UIViewController {
             },
             completion: nil
         )
+        
+        lblPhoneNumber.text = "+971 \(phoneNumber)"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,8 +79,14 @@ class VerifyOtp: UIViewController {
     @IBAction func tappedResendCode(_ sender: Any) {
     }
     @IBAction func tappedVerifu(_ sender: Any) {
+        
+        guard enteredOtp.count == 6 else {
+            setUpMakeToast(msg: "Please enter valid OTP")
+            return
+        }
+        
         dismissToBottom {
-            self.delegateVerify?.onCallTappedVerify()
+            self.delegateVerify?.onCallTappedVerify(enteredOtp: self.enteredOtp, phoneNumber: self.viewModel.phoneNumber)
         }
     }
     
@@ -97,6 +114,7 @@ class VerifyOtp: UIViewController {
     }
     
 }
+
  
 extension VerifyOtp: OTPFieldViewDelegate {
     func hasEnteredAllOTP(hasEnteredAll hasEntered: Bool) -> Bool {
@@ -110,5 +128,6 @@ extension VerifyOtp: OTPFieldViewDelegate {
     
     func enteredOTP(otp otpString: String) {
         print("OTPString: \(otpString)")
+        self.enteredOtp = otpString
     }
 }

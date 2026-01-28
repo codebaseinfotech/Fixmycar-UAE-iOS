@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyOtp" customModule="Fixmycar_UAE" customModuleProvider="target">
             <connections>
+                <outlet property="lblPhoneNumber" destination="QTa-KQ-Z3X" id="bIj-xq-OfW"/>
                 <outlet property="otpFieldView" destination="6tE-LG-4ci" id="RnM-pc-uez"/>
                 <outlet property="timeLabel" destination="dOJ-GC-aia" id="uep-wF-aOS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

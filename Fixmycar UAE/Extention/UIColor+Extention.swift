@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Toast
 
 extension UIView {
     func applyGradient(colors: [CGColor]) {
@@ -111,31 +112,26 @@ extension UIColor {
     }
 }
 
-//extension UIViewController
-//{
-//    func setUpMakeToast(msg: String)
-//    {
-//        setUpHideToast()
-//        
-//        self.view.makeToast(msg,position: .center)
-//        let window = UIApplication.shared.windows
-//        window.last?.makeToast(msg,position: .center)
-//    }
-//  
-//    func setUpHideToast()
-//    {
-//        self.view.hideToast()
-//        let window = UIApplication.shared.windows
-//        window.last?.hideToast()
-//    }
-//    
-//    func convertImageToBase64String (img: UIImage) -> String {
-//        return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
-//    }
-//    
-//    func convertBase64StringToImage (imageBase64String:String) -> UIImage {
-//        let imageData = Data(base64Encoded: imageBase64String)
-//        let image = UIImage(data: imageData!)
-//        return image!
-//    }
-//}
+extension UIViewController
+{
+    func setUpMakeToast(msg: String)
+    {
+        setUpHideToast()
+        self.view.makeToast(msg)
+    }
+
+    func setUpHideToast()
+    {
+        self.view.hideToast()
+    }
+
+    func convertImageToBase64String (img: UIImage) -> String {
+        return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
+    }
+
+    func convertBase64StringToImage (imageBase64String:String) -> UIImage {
+        let imageData = Data(base64Encoded: imageBase64String)
+        let image = UIImage(data: imageData!)
+        return image!
+    }
+}

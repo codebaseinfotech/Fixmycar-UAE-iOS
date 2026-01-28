@@ -14,11 +14,41 @@ class LoginVC: UIViewController {
     @IBOutlet weak var mobileNumberTextField: UITextField!
     @IBOutlet weak var byContinueLabel: UILabel!
     
+    var viewModel = LoginVM()
+    var verifyOtpVM = VerifyOtpVM()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTitleLabel()
-        
+        bindViewModel()
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - Bind VM
+    func bindViewModel() {
+        viewModel.successLogin = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                
+                let vc = VerifyOtp()
+                vc.modalPresentationStyle = .custom
+                vc.transitioningDelegate = self
+                vc.delegateVerify = self
+                
+                
+                // ✅ Pass DATA not outlet
+                vc.viewModel.phoneNumber = self.mobileNumberTextField.text ?? ""
+                vc.otpDebug = self.viewModel.loginResponse?.data?.otpDebug
+                
+                self.present(vc, animated: true)
+            }
+        }
+        
+        viewModel.failureLogin = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.setUpMakeToast(msg: message)
+            }
+        }
     }
     
     // MARK: - setUpTitle
@@ -64,11 +94,12 @@ class LoginVC: UIViewController {
     
     // MARK: - Action Method
     @IBAction func tappedContinue(_ sender: Any) {
-        let vc = VerifyOtp()
-        vc.modalPresentationStyle = .custom
-        vc.transitioningDelegate = self
-        vc.delegateVerify = self
-        self.present(vc, animated: true)
+        guard let phone = mobileNumberTextField.text, !phone.isEmpty else {
+            setUpMakeToast(msg: "Please enter mobile number")
+            return
+        }
+        
+        viewModel.callLoginAPI(phone: phone, countryCode: "+971")
     }
     
      
@@ -76,11 +107,42 @@ class LoginVC: UIViewController {
 }
 // MARK: - didTapOnVerify
 extension LoginVC: didTapOnVerify {
-    func onCallTappedVerify() {
-        let vc = CreateAccountVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+    func onCallTappedVerify(enteredOtp: String, phoneNumber: String) {
+        
+        verifyOtpVM.callVerifyOtpAPI(
+            phone: phoneNumber,
+            otp: enteredOtp,
+            countryCode: "+971"
+        )
+        
+        verifyOtpVM.successVerify = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+
+                let isRegistered = self.verifyOtpVM.verifyResponse?.isRegistered ?? false
+                
+                print("IS REGISTERED =", isRegistered)
+
+                if isRegistered {
+                    AppDelegate.appDelegate.setUpHome()
+                } else {
+                    let vc = CreateAccountVC()
+                    vc.phoneNumber = phoneNumber
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
+
+        verifyOtpVM.failureVerify = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.setUpMakeToast(msg: message)
+
+                let vc = CreateAccountVC()
+                vc.phoneNumber = phoneNumber
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
-    
     
 }
 

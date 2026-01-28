@@ -26,6 +26,13 @@
 		889AD7862F23325000F2271A /* NotificationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889AD7852F23325000F2271A /* NotificationHeaderView.xib */; };
 		889AD7872F23325000F2271A /* NotificationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AD7842F23325000F2271A /* NotificationHeaderView.swift */; };
 		88AD25E32F2A093B002DFA44 /* FCUtilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD25E22F2A093B002DFA44 /* FCUtilites.swift */; };
+		88AD25E72F2A0C8B002DFA44 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD25E62F2A0C8B002DFA44 /* LoginVM.swift */; };
+		88AD25E92F2A0D42002DFA44 /* OTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD25E82F2A0D42002DFA44 /* OTPResponseModel.swift */; };
+		88AD25EC2F2A0FC5002DFA44 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 88AD25EB2F2A0FC5002DFA44 /* Toast */; };
+		88AD25F02F2A121B002DFA44 /* LoginSuccessResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD25EF2F2A121B002DFA44 /* LoginSuccessResponseModel.swift */; };
+		88AD25F22F2A123D002DFA44 /* VerifyOtpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD25F12F2A123D002DFA44 /* VerifyOtpVM.swift */; };
+		88AD25F62F2A324B002DFA44 /* RegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD25F52F2A324B002DFA44 /* RegisterResponseModel.swift */; };
+		88AD25F82F2A3324002DFA44 /* CreateAccountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD25F72F2A3324002DFA44 /* CreateAccountVM.swift */; };
 		88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */; };
 		88B57DA42F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */; };
 		88D049DB2F0F67E500003B4C /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D049DA2F0F67E500003B4C /* SettingVC.xib */; };
@@ -150,6 +157,12 @@
 		889AD7842F23325000F2271A /* NotificationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHeaderView.swift; sourceTree = "<group>"; };
 		889AD7852F23325000F2271A /* NotificationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationHeaderView.xib; sourceTree = "<group>"; };
 		88AD25E22F2A093B002DFA44 /* FCUtilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUtilites.swift; sourceTree = "<group>"; };
+		88AD25E62F2A0C8B002DFA44 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		88AD25E82F2A0D42002DFA44 /* OTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponseModel.swift; sourceTree = "<group>"; };
+		88AD25EF2F2A121B002DFA44 /* LoginSuccessResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessResponseModel.swift; sourceTree = "<group>"; };
+		88AD25F12F2A123D002DFA44 /* VerifyOtpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOtpVM.swift; sourceTree = "<group>"; };
+		88AD25F52F2A324B002DFA44 /* RegisterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponseModel.swift; sourceTree = "<group>"; };
+		88AD25F72F2A3324002DFA44 /* CreateAccountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVM.swift; sourceTree = "<group>"; };
 		88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguagePopUp.swift; sourceTree = "<group>"; };
 		88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeLanguagePopUp.xib; sourceTree = "<group>"; };
 		88D049D92F0F67E500003B4C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -265,6 +278,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88AD25EC2F2A0FC5002DFA44 /* Toast in Frameworks */,
 				88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */,
 				88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */,
 				BC929D2B2F27744D00A730A9 /* GooglePlacesSwift in Frameworks */,
@@ -417,6 +431,54 @@
 				88AD25E22F2A093B002DFA44 /* FCUtilites.swift */,
 			);
 			path = FCUtilites;
+			sourceTree = "<group>";
+		};
+		88AD25E42F2A0C71002DFA44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88AD25E82F2A0D42002DFA44 /* OTPResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88AD25E52F2A0C76002DFA44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				88AD25E62F2A0C8B002DFA44 /* LoginVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		88AD25ED2F2A11E7002DFA44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88AD25EF2F2A121B002DFA44 /* LoginSuccessResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88AD25EE2F2A11EC002DFA44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				88AD25F12F2A123D002DFA44 /* VerifyOtpVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		88AD25F32F2A3114002DFA44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88AD25F52F2A324B002DFA44 /* RegisterResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88AD25F42F2A3119002DFA44 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				88AD25F72F2A3324002DFA44 /* CreateAccountVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		88B57D9F2F0FA17E00D0CE84 /* Change language */ = {
@@ -801,6 +863,8 @@
 		BC4E176C2F0696A700EDC9AE /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				88AD25E52F2A0C76002DFA44 /* ViewModel */,
+				88AD25E42F2A0C71002DFA44 /* Model */,
 				BC4E176D2F0696BF00EDC9AE /* View */,
 			);
 			path = Login;
@@ -852,6 +916,8 @@
 		BC4E178B2F06A13B00EDC9AE /* VerifyOtp */ = {
 			isa = PBXGroup;
 			children = (
+				88AD25EE2F2A11EC002DFA44 /* ViewModel */,
+				88AD25ED2F2A11E7002DFA44 /* Model */,
 				BC4E178C2F06A14400EDC9AE /* View */,
 			);
 			path = VerifyOtp;
@@ -988,6 +1054,8 @@
 		BC75E8742F0D2C9700947022 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				88AD25F42F2A3119002DFA44 /* ViewModel */,
+				88AD25F32F2A3114002DFA44 /* Model */,
 				BC75E8752F0D2CA900947022 /* View */,
 			);
 			path = CreateAccount;
@@ -1193,6 +1261,7 @@
 				BCA305D62F275DCC0036E322 /* UITextView-Placeholder */,
 				BC929D282F27744D00A730A9 /* GooglePlaces */,
 				BC929D2A2F27744D00A730A9 /* GooglePlacesSwift */,
+				88AD25EB2F2A0FC5002DFA44 /* Toast */,
 			);
 			productName = "Fixmycar UAE";
 			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
@@ -1230,6 +1299,7 @@
 				88FDACD72F2345C800983C39 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 				BCA305D52F275DCC0036E322 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */,
 				BC929D272F27744D00A730A9 /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
+				88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BC67730B2F067F4500B15653 /* Products */;
@@ -1345,10 +1415,12 @@
 				BC23A4B42F0E6E81005A8CE1 /* ChatListTVCell.swift in Sources */,
 				880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */,
 				BC64B7EC2F28958D00A9D314 /* BookingPaymentVC.swift in Sources */,
+				88AD25E72F2A0C8B002DFA44 /* LoginVM.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
 				BC41009C2F0E786C0062DC80 /* SenderChatTVCell.swift in Sources */,
 				884481CD2F0FCA2600A9D076 /* DeleteAccountVC.swift in Sources */,
 				BC1DE3392F0E3E66008BB044 /* BookingDetailsVC.swift in Sources */,
+				88AD25F62F2A324B002DFA44 /* RegisterResponseModel.swift in Sources */,
 				BC7121AE2F067F940041E2F7 /* AGDesignable.swift in Sources */,
 				BC7121AF2F067F940041E2F7 /* VideoPicker.swift in Sources */,
 				BC7121B02F067F940041E2F7 /* PickerViewViewController.swift in Sources */,
@@ -1365,7 +1437,9 @@
 				BCA305E42F276C370036E322 /* ScheduleDateVC.swift in Sources */,
 				BC07DDE02F2880720088D79F /* BookingFareAmountVM.swift in Sources */,
 				BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */,
+				88AD25F82F2A3324002DFA44 /* CreateAccountVM.swift in Sources */,
 				BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */,
+				88AD25E92F2A0D42002DFA44 /* OTPResponseModel.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
 				BCA305DD2F27601E0036E322 /* VehicleTypeCVCell.swift in Sources */,
@@ -1376,7 +1450,9 @@
 				889AD7822F232AD600F2271A /* NotifivationTblViewCell.swift in Sources */,
 				88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */,
 				BC4100B02F0E81650062DC80 /* JumpStartVC.swift in Sources */,
+				88AD25F22F2A123D002DFA44 /* VerifyOtpVM.swift in Sources */,
 				BC7121B52F067F940041E2F7 /* APIClient.swift in Sources */,
+				88AD25F02F2A121B002DFA44 /* LoginSuccessResponseModel.swift in Sources */,
 				BC4E17732F0696DE00EDC9AE /* LoginVC.swift in Sources */,
 				BC7121B62F067F940041E2F7 /* UIColor+Extention.swift in Sources */,
 				88EAE3922F0FD02E008FBCFC /* ReasonListTblViewCell.swift in Sources */,
@@ -1644,6 +1720,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		88FDACCE2F23458200983C39 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
@@ -1695,6 +1779,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		88AD25EB2F2A0FC5002DFA44 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		88FDACCF2F23458200983C39 /* GoogleMaps */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 88FDACCE2F23458200983C39 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;

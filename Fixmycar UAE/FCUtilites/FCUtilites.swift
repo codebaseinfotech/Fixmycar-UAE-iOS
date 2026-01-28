@@ -18,6 +18,29 @@ class FCUtilites {
         return userDefaults.bool(forKey: "isUserLogin")
     }
     
+    class func saveCurrentUserToken(_ access_token: String) {
+        userDefaults.set(access_token, forKey: "access_token")
+    }
+    
+    class func saveCurrentUser(_ user: User?) {
+        userDefaults.set(try? PropertyListEncoder().encode(user), forKey: "currentUser")
+    }
+    
+    class func getCurrentUser() -> User? {
+        if let data = userDefaults.value(forKey: "currentUser") as? Data {
+            return try? PropertyListDecoder().decode(User.self, from: data)
+        }
+        return nil
+    }
+    
+    class func saveRoleName(_ role: String) {
+        userDefaults.set(role, forKey: "role_name")
+    }
+    
+    class func getRoleName() -> String {
+        return userDefaults.string(forKey: "role_name") ?? ""
+    }
+    
     // MARK: - getdevice
     class func deviceType() -> String {
         return "iOS"
