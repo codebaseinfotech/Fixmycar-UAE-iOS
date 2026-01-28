@@ -28,7 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(google_place_key)
         GMSPlacesClient.provideAPIKey(google_place_key)
 
-        setUpHome()
+        if FCUtilites.getIsCurrentUser() {
+            setUpHome()
+        } else {
+            setUpLogin()
+        }
         
         return true
     }
@@ -42,6 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
     }
 
+    // MARK: - setUp Login
+    func setUpLogin() {
+        let login = LoginVC()
+        let homeNavigation = UINavigationController(rootViewController: login)
+        homeNavigation.navigationBar.isHidden = true
+        self.window?.rootViewController = homeNavigation
+        self.window?.makeKeyAndVisible()
+    }
 
 }
 

