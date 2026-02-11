@@ -83,7 +83,10 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dicData = historyBookingVM.historyBookingList[indexPath.row]
+
         let vc = BookingDetailsVC()
+        vc.bookingVM.bookingid = dicData.bookingID ?? 0
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

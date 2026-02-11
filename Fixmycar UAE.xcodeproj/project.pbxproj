@@ -14,6 +14,8 @@
 		0A61F6212F3C91C500A8AC1E /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6202F3C91C500A8AC1E /* HomeResponse.swift */; };
 		0A61F6262F3CA36100A8AC1E /* BookingHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6252F3CA36100A8AC1E /* BookingHistoryResponse.swift */; };
 		0A61F6282F3CA3BC00A8AC1E /* HistoryBookingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6272F3CA3BC00A8AC1E /* HistoryBookingVM.swift */; };
+		0A61F62D2F3CA89900A8AC1E /* BookingDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F62C2F3CA89900A8AC1E /* BookingDetailsResponse.swift */; };
+		0A61F62F2F3CA8D700A8AC1E /* BookingDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F62E2F3CA8D700A8AC1E /* BookingDetailsVM.swift */; };
 		880920352F0F82D400B55769 /* MyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880920342F0F82D400B55769 /* MyProfileVC.xib */; };
 		880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880920332F0F82D400B55769 /* MyProfileVC.swift */; };
 		8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8809203A2F0F9AE800B55769 /* EditProfileVC.xib */; };
@@ -151,6 +153,8 @@
 		0A61F6202F3C91C500A8AC1E /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		0A61F6252F3CA36100A8AC1E /* BookingHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryResponse.swift; sourceTree = "<group>"; };
 		0A61F6272F3CA3BC00A8AC1E /* HistoryBookingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingVM.swift; sourceTree = "<group>"; };
+		0A61F62C2F3CA89900A8AC1E /* BookingDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsResponse.swift; sourceTree = "<group>"; };
+		0A61F62E2F3CA8D700A8AC1E /* BookingDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVM.swift; sourceTree = "<group>"; };
 		880920332F0F82D400B55769 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		880920342F0F82D400B55769 /* MyProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileVC.xib; sourceTree = "<group>"; };
 		880920392F0F9AE800B55769 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
@@ -342,6 +346,22 @@
 			isa = PBXGroup;
 			children = (
 				0A61F6252F3CA36100A8AC1E /* BookingHistoryResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A61F62A2F3CA88000A8AC1E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A61F62E2F3CA8D700A8AC1E /* BookingDetailsVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A61F62B2F3CA88F00A8AC1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A61F62C2F3CA89900A8AC1E /* BookingDetailsResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -720,6 +740,8 @@
 		BC1DE3332F0E3E45008BB044 /* BookingDetails */ = {
 			isa = PBXGroup;
 			children = (
+				0A61F62B2F3CA88F00A8AC1E /* Model */,
+				0A61F62A2F3CA88000A8AC1E /* ViewModel */,
 				BC1DE3342F0E3E4D008BB044 /* View */,
 			);
 			path = BookingDetails;
@@ -1487,6 +1509,7 @@
 				88AD25F62F2A324B002DFA44 /* RegisterResponseModel.swift in Sources */,
 				BC7121AE2F067F940041E2F7 /* AGDesignable.swift in Sources */,
 				BC7121AF2F067F940041E2F7 /* VideoPicker.swift in Sources */,
+				0A61F62D2F3CA89900A8AC1E /* BookingDetailsResponse.swift in Sources */,
 				BC7121B02F067F940041E2F7 /* PickerViewViewController.swift in Sources */,
 				0A61F6282F3CA3BC00A8AC1E /* HistoryBookingVM.swift in Sources */,
 				BC929D322F27755F00A730A9 /* PopularLocationTVCell.swift in Sources */,
@@ -1509,6 +1532,7 @@
 				88AD25E92F2A0D42002DFA44 /* OTPResponseModel.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
+				0A61F62F2F3CA8D700A8AC1E /* BookingDetailsVM.swift in Sources */,
 				BCA305DD2F27601E0036E322 /* VehicleTypeCVCell.swift in Sources */,
 				BC29D6C12F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m in Sources */,
 				BC29D6C22F06A6CD00DD3EB2 /* FTAnimationManager.m in Sources */,
