@@ -38,10 +38,13 @@ class VerifyOtpVM {
                 verifyResponse = response?.data
 
                 if response?.status == true {
-                    FCUtilites.saveCurrentUserToken(response?.data?.accessToken ?? "")
-                    FCUtilites.saveIsGetCurrentUser(true)
-                    FCUtilites.saveRoleName(response?.data?.roleName ?? "")
-                    FCUtilites.saveCurrentUser(response?.data?.user)
+                    if response?.data?.isRegistered == true {
+                        FCUtilites.saveCurrentUserToken(response?.data?.accessToken ?? "")
+                        FCUtilites.saveIsGetCurrentUser(true)
+                        FCUtilites.saveRoleName(response?.data?.roleName ?? "")
+                        FCUtilites.saveCurrentUser(response?.data?.user)
+                    }
+                    
                     successVerify?()
                 } else {
                     failureVerify?(errorMessage ?? "")

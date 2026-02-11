@@ -22,6 +22,10 @@ class FCUtilites {
         userDefaults.set(access_token, forKey: "access_token")
     }
     
+    class func getCurrentUserToken() -> String {
+        return userDefaults.string(forKey: "access_token") ?? ""
+    }
+    
     class func saveCurrentUser(_ user: User?) {
         userDefaults.set(try? PropertyListEncoder().encode(user), forKey: "currentUser")
     }

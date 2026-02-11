@@ -50,7 +50,7 @@ class LoginVM {
                 self.loginResponse = response
                 self.successLogin?()
             } else {
-                self.failureLogin?(response.message)
+                self.failureLogin?(response.message ?? "")
             }
         }
     }

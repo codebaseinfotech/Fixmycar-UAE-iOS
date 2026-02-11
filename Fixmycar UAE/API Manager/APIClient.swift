@@ -76,15 +76,15 @@ class APIClient: NSObject {
             "Content-Type": "application/json",
             "Accept": "application/json",
             "Language": Language.shared.currentAppLang,
-            /*"DeviceType": TRUtilites.deviceType(),
-            "DeviceID": TRUtilites.deviceID(),
-            "Latitude": "\(AppDelegate.appDelegate.latitude ?? 0.0)",
-            "Longitude": "\(AppDelegate.appDelegate.longitude ?? 0.0)",
-            "Device-Token": TRUtilites.getOneSignleToken()*/
+            "DeviceType": FCUtilites.deviceType(),
+            "DeviceID": FCUtilites.deviceID(),
+            "Latitude": "\(AppDelegate.appDelegate.currentLatitude)",
+            "Longitude": "\(AppDelegate.appDelegate.currentLongitude)",
+            "Device-Token": ""
         ]
         
         if needUserToken {
-            //headers["Authorization"] = "Bearer \(TRUtilites.getCurrentUserToken())"
+            headers["Authorization"] = "Bearer \(FCUtilites.getCurrentUserToken())"
         }
         
         debugPrint("➡️ REQUEST URL:", absoluteUrl)
@@ -142,24 +142,24 @@ class APIClient: NSObject {
         
         let absoluteUrl = BASE_URL + urlString.rawValue
         
-        /*let deviceType = TRUtilites.deviceType()
-        let deviceID = TRUtilites.deviceID()
-        let latitude = "\(AppDelegate.appDelegate.latitude ?? 0.0)"
-        let longitude = "\(AppDelegate.appDelegate.longitude ?? 0.0)"*/
+        let deviceType = FCUtilites.deviceType()
+        let deviceID = FCUtilites.deviceID()
+        let latitude = "\(AppDelegate.appDelegate.currentLatitude)"
+        let longitude = "\(AppDelegate.appDelegate.currentLongitude)"
         
         // ✅ DO NOT ADD Content-Type HERE
         var headers: [String: String] = [
             "Accept": "application/json",
             "Language": Language.shared.currentAppLang,
-            /*"DeviceType": deviceType,
+            "DeviceType": deviceType,
             "DeviceID": deviceID,
             "Latitude": latitude,
             "Longitude": longitude,
-            "Device-Token": TRUtilites.getOneSignleToken()*/
+            "Device-Token": ""
         ]
         
         if needUserToken {
-           // headers["Authorization"] = "Bearer \(TRUtilites.getCurrentUserToken())"
+            headers["Authorization"] = "Bearer \(FCUtilites.getCurrentUserToken())"
         }
         
         debugPrint("➡️ REQUEST URL:", absoluteUrl)

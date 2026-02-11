@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return UIApplication.shared.delegate as! AppDelegate
         }
     }
+    
+    var currentLatitude: Double = 0.0
+    var currentLongitude: Double = 0.0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -52,8 +52,7 @@ class VerifyOtp: UIViewController {
             },
             completion: nil
         )
-        
-        lblPhoneNumber.text = "+971 \(phoneNumber)"
+        lblPhoneNumber.text = "+971 \(viewModel.phoneNumber)"
     }
     
     override func viewDidAppear(_ animated: Bool) {

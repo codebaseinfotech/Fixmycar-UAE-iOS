@@ -9,16 +9,16 @@ import Foundation
 
 // MARK: - OTP Response Model
 struct OTPResponseModel: Codable {
-    let status: Bool
-    let message: String
+    let status: Bool?
+    let message: String?
     let data: OTPData?
     let errors: String?
 }
 
 // MARK: - OTP Data
 struct OTPData: Codable {
-    let phone: String
-    let otpDebug: String
+    let phone: String?
+    let otpDebug: Int?
 
     enum CodingKeys: String, CodingKey {
         case phone

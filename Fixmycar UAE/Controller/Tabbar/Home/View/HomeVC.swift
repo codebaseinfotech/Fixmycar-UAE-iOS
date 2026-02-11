@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeVC: UIViewController {
 
@@ -31,11 +32,24 @@ class HomeVC: UIViewController {
         }
     }
     
+    let locationManager = CLLocationManager()
+    let geocoder = CLGeocoder()
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupLocation()
+        lblUserName.text = "Hello, " + (FCUtilites.getCurrentUser()?.name ?? "") + "👋"
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func setupLocation() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()   // 🔴 Start Live Location
     }
     
     // MARK: - TV height set
@@ -113,6 +127,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// MARK: - PresentSheet
 extension HomeVC: UISheetPresentationControllerDelegate {
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         if let overlayView = view.viewWithTag(999) {
@@ -123,5 +138,51 @@ extension HomeVC: UISheetPresentationControllerDelegate {
             })
             
         }
+    }
+}
+
+// MARK: - location Delegate
+extension HomeVC: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let location = locations.last else { return }
+        
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        
+        AppDelegate.appDelegate.currentLatitude = latitude
+        AppDelegate.appDelegate.currentLongitude = longitude
+        debugPrint("Live Latitude:", latitude)
+        debugPrint("Live Longitude:", longitude)
+
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            
+            if let error = error {
+                print("Geocode error:", error.localizedDescription)
+                return
+            }
+            
+            guard let placemark = placemarks?.first else { return }
+            
+            let area = placemark.subLocality        // Area
+            let city = placemark.locality           // City
+            /*let state = placemark.administrativeArea
+            let country = placemark.country
+            let postalCode = placemark.postalCode*/
+            
+            debugPrint("Area:", area ?? "")
+            debugPrint("City:", city ?? "")
+            /*debugPrint("State:", state ?? "")
+            debugPrint("Country:", country ?? "")
+            debugPrint("Pincode:", postalCode ?? "")*/
+            
+            self.lblLocation.text = "\(area ?? ""), \(city ?? "")"
+        }
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location error:", error.localizedDescription)
     }
 }

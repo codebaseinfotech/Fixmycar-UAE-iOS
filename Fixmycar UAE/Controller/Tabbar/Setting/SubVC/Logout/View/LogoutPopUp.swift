@@ -37,6 +37,11 @@ class LogoutPopUp: UIViewController {
     }
     
     @IBAction func tappedLogout(_ sender: Any) {
+        
+        if isOpenLogout {
+            FCUtilites.saveIsGetCurrentUser(false)
+            AppDelegate.appDelegate.setUpLogin()
+        }
     }
     
     

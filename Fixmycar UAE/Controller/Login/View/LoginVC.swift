@@ -26,21 +26,9 @@ class LoginVC: UIViewController {
     
     // MARK: - Bind VM
     func bindViewModel() {
-        viewModel.successLogin = { [weak self] in
+        viewModel.successLogin = {
             DispatchQueue.main.async {
-                guard let self = self else { return }
-                
-                let vc = VerifyOtp()
-                vc.modalPresentationStyle = .custom
-                vc.transitioningDelegate = self
-                vc.delegateVerify = self
-                
-                
-                // ✅ Pass DATA not outlet
-                vc.viewModel.phoneNumber = self.mobileNumberTextField.text ?? ""
-                vc.otpDebug = self.viewModel.loginResponse?.data?.otpDebug
-                
-                self.present(vc, animated: true)
+                self.presentOtp()
             }
         }
         
@@ -49,6 +37,17 @@ class LoginVC: UIViewController {
                 self?.setUpMakeToast(msg: message)
             }
         }
+    }
+    
+    func presentOtp() {
+        let vc = VerifyOtp()
+        vc.modalPresentationStyle = .custom
+        vc.delegateVerify = self
+        
+        // ✅ Pass DATA not outlet
+        vc.viewModel.phoneNumber = self.viewModel.loginResponse?.data?.phone ?? ""
+        vc.otpDebug = "\(self.viewModel.loginResponse?.data?.otpDebug ?? 0)"
+        self.present(vc, animated: true)
     }
     
     // MARK: - setUpTitle
