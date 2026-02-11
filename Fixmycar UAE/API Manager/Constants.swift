@@ -26,4 +26,5 @@ enum APIEndPoint: String {
     case register = "v1/customer/register"
     case updateProfile = "v1/customer/profile"
     case homePage = "v1/customer/home"
+    case bookingList = "v1/customer/bookings"
 }

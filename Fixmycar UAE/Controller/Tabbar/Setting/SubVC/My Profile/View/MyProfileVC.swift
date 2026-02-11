@@ -16,6 +16,32 @@ class MyProfileVC: UIViewController {
     @IBOutlet weak var txtNumber: AppTextField!
     @IBOutlet weak var txtEmail: AppTextField!
     
+    @IBOutlet weak var lblTFullName: UILabel! {
+        didSet {
+            let fullText = "Full name *".localized
+
+            lblTFullName.attributedText = fullText.attributedText(
+                defaultFont: UIFont.AppFont.bold(14),
+                defaultColor: #colorLiteral(red: 0.003921568627, green: 0.003921568627, blue: 0.003921568627, alpha: 1),
+                highlightText: "*",
+                highlightColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
+            )
+        }
+    }
+    @IBOutlet weak var lblTMobileNumber: UILabel! {
+        didSet {
+            let fullText = "Mobile number *".localized
+
+            lblTMobileNumber.attributedText = fullText.attributedText(
+                defaultFont: UIFont.AppFont.bold(14),
+                defaultColor: #colorLiteral(red: 0.003921568627, green: 0.003921568627, blue: 0.003921568627, alpha: 1),
+                highlightText: "*",
+                highlightColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
+            )
+        }
+    }
+    
+    // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +60,7 @@ class MyProfileVC: UIViewController {
         imgProfile.loadFromUrlString(FCUtilites.getCurrentUser()?.avatar ?? "", placeholder: "ic_placeholder_user".image)
     }
 
+    // MARK: - Action Method
     @IBAction func tappedBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

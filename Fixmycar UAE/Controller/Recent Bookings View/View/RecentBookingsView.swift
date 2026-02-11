@@ -61,14 +61,14 @@ class RecentBookingsView: UIView {
     
     func config(type: String = "recent_booking") {
         if type == "recent_booking" {
-            svLocation.isHidden = false
-            svHistoryMain.isHidden = true
-            viewLineAddress.isHidden = true
-            
-        } else if type == "history_booking" {
-            svLocation.isHidden = true
             svHistoryMain.isHidden = false
             viewLineAddress.isHidden = false
+            svLocation.isHidden = true
+            
+        } else if type == "history_booking" {
+            svHistoryMain.isHidden = false
+            viewLineAddress.isHidden = false
+            svLocation.isHidden = true
             
         } else if type == "booking_details" {
             svLocation.isHidden = true

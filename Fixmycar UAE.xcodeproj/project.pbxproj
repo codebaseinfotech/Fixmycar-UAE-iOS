@@ -12,6 +12,8 @@
 		0A61F61B2F3C897400A8AC1E /* EditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */; };
 		0A61F61E2F3C917200A8AC1E /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F61D2F3C917200A8AC1E /* HomeVM.swift */; };
 		0A61F6212F3C91C500A8AC1E /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6202F3C91C500A8AC1E /* HomeResponse.swift */; };
+		0A61F6262F3CA36100A8AC1E /* BookingHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6252F3CA36100A8AC1E /* BookingHistoryResponse.swift */; };
+		0A61F6282F3CA3BC00A8AC1E /* HistoryBookingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6272F3CA3BC00A8AC1E /* HistoryBookingVM.swift */; };
 		880920352F0F82D400B55769 /* MyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880920342F0F82D400B55769 /* MyProfileVC.xib */; };
 		880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880920332F0F82D400B55769 /* MyProfileVC.swift */; };
 		8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8809203A2F0F9AE800B55769 /* EditProfileVC.xib */; };
@@ -147,6 +149,8 @@
 		0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVM.swift; sourceTree = "<group>"; };
 		0A61F61D2F3C917200A8AC1E /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		0A61F6202F3C91C500A8AC1E /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
+		0A61F6252F3CA36100A8AC1E /* BookingHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryResponse.swift; sourceTree = "<group>"; };
+		0A61F6272F3CA3BC00A8AC1E /* HistoryBookingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingVM.swift; sourceTree = "<group>"; };
 		880920332F0F82D400B55769 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		880920342F0F82D400B55769 /* MyProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileVC.xib; sourceTree = "<group>"; };
 		880920392F0F9AE800B55769 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
@@ -322,6 +326,22 @@
 			isa = PBXGroup;
 			children = (
 				0A61F6202F3C91C500A8AC1E /* HomeResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A61F6222F3CA34F00A8AC1E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A61F6272F3CA3BC00A8AC1E /* HistoryBookingVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A61F6242F3CA35700A8AC1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A61F6252F3CA36100A8AC1E /* BookingHistoryResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -672,6 +692,8 @@
 		BC1DE32C2F0E3415008BB044 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				0A61F6242F3CA35700A8AC1E /* Model */,
+				0A61F6222F3CA34F00A8AC1E /* ViewModel */,
 				BC1DE3322F0E3E31008BB044 /* SubVC */,
 				BC1DE32D2F0E342C008BB044 /* View */,
 			);
@@ -1466,6 +1488,7 @@
 				BC7121AE2F067F940041E2F7 /* AGDesignable.swift in Sources */,
 				BC7121AF2F067F940041E2F7 /* VideoPicker.swift in Sources */,
 				BC7121B02F067F940041E2F7 /* PickerViewViewController.swift in Sources */,
+				0A61F6282F3CA3BC00A8AC1E /* HistoryBookingVM.swift in Sources */,
 				BC929D322F27755F00A730A9 /* PopularLocationTVCell.swift in Sources */,
 				BC7121B12F067F940041E2F7 /* NetConnection.swift in Sources */,
 				BC7121B22F067F940041E2F7 /* ImagePicker.swift in Sources */,
@@ -1490,6 +1513,7 @@
 				BC29D6C12F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m in Sources */,
 				BC29D6C22F06A6CD00DD3EB2 /* FTAnimationManager.m in Sources */,
 				882B88702F0FAE7B008EFA5A /* HelpAndFAQsVC.swift in Sources */,
+				0A61F6262F3CA36100A8AC1E /* BookingHistoryResponse.swift in Sources */,
 				8809203C2F0F9AE800B55769 /* EditProfileVC.swift in Sources */,
 				889AD7822F232AD600F2271A /* NotifivationTblViewCell.swift in Sources */,
 				88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */,

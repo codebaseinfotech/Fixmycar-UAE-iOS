@@ -16,6 +16,32 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var txtNumber: AppTextField!
     @IBOutlet weak var txtEmail: UITextField!
     
+    @IBOutlet weak var lblTFullName: UILabel! {
+        didSet {
+            let fullText = "Full name *".localized
+
+            lblTFullName.attributedText = fullText.attributedText(
+                defaultFont: UIFont.AppFont.bold(14),
+                defaultColor: #colorLiteral(red: 0.003921568627, green: 0.003921568627, blue: 0.003921568627, alpha: 1),
+                highlightText: "*",
+                highlightColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
+            )
+        }
+    }
+    @IBOutlet weak var lblTMobileNumber: UILabel! {
+        didSet {
+            let fullText = "Mobile number *".localized
+
+            lblTMobileNumber.attributedText = fullText.attributedText(
+                defaultFont: UIFont.AppFont.bold(14),
+                defaultColor: #colorLiteral(red: 0.003921568627, green: 0.003921568627, blue: 0.003921568627, alpha: 1),
+                highlightText: "*",
+                highlightColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
+            )
+        }
+    }
+    
+    
     var editProfileVM = EditProfileVM()
     var isUploadProfile: Bool = false
     var selectedVehicleTypeId: String?
@@ -49,6 +75,11 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
  
     @IBAction func tappedSaveChanges(_ sender: Any) {
+        guard let fullName = txtFullName.text, !fullName.isEmpty else {
+            self.setUpMakeToast(msg: "Please enter full name")
+            return
+        }
+        
         updateProfileData()
     }
 

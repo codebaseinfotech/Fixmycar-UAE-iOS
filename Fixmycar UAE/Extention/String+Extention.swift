@@ -7,6 +7,51 @@
 
 import Foundation
 
+extension String {
+
+    func attributedText(
+        defaultFont: UIFont,
+        defaultColor: UIColor = .black,
+        highlightText: String,
+        highlightColor: UIColor = .red
+    ) -> NSAttributedString {
+
+        let attributedString = NSMutableAttributedString(
+            string: self,
+            attributes: [
+                .font: defaultFont,
+                .foregroundColor: defaultColor
+            ]
+        )
+
+        let ranges = self.ranges(of: highlightText)
+        for range in ranges {
+            let nsRange = NSRange(range, in: self)
+            attributedString.addAttribute(
+                .foregroundColor,
+                value: highlightColor,
+                range: nsRange
+            )
+        }
+
+        return attributedString
+    }
+
+    // Helper to find multiple occurrences
+    private func ranges(of searchText: String) -> [Range<String.Index>] {
+        var result: [Range<String.Index>] = []
+        var startIndex = self.startIndex
+
+        while startIndex < self.endIndex,
+              let range = self.range(of: searchText, range: startIndex..<self.endIndex) {
+            result.append(range)
+            startIndex = range.upperBound
+        }
+        return result
+    }
+}
+
+
 extension UILabel {
     func setLineHeight(_ lineHeight: CGFloat) {
         guard let text = self.text else { return }
@@ -24,6 +69,31 @@ extension UILabel {
                 .foregroundColor: self.textColor!
             ]
         )
+    }
+}
+
+extension String {
+    
+    /// Convert API date string to Date object
+    func toDate(withFormat format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = TimeZone(abbreviation: "UTC")!) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.timeZone = timeZone
+        return formatter.date(from: self)
+    }
+    
+    /// Convert API date string to display string
+    func toDisplayDate(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
+                       displayFormat: String = "dd MMM, yyyy hh:mm a",
+                       apiTimeZone: TimeZone = TimeZone(abbreviation: "UTC")!,
+                       displayTimeZone: TimeZone = TimeZone.current) -> String {
+        
+        guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
+        
+        let displayFormatter = DateFormatter()
+        displayFormatter.dateFormat = displayFormat
+        displayFormatter.timeZone = displayTimeZone
+        return displayFormatter.string(from: date)
     }
 }
 

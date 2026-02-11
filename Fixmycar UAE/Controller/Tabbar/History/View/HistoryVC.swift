@@ -21,11 +21,24 @@ class HistoryVC: UIViewController {
         }
     }
     
+    var historyBookingVM = HistoryBookingVM()
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        historyBookingVM.getHistoryBookingData()
+        
+        historyBookingVM.successHistoryData = {
+            self.tblViewBookingList.reloadData()
+        }
+        historyBookingVM.failureHistoryData = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
     }
 
     // MARK: - Action Method
@@ -52,12 +65,15 @@ class HistoryVC: UIViewController {
 // MARK: - tv Delegate & DataSource
 extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return historyBookingVM.historyBookingList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecentBookingTVCell.identifier) as! RecentBookingTVCell
         cell.viewRecentBooking.config(type: "history_booking")
+        
+        let dicData = historyBookingVM.historyBookingList[indexPath.row]
+        cell.historyBooking = dicData
         
         return cell
     }

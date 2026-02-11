@@ -131,8 +131,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecentBookingTVCell.identifier) as! RecentBookingTVCell
         cell.selectionStyle = .none
-        cell.config(type: "recent_booking")
-        
+        cell.viewRecentBooking.config(type: "recent_booking")
+
         let dicData = homeVM.recentServiceList[indexPath.row]
         cell.recentBooking = dicData
         

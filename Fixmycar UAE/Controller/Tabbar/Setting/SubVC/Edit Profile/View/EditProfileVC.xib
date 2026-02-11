@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,6 +22,8 @@
             <connections>
                 <outlet property="imgUser" destination="22Y-Or-yQQ" id="XvC-9u-Nut"/>
                 <outlet property="lblName" destination="8Kk-AU-CFj" id="hgj-GL-KFV"/>
+                <outlet property="lblTFullName" destination="TDv-Da-Duv" id="oQy-QC-SZc"/>
+                <outlet property="lblTMobileNumber" destination="GuI-Uj-TTb" id="cLT-ib-tHe"/>
                 <outlet property="lblTime" destination="5gK-o1-gjt" id="1CL-1V-97P"/>
                 <outlet property="txtEmail" destination="i2S-sH-D2k" id="udK-Jd-xA1"/>
                 <outlet property="txtFullName" destination="g2l-XN-ROK" id="iIb-Lm-B17"/>
@@ -35,10 +37,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmz-Ja-D2S">
-                    <rect key="frame" x="0.0" y="59" width="393" height="40"/>
+                    <rect key="frame" x="0.0" y="118" width="393" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgc-y8-FU1">
-                            <rect key="frame" x="20" y="2.6666666666666643" width="35" height="35"/>
+                            <rect key="frame" x="20" y="2.6666666666666714" width="35" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="Yvk-ni-yNZ"/>
                                 <constraint firstAttribute="width" constant="35" id="tln-zy-35t"/>
@@ -66,7 +68,7 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dummy_user" translatesAutoresizingMaskIntoConstraints="NO" id="22Y-Or-yQQ">
-                    <rect key="frame" x="132.66666666666666" y="114" width="127.99999999999997" height="128"/>
+                    <rect key="frame" x="132.66666666666666" y="173" width="127.99999999999997" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="128" id="9y9-cV-OV2"/>
                         <constraint firstAttribute="height" constant="128" id="eQX-6u-8V5"/>
@@ -78,7 +80,7 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtb-fH-SnE">
-                    <rect key="frame" x="222.66666666666666" y="204" width="37.999999999999972" height="38"/>
+                    <rect key="frame" x="222.66666666666666" y="263" width="37.999999999999972" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="38" id="Tx8-vP-U60"/>
                         <constraint firstAttribute="height" constant="38" id="UZt-1c-FtW"/>
@@ -90,19 +92,19 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kk-AU-CFj">
-                    <rect key="frame" x="157.33333333333334" y="251.99999999999997" width="78.666666666666657" height="22.666666666666657"/>
+                    <rect key="frame" x="157.33333333333334" y="311" width="78.666666666666657" height="22.666666666666686"/>
                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
                     <color key="textColor" name="primery_black"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member since 14th February, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-o1-gjt">
-                    <rect key="frame" x="86.666666666666686" y="276.66666666666669" width="220" height="17.666666666666686"/>
+                    <rect key="frame" x="86.666666666666686" y="335.66666666666669" width="220" height="17.666666666666686"/>
                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                     <color key="textColor" name="Gray"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yOF-hM-HKW">
-                    <rect key="frame" x="20" y="324.33333333333331" width="353" height="252.99999999999994"/>
+                    <rect key="frame" x="20" y="383.33333333333331" width="353" height="252.99999999999994"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKK-CW-Efl">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="71"/>
@@ -259,7 +261,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XH4-ZV-Jtd">
-                            <rect key="frame" x="0.0" y="182" width="353" height="71"/>
+                            <rect key="frame" x="0.0" y="182.00000000000006" width="353" height="71"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJA-4J-mVr">
                                     <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="17.666666666666668"/>
@@ -268,7 +270,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-sH-HSR">
-                                    <rect key="frame" x="0.0" y="27.666666666666689" width="353" height="43.333333333333343"/>
+                                    <rect key="frame" x="0.0" y="27.666666666666632" width="353" height="43.333333333333343"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="johndoe@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-sH-D2k">
                                             <rect key="frame" x="14" y="0.0" width="325" height="43.333333333333336"/>
@@ -307,7 +309,7 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hk0-zO-SnF" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
-                    <rect key="frame" x="20" y="607.33333333333337" width="353" height="42"/>
+                    <rect key="frame" x="20" y="666.33333333333337" width="353" height="42"/>
                     <color key="backgroundColor" name="primery_black"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="l6Y-Xw-fIR"/>
