@@ -25,4 +25,5 @@ enum APIEndPoint: String {
     case verifyOtp = "v1/customer/verify-otp"
     case register = "v1/customer/register"
     case updateProfile = "v1/customer/profile"
+    case homePage = "v1/customer/home"
 }

@@ -10,6 +10,8 @@
 		0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A61F6152F3C82DB00A8AC1E /* Kingfisher */; };
 		0A61F6182F3C875C00A8AC1E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */; };
 		0A61F61B2F3C897400A8AC1E /* EditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */; };
+		0A61F61E2F3C917200A8AC1E /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F61D2F3C917200A8AC1E /* HomeVM.swift */; };
+		0A61F6212F3C91C500A8AC1E /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6202F3C91C500A8AC1E /* HomeResponse.swift */; };
 		880920352F0F82D400B55769 /* MyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880920342F0F82D400B55769 /* MyProfileVC.xib */; };
 		880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880920332F0F82D400B55769 /* MyProfileVC.swift */; };
 		8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8809203A2F0F9AE800B55769 /* EditProfileVC.xib */; };
@@ -143,6 +145,8 @@
 /* Begin PBXFileReference section */
 		0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVM.swift; sourceTree = "<group>"; };
+		0A61F61D2F3C917200A8AC1E /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		0A61F6202F3C91C500A8AC1E /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		880920332F0F82D400B55769 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		880920342F0F82D400B55769 /* MyProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileVC.xib; sourceTree = "<group>"; };
 		880920392F0F9AE800B55769 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
@@ -304,6 +308,22 @@
 				0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A61F61C2F3C916A00A8AC1E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A61F61D2F3C917200A8AC1E /* HomeVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A61F61F2F3C91B600A8AC1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A61F6202F3C91C500A8AC1E /* HomeResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		880920312F0F82A400B55769 /* My Profile */ = {
@@ -1219,6 +1239,8 @@
 		BCA894AE2F0E0F2D00633E20 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0A61F61F2F3C91B600A8AC1E /* Model */,
+				0A61F61C2F3C916A00A8AC1E /* ViewModel */,
 				BC4100AA2F0E814A0062DC80 /* SubVC */,
 				BC98E7C52F0E228200426807 /* Cell */,
 				BCA894AF2F0E0F3000633E20 /* View */,
@@ -1425,6 +1447,7 @@
 				BC7121AD2F067F940041E2F7 /* UIFont+Extention.swift in Sources */,
 				889AD77D2F23283000F2271A /* NotificationVC.swift in Sources */,
 				882B887A2F0FB454008EFA5A /* FAQsTblViewCell.swift in Sources */,
+				0A61F61E2F3C917200A8AC1E /* HomeVM.swift in Sources */,
 				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
 				BC23A4BC2F0E7444005A8CE1 /* UserChatVC.swift in Sources */,
 				88D049DC2F0F67E500003B4C /* SettingVC.swift in Sources */,
@@ -1455,6 +1478,7 @@
 				88F8B9C32F235A76001C9282 /* RecoveryServiceVC.swift in Sources */,
 				BCA305E42F276C370036E322 /* ScheduleDateVC.swift in Sources */,
 				BC07DDE02F2880720088D79F /* BookingFareAmountVM.swift in Sources */,
+				0A61F6212F3C91C500A8AC1E /* HomeResponse.swift in Sources */,
 				BC41009F2F0E79C70062DC80 /* UIView+Extention.swift in Sources */,
 				88AD25F82F2A3324002DFA44 /* CreateAccountVM.swift in Sources */,
 				0A61F61B2F3C897400A8AC1E /* EditProfileVM.swift in Sources */,

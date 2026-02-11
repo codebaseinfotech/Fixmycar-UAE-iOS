@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -85,7 +85,7 @@
                             </subviews>
                             <color key="backgroundColor" name="light_green"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="81" id="7EX-Vf-n7i"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="81" id="7EX-Vf-n7i"/>
                                 <constraint firstAttribute="trailing" secondItem="ove-Oc-44M" secondAttribute="trailing" constant="10" id="BWQ-yy-3xe"/>
                                 <constraint firstAttribute="bottom" secondItem="ove-Oc-44M" secondAttribute="bottom" constant="4" id="SMK-Le-fPO"/>
                                 <constraint firstItem="ove-Oc-44M" firstAttribute="leading" secondItem="xtB-mw-yjU" secondAttribute="leading" constant="10" id="Zt0-Lb-RXQ"/>

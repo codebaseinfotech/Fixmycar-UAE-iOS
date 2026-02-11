@@ -35,14 +35,25 @@ class HomeVC: UIViewController {
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     
+    var homeVM = HomeVM()
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupLocation()
         lblUserName.text = "Hello, " + (FCUtilites.getCurrentUser()?.name ?? "") + "👋"
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupLocation()
+               
+        homeVM.successHomeData = { [weak self] in
+            self?.tblViewRecentBooking.reloadData()
+        }
+        homeVM.failureHomeData = { [weak self] msg in
+            self?.setUpMakeToast(msg: msg)
+        }
     }
     
     func setupLocation() {
@@ -114,12 +125,16 @@ class HomeVC: UIViewController {
 // MARK: - tv Delegate & DataSource
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return homeVM.recentServiceList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecentBookingTVCell.identifier) as! RecentBookingTVCell
         cell.selectionStyle = .none
+        cell.config(type: "recent_booking")
+        
+        let dicData = homeVM.recentServiceList[indexPath.row]
+        cell.recentBooking = dicData
         
         return cell
     }
@@ -180,6 +195,7 @@ extension HomeVC: CLLocationManagerDelegate {
             self.lblLocation.text = "\(area ?? ""), \(city ?? "")"
         }
         locationManager.stopUpdatingLocation()
+        homeVM.getHomeData()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -13,7 +13,11 @@ class RecentBookingsView: UIView {
     @IBOutlet weak var lblType: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var viewStatus: UIView!
-    @IBOutlet weak var lblStatus: UILabel!
+    @IBOutlet weak var lblStatus: UILabel! {
+        didSet {
+            lblStatus.textAlignment = .center
+        }
+    }
     
     @IBOutlet weak var svHistoryMain: UIStackView!
     @IBOutlet weak var lblPickLocation: UILabel!
