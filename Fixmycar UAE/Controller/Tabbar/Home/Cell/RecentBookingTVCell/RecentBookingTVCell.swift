@@ -14,8 +14,8 @@ class RecentBookingTVCell: UITableViewCell {
     var recentBooking: RecentRequest? {
         didSet {
             viewRecentBooking.lblType.text = recentBooking?.serviceName
-            viewRecentBooking.lblTime.text = recentBooking?.dateTime
-            viewRecentBooking.lblPrice.text = "\(historyBooking?.currency ?? "") \(recentBooking?.amount ?? 0)"
+            viewRecentBooking.lblTime.text = recentBooking?.job_date
+            viewRecentBooking.lblPrice.text = "\(historyBooking?.currency ?? "") \(recentBooking?.amount ?? "")"
             viewRecentBooking.lblStatus.text = recentBooking?.status?.capitalized
             
             if recentBooking?.status == "pending" {

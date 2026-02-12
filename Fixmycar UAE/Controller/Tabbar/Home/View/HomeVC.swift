@@ -40,7 +40,7 @@ class HomeVC: UIViewController {
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblUserName.text = "Hello, " + (FCUtilites.getCurrentUser()?.name ?? "") + "👋"
+        lblUserName.text = "Hello, " + (FCUtilites.getCurrentUser()?.name ?? "")
         
         // Do any additional setup after loading the view.
     }

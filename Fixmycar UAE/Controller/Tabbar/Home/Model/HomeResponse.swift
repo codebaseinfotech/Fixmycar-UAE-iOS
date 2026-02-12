@@ -64,16 +64,18 @@ struct HomeService: Codable {
 struct RecentRequest: Codable {
     let serviceName: String?
     let status: String?
-    let dateTime: String?
+    let job_date: String?
+    let job_time: String?
     let pickupAddress: String?
     let dropAddress: String?
-    let amount: Int?
+    let amount: String?
     let currency: String?
     
     enum CodingKeys: String, CodingKey {
         case serviceName = "service_name"
         case status
-        case dateTime = "date_time"
+        case job_date
+        case job_time
         case pickupAddress = "pickup_address"
         case dropAddress = "drop_address"
         case amount

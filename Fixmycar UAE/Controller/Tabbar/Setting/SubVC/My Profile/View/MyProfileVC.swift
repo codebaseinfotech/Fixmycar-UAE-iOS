@@ -53,7 +53,7 @@ class MyProfileVC: UIViewController {
         let result = formattedMemberSince(from: joinedAt)
         lblDate.text = result
         lblUserName.text = FCUtilites.getCurrentUser()?.name ?? ""
-        txtFullName.text = (FCUtilites.getCurrentUser()?.firstName ?? "") + (FCUtilites.getCurrentUser()?.lastName ?? "")
+        txtFullName.text = FCUtilites.getCurrentUser()?.firstName ?? ""
         txtNumber.text = FCUtilites.getCurrentUser()?.phone ?? ""
         txtEmail.text = FCUtilites.getCurrentUser()?.email ?? ""
         

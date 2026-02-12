@@ -55,7 +55,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         let result = formattedMemberSince(from: joinedAt)
         lblTime.text = result
         lblName.text = FCUtilites.getCurrentUser()?.name ?? ""
-        txtFullName.text = (FCUtilites.getCurrentUser()?.firstName ?? "") + (FCUtilites.getCurrentUser()?.lastName ?? "")
+        txtFullName.text = FCUtilites.getCurrentUser()?.firstName ?? ""
         txtNumber.text = FCUtilites.getCurrentUser()?.phone ?? ""
         txtEmail.text = FCUtilites.getCurrentUser()?.email ?? ""
         
