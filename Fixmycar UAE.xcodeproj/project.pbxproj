@@ -34,6 +34,7 @@
 		0A6D0D0F2F43381900F374AF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A6D0D0E2F43381900F374AF /* FirebaseAnalytics */; };
 		0A6D0D112F43381900F374AF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A6D0D102F43381900F374AF /* FirebaseCrashlytics */; };
 		0A6D0D142F433A2400F374AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A6D0D132F433A2400F374AF /* GoogleService-Info.plist */; };
+		0A6D0D202F433D3F00F374AF /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 0A6D0D1F2F433D3F00F374AF /* OneSignal */; };
 		0AB7AD422F3F2CBE003F9272 /* CalculatePriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7AD412F3F2CBD003F9272 /* CalculatePriceResponse.swift */; };
 		0AB7AD442F3F404E003F9272 /* AvailableDriversResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7AD432F3F404E003F9272 /* AvailableDriversResponse.swift */; };
 		880920352F0F82D400B55769 /* MyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880920342F0F82D400B55769 /* MyProfileVC.xib */; };
@@ -338,6 +339,7 @@
 				88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */,
 				0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */,
 				BC929D2B2F27744D00A730A9 /* GooglePlacesSwift in Frameworks */,
+				0A6D0D202F433D3F00F374AF /* OneSignal in Frameworks */,
 				0A6D0D112F43381900F374AF /* FirebaseCrashlytics in Frameworks */,
 				88FDACD32F23459900983C39 /* Alamofire in Frameworks */,
 				BC929D292F27744D00A730A9 /* GooglePlaces in Frameworks */,
@@ -1534,6 +1536,7 @@
 				0A61F6152F3C82DB00A8AC1E /* Kingfisher */,
 				0A6D0D0E2F43381900F374AF /* FirebaseAnalytics */,
 				0A6D0D102F43381900F374AF /* FirebaseCrashlytics */,
+				0A6D0D1F2F433D3F00F374AF /* OneSignal */,
 			);
 			productName = "Fixmycar UAE";
 			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
@@ -1574,6 +1577,7 @@
 				88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				0A61F6142F3C82DB00A8AC1E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				0A6D0D0D2F43381900F374AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0A6D0D1E2F433D3F00F374AF /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BC67730B2F067F4500B15653 /* Products */;
@@ -2069,6 +2073,14 @@
 				minimumVersion = 12.9.0;
 			};
 		};
+		0A6D0D1E2F433D3F00F374AF /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.2;
+			};
+		};
 		88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -2142,6 +2154,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A6D0D0D2F43381900F374AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		0A6D0D1F2F433D3F00F374AF /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A6D0D1E2F433D3F00F374AF /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignal;
 		};
 		88AD25EB2F2A0FC5002DFA44 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;

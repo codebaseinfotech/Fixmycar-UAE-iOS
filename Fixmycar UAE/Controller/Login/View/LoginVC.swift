@@ -73,26 +73,6 @@ class LoginVC: UIViewController {
         ))
         
         welcomeTitleLabel.attributedText = text
-        
-        let fullText = "By continuing, you agree to our Terms of Service & Privacy Policy"
-        let attributedText = NSMutableAttributedString(
-            string: fullText,
-            attributes: [
-                .font: UIFont.AppFont.medium(14),
-                .foregroundColor: #colorLiteral(red: 0.5098039216, green: 0.5098039216, blue: 0.5098039216, alpha: 1)
-            ]
-        )
-
-        // Highlight text
-        let highlightText = "Terms of Service & Privacy Policy"
-        let range = (fullText as NSString).range(of: highlightText)
-
-        attributedText.addAttributes([
-            .foregroundColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1),
-            .underlineStyle: NSUnderlineStyle.single.rawValue
-        ], range: range)
-
-        byContinueLabel.attributedText = attributedText
     }
     
     // MARK: - Action Method
@@ -108,6 +88,16 @@ class LoginVC: UIViewController {
         }
         
         viewModel.callLoginAPI(phone: phone, countryCode: "+971")
+    }
+    @IBAction func tappedTC(_ sender: Any) {
+        let vc = LegalInfoVC()
+        vc.screen = .termsAndConditions
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func tappedPP(_ sender: Any) {
+        let vc = LegalInfoVC()
+        vc.screen = .privacyPolicy
+        navigationController?.pushViewController(vc, animated: true)
     }
     
      

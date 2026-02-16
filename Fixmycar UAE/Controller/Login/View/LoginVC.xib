@@ -68,10 +68,10 @@
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="JrW-hQ-iTc">
-                    <rect key="frame" x="20" y="366" width="373" height="250"/>
+                    <rect key="frame" x="20" y="366" width="373" height="241"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xFY-FL-XTS">
-                    <rect key="frame" x="20" y="624" width="353" height="133"/>
+                    <rect key="frame" x="20" y="615" width="353" height="133"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gqg-Hz-hz7">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="71"/>
@@ -186,34 +186,95 @@
                         </button>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing, you agree to our Terms of Service &amp; Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBJ-GN-4Rh" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                    <rect key="frame" x="20" y="787" width="353" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="35" id="yeM-fQ-c0y"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="by_continueing_agree"/>
-                    </userDefinedRuntimeAttributes>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3pt-LP-0UZ">
+                    <rect key="frame" x="20" y="778" width="353" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing, you agree to our" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBJ-GN-4Rh" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                            <rect key="frame" x="77.666666666666686" y="0.0" width="198" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="TXy-Ph-RxB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                            <color key="textColor" name="Gray"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="by_continueing_agree"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lci-6C-flK">
+                            <rect key="frame" x="46" y="22" width="261" height="22"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZH-au-ulc">
+                                    <rect key="frame" x="0.0" y="0.0" width="135" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="wSG-sV-yPc"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Terms &amp; Conditions">
+                                                <attributes>
+                                                    <color key="NSColor" name="primary_red"/>
+                                                    <font key="NSFont" metaFont="system" size="15"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="tappedTC:" destination="-1" eventType="touchUpInside" id="HcY-PD-z1T"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVr-4k-aIO" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                    <rect key="frame" x="137" y="0.0" width="24" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="wop-W3-DN8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                    <color key="textColor" name="Gray"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7Q-AT-7pB">
+                                    <rect key="frame" x="163" y="0.0" width="98" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="a4d-Rc-ZRV"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="Privacy policy.">
+                                                <attributes>
+                                                    <color key="NSColor" name="primary_red"/>
+                                                    <font key="NSFont" metaFont="system" size="15"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="tappedPP:" destination="-1" eventType="touchUpInside" id="Akj-nX-7Rw"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="snu-CU-xaW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Qo-K4-okB"/>
-                <constraint firstItem="vBJ-GN-4Rh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="2zx-Op-cQO"/>
-                <constraint firstItem="vBJ-GN-4Rh" firstAttribute="top" secondItem="xFY-FL-XTS" secondAttribute="bottom" constant="30" id="6EG-dq-fyK"/>
+                <constraint firstAttribute="bottom" secondItem="3pt-LP-0UZ" secondAttribute="bottom" constant="30" id="2sU-HO-jmL"/>
+                <constraint firstAttribute="trailing" secondItem="3pt-LP-0UZ" secondAttribute="trailing" constant="20" id="3gF-58-kkc"/>
                 <constraint firstItem="JrW-hQ-iTc" firstAttribute="top" secondItem="285-yG-yd6" secondAttribute="bottom" constant="30" id="8gC-RG-aca"/>
                 <constraint firstItem="xFY-FL-XTS" firstAttribute="top" secondItem="JrW-hQ-iTc" secondAttribute="bottom" constant="8" id="9md-9C-y5f"/>
                 <constraint firstItem="285-yG-yd6" firstAttribute="top" secondItem="snu-CU-xaW" secondAttribute="bottom" constant="30" id="DFH-vo-QgG"/>
-                <constraint firstAttribute="bottom" secondItem="vBJ-GN-4Rh" secondAttribute="bottom" constant="30" id="RBc-wW-ICf"/>
+                <constraint firstItem="3pt-LP-0UZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="HHL-gZ-Vit"/>
                 <constraint firstItem="xFY-FL-XTS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UB3-MS-HAq"/>
                 <constraint firstItem="285-yG-yd6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YlF-28-uKr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JrW-hQ-iTc" secondAttribute="trailing" id="eho-pg-EgR"/>
-                <constraint firstAttribute="trailing" secondItem="vBJ-GN-4Rh" secondAttribute="trailing" constant="20" id="jQR-XI-n1v"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="285-yG-yd6" secondAttribute="trailing" constant="20" id="l0L-kk-9oK"/>
+                <constraint firstItem="3pt-LP-0UZ" firstAttribute="top" secondItem="xFY-FL-XTS" secondAttribute="bottom" constant="30" id="t1I-nL-wed"/>
                 <constraint firstItem="snu-CU-xaW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="u0d-qW-D3W"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xFY-FL-XTS" secondAttribute="trailing" constant="20" id="uTP-HB-UjQ"/>
                 <constraint firstItem="JrW-hQ-iTc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="xTQ-1r-4Gz"/>
@@ -231,6 +292,9 @@
         </namedColor>
         <namedColor name="gray_base">
             <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary_red">
+            <color red="0.81960784313725488" green="0.0" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primery_black">
             <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

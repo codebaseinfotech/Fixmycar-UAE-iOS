@@ -45,6 +45,14 @@ class FCUtilites {
         return userDefaults.string(forKey: "role_name") ?? ""
     }
     
+    class func saveOneSignleToken(_ token: String) {
+        userDefaults.set(token, forKey: "onesignle_token")
+    }
+    
+    class func getOneSignleToken() -> String {
+        userDefaults.string(forKey: "onesignle_token") ?? ""
+    }
+    
     // MARK: - getdevice
     class func deviceType() -> String {
         return "iOS"

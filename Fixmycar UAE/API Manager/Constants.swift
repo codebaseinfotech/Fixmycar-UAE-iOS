@@ -8,13 +8,14 @@
 import Foundation
 
 let google_place_key = "AIzaSyD4Fl5fv1u4g-96GrYYGCJmqCtTx6fs_CI"
+var ONE_SINGNAL_ID = "7c0b8947-9a28-4b72-ad45-87403b4676f2"
 
 enum AppEnviroment {
     case live
     case dev
 }
 
-let current: AppEnviroment = .live
+let current: AppEnviroment = .dev
 
 // ************************* LIVE ***********************
 let BASE_URL = current == .live ? "https://admin.torettorecovery.ae/api/" : "https://admin-dev.torettorecovery.ae/api/"

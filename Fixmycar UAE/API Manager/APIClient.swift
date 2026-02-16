@@ -80,7 +80,7 @@ class APIClient: NSObject {
             "DeviceID": FCUtilites.deviceID(),
             "Latitude": "\(AppDelegate.appDelegate.currentLatitude)",
             "Longitude": "\(AppDelegate.appDelegate.currentLongitude)",
-            "Device-Token": ""
+            "Device-Token": FCUtilites.getOneSignleToken()
         ]
         
         if needUserToken {
@@ -155,7 +155,7 @@ class APIClient: NSObject {
             "DeviceID": deviceID,
             "Latitude": latitude,
             "Longitude": longitude,
-            "Device-Token": ""
+            "Device-Token": FCUtilites.getOneSignleToken()
         ]
         
         if needUserToken {

@@ -13,7 +13,7 @@
 "mobile_number" = "Mobile number";
 "enter_mobile_numbre" = "Enter mobile number";
 "continue" = "Continue";
-"by_continueing_agree" = "By continuing, you agree to our Terms of Service & Privacy Policy";
+"by_continueing_agree" = "By continuing, you agree to our";
 
 //MARK: - verify OTP
 "verify_your_account" = "Verify Your Account";

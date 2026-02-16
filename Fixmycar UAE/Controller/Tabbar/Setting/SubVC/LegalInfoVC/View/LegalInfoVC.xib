@@ -58,7 +58,7 @@
                         <constraint firstItem="yMV-Fq-sfu" firstAttribute="centerY" secondItem="QiH-cO-SC7" secondAttribute="centerY" id="fKT-te-gUQ"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-PW-XB6" customClass="AppTextView" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-PW-XB6" customClass="AppTextView" customModule="Fixmycar_UAE" customModuleProvider="target">
                     <rect key="frame" x="20" y="168" width="353" height="616"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" systemColor="labelColor"/>
