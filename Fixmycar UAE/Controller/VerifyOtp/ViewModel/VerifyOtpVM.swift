@@ -47,10 +47,10 @@ class VerifyOtpVM {
                     
                     successVerify?()
                 } else {
-                    failureVerify?(errorMessage ?? "")
+                    failureVerify?(response?.message ?? "")
                 }
             } else {
-                failureVerify?(errorMessage ?? "")
+                failureVerify?(response?.message ?? "")
             }
         }
     }

@@ -11,7 +11,11 @@ class LoginVC: UIViewController {
 
 
     @IBOutlet weak var welcomeTitleLabel: UILabel!
-    @IBOutlet weak var mobileNumberTextField: UITextField!
+    @IBOutlet weak var mobileNumberTextField: UITextField! {
+        didSet {
+            mobileNumberTextField.maxLength = 10
+        }
+    }
     @IBOutlet weak var byContinueLabel: UILabel!
     
     var viewModel = LoginVM()
@@ -98,6 +102,11 @@ class LoginVC: UIViewController {
             return
         }
         
+        if phone.count < 10 {
+            setUpMakeToast(msg: "Please enter valid mobile number")
+            return
+        }
+        
         viewModel.callLoginAPI(phone: phone, countryCode: "+971")
     }
     
@@ -136,9 +145,15 @@ extension LoginVC: didTapOnVerify {
             DispatchQueue.main.async {
                 self?.setUpMakeToast(msg: message)
 
-                let vc = CreateAccountVC()
-                vc.phoneNumber = phoneNumber
-                self?.navigationController?.pushViewController(vc, animated: true)
+                if message == "Invalid OTP." {
+                    DispatchQueue.main.async {
+                        self?.presentOtp()
+                    }
+                } else {
+                    let vc = CreateAccountVC()
+                    vc.phoneNumber = phoneNumber
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
     }

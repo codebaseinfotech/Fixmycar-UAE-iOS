@@ -17,6 +17,12 @@ class ChatVC: UIViewController {
             tblViewList.dataSource = self
         }
     }
+    @IBOutlet weak var viewNoChatFound: UIView! {
+        didSet {
+            tblViewList.isHidden = true
+            viewNoChatFound.isHidden = false
+        }
+    }
     
     // MARK: - view Cycle
     override func viewDidLoad() {

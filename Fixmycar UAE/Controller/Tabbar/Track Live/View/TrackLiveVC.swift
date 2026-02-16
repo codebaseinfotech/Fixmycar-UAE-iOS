@@ -25,6 +25,11 @@ class TrackLiveVC: UIViewController {
     @IBOutlet weak var lblCarName: AppLabel!
     @IBOutlet weak var lblRate: AppLabel!
     
+    @IBOutlet weak var viewNoTrackFound: UIView! {
+        didSet {
+            viewNoTrackFound.isHidden = true
+        }
+    }
     
     private var mapView: GMSMapView!
     private let locationManager = CLLocationManager()

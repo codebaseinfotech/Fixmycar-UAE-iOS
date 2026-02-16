@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "21ECD309-CE5B-4B2A-AD94-FE2DBADAFF22"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/Controller/VerifyOtp/ViewModel/VerifyOtpVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "callVerifyOtpAPI(phone:otp:countryCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "53B4BE20-73D6-4EE8-922D-4CC8865B8C5E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/Controller/VerifyOtp/ViewModel/VerifyOtpVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "callVerifyOtpAPI(phone:otp:countryCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "392C8926-C59D-4E8A-8E0D-83C429645BF1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/Controller/VerifyOtp/ViewModel/VerifyOtpVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "callVerifyOtpAPI(phone:otp:countryCode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DA58B8B8-0529-4389-BE02-08E2ABB17759"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -78,8 +30,8 @@
             filePath = "Fixmycar UAE/Controller/Tabbar/Home/View/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +46,8 @@
             filePath = "Fixmycar UAE/Controller/Tabbar/Home/View/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -151,80 +103,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA8F46D0-49B7-4E1B-A79A-DD820B7F4371"
+            uuid = "8C8A9DE5-0A07-4029-BAE5-5994F6247D10"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/APIClient.swift"
+            filePath = "Fixmycar UAE/Controller/Login/View/LoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "request(method:url:parameters:pathComponent:needUserToken:responseType:parameterEncoding:completionHandler:)"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "onCallTappedVerify(enteredOtp:phoneNumber:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DF6135D3-59B6-423D-BB42-A65F428ABFC9"
+            uuid = "F6E5EE1E-A5A7-4407-899B-85334FB0617E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/APIClient.swift"
+            filePath = "Fixmycar UAE/Controller/Login/View/LoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "request(method:url:parameters:pathComponent:needUserToken:responseType:parameterEncoding:completionHandler:)"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "onCallTappedVerify(enteredOtp:phoneNumber:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7985BABE-232E-4185-85BE-A4C6168B7129"
+            uuid = "65DEFC31-BF1E-4934-8EBA-F898867853BD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/APIClient.swift"
+            filePath = "Fixmycar UAE/Controller/Login/View/LoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "request(method:url:parameters:pathComponent:needUserToken:responseType:parameterEncoding:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E3913DBB-4038-4315-99C5-92DC069F95DF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/APIClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "request(method:url:parameters:pathComponent:needUserToken:responseType:parameterEncoding:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "175A692E-B41A-45E3-BF27-9652E2306F0A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/APIClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "request(method:url:parameters:pathComponent:needUserToken:responseType:parameterEncoding:completionHandler:)"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "onCallTappedVerify(enteredOtp:phoneNumber:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

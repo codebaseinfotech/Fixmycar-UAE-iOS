@@ -31,6 +31,7 @@ class HomeVC: UIViewController {
             scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         }
     }
+    @IBOutlet weak var svNoBookingFound: UIStackView!
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
@@ -49,9 +50,13 @@ class HomeVC: UIViewController {
         setupLocation()
                
         homeVM.successHomeData = { [weak self] in
+            self?.svNoBookingFound.isHidden = self?.homeVM.recentServiceList.count == 0 ? false : true
+            self?.tblViewRecentBooking.isHidden = self?.homeVM.recentServiceList.count == 0 ? true : false
             self?.tblViewRecentBooking.reloadData()
         }
         homeVM.failureHomeData = { [weak self] msg in
+            self?.svNoBookingFound.isHidden = self?.homeVM.recentServiceList.count == 0 ? false : true
+            self?.tblViewRecentBooking.isHidden = self?.homeVM.recentServiceList.count == 0 ? true : false
             self?.setUpMakeToast(msg: msg)
         }
     }

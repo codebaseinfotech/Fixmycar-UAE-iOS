@@ -20,6 +20,7 @@ class HistoryVC: UIViewController {
             tblViewBookingList.showsVerticalScrollIndicator = false
         }
     }
+    @IBOutlet weak var viewNoHisotryFound: UIView!
     
     var historyBookingVM = HistoryBookingVM()
     
@@ -34,10 +35,27 @@ class HistoryVC: UIViewController {
         historyBookingVM.getHistoryBookingData()
         
         historyBookingVM.successHistoryData = {
+            
+            if self.historyBookingVM.historyBookingList.count == 0 {
+                self.tblViewBookingList.isHidden = true
+                self.viewNoHisotryFound.isHidden = false
+            } else {
+                self.tblViewBookingList.isHidden = false
+                self.viewNoHisotryFound.isHidden = true
+            }
+            
             self.tblViewBookingList.reloadData()
         }
         historyBookingVM.failureHistoryData = { msg in
             self.setUpMakeToast(msg: msg)
+            
+            if self.historyBookingVM.historyBookingList.count == 0 {
+                self.tblViewBookingList.isHidden = true
+                self.viewNoHisotryFound.isHidden = false
+            } else {
+                self.tblViewBookingList.isHidden = false
+                self.viewNoHisotryFound.isHidden = true
+            }
         }
     }
 
