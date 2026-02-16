@@ -16,6 +16,8 @@ class LogoutPopUp: UIViewController {
     
     var isOpenLogout: Bool = true
     
+    var viewModel = LogoutVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,13 +36,26 @@ class LogoutPopUp: UIViewController {
     }
 
     @IBAction func tappedCancel(_ sender: Any) {
+        self.dismiss(animated: false)
     }
     
     @IBAction func tappedLogout(_ sender: Any) {
         
         if isOpenLogout {
-            FCUtilites.saveIsGetCurrentUser(false)
-            AppDelegate.appDelegate.setUpLogin()
+            viewModel.logoutUser()
+            viewModel.successLogout = {
+                self.setUpMakeToast(msg: "Logout Successfully!")
+                AppDelegate.appDelegate.setUpLogin()
+            }
+        } else {
+            viewModel.deleteUser()
+            viewModel.successDeleteAccount = {
+                self.setUpMakeToast(msg: "Logout Successfully!")
+                AppDelegate.appDelegate.setUpLogin()
+            }
+            viewModel.failureDeleteAccount = { msg in
+                self.setUpMakeToast(msg: msg)
+            }
         }
     }
     

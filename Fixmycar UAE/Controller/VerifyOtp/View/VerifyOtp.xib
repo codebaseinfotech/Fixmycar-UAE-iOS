@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyOtp" customModule="Fixmycar_UAE" customModuleProvider="target">
             <connections>
+                <outlet property="btnResend" destination="hUW-Dg-YFq" id="gKF-bq-rGs"/>
                 <outlet property="lblPhoneNumber" destination="QTa-KQ-Z3X" id="bIj-xq-OfW"/>
                 <outlet property="otpFieldView" destination="6tE-LG-4ci" id="RnM-pc-uez"/>
                 <outlet property="timeLabel" destination="dOJ-GC-aia" id="uep-wF-aOS"/>
@@ -49,10 +50,10 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-pK-Woj">
-                            <rect key="frame" x="29" y="50" width="335" height="80"/>
+                            <rect key="frame" x="29" y="49.999999999999993" width="335" height="75.333333333333314"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Your Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W9-Um-pSK" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="28"/>
                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
                                     <color key="textColor" name="primery_black"/>
                                     <nil key="highlightedColor"/>
@@ -61,10 +62,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kgg-bY-6et">
-                                    <rect key="frame" x="0.0" y="38" width="335" height="42"/>
+                                    <rect key="frame" x="0.0" y="36" width="335" height="39.333333333333343"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wo have sent a 6 digit code to the number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-PS-NVi" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="18.666666666666668"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
                                             <color key="textColor" name="Gray"/>
                                             <nil key="highlightedColor"/>
@@ -73,7 +74,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+971 5X XXX 5555" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTa-KQ-Z3X">
-                                            <rect key="frame" x="0.0" y="22" width="335" height="20"/>
+                                            <rect key="frame" x="0.0" y="20.666666666666629" width="335" height="18.666666666666671"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
                                             <color key="textColor" name="Gray"/>
                                             <nil key="highlightedColor"/>
@@ -83,23 +84,23 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tE-LG-4ci" customClass="OTPFieldView" customModule="Fixmycar_UAE" customModuleProvider="target">
-                            <rect key="frame" x="48" y="170" width="297" height="42"/>
+                            <rect key="frame" x="48" y="165.33333333333337" width="297" height="42"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="42" id="sgO-9S-KDu"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:59" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOJ-GC-aia">
-                            <rect key="frame" x="176.33333333333334" y="232" width="40.333333333333343" height="17.666666666666657"/>
+                            <rect key="frame" x="179" y="227.33333333333337" width="35.333333333333343" height="16.333333333333343"/>
                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                             <color key="textColor" name="primery_black"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="x7h-UB-EP7">
-                            <rect key="frame" x="74.666666666666686" y="289.66666666666663" width="244" height="31"/>
+                            <rect key="frame" x="75" y="283.66666666666663" width="243" height="31"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t get the code?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edB-4R-sIo" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="147" height="31"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="146" height="31"/>
                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
                                     <color key="textColor" name="Gray"/>
                                     <nil key="highlightedColor"/>
@@ -108,7 +109,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUW-Dg-YFq" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                    <rect key="frame" x="149" y="0.0" width="95" height="31"/>
+                                    <rect key="frame" x="148" y="0.0" width="95" height="31"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal">
                                         <attributedString key="attributedTitle">
@@ -131,7 +132,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gjX-aR-ohe">
-                            <rect key="frame" x="20" y="340.66666666666663" width="353" height="42"/>
+                            <rect key="frame" x="20" y="334.66666666666663" width="353" height="42"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-ZJ-400" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="42"/>

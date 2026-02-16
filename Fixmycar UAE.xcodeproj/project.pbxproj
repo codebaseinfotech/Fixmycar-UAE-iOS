@@ -20,6 +20,8 @@
 		0A26BF882F42F58F0047AC09 /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF872F42F58F0047AC09 /* FeedbackResponse.swift */; };
 		0A26BF8C2F42F6C40047AC09 /* FAQResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF8B2F42F6C40047AC09 /* FAQResponse.swift */; };
 		0A26BF8E2F42F6D20047AC09 /* FAQsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF8D2F42F6D20047AC09 /* FAQsVM.swift */; };
+		0A26BF922F42F86D0047AC09 /* LogoutVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF912F42F86D0047AC09 /* LogoutVM.swift */; };
+		0A26BF942F42F89F0047AC09 /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF932F42F89F0047AC09 /* LogoutResponse.swift */; };
 		0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A61F6152F3C82DB00A8AC1E /* Kingfisher */; };
 		0A61F6182F3C875C00A8AC1E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */; };
 		0A61F61B2F3C897400A8AC1E /* EditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */; };
@@ -175,6 +177,8 @@
 		0A26BF872F42F58F0047AC09 /* FeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
 		0A26BF8B2F42F6C40047AC09 /* FAQResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQResponse.swift; sourceTree = "<group>"; };
 		0A26BF8D2F42F6D20047AC09 /* FAQsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsVM.swift; sourceTree = "<group>"; };
+		0A26BF912F42F86D0047AC09 /* LogoutVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutVM.swift; sourceTree = "<group>"; };
+		0A26BF932F42F89F0047AC09 /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
 		0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVM.swift; sourceTree = "<group>"; };
 		0A61F61D2F3C917200A8AC1E /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -447,6 +451,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0A26BF8F2F42F85D0047AC09 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A26BF912F42F86D0047AC09 /* LogoutVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A26BF902F42F8630047AC09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A26BF932F42F89F0047AC09 /* LogoutResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0A61F6192F3C896800A8AC1E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +599,8 @@
 		884481C32F0FC80300A9D076 /* Logout */ = {
 			isa = PBXGroup;
 			children = (
+				0A26BF902F42F8630047AC09 /* Model */,
+				0A26BF8F2F42F85D0047AC09 /* ViewModel */,
 				884481C42F0FC80700A9D076 /* View */,
 			);
 			path = Logout;
@@ -1699,6 +1721,7 @@
 				88AD25E92F2A0D42002DFA44 /* OTPResponseModel.swift in Sources */,
 				0A26BF822F42EEF80047AC09 /* SupportDetailsResponse.swift in Sources */,
 				0A26BF882F42F58F0047AC09 /* FeedbackResponse.swift in Sources */,
+				0A26BF942F42F89F0047AC09 /* LogoutResponse.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
 				0A61F62F2F3CA8D700A8AC1E /* BookingDetailsVM.swift in Sources */,
@@ -1706,6 +1729,7 @@
 				BC29D6C12F06A6CD00DD3EB2 /* FTUtils+UIGestureRecognizer.m in Sources */,
 				BC29D6C22F06A6CD00DD3EB2 /* FTAnimationManager.m in Sources */,
 				882B88702F0FAE7B008EFA5A /* HelpAndFAQsVC.swift in Sources */,
+				0A26BF922F42F86D0047AC09 /* LogoutVM.swift in Sources */,
 				0A61F6262F3CA36100A8AC1E /* BookingHistoryResponse.swift in Sources */,
 				8809203C2F0F9AE800B55769 /* EditProfileVC.swift in Sources */,
 				889AD7822F232AD600F2271A /* NotifivationTblViewCell.swift in Sources */,

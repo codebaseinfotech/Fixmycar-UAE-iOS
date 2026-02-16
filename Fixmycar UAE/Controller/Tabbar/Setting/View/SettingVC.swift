@@ -134,6 +134,15 @@ class SettingVC: UIViewController {
         vc.screen = .aboutUs
         navigationController?.pushViewController(vc, animated: true)
     }
+    @IBAction func tappedRateApp(_ sender: Any) {
+        let appID = "6757262756"
+        let urlString = "https://apps.apple.com/app/id\(appID)?action=write-review"
+        
+        if let url = URL(string: urlString),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
     
     
     

@@ -35,4 +35,6 @@ enum APIEndPoint: String {
     case faqs = "v1/common/faqs"
     case support = "v1/driver/support"
     case feedback = "v1/common/feedback"
+    case logoutUser = "v1/driver/logout"
+    case deleteAccount = "v1/delete-account"
 }

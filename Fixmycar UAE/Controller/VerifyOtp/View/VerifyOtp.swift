@@ -24,19 +24,40 @@ class VerifyOtp: UIViewController {
     @IBOutlet weak var otpFieldView: OTPFieldView!
     
     @IBOutlet weak var lblPhoneNumber: UILabel!
+    @IBOutlet weak var btnResend: AppButton! {
+        didSet {
+            let resendText = "Resend code"
+
+            let attributedString = NSMutableAttributedString(string: resendText)
+
+            attributedString.addAttributes([
+                .underlineStyle: NSUnderlineStyle.single.rawValue,
+                .foregroundColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1),
+                .font: UIFont.AppFont.medium(14)
+            ], range: NSRange(location: 0, length: resendText.count))
+
+            btnResend.setAttributedTitle(attributedString, for: .normal)
+        }
+    }
     
     var delegateVerify: didTapOnVerify?
     
     var viewModel = VerifyOtpVM()
+    var loginVM = LoginVM()
     
     var phoneNumber: String = ""
     var otpDebug: String?
     
     var enteredOtp: String = ""
     
+    var timer: Timer?
+    var totalSeconds = 59
+    
+    // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupOtpView()
+        startTimer()
         
         viewMain.isHidden = false
         viewMain.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
@@ -75,7 +96,12 @@ class VerifyOtp: UIViewController {
         self.otpFieldView.initializeUI()
     }
     
+    // MARK: - Action Method
     @IBAction func tappedResendCode(_ sender: Any) {
+        loginVM.callLoginAPI(phone: phoneNumber, countryCode: "+971")
+        loginVM.successLogin = {
+            self.startTimer()
+        }
     }
     @IBAction func tappedVerifu(_ sender: Any) {
         
@@ -105,16 +131,47 @@ class VerifyOtp: UIViewController {
                     self.dismiss(animated: false)
                 }
                 
-             },
+            },
             completion: { _ in
                 completion?()
             }
         )
     }
     
+    // MARK: - Show Timer
+    func startTimer() {
+        // Hide button while counting
+        btnResend.isEnabled = false
+        timeLabel.isHidden = false
+        
+        totalSeconds = 59
+        timeLabel.text = "00:\(totalSeconds)"
+        
+        timer?.invalidate()
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                     target: self,
+                                     selector: #selector(updateTimer),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        if totalSeconds > 0 {
+            totalSeconds -= 1
+            timeLabel.text = "00:\(totalSeconds)"
+        } else {
+            timer?.invalidate()
+            timer = nil
+            // Show button again
+            timeLabel.isHidden = true
+            btnResend.isEnabled = true
+        }
+    }
+    
 }
 
- 
+
 extension VerifyOtp: OTPFieldViewDelegate {
     func hasEnteredAllOTP(hasEnteredAll hasEntered: Bool) -> Bool {
         print("Has entered all OTP? \(hasEntered)")
