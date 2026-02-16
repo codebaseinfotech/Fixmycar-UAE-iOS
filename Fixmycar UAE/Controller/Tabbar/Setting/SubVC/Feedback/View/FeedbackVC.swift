@@ -13,6 +13,31 @@ class FeedbackVC: UIViewController {
     @IBOutlet weak var txtMobile: UITextField!
     @IBOutlet weak var textViewMessage: UITextView!
     
+    @IBOutlet weak var lblFullName: UILabel! {
+        didSet {
+            let fullText = "Full name *".localized
+
+            lblFullName.attributedText = fullText.attributedText(
+                defaultFont: UIFont.AppFont.bold(14),
+                defaultColor: #colorLiteral(red: 0.003921568627, green: 0.003921568627, blue: 0.003921568627, alpha: 1),
+                highlightText: "*",
+                highlightColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
+            )
+        }
+    }
+    @IBOutlet weak var lblEmail: UILabel! {
+        didSet {
+            let fullText = "Mobile or Email *".localized
+
+            lblEmail.attributedText = fullText.attributedText(
+                defaultFont: UIFont.AppFont.bold(14),
+                defaultColor: #colorLiteral(red: 0.003921568627, green: 0.003921568627, blue: 0.003921568627, alpha: 1),
+                highlightText: "*",
+                highlightColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
+            )
+        }
+    }
+    
     let viewModel = FeedbackVM()
     let messagePlaceholder = "Enter your message / complain"
 
