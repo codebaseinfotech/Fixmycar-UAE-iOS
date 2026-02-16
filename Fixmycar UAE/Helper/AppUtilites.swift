@@ -17,6 +17,14 @@ class AppUtilites: NSObject {
         return Static.instance
     }
     
+    var version: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
+    }
+
+    var build: String {
+        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
+    }
+    
     class var deviceHasTopNotch: Bool {
         if #available(iOS 11.0,  *) {
             return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20

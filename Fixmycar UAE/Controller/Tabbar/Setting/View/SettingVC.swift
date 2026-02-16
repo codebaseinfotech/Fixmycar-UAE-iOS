@@ -19,9 +19,12 @@ class SettingVC: UIViewController {
     @IBOutlet weak var switchDriverAssigned: UISwitch!
     @IBOutlet weak var switchOffers: UISwitch!
     
+    @IBOutlet weak var lblVersion: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.lblVersion.text = "\(AppUtilites.sharedInstance.version) (\(AppUtilites.sharedInstance.build))"
 
         let scaleX: CGFloat = 36.0 / 49.0
         let scaleY: CGFloat = 20.0 / 31.0
@@ -29,6 +32,7 @@ class SettingVC: UIViewController {
         switchBookingUpdate.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
         switchDriverAssigned.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
         switchOffers.transform = CGAffineTransform(scaleX: scaleX, y: scaleY)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -114,6 +118,23 @@ class SettingVC: UIViewController {
         let vc = DeleteAccountVC()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func tappedTermsandCondition(_ sender: Any) {
+        let vc = LegalInfoVC()
+        vc.screen = .termsAndConditions
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func tappedPrivacyPolicy(_ sender: Any) {
+        let vc = LegalInfoVC()
+        vc.screen = .privacyPolicy
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func tappedAboutUs(_ sender: Any) {
+        let vc = LegalInfoVC()
+        vc.screen = .aboutUs
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     
     

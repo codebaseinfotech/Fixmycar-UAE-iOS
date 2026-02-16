@@ -29,4 +29,9 @@ enum APIEndPoint: String {
     case bookingList = "v1/customer/bookings"
     case calculatePrice = "v1/customer/price/calculate"
     case availableDrivers = "v1/customer/available-drivers"
+    case terms = "v1/common/legal/terms"
+    case privacy = "v1/common/legal/privacy"
+    case about = "v1/common/legal/about"
+    case faqs = "v1/common/faqs"
+    case support = "v1/driver/support"
 }
