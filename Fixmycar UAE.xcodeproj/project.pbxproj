@@ -31,6 +31,9 @@
 		0A61F6282F3CA3BC00A8AC1E /* HistoryBookingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6272F3CA3BC00A8AC1E /* HistoryBookingVM.swift */; };
 		0A61F62D2F3CA89900A8AC1E /* BookingDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F62C2F3CA89900A8AC1E /* BookingDetailsResponse.swift */; };
 		0A61F62F2F3CA8D700A8AC1E /* BookingDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F62E2F3CA8D700A8AC1E /* BookingDetailsVM.swift */; };
+		0A6D0D0F2F43381900F374AF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A6D0D0E2F43381900F374AF /* FirebaseAnalytics */; };
+		0A6D0D112F43381900F374AF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A6D0D102F43381900F374AF /* FirebaseCrashlytics */; };
+		0A6D0D142F433A2400F374AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A6D0D132F433A2400F374AF /* GoogleService-Info.plist */; };
 		0AB7AD422F3F2CBE003F9272 /* CalculatePriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7AD412F3F2CBD003F9272 /* CalculatePriceResponse.swift */; };
 		0AB7AD442F3F404E003F9272 /* AvailableDriversResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7AD432F3F404E003F9272 /* AvailableDriversResponse.swift */; };
 		880920352F0F82D400B55769 /* MyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880920342F0F82D400B55769 /* MyProfileVC.xib */; };
@@ -187,6 +190,7 @@
 		0A61F6272F3CA3BC00A8AC1E /* HistoryBookingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingVM.swift; sourceTree = "<group>"; };
 		0A61F62C2F3CA89900A8AC1E /* BookingDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsResponse.swift; sourceTree = "<group>"; };
 		0A61F62E2F3CA8D700A8AC1E /* BookingDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVM.swift; sourceTree = "<group>"; };
+		0A6D0D132F433A2400F374AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0AB7AD412F3F2CBD003F9272 /* CalculatePriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePriceResponse.swift; sourceTree = "<group>"; };
 		0AB7AD432F3F404E003F9272 /* AvailableDriversResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDriversResponse.swift; sourceTree = "<group>"; };
 		880920332F0F82D400B55769 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
@@ -334,9 +338,11 @@
 				88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */,
 				0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */,
 				BC929D2B2F27744D00A730A9 /* GooglePlacesSwift in Frameworks */,
+				0A6D0D112F43381900F374AF /* FirebaseCrashlytics in Frameworks */,
 				88FDACD32F23459900983C39 /* Alamofire in Frameworks */,
 				BC929D292F27744D00A730A9 /* GooglePlaces in Frameworks */,
 				BCA305D72F275DCC0036E322 /* UITextView-Placeholder in Frameworks */,
+				0A6D0D0F2F43381900F374AF /* FirebaseAnalytics in Frameworks */,
 				88FDACD62F2345B600983C39 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1238,6 +1244,7 @@
 				BC7121AB2F067F940041E2F7 /* Helper */,
 				BC71218D2F067F800041E2F7 /* Assets.xcassets */,
 				BC71218E2F067F800041E2F7 /* Info.plist */,
+				0A6D0D132F433A2400F374AF /* GoogleService-Info.plist */,
 				BC7121902F067F800041E2F7 /* LaunchScreen.storyboard */,
 				BC7121922F067F800041E2F7 /* Main.storyboard */,
 				BC7121932F067F800041E2F7 /* ViewController.swift */,
@@ -1508,6 +1515,7 @@
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
+				0A6D0D122F43384A00F374AF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1524,6 +1532,8 @@
 				BC929D2A2F27744D00A730A9 /* GooglePlacesSwift */,
 				88AD25EB2F2A0FC5002DFA44 /* Toast */,
 				0A61F6152F3C82DB00A8AC1E /* Kingfisher */,
+				0A6D0D0E2F43381900F374AF /* FirebaseAnalytics */,
+				0A6D0D102F43381900F374AF /* FirebaseCrashlytics */,
 			);
 			productName = "Fixmycar UAE";
 			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
@@ -1563,6 +1573,7 @@
 				BC929D272F27744D00A730A9 /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
 				88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				0A61F6142F3C82DB00A8AC1E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0A6D0D0D2F43381900F374AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BC67730B2F067F4500B15653 /* Products */;
@@ -1590,6 +1601,7 @@
 				BC4E17832F06982200EDC9AE /* Satoshi-BoldItalic.otf in Resources */,
 				BC929D312F27755F00A730A9 /* PopularLocationTVCell.xib in Resources */,
 				BC4E17842F06982200EDC9AE /* Satoshi-Medium.otf in Resources */,
+				0A6D0D142F433A2400F374AF /* GoogleService-Info.plist in Resources */,
 				0A26BF732F42EACF0047AC09 /* LegalInfoVC.xib in Resources */,
 				882B887B2F0FB454008EFA5A /* FAQsTblViewCell.xib in Resources */,
 				BC929D372F27866A00A730A9 /* BookingFareAmountVC.xib in Resources */,
@@ -1638,6 +1650,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A6D0D122F43384A00F374AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
 		6B114AA771644755ABC62C0C /* Compile Image Assets */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -1803,6 +1834,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Fixmycar UAE/Fixmycar UAE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = N52PUGPAB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fixmycar UAE/Info.plist";
@@ -1844,6 +1876,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Fixmycar UAE/Fixmycar UAE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = N52PUGPAB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fixmycar UAE/Info.plist";
@@ -2028,6 +2061,14 @@
 				minimumVersion = 8.6.2;
 			};
 		};
+		0A6D0D0D2F43381900F374AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.9.0;
+			};
+		};
 		88AD25EA2F2A0FC5002DFA44 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -2091,6 +2132,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A61F6142F3C82DB00A8AC1E /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		0A6D0D0E2F43381900F374AF /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A6D0D0D2F43381900F374AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		0A6D0D102F43381900F374AF /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A6D0D0D2F43381900F374AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		88AD25EB2F2A0FC5002DFA44 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
