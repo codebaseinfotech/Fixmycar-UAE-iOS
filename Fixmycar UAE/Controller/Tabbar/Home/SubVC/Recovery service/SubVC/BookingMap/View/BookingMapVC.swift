@@ -52,9 +52,10 @@ class BookingMapVC: UIViewController {
     
     private let locationManager = CLLocationManager()
     private let placesClient = GMSPlacesClient.shared()
-    
+
     private var predictions: [GMSAutocompletePrediction] = []
     private var selectedCoordinate: CLLocationCoordinate2D?
+    private var sessionToken: GMSAutocompleteSessionToken?
     
     var isDropAddress: Bool = false
     var delegateLocation: onTappedConfirmLocation?
@@ -79,7 +80,7 @@ class BookingMapVC: UIViewController {
         tblViewAddressList.reloadData()
         viewMainPopular.isHidden = true
         btnClose.isHidden = true
-
+        sessionToken = nil
     }
     @IBAction func tappedConfirm(_ sender: Any) {
         guard let coordinate = selectedCoordinate else { return }
@@ -96,52 +97,72 @@ class BookingMapVC: UIViewController {
 
 // MARK: - TV Delegate & DataSource
 extension BookingMapVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return predictions.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PopularLocationTVCell.identifier) as! PopularLocationTVCell
-        
+
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: PopularLocationTVCell.identifier,
+            for: indexPath
+        ) as! PopularLocationTVCell
+
         let item = predictions[indexPath.row]
-        cell.lblNam.text = item.attributedPrimaryText.string
-        cell.lblAddress.text = item.attributedSecondaryText?.string
-        
+
+        // ✅ Full address
+        cell.lblNam.text = item.attributedFullText.string
+        cell.lblAddress.text = ""
+
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+
         let prediction = predictions[indexPath.row]
-        
+
         placesClient.fetchPlace(
             fromPlaceID: prediction.placeID,
             placeFields: [.coordinate, .formattedAddress],
-            sessionToken: nil
+            sessionToken: sessionToken
         ) { place, error in
-            
+
             guard let place = place else { return }
-            
+
             self.selectedCoordinate = place.coordinate
             self.txtLocation.text = place.formattedAddress
             self.btnClose.isHidden = false
-            
+            self.sessionToken = nil
+
+            // Update Map
             self.mapView.clear()
+
             let marker = GMSMarker(position: place.coordinate)
             marker.map = self.mapView
-            
-            self.mapView.animate(
-                toLocation: place.coordinate
+
+            let camera = GMSCameraPosition.camera(
+                withLatitude: place.coordinate.latitude,
+                longitude: place.coordinate.longitude,
+                zoom: 16
             )
+
+            self.mapView.animate(to: camera)
+
+//            self.viewMainPopular.isHidden = true
         }
     }
-    
-    
 }
+
 
 // MARK: - setUp MapView
 extension BookingMapVC: CLLocationManagerDelegate {
 
     func setupMap() {
+
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
@@ -155,8 +176,8 @@ extension BookingMapVC: CLLocationManagerDelegate {
 
         guard let location = locations.first else { return }
 
-        let camera = GMSCameraPosition(
-            latitude: location.coordinate.latitude,
+        let camera = GMSCameraPosition.camera(
+            withLatitude: location.coordinate.latitude,
             longitude: location.coordinate.longitude,
             zoom: 15
         )
@@ -166,38 +187,50 @@ extension BookingMapVC: CLLocationManagerDelegate {
     }
 }
 
+
 // MARK: - textField Delegate
 extension BookingMapVC: UITextFieldDelegate {
 
     func setupSearchField() {
-        txtLocation.delegate = self
         txtLocation.addTarget(self,
                               action: #selector(textDidChange),
                               for: .editingChanged)
     }
 
     @objc func textDidChange() {
-        guard let text = txtLocation.text, !text.isEmpty else {
+
+        guard let text = txtLocation.text,
+              !text.isEmpty else {
+
             predictions.removeAll()
             tblViewAddressList.reloadData()
             viewMainPopular.isHidden = true
+            sessionToken = nil
             return
         }
 
+        if sessionToken == nil {
+            sessionToken = GMSAutocompleteSessionToken()
+        }
+
         let filter = GMSAutocompleteFilter()
-        filter.type = .address
+
+        filter.countries = ["IN"]   // ✅ UAE restriction
+        filter.type = .noFilter     // better suggestions
 
         placesClient.findAutocompletePredictions(
             fromQuery: text,
             filter: filter,
-            sessionToken: nil
+            sessionToken: sessionToken
         ) { results, error in
 
             guard let results = results else { return }
+
             self.predictions = results
             self.viewMainPopular.isHidden = false
             self.tblViewAddressList.reloadData()
         }
     }
 }
+
 

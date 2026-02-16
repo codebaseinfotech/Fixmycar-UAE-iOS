@@ -38,10 +38,10 @@
                     <rect key="frame" x="0.0" y="96" width="414" height="60"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Vqg-7M-jEM">
-                            <rect key="frame" x="20" y="0.0" width="76" height="56"/>
+                            <rect key="frame" x="20" y="0.0" width="102" height="56"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NIO-zm-A61">
-                                    <rect key="frame" x="0.0" y="0.0" width="76" height="20"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="102" height="20"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_location" translatesAutoresizingMaskIntoConstraints="NO" id="ymC-7B-LiB">
                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -56,8 +56,8 @@
                                             <color key="textColor" name="Gray"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-drop_down" translatesAutoresizingMaskIntoConstraints="NO" id="jTQ-Vo-dU3">
-                                            <rect key="frame" x="76" y="0.0" width="20" height="20"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-drop_down" translatesAutoresizingMaskIntoConstraints="NO" id="jTQ-Vo-dU3">
+                                            <rect key="frame" x="82" y="0.0" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="0DF-36-Ghr"/>
                                                 <constraint firstAttribute="width" constant="20" id="oqo-j7-Klb"/>

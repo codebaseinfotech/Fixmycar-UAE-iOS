@@ -9,14 +9,89 @@ import Foundation
 
 class BookingFareAmountVM {
     
-    var pickUpAddress: String = ""
-    var dropAddress: String = ""
-    
-    var pickUpLatitude: Double = 0.0
-    var pickUpLongitude: Double = 0.0
-    
-    var dropLatitude: Double = 0.0
-    var dropLongitude: Double = 0.0
-    
     var isScheduleBooking: Bool = false
+    
+    var successCalculatePrice: (() -> Void)?
+    var failureCalculatePrice: ((String) -> Void)?
+    
+    var successAvailableDrivers: (() -> Void)?
+    var failureAvailableDrivers: ((String) -> Void)?
+    
+    var priceData: PriceData?
+    var availableDrivers: [DriverData] = []
+    
+    func getCalculatePrice(km: Double) {
+        let latitude = AppDelegate.appDelegate.currentLatitude
+        let langitude = AppDelegate.appDelegate.currentLongitude
+        let km = km
+        
+        let params: [String: Any] = [
+            "latitude": latitude,
+            "longitude": langitude,
+            "km": km
+        ]
+        
+        APIClient.sharedInstance.request(
+            method: .post,
+            url: APIEndPoint.calculatePrice,
+            parameters: params,
+            responseType: PriceResponse.self) { [weak self] response, error, statusCode in
+                
+                guard let self = self else { return }
+                
+                // 🔴 If error
+                if let error = error {
+                    self.failureCalculatePrice?(error)
+                    return
+                }
+                
+                // 🔴 If response is nil
+                guard let response = response else {
+                    self.failureCalculatePrice?("Something went wrong")
+                    return
+                }
+                
+                // 🔴 If API status false
+                if response.status == false {
+                    self.failureCalculatePrice?(response.message ?? "Failed")
+                    return
+                }
+                
+                self.priceData = response.data
+                self.successCalculatePrice?()
+            }
+    }
+    
+    func getAvailableDrivers() {
+        APIClient.sharedInstance.request(
+            method: .get,
+            url: APIEndPoint.availableDrivers,
+            responseType: AvailableDriversResponse.self,
+            parameterEncoding: .url) { [weak self] response, error, statusCode in
+                
+                guard let self = self else { return }
+                
+                // 🔴 If error
+                if let error = error {
+                    self.failureAvailableDrivers?(error)
+                    return
+                }
+                
+                // 🔴 If response is nil
+                guard let response = response else {
+                    self.failureAvailableDrivers?("Something went wrong")
+                    return
+                }
+                
+                // 🔴 If API status false
+                if response.status == false {
+                    self.failureAvailableDrivers?(response.message ?? "Failed")
+                    return
+                }
+                
+                self.availableDrivers = response.data ?? []
+                self.successAvailableDrivers?()
+            }
+    }
+    
 }

@@ -15,13 +15,20 @@ class RecentBookingTVCell: UITableViewCell {
         didSet {
             viewRecentBooking.lblType.text = recentBooking?.serviceName
             viewRecentBooking.lblTime.text = recentBooking?.job_date
-            viewRecentBooking.lblPrice.text = "\(historyBooking?.currency ?? "") \(recentBooking?.amount ?? "")"
+            viewRecentBooking.lblPrice.text = "\(recentBooking?.currency ?? "") \(recentBooking?.amount ?? "")"
             viewRecentBooking.lblStatus.text = recentBooking?.status?.capitalized
             
+            viewRecentBooking.lblPickLocation.text = recentBooking?.pickupAddress ?? ""
+            viewRecentBooking.lblDropLocation.text = recentBooking?.dropAddress ?? ""
+
             if recentBooking?.status == "pending" {
                 viewRecentBooking.viewStatus.backgroundColor = #colorLiteral(red: 1, green: 0.9882352941, blue: 0.9490196078, alpha: 1)
                 viewRecentBooking.viewStatus.borderColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
                 viewRecentBooking.lblStatus.textColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
+            } else if recentBooking?.status == "cancelled" {
+                viewRecentBooking.viewStatus.backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.9294117647, blue: 0.9333333333, alpha: 1)
+                viewRecentBooking.viewStatus.borderColor = #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
+                viewRecentBooking.lblStatus.textColor = #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
             }
             
         }
@@ -41,6 +48,10 @@ class RecentBookingTVCell: UITableViewCell {
                 viewRecentBooking.viewStatus.backgroundColor = #colorLiteral(red: 1, green: 0.9882352941, blue: 0.9490196078, alpha: 1)
                 viewRecentBooking.viewStatus.borderColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
                 viewRecentBooking.lblStatus.textColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
+            } else if historyBooking?.status == "cancelled" {
+                viewRecentBooking.viewStatus.backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.9294117647, blue: 0.9333333333, alpha: 1)
+                viewRecentBooking.viewStatus.borderColor = #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
+                viewRecentBooking.lblStatus.textColor = #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
             }
             
         }

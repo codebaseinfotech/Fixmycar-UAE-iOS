@@ -61,6 +61,16 @@ class RecoveryServiceVC: UIViewController {
     
     var isScheduleBooking: Bool = true
     
+    var arrVehicleIssue = [
+        "Vehicle not starting / jammed",
+        "Accident recovery",
+        "Vehicle stuck (sand / mud)",
+        "Tyre issue",
+        "Mechanical problem",
+        "Other issue"
+    ]
+    var selectedVehicleIssueIndex: Int? = nil
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,26 +150,45 @@ class RecoveryServiceVC: UIViewController {
             vc.isConfirmSchedule = true
             
             vc.onTappedConfirmBooking = { [self] in
+                
+                CreateBooking.shared.pickup_address = txtPickupLocation.text ?? ""
+                CreateBooking.shared.dropoff_address = txtDropLocation.text ?? ""
+                CreateBooking.shared.pickup_lat = pickUpLatitude
+                CreateBooking.shared.pickup_lng = pickUpLangitude
+                CreateBooking.shared.dropoff_lat = dropLatitude
+                CreateBooking.shared.dropoff_lng = dropLangitude
+                
                 let vc = BookingFareAmountVC()
-                vc.viewModel.pickUpAddress = txtPickupLocation.text ?? ""
-                vc.viewModel.dropAddress = txtDropLocation.text ?? ""
-                vc.viewModel.pickUpLatitude = pickUpLatitude
-                vc.viewModel.pickUpLongitude = pickUpLangitude
-                vc.viewModel.dropLatitude = dropLatitude
-                vc.viewModel.dropLongitude = dropLangitude
                 vc.viewModel.isScheduleBooking = isScheduleBooking
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
             self.present(vc, animated: true)
         } else {
+            
+            guard let pickUpLocation = txtPickupLocation.text, !pickUpLocation.isEmpty else {
+                self.setUpMakeToast(msg: "Please select pickup location")
+                return
+            }
+            
+            guard let dropLocation = txtDropLocation.text, !dropLocation.isEmpty else {
+                self.setUpMakeToast(msg: "Please select drop location")
+                return
+            }
+            
+            guard let vehicleIssue = selectedVehicleIssueIndex, vehicleIssue >= 0 else {
+                self.setUpMakeToast(msg: "Please select vehicle issue")
+                return
+            }
+            
+            CreateBooking.shared.pickup_address = txtPickupLocation.text ?? ""
+            CreateBooking.shared.dropoff_address = txtDropLocation.text ?? ""
+            CreateBooking.shared.pickup_lat = pickUpLatitude
+            CreateBooking.shared.pickup_lng = pickUpLangitude
+            CreateBooking.shared.dropoff_lat = dropLatitude
+            CreateBooking.shared.dropoff_lng = dropLangitude
+            
             let vc = BookingFareAmountVC()
-            vc.viewModel.pickUpAddress = txtPickupLocation.text ?? ""
-            vc.viewModel.dropAddress = txtDropLocation.text ?? ""
-            vc.viewModel.pickUpLatitude = pickUpLatitude
-            vc.viewModel.pickUpLongitude = pickUpLangitude
-            vc.viewModel.dropLatitude = dropLatitude
-            vc.viewModel.dropLongitude = dropLangitude
             vc.viewModel.isScheduleBooking = false
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -240,11 +269,14 @@ extension RecoveryServiceVC: onTappedConfirmLocation {
 // MARK: - TV Delegate & DataSource
 extension RecoveryServiceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return arrVehicleIssue.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReasonListTblViewCell.identifier) as! ReasonListTblViewCell
+        
+        cell.lblReason.text = arrVehicleIssue[indexPath.row]
+        cell.imgCheckBox.image = selectedVehicleIssueIndex == indexPath.item ? "ic_check".image : "ic_uncheck".image
         
         cell.lblBottomLine.isHidden = tableView.isLastRow(at: indexPath) ? true : false
         
@@ -253,6 +285,11 @@ extension RecoveryServiceVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedVehicleIssueIndex = indexPath.item
+        tableView.reloadData()
     }
 }
 

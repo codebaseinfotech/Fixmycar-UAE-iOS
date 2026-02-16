@@ -81,22 +81,6 @@ extension NibLoadable where Self: UIView {
 
 }
 
-
-class ALUtility {
-    static let userDefault = UserDefaults.standard
-
-    class func isSaveLoginUser(_ isUserLogin: Bool) {
-        userDefault.set(isUserLogin, forKey: "isUserLogin")
-    }
-    
-    class func getSaveLogin() -> Bool {
-        userDefault.bool(forKey: "isUserLogin")
-    }
-}
-
-
-
-
 class BottomSheetPresentationController: UIPresentationController {
 
     private let dimmingView = UIView()

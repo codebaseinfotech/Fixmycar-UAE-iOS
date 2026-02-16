@@ -18,9 +18,30 @@ class BookingPaymentVC: UIViewController {
         }
     }
     
+    var bookingPaymentVM = BookingPaymentVM()
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bookingPaymentVM.successCreateBooking = {
+            let vc = BookingSuccessPopUpVC()
+            if let sheet = vc.sheetPresentationController {
+                // Create a custom detent that returns a fixed height
+                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                    return 250
+                }
+                sheet.detents = [fixedDetent]
+                sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+            }
+            vc.sheetPresentationController?.delegate = self
+            vc.isScheduleBooking = false
+            self.present(vc, animated: true)
+        }
+        
+        bookingPaymentVM.failureCreateBooking = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -44,18 +65,7 @@ class BookingPaymentVC: UIViewController {
         btnPayFull.setImage("ic_uncheck".image, for: [])
     }
     @IBAction func tappedPayNow(_ sender: Any) {
-        let vc = BookingSuccessPopUpVC()
-        if let sheet = vc.sheetPresentationController {
-            // Create a custom detent that returns a fixed height
-            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
-                return 250
-            }
-            sheet.detents = [fixedDetent]
-            sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
-        }
-        vc.sheetPresentationController?.delegate = self
-        vc.isScheduleBooking = false
-        self.present(vc, animated: true)
+        bookingPaymentVM.createBooking()
     }
     
     // MARK: - setUpText 30 PayNow

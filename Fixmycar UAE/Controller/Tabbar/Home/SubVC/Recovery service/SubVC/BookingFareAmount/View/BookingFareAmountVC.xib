@@ -63,23 +63,23 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqs-b5-uXY">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="66"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₳113.22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP3-ZI-KdQ">
-                                            <rect key="frame" x="252.66666666666671" y="12" width="88.333333333333343" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AP3-ZI-KdQ">
+                                            <rect key="frame" x="244.33333333333329" y="12" width="96.666666666666657" height="30"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Black" family="Satoshi" pointSize="24"/>
                                             <color key="textColor" name="primery_black"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MI0-Sh-49P">
-                                            <rect key="frame" x="12" y="12" width="180.33333333333334" height="42"/>
+                                            <rect key="frame" x="12" y="12" width="173.33333333333334" height="42"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance: 10.12 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-os-4qZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180.33333333333334" height="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Distance: 0.0 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-os-4qZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="23"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                     <color key="textColor" name="primery_black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Estimated time taken: 30 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qig-Db-GeJ">
-                                                    <rect key="frame" x="0.0" y="27" width="180.33333333333334" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Estimated time taken: 0 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qig-Db-GeJ">
+                                                    <rect key="frame" x="0.0" y="27" width="173.33333333333334" height="15"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
@@ -89,6 +89,7 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
+                                        <constraint firstItem="AP3-ZI-KdQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MI0-Sh-49P" secondAttribute="trailing" constant="10" id="3M1-Xm-EUl"/>
                                         <constraint firstAttribute="height" constant="66" id="BNS-vY-pNH"/>
                                         <constraint firstItem="MI0-Sh-49P" firstAttribute="leading" secondItem="mqs-b5-uXY" secondAttribute="leading" constant="12" id="DBW-c2-YUL"/>
                                         <constraint firstItem="MI0-Sh-49P" firstAttribute="top" secondItem="mqs-b5-uXY" secondAttribute="top" constant="12" id="FnA-Lk-uyQ"/>

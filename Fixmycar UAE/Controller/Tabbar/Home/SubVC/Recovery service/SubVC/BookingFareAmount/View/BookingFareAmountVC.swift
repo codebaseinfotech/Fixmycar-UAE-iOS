@@ -14,24 +14,85 @@ class BookingFareAmountVC: UIViewController {
     @IBOutlet weak var lblDistance: UILabel!
     @IBOutlet weak var lblEstimatedTime: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
-    @IBOutlet weak var txtPickup: UITextField! {
-        didSet {
-            txtPickup.text = viewModel.pickUpAddress
-        }
-    }
-    @IBOutlet weak var txtDrop: UITextField! {
-        didSet {
-            txtDrop.text = viewModel.dropAddress
-        }
-    }
+    @IBOutlet weak var txtPickup: UITextField!
+    @IBOutlet weak var txtDrop: UITextField!
     
     var viewModel = BookingFareAmountVM()
     
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtPickup.text = CreateBooking.shared.pickup_address
+        txtDrop.text = CreateBooking.shared.dropoff_address
+         
+        setupMap()
+        addMarkers()
+        drawRoute()
+        
+        print("pickup_lat", CreateBooking.shared.pickup_lat ?? 0.0)
+        print("pickup_lng", CreateBooking.shared.pickup_lng ?? 0.0)
+        print("dropoff_lat", CreateBooking.shared.dropoff_lat ?? 0.0)
+        print("dropoff_lng", CreateBooking.shared.dropoff_lng ?? 0.0)
 
+        calculateDistance()
+        
+        viewModel.successCalculatePrice = {
+            let rounded = Double(String(format: "%.5f", self.viewModel.priceData?.distanceKm ?? 0.0))!
+
+            self.lblDistance.text = "Distance:" + " \(rounded) km"
+            self.lblPrice.text = "\(self.viewModel.priceData?.currency ?? "") \(self.viewModel.priceData?.price ?? 0.0)"
+            CreateBooking.shared.price = self.viewModel.priceData?.price ?? 0.0
+            CreateBooking.shared.currency = self.viewModel.priceData?.currency ?? ""
+            
+            self.viewModel.getAvailableDrivers()
+        }
+        viewModel.failureCalculatePrice = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
+        viewModel.successAvailableDrivers = {
+            self.showDriversOnMap(drivers: self.viewModel.availableDrivers)
+        }
+        viewModel.failureAvailableDrivers = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - calculateDistance
+    func calculateDistance() {
+        
+        let pickup = CLLocation(latitude: CreateBooking.shared.pickup_lat ?? 0.0, longitude: CreateBooking.shared.pickup_lng ?? 0.0)
+        let drop = CLLocation(latitude: CreateBooking.shared.dropoff_lat ?? 0.0, longitude: CreateBooking.shared.dropoff_lng ?? 0.0)
+        
+        let distanceInMeters = pickup.distance(from: drop)
+        let distanceInKM = distanceInMeters / 1000.0
+        
+        print("Distance: \(distanceInKM) KM")
+        viewModel.getCalculatePrice(km: distanceInKM)
+    }
+    
+    func showDriversOnMap(drivers: [DriverData]) {
+        
+        for driver in drivers {
+            
+            guard
+                let lat = driver.location?.latitude,
+                let lng = driver.location?.longitude
+            else { continue }
+            
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+//            marker.title = driver.fullName ?? "Driver"
+//            marker.snippet = "Distance: \(driver.distanceKm ?? 0) km | ETA: \(driver.estimatedTime ?? "")"
+            
+            // Custom driver icon (optional)
+            marker.icon = UIImage(named: "ic_driver") // Add car icon in Assets
+            
+            marker.map = mapView
+        }
     }
     
     // MARK: - Action Method
@@ -69,8 +130,8 @@ class BookingFareAmountVC: UIViewController {
     // MARK: - setUp Map
     func setupMap() {
         let camera = GMSCameraPosition.camera(
-            withLatitude: viewModel.pickUpLatitude,
-            longitude: viewModel.pickUpLongitude,
+            withLatitude: CreateBooking.shared.pickup_lat ?? 0.0,
+            longitude: CreateBooking.shared.pickup_lng ?? 0.0,
             zoom: 14
         )
         mapView.camera = camera
@@ -80,8 +141,8 @@ class BookingFareAmountVC: UIViewController {
 
         let pickupMarker = GMSMarker()
         pickupMarker.position = CLLocationCoordinate2D(
-            latitude: viewModel.pickUpLatitude,
-            longitude: viewModel.pickUpLongitude
+            latitude: CreateBooking.shared.pickup_lat ?? 0.0,
+            longitude: CreateBooking.shared.pickup_lng ?? 0.0
         )
         pickupMarker.title = "Pickup"
         pickupMarker.icon = GMSMarker.markerImage(with: .green)
@@ -89,8 +150,8 @@ class BookingFareAmountVC: UIViewController {
 
         let dropMarker = GMSMarker()
         dropMarker.position = CLLocationCoordinate2D(
-            latitude: viewModel.dropLatitude,
-            longitude: viewModel.dropLongitude
+            latitude: CreateBooking.shared.dropoff_lat ?? 0.0,
+            longitude: CreateBooking.shared.dropoff_lng ?? 0.0
         )
         dropMarker.title = "Drop"
         dropMarker.icon = GMSMarker.markerImage(with: .red)
@@ -99,8 +160,8 @@ class BookingFareAmountVC: UIViewController {
 
     func drawRoute() {
 
-        let origin = "\(viewModel.pickUpLatitude),\(viewModel.pickUpLongitude)"
-        let destination = "\(viewModel.dropLatitude),\(viewModel.dropLongitude)"
+        let origin = "\(CreateBooking.shared.pickup_lat ?? 0.0),\(CreateBooking.shared.pickup_lng ?? 0.0)"
+        let destination = "\(CreateBooking.shared.dropoff_lat ?? 0.0),\(CreateBooking.shared.dropoff_lng ?? 0.0)"
 
         let urlString =
         "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(google_place_key)"
@@ -114,12 +175,18 @@ class BookingFareAmountVC: UIViewController {
                 let routes = json["routes"] as? [[String: Any]],
                 let route = routes.first,
                 let overviewPolyline = route["overview_polyline"] as? [String: Any],
-                let points = overviewPolyline["points"] as? String
+                let points = overviewPolyline["points"] as? String,
+                let legs = route["legs"] as? [[String: Any]],
+                let leg = legs.first,
+                let duration = leg["duration"] as? [String: Any],
+                let durationText = duration["text"] as? String
             else {
                 return
             }
 
             DispatchQueue.main.async {
+                let titleEstimetedTime = "Estimated time taken: \(durationText) minutes"
+                self.lblEstimatedTime.text = titleEstimetedTime
                 self.showPolyline(encodedPath: points)
             }
         }.resume()
@@ -137,10 +204,10 @@ class BookingFareAmountVC: UIViewController {
         // Adjust camera to fit route
         var bounds = GMSCoordinateBounds()
         bounds = bounds.includingCoordinate(
-            CLLocationCoordinate2D(latitude: viewModel.pickUpLatitude, longitude: viewModel.pickUpLongitude)
+            CLLocationCoordinate2D(latitude: CreateBooking.shared.pickup_lat ?? 0.0, longitude: CreateBooking.shared.pickup_lng ?? 0.0)
         )
         bounds = bounds.includingCoordinate(
-            CLLocationCoordinate2D(latitude: viewModel.dropLatitude, longitude: viewModel.dropLongitude)
+            CLLocationCoordinate2D(latitude: CreateBooking.shared.dropoff_lat ?? 0.0, longitude: CreateBooking.shared.dropoff_lng ?? 0.0)
         )
 
         let update = GMSCameraUpdate.fit(bounds, withPadding: 60)
