@@ -32,6 +32,8 @@ class BookingMapVC: UIViewController {
     }
     @IBOutlet weak var tblViewAddressList: UITableView! {
         didSet {
+            tblViewAddressList.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+
             tblViewAddressList.register(PopularLocationTVCell.nib, forCellReuseIdentifier: PopularLocationTVCell.identifier)
             tblViewAddressList.delegate = self
             tblViewAddressList.dataSource = self
@@ -49,6 +51,12 @@ class BookingMapVC: UIViewController {
             viewMainPopular.isHidden = true
         }
     }
+    @IBOutlet weak var viewLocationList: UIView! {
+        didSet {
+            viewLocationList.isHidden = true
+        }
+    }
+    @IBOutlet weak var heightTV: NSLayoutConstraint!
     
     private let locationManager = CLLocationManager()
     private let placesClient = GMSPlacesClient.shared()
@@ -70,6 +78,16 @@ class BookingMapVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - TV height set
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if(keyPath == "contentSize"){
+            if let newvalue = change?[.newKey] {
+                let newsize  = newvalue as! CGSize
+                self.heightTV.constant = newsize.height
+            }
+        }
+    }
 
     // MARK: - Action Method
     @IBAction func tappedBack(_ sender: Any) {
@@ -80,6 +98,7 @@ class BookingMapVC: UIViewController {
         predictions.removeAll()
         tblViewAddressList.reloadData()
         viewMainPopular.isHidden = true
+        viewLocationList.isHidden = true
         btnClose.isHidden = true
         sessionToken = nil
     }
@@ -142,7 +161,7 @@ extension BookingMapVC: UITableViewDelegate, UITableViewDataSource {
             guard let place = place else { return }
 
             self.selectedCoordinate = place.coordinate
-            self.txtLocation.text = place.formattedAddress
+            self.txtLocation.text = prediction.attributedFullText.string
             self.btnClose.isHidden = false
             self.sessionToken = nil
 
@@ -161,7 +180,9 @@ extension BookingMapVC: UITableViewDelegate, UITableViewDataSource {
             )
 
             self.mapView.animate(to: camera)
-
+            self.view.endEditing(true)
+            self.viewLocationList.isHidden = true
+            
 //            self.viewMainPopular.isHidden = true
         }
     }
@@ -241,6 +262,7 @@ extension BookingMapVC: UITextFieldDelegate {
             predictions.removeAll()
             tblViewAddressList.reloadData()
             viewMainPopular.isHidden = true
+            viewLocationList.isHidden = true
             sessionToken = nil
             return
         }
@@ -264,6 +286,7 @@ extension BookingMapVC: UITextFieldDelegate {
 
             self.predictions = results
             self.viewMainPopular.isHidden = false
+            self.viewLocationList.isHidden = false
             self.tblViewAddressList.reloadData()
         }
     }
