@@ -61,8 +61,8 @@ class BookingDetailsVC: UIViewController {
             
             lblBaseFare.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.basePrice ?? "")"
             lblDiscount.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.discountAmount ?? "")"
-            lblPlatformFee.text = "\(bookingVM.bookingDetails?.currency ?? "") 1.1"
-            lblTax.text = "\(bookingVM.bookingDetails?.currency ?? "") 1.1"
+            lblPlatformFee.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.platformFee ?? 0)"
+            lblTax.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.tax ?? 0)"
             lblTotalAmount.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.finalPrice ?? 0)"
         }
         

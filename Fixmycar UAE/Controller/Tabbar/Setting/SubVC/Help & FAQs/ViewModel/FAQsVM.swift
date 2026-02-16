@@ -16,7 +16,7 @@ class FAQsVM {
     var category: String = ""
     
     func getFaqs() {
-        let pathCom = "?" + "category=driver"
+        let pathCom = "?" + "category=customer"
         APIClient.sharedInstance.request(
             method: .get,
             url: APIEndPoint.faqs,

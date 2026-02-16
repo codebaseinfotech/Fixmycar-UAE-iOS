@@ -19,7 +19,7 @@ struct BookingDetailsResponse: Codable {
 struct BookingDetails: Codable {
     
     let id: Int?
-    let bookingID: Int?
+    let bookingId: Int?
     let status: String?
     let paymentStatus: String?
     let createdAt: String?
@@ -36,10 +36,15 @@ struct BookingDetails: Codable {
     let distanceKm: String?
     let basePrice: String?
     let discountAmount: String?
+    
+    let platformFee: Int?
+    let tax: Int?
+    let taxPercentage: Int?
+    
     let finalPrice: Int?
     let currency: String?
     
-    let driver: String?
+    let driver: Driver?
     
     let acceptedAt: String?
     let arrivedAt: String?
@@ -49,7 +54,7 @@ struct BookingDetails: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case bookingID = "booking_id"
+        case bookingId = "booking_id"
         case status
         case paymentStatus = "payment_status"
         case createdAt = "created_at"
@@ -66,6 +71,11 @@ struct BookingDetails: Codable {
         case distanceKm = "distance_km"
         case basePrice = "base_price"
         case discountAmount = "discount_amount"
+        
+        case platformFee = "platform_fee"
+        case tax
+        case taxPercentage = "tax_percentage"
+        
         case finalPrice = "final_price"
         case currency
         
@@ -78,3 +88,25 @@ struct BookingDetails: Codable {
         case cancelledAt = "cancelled_at"
     }
 }
+
+struct Driver: Codable {
+    
+    let id: Int?
+    let name: String?
+    let rating: String?
+    let vehicleModel: String?
+    let vehicleNumber: String?
+    let image: String?
+    let phone: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case rating
+        case vehicleModel = "vehicle_model"
+        case vehicleNumber = "vehicle_number"
+        case image
+        case phone
+    }
+}
+
