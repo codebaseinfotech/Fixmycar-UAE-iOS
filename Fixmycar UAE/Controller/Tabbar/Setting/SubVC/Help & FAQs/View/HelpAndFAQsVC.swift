@@ -17,36 +17,11 @@ class HelpAndFAQsVC: UIViewController {
 
     @IBOutlet weak var tblViewFAQs: UITableView!
     
-    var faqList: [FAQItem] = [
-        FAQItem(question: "How do I book a recovery service?",
-                answer: "Open the app, select the service you need (towing, jump start, fuel delivery, etc.), confirm your location, and submit your request. A nearby driver will be assigned instantly.",
-                isExpanded: false),
-        
-        FAQItem(question: "What services are available?",
-                answer: "We provide towing, jump start, fuel delivery and roadside assistance.",
-                isExpanded: false),
-        
-        FAQItem(question: "Can I track the driver live?",
-                answer: "Yes, you can track the driver in real time.",
-                isExpanded: false),
-        
-        FAQItem(question: "Are there any hidden charges?",
-                answer: "No, all charges are shown before booking.",
-                isExpanded: false),
-        
-        FAQItem(question: "What payment methods are accepted?",
-                answer: "Yes, you can track the driver in real time.",
-                isExpanded: false),
-        
-        FAQItem(question: "Can I cancel my booking?",
-                answer: "Yes, you can track the driver in real time.",
-                isExpanded: false),
-        
-        FAQItem(question: "What roadside services do you provide?",
-                answer: "No, all charges are shown before booking.",
-                isExpanded: false)
-    ]
+    var faqList: [FAQItem] = []
     
+    var viewModel = FAQsVM()
+    
+    // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,13 +31,37 @@ class HelpAndFAQsVC: UIViewController {
         
         tblViewFAQs.rowHeight = UITableView.automaticDimension
         tblViewFAQs.estimatedRowHeight = 40
+        
+        getFaqsData()
         // Do any additional setup after loading the view.
     }
 
+    // MARK: - Action Method
     @IBAction func tappedBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    // MARK: - getFaqData
+    func getFaqsData() {
+        viewModel.getFaqs()
+        
+        viewModel.successFaqs = { [weak self] in
+            guard let self = self else { return }
+            
+            // Map API FAQs to local FAQItem array
+            self.faqList = self.viewModel.faqs.map {
+                FAQItem(question: $0.question ?? "", answer: $0.answer ?? "", isExpanded: false)
+            }
+            
+            DispatchQueue.main.async {
+                self.tblViewFAQs.reloadData()
+            }
+        }
+        
+        viewModel.failuerFaqs = { error in
+            print("❌ Legal Info Error:", error)
+        }
+    }
 
 }
 
