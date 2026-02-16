@@ -34,4 +34,5 @@ enum APIEndPoint: String {
     case about = "v1/common/legal/about"
     case faqs = "v1/common/faqs"
     case support = "v1/driver/support"
+    case feedback = "v1/common/feedback"
 }

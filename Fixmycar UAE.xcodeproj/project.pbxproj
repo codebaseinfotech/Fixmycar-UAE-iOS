@@ -16,6 +16,8 @@
 		0A26BF7C2F42EC200047AC09 /* LegalInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF7B2F42EC200047AC09 /* LegalInfoResponse.swift */; };
 		0A26BF7F2F42EED10047AC09 /* JumpStartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF7E2F42EED10047AC09 /* JumpStartVM.swift */; };
 		0A26BF822F42EEF80047AC09 /* SupportDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF812F42EEF80047AC09 /* SupportDetailsResponse.swift */; };
+		0A26BF852F42F55B0047AC09 /* FeedbackVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF842F42F55B0047AC09 /* FeedbackVM.swift */; };
+		0A26BF882F42F58F0047AC09 /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF872F42F58F0047AC09 /* FeedbackResponse.swift */; };
 		0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A61F6152F3C82DB00A8AC1E /* Kingfisher */; };
 		0A61F6182F3C875C00A8AC1E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */; };
 		0A61F61B2F3C897400A8AC1E /* EditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */; };
@@ -167,6 +169,8 @@
 		0A26BF7B2F42EC200047AC09 /* LegalInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalInfoResponse.swift; sourceTree = "<group>"; };
 		0A26BF7E2F42EED10047AC09 /* JumpStartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpStartVM.swift; sourceTree = "<group>"; };
 		0A26BF812F42EEF80047AC09 /* SupportDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportDetailsResponse.swift; sourceTree = "<group>"; };
+		0A26BF842F42F55B0047AC09 /* FeedbackVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVM.swift; sourceTree = "<group>"; };
+		0A26BF872F42F58F0047AC09 /* FeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
 		0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVM.swift; sourceTree = "<group>"; };
 		0A61F61D2F3C917200A8AC1E /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -403,6 +407,22 @@
 			isa = PBXGroup;
 			children = (
 				0A26BF812F42EEF80047AC09 /* SupportDetailsResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A26BF832F42F5550047AC09 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A26BF842F42F55B0047AC09 /* FeedbackVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A26BF862F42F57B0047AC09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A26BF872F42F58F0047AC09 /* FeedbackResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -742,6 +762,8 @@
 		88F725B12F0FC21900AAFC2E /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				0A26BF862F42F57B0047AC09 /* Model */,
+				0A26BF832F42F5550047AC09 /* ViewModel */,
 				88F725B22F0FC23900AAFC2E /* View */,
 			);
 			path = Feedback;
@@ -1601,6 +1623,7 @@
 			files = (
 				88FDACCC2F233B2D00983C39 /* TrackLiveVC.swift in Sources */,
 				BC233D122F288ED700A633A6 /* BookingConfirmationPopupVC.swift in Sources */,
+				0A26BF852F42F55B0047AC09 /* FeedbackVM.swift in Sources */,
 				BC7121AC2F067F940041E2F7 /* Constants.swift in Sources */,
 				BC7121AD2F067F940041E2F7 /* UIFont+Extention.swift in Sources */,
 				889AD77D2F23283000F2271A /* NotificationVC.swift in Sources */,
@@ -1651,6 +1674,7 @@
 				BC98E7CA2F0E229700426807 /* RecentBookingTVCell.swift in Sources */,
 				88AD25E92F2A0D42002DFA44 /* OTPResponseModel.swift in Sources */,
 				0A26BF822F42EEF80047AC09 /* SupportDetailsResponse.swift in Sources */,
+				0A26BF882F42F58F0047AC09 /* FeedbackResponse.swift in Sources */,
 				BC29D6BF2F06A6CD00DD3EB2 /* FTAnimation+UIView.m in Sources */,
 				BC29D6C02F06A6CD00DD3EB2 /* FTUtils+NSObject.m in Sources */,
 				0A61F62F2F3CA8D700A8AC1E /* BookingDetailsVM.swift in Sources */,
