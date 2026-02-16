@@ -59,7 +59,8 @@ class BookingMapVC: UIViewController {
     
     var isDropAddress: Bool = false
     var delegateLocation: onTappedConfirmLocation?
-    
+    private var locationMarker: GMSMarker?
+
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +91,9 @@ class BookingMapVC: UIViewController {
         delegateLocation?.tappedConfirmLocation(isDropLocation: isDropAddress, location: txtLocation.text ?? "", lat: coordinate.latitude, lang: coordinate.longitude)
         tappedBack(self)
     }
+    @IBAction func tappedCurrentLocation(_ sender: Any) {
+        setupMap()
+    }
     
      
 
@@ -119,6 +123,10 @@ extension BookingMapVC: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
@@ -144,6 +152,8 @@ extension BookingMapVC: UITableViewDelegate, UITableViewDataSource {
             let marker = GMSMarker(position: place.coordinate)
             marker.map = self.mapView
 
+            self.showMarker(at: place.coordinate)
+
             let camera = GMSCameraPosition.camera(
                 withLatitude: place.coordinate.latitude,
                 longitude: place.coordinate.longitude,
@@ -158,7 +168,7 @@ extension BookingMapVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-// MARK: - setUp MapView
+// MARK: - Map Setup
 extension BookingMapVC: CLLocationManagerDelegate {
 
     func setupMap() {
@@ -167,8 +177,7 @@ extension BookingMapVC: CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
 
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
+//        mapView.settings.myLocationButton = true
     }
 
     func locationManager(_ manager: CLLocationManager,
@@ -183,7 +192,34 @@ extension BookingMapVC: CLLocationManagerDelegate {
         )
 
         mapView.animate(to: camera)
+        
+        // ✅ Show custom marker on first load
+        showMarker(at: location.coordinate)
+
         locationManager.stopUpdatingLocation()
+    }
+}
+
+// MARK: - Custom Marker
+extension BookingMapVC {
+
+    func showMarker(at coordinate: CLLocationCoordinate2D) {
+
+        mapView.clear()
+
+        locationMarker = GMSMarker(position: coordinate)
+
+        if let image = UIImage(named: "live_location_icon") {
+
+            let imageView = UIImageView(image: image)
+            imageView.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
+            imageView.contentMode = .scaleAspectFit
+
+            locationMarker?.iconView = imageView
+            locationMarker?.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+        }
+
+        locationMarker?.map = mapView
     }
 }
 

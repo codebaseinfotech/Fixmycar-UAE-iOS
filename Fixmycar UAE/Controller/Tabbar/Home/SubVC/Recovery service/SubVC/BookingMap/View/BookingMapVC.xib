@@ -122,9 +122,58 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nxw-7d-Hav">
                     <rect key="frame" x="0.0" y="240" width="393" height="612"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJ1-Xt-Qvz" customClass="GMSMapView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Os4-bn-50u">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="322"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJ1-Xt-Qvz" customClass="GMSMapView">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="322"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNE-0h-3IH">
+                                    <rect key="frame" x="328" y="237" width="45" height="45"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_target" translatesAutoresizingMaskIntoConstraints="NO" id="LdU-ZS-qDE">
+                                            <rect key="frame" x="10" y="10" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="XbO-5b-9Cy"/>
+                                                <constraint firstAttribute="width" constant="25" id="bXO-zY-MmT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdm-tQ-Ian">
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="tappedCurrentLocation:" destination="-1" eventType="touchUpInside" id="Pye-1n-XJc"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="rdm-tQ-Ian" secondAttribute="trailing" id="Dl5-eF-KeU"/>
+                                        <constraint firstItem="LdU-ZS-qDE" firstAttribute="centerY" secondItem="dNE-0h-3IH" secondAttribute="centerY" id="MXb-7z-7no"/>
+                                        <constraint firstItem="LdU-ZS-qDE" firstAttribute="centerX" secondItem="dNE-0h-3IH" secondAttribute="centerX" id="Qx6-da-sSs"/>
+                                        <constraint firstAttribute="width" constant="45" id="RCk-E2-rY4"/>
+                                        <constraint firstAttribute="height" constant="45" id="U24-vY-WkW"/>
+                                        <constraint firstItem="rdm-tQ-Ian" firstAttribute="top" secondItem="dNE-0h-3IH" secondAttribute="top" id="c7u-5a-2YN"/>
+                                        <constraint firstItem="rdm-tQ-Ian" firstAttribute="leading" secondItem="dNE-0h-3IH" secondAttribute="leading" id="dwj-yG-7q8"/>
+                                        <constraint firstAttribute="bottom" secondItem="rdm-tQ-Ian" secondAttribute="bottom" id="l1f-du-uQg"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="22.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="dJ1-Xt-Qvz" secondAttribute="bottom" id="BMw-v1-vU1"/>
+                                <constraint firstAttribute="trailing" secondItem="dJ1-Xt-Qvz" secondAttribute="trailing" id="BU6-sE-6fb"/>
+                                <constraint firstItem="dJ1-Xt-Qvz" firstAttribute="leading" secondItem="Os4-bn-50u" secondAttribute="leading" id="JFl-wi-iCm"/>
+                                <constraint firstAttribute="bottom" secondItem="dNE-0h-3IH" secondAttribute="bottom" constant="40" id="Yp0-NT-vkg"/>
+                                <constraint firstItem="dJ1-Xt-Qvz" firstAttribute="top" secondItem="Os4-bn-50u" secondAttribute="top" id="dcu-pa-ktZ"/>
+                                <constraint firstAttribute="trailing" secondItem="dNE-0h-3IH" secondAttribute="trailing" constant="20" id="nU6-r9-Q81"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXb-Yz-oXv">
                             <rect key="frame" x="0.0" y="322" width="393" height="290"/>
@@ -141,7 +190,7 @@
                                                     <color key="textColor" name="primery_black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pbJ-lD-jsA">
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pbJ-lD-jsA">
                                                     <rect key="frame" x="0.0" y="34.666666666666629" width="353" height="143.33333333333334"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </tableView>
@@ -203,6 +252,7 @@
         <image name="ic_back_arrow" width="24" height="24"/>
         <image name="ic_close" width="13" height="13"/>
         <image name="ic_dark_pin_location" width="18" height="18"/>
+        <image name="ic_target" width="512" height="512"/>
         <namedColor name="Gray">
             <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
