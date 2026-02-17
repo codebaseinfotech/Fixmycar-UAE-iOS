@@ -54,6 +54,7 @@ class DeleteAccountVC: UIViewController {
         }
         vc.sheetPresentationController?.delegate = self
         vc.isOpenLogout = false
+        vc.viewModel.selectedDeleteReason = arrReasonList[self.selectedIndex ?? 0]
         self.present(vc, animated: true)
     }
     
