@@ -13,6 +13,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var welcomeTitleLabel: UILabel!
     @IBOutlet weak var mobileNumberTextField: UITextField! {
         didSet {
+            mobileNumberTextField.text = "9876543211"
             mobileNumberTextField.maxLength = 10
         }
     }
@@ -45,13 +46,11 @@ class LoginVC: UIViewController {
     
     func presentOtp() {
         let vc = VerifyOtp()
-        vc.modalPresentationStyle = .custom
-        vc.delegateVerify = self
-        
-        // ✅ Pass DATA not outlet
+        let home = UINavigationController(rootViewController: vc)
+        home.modalPresentationStyle = .custom
         vc.viewModel.phoneNumber = self.viewModel.loginResponse?.data?.phone ?? ""
         vc.otpDebug = "\(self.viewModel.loginResponse?.data?.otpDebug ?? 0)"
-        self.present(vc, animated: true)
+        self.present(home, animated: true)
     }
     
     // MARK: - setUpTitle

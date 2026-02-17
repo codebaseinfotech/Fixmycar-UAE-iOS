@@ -21,11 +21,15 @@ class FareBreakupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lblBaseFare.text = "\(CreateBooking.shared.currency ?? "") \(CreateBooking.shared.price ?? 0.0)"
+        let base_price = String(format: "%.3f", CreateBooking.shared.price ?? 0.0)
+        
+        lblBaseFare.text = "\(CreateBooking.shared.currency ?? "") \(base_price)"
         lblDiscount.text = "\(CreateBooking.shared.currency ?? "") 0.0"
         lblPlatformFee.text = "\(CreateBooking.shared.currency ?? "") 0.0"
         lblTax.text = "\(CreateBooking.shared.currency ?? "") 0.0"
-        lblTotalAmount.text = "\(CreateBooking.shared.currency ?? "") \(CreateBooking.shared.price ?? 0.0)"
+        
+        let total_amount = String(format: "%.3f", CreateBooking.shared.price ?? 0.0)
+        lblTotalAmount.text = "\(CreateBooking.shared.currency ?? "") \(total_amount)"
         
         // Do any additional setup after loading the view.
     }

@@ -38,12 +38,16 @@ class BookingFareAmountVC: UIViewController {
         calculateDistance()
         
         viewModel.successCalculatePrice = {
-            let rounded = Double(String(format: "%.5f", self.viewModel.priceData?.distanceKm ?? 0.0))!
+            let rounded = Double(String(format: "%.3f", self.viewModel.priceData?.distanceKm ?? 0.0))!
 
             self.lblDistance.text = "Distance:" + " \(rounded) km"
-            self.lblPrice.text = "\(self.viewModel.priceData?.currency ?? "") \(self.viewModel.priceData?.price ?? 0.0)"
+            
+            let price = String(format: "%.3f", self.viewModel.priceData?.price ?? 0.0) 
+            self.lblPrice.text = "\(self.viewModel.priceData?.currency ?? "") \(price)"
+
             CreateBooking.shared.price = self.viewModel.priceData?.price ?? 0.0
             CreateBooking.shared.currency = self.viewModel.priceData?.currency ?? ""
+            CreateBooking.shared.distance_km = self.viewModel.priceData?.distanceKm ?? 0.0
             
             self.viewModel.getAvailableDrivers()
         }
@@ -185,7 +189,12 @@ class BookingFareAmountVC: UIViewController {
             }
 
             DispatchQueue.main.async {
-                let titleEstimetedTime = "Estimated time taken: \(durationText) minutes"
+                var titleEstimetedTime = ""
+                if durationText.contains("mins") == true {
+                    titleEstimetedTime = "Estimated time taken: \(durationText)"
+                } else {
+                    titleEstimetedTime = "Estimated time taken: \(durationText) minutes"
+                }
                 self.lblEstimatedTime.text = titleEstimetedTime
                 self.showPolyline(encodedPath: points)
             }

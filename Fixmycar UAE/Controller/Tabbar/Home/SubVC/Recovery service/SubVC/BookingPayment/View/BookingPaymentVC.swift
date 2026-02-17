@@ -24,6 +24,9 @@ class BookingPaymentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let total_amount = String(format: "%.3f", CreateBooking.shared.price ?? 0.0)
+        lblAmount.text = "\(CreateBooking.shared.currency ?? "") \(total_amount)"
+        
         bookingPaymentVM.successCreateBooking = {
             let vc = BookingSuccessPopUpVC()
             if let sheet = vc.sheetPresentationController {

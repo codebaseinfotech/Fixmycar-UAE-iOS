@@ -45,7 +45,6 @@ class VerifyOtp: UIViewController {
     var viewModel = VerifyOtpVM()
     var loginVM = LoginVM()
     
-    var phoneNumber: String = ""
     var otpDebug: String?
     
     var enteredOtp: String = ""
@@ -56,23 +55,28 @@ class VerifyOtp: UIViewController {
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupOtpView()
+//        setupOtpView()
         startTimer()
         
         viewMain.isHidden = false
         viewMain.transform = CGAffineTransform(translationX: 0, y: UIScreen.main.bounds.height)
         
         UIView.animate(
-            withDuration: 0.7,          // ⏱ slower
-            delay: 0.05,
-            usingSpringWithDamping: 0.88, // 🧈 smooth stop
-            initialSpringVelocity: 0.4,  // 🐢 gentle start
+            withDuration: 0.25,          // ⏱ slower
+            delay: 0.0,
+            usingSpringWithDamping: 1.0, // 🧈 smooth stop
+            initialSpringVelocity: 1.0,  // 🐢 gentle start
             options: [.curveEaseOut],
             animations: {
                 self.viewMain.transform = .identity
             },
-            completion: nil
+            completion: { _ in
+                // ✅ Called AFTER animation finishes
+                self.setupOtpView()
+            }
         )
+//        self.setupOtpView()
+        
         lblPhoneNumber.text = "+971 \(viewModel.phoneNumber)"
     }
     
@@ -98,7 +102,7 @@ class VerifyOtp: UIViewController {
     
     // MARK: - Action Method
     @IBAction func tappedResendCode(_ sender: Any) {
-        loginVM.callLoginAPI(phone: phoneNumber, countryCode: "+971")
+        loginVM.callLoginAPI(phone: viewModel.phoneNumber, countryCode: "+971")
         loginVM.successLogin = {
             self.startTimer()
         }
@@ -109,10 +113,35 @@ class VerifyOtp: UIViewController {
             setUpMakeToast(msg: "Please enter valid OTP")
             return
         }
+        viewModel.callVerifyOtpAPI(phone: viewModel.phoneNumber, otp: enteredOtp, countryCode: "+971")
         
-        dismissToBottom {
-            self.delegateVerify?.onCallTappedVerify(enteredOtp: self.enteredOtp, phoneNumber: self.viewModel.phoneNumber)
+        viewModel.successVerify = { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+
+                let isRegistered = self.viewModel.verifyResponse?.isRegistered ?? false
+                
+                print("IS REGISTERED =", isRegistered)
+
+                if isRegistered {
+                    AppDelegate.appDelegate.setUpHome()
+                } else {
+                    let vc = CreateAccountVC()
+                    vc.phoneNumber = self.viewModel.phoneNumber
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
         }
+
+        viewModel.failureVerify = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.setUpMakeToast(msg: message)                
+            }
+        }
+    
+    }
+    @IBAction func tappedClose(_ sender: Any) {
+        dismissToBottom()
     }
     
     func dismissToBottom(completion: (() -> Void)? = nil) {
