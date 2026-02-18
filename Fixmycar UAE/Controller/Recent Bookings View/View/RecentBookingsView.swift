@@ -75,6 +75,11 @@ class RecentBookingsView: UIView {
             svHistoryMain.isHidden = false
             viewLineAddress.isHidden = false
             svPrice.isHidden = true
+        } else if type == "active_job" {
+            svHistoryMain.isHidden = false
+            viewLineAddress.isHidden = false
+            svLocation.isHidden = true
+            
         }
     }
 }

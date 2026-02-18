@@ -11,10 +11,10 @@ class RecentBookingTVCell: UITableViewCell {
    
     @IBOutlet weak var viewRecentBooking: RecentBookingsView!
     
-    var recentBooking: RecentRequest? {
+    var recentBooking: HomeBooking? {
         didSet {
             viewRecentBooking.lblType.text = recentBooking?.serviceName
-            viewRecentBooking.lblTime.text = recentBooking?.job_date
+            viewRecentBooking.lblTime.text = recentBooking?.jobDate
             viewRecentBooking.lblPrice.text = "\(recentBooking?.currency ?? "") \(recentBooking?.amount ?? "")"
             viewRecentBooking.lblStatus.text = recentBooking?.status?.capitalized
             

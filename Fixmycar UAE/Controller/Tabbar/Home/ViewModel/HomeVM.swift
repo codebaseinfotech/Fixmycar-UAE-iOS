@@ -13,7 +13,7 @@ class HomeVM {
     var failureHomeData: ((String)->Void)?
     
     var homeData: HomeData?
-    var recentServiceList: [RecentRequest] = []
+    var recentServiceList: [HomeBooking] = []
     
     func getHomeData() {
         
@@ -43,6 +43,7 @@ class HomeVM {
                     return
                 }
                 
+                self.homeData = response.data
                 self.recentServiceList = response.data?.recentRequests ?? []
                 self.successHomeData?()
             }

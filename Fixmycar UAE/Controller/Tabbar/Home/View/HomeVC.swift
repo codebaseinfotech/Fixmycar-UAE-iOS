@@ -32,6 +32,8 @@ class HomeVC: UIViewController {
         }
     }
     @IBOutlet weak var svNoBookingFound: UIStackView!
+    @IBOutlet weak var viewMainActiveBooking: UIView!
+    @IBOutlet weak var viewActiveBooking: RecentBookingsView!
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
@@ -48,10 +50,41 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupLocation()
-               
+        viewActiveBooking.config(type: "active_job")
         homeVM.successHomeData = { [weak self] in
             self?.svNoBookingFound.isHidden = self?.homeVM.recentServiceList.count == 0 ? false : true
             self?.tblViewRecentBooking.isHidden = self?.homeVM.recentServiceList.count == 0 ? true : false
+            
+            self?.viewMainActiveBooking.isHidden = self?.homeVM.homeData?.activeBooking?.count == 0 ? true : false
+            
+            guard let homeData = self?.homeVM.homeData else {
+                print("❌ homeData is nil")
+                return
+            }
+
+            guard let activeBooking = homeData.activeBooking, !activeBooking.isEmpty else {
+                print("❌ activeBooking empty or nil")
+                return
+            }
+
+//            let activeBooking = activeBooking
+            
+            self?.viewActiveBooking.lblType.text = activeBooking[0].serviceName
+            self?.viewActiveBooking.lblTime.text = activeBooking[0].jobDate?.toDisplayDate()
+            self?.viewActiveBooking.lblPickLocation.text = activeBooking[0].pickupAddress
+            self?.viewActiveBooking.lblDropLocation.text = activeBooking[0].dropAddress
+            self?.viewActiveBooking.lblPrice.text = (activeBooking[0].currency ?? "") + " " + (activeBooking[0].amount ?? "")
+            self?.viewActiveBooking.lblStatus.text = activeBooking[0].status
+//            if let homeData = self?.homeVM.homeData, let activeBooking = homeData.activeBooking, activeBooking.count > 0 {
+//                self?.viewActiveBooking.lblType.text = activeBooking[0].serviceName
+//                self?.viewActiveBooking.lblTime.text = activeBooking[0].jobDate?.toDisplayDate()
+//                self?.viewActiveBooking.lblPickLocation.text = activeBooking[0].pickupAddress
+//                self?.viewActiveBooking.lblDropLocation.text = activeBooking[0].dropAddress
+//                self?.viewActiveBooking.lblPrice.text = (activeBooking[0].currency ?? "") + (activeBooking[0].amount ?? "")
+//                self?.viewActiveBooking.lblStatus.text = activeBooking[0].status
+//                
+//            }
+            
             self?.tblViewRecentBooking.reloadData()
         }
         homeVM.failureHomeData = { [weak self] msg in
@@ -104,6 +137,8 @@ class HomeVC: UIViewController {
     @IBAction func tappedNotification(_ sender: Any) {
         let vc = NotificationVC()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func tappedActiveJob(_ sender: Any) {
     }
     
     //MARK: - tabbar Action

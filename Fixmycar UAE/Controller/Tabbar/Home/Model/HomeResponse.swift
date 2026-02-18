@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - HomeResponse
+// MARK: - Main Response
 struct HomeResponse: Codable {
     let status: Bool?
     let message: String?
@@ -15,22 +15,24 @@ struct HomeResponse: Codable {
     let errors: String?
 }
 
-// MARK: - HomeData
+// MARK: - Home Data
 struct HomeData: Codable {
     let user: HomeUser?
     let banners: [HomeBanner]?
     let services: [HomeService]?
-    let recentRequests: [RecentRequest]?
+    let activeBooking: [HomeBooking]?
+    let recentRequests: [HomeBooking]?
     
     enum CodingKeys: String, CodingKey {
         case user
         case banners
         case services
+        case activeBooking = "active_booking"
         case recentRequests = "recent_requests"
     }
 }
 
-// MARK: - HomeUser
+// MARK: - User
 struct HomeUser: Codable {
     let id: Int?
     let name: String?
@@ -47,12 +49,24 @@ struct HomeUser: Codable {
     }
 }
 
-// MARK: - HomeBanner
+// MARK: - Banner
 struct HomeBanner: Codable {
-    // Add properties later if API sends banner data
+    let id: Int?
+    let title: String?
+    let imageURL: String?
+    let buttonText: String?
+    let promoCode: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case imageURL = "image_url"
+        case buttonText = "button_text"
+        case promoCode = "promo_code"
+    }
 }
 
-// MARK: - HomeBanner
+// MARK: - Service
 struct HomeService: Codable {
     let id: Int?
     let name: String?
@@ -60,22 +74,22 @@ struct HomeService: Codable {
     let slug: String?
 }
 
-// MARK: - RecentRequest
-struct RecentRequest: Codable {
+// MARK: - Booking (Used for both Active & Recent)
+struct HomeBooking: Codable {
+    let id: Int?
     let serviceName: String?
     let status: String?
-    let job_date: String?
-    let job_time: String?
+    let jobDate: String?
     let pickupAddress: String?
     let dropAddress: String?
     let amount: String?
     let currency: String?
     
     enum CodingKeys: String, CodingKey {
+        case id
         case serviceName = "service_name"
         case status
-        case job_date
-        case job_time
+        case jobDate = "job_date"
         case pickupAddress = "pickup_address"
         case dropAddress = "drop_address"
         case amount

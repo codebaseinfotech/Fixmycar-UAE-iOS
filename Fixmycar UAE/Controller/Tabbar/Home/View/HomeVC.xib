@@ -27,7 +27,9 @@
                 <outlet property="svNoBookingFound" destination="I7u-p1-4KZ" id="ruh-gQ-rqs"/>
                 <outlet property="tblViewRecentBooking" destination="jgc-md-0zn" id="yoC-gw-Mre"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewActiveBooking" destination="8gZ-2A-gHF" id="9L7-PE-bcO"/>
                 <outlet property="viewDotsNotification" destination="xSi-b4-Pzc" id="aab-mU-CsE"/>
+                <outlet property="viewMainActiveBooking" destination="doK-RC-mBL" id="dx9-jE-t96"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -323,6 +325,92 @@ first recovery</string>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doK-RC-mBL">
+                                            <rect key="frame" x="0.0" y="343.5" width="374" height="285"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ4-vh-0di" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
+                                                    <color key="textColor" name="primery_black"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuD-FS-LX4">
+                                                    <rect key="frame" x="0.0" y="36.5" width="374" height="248.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vrN-M4-j1c">
+                                                            <rect key="frame" x="12" y="12" width="350" height="224.5"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gZ-2A-gHF" customClass="RecentBookingsView" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="178.5"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLv-yv-pYb">
+                                                                    <rect key="frame" x="0.0" y="188.5" width="350" height="36"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Tracking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOH-Ro-P6L" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                                            <rect key="frame" x="129" y="9.5" width="92" height="17.5"/>
+                                                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                                            <color key="textColor" name="White"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" name="primery_black"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="DOH-Ro-P6L" firstAttribute="centerX" secondItem="kLv-yv-pYb" secondAttribute="centerX" id="590-n5-RFV"/>
+                                                                        <constraint firstAttribute="height" constant="36" id="A5j-1d-rpe"/>
+                                                                        <constraint firstItem="DOH-Ro-P6L" firstAttribute="centerY" secondItem="kLv-yv-pYb" secondAttribute="centerY" id="EIY-mX-goK"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="18"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0q2-1K-WB4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="248.5"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <connections>
+                                                                <action selector="tappedActiveJob:" destination="-1" eventType="touchUpInside" id="Sfa-4P-FCm"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="0q2-1K-WB4" secondAttribute="trailing" id="1mu-Xm-Lxr"/>
+                                                        <constraint firstItem="vrN-M4-j1c" firstAttribute="top" secondItem="xuD-FS-LX4" secondAttribute="top" constant="12" id="2G9-yC-mSm"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0q2-1K-WB4" secondAttribute="bottom" id="DcF-hg-ffb"/>
+                                                        <constraint firstItem="0q2-1K-WB4" firstAttribute="leading" secondItem="xuD-FS-LX4" secondAttribute="leading" id="GNd-xk-hYo"/>
+                                                        <constraint firstItem="0q2-1K-WB4" firstAttribute="top" secondItem="xuD-FS-LX4" secondAttribute="top" id="JnV-vx-5Oj"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vrN-M4-j1c" secondAttribute="bottom" constant="12" id="ZcE-It-lYz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vrN-M4-j1c" secondAttribute="trailing" constant="12" id="gyE-HX-Bcz"/>
+                                                        <constraint firstItem="vrN-M4-j1c" firstAttribute="leading" secondItem="xuD-FS-LX4" secondAttribute="leading" constant="12" id="w2d-GD-59E"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" name="Storke"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="285" id="EHN-ks-4jF"/>
+                                                <constraint firstAttribute="bottom" secondItem="xuD-FS-LX4" secondAttribute="bottom" id="FMP-bp-d5I"/>
+                                                <constraint firstItem="xuD-FS-LX4" firstAttribute="top" secondItem="NJ4-vh-0di" secondAttribute="bottom" constant="14" id="Gsz-e2-H0a"/>
+                                                <constraint firstAttribute="trailing" secondItem="xuD-FS-LX4" secondAttribute="trailing" id="brB-dx-GcB"/>
+                                                <constraint firstItem="NJ4-vh-0di" firstAttribute="leading" secondItem="doK-RC-mBL" secondAttribute="leading" id="gPa-DV-Pyf"/>
+                                                <constraint firstItem="NJ4-vh-0di" firstAttribute="top" secondItem="doK-RC-mBL" secondAttribute="top" id="sLt-XX-Jkd"/>
+                                                <constraint firstItem="xuD-FS-LX4" firstAttribute="leading" secondItem="doK-RC-mBL" secondAttribute="leading" id="zp5-Rw-GTP"/>
+                                            </constraints>
+                                        </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="shq-OP-GOy">
                                             <rect key="frame" x="0.0" y="353.5" width="374" height="90.5"/>
                                             <subviews>
@@ -437,7 +525,7 @@ first recovery</string>
                                                         <constraint firstAttribute="height" constant="22" id="UPX-yp-ahW"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfX-eo-3rj" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfX-eo-3rj" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="39" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="White"/>
@@ -471,7 +559,7 @@ first recovery</string>
                                                         <constraint firstAttribute="height" constant="22" id="VKZ-0L-q21"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSM-2Z-7i1" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSM-2Z-7i1" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="44.5" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
@@ -508,7 +596,7 @@ first recovery</string>
                                                         <constraint firstAttribute="height" constant="22" id="ds1-hW-7jQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq5-mU-hxQ" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq5-mU-hxQ" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="30.5" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
@@ -545,7 +633,7 @@ first recovery</string>
                                                         <constraint firstAttribute="height" constant="22" id="eLR-iu-fJL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cja-PO-8qE" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cja-PO-8qE" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="51" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
@@ -622,6 +710,9 @@ first recovery</string>
         <image name="ic_un_settings" width="22" height="22"/>
         <namedColor name="Gray">
             <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Storke">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
