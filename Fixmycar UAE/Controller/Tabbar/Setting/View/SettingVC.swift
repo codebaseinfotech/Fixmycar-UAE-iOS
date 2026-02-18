@@ -21,6 +21,7 @@ class SettingVC: UIViewController {
     
     @IBOutlet weak var lblVersion: UILabel!
     
+    // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,26 +37,7 @@ class SettingVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func tappedTHome(_ sender: Any) {
-        let vc = HomeVC()
-        navigationController?.pushViewController(vc, animated: false)
-    }
-    
-    @IBAction func tappedTHistory(_ sender: Any) {
-        let vc = HistoryVC()
-        navigationController?.pushViewController(vc, animated: false)
-    }
-    
-    @IBAction func clickedTTrackLive(_ sender: Any) {
-        let vc = TrackLiveVC()
-        navigationController?.pushViewController(vc, animated: false)
-    }
-    
-    @IBAction func tappedTChat(_ sender: Any) {
-        let vc = ChatVC()
-        navigationController?.pushViewController(vc, animated: false)
-    }
-    
+    // MARK: - Action Method
     @IBAction func tappedMyProfile(_ sender: Any) {
         let vc = MyProfileVC()
         navigationController?.pushViewController(vc, animated: true)
@@ -144,6 +126,19 @@ class SettingVC: UIViewController {
         }
     }
     
+    // MARK: - Tabbar Action Method
+    @IBAction func tappedTHome(_ sender: Any) {
+        let vc = HomeVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    @IBAction func tappedTHistory(_ sender: Any) {
+        let vc = HistoryVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    @IBAction func tappedTChat(_ sender: Any) {
+        let vc = ChatVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
     
     
     

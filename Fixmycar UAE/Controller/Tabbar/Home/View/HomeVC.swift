@@ -106,23 +106,18 @@ class HomeVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
     //MARK: - tabbar Action
     @IBAction func tappedTHistory(_ sender: Any) {
         let vc = HistoryVC()
-        navigationController?.pushViewController(vc, animated: false)
-    }
-    @IBAction func tappedTTrackLive(_ sender: Any) {
-        let vc = TrackLiveVC()
-        navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     @IBAction func tappedTChat(_ sender: Any) {
         let vc = ChatVC()
-        navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
-    @IBAction func tappedTSetting(_ sender: Any) {
+    @IBAction func tappedTSettings(_ sender: Any) {
         let vc = SettingVC()
-        navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
 }

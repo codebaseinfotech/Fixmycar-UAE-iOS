@@ -32,16 +32,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-cj-PWL">
-                    <rect key="frame" x="20" y="118" width="353" height="704"/>
+                    <rect key="frame" x="20" y="118" width="353" height="734"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za3-Mz-JxZ" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="353" height="8.6666666666666661"/>
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="22.666666666666668"/>
                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
                             <color key="textColor" name="primery_black"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWe-L9-gUK">
-                            <rect key="frame" x="0.0" y="22.666666666666657" width="353" height="42"/>
+                            <rect key="frame" x="0.0" y="36.666666666666657" width="353" height="42"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_search" translatesAutoresizingMaskIntoConstraints="NO" id="ScQ-fH-EsS">
                                     <rect key="frame" x="10" y="9" width="24" height="24"/>
@@ -73,11 +73,11 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3KD-m9-Icf">
-                            <rect key="frame" x="0.0" y="78.666666666666686" width="353" height="611.33333333333326"/>
+                            <rect key="frame" x="0.0" y="92.666666666666686" width="353" height="611.33333333333326"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-hO-MEc">
-                            <rect key="frame" x="0.0" y="704" width="353" height="0.0"/>
+                            <rect key="frame" x="0.0" y="718" width="353" height="16"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HxT-ps-66R">
                                     <rect key="frame" x="20" y="213.33333333333337" width="313" height="231"/>
@@ -118,240 +118,175 @@
                         </view>
                     </subviews>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lg8-Vd-hMc">
-                    <rect key="frame" x="0.0" y="742" width="393" height="110"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lg8-Vd-hMc" customClass="AllSideCornerView" customModule="Fixmycar_UAE" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="772" width="393" height="80"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tabbar_back" translatesAutoresizingMaskIntoConstraints="NO" id="YaP-46-3Nm">
-                            <rect key="frame" x="0.0" y="30" width="393" height="80"/>
-                        </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nf2-YQ-cv2">
-                            <rect key="frame" x="227" y="30" width="166" height="80"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dxd-d0-ZIe">
+                            <rect key="frame" x="10" y="0.0" width="373" height="80"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AM-nA-fNx">
-                                    <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgH-uX-Whu">
+                                    <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="80"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="eqx-PX-owU">
-                                            <rect key="frame" x="26" y="18.666666666666625" width="31.333333333333329" height="42.666666666666657"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ux9-cc-TyJ">
+                                            <rect key="frame" x="24" y="18.666666666666625" width="38" height="42.666666666666657"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_s_chat" translatesAutoresizingMaskIntoConstraints="NO" id="mBe-qN-aoh">
-                                                    <rect key="frame" x="4.6666666666666856" y="0.0" width="22" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="6b0-Jv-0NP"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIM-eu-Ivk" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="31.333333333333332" height="17.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
-                                                    <color key="textColor" name="White"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="chat_tab"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIC-JT-PCJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="iIC-JT-PCJ" secondAttribute="trailing" id="3WL-yi-8dE"/>
-                                        <constraint firstItem="eqx-PX-owU" firstAttribute="centerY" secondItem="3AM-nA-fNx" secondAttribute="centerY" id="CTW-ui-6KX"/>
-                                        <constraint firstAttribute="bottom" secondItem="iIC-JT-PCJ" secondAttribute="bottom" id="GKM-mz-VNw"/>
-                                        <constraint firstItem="eqx-PX-owU" firstAttribute="centerX" secondItem="3AM-nA-fNx" secondAttribute="centerX" id="NUF-Nr-KmO"/>
-                                        <constraint firstItem="iIC-JT-PCJ" firstAttribute="top" secondItem="3AM-nA-fNx" secondAttribute="top" id="Wyx-UT-OAi"/>
-                                        <constraint firstItem="iIC-JT-PCJ" firstAttribute="leading" secondItem="3AM-nA-fNx" secondAttribute="leading" id="nJz-ZR-Sqe"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jv7-Oi-CRK">
-                                    <rect key="frame" x="83" y="0.0" width="83" height="80"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="FBj-GH-LAS">
-                                            <rect key="frame" x="16.333333333333311" y="18.666666666666625" width="50.666666666666657" height="42.666666666666657"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_settings" translatesAutoresizingMaskIntoConstraints="NO" id="1oy-AU-tRd">
-                                                    <rect key="frame" x="14.333333333333371" y="0.0" width="22" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="M45-ce-Aoy"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yn-n5-u6c" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="50.666666666666664" height="17.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
-                                                    <color key="textColor" name="Gray"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="setting_tab"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3L-pW-sSO">
-                                            <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="tappedTSetting:" destination="-1" eventType="touchUpInside" id="V32-t2-cAQ"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="U3L-pW-sSO" firstAttribute="top" secondItem="jv7-Oi-CRK" secondAttribute="top" id="0Qt-oH-aPS"/>
-                                        <constraint firstAttribute="bottom" secondItem="U3L-pW-sSO" secondAttribute="bottom" id="AfL-7f-Nc5"/>
-                                        <constraint firstItem="FBj-GH-LAS" firstAttribute="centerY" secondItem="jv7-Oi-CRK" secondAttribute="centerY" id="PLC-Vh-ltk"/>
-                                        <constraint firstItem="FBj-GH-LAS" firstAttribute="centerX" secondItem="jv7-Oi-CRK" secondAttribute="centerX" id="Vzp-jU-nef"/>
-                                        <constraint firstAttribute="trailing" secondItem="U3L-pW-sSO" secondAttribute="trailing" id="ae5-8u-JFR"/>
-                                        <constraint firstItem="U3L-pW-sSO" firstAttribute="leading" secondItem="jv7-Oi-CRK" secondAttribute="leading" id="jC1-5y-pRr"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                        </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-NW-MRp">
-                            <rect key="frame" x="166" y="0.0" width="61" height="110"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t8o-p7-SOR">
-                                    <rect key="frame" x="0.0" y="0.0" width="61" height="110"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_create_tab" translatesAutoresizingMaskIntoConstraints="NO" id="EWW-I9-HQt">
-                                            <rect key="frame" x="0.0" y="0.0" width="61" height="62"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="62" id="1aG-Nk-gi5"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMR-td-Zz0" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="62" width="61" height="48"/>
-                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
-                                            <color key="textColor" name="Gray"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="track_live_tab"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACr-2D-Bpc">
-                                    <rect key="frame" x="0.0" y="0.0" width="61" height="110"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <connections>
-                                        <action selector="tappedTTrackLive:" destination="-1" eventType="touchUpInside" id="Fud-Ih-hfN"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="t8o-p7-SOR" firstAttribute="top" secondItem="TWC-NW-MRp" secondAttribute="top" id="2Xi-rD-K2d"/>
-                                <constraint firstItem="t8o-p7-SOR" firstAttribute="leading" secondItem="TWC-NW-MRp" secondAttribute="leading" id="KOn-9Y-sAC"/>
-                                <constraint firstAttribute="bottom" secondItem="t8o-p7-SOR" secondAttribute="bottom" id="NY5-7B-zpk"/>
-                                <constraint firstItem="ACr-2D-Bpc" firstAttribute="top" secondItem="TWC-NW-MRp" secondAttribute="top" id="Rtj-LN-ZMp"/>
-                                <constraint firstAttribute="bottom" secondItem="ACr-2D-Bpc" secondAttribute="bottom" id="cNG-r2-Jir"/>
-                                <constraint firstAttribute="trailing" secondItem="t8o-p7-SOR" secondAttribute="trailing" id="pN9-ix-8jx"/>
-                                <constraint firstItem="ACr-2D-Bpc" firstAttribute="leading" secondItem="TWC-NW-MRp" secondAttribute="leading" id="vwn-2N-s6q"/>
-                                <constraint firstAttribute="trailing" secondItem="ACr-2D-Bpc" secondAttribute="trailing" id="xIA-On-iGh"/>
-                            </constraints>
-                        </view>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZTJ-cL-9q3">
-                            <rect key="frame" x="0.0" y="30" width="166" height="80"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PW-67-tGh">
-                                    <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="QQa-0b-AWL">
-                                            <rect key="frame" x="22.666666666666671" y="18.666666666666625" width="38" height="42.666666666666657"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_home" translatesAutoresizingMaskIntoConstraints="NO" id="PVI-Y1-1LA">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_home" translatesAutoresizingMaskIntoConstraints="NO" id="gLH-er-q6m">
                                                     <rect key="frame" x="8" y="0.0" width="22" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="wnA-I8-9nV"/>
+                                                        <constraint firstAttribute="height" constant="22" id="VfV-hb-kEF"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFD-nG-hQs" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5P-YO-8ev" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="38" height="17.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="home_tab"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7H-3b-ZjX">
-                                            <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kb3-3I-DaX">
+                                            <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="80"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <connections>
-                                                <action selector="tappedTHome:" destination="-1" eventType="touchUpInside" id="tdq-6d-g47"/>
+                                                <action selector="tappedTHome:" destination="-1" eventType="touchUpInside" id="JVx-vG-2qc"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Y7H-3b-ZjX" firstAttribute="leading" secondItem="8PW-67-tGh" secondAttribute="leading" id="Afh-I2-EOA"/>
-                                        <constraint firstItem="QQa-0b-AWL" firstAttribute="centerY" secondItem="8PW-67-tGh" secondAttribute="centerY" id="Cax-kZ-ptG"/>
-                                        <constraint firstItem="Y7H-3b-ZjX" firstAttribute="top" secondItem="8PW-67-tGh" secondAttribute="top" id="DGS-yq-nMw"/>
-                                        <constraint firstItem="QQa-0b-AWL" firstAttribute="centerX" secondItem="8PW-67-tGh" secondAttribute="centerX" id="Z9H-G4-ey6"/>
-                                        <constraint firstAttribute="bottom" secondItem="Y7H-3b-ZjX" secondAttribute="bottom" id="bqv-hI-CQH"/>
-                                        <constraint firstAttribute="trailing" secondItem="Y7H-3b-ZjX" secondAttribute="trailing" id="zPH-p4-MOk"/>
+                                        <constraint firstAttribute="bottom" secondItem="Kb3-3I-DaX" secondAttribute="bottom" id="7q0-Ej-LwT"/>
+                                        <constraint firstItem="Kb3-3I-DaX" firstAttribute="top" secondItem="PgH-uX-Whu" secondAttribute="top" id="8N5-If-ses"/>
+                                        <constraint firstItem="Ux9-cc-TyJ" firstAttribute="centerX" secondItem="PgH-uX-Whu" secondAttribute="centerX" id="OXc-Xd-802"/>
+                                        <constraint firstItem="Ux9-cc-TyJ" firstAttribute="centerY" secondItem="PgH-uX-Whu" secondAttribute="centerY" id="hDK-jj-mPP"/>
+                                        <constraint firstItem="Kb3-3I-DaX" firstAttribute="leading" secondItem="PgH-uX-Whu" secondAttribute="leading" id="ifx-T0-YNE"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kb3-3I-DaX" secondAttribute="trailing" id="qoa-3L-nle"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-C1-as9">
-                                    <rect key="frame" x="83" y="0.0" width="83" height="80"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVp-PU-EEF">
+                                    <rect key="frame" x="95.666666666666686" y="0.0" width="86" height="80"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="adE-DJ-Utq">
-                                            <rect key="frame" x="19.333333333333325" y="18.666666666666625" width="44.666666666666657" height="42.666666666666657"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="3uh-df-qlK">
+                                            <rect key="frame" x="20.666666666666654" y="18.666666666666625" width="44.666666666666657" height="42.666666666666657"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_history" translatesAutoresizingMaskIntoConstraints="NO" id="vyo-aC-5OY">
-                                                    <rect key="frame" x="11.333333333333343" y="0.0" width="22" height="22"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_history" translatesAutoresizingMaskIntoConstraints="NO" id="SYR-Od-rtG">
+                                                    <rect key="frame" x="11.333333333333329" y="0.0" width="22" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="92e-z2-cT6"/>
+                                                        <constraint firstAttribute="height" constant="22" id="Unf-uK-d29"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baj-5S-H4r" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuv-hx-8al" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="44.666666666666664" height="17.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="history_tab"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKJ-X1-ulV">
-                                            <rect key="frame" x="0.0" y="0.0" width="83" height="80"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kY4-G5-YNJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="86" height="80"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <connections>
-                                                <action selector="tappedTHistory:" destination="-1" eventType="touchUpInside" id="jmu-2K-b4S"/>
+                                                <action selector="tappedTHistory:" destination="-1" eventType="touchUpInside" id="zkU-di-wdL"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="adE-DJ-Utq" firstAttribute="centerX" secondItem="Xf2-C1-as9" secondAttribute="centerX" id="1uR-Ze-zgt"/>
-                                        <constraint firstAttribute="trailing" secondItem="EKJ-X1-ulV" secondAttribute="trailing" id="9Xb-NU-hTE"/>
-                                        <constraint firstAttribute="bottom" secondItem="EKJ-X1-ulV" secondAttribute="bottom" id="JgV-NB-ApT"/>
-                                        <constraint firstItem="EKJ-X1-ulV" firstAttribute="leading" secondItem="Xf2-C1-as9" secondAttribute="leading" id="RGp-m0-QXp"/>
-                                        <constraint firstItem="adE-DJ-Utq" firstAttribute="centerY" secondItem="Xf2-C1-as9" secondAttribute="centerY" id="mRg-Rn-82E"/>
-                                        <constraint firstItem="EKJ-X1-ulV" firstAttribute="top" secondItem="Xf2-C1-as9" secondAttribute="top" id="p6t-wS-Ngp"/>
+                                        <constraint firstItem="3uh-df-qlK" firstAttribute="centerX" secondItem="xVp-PU-EEF" secondAttribute="centerX" id="U2x-6l-tKw"/>
+                                        <constraint firstAttribute="bottom" secondItem="kY4-G5-YNJ" secondAttribute="bottom" id="Xqt-YW-0Ub"/>
+                                        <constraint firstItem="kY4-G5-YNJ" firstAttribute="leading" secondItem="xVp-PU-EEF" secondAttribute="leading" id="aYn-jC-YJ8"/>
+                                        <constraint firstAttribute="trailing" secondItem="kY4-G5-YNJ" secondAttribute="trailing" id="dOf-4c-c1t"/>
+                                        <constraint firstItem="3uh-df-qlK" firstAttribute="centerY" secondItem="xVp-PU-EEF" secondAttribute="centerY" id="hPl-wo-NRb"/>
+                                        <constraint firstItem="kY4-G5-YNJ" firstAttribute="top" secondItem="xVp-PU-EEF" secondAttribute="top" id="uih-aD-PnY"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLn-ph-N8A">
+                                    <rect key="frame" x="191.66666666666666" y="0.0" width="85.666666666666657" height="80"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="rju-BV-Fq2">
+                                            <rect key="frame" x="27" y="18.666666666666625" width="31.333333333333329" height="42.666666666666657"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_s_chat" translatesAutoresizingMaskIntoConstraints="NO" id="KeG-Od-HUw">
+                                                    <rect key="frame" x="4.6666666666666856" y="0.0" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="xTe-pL-Z17"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-YV-OFm" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="25" width="31.333333333333332" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                    <color key="textColor" name="White"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgw-8O-jb7">
+                                            <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="80"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mgw-8O-jb7" firstAttribute="leading" secondItem="PLn-ph-N8A" secondAttribute="leading" id="2Z2-gQ-hrt"/>
+                                        <constraint firstItem="rju-BV-Fq2" firstAttribute="centerY" secondItem="PLn-ph-N8A" secondAttribute="centerY" id="82Y-Uj-sy5"/>
+                                        <constraint firstAttribute="bottom" secondItem="mgw-8O-jb7" secondAttribute="bottom" id="Fv4-GD-VDq"/>
+                                        <constraint firstItem="rju-BV-Fq2" firstAttribute="centerX" secondItem="PLn-ph-N8A" secondAttribute="centerX" id="f3w-WQ-c1J"/>
+                                        <constraint firstAttribute="trailing" secondItem="mgw-8O-jb7" secondAttribute="trailing" id="l3h-IK-7CO"/>
+                                        <constraint firstItem="mgw-8O-jb7" firstAttribute="top" secondItem="PLn-ph-N8A" secondAttribute="top" id="zgS-lY-kQ5"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jyi-rR-bIK">
+                                    <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="80"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="p8e-iP-y92">
+                                            <rect key="frame" x="17.333333333333368" y="18.666666666666625" width="50.666666666666657" height="42.666666666666657"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_settings" translatesAutoresizingMaskIntoConstraints="NO" id="WMf-wI-zEh">
+                                                    <rect key="frame" x="14.333333333333314" y="0.0" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="T7r-bJ-qOd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJs-8u-zSI" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="25" width="50.666666666666664" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                                    <color key="textColor" name="Gray"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhO-Qc-c4k">
+                                            <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="80"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <connections>
+                                                <action selector="tappedTSettings:" destination="-1" eventType="touchUpInside" id="rVA-CO-GKq"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="p8e-iP-y92" firstAttribute="centerY" secondItem="Jyi-rR-bIK" secondAttribute="centerY" id="B8R-iE-lgW"/>
+                                        <constraint firstAttribute="trailing" secondItem="rhO-Qc-c4k" secondAttribute="trailing" id="IjU-Jd-uBB"/>
+                                        <constraint firstItem="rhO-Qc-c4k" firstAttribute="top" secondItem="Jyi-rR-bIK" secondAttribute="top" id="Vfs-aJ-LGk"/>
+                                        <constraint firstAttribute="bottom" secondItem="rhO-Qc-c4k" secondAttribute="bottom" id="Z0A-UQ-JS6"/>
+                                        <constraint firstItem="rhO-Qc-c4k" firstAttribute="leading" secondItem="Jyi-rR-bIK" secondAttribute="leading" id="g4T-rn-QOM"/>
+                                        <constraint firstItem="p8e-iP-y92" firstAttribute="centerX" secondItem="Jyi-rR-bIK" secondAttribute="centerX" id="kt1-Oo-c9d"/>
                                     </constraints>
                                 </view>
                             </subviews>
                         </stackView>
                     </subviews>
+                    <color key="backgroundColor" name="primery_black"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="ZTJ-cL-9q3" secondAttribute="bottom" id="4fR-i6-e1A"/>
-                        <constraint firstItem="YaP-46-3Nm" firstAttribute="top" secondItem="Lg8-Vd-hMc" secondAttribute="top" constant="30" id="4s0-BG-FLJ"/>
-                        <constraint firstItem="Nf2-YQ-cv2" firstAttribute="top" secondItem="YaP-46-3Nm" secondAttribute="top" id="94r-c9-VFD"/>
-                        <constraint firstItem="TWC-NW-MRp" firstAttribute="top" secondItem="Lg8-Vd-hMc" secondAttribute="top" id="BiI-Ga-UdT"/>
-                        <constraint firstAttribute="bottom" secondItem="TWC-NW-MRp" secondAttribute="bottom" id="Ffl-cr-iso"/>
-                        <constraint firstAttribute="bottom" secondItem="Nf2-YQ-cv2" secondAttribute="bottom" id="M45-lv-IDN"/>
-                        <constraint firstItem="TWC-NW-MRp" firstAttribute="leading" secondItem="ZTJ-cL-9q3" secondAttribute="trailing" id="PPp-Hb-ptK"/>
-                        <constraint firstItem="ZTJ-cL-9q3" firstAttribute="top" secondItem="YaP-46-3Nm" secondAttribute="top" id="VMs-ax-qMe"/>
-                        <constraint firstItem="TWC-NW-MRp" firstAttribute="centerX" secondItem="Lg8-Vd-hMc" secondAttribute="centerX" id="cjX-IO-wiY"/>
-                        <constraint firstItem="YaP-46-3Nm" firstAttribute="leading" secondItem="Lg8-Vd-hMc" secondAttribute="leading" id="fRB-eA-WOb"/>
-                        <constraint firstItem="ZTJ-cL-9q3" firstAttribute="leading" secondItem="Lg8-Vd-hMc" secondAttribute="leading" id="joS-IE-IeG"/>
-                        <constraint firstAttribute="trailing" secondItem="YaP-46-3Nm" secondAttribute="trailing" id="khl-eM-vlK"/>
-                        <constraint firstAttribute="height" constant="110" id="srH-YS-2ik"/>
-                        <constraint firstAttribute="bottom" secondItem="YaP-46-3Nm" secondAttribute="bottom" id="voK-41-PpG"/>
-                        <constraint firstItem="Nf2-YQ-cv2" firstAttribute="leading" secondItem="TWC-NW-MRp" secondAttribute="trailing" id="y9x-2h-DD2"/>
-                        <constraint firstAttribute="trailing" secondItem="Nf2-YQ-cv2" secondAttribute="trailing" id="zwO-WO-wvw"/>
+                        <constraint firstAttribute="trailing" secondItem="dxd-d0-ZIe" secondAttribute="trailing" constant="10" id="0mu-E4-duG"/>
+                        <constraint firstAttribute="bottom" secondItem="dxd-d0-ZIe" secondAttribute="bottom" id="6Al-eh-Vp7"/>
+                        <constraint firstItem="dxd-d0-ZIe" firstAttribute="leading" secondItem="Lg8-Vd-hMc" secondAttribute="leading" constant="10" id="du6-zC-TSO"/>
+                        <constraint firstItem="dxd-d0-ZIe" firstAttribute="top" secondItem="Lg8-Vd-hMc" secondAttribute="top" id="pT4-hp-ST8"/>
+                        <constraint firstAttribute="height" constant="80" id="srH-YS-2ik"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableLeftTopCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableRightTopCorner" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusSide">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -369,11 +304,9 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_create_tab" width="60" height="60"/>
         <image name="ic_empty_history_list" width="200" height="145"/>
         <image name="ic_s_chat" width="22" height="22"/>
         <image name="ic_search" width="24" height="24"/>
-        <image name="ic_tabbar_back" width="375" height="80"/>
         <image name="ic_un_history" width="22" height="22"/>
         <image name="ic_un_home" width="22" height="22"/>
         <image name="ic_un_settings" width="22" height="22"/>
