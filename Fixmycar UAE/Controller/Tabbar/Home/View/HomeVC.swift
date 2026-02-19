@@ -8,6 +8,22 @@
 import UIKit
 import CoreLocation
 
+enum JobStatus: String {
+    case pending = "pending"
+    case accepted = "ACCEPTED"
+    case started = "STARTED"
+    case onTheWayToPickup = "ON_THE_WAY_TO_PICKUP"
+    case nearPickup = "NEAR_PICKUP"
+    case arrivedAtPickup = "ARRIVED_AT_PICKUP"
+    case pickupCompleted = "PICKUP_COMPLETED"
+
+    case onTheWayToDelivery = "ON_THE_WAY_TO_DELIVERY"
+    case nearDelivery = "NEAR_DELIVERY"
+    case arrivedAtDelivery = "ARRIVED_AT_DELIVERY"
+    case completed = "COMPLETED"
+    case cancelled = "cancelled"
+}
+
 class HomeVC: UIViewController {
 
     @IBOutlet weak var lblLocation: UILabel!
@@ -34,6 +50,8 @@ class HomeVC: UIViewController {
     @IBOutlet weak var svNoBookingFound: UIStackView!
     @IBOutlet weak var viewMainActiveBooking: UIView!
     @IBOutlet weak var viewActiveBooking: RecentBookingsView!
+    @IBOutlet weak var viewActiveStatus: UIView!
+    @IBOutlet weak var lblActiveStatus: AppLabel!
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
@@ -66,24 +84,106 @@ class HomeVC: UIViewController {
                 print("❌ activeBooking empty or nil")
                 return
             }
-
-//            let activeBooking = activeBooking
             
             self?.viewActiveBooking.lblType.text = activeBooking[0].serviceName
             self?.viewActiveBooking.lblTime.text = activeBooking[0].jobDate?.toDisplayDate()
             self?.viewActiveBooking.lblPickLocation.text = activeBooking[0].pickupAddress
             self?.viewActiveBooking.lblDropLocation.text = activeBooking[0].dropAddress
             self?.viewActiveBooking.lblPrice.text = (activeBooking[0].currency ?? "") + " " + (activeBooking[0].amount ?? "")
-            self?.viewActiveBooking.lblStatus.text = activeBooking[0].status
-//            if let homeData = self?.homeVM.homeData, let activeBooking = homeData.activeBooking, activeBooking.count > 0 {
-//                self?.viewActiveBooking.lblType.text = activeBooking[0].serviceName
-//                self?.viewActiveBooking.lblTime.text = activeBooking[0].jobDate?.toDisplayDate()
-//                self?.viewActiveBooking.lblPickLocation.text = activeBooking[0].pickupAddress
-//                self?.viewActiveBooking.lblDropLocation.text = activeBooking[0].dropAddress
-//                self?.viewActiveBooking.lblPrice.text = (activeBooking[0].currency ?? "") + (activeBooking[0].amount ?? "")
-//                self?.viewActiveBooking.lblStatus.text = activeBooking[0].status
-//                
-//            }
+            self?.viewActiveBooking.lblStatus.text = "View"
+            self?.viewActiveBooking.lblStatus.textColor = .white
+            self?.viewActiveBooking.viewStatus.backgroundColor = .primeryBlack
+            self?.viewActiveBooking.viewStatus.borderColor = .clear
+            
+            let jobStatus: JobStatus = JobStatus(rawValue: activeBooking[0].status ?? "") ?? .accepted
+            
+            switch jobStatus {
+            case .pending:
+                self?.lblActiveStatus.text = "pending"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.pending_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.pending_border
+                self?.lblActiveStatus.textColor = UIColor.AppColor.pending_border
+                
+            case .accepted:
+                self?.lblActiveStatus.text = "Accepted"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.started_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.started_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.started_border
+            case .started:
+                self?.lblActiveStatus.text = "Started"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.started_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.started_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.started_border
+            case .onTheWayToPickup:
+                self?.lblActiveStatus.text = "On the way to pickup"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.one_way_to_pickup_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.one_way_to_pickup_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.one_way_to_pickup_border
+            case .nearPickup:
+                self?.lblActiveStatus.text = "Near pickup"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.near_pickup_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.near_pickup_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.near_pickup_border
+            case .arrivedAtPickup:
+                self?.lblActiveStatus.text = "Arrived at pickup"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.arrived_pick_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.arrived_pick_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.arrived_pick_border
+            case .pickupCompleted:
+                self?.lblActiveStatus.text = "Pickup completed"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.pickup_completed_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.pickup_completed_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.pickup_completed_border
+            case .onTheWayToDelivery:
+                self?.lblActiveStatus.text = "On the way to delivery"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.one_way_to_delivery_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.one_way_to_delivery_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.one_way_to_delivery_border
+            case .nearDelivery:
+                self?.lblActiveStatus.text = "Near delivery"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.near_delivery_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.near_delivery_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.near_delivery_border
+            case .arrivedAtDelivery:
+                self?.lblActiveStatus.text = "Arrived at delivery"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.arrived_delivery_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.arrived_delivery_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.arrived_delivery_border
+            case .completed:
+                self?.lblActiveStatus.text = "Completed"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.completrd_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.completrd_border
+                
+                self?.lblActiveStatus.textColor = UIColor.AppColor.completrd_border
+            case .cancelled:
+                self?.lblActiveStatus.text = "Cancelled"
+                
+                self?.viewActiveStatus.backgroundColor = UIColor.AppColor.cancelled_bg
+                self?.viewActiveStatus.borderColor = UIColor.AppColor.cancelled_border
+            
+                self?.lblActiveStatus.textColor = UIColor.AppColor.cancelled_bg
+            }
+            
             
             self?.tblViewRecentBooking.reloadData()
         }
@@ -132,6 +232,7 @@ class HomeVC: UIViewController {
         self.present(vc, animated: true)
     }
     @IBAction func tappedViewAllRecentBooking(_ sender: Any) {
+        tappedTHistory(self)
     }
     
     @IBAction func tappedNotification(_ sender: Any) {
@@ -139,6 +240,9 @@ class HomeVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func tappedActiveJob(_ sender: Any) {
+        let vc = TrackLiveVC()
+        vc.trackLiveVM.bookingId = self.homeVM.homeData?.activeBooking?[0].id ?? 0
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - tabbar Action
@@ -174,6 +278,13 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dicData = homeVM.recentServiceList[indexPath.row]
+
+        let vc = BookingDetailsVC()
+        vc.bookingVM.bookingid = dicData.id ?? 0
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 

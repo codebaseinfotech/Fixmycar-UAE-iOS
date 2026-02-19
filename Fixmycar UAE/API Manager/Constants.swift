@@ -38,4 +38,7 @@ enum APIEndPoint: String {
     case feedback = "v1/common/feedback"
     case logoutUser = "v1/logout"
     case deleteAccount = "v1/delete-account"
+    
 }
+
+ 

@@ -21,6 +21,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Fixmycar_UAE" customModuleProvider="target">
             <connections>
                 <outlet property="heightTVRecentBooking" destination="YiQ-QB-edd" id="t4G-CA-zie"/>
+                <outlet property="lblActiveStatus" destination="DOH-Ro-P6L" id="QCh-tB-5xC"/>
                 <outlet property="lblLocation" destination="d5i-hD-BGk" id="zLr-A0-aMN"/>
                 <outlet property="lblUserName" destination="xbh-kF-Yhq" id="e9o-YS-cef"/>
                 <outlet property="scrollView" destination="AzE-qJ-I0h" id="A5l-vR-ra7"/>
@@ -28,6 +29,7 @@
                 <outlet property="tblViewRecentBooking" destination="jgc-md-0zn" id="yoC-gw-Mre"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewActiveBooking" destination="8gZ-2A-gHF" id="9L7-PE-bcO"/>
+                <outlet property="viewActiveStatus" destination="kLv-yv-pYb" id="5NZ-mV-Ioh"/>
                 <outlet property="viewDotsNotification" destination="xSi-b4-Pzc" id="aab-mU-CsE"/>
                 <outlet property="viewMainActiveBooking" destination="doK-RC-mBL" id="dx9-jE-t96"/>
             </connections>
@@ -363,6 +365,9 @@ first recovery</string>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                             <real key="value" value="18"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>

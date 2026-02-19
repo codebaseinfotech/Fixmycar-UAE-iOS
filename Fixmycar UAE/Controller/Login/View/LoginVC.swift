@@ -13,7 +13,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var welcomeTitleLabel: UILabel!
     @IBOutlet weak var mobileNumberTextField: UITextField! {
         didSet {
-            mobileNumberTextField.text = "9876543211"
+//            mobileNumberTextField.text = "9876543211"
             mobileNumberTextField.maxLength = 10
         }
     }

@@ -20,17 +20,95 @@ class RecentBookingTVCell: UITableViewCell {
             
             viewRecentBooking.lblPickLocation.text = recentBooking?.pickupAddress ?? ""
             viewRecentBooking.lblDropLocation.text = recentBooking?.dropAddress ?? ""
-
-            if recentBooking?.status == "pending" {
-                viewRecentBooking.viewStatus.backgroundColor = #colorLiteral(red: 1, green: 0.9882352941, blue: 0.9490196078, alpha: 1)
-                viewRecentBooking.viewStatus.borderColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
-                viewRecentBooking.lblStatus.textColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
-            } else if recentBooking?.status == "cancelled" {
-                viewRecentBooking.viewStatus.backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.9294117647, blue: 0.9333333333, alpha: 1)
-                viewRecentBooking.viewStatus.borderColor = #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
-                viewRecentBooking.lblStatus.textColor = #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
-            }
             
+            let jobStatus: JobStatus = JobStatus(rawValue: recentBooking?.status ?? "") ?? .accepted
+            
+            switch jobStatus {
+            case .pending:
+                viewRecentBooking.lblStatus.text = "pending"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.pending_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.pending_border
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.pending_border
+                
+            case .accepted:
+                viewRecentBooking.lblStatus.text = "Accepted"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.started_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.started_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.started_border
+            case .started:
+                viewRecentBooking.lblStatus.text = "Started"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.started_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.started_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.started_border
+            case .onTheWayToPickup:
+                viewRecentBooking.lblStatus.text = "On the way to pickup"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.one_way_to_pickup_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.one_way_to_pickup_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.one_way_to_pickup_border
+            case .nearPickup:
+                viewRecentBooking.lblStatus.text = "Near pickup"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.near_pickup_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.near_pickup_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.near_pickup_border
+            case .arrivedAtPickup:
+                viewRecentBooking.lblStatus.text = "Arrived at pickup"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.arrived_pick_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.arrived_pick_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.arrived_pick_border
+            case .pickupCompleted:
+                viewRecentBooking.lblStatus.text = "Pickup completed"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.pickup_completed_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.pickup_completed_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.pickup_completed_border
+            case .onTheWayToDelivery:
+                viewRecentBooking.lblStatus.text = "On the way to delivery"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.one_way_to_delivery_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.one_way_to_delivery_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.one_way_to_delivery_border
+            case .nearDelivery:
+                viewRecentBooking.lblStatus.text = "Near delivery"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.near_delivery_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.near_delivery_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.near_delivery_border
+            case .arrivedAtDelivery:
+                viewRecentBooking.lblStatus.text = "Arrived at delivery"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.arrived_delivery_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.arrived_delivery_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.arrived_delivery_border
+            case .completed:
+                viewRecentBooking.lblStatus.text = "Completed"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.completrd_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.completrd_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.completrd_border
+            case .cancelled:
+                viewRecentBooking.lblStatus.text = "Cancelled"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.cancelled_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.cancelled_border
+            
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.cancelled_border
+            }
         }
     }
     
@@ -44,16 +122,94 @@ class RecentBookingTVCell: UITableViewCell {
             viewRecentBooking.lblPickLocation.text = historyBooking?.pickupAddress ?? ""
             viewRecentBooking.lblDropLocation.text = historyBooking?.dropoffAddress ?? ""
             
-            if historyBooking?.status == "pending" {
-                viewRecentBooking.viewStatus.backgroundColor = #colorLiteral(red: 1, green: 0.9882352941, blue: 0.9490196078, alpha: 1)
-                viewRecentBooking.viewStatus.borderColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
-                viewRecentBooking.lblStatus.textColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
-            } else if historyBooking?.status == "cancelled" {
-                viewRecentBooking.viewStatus.backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.9294117647, blue: 0.9333333333, alpha: 1)
-                viewRecentBooking.viewStatus.borderColor = #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
-                viewRecentBooking.lblStatus.textColor = #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)
-            }
+            let jobStatus: JobStatus = JobStatus(rawValue: historyBooking?.status ?? "") ?? .accepted
             
+            switch jobStatus {
+            case .pending:
+                viewRecentBooking.lblStatus.text = "pending"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.pending_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.pending_border
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.pending_border
+                
+            case .accepted:
+                viewRecentBooking.lblStatus.text = "Accepted"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.started_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.started_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.started_border
+            case .started:
+                viewRecentBooking.lblStatus.text = "Started"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.started_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.started_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.started_border
+            case .onTheWayToPickup:
+                viewRecentBooking.lblStatus.text = "On the way to pickup"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.one_way_to_pickup_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.one_way_to_pickup_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.one_way_to_pickup_border
+            case .nearPickup:
+                viewRecentBooking.lblStatus.text = "Near pickup"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.near_pickup_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.near_pickup_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.near_pickup_border
+            case .arrivedAtPickup:
+                viewRecentBooking.lblStatus.text = "Arrived at pickup"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.arrived_pick_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.arrived_pick_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.arrived_pick_border
+            case .pickupCompleted:
+                viewRecentBooking.lblStatus.text = "Pickup completed"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.pickup_completed_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.pickup_completed_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.pickup_completed_border
+            case .onTheWayToDelivery:
+                viewRecentBooking.lblStatus.text = "On the way to delivery"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.one_way_to_delivery_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.one_way_to_delivery_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.one_way_to_delivery_border
+            case .nearDelivery:
+                viewRecentBooking.lblStatus.text = "Near delivery"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.near_delivery_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.near_delivery_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.near_delivery_border
+            case .arrivedAtDelivery:
+                viewRecentBooking.lblStatus.text = "Arrived at delivery"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.arrived_delivery_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.arrived_delivery_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.arrived_delivery_border
+            case .completed:
+                viewRecentBooking.lblStatus.text = "Completed"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.completrd_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.completrd_border
+                
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.completrd_border
+            case .cancelled:
+                viewRecentBooking.lblStatus.text = "Cancelled"
+                
+                viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.cancelled_bg
+                viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.cancelled_border
+            
+                viewRecentBooking.lblStatus.textColor = UIColor.AppColor.cancelled_border
+            }
         }
     }
     
