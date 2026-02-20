@@ -41,9 +41,22 @@ class MyProfileVC: UIViewController {
         }
     }
     
+    var profileVM = MyProfileVM()
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileVM.getProfile()
+        
+        profileVM.successGetProfile = {
+            self.lblUserName.text = FCUtilites.getCurrentUser()?.name ?? ""
+            self.txtFullName.text = FCUtilites.getCurrentUser()?.firstName ?? ""
+            self.txtNumber.text = FCUtilites.getCurrentUser()?.phone ?? ""
+            self.txtEmail.text = FCUtilites.getCurrentUser()?.email ?? ""
+            
+            self.imgProfile.loadFromUrlString(FCUtilites.getCurrentUser()?.avatar ?? "", placeholder: "ic_placeholder_user".image)
+        }
         
         // Do any additional setup after loading the view.
     }
