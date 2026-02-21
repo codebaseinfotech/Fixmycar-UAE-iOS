@@ -80,12 +80,7 @@ class LoginVC: UIViewController {
             setUpMakeToast(msg: "Please enter mobile number")
             return
         }
-        
-        if phone.count < 10 {
-            setUpMakeToast(msg: "Please enter valid mobile number")
-            return
-        }
-        
+
         viewModel.callLoginAPI(phone: phone, countryCode: "+971")
     }
     @IBAction func tappedTC(_ sender: Any) {

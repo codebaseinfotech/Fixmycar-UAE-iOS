@@ -15,7 +15,7 @@ enum AppEnviroment {
     case dev
 }
 
-let current: AppEnviroment = .dev
+let current: AppEnviroment = .live
 
 // ************************* LIVE ***********************
 let BASE_URL = current == .live ? "https://admin.torettorecovery.ae/api/" : "https://admin-dev.torettorecovery.ae/api/"

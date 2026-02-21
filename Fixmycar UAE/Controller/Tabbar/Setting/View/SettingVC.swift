@@ -126,6 +126,12 @@ class SettingVC: UIViewController {
         }
     }
     
+    @IBAction func clickedInfo(_ sender: Any) {
+        UIPasteboard.general.string = FCUtilites.getOneSignleToken()
+        self.setUpMakeToast(msg: FCUtilites.getOneSignleToken())
+    }
+    
+    
     // MARK: - Tabbar Action Method
     @IBAction func tappedTHome(_ sender: Any) {
         let vc = HomeVC()
