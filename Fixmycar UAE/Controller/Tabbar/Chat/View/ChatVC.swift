@@ -24,10 +24,29 @@ class ChatVC: UIViewController {
         }
     }
     
+    var chatVM = ChatVM()
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        chatVM.getChatList()
+        chatVM.successChatList = {
+            
+            if self.chatVM.chatList.count > 0 {
+                self.viewNoChatFound.isHidden = true
+                self.tblViewList.isHidden = false
+            } else {
+                self.viewNoChatFound.isHidden = true
+                self.tblViewList.isHidden = true
+            }
+            
+            self.tblViewList.reloadData()
+        }
+        chatVM.failureChatList = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -51,11 +70,16 @@ class ChatVC: UIViewController {
 // MARK: - TV Delegate & DataSource
 extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return chatVM.chatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatListTVCell.identifier) as! ChatListTVCell
+        
+        let dicData = chatVM.chatList[indexPath.row]
+        cell.lblName.text = dicData.chatPartner ?? ""
+        cell.imgProfile.loadFromUrlString(dicData.chatPartner ?? "", placeholder: "ic_placeholder_user".image)
+        cell.lblMsg.text = dicData.lastMessage ?? ""
         
         return cell
     }

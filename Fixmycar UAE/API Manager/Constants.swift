@@ -42,6 +42,7 @@ enum APIEndPoint: String {
     case vehicle_issue = "v1/common/vehicle-issues"
     case promo_code_verify = "v1/customer/promocodes/verify"
     case get_config = "v1/common/config"
+    case chat_list = "v1/chat/inbox"
 }
 
  
