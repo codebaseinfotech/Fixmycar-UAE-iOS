@@ -85,6 +85,7 @@
             <connections>
                 <outlet property="imgPick" destination="6Bf-QJ-wGB" id="nsx-LD-eOW"/>
                 <outlet property="lblName" destination="Uzh-WX-E3X" id="J2H-ui-hHK"/>
+                <outlet property="viewMain" destination="tP1-Vt-cZ3" id="FHR-6I-KUf"/>
             </connections>
             <point key="canvasLocation" x="47" y="120"/>
         </collectionViewCell>

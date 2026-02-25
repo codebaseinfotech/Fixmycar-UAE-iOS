@@ -70,10 +70,29 @@ class RecoveryServiceVC: UIViewController {
         "Other issue"
     ]
     var selectedVehicleIssueIndex: Int? = nil
+    var selectedVehicleType: Int? = nil
+    var recoveryVM = RecoveryServiceVM()
     
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        recoveryVM.getVehicleType()
+        recoveryVM.getVehicleIssue()
+        
+        recoveryVM.successVehicleType = {
+            self.collectionViewVehicleType.reloadData()
+        }
+        recoveryVM.successVehicleIssue = {
+            self.tblViewVehicleIssue.reloadData()
+        }
+        
+        recoveryVM.failureVehicleIssue = { (message) in
+            self.setUpMakeToast(msg: message)
+        }
+        recoveryVM.failureVehicleType = { (message) in
+            self.setUpMakeToast(msg: message)
+        }
 
         selectBookService()
         // Do any additional setup after loading the view.
@@ -137,6 +156,8 @@ class RecoveryServiceVC: UIViewController {
     }
     @IBAction func tappedContinue(_ sender: Any) {
         if isScheduleBooking {
+            guard validateBooking(isShedule: true) else { return }
+            
             let vc = BookingConfirmationPopupVC()
             if let sheet = vc.sheetPresentationController {
                 // Create a custom detent that returns a fixed height
@@ -151,6 +172,7 @@ class RecoveryServiceVC: UIViewController {
             
             vc.onTappedConfirmBooking = { [self] in
                 
+                CreateBooking.shared.booking_type = "scheduled"
                 CreateBooking.shared.pickup_address = txtPickupLocation.text ?? ""
                 CreateBooking.shared.dropoff_address = txtDropLocation.text ?? ""
                 CreateBooking.shared.pickup_lat = pickUpLatitude
@@ -159,6 +181,7 @@ class RecoveryServiceVC: UIViewController {
                 CreateBooking.shared.dropoff_lng = dropLangitude
                 CreateBooking.shared.scheduled_at = txtChooseDate.text ?? ""
                 CreateBooking.shared.isScheduleBooking = isScheduleBooking
+                CreateBooking.shared.additional_notes = txtAdditionalNotes.text ?? ""
                 
                 let vc = BookingFareAmountVC()
                 vc.viewModel.isScheduleBooking = isScheduleBooking
@@ -168,27 +191,17 @@ class RecoveryServiceVC: UIViewController {
             self.present(vc, animated: true)
         } else {
             
-            guard let pickUpLocation = txtPickupLocation.text, !pickUpLocation.isEmpty else {
-                self.setUpMakeToast(msg: "Please select pickup location")
-                return
-            }
+            guard validateBooking() else { return }
             
-            guard let dropLocation = txtDropLocation.text, !dropLocation.isEmpty else {
-                self.setUpMakeToast(msg: "Please select drop location")
-                return
-            }
-            
-            guard let vehicleIssue = selectedVehicleIssueIndex, vehicleIssue >= 0 else {
-                self.setUpMakeToast(msg: "Please select vehicle issue")
-                return
-            }
-            
+            CreateBooking.shared.booking_type = "immediate"
             CreateBooking.shared.pickup_address = txtPickupLocation.text ?? ""
             CreateBooking.shared.dropoff_address = txtDropLocation.text ?? ""
             CreateBooking.shared.pickup_lat = pickUpLatitude
             CreateBooking.shared.pickup_lng = pickUpLangitude
             CreateBooking.shared.dropoff_lat = dropLatitude
             CreateBooking.shared.dropoff_lng = dropLangitude
+            CreateBooking.shared.isScheduleBooking = false
+            CreateBooking.shared.additional_notes = txtAdditionalNotes.text ?? ""
             
             let vc = BookingFareAmountVC()
             vc.viewModel.isScheduleBooking = false
@@ -208,7 +221,38 @@ class RecoveryServiceVC: UIViewController {
         vc.isDropAddress = true
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+    // MARK: - validate
+    func validateBooking(isShedule: Bool = false) -> Bool {
+        
+        if isShedule {
+            guard let dateTime = txtChooseDate.text, !dateTime.isEmpty else {
+                self.setUpMakeToast(msg: "Please select date and time")
+                return false
+            }
+        }
+        
+        guard let pickUpLocation = txtPickupLocation.text, !pickUpLocation.isEmpty else {
+            self.setUpMakeToast(msg: "Please select pickup location")
+            return false
+        }
+        
+        guard let dropLocation = txtDropLocation.text, !dropLocation.isEmpty else {
+            self.setUpMakeToast(msg: "Please select drop location")
+            return false
+        }
+        
+        guard let vehicleType = selectedVehicleType, vehicleType >= 0 else {
+            self.setUpMakeToast(msg: "Please select vehicle type")
+            return false
+        }
+        
+        guard let vehicleIssue = selectedVehicleIssueIndex, vehicleIssue >= 0 else {
+            self.setUpMakeToast(msg: "Please select vehicle issue")
+            return false
+        }
+        
+        return true
+    }
     // MARK: - selectBookService
     func selectBookService() {
         heightConstBookServiceLine.constant = 2
@@ -271,13 +315,13 @@ extension RecoveryServiceVC: onTappedConfirmLocation {
 // MARK: - TV Delegate & DataSource
 extension RecoveryServiceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrVehicleIssue.count
+        return recoveryVM.vehicleIssue?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReasonListTblViewCell.identifier) as! ReasonListTblViewCell
         
-        cell.lblReason.text = arrVehicleIssue[indexPath.row]
+        cell.lblReason.text = recoveryVM.vehicleIssue?[indexPath.row].name
         cell.imgCheckBox.image = selectedVehicleIssueIndex == indexPath.item ? "ic_check".image : "ic_uncheck".image
         
         cell.lblBottomLine.isHidden = tableView.isLastRow(at: indexPath) ? true : false
@@ -291,6 +335,7 @@ extension RecoveryServiceVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedVehicleIssueIndex = indexPath.item
+        CreateBooking.shared.issue = recoveryVM.vehicleIssue?[indexPath.row].id
         tableView.reloadData()
     }
 }
@@ -298,18 +343,26 @@ extension RecoveryServiceVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - CV Delegate & DataSource
 extension RecoveryServiceVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return setUpVehicleType().count
+        return recoveryVM.vehicleType?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VehicleTypeCVCell.identifier, for: indexPath) as! VehicleTypeCVCell
         
-        let dicData = setUpVehicleType()[indexPath.item]
+        let dicData = recoveryVM.vehicleType?[indexPath.item]
         
-        cell.imgPick.image = dicData.imgVehicle.image
-        cell.lblName.text = dicData.nameVehicle
+        cell.imgPick.loadFromUrlString(dicData?.image)
+        cell.lblName.text = dicData?.name
+        
+        cell.viewMain.borderColor = selectedVehicleType == indexPath.row ? #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1) : #colorLiteral(red: 0.9215686275, green: 0.9215686275, blue: 0.9215686275, alpha: 1)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedVehicleType = indexPath.row
+        CreateBooking.shared.vehicle_type = recoveryVM.vehicleType?[indexPath.row].id
+        collectionView.reloadData()
     }
     
     

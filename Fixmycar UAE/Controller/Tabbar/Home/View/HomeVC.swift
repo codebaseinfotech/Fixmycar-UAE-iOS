@@ -73,6 +73,8 @@ class HomeVC: UIViewController {
             self?.svNoBookingFound.isHidden = self?.homeVM.recentServiceList.count == 0 ? false : true
             self?.tblViewRecentBooking.isHidden = self?.homeVM.recentServiceList.count == 0 ? true : false
             
+            self?.tblViewRecentBooking.reloadData()
+            
             self?.viewMainActiveBooking.isHidden = self?.homeVM.homeData?.activeBooking?.count == 0 ? true : false
             
             guard let homeData = self?.homeVM.homeData else {
@@ -96,7 +98,6 @@ class HomeVC: UIViewController {
             self?.viewActiveBooking.viewStatus.borderColor = .clear
             
             let jobStatus: JobStatus = JobStatus(rawValue: activeBooking[0].status ?? "") ?? .accepted
-            
             switch jobStatus {
             case .pending:
                 self?.lblActiveStatus.text = "pending"
@@ -184,8 +185,6 @@ class HomeVC: UIViewController {
                 self?.lblActiveStatus.textColor = UIColor.AppColor.cancelled_bg
             }
             
-            
-            self?.tblViewRecentBooking.reloadData()
         }
         homeVM.failureHomeData = { [weak self] msg in
             self?.svNoBookingFound.isHidden = self?.homeVM.recentServiceList.count == 0 ? false : true

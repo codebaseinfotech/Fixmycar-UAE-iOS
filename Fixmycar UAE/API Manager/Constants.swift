@@ -15,7 +15,7 @@ enum AppEnviroment {
     case dev
 }
 
-let current: AppEnviroment = .live
+let current: AppEnviroment = .dev
 
 // ************************* LIVE ***********************
 let BASE_URL = current == .live ? "https://admin.torettorecovery.ae/api/" : "https://admin-dev.torettorecovery.ae/api/"
@@ -38,7 +38,10 @@ enum APIEndPoint: String {
     case feedback = "v1/common/feedback"
     case logoutUser = "v1/logout"
     case deleteAccount = "v1/delete-account"
-    
+    case vehicle_type = "v1/common/vehicle-types"
+    case vehicle_issue = "v1/common/vehicle-issues"
+    case promo_code_verify = "v1/customer/promocodes/verify"
+    case get_config = "v1/common/config"
 }
 
  

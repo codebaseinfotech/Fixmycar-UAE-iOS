@@ -39,13 +39,11 @@ class BookingFareAmountVC: UIViewController {
         
         viewModel.successCalculatePrice = {
             let rounded = Double(String(format: "%.3f", self.viewModel.priceData?.distanceKm ?? 0.0))!
-
             self.lblDistance.text = "Distance:" + " \(rounded) km"
             
-            let price = String(format: "%.3f", self.viewModel.priceData?.price ?? 0.0) 
-            self.lblPrice.text = "\(self.viewModel.priceData?.currency ?? "") \(price)"
+            self.lblPrice.text = "\(self.viewModel.priceData?.currency ?? "") \(self.viewModel.priceData?.price ?? "")"
 
-            CreateBooking.shared.price = self.viewModel.priceData?.price ?? 0.0
+            CreateBooking.shared.price = self.viewModel.priceData?.price ?? ""
             CreateBooking.shared.currency = self.viewModel.priceData?.currency ?? ""
             CreateBooking.shared.distance_km = self.viewModel.priceData?.distanceKm ?? 0.0
             

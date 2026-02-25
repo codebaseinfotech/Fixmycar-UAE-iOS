@@ -27,10 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     var currentLatitude: Double = 0.0
     var currentLongitude: Double = 0.0
+    
+    var configVM = ConfigVM()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
+        
+        getConfigData()
         
         FirebaseApp.configure()
         Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
@@ -53,6 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         return true
+    }
+    
+    // MARK: - getConfigAPI()
+    func getConfigData() {
+        configVM.getGeneralSettings()
     }
     
     // MARK: - setUp Home

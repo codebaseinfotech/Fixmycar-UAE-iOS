@@ -23,9 +23,13 @@ class BookingPaymentVM {
             "pickup_lng": CreateBooking.shared.pickup_lng ?? 0.0,
             "dropoff_lat": CreateBooking.shared.dropoff_lat ?? 0.0,
             "dropoff_lng": CreateBooking.shared.dropoff_lng ?? 0.0,
+            "booking_type": CreateBooking.shared.booking_type ?? "",
+            "vehicle_type": CreateBooking.shared.vehicle_type ?? "",
+            "issue": CreateBooking.shared.issue ?? "",
+            "additional_notes": CreateBooking.shared.additional_notes ?? "",
         ]
         
-        if !CreateBooking.shared.isScheduleBooking {
+        if CreateBooking.shared.isScheduleBooking {
             let date = CreateBooking.shared.scheduled_at?.toDisplayDate(apiFormat: "dd MMM yyyy hh:mm a", displayFormat: "yyyy-MM-dd HH:mm:ss")
             params["scheduled_at"] = date
         }

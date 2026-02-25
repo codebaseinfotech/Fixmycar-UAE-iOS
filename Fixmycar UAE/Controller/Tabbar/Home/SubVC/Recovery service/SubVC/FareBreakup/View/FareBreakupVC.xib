@@ -21,6 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FareBreakupVC" customModule="Fixmycar_UAE" customModuleProvider="target">
             <connections>
+                <outlet property="btnApply" destination="WUY-Fe-zbW" id="gky-5Q-t5g"/>
                 <outlet property="lblBaseFare" destination="2b8-Jh-8BN" id="FBx-Kd-MTk"/>
                 <outlet property="lblDiscount" destination="HHI-pO-0go" id="Ygb-Br-ReW"/>
                 <outlet property="lblPlatformFee" destination="Sgd-rQ-rzV" id="sHH-Sk-py8"/>
@@ -90,7 +91,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter promo code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fl5-3G-dCA" customClass="AppTextField" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="14" y="0.0" width="231" height="42"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                             <color key="value" name="Gray"/>

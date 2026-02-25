@@ -86,13 +86,14 @@ extension String {
     func toDisplayDate(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
                        displayFormat: String = "dd MMM, yyyy hh:mm a",
                        apiTimeZone: TimeZone = TimeZone(abbreviation: "UTC")!,
-                       displayTimeZone: TimeZone = TimeZone.current) -> String {
+                       displayTimeZone: TimeZone = TimeZone(identifier: "Asia/Dubai")!) -> String {
         
         guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
         
         let displayFormatter = DateFormatter()
         displayFormatter.dateFormat = displayFormat
         displayFormatter.timeZone = displayTimeZone
+        
         return displayFormatter.string(from: date)
     }
 }
