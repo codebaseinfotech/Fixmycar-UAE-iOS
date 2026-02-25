@@ -59,6 +59,10 @@ class BookingDetailsVC: UIViewController {
                 lblStatus.textColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
             }
             
+            lblUserName.text = bookingVM.bookingDetails?.driver?.name
+            imgUser.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
+            lblRating.text = bookingVM.bookingDetails?.driver?.rating ?? "0.0"
+            
             lblBaseFare.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.basePrice ?? "")"
             lblDiscount.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.discountAmount ?? "")"
             lblPlatformFee.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.platformFee ?? 0)"
