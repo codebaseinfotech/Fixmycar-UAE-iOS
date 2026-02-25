@@ -157,6 +157,8 @@ class RecoveryServiceVC: UIViewController {
                 CreateBooking.shared.pickup_lng = pickUpLangitude
                 CreateBooking.shared.dropoff_lat = dropLatitude
                 CreateBooking.shared.dropoff_lng = dropLangitude
+                CreateBooking.shared.scheduled_at = txtChooseDate.text ?? ""
+                CreateBooking.shared.isScheduleBooking = isScheduleBooking
                 
                 let vc = BookingFareAmountVC()
                 vc.viewModel.isScheduleBooking = isScheduleBooking

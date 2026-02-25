@@ -14,7 +14,7 @@ class BookingPaymentVM {
     func createBooking() {
         APIClient.sharedInstance.showIndicaor()
         
-        let params: [String: Any] = [
+        var params: [String: Any] = [
             "service_type_id": CreateBooking.shared.service_type_id,
             "pickup_address": CreateBooking.shared.pickup_address ?? "",
             "dropoff_address": CreateBooking.shared.dropoff_address ?? "",
@@ -24,6 +24,13 @@ class BookingPaymentVM {
             "dropoff_lat": CreateBooking.shared.dropoff_lat ?? 0.0,
             "dropoff_lng": CreateBooking.shared.dropoff_lng ?? 0.0,
         ]
+        
+        if !CreateBooking.shared.isScheduleBooking {
+            let date = CreateBooking.shared.scheduled_at?.toDisplayDate(apiFormat: "dd MMM yyyy hh:mm a", displayFormat: "yyyy-MM-dd HH:mm:ss")
+            params["scheduled_at"] = date
+        }
+        
+        debugPrint("Create Booking Param: ", params)
         
         APIClient.sharedInstance.request(
             method: .post,

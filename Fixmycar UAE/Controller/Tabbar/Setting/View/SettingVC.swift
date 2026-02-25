@@ -117,7 +117,7 @@ class SettingVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func tappedRateApp(_ sender: Any) {
-        let appID = "6757262756"
+        let appID = "6757262754"
         let urlString = "https://apps.apple.com/app/id\(appID)?action=write-review"
         
         if let url = URL(string: urlString),

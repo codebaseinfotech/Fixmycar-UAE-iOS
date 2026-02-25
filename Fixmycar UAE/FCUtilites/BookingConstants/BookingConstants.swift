@@ -26,4 +26,7 @@ class CreateBooking {
     
     var price: Double?
     var currency: String?
+    
+    var scheduled_at: String?
+    var isScheduleBooking: Bool = false
 }
