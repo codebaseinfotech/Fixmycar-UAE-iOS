@@ -19,7 +19,7 @@ class ChatListTVCell: UITableViewCell {
     var chatListData: InboxItem? {
         didSet {
             lblName.text = chatListData?.chatPartner ?? ""
-            imgProfile.loadFromUrlString(chatListData?.chatPartner ?? "", placeholder: "ic_placeholder_user".image)
+            imgProfile.loadFromUrlString(chatListData?.partnerImage ?? "", placeholder: "ic_placeholder_user".image)
             lblMsg.text = chatListData?.lastMessage ?? ""
             
             viewMsgCount.isHidden = (chatListData?.unreadCount ?? 0) > 0 ? false : true

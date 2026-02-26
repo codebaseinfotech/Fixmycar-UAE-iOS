@@ -26,7 +26,12 @@ class UserChatVC: UIViewController {
 
         }
     }
-    @IBOutlet weak var txtMessage: UITextField!
+    @IBOutlet weak var txtMessage: UITextField! {
+        didSet {
+            txtMessage.returnKeyType = .send
+            txtMessage.delegate = self
+        }
+    }
     
     var chatDetailsVM = ChatDetailsVM()
     
@@ -149,4 +154,21 @@ extension UserChatVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+// MARK: - textFiled Deletegate
+extension UserChatVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let text = txtMessage.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        if !text.isEmpty {
+            chatDetailsVM.message = text
+            chatDetailsVM.sendMessageOnChat()
+        }
+        
+        textField.resignFirstResponder()
+        return true
+    }
 }
