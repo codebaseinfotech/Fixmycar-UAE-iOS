@@ -11,6 +11,16 @@ class ReciverChatTVCell: UITableViewCell {
 
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var lblTime: UILabel!
+    
+    var chatDetails: MessageDetails? {
+        didSet {
+            lblMessage.text = chatDetails?.message
+            
+            let time = chatDetails?.created_at?.toDisplayDate(displayFormat: "hh:mm a")
+            lblTime.text = time
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

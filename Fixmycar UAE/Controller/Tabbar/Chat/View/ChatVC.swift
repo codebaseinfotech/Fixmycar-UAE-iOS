@@ -77,15 +77,18 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatListTVCell.identifier) as! ChatListTVCell
         
         let dicData = chatVM.chatList[indexPath.row]
-        cell.lblName.text = dicData.chatPartner ?? ""
-        cell.imgProfile.loadFromUrlString(dicData.chatPartner ?? "", placeholder: "ic_placeholder_user".image)
-        cell.lblMsg.text = dicData.lastMessage ?? ""
+        cell.chatListData = dicData
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dicData = chatVM.chatList[indexPath.row]
+        
         let vc = UserChatVC()
+        vc.chatDetailsVM.jobId = dicData.jobId ?? 0
+        vc.profileImg = dicData.partnerImage ?? ""
+        vc.profileName = dicData.chatPartner ?? ""
         navigationController?.pushViewController(vc, animated: true)
     }
     

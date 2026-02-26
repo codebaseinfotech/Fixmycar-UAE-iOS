@@ -43,6 +43,8 @@ enum APIEndPoint: String {
     case promo_code_verify = "v1/customer/promocodes/verify"
     case get_config = "v1/common/config"
     case chat_list = "v1/chat/inbox"
+    case chatDetails = "v1/chat/jobs"
+    case sendMessage = "v1/chat/send"
 }
 
  

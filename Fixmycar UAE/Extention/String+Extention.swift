@@ -82,6 +82,7 @@ extension String {
         return formatter.date(from: self)
     }
     
+    // =============================
     /// Convert API date string to display string
     func toDisplayDate(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
                        displayFormat: String = "dd MMM, yyyy hh:mm a",
@@ -148,6 +149,16 @@ extension String {
     }
 }
 
+extension String {
+    
+    func toDate() -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = .current
+        return formatter.date(from: self)
+    }
+}
 
 // MARK: - NSMutableData
 extension NSMutableData {
@@ -166,3 +177,4 @@ extension UIView {
         String(describing: self)
     }
 }
+
