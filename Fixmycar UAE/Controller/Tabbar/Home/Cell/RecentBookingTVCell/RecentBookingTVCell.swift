@@ -25,7 +25,7 @@ class RecentBookingTVCell: UITableViewCell {
             
             switch jobStatus {
             case .pending:
-                viewRecentBooking.lblStatus.text = "pending"
+                viewRecentBooking.lblStatus.text = "Pending"
                 
                 viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.pending_bg
                 viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.pending_border

@@ -86,7 +86,7 @@
                 self.lblCarName.text = dicData?.vehicleType ?? ""
                 
                 let jobStatus = dicData?.status
-                if jobStatus == "PICKUP_COMPLETED" || jobStatus == "ON_THE_WAY_TO_DELIVERY" || jobStatus == "NEAR_DELIVERY" || jobStatus == "ARRIVED_AT_DELIVERY" {
+                if jobStatus == "pickup_completed" || jobStatus == "on_the_way_to_delivery" || jobStatus == "near_delivery" || jobStatus == "arrived_at_delivery" {
                     self.lblFirstStatus.text = "At pickup"
                     self.lblSecondStatus.text = "On the way delivery"
                     self.lblTherdStatus.text = "Delivered"
@@ -254,11 +254,11 @@
         func isDeliveryPhase(status: String) -> Bool {
 
             let deliveryStatuses = [
-                "PICKUP_COMPLETED",
-                "ON_THE_WAY_TO_DELIVERY",
-                "NEAR_DELIVERY",
-                "ARRIVED_AT_DELIVERY",
-                "COMPLETED"
+                "pickup_completed",
+                "on_the_way_to_delivery",
+                "near_delivery",
+                "arrived_at_delivery",
+                "completed"
             ]
 
             return deliveryStatuses.contains(status)
@@ -299,10 +299,10 @@
 
                 var destination: CLLocationCoordinate2D
 
-                if booking.status == "PICKUP_COMPLETED" ||
-                    booking.status == "ON_THE_WAY_TO_DELIVERY" ||
-                    booking.status == "NEAR_DELIVERY" ||
-                    booking.status == "ARRIVED_AT_DELIVERY" {
+                if booking.status == "pickup_completed" ||
+                    booking.status == "on_the_way_to_delivery" ||
+                    booking.status == "near_delivery" ||
+                    booking.status == "arrived_at_delivery" {
 
                     destination = CLLocationCoordinate2D(
                         latitude: booking.dropAddress?.lat ?? 0,
