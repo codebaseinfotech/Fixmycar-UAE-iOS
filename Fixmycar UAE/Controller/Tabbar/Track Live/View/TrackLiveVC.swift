@@ -390,22 +390,22 @@
         }
         
         func updateProgressFromAPI(statusString: String) {
-            let progress = progressValue(for: statusString)
+            let progress = progressValue(for: JobStatus(rawValue: statusString)!)
             animateProgress(to: progress)
         }
         
-        func progressValue(for status: String) -> CGFloat {
+        func progressValue(for status: JobStatus = .accepted) -> CGFloat {
             switch status {
-            case "ACCEPTED": return 0.0
-            case "STARTED": return 0.25
-            case "ON_THE_WAY_TO_PICKUP": return 0.50
-            case "NEAR_PICKUP": return 0.75
-            case "ARRIVED_AT_PICKUP": return 1.0
-            case "PICKUP_COMPLETED": return 0.0
-            case "ON_THE_WAY_TO_DELIVERY": return 0.50
-            case "NEAR_DELIVERY": return 0.75
-            case "ARRIVED_AT_DELIVERY": return 0.75
-            case "COMPLETED": return 1.0
+            case .accepted: return 0.0
+            case .started: return 0.25
+            case .onTheWayToPickup: return 0.50
+            case .nearPickup: return 0.75
+            case .arrivedAtPickup: return 1.0
+            case .pickupCompleted: return 0.0
+            case .onTheWayToDelivery: return 0.50
+            case .nearDelivery: return 0.75
+            case .arrivedAtDelivery: return 0.75
+            case .completed: return 1.0
             default: return 0.0
             }
         }

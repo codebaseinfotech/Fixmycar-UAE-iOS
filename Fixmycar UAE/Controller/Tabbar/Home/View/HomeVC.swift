@@ -10,17 +10,17 @@ import CoreLocation
 
 enum JobStatus: String {
     case pending = "pending"
-    case accepted = "ACCEPTED"
-    case started = "STARTED"
-    case onTheWayToPickup = "ON_THE_WAY_TO_PICKUP"
-    case nearPickup = "NEAR_PICKUP"
-    case arrivedAtPickup = "ARRIVED_AT_PICKUP"
-    case pickupCompleted = "PICKUP_COMPLETED"
+    case accepted = "accepted"
+    case started = "started"
+    case onTheWayToPickup = "on_the_way_to_pickup"
+    case nearPickup = "near_pickup"
+    case arrivedAtPickup = "arrived_at_pickup"
+    case pickupCompleted = "pickup_completed"
 
-    case onTheWayToDelivery = "ON_THE_WAY_TO_DELIVERY"
-    case nearDelivery = "NEAR_DELIVERY"
-    case arrivedAtDelivery = "ARRIVED_AT_DELIVERY"
-    case completed = "COMPLETED"
+    case onTheWayToDelivery = "on_the_way_to_delivery"
+    case nearDelivery = "near_delivery"
+    case arrivedAtDelivery = "arrived_at_delivery"
+    case completed = "completed"
     case cancelled = "cancelled"
 }
 
