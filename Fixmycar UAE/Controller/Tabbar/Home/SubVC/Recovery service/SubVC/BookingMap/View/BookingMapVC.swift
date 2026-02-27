@@ -111,7 +111,7 @@ class BookingMapVC: UIViewController {
         tappedBack(self)
     }
     @IBAction func tappedCurrentLocation(_ sender: Any) {
-        setupMap()
+        locationManager.startUpdatingLocation()
     }
     
      
@@ -213,9 +213,15 @@ extension BookingMapVC: CLLocationManagerDelegate {
         )
 
         mapView.animate(to: camera)
-        
+
         // ✅ Show custom marker on first load
         showMarker(at: location.coordinate)
+
+        // ✅ Store current coordinate
+        selectedCoordinate = location.coordinate
+
+        // ✅ Get address name from coordinates (Reverse Geocoding)
+        getAddressFromCoordinate(location.coordinate)
 
         locationManager.stopUpdatingLocation()
     }
@@ -241,6 +247,53 @@ extension BookingMapVC {
         }
 
         locationMarker?.map = mapView
+    }
+}
+
+
+// MARK: - Reverse Geocoding
+extension BookingMapVC {
+
+    func getAddressFromCoordinate(_ coordinate: CLLocationCoordinate2D) {
+
+        let geocoder = CLGeocoder()
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+
+        geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
+
+            guard let self = self else { return }
+
+            if let error = error {
+                print("Reverse geocoding error: \(error.localizedDescription)")
+                return
+            }
+
+            if let placemark = placemarks?.first {
+
+                // Full address banavo
+                var addressParts: [String] = []
+
+                if let name = placemark.name {
+                    addressParts.append(name)
+                }
+                if let locality = placemark.locality {
+                    addressParts.append(locality)
+                }
+                if let administrativeArea = placemark.administrativeArea {
+                    addressParts.append(administrativeArea)
+                }
+                if let country = placemark.country {
+                    addressParts.append(country)
+                }
+
+                let fullAddress = addressParts.joined(separator: ", ")
+
+                DispatchQueue.main.async {
+                    self.txtLocation.text = fullAddress
+                    self.btnClose.isHidden = false
+                }
+            }
+        }
     }
 }
 
