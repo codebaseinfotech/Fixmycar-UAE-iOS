@@ -2,7 +2,7 @@
 //  AppUtilites.swift
 //  Look_Vendor
 //
-//  Created by Ankit Gabani on 24/07/23.
+//  Created by Codebase Infotech on 24/07/23.
 //
 
 import UIKit

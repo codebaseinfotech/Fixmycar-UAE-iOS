@@ -100,7 +100,7 @@ class HomeVC: UIViewController {
             let jobStatus: JobStatus = JobStatus(rawValue: activeBooking[0].status ?? "") ?? .accepted
             switch jobStatus {
             case .pending:
-                self?.lblActiveStatus.text = "pending"
+                self?.lblActiveStatus.text = "Pending"
                 
                 self?.viewActiveStatus.backgroundColor = UIColor.AppColor.pending_bg
                 self?.viewActiveStatus.borderColor = UIColor.AppColor.pending_border
@@ -239,9 +239,9 @@ class HomeVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func tappedActiveJob(_ sender: Any) {
-        let vc = TrackLiveVC()
-        vc.trackLiveVM.bookingId = self.homeVM.homeData?.activeBooking?[0].id ?? 0
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = TrackLiveVC()
+//        vc.trackLiveVM.bookingId = self.homeVM.homeData?.activeBooking?[0].id ?? 0
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - tabbar Action

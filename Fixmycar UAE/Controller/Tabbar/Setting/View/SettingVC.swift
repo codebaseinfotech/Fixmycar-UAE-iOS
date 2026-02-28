@@ -2,7 +2,7 @@
 //  SettingVC.swift
 //  Fixmycar UAE
 //
-//  Created by iMac on 08/01/26.
+//  Created by Codebase Infotech on 08/01/26.
 //
 
 import UIKit
@@ -160,5 +160,10 @@ extension SettingVC: UISheetPresentationControllerDelegate {
             })
             
         }
+    }
+}
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst().lowercased()
     }
 }
