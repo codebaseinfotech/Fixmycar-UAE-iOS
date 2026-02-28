@@ -42,7 +42,7 @@ class ScheduleDateVC: UIViewController {
         formatter.dateFormat = "dd MMM yyyy hh:mm a"
         
         let selectedDate = formatter.string(from: datePicker.date)
-        print("Selected Date:", selectedDate)
+        debugPrint("Selected Date:", selectedDate)
         
         onTappedConfirm?(selectedDate)
         // Example: pass value back / show / save

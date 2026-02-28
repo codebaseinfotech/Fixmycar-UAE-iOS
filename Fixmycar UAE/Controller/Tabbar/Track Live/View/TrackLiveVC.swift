@@ -337,7 +337,7 @@
                 let points = poly?["points"] as? String
 
                 guard let points else {
-                    print("❌ No polyline points")
+                    debugPrint("❌ No polyline points")
                     return
                 }
 

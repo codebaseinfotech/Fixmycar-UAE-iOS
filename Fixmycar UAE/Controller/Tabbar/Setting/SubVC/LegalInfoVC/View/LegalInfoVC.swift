@@ -62,7 +62,7 @@ class LegalInfoVC: UIViewController {
         }
         
         legalInfoVM.failureLegalInfo = { error in
-            print("❌ Legal Info Error:", error)
+            debugPrint("❌ Legal Info Error:", error)
         }
     }
    

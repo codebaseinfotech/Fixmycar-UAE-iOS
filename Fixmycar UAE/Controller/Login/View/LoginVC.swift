@@ -113,7 +113,7 @@ extension LoginVC: didTapOnVerify {
 
                 let isRegistered = self.verifyOtpVM.verifyResponse?.isRegistered ?? false
                 
-                print("IS REGISTERED =", isRegistered)
+                debugPrint("IS REGISTERED =", isRegistered)
 
                 if isRegistered {
                     AppDelegate.appDelegate.setUpHome()

@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+// MARK: - debugPrint
+
+func debugPrint(_ items: Any...) {
+    if isDebugPrint {
+        print(items)
+    }
+}
 
 extension UIViewController: Identifiable {
     

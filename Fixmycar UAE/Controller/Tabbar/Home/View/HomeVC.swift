@@ -79,12 +79,12 @@ class HomeVC: UIViewController {
             self?.viewMainActiveBooking.isHidden = self?.homeVM.homeData?.activeBooking?.count == 0 ? true : false
             
             guard let homeData = self?.homeVM.homeData else {
-                print("❌ homeData is nil")
+                debugPrint("❌ homeData is nil")
                 return
             }
 
             guard let activeBooking = homeData.activeBooking, !activeBooking.isEmpty else {
-                print("❌ activeBooking empty or nil")
+                debugPrint("❌ activeBooking empty or nil")
                 return
             }
             
@@ -320,7 +320,7 @@ extension HomeVC: CLLocationManagerDelegate {
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             
             if let error = error {
-                print("Geocode error:", error.localizedDescription)
+                debugPrint("Geocode error:", error.localizedDescription)
                 return
             }
             
@@ -345,6 +345,6 @@ extension HomeVC: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location error:", error.localizedDescription)
+        debugPrint("Location error:", error.localizedDescription)
     }
 }

@@ -125,15 +125,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
            
 //            switch actionId {
 //                case "accept":
-//                    print("✅ ACCEPT tapped")
+//                    debugPrint("✅ ACCEPT tapped")
 //                    // call accept booking API
 //
 //                case "reject":
-//                    print("❌ REJECT tapped")
+//                    debugPrint("❌ REJECT tapped")
 //                    // call reject booking API
 //
 //                case "__DEFAULT__":
-//                    print("Notification tapped normally")
+//                    debugPrint("Notification tapped normally")
 //
 //                default:
 //                    break
@@ -177,7 +177,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().requestAuthorization(
             options: [.alert, .sound, .badge]
         ) { granted, error in
-            print("Notification Permission:", granted)
+            debugPrint("Notification Permission:", granted)
         }
     }
 
@@ -192,7 +192,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 //        UNUserNotificationCenter.current().requestAuthorization(
 //            options: [.alert, .sound, .badge, .criticalAlert]
 //        ) { granted, error in
-//            print("Critical Alert Permission:", granted)
+//            debugPrint("Critical Alert Permission:", granted)
 //        }
         
         completionHandler([.banner, .sound, .badge])

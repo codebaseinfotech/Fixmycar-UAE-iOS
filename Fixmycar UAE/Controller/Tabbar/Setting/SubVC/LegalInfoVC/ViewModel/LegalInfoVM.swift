@@ -42,7 +42,7 @@ class LegalInfoVM {
                 guard let self else { return }
                 
                 if let errorMessage = errorMessage {
-                    print("❌ API Error:", errorMessage)
+                    debugPrint("❌ API Error:", errorMessage)
                     self.failureLegalInfo?(errorMessage)
                     return
                 }

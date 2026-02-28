@@ -169,7 +169,7 @@ class BookingDetailsVC: UIViewController {
     @IBAction func clickedInvoice(_ sender: Any) {
 //        let link = bookingVM.bookingDetails ?? ""
 //        guard let url = URL(string: link) else {
-//            print("Invalid URL")
+//            debugPrint("Invalid URL")
 //            return
 //        }
 //        

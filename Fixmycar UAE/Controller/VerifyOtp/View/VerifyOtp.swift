@@ -121,7 +121,7 @@ class VerifyOtp: UIViewController {
 
                 let isRegistered = self.viewModel.verifyResponse?.isRegistered ?? false
                 
-                print("IS REGISTERED =", isRegistered)
+                debugPrint("IS REGISTERED =", isRegistered)
 
                 if isRegistered {
                     AppDelegate.appDelegate.setUpHome()
@@ -203,7 +203,7 @@ class VerifyOtp: UIViewController {
 
 extension VerifyOtp: OTPFieldViewDelegate {
     func hasEnteredAllOTP(hasEnteredAll hasEntered: Bool) -> Bool {
-        print("Has entered all OTP? \(hasEntered)")
+        debugPrint("Has entered all OTP? \(hasEntered)")
         return false
     }
     
@@ -212,7 +212,7 @@ extension VerifyOtp: OTPFieldViewDelegate {
     }
     
     func enteredOTP(otp otpString: String) {
-        print("OTPString: \(otpString)")
+        debugPrint("OTPString: \(otpString)")
         self.enteredOtp = otpString
     }
 }

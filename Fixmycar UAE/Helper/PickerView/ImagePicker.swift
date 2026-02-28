@@ -129,7 +129,7 @@ extension ImagePicker: UIImagePickerControllerDelegate {
 extension ImagePicker: UIDocumentPickerDelegate {
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         controller.dismiss(animated: true, completion: nil)
-        print("URL: \(urls)")
+        debugPrint("URL: \(urls)")
         self.delegate?.didSelectDoc(urls: urls)
     }
 }

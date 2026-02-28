@@ -202,7 +202,7 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="Confirm vehical location">
+                                            <state key="normal" title="Confirm Vehical Location">
                                                 <color key="titleColor" name="White"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -217,7 +217,6 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="7re-VW-bsf" firstAttribute="top" secondItem="gXb-Yz-oXv" secondAttribute="top" constant="20" id="1lc-1Y-d4k"/>
                                 <constraint firstAttribute="bottom" secondItem="7re-VW-bsf" secondAttribute="bottom" constant="25" id="89w-YW-rlF"/>

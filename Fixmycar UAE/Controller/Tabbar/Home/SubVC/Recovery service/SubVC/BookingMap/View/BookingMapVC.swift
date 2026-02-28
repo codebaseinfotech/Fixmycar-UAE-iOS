@@ -41,7 +41,7 @@ class BookingMapVC: UIViewController {
     }
     @IBOutlet weak var btnConfirmLocation: UIButton! {
         didSet {
-            let btnTitle = isDropAddress ? "Confirm destination location" : "Confirm vehical location"
+            let btnTitle = isDropAddress ? "Confirm Drop-off Location" : "Confirm Pickup Location"
             btnConfirmLocation.setTitle(btnTitle.localized, for: [])
         }
     }
@@ -104,8 +104,8 @@ class BookingMapVC: UIViewController {
     }
     @IBAction func tappedConfirm(_ sender: Any) {
         guard let coordinate = selectedCoordinate else { return }
-        print("Confirmed Lat:", coordinate.latitude)
-        print("Confirmed Lng:", coordinate.longitude)
+        debugPrint("Confirmed Lat:", coordinate.latitude)
+        debugPrint("Confirmed Lng:", coordinate.longitude)
         
         delegateLocation?.tappedConfirmLocation(isDropLocation: isDropAddress, location: txtLocation.text ?? "", lat: coordinate.latitude, lang: coordinate.longitude)
         tappedBack(self)
@@ -221,7 +221,10 @@ extension BookingMapVC: CLLocationManagerDelegate {
         selectedCoordinate = location.coordinate
 
         // ✅ Get address name from coordinates (Reverse Geocoding)
-        getAddressFromCoordinate(location.coordinate)
+        
+        if isDropAddress == false {
+            getAddressFromCoordinate(location.coordinate)
+        }
 
         locationManager.stopUpdatingLocation()
     }
@@ -264,7 +267,7 @@ extension BookingMapVC {
             guard let self = self else { return }
 
             if let error = error {
-                print("Reverse geocoding error: \(error.localizedDescription)")
+                debugPrint("Reverse geocoding error: \(error.localizedDescription)")
                 return
             }
 
@@ -290,6 +293,7 @@ extension BookingMapVC {
 
                 DispatchQueue.main.async {
                     self.txtLocation.text = fullAddress
+                    self.viewMainPopular.isHidden = false
                     self.btnClose.isHidden = false
                 }
             }

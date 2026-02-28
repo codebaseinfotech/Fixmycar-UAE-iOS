@@ -74,7 +74,7 @@ class FeedbackVC: UIViewController {
         }
         viewModel.failuerFeedback = { error in
             self.setUpMakeToast(msg: error)
-            print("❌ Error:", error)
+            debugPrint("❌ Error:", error)
         }
         viewModel.submitFeedback(
             fullName: fullName,

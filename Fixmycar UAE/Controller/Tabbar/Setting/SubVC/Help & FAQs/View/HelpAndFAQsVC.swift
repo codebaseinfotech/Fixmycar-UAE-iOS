@@ -59,7 +59,7 @@ class HelpAndFAQsVC: UIViewController {
         }
         
         viewModel.failuerFaqs = { error in
-            print("❌ Legal Info Error:", error)
+            debugPrint("❌ Legal Info Error:", error)
         }
     }
 

@@ -16,9 +16,9 @@ enum AppEnviroment {
 }
 
 let current: AppEnviroment = .dev
-
-// ************************* LIVE ***********************
 let BASE_URL = current == .live ? "https://admin.torettorecovery.ae/api/" : "https://admin-dev.torettorecovery.ae/api/"
+
+var isDebugPrint: Bool = false
 
 enum APIEndPoint: String {
     
@@ -48,5 +48,3 @@ enum APIEndPoint: String {
     case lastLoginModify = "v1/modify-last-login"
     case checkAppStatus = "v1/common/check-app-status"
 }
-
- 

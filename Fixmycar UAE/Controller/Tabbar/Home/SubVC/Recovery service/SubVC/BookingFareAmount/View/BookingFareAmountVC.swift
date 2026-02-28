@@ -30,10 +30,10 @@ class BookingFareAmountVC: UIViewController {
         addMarkers()
         drawRoute()
         
-        print("pickup_lat", CreateBooking.shared.pickup_lat ?? 0.0)
-        print("pickup_lng", CreateBooking.shared.pickup_lng ?? 0.0)
-        print("dropoff_lat", CreateBooking.shared.dropoff_lat ?? 0.0)
-        print("dropoff_lng", CreateBooking.shared.dropoff_lng ?? 0.0)
+        debugPrint("pickup_lat", CreateBooking.shared.pickup_lat ?? 0.0)
+        debugPrint("pickup_lng", CreateBooking.shared.pickup_lng ?? 0.0)
+        debugPrint("dropoff_lat", CreateBooking.shared.dropoff_lat ?? 0.0)
+        debugPrint("dropoff_lng", CreateBooking.shared.dropoff_lng ?? 0.0)
 
         calculateDistance()
         
@@ -72,7 +72,7 @@ class BookingFareAmountVC: UIViewController {
         let distanceInMeters = pickup.distance(from: drop)
         let distanceInKM = distanceInMeters / 1000.0
         
-        print("Distance: \(distanceInKM) KM")
+        debugPrint("Distance: \(distanceInKM) KM")
         viewModel.getCalculatePrice(km: distanceInKM)
     }
     
