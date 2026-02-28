@@ -17,6 +17,7 @@ class LogoutPopUp: UIViewController {
     var isOpenLogout: Bool = true
     
     var viewModel = LogoutVM()
+    var loginVM = LoginVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,8 @@ class LogoutPopUp: UIViewController {
     
     @IBAction func tappedLogout(_ sender: Any) {
         
+        loginVM.lastLoginModify(role: FCUtilites.getRoleName())
+        
         if isOpenLogout {
             viewModel.logoutUser()
             viewModel.successLogout = {
@@ -57,6 +60,8 @@ class LogoutPopUp: UIViewController {
                 self.setUpMakeToast(msg: msg)
             }
         }
+        
+        
     }
     
     

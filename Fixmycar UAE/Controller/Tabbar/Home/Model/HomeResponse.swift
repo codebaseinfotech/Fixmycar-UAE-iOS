@@ -82,7 +82,7 @@ struct HomeBooking: Codable {
     let jobDate: String?
     let pickupAddress: String?
     let dropAddress: String?
-    let amount: String?
+    let amount: Double?
     let currency: String?
     
     enum CodingKeys: String, CodingKey {

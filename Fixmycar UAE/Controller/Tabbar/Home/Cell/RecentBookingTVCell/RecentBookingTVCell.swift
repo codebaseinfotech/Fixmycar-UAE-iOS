@@ -15,7 +15,7 @@ class RecentBookingTVCell: UITableViewCell {
         didSet {
             viewRecentBooking.lblType.text = recentBooking?.serviceName
             viewRecentBooking.lblTime.text = recentBooking?.jobDate
-            viewRecentBooking.lblPrice.text = "\(recentBooking?.currency ?? "") \(recentBooking?.amount ?? "")"
+            viewRecentBooking.lblPrice.text = "\(recentBooking?.currency ?? "") \(recentBooking?.amount ?? 0.0)"
             viewRecentBooking.lblStatus.text = recentBooking?.status?.capitalized
             
             viewRecentBooking.lblPickLocation.text = recentBooking?.pickupAddress ?? ""
@@ -126,7 +126,7 @@ class RecentBookingTVCell: UITableViewCell {
             
             switch jobStatus {
             case .pending:
-                viewRecentBooking.lblStatus.text = "pending"
+                viewRecentBooking.lblStatus.text = "Pending"
                 
                 viewRecentBooking.viewStatus.backgroundColor = UIColor.AppColor.pending_bg
                 viewRecentBooking.viewStatus.borderColor = UIColor.AppColor.pending_border

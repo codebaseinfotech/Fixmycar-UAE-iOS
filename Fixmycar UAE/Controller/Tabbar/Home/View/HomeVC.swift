@@ -68,6 +68,7 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupLocation()
+        homeVM.getHomeData()
         viewActiveBooking.config(type: "active_job")
         homeVM.successHomeData = { [weak self] in
             self?.svNoBookingFound.isHidden = self?.homeVM.recentServiceList.count == 0 ? false : true
@@ -91,7 +92,7 @@ class HomeVC: UIViewController {
             self?.viewActiveBooking.lblTime.text = activeBooking[0].jobDate?.toDisplayDate()
             self?.viewActiveBooking.lblPickLocation.text = activeBooking[0].pickupAddress
             self?.viewActiveBooking.lblDropLocation.text = activeBooking[0].dropAddress
-            self?.viewActiveBooking.lblPrice.text = (activeBooking[0].currency ?? "") + " " + (activeBooking[0].amount ?? "")
+            self?.viewActiveBooking.lblPrice.text = (activeBooking[0].currency ?? "") + " " + "\(activeBooking[0].amount ?? 0.0)"
             self?.viewActiveBooking.lblStatus.text = "View"
             self?.viewActiveBooking.lblStatus.textColor = .white
             self?.viewActiveBooking.viewStatus.backgroundColor = .primeryBlack

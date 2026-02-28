@@ -34,12 +34,12 @@ struct BookingDetails: Codable {
     let dropoffLng: String?
     
     let distanceKm: String?
-    let basePrice: String?
-    let discountAmount: String?
+    let basePrice: Double?
+    let discountAmount: Double?
     
-    let platformFee: Int?
-    let tax: Int?
-    let taxPercentage: Int?
+    let platformFee: Double?
+    let tax: Double?
+    let taxPercentage: Double?
     
     let finalPrice: Double?
     let currency: String?

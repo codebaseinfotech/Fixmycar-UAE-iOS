@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var currentLongitude: Double = 0.0
     
     var configVM = ConfigVM()
+    var loginVM = LoginVM()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -62,6 +63,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // MARK: - getConfigAPI()
     func getConfigData() {
         configVM.getGeneralSettings()
+    }
+    
+    func callModifyLogin() {
+        if FCUtilites.getIsCurrentUser() {
+            loginVM.lastLoginModify(role: FCUtilites.getRoleName())
+        }
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        callModifyLogin()
+        //callCheckApp()
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        callModifyLogin()
+       // callCheckApp()
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        callModifyLogin()
+       // callCheckApp()
     }
     
     // MARK: - setUp Home

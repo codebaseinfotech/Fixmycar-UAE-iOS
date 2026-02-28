@@ -24,6 +24,7 @@ struct BookingHistoryData: Codable {
 
 
 // MARK: - BookingItem
+// MARK: - BookingItem
 struct BookingItem: Codable {
     let id: Int?
     let bookingID: Int?
@@ -33,6 +34,11 @@ struct BookingItem: Codable {
     let pickupAddress: String?
     let dropoffAddress: String?
     let totalAmount: Double?
+    let baseAmount: Double?
+    let discountAmount: Double?
+    let tax: Double?
+    let promotionCode: String?
+    let additionalNotes: String?
     let currency: String?
     let isRated: Bool?
     
@@ -45,6 +51,11 @@ struct BookingItem: Codable {
         case pickupAddress = "pickup_address"
         case dropoffAddress = "dropoff_address"
         case totalAmount = "total_amount"
+        case baseAmount = "base_amount"
+        case discountAmount = "discount_amount"
+        case tax
+        case promotionCode = "promotion_code"
+        case additionalNotes = "additional_notes"
         case currency
         case isRated = "is_rated"
     }

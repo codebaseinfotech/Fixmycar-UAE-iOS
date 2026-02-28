@@ -53,18 +53,102 @@ class BookingDetailsVC: UIViewController {
             lblPickup.text = bookingVM.bookingDetails?.pickupAddress
             lblDrop.text = bookingVM.bookingDetails?.dropoffAddress
             lblStatus.text = bookingVM.bookingDetails?.status?.capitalized
-            if bookingVM.bookingDetails?.status == "pending" {
-                viewStatus.backgroundColor = #colorLiteral(red: 1, green: 0.9882352941, blue: 0.9490196078, alpha: 1)
-                viewStatus.borderColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
-                lblStatus.textColor = #colorLiteral(red: 0.9529411765, green: 0.8, blue: 0.1921568627, alpha: 1)
+            
+            let jobStatus: JobStatus = JobStatus(rawValue: bookingVM.bookingDetails?.status ?? "") ?? .accepted
+            
+            switch jobStatus {
+            case .pending:
+                lblStatus.text = "Pending"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.pending_bg
+                viewStatus.borderColor = UIColor.AppColor.pending_border
+                lblStatus.textColor = UIColor.AppColor.pending_border
+                
+            case .accepted:
+                lblStatus.text = "Accepted"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.started_bg
+                viewStatus.borderColor = UIColor.AppColor.started_border
+                
+                lblStatus.textColor = UIColor.AppColor.started_border
+            case .started:
+                lblStatus.text = "Started"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.started_bg
+                viewStatus.borderColor = UIColor.AppColor.started_border
+                
+                lblStatus.textColor = UIColor.AppColor.started_border
+            case .onTheWayToPickup:
+                lblStatus.text = "On the way to pickup"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.one_way_to_pickup_bg
+                viewStatus.borderColor = UIColor.AppColor.one_way_to_pickup_border
+                
+                lblStatus.textColor = UIColor.AppColor.one_way_to_pickup_border
+            case .nearPickup:
+                lblStatus.text = "Near pickup"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.near_pickup_bg
+                viewStatus.borderColor = UIColor.AppColor.near_pickup_border
+                
+                lblStatus.textColor = UIColor.AppColor.near_pickup_border
+            case .arrivedAtPickup:
+                lblStatus.text = "Arrived at pickup"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.arrived_pick_bg
+                viewStatus.borderColor = UIColor.AppColor.arrived_pick_border
+                
+                lblStatus.textColor = UIColor.AppColor.arrived_pick_border
+            case .pickupCompleted:
+                lblStatus.text = "Pickup completed"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.pickup_completed_bg
+                viewStatus.borderColor = UIColor.AppColor.pickup_completed_border
+                
+                lblStatus.textColor = UIColor.AppColor.pickup_completed_border
+            case .onTheWayToDelivery:
+                lblStatus.text = "On the way to delivery"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.one_way_to_delivery_bg
+                viewStatus.borderColor = UIColor.AppColor.one_way_to_delivery_border
+                
+                lblStatus.textColor = UIColor.AppColor.one_way_to_delivery_border
+            case .nearDelivery:
+                lblStatus.text = "Near delivery"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.near_delivery_bg
+                viewStatus.borderColor = UIColor.AppColor.near_delivery_border
+                
+                lblStatus.textColor = UIColor.AppColor.near_delivery_border
+            case .arrivedAtDelivery:
+                lblStatus.text = "Arrived at delivery"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.arrived_delivery_bg
+                viewStatus.borderColor = UIColor.AppColor.arrived_delivery_border
+                
+                lblStatus.textColor = UIColor.AppColor.arrived_delivery_border
+            case .completed:
+                lblStatus.text = "Completed"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.completrd_bg
+                viewStatus.borderColor = UIColor.AppColor.completrd_border
+                
+                lblStatus.textColor = UIColor.AppColor.completrd_border
+            case .cancelled:
+                lblStatus.text = "Cancelled"
+                
+                viewStatus.backgroundColor = UIColor.AppColor.cancelled_bg
+                viewStatus.borderColor = UIColor.AppColor.cancelled_border
+            
+                lblStatus.textColor = UIColor.AppColor.cancelled_border
             }
             
             lblUserName.text = bookingVM.bookingDetails?.driver?.name
             imgUser.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
             lblRating.text = bookingVM.bookingDetails?.driver?.rating ?? "0.0"
             
-            lblBaseFare.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.basePrice ?? "")"
-            lblDiscount.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.discountAmount ?? "")"
+            lblBaseFare.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.basePrice ?? 0.0)"
+            lblDiscount.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.discountAmount ?? 0.0)"
             lblPlatformFee.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.platformFee ?? 0)"
             lblTax.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.tax ?? 0)"
             lblTotalAmount.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.finalPrice ?? 0)"
