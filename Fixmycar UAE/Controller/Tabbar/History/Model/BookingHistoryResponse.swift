@@ -32,7 +32,7 @@ struct BookingItem: Codable {
     let createdAt: String?
     let pickupAddress: String?
     let dropoffAddress: String?
-    let totalAmount: Int?
+    let totalAmount: Double?
     let currency: String?
     let isRated: Bool?
     

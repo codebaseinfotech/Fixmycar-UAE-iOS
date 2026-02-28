@@ -41,7 +41,7 @@ struct BookingDetails: Codable {
     let tax: Int?
     let taxPercentage: Int?
     
-    let finalPrice: Int?
+    let finalPrice: Double?
     let currency: String?
     
     let driver: Driver?

@@ -82,6 +82,16 @@ class BookingDetailsVC: UIViewController {
     }
     
     
-    
+    @IBAction func clickedInvoice(_ sender: Any) {
+        let link = bookingVM.bookingDetails ?? ""
+        guard let url = URL(string: link) else {
+            print("Invalid URL")
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     
 }

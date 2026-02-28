@@ -51,7 +51,7 @@
                                         <action selector="tappedBack:" destination="-1" eventType="touchUpInside" id="dbF-Oh-Oxs"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dummy_user" translatesAutoresizingMaskIntoConstraints="NO" id="vo7-uQ-tiM">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dummy_user" translatesAutoresizingMaskIntoConstraints="NO" id="vo7-uQ-tiM">
                                     <rect key="frame" x="45" y="2" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="tf7-ka-13v"/>
