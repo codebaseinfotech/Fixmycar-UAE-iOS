@@ -40,18 +40,18 @@ class FareBreakupVC: UIViewController {
     func setUpBookingAmount(isDiscount: Bool = false) {
         let currency = CreateBooking.shared.currency ?? ""
         
-        lblBaseFare.text = currency + " " + "\(CreateBooking.shared.price ?? "")"
+        lblBaseFare.text = currency + " " + "\(CreateBooking.shared.price ?? 0.0)"
         lblDiscount.text = isDiscount ? currency + " " + "\(fareBreakupVM.promoCodeData?.discountValue ?? 0)" : currency + " " + "0.0"
         
-        let basePrice = Double(CreateBooking.shared.price ?? "") ?? 0.0
+        let basePrice = Double(CreateBooking.shared.price ?? 0.0) ?? 0.0
         let discountValue = Double(fareBreakupVM.promoCodeData?.discountValue ?? 0)
         
         let price = isDiscount ? basePrice - discountValue : basePrice
         
         let configVM = AppDelegate.appDelegate.configVM.configResponse
         
-        let platformFee = configVM?.generalSettings.showPlatformFee == true ? configVM?.generalSettings.platformFeeAmount : currency + " " + "0.0"
-        let tax = configVM?.generalSettings.showTax == true ? configVM?.generalSettings.taxAmount : currency + " " + "0.0"
+        let platformFee = configVM?.generalSettings.showPlatformFee == true ? "\(configVM?.generalSettings.platformFeeAmount ?? 0.0)" : currency + " " + "0.0"
+        let tax = configVM?.generalSettings.showTax == true ? "\(configVM?.generalSettings.taxAmount ?? 0.0)" : currency + " " + "0.0"
         
         lblPlatformFee.text = currency + " " + (platformFee ?? "")
         lblTax.text = currency + " " + (tax ?? "")
@@ -61,7 +61,7 @@ class FareBreakupVC: UIViewController {
         
         let totalAmount = price + platformFeeValue + taxValue
         lblTotalAmount.text = "\(currency) \(totalAmount)"
-        CreateBooking.shared.finalPrice = "\(totalAmount)"
+        CreateBooking.shared.finalPrice = totalAmount
     }
 
     // MARK: - Action Method

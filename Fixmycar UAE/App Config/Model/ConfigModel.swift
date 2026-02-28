@@ -37,11 +37,11 @@ struct KeyValueItem: Codable {
 
 struct GeneralSettings: Codable {
     let showRegisterFee: Bool?
-    let registerFeeAmount: String?
+    let registerFeeAmount: Double?
     let showPlatformFee: Bool?
-    let platformFeeAmount: String?
+    let platformFeeAmount: Double?
     let showTax: Bool
-    let taxAmount: String?
+    let taxAmount: Double?
     
     enum CodingKeys: String, CodingKey {
         case showRegisterFee = "show_register_fee"

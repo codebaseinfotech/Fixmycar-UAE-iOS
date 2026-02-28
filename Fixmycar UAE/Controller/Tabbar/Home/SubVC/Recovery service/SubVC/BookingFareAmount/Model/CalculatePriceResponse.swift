@@ -15,7 +15,7 @@ struct PriceResponse: Codable {
 }
 
 struct PriceData: Codable {
-    let price: String?
+    let price: Double?
     let currency: String?
     let distanceKm: Double?
     

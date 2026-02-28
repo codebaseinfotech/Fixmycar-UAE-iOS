@@ -23,7 +23,7 @@ class BookingPaymentVC: UIViewController {
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblAmount.text = "\(CreateBooking.shared.currency ?? "") \(CreateBooking.shared.finalPrice ?? "")"
+        lblAmount.text = "\(CreateBooking.shared.currency ?? "") \(CreateBooking.shared.finalPrice ?? 0.0)"
         
         bookingPaymentVM.successCreateBooking = {
             let vc = BookingSuccessPopUpVC()

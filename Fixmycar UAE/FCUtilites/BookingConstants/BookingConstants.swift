@@ -24,9 +24,9 @@ class CreateBooking {
     
     var distance_km: Double?
     
-    var finalPrice: String?
+    var finalPrice: Double?
     
-    var price: String?
+    var price: Double?
     var currency: String?
     
     var scheduled_at: String?
