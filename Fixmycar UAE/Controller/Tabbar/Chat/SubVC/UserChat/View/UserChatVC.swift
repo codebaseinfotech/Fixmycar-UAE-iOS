@@ -60,7 +60,7 @@ class UserChatVC: UIViewController {
         // Tap gesture to dismiss keyboard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGesture)
+        tblVIewList.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
     

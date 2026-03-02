@@ -32,7 +32,9 @@ class FareBreakupVC: UIViewController {
             
             self.setUpBookingAmount(isDiscount: true)
         }
-        
+        fareBreakupVM.failurePromoCode = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
         // Do any additional setup after loading the view.
     }
     
