@@ -108,6 +108,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         let dicData = filteredChatList[indexPath.row]
         
         let vc = UserChatVC()
+        vc.jobStatus = dicData.jobStatus ?? ""
         vc.chatDetailsVM.jobId = dicData.jobId ?? 0
         vc.profileImg = dicData.partnerImage ?? ""
         vc.profileName = dicData.chatPartner ?? ""

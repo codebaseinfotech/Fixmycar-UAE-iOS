@@ -39,10 +39,17 @@ class UserChatVC: UIViewController {
     
     var profileImg: String?
     var profileName: String?
+    var jobStatus = ""
     
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if jobStatus == "rejected" || jobStatus == "cancelled" || jobStatus == "completed" {
+            self.viewBottomChat.isHidden = true
+        } else {
+            self.viewBottomChat.isHidden = false
+        }
         
         imgProfile.loadFromUrlString(profileImg, placeholder: "ic_placeholder_user".image)
         lblName.text = profileName
