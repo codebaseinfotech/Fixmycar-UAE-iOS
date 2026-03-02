@@ -20,15 +20,17 @@ class BookingFareAmountVM {
     var priceData: PriceData?
     var availableDrivers: [DriverData] = []
     
-    func getCalculatePrice(km: String) {
+    func getCalculatePrice(km: String, minutes: Int) {
         let latitude = AppDelegate.appDelegate.currentLatitude
         let langitude = AppDelegate.appDelegate.currentLongitude
         let km = Double(km) ?? 0.0
+        let minutes = minutes
         
         let params: [String: Any] = [
             "latitude": latitude,
             "longitude": langitude,
-            "km": km
+            "km": km,
+            "minutes": minutes
         ]
         
         APIClient.sharedInstance.request(

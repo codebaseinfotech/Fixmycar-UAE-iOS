@@ -73,7 +73,7 @@ class BookingFareAmountVC: UIViewController {
             self.lblDistance.text = "Distance: " + "\(self.googleMapVM.distanceWithName)"
             self.lblEstimatedTime.text = "Estimated time taken: " + "\(self.googleMapVM.durationWithName)"
             
-            self.viewModel.getCalculatePrice(km: self.googleMapVM.distance)
+            self.viewModel.getCalculatePrice(km: self.googleMapVM.distance, minutes: Int(self.googleMapVM.duration) ?? 0)
         }
     }
     
