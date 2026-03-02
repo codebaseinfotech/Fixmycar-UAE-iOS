@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class UserChatVC: UIViewController {
 
@@ -32,6 +33,7 @@ class UserChatVC: UIViewController {
             txtMessage.delegate = self
         }
     }
+    @IBOutlet weak var viewBottomChat: UIStackView!
     
     var chatDetailsVM = ChatDetailsVM()
     
@@ -48,7 +50,37 @@ class UserChatVC: UIViewController {
         setupBindings()
         chatDetailsVM.getChatDetails()
         
+        // Tap gesture to dismiss keyboard
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Disable IQKeyboardManager for this screen
+        IQKeyboardManager.shared.enable = false
+        IQKeyboardManager.shared.enableAutoToolbar = false
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Re-enable IQKeyboardManager for other screens
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -110,6 +142,42 @@ class UserChatVC: UIViewController {
             self.tblVIewList.scrollToRow(at: indexPath,
                                          at: .bottom,
                                          animated: animated)
+        }
+    }
+    
+    // MARK: - Keyboard Handling
+    @objc func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+              let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+
+        // Calculate how much to move up
+        let keyboardTop = view.frame.height - keyboardFrame.height
+        let bottomChatBottom = viewBottomChat.frame.maxY
+        let overlap = bottomChatBottom - keyboardTop + 15 // 15 points padding
+
+        guard overlap > 0 else { return }
+
+        UIView.animate(withDuration: duration) {
+            self.viewBottomChat.transform = CGAffineTransform(translationX: 0, y: -overlap)
+            // Adjust tableView content inset instead of transform
+            self.tblVIewList.contentInset.bottom = overlap
+            self.tblVIewList.verticalScrollIndicatorInsets.bottom = overlap
+            self.view.layoutIfNeeded()
+        }
+
+        scrollToBottom(animated: true)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+
+        UIView.animate(withDuration: duration) {
+            self.viewBottomChat.transform = .identity
+            self.tblVIewList.contentInset.bottom = 0
+            self.tblVIewList.verticalScrollIndicatorInsets.bottom = 0
+            self.view.layoutIfNeeded()
         }
     }
 

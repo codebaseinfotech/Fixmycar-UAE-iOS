@@ -26,6 +26,7 @@
                 <outlet property="tblVIewList" destination="9NO-Ho-l1R" id="rBn-sC-zwe"/>
                 <outlet property="txtMessage" destination="QYk-XO-guc" id="raB-Yc-Aa8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewBottomChat" destination="qZa-7e-PH6" id="0FA-8w-kA7"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -121,22 +122,22 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9NO-Ho-l1R">
-                    <rect key="frame" x="0.0" y="173" width="393" height="544"/>
+                    <rect key="frame" x="0.0" y="173" width="393" height="541"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-7e-PH6">
-                    <rect key="frame" x="20" y="722" width="353" height="42"/>
+                    <rect key="frame" x="20" y="719" width="353" height="45"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIP-gl-Nqq">
-                            <rect key="frame" x="0.0" y="0.0" width="305" height="42"/>
+                            <rect key="frame" x="0.0" y="0.0" width="302" height="45"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type here...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYk-XO-guc">
-                                    <rect key="frame" x="10" y="0.0" width="255" height="42"/>
+                                    <rect key="frame" x="10" y="0.0" width="252" height="45"/>
                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geu-u7-oeh">
-                                    <rect key="frame" x="271" y="9" width="24" height="24"/>
+                                    <rect key="frame" x="268" y="10.666666666666629" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="BAY-Rp-2EE"/>
                                         <constraint firstAttribute="width" constant="24" id="Kri-kT-trg"/>
@@ -150,7 +151,7 @@
                             </subviews>
                             <color key="backgroundColor" name="gray_base"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="42" id="DcU-0M-QZx"/>
+                                <constraint firstAttribute="height" constant="45" id="DcU-0M-QZx"/>
                                 <constraint firstItem="geu-u7-oeh" firstAttribute="leading" secondItem="QYk-XO-guc" secondAttribute="trailing" constant="6" id="Kdt-yI-V8h"/>
                                 <constraint firstAttribute="bottom" secondItem="QYk-XO-guc" secondAttribute="bottom" id="boG-1o-cut"/>
                                 <constraint firstAttribute="trailing" secondItem="geu-u7-oeh" secondAttribute="trailing" constant="10" id="g0d-Xe-6KO"/>
@@ -165,9 +166,9 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQU-uQ-rUI">
-                            <rect key="frame" x="311" y="0.0" width="42" height="42"/>
+                            <rect key="frame" x="308" y="0.0" width="45" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="42" id="CAX-Dw-HjV"/>
+                                <constraint firstAttribute="width" constant="45" id="CAX-Dw-HjV"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="ic_send_msg"/>

@@ -41,6 +41,7 @@ class BookingDetailsVC: UIViewController {
     @IBOutlet weak var lblTotalAmount: UILabel!
     
     var bookingVM = BookingDetailsVM()
+    var chatVM = ChatVM()
     
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -167,15 +168,26 @@ class BookingDetailsVC: UIViewController {
     
     
     @IBAction func clickedInvoice(_ sender: Any) {
-//        let link = bookingVM.bookingDetails ?? ""
-//        guard let url = URL(string: link) else {
-//            debugPrint("Invalid URL")
-//            return
-//        }
-//        
-//        if UIApplication.shared.canOpenURL(url) {
-//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//        }
+        let link = bookingVM.bookingDetails?.invoiceURL ?? ""
+        guard let url = URL(string: link) else {
+            debugPrint("Invalid URL")
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func tappedChat(_ sender: Any) {
+        guard let booking = bookingVM.bookingDetails else { return }
+        
+        let vc = UserChatVC()
+        vc.chatDetailsVM.jobId = booking.id
+        vc.profileImg = booking.driver?.image ?? ""
+        vc.profileName = booking.driver?.name ?? ""
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

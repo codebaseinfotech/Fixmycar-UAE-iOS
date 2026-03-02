@@ -131,6 +131,58 @@ class APIClient: NSObject {
         }
     }
     
+    func requestGoogleDistance<T: Decodable>(
+        method: HTTPMethod = .get,
+        parameters: Parameters = [:],
+        pathComponent: String = "",
+        needUserToken: Bool = true,
+        responseType: T.Type,
+        parameterEncoding: EncodingAPI = .url,
+        completionHandler: @escaping (T?, String?, Int?) -> Void
+    ) {
+        
+        let absoluteUrl = "https://maps.googleapis.com/maps/api/distancematrix/json" + pathComponent
+        debugPrint("➡️ REQUEST DISTANCE URL:", absoluteUrl)
+        
+        guard NetConnection.isConnectedToNetwork() else {
+            completionHandler(nil, "No Internet Connection", nil)
+            return
+        }
+        
+        AF.request(
+            absoluteUrl,
+            method: method,
+            parameters: parameters,
+            encoding: parameterEncoding,
+        )
+        .responseData { response in
+            
+            let statusCode = response.response?.statusCode
+            if let data = response.data {
+                debugPrint("⬅️ RAW RESPONSE:", String(data: data, encoding: .utf8) ?? "")
+            }
+            
+            guard let data = response.data else {
+                completionHandler(nil, "No data received", statusCode)
+                return
+            }
+            
+            do {
+                // Try decoding success response first
+                let decoded = try JSONDecoder().decode(T.self, from: data)
+                completionHandler(decoded, nil, statusCode)
+            } catch {
+                // If decoding fails, try decoding API error
+                if let apiError = try? JSONDecoder().decode(APIErrorResponse.self, from: data) {
+                    completionHandler(nil, apiError.message, statusCode)
+                } else {
+                    // Fallback: raw decoding error
+                    completionHandler(nil, "Decoding error: \(error.localizedDescription)", statusCode)
+                }
+            }
+        }
+    }
+    
     func uploadMultipart(
         urlString: APIEndPoint,
         method: String = "POST",

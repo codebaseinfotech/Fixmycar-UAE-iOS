@@ -20,10 +20,10 @@ class BookingFareAmountVM {
     var priceData: PriceData?
     var availableDrivers: [DriverData] = []
     
-    func getCalculatePrice(km: Double) {
+    func getCalculatePrice(km: String) {
         let latitude = AppDelegate.appDelegate.currentLatitude
         let langitude = AppDelegate.appDelegate.currentLongitude
-        let km = km
+        let km = Double(km) ?? 0.0
         
         let params: [String: Any] = [
             "latitude": latitude,

@@ -70,7 +70,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovery service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jem-cM-ZhH">
-                            <rect key="frame" x="125.33333333333333" y="8.6666666666666732" width="142.66666666666669" height="22.666666666666671"/>
+                            <rect key="frame" x="125.33333333333334" y="8.6666666666666732" width="142.66666666666666" height="22.666666666666671"/>
                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
                             <color key="textColor" name="primery_black"/>
                             <nil key="highlightedColor"/>
@@ -432,6 +432,9 @@
                                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HV-YE-Dnt">
                                                                                                                     <rect key="frame" x="0.0" y="0.0" width="84" height="36"/>
                                                                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                                                    <connections>
+                                                                                                                        <action selector="tappedChat:" destination="-1" eventType="touchUpInside" id="3L5-93-rfM"/>
+                                                                                                                    </connections>
                                                                                                                 </button>
                                                                                                             </subviews>
                                                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

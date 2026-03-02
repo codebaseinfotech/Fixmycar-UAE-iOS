@@ -18,6 +18,7 @@ class BookingFareAmountVC: UIViewController {
     @IBOutlet weak var txtDrop: UITextField!
     
     var viewModel = BookingFareAmountVM()
+    var googleMapVM = GoogleDistanceVM()
     
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -38,8 +39,8 @@ class BookingFareAmountVC: UIViewController {
         calculateDistance()
         
         viewModel.successCalculatePrice = {
-            let rounded = Double(String(format: "%.3f", self.viewModel.priceData?.distanceKm ?? 0.0))!
-            self.lblDistance.text = "Distance:" + " \(rounded) km"
+//            let rounded = Double(String(format: "%.3f", self.viewModel.priceData?.distanceKm ?? 0.0))!
+//            self.lblDistance.text = "Distance:" + " \(rounded) km"
             
             self.lblPrice.text = "\(self.viewModel.priceData?.currency ?? "") \(self.viewModel.priceData?.price ?? 0.0)"
 
@@ -66,14 +67,14 @@ class BookingFareAmountVC: UIViewController {
     // MARK: - calculateDistance
     func calculateDistance() {
         
-        let pickup = CLLocation(latitude: CreateBooking.shared.pickup_lat ?? 0.0, longitude: CreateBooking.shared.pickup_lng ?? 0.0)
-        let drop = CLLocation(latitude: CreateBooking.shared.dropoff_lat ?? 0.0, longitude: CreateBooking.shared.dropoff_lng ?? 0.0)
-        
-        let distanceInMeters = pickup.distance(from: drop)
-        let distanceInKM = distanceInMeters / 1000.0
-        
-        debugPrint("Distance: \(distanceInKM) KM")
-        viewModel.getCalculatePrice(km: distanceInKM)
+        googleMapVM.getDistance(originLat: CreateBooking.shared.pickup_lat ?? 0.0, originLng: CreateBooking.shared.pickup_lng ?? 0.0, destLat: CreateBooking.shared.dropoff_lat ?? 0.0, destLng: CreateBooking.shared.dropoff_lng ?? 0.0)
+            
+        googleMapVM.successGoogleDistance = {
+            self.lblDistance.text = "Distance: " + "\(self.googleMapVM.distanceWithName)"
+            self.lblEstimatedTime.text = "Estimated time taken: " + "\(self.googleMapVM.durationWithName)"
+            
+            self.viewModel.getCalculatePrice(km: self.googleMapVM.distance)
+        }
     }
     
     func showDriversOnMap(drivers: [DriverData]) {
@@ -187,13 +188,13 @@ class BookingFareAmountVC: UIViewController {
             }
 
             DispatchQueue.main.async {
-                var titleEstimetedTime = ""
-                if durationText.contains("mins") == true {
-                    titleEstimetedTime = "Estimated time taken: \(durationText)"
-                } else {
-                    titleEstimetedTime = "Estimated time taken: \(durationText) minutes"
-                }
-                self.lblEstimatedTime.text = titleEstimetedTime
+//                var titleEstimetedTime = ""
+//                if durationText.contains("mins") == true {
+//                    titleEstimetedTime = "Estimated time taken: \(durationText)"
+//                } else {
+//                    titleEstimetedTime = "Estimated time taken: \(durationText) minutes"
+//                }
+//                self.lblEstimatedTime.text = titleEstimetedTime
                 self.showPolyline(encodedPath: points)
             }
         }.resume()

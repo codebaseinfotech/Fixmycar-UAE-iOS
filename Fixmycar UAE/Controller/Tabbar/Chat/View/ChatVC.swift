@@ -25,6 +25,8 @@ class ChatVC: UIViewController {
     }
     
     var chatVM = ChatVM()
+    var filteredChatList: [InboxItem] = []
+    var isSearching: Bool = false
     
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class ChatVC: UIViewController {
 
         chatVM.getChatList()
         chatVM.successChatList = {
+            self.filteredChatList = self.chatVM.chatList
             
             if self.chatVM.chatList.count > 0 {
                 self.viewNoChatFound.isHidden = true
@@ -47,6 +50,8 @@ class ChatVC: UIViewController {
             self.setUpMakeToast(msg: msg)
         }
         
+        txtSearch.delegate = self
+        txtSearch.addTarget(self, action: #selector(searchTextChanged(_:)), for: .editingChanged)
         // Do any additional setup after loading the view.
     }
 
@@ -64,26 +69,43 @@ class ChatVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
+    // MARK: - Search
+    @objc func searchTextChanged(_ textField: UITextField) {
+        let searchText = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
+
+        if searchText.isEmpty {
+            isSearching = false
+            filteredChatList = chatVM.chatList
+        } else {
+            isSearching = true
+            filteredChatList = chatVM.chatList.filter { item in
+                let name = item.chatPartner?.lowercased() ?? ""
+                return name.contains(searchText)
+            }
+        }
+
+        tblViewList.reloadData()
+    }
 
 }
 
 // MARK: - TV Delegate & DataSource
 extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatVM.chatList.count
+        return filteredChatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatListTVCell.identifier) as! ChatListTVCell
         
-        let dicData = chatVM.chatList[indexPath.row]
+        let dicData = filteredChatList[indexPath.row]
         cell.chatListData = dicData
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dicData = chatVM.chatList[indexPath.row]
+        let dicData = filteredChatList[indexPath.row]
         
         let vc = UserChatVC()
         vc.chatDetailsVM.jobId = dicData.jobId ?? 0
@@ -93,4 +115,12 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+// MARK: - UITextFieldDelegate
+extension ChatVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
