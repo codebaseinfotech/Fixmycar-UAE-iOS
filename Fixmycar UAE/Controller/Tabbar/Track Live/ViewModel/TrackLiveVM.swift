@@ -44,6 +44,7 @@ class TrackLiveVM {
                 } else {
                     self.failureTrackLive?(response.message ?? "")
                 }
+                
             }
     }
 }

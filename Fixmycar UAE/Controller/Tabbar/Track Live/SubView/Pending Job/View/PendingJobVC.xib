@@ -20,6 +20,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PendingJobVC" customModule="Fixmycar_UAE" customModuleProvider="target">
             <connections>
+                <outlet property="lblDis" destination="oQY-cU-xiV" id="MTT-zT-7t0"/>
+                <outlet property="svCallUs" destination="axp-wI-1PR" id="liR-he-ihg"/>
+                <outlet property="svYesorNo" destination="hI4-IY-ub2" id="Sju-te-eOq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewBottomPopup" destination="R1a-LG-wLH" id="CkL-ag-z0I"/>
                 <outlet property="viewLoader" destination="R1a-LG-wLH" id="nsV-Bz-HGo"/>
@@ -32,7 +35,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2d-71-odm">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="540.66666666666663"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="497"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqI-bJ-5wv">
@@ -47,14 +50,14 @@
                         <action selector="tappedBack:" destination="-1" eventType="touchUpInside" id="msA-hd-h0U"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADo-kw-QNS">
-                    <rect key="frame" x="0.0" y="540.66666666666663" width="393" height="311.33333333333337"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADo-kw-QNS">
+                    <rect key="frame" x="0.0" y="497" width="393" height="355"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1A-2p-fvu">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mI3-QG-XXV">
-                                    <rect key="frame" x="138.66666666666666" y="17.666666666666742" width="115.66666666666666" height="25"/>
+                                    <rect key="frame" x="138.66666666666666" y="17.666666666666629" width="115.66666666666666" height="25"/>
                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="20"/>
                                     <color key="textColor" name="White"/>
                                     <nil key="highlightedColor"/>
@@ -68,38 +71,38 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="clg-7z-3EU">
-                            <rect key="frame" x="20" y="80.000000000000014" width="353" height="201.33333333333337"/>
+                            <rect key="frame" x="20" y="80" width="353" height="245"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1a-LG-wLH">
-                                    <rect key="frame" x="126.66666666666666" y="0.0" width="100" height="100"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1a-LG-wLH" customClass="FindingDriverLoaderView" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                    <rect key="frame" x="116.66666666666666" y="0.0" width="120" height="120"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="3YE-Vp-lgP"/>
-                                        <constraint firstAttribute="width" constant="100" id="uIY-Me-Gtx"/>
+                                        <constraint firstAttribute="height" constant="120" id="3YE-Vp-lgP"/>
+                                        <constraint firstAttribute="width" constant="120" id="uIY-Me-Gtx"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait while we look for available drivers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQY-cU-xiV">
-                                    <rect key="frame" x="3" y="119.99999999999999" width="347" height="21.333333333333329"/>
-                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="17"/>
+                                    <rect key="frame" x="58.000000000000014" y="140" width="237.33333333333337" height="45"/>
+                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="18"/>
                                     <color key="textColor" name="primery_black"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="axp-wI-1PR">
-                                    <rect key="frame" x="51.666666666666686" y="161.33333333333337" width="250" height="40"/>
+                                    <rect key="frame" x="46.666666666666686" y="205" width="260" height="40"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCg-19-PTz">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="120" id="fp9-3X-MuZ"/>
+                                                <constraint firstAttribute="width" constant="125" id="fp9-3X-MuZ"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="15"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="Cancel">
                                                 <color key="titleColor" name="primery_black"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="20"/>
+                                                    <real key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="1"/>
@@ -108,24 +111,80 @@
                                                     <color key="value" name="primery_black"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tappedCancel:" destination="-1" eventType="touchUpInside" id="KiB-Kn-Dno"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WB9-lY-GxE">
-                                            <rect key="frame" x="130" y="0.0" width="120" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WB9-lY-GxE">
+                                            <rect key="frame" x="135" y="0.0" width="125" height="40"/>
                                             <color key="backgroundColor" name="primery_black"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="15"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" title="Call us">
+                                            <state key="normal" title=" Call Us" image="ic_call_us">
                                                 <color key="titleColor" name="White"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="20"/>
+                                                    <real key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tappedCallUs:" destination="-1" eventType="touchUpInside" id="YPg-6A-oe2"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="eT3-c0-Ko8"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hI4-IY-ub2">
+                                    <rect key="frame" x="46.666666666666686" y="245" width="260" height="40"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXc-EV-elk">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="125" id="5TV-SX-wjK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="15"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="No">
+                                                <color key="titleColor" name="primery_black"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="primery_black"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tappedNo:" destination="-1" eventType="touchUpInside" id="qaf-hX-xIe"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuL-K7-O9b">
+                                            <rect key="frame" x="135" y="0.0" width="125" height="40"/>
+                                            <color key="backgroundColor" name="primery_black"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="15"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Yes">
+                                                <color key="titleColor" name="White"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tappedYes:" destination="-1" eventType="touchUpInside" id="mHt-U7-wb8"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="w1X-fY-pef"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
@@ -161,6 +220,7 @@
     </objects>
     <resources>
         <image name="ic_back_bg" width="32" height="32"/>
+        <image name="ic_call_us" width="22" height="22"/>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

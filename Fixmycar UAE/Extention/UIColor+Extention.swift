@@ -149,11 +149,17 @@ extension UIViewController
     {
         setUpHideToast()
         self.view.makeToast(msg)
+        let window = UIApplication.shared.windows
+        window.last?.makeToast(msg)
+        
     }
 
     func setUpHideToast()
     {
         self.view.hideToast()
+        
+        let window = UIApplication.shared.windows
+        window.last?.hideToast()
     }
 
     func convertImageToBase64String (img: UIImage) -> String {

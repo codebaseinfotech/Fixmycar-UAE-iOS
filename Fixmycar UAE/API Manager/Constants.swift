@@ -47,7 +47,7 @@ enum APIEndPoint: String {
     case sendMessage = "v1/chat/send"
     case lastLoginModify = "v1/modify-last-login"
     case checkAppStatus = "v1/common/check-app-status"
-    case cancel_booking = "v1/bookings"
+    case cancelBooking = "v1/bookings"
 }
 
 

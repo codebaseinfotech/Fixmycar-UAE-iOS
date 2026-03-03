@@ -258,8 +258,9 @@ class HomeVC: UIViewController {
         /*let vc = TrackLiveVC()
         vc.trackLiveVM.bookingId = self.homeVM.homeData?.activeBooking?[0].id ?? 0
         self.navigationController?.pushViewController(vc, animated: true)*/
-        
+        guard let active = homeVM.homeData?.activeBooking?.first, let id = active.id else { return }
         let vc = PendingJobVC()
+        vc.activeJobId = id
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

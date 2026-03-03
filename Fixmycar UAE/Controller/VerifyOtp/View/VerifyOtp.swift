@@ -17,7 +17,7 @@ class VerifyOtp: UIViewController {
         didSet {
             viewMain.clipsToBounds = true
             viewMain.layer.cornerRadius = 20
-            viewMain.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Top Corner
+            viewMain.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         }
     }
     @IBOutlet weak var timeLabel: UILabel!
