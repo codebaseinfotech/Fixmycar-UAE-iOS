@@ -255,13 +255,20 @@ class HomeVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func tappedActiveJob(_ sender: Any) {
-        /*let vc = TrackLiveVC()
-        vc.trackLiveVM.bookingId = self.homeVM.homeData?.activeBooking?[0].id ?? 0
-        self.navigationController?.pushViewController(vc, animated: true)*/
-        guard let active = homeVM.homeData?.activeBooking?.first, let id = active.id else { return }
-        let vc = PendingJobVC()
-        vc.activeJobId = id
-        self.navigationController?.pushViewController(vc, animated: true)
+        guard let active = homeVM.homeData?.activeBooking?.first,
+              let bookingId = active.id else { return }
+        
+        let status = active.status?.lowercased() ?? ""
+        
+        if status == "pending" {
+            let vc = PendingJobVC()
+            vc.activeJobId = bookingId
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = TrackLiveVC()
+            vc.trackLiveVM.bookingId = bookingId
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     //MARK: - tabbar Action
