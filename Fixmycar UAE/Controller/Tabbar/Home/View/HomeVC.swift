@@ -63,6 +63,13 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         lblUserName.text = "Hello, " + (FCUtilites.getCurrentUser()?.name ?? "")
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(refreshPageData(_:)),
+            name: .createNewBooking,
+            object: nil
+        )
+
         // Do any additional setup after loading the view.
     }
     
@@ -201,6 +208,14 @@ class HomeVC: UIViewController {
         locationManager.startUpdatingLocation()   // 🔴 Start Live Location
     }
     
+    @objc func refreshPageData(_ notification: Notification) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let vc = ThankYouPopUp(nibName: "ThankYouPopUp", bundle: nil)
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false)
+        }
+    }
+
     // MARK: - TV height set
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if(keyPath == "contentSize"){
@@ -240,9 +255,12 @@ class HomeVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func tappedActiveJob(_ sender: Any) {
-//        let vc = TrackLiveVC()
-//        vc.trackLiveVM.bookingId = self.homeVM.homeData?.activeBooking?[0].id ?? 0
-//        self.navigationController?.pushViewController(vc, animated: true)
+        /*let vc = TrackLiveVC()
+        vc.trackLiveVM.bookingId = self.homeVM.homeData?.activeBooking?[0].id ?? 0
+        self.navigationController?.pushViewController(vc, animated: true)*/
+        
+        let vc = PendingJobVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - tabbar Action

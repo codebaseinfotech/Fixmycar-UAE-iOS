@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PendingJobVC" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewBottomPopup" destination="R1a-LG-wLH" id="CkL-ag-z0I"/>
+                <outlet property="viewLoader" destination="R1a-LG-wLH" id="nsV-Bz-HGo"/>
+                <outlet property="viewMap" destination="k2d-71-odm" id="EgJ-jq-b7a"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2d-71-odm">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="540.66666666666663"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqI-bJ-5wv">
+                    <rect key="frame" x="20" y="128" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="k7w-Yo-MGI"/>
+                        <constraint firstAttribute="width" constant="32" id="uaw-Sy-4FX"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="ic_back_bg"/>
+                    <connections>
+                        <action selector="tappedBack:" destination="-1" eventType="touchUpInside" id="msA-hd-h0U"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADo-kw-QNS">
+                    <rect key="frame" x="0.0" y="540.66666666666663" width="393" height="311.33333333333337"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1A-2p-fvu">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mI3-QG-XXV">
+                                    <rect key="frame" x="138.66666666666666" y="17.666666666666742" width="115.66666666666666" height="25"/>
+                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="20"/>
+                                    <color key="textColor" name="White"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="primery_black"/>
+                            <constraints>
+                                <constraint firstItem="mI3-QG-XXV" firstAttribute="centerX" secondItem="d1A-2p-fvu" secondAttribute="centerX" id="TQy-ym-MCG"/>
+                                <constraint firstAttribute="height" constant="60" id="cZV-1R-Fkh"/>
+                                <constraint firstItem="mI3-QG-XXV" firstAttribute="centerY" secondItem="d1A-2p-fvu" secondAttribute="centerY" id="cjp-YD-gf7"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="clg-7z-3EU">
+                            <rect key="frame" x="20" y="80.000000000000014" width="353" height="201.33333333333337"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1a-LG-wLH">
+                                    <rect key="frame" x="126.66666666666666" y="0.0" width="100" height="100"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="3YE-Vp-lgP"/>
+                                        <constraint firstAttribute="width" constant="100" id="uIY-Me-Gtx"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait while we look for available drivers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQY-cU-xiV">
+                                    <rect key="frame" x="3" y="119.99999999999999" width="347" height="21.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="17"/>
+                                    <color key="textColor" name="primery_black"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="axp-wI-1PR">
+                                    <rect key="frame" x="51.666666666666686" y="161.33333333333337" width="250" height="40"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCg-19-PTz">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="fp9-3X-MuZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" name="primery_black"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="primery_black"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WB9-lY-GxE">
+                                            <rect key="frame" x="130" y="0.0" width="120" height="40"/>
+                                            <color key="backgroundColor" name="primery_black"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="15"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Call us">
+                                                <color key="titleColor" name="White"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="eT3-c0-Ko8"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="clg-7z-3EU" firstAttribute="top" secondItem="d1A-2p-fvu" secondAttribute="bottom" constant="20" id="DXM-nj-zmS"/>
+                        <constraint firstAttribute="trailing" secondItem="d1A-2p-fvu" secondAttribute="trailing" id="KgV-MH-Lki"/>
+                        <constraint firstItem="d1A-2p-fvu" firstAttribute="top" secondItem="ADo-kw-QNS" secondAttribute="top" id="VXh-iJ-dhy"/>
+                        <constraint firstAttribute="trailing" secondItem="clg-7z-3EU" secondAttribute="trailing" constant="20" id="ZXo-o4-g0p"/>
+                        <constraint firstItem="d1A-2p-fvu" firstAttribute="leading" secondItem="ADo-kw-QNS" secondAttribute="leading" id="bQK-au-61q"/>
+                        <constraint firstItem="clg-7z-3EU" firstAttribute="leading" secondItem="ADo-kw-QNS" secondAttribute="leading" constant="20" id="bxg-Eg-h3z"/>
+                        <constraint firstAttribute="bottom" secondItem="clg-7z-3EU" secondAttribute="bottom" constant="30" id="rbK-sZ-Yvc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="k2d-71-odm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KIM-VD-nu1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ADo-kw-QNS" secondAttribute="trailing" id="LEt-lH-SDh"/>
+                <constraint firstItem="jqI-bJ-5wv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SxU-r8-8iz"/>
+                <constraint firstItem="ADo-kw-QNS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V5f-Uc-fQO"/>
+                <constraint firstItem="ADo-kw-QNS" firstAttribute="top" secondItem="k2d-71-odm" secondAttribute="bottom" id="afC-sE-PyU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k2d-71-odm" secondAttribute="trailing" id="hYX-GW-j5F"/>
+                <constraint firstItem="k2d-71-odm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iQf-px-v4W"/>
+                <constraint firstItem="jqI-bJ-5wv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="q5E-Fj-AFX"/>
+                <constraint firstAttribute="bottom" secondItem="ADo-kw-QNS" secondAttribute="bottom" id="tf7-KR-on9"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="153.52112676056339"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back_bg" width="32" height="32"/>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

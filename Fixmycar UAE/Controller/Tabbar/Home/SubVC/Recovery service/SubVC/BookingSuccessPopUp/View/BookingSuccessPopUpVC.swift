@@ -28,6 +28,9 @@ class BookingSuccessPopUpVC: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             AppDelegate.appDelegate.setUpHome()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                NotificationCenter.default.post(name: .createNewBooking, object: nil)
+            }
         }
 
         // Do any additional setup after loading the view.

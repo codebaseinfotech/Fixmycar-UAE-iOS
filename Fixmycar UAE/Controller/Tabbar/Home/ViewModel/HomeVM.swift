@@ -26,8 +26,10 @@ class HomeVM {
                 guard let self = self else { return }
                 
                 // 🔴 If error
-                if let error = error {
-                    self.failureHomeData?(error)
+                if let errorMessage = error {
+                    debugPrint("❌ APIClient Error:", error ?? "")
+                    debugPrint("❌ Status Code:", statusCode ?? 0)
+                    self.failureHomeData?(error ?? "")
                     return
                 }
                 
@@ -43,9 +45,17 @@ class HomeVM {
                     return
                 }
                 
-                self.homeData = response.data
-                self.recentServiceList = response.data?.recentRequests ?? []
-                self.successHomeData?()
+                if statusCode == 401 {
+                    FCUtilites.saveIsGetCurrentUser(false)
+                    FCUtilites.saveCurrentUser(nil)
+                    AppDelegate.appDelegate.setUpLogin()
+                } else {
+                    self.homeData = response.data
+                    self.recentServiceList = response.data?.recentRequests ?? []
+                    self.successHomeData?()
+                }
+                
+               
             }
     }
 
