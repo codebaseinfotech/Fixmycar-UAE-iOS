@@ -84,6 +84,7 @@
                 self.lblTimeDis.text = "Your ride request is assigned to the \(dicData?.driver?.name ?? ""). arriving soon for pick up."
                 self.lblUserName.text = dicData?.driver?.name
                 self.lblRate.text = "\(dicData?.driver?.rating ?? 0.0)"
+                self.lblCarName.text = dicData?.vehicleType ?? ""
                 self.lblPlateNumber.text = dicData?.vehicleNumber
                 self.lblCarName.text = dicData?.vehicleType ?? ""
                 
@@ -164,12 +165,43 @@
         
         //MARK: - Action Method
         @IBAction func tappedChatWithDriver(_ sender: Any) {
+            let vc = UserChatVC()
+            vc.chatDetailsVM.jobId = trackLiveVM.trackBookingDetails?.bookingID ?? 0
+            vc.profileName = trackLiveVM.trackBookingDetails?.driver?.name ?? ""
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
         @IBAction func tappedCall(_ sender: Any) {
+            callDriver()
         }
         @IBAction func tappedBack(_ sender: Any) {
             self.navigationController?.popViewController(animated: true)
+        }
+        
+        // MARK: - Call Driver
+        private func sanitizePhone(_ raw: String) -> String {
+            let allowed = CharacterSet(charactersIn: "+0123456789")
+            return raw.unicodeScalars.filter { allowed.contains($0) }.map(String.init).joined()
+        }
+        
+        private func callDriver() {
+            guard let phoneRaw = trackLiveVM.trackBookingDetails?.driver?.phone else {
+                setUpMakeToast(msg: "Driver phone number not available")
+                return
+            }
+            
+            let phone = sanitizePhone(phoneRaw)
+            
+            guard !phone.isEmpty, let url = URL(string: "tel://\(phone)") else {
+                setUpMakeToast(msg: "Invalid phone number")
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                setUpMakeToast(msg: "Calling not supported on this device")
+            }
         }
         
         // MARK: - Setup Map
