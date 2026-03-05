@@ -22,7 +22,7 @@ class CreateBooking {
     var dropoff_lat: Double?
     var dropoff_lng: Double?
     
-    var distance_km: Double?
+    var distance_km: String?
     
     var finalPrice: Double?
     
@@ -36,5 +36,9 @@ class CreateBooking {
     var vehicle_type: String?
     var issue: Int?
     var additional_notes: String?
-    var discount_amount: String?
+    var discountPrice: String?
+    var eta_minutes: String?
+    var total_price: String?
+    var platform_fee: String?
+    var tax: String?
 }

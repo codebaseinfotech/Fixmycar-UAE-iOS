@@ -45,21 +45,26 @@ class FareBreakupVC: UIViewController {
         lblBaseFare.text = currency + " " + "\(CreateBooking.shared.price ?? 0.0)"
         lblDiscount.text = isDiscount ? currency + " " + "\(fareBreakupVM.promoCodeData?.discountValue ?? 0)" : currency + " " + "0.0"
         
-        let basePrice = Double(CreateBooking.shared.price ?? 0.0) ?? 0.0
+        let basePrice = Double(CreateBooking.shared.price ?? 0.0)
         let discountValue = Double(fareBreakupVM.promoCodeData?.discountValue ?? 0)
+        CreateBooking.shared.discountPrice = "\(fareBreakupVM.promoCodeData?.discountValue ?? 0)"
+        CreateBooking.shared.promotion_id = fareBreakupVM.promoCodeData?.id ?? 0
         
         let price = isDiscount ? basePrice - discountValue : basePrice
         
         let configVM = AppDelegate.appDelegate.configVM.configResponse
         
-        let platformFee = configVM?.generalSettings.showPlatformFee == true ? "\(configVM?.generalSettings.platformFeeAmount ?? 0.0)" : currency + " " + "0.0"
-        let tax = configVM?.generalSettings.showTax == true ? "\(configVM?.generalSettings.taxAmount ?? 0.0)" : currency + " " + "0.0"
+        let platformFee = configVM?.generalSettings.showPlatformFee == true ? "\(configVM?.generalSettings.platformFeeAmount ?? 0.0)" : "0.0"
+        let tax = configVM?.generalSettings.showTax == true ? "\(configVM?.generalSettings.taxAmount ?? 0.0)" : "0.0"
         
-        lblPlatformFee.text = currency + " " + (platformFee ?? "")
-        lblTax.text = currency + " " + (tax ?? "")
+        lblPlatformFee.text = currency + " " + (platformFee)
+        lblTax.text = currency + " " + (tax)
         
-        let platformFeeValue = Double(platformFee ?? "0.0") ?? 0.00
-        let taxValue = Double(tax ?? "0.0") ?? 0.0
+        let platformFeeValue = Double(platformFee) ?? 0.00
+        let taxValue = Double(tax) ?? 0.0
+        
+        CreateBooking.shared.platform_fee = platformFee
+        CreateBooking.shared.tax = tax
         
         let totalAmount = price + platformFeeValue + taxValue
         lblTotalAmount.text = "\(currency) \(totalAmount)"

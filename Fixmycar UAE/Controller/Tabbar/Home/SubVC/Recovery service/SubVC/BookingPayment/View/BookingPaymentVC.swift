@@ -19,7 +19,7 @@ class BookingPaymentVC: UIViewController {
     }
     
     var bookingPaymentVM = BookingPaymentVM()
-    
+
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

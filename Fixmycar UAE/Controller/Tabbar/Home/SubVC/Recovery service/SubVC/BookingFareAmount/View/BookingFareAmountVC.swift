@@ -46,7 +46,6 @@ class BookingFareAmountVC: UIViewController {
 
             CreateBooking.shared.price = self.viewModel.priceData?.price ?? 0.0
             CreateBooking.shared.currency = self.viewModel.priceData?.currency ?? ""
-            CreateBooking.shared.distance_km = self.viewModel.priceData?.distanceKm ?? 0.0
             
             self.viewModel.getAvailableDrivers()
         }
@@ -72,6 +71,9 @@ class BookingFareAmountVC: UIViewController {
         googleMapVM.successGoogleDistance = {
             self.lblDistance.text = "Distance: " + "\(self.googleMapVM.distanceWithName)"
             self.lblEstimatedTime.text = "Estimated time taken: " + "\(self.googleMapVM.durationWithName)"
+            
+            CreateBooking.shared.distance_km = self.googleMapVM.distance
+            CreateBooking.shared.eta_minutes = "\(self.googleMapVM.duration.toMinutes())"
             
             self.viewModel.getCalculatePrice(km: self.googleMapVM.distance, minutes: Int(self.googleMapVM.duration) ?? 0)
         }

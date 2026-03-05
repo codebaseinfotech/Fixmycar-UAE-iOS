@@ -178,3 +178,30 @@ extension UIView {
     }
 }
 
+// MARK: - hour to min
+extension String {
+    
+    func toMinutes() -> Int {
+        var totalMinutes = 0
+        
+        let lower = self.lowercased()
+        let components = lower.components(separatedBy: " ")
+        
+        for (index, value) in components.enumerated() {
+            if let number = Int(value) {
+                
+                if index + 1 < components.count {
+                    let unit = components[index + 1]
+                    
+                    if unit.contains("hour") {
+                        totalMinutes += number * 60
+                    } else if unit.contains("min") {
+                        totalMinutes += number
+                    }
+                }
+            }
+        }
+        
+        return totalMinutes
+    }
+}

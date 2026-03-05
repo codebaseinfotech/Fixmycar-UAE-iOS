@@ -47,29 +47,44 @@ struct PriceBreakdown: Codable {
     }
 }
 
-// MARK: - Booking Details
 struct CreateBookingDetails: Codable {
     let customerId: Int?
     let serviceTypeId: Int?
-    let promotionId: Int?   // ✅ Nullable supported
+    let promotionId: Int?
+    
     let pickupAddress: String?
     let pickupLat: Double?
     let pickupLng: Double?
+    
     let dropoffAddress: String?
     let dropoffLat: Double?
     let dropoffLng: Double?
-    let distanceKm: Double?   // ✅ Handles 0 or decimal
+    
+    let minutes: String?          // ✅ Missing
+    let tax: Double?              // ✅ Missing
+    let platformFee: Double?      // ✅ Missing
+    
+    let distanceKm: String?       // ⚠️ API sends string
+    
     let basePrice: Double?
     let estimatedPrice: Double?
-    let discountAmount: Double?   // ✅ Changed to Double
+    let discountAmount: String?   // ⚠️ Sometimes string
     let finalPrice: Double?
+    
     let bookingType: String?
     let scheduledAt: String?
+    
     let status: String?
     let paymentStatus: String?
+    
+    let customerVehicleType: String?  // ✅ Missing
+    let vehicleIssueId: Int?          // ✅ Missing
+    let additionalNotes: String?      // ✅ Missing
+    
     let updatedAt: String?
     let createdAt: String?
     let id: Int?
+    
     let promotionCode: String?
     
     enum CodingKeys: String, CodingKey {
@@ -82,6 +97,9 @@ struct CreateBookingDetails: Codable {
         case dropoffAddress = "dropoff_address"
         case dropoffLat = "dropoff_lat"
         case dropoffLng = "dropoff_lng"
+        case minutes
+        case tax
+        case platformFee = "platform_fee"
         case distanceKm = "distance_km"
         case basePrice = "base_price"
         case estimatedPrice = "estimated_price"
@@ -91,6 +109,9 @@ struct CreateBookingDetails: Codable {
         case scheduledAt = "scheduled_at"
         case status
         case paymentStatus = "payment_status"
+        case customerVehicleType = "customer_vehicle_type"
+        case vehicleIssueId = "vehicle_issue_id"
+        case additionalNotes = "additional_notes"
         case updatedAt = "updated_at"
         case createdAt = "created_at"
         case id

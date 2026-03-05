@@ -27,7 +27,17 @@ class BookingPaymentVM {
             "vehicle_type": CreateBooking.shared.vehicle_type ?? "",
             "issue": CreateBooking.shared.issue ?? "",
             "additional_notes": CreateBooking.shared.additional_notes ?? "",
+            "eta_minutes": CreateBooking.shared.eta_minutes ?? "",
+            "discountPrice": CreateBooking.shared.discountPrice ?? "",
+            "total_price": CreateBooking.shared.finalPrice ?? "",
+            "platform_fee": CreateBooking.shared.platform_fee ?? "",
+            "tax": CreateBooking.shared.tax ?? "",
+            "price": CreateBooking.shared.price ?? ""
         ]
+        
+        if CreateBooking.shared.promotion_id != 0 {
+            params["promotion_id"] = CreateBooking.shared.promotion_id
+        }
         
         if CreateBooking.shared.isScheduleBooking {
             let date = CreateBooking.shared.scheduled_at?.toDisplayDate(apiFormat: "dd MMM yyyy hh:mm a", displayFormat: "yyyy-MM-dd HH:mm:ss")
