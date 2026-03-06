@@ -48,20 +48,25 @@ class FMSocketManager {
 
         // Get auth token
         let token = UserDefaults.standard.string(forKey: "access_token") ?? ""
-        log("Auth Token: \(token.prefix(20))...")
+        log("Auth Token: \(token)...")
 
         let config: SocketIOClientConfiguration = [
-            .log(isDebugPrint),
+            .log(true),
             .compress,
             .forceWebsockets(true),
-            .connectParams(["token": token]),
+            .connectParams([
+                "token": token
+            ]),
             .reconnects(true),
-            .reconnectAttempts(5),
+            .reconnectAttempts(-1),
             .reconnectWait(3)
         ]
 
         manager = SocketManager(socketURL: url, config: config)
         socket = manager?.defaultSocket
+
+        setupEventListeners()
+        socket?.connect()
 
         setupEventListeners()
         socket?.connect()
