@@ -141,7 +141,7 @@ class APIClient: NSObject {
         completionHandler: @escaping (T?, String?, Int?) -> Void
     ) {
         
-        let absoluteUrl = "https://maps.googleapis.com/maps/api/distancematrix/json" + pathComponent
+        let absoluteUrl = "https://maps.googleapis.com/maps/api/directions/json" + pathComponent
         debugPrint("➡️ REQUEST DISTANCE URL:", absoluteUrl)
         
         guard NetConnection.isConnectedToNetwork() else {

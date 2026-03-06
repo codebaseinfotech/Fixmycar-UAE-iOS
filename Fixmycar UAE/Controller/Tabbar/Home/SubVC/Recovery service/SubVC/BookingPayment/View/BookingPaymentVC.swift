@@ -36,7 +36,11 @@ class BookingPaymentVC: UIViewController {
                 sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
             }
             vc.sheetPresentationController?.delegate = self
-            vc.isScheduleBooking = false
+            if CreateBooking.shared.isScheduleBooking {
+                vc.strOpenFrom = "schedule_service"
+            } else {
+                vc.strOpenFrom = "create_booking"
+            }
             self.present(vc, animated: true)
         }
         

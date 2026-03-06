@@ -7,44 +7,100 @@
 
 import Foundation
 
-// MARK: - Root
-struct DistanceMatrixResponse: Codable {
-    let destinationAddresses: [String]?
-    let originAddresses: [String]?
-    let rows: [DistanceMatrixRow]?
+struct DirectionsResponse: Codable {
+    let geocodedWaypoints: [GeocodedWaypoint]?
+    let routes: [Route]?
     let status: String?
-    let errorMessage: String?   // ✅ ADD THIS
-    
+
     enum CodingKeys: String, CodingKey {
-        case destinationAddresses = "destination_addresses"
-        case originAddresses = "origin_addresses"
-        case rows
+        case geocodedWaypoints = "geocoded_waypoints"
+        case routes
         case status
-        case errorMessage = "error_message"
     }
 }
-// MARK: - Row
-struct DistanceMatrixRow: Codable {
-    let elements: [DistanceMatrixElement]?
+
+struct GeocodedWaypoint: Codable {
+    let geocoderStatus: String?
+    let placeId: String?
+    let types: [String]?
+
+    enum CodingKeys: String, CodingKey {
+        case geocoderStatus = "geocoder_status"
+        case placeId = "place_id"
+        case types
+    }
 }
 
-// MARK: - Element
-struct DistanceMatrixElement: Codable {
-    let distance: DistanceValue?
-    let duration: DistanceValue?
-    let durationInTraffic: DistanceValue?
-    let status: String?
-    
+struct Route: Codable {
+    let bounds: Bounds?
+    let copyrights: String?
+    let legs: [Leg]?
+}
+
+struct Bounds: Codable {
+    let northeast: Location?
+    let southwest: Location?
+}
+
+struct Leg: Codable {
+    let distance: Distance?
+    let duration: DurationValue?
+    let durationInTraffic: DurationValue?
+    let endAddress: String?
+    let endLocation: Location?
+    let startAddress: String?
+    let startLocation: Location?
+    let steps: [Step]?
+
     enum CodingKeys: String, CodingKey {
         case distance
         case duration
         case durationInTraffic = "duration_in_traffic"
-        case status
+        case endAddress = "end_address"
+        case endLocation = "end_location"
+        case startAddress = "start_address"
+        case startLocation = "start_location"
+        case steps
     }
 }
 
-// MARK: - Distance/Duration
-struct DistanceValue: Codable {
+struct Distance: Codable {
     let text: String?
     let value: Int?
+}
+
+struct DurationValue: Codable {
+    let text: String?
+    let value: Int?
+}
+
+struct Location: Codable {
+    let lat: Double?
+    let lng: Double?
+}
+
+struct Step: Codable {
+    let distance: Distance?
+    let duration: DurationValue?
+    let endLocation: Location?
+    let htmlInstructions: String?
+    let maneuver: String?
+    let polyline: Polyline?
+    let startLocation: Location?
+    let travelMode: String?
+
+    enum CodingKeys: String, CodingKey {
+        case distance
+        case duration
+        case endLocation = "end_location"
+        case htmlInstructions = "html_instructions"
+        case maneuver
+        case polyline
+        case startLocation = "start_location"
+        case travelMode = "travel_mode"
+    }
+}
+
+struct Polyline: Codable {
+    let points: String?
 }

@@ -9,4 +9,6 @@
 #define Header_Fixmycar_h
 
 #import "FTAnimation+UIView.h"
+#import "HCSStarRatingView.h"
+
 #endif /* Header_Fixmycar_h */

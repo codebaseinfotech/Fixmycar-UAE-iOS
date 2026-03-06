@@ -30,11 +30,11 @@ class GoogleDistanceVM {
         let origins = "\(originLat),\(originLng)"
         let destinations = "\(destLat),\(destLng)"
         
-        let pathCompponents = "?" + "key=\(key)" + "&origins=\(origins)" + "&destinations=\(destinations)" + "&mode=\(mode)" + "&departure_time=\(departure_time)"
+        let pathCompponents = "?" + "key=\(key)" + "&origin=\(origins)" + "&destination=\(destinations)" + "&mode=\(mode)" + "&departure_time=\(departure_time)"
         
         APIClient.sharedInstance.requestGoogleDistance(
             pathComponent: pathCompponents,
-            responseType: DistanceMatrixResponse.self) { response, error, statusCode in
+            responseType: DirectionsResponse.self) { response, error, statusCode in
                 // If error
                 if let error = error {
                     self.failureGoogleDistance?(error)
@@ -48,16 +48,18 @@ class GoogleDistanceVM {
                 }
                 
                 // If API status false
-                if (response.status != nil) == false {
+                if response.status != "OK" {
                     self.failureGoogleDistance?("Failed")
                     return
                 }
                 
-                self.distanceWithName = response.rows?.first?.elements?.first?.distance?.text ?? ""
-                self.distance = response.rows?.first?.elements?.first?.distance?.text?.replacingOccurrences(of: " km", with: "") ?? ""
+                let distance = response.routes?.first?.legs?.first?.distance?.text ?? ""
+                self.distanceWithName = distance
+                self.distance = distance.replacingOccurrences(of: " km", with: "")
                 
-                self.durationWithName = response.rows?.first?.elements?.first?.durationInTraffic?.text ?? ""
-                self.duration = response.rows?.first?.elements?.first?.durationInTraffic?.text?.replacingOccurrences(of: " mins", with: "") ?? ""
+                let duration = response.routes?.first?.legs?.first?.durationInTraffic?.text ?? ""
+                self.durationWithName = duration
+                self.duration = duration.replacingOccurrences(of: " mins", with: "")
 
                 self.successGoogleDistance?()
             }

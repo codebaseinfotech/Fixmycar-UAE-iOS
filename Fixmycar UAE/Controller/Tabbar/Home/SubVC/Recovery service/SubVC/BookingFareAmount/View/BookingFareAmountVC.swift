@@ -73,7 +73,9 @@ class BookingFareAmountVC: UIViewController {
             self.lblEstimatedTime.text = "Estimated time taken: " + "\(self.googleMapVM.durationWithName)"
             
             CreateBooking.shared.distance_km = self.googleMapVM.distance
-            CreateBooking.shared.eta_minutes = "\(self.googleMapVM.duration.toMinutes())"
+            
+            let duration = self.googleMapVM.durationWithName.toMinutes()
+            CreateBooking.shared.eta_minutes = "\(duration)"
             
             self.viewModel.getCalculatePrice(km: self.googleMapVM.distance, minutes: Int(self.googleMapVM.duration) ?? 0)
         }

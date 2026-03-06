@@ -45,47 +45,44 @@ class JumpStartVC: UIViewController {
     
     // MARK: - setUpUI
     func setUpUI(isOpen: Bool, title: String) {
-        if isOpen {
-            
-        } else {
-            if title == "Chat" {
-                guard let data = supportVM.supportDetails else {
-                     self.setUpMakeToast(msg: "Support data not loaded")
-                     return
-                 }
-                 
-                 guard data.chatSupportEnabled else {
-                     self.setUpMakeToast(msg: "Chat support is currently unavailable")
-                     return
-                 }
-                 
-                 // Remove + and spaces from number
-                 let phone = data.phoneNumber
-                     .replacingOccurrences(of: "+", with: "")
-                     .replacingOccurrences(of: " ", with: "")
-                 
-                 let whatsappURLString = "https://wa.me/\(phone)"
-                 
-                 guard let url = URL(string: whatsappURLString) else {
-                     self.setUpMakeToast(msg: "Invalid WhatsApp number")
-                     return
-                 }
-                 
-                 if UIApplication.shared.canOpenURL(url) {
-                     UIApplication.shared.open(url)
-                 } else {
-                     self.setUpMakeToast(msg: "WhatsApp is not installed on this device")
-                 }
-            } else {
-                guard let phone = supportVM.supportDetails?.phoneNumber,
-                      let url = URL(string: "tel://\(phone)") else {
-                    self.setUpMakeToast(msg: "Invalid phone number")
-                    return
-                }
-                
-                UIApplication.shared.open(url)
+        if title == "Chat" {
+            guard let data = supportVM.supportDetails else {
+                self.setUpMakeToast(msg: "Support data not loaded")
+                return
             }
-           
+            
+            guard data.chatSupportEnabled else {
+                self.setUpMakeToast(msg: "Chat support is currently unavailable")
+                return
+            }
+            
+            // Remove + and spaces from number
+            let phone = data.phoneNumber
+                .replacingOccurrences(of: "+", with: "")
+                .replacingOccurrences(of: " ", with: "")
+            
+            let whatsappURLString = "https://wa.me/\(phone)"
+            
+            guard let url = URL(string: whatsappURLString) else {
+                self.setUpMakeToast(msg: "Invalid WhatsApp number")
+                return
+            }
+            
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            } else {
+                self.setUpMakeToast(msg: "WhatsApp is not installed on this device")
+            }
+        } else {
+            guard let phone = supportVM.supportDetails?.phoneNumber,
+                  let url = URL(string: "tel://\(phone)") else {
+                self.setUpMakeToast(msg: "Invalid phone number")
+                return
+            }
+            
+            UIApplication.shared.open(url)
+            
+            
         }
     }
 

@@ -57,6 +57,11 @@ class SettingVC: UIViewController {
         self.present(vc, animated: true)
     }
     
+    @IBAction func tappedMyReview(_ sender: Any) {
+        let vc = ReviewListVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func tappedContactSupport(_ sender: Any) {
         let vc = JumpStartVC()
         if let sheet = vc.sheetPresentationController {

@@ -195,7 +195,9 @@ extension String {
                     
                     if unit.contains("hour") {
                         totalMinutes += number * 60
-                    } else if unit.contains("min") {
+                    } else if unit.contains("mins") {
+                        totalMinutes += number
+                    } else {
                         totalMinutes += number
                     }
                 }

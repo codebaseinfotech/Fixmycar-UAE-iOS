@@ -42,3 +42,10 @@ class CreateBooking {
     var platform_fee: String?
     var tax: String?
 }
+
+// MARK: - rating Booking
+class RatingBooking {
+    static let shared = RatingBooking()
+
+    var bookingId: Int?
+}
