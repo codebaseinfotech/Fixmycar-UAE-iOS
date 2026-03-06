@@ -32,7 +32,7 @@ class ChatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        chatVM.getChatList()
+       
         chatVM.successChatList = {
             self.filteredChatList = self.chatVM.chatList
             
@@ -53,6 +53,10 @@ class ChatVC: UIViewController {
         txtSearch.delegate = self
         txtSearch.addTarget(self, action: #selector(searchTextChanged(_:)), for: .editingChanged)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        chatVM.getChatList()
     }
 
     // MARK: - Action Method
