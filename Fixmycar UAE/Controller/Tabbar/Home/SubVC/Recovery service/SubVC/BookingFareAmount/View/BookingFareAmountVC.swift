@@ -29,7 +29,6 @@ class BookingFareAmountVC: UIViewController {
          
         setupMap()
         addMarkers()
-        drawRoute()
         
         debugPrint("pickup_lat", CreateBooking.shared.pickup_lat ?? 0.0)
         debugPrint("pickup_lng", CreateBooking.shared.pickup_lng ?? 0.0)
@@ -71,6 +70,8 @@ class BookingFareAmountVC: UIViewController {
         googleMapVM.successGoogleDistance = {
             self.lblDistance.text = "Distance: " + "\(self.googleMapVM.distanceWithName)"
             self.lblEstimatedTime.text = "Estimated time taken: " + "\(self.googleMapVM.durationWithName)"
+            
+            self.drawRoute(resultPolyline: self.googleMapVM.resultPolyline)
             
             CreateBooking.shared.distance_km = self.googleMapVM.distance
             
@@ -164,47 +165,32 @@ class BookingFareAmountVC: UIViewController {
         dropMarker.icon = GMSMarker.markerImage(with: .red)
         dropMarker.map = mapView
     }
-
-    func drawRoute() {
-
-        let origin = "\(CreateBooking.shared.pickup_lat ?? 0.0),\(CreateBooking.shared.pickup_lng ?? 0.0)"
-        let destination = "\(CreateBooking.shared.dropoff_lat ?? 0.0),\(CreateBooking.shared.dropoff_lng ?? 0.0)"
-
-        let urlString =
-        "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(google_place_key)"
-
-        guard let url = URL(string: urlString) else { return }
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let data = data,
-                let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                let routes = json["routes"] as? [[String: Any]],
-                let route = routes.first,
-                let overviewPolyline = route["overview_polyline"] as? [String: Any],
-                let points = overviewPolyline["points"] as? String,
-                let legs = route["legs"] as? [[String: Any]],
-                let leg = legs.first,
-                let duration = leg["duration"] as? [String: Any],
-                let durationText = duration["text"] as? String
-            else {
+    
+    func drawRoute(resultPolyline: String?) {
+            // old polyline remove
+//            routePolyline?.map = nil
+//            routePolyline = nil
+            guard let encoded = resultPolyline,
+                  !encoded.isEmpty,
+                  let path = GMSPath(fromEncodedPath: encoded) else {
                 return
             }
-
-            DispatchQueue.main.async {
-//                var titleEstimetedTime = ""
-//                if durationText.contains("mins") == true {
-//                    titleEstimetedTime = "Estimated time taken: \(durationText)"
-//                } else {
-//                    titleEstimetedTime = "Estimated time taken: \(durationText) minutes"
-//                }
-//                self.lblEstimatedTime.text = titleEstimetedTime
-                self.showPolyline(encodedPath: points)
+            let polyline = GMSPolyline(path: path)
+            polyline.strokeColor = .black
+            polyline.strokeWidth = 4
+            polyline.geodesic = true
+            polyline.map = mapView
+//            routePolyline = polyline
+            // fit bounds like Laravel/JS
+            var bounds = GMSCoordinateBounds()
+            for i in 0..<path.count() {
+                bounds = bounds.includingCoordinate(path.coordinate(at: i))
             }
-        }.resume()
-    }
+            let update = GMSCameraUpdate.fit(bounds, withPadding: 40)
+            mapView.animate(with: update)
+        }
     
-    func showPolyline(encodedPath: String) {
+    /*func showPolyline(encodedPath: String) {
 
         let path = GMSPath(fromEncodedPath: encodedPath)
         let polyline = GMSPolyline(path: path)
@@ -224,7 +210,7 @@ class BookingFareAmountVC: UIViewController {
 
         let update = GMSCameraUpdate.fit(bounds, withPadding: 60)
         mapView.animate(with: update)
-    }
+    }*/
 
 
     

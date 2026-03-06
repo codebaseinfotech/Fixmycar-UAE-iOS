@@ -18,6 +18,7 @@ class GoogleDistanceVM {
     
     var duration: String = ""
     var durationWithName: String = ""
+    var resultPolyline: String?
     
     func getDistance(originLat: Double,
                      originLng: Double,
@@ -34,7 +35,7 @@ class GoogleDistanceVM {
         
         APIClient.sharedInstance.requestGoogleDistance(
             pathComponent: pathCompponents,
-            responseType: DirectionsResponse.self) { response, error, statusCode in
+            responseType: DirectionResponse.self) { response, error, statusCode in
                 // If error
                 if let error = error {
                     self.failureGoogleDistance?(error)
@@ -47,12 +48,6 @@ class GoogleDistanceVM {
                     return
                 }
                 
-                // If API status false
-                if response.status != "OK" {
-                    self.failureGoogleDistance?("Failed")
-                    return
-                }
-                
                 let distance = response.routes?.first?.legs?.first?.distance?.text ?? ""
                 self.distanceWithName = distance
                 self.distance = distance.replacingOccurrences(of: " km", with: "")
@@ -60,6 +55,8 @@ class GoogleDistanceVM {
                 let duration = response.routes?.first?.legs?.first?.durationInTraffic?.text ?? ""
                 self.durationWithName = duration
                 self.duration = duration.replacingOccurrences(of: " mins", with: "")
+                
+                self.resultPolyline = response.routes?.first?.overviewPolyline?.points ?? ""
 
                 self.successGoogleDistance?()
             }
