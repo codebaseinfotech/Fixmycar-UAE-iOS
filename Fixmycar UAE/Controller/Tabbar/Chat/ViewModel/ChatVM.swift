@@ -37,7 +37,9 @@ class ChatVM {
                     return
                 }
                 
-                self.chatList = response.data ?? []
+                self.chatList = (response.data ?? []).filter {
+                    ($0.lastMessage ?? "").isEmpty == false
+                }
                 self.successChatList?()
             }
     }

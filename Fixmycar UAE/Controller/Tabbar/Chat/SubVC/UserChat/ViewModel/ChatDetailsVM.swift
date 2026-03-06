@@ -13,7 +13,10 @@ class ChatDetailsVM {
     
     var successSendMessage: (()->Void)?
     var failureSendMessage: ((String)->Void)?
-    
+
+    var successReadMessage: (()->Void)?
+    var failureReadMessage: ((String)->Void)?
+
     var messageList: [MessageDetails] = []
     
     var jobId: Int?
@@ -86,5 +89,37 @@ class ChatDetailsVM {
                 self.successSendMessage?()
             }
     }
-    
+
+    func chatReedMessage() {
+        let param: [String: Any] = [
+            "booking_id": jobId ?? 0
+        ]
+
+        APIClient.sharedInstance.request(
+            method: .post,
+            url: APIEndPoint.chat_mark_read,
+            parameters: param,
+            responseType: SendMessageResponse.self,
+            parameterEncoding: .json) { response, error, statusCode in
+                // 🔴 If error
+                if let error = error {
+                    self.failureReadMessage?(error)
+                    return
+                }
+
+                // 🔴 If response is nil
+                guard let response = response else {
+                    self.failureReadMessage?("Something went wrong")
+                    return
+                }
+
+                // 🔴 If API status false
+                if response.status == false {
+                    self.failureReadMessage?(response.message ?? "Failed")
+                    return
+                }
+                self.successReadMessage?()
+            }
+    }
+
 }

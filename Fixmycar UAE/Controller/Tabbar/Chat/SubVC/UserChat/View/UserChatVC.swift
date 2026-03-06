@@ -122,7 +122,8 @@ class UserChatVC: UIViewController {
                 }
                 
                 self.tblVIewList.reloadData()
-                
+
+                self.chatDetailsVM.chatReedMessage()
                 // Important Fix
                 self.tblVIewList.layoutIfNeeded()
                 self.scrollToBottom(animated: false)
