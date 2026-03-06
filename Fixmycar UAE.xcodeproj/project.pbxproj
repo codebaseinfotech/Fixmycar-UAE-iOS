@@ -198,6 +198,8 @@
 		BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA894B02F0E0F4200633E20 /* HomeVC.swift */; };
 		BCC2B1632F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2B1612F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift */; };
 		BCC2B1642F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC2B1622F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib */; };
+		BCF8B6FB2F5AEFEF002B6839 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = BCF8B6FA2F5AEFEF002B6839 /* SocketIO */; };
+		BCF8B6FD2F5AF019002B6839 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8B6FC2F5AF019002B6839 /* SocketManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -394,6 +396,7 @@
 		BCA894B12F0E0F4200633E20 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		BCC2B1612F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSuccessPopUpVC.swift; sourceTree = "<group>"; };
 		BCC2B1622F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingSuccessPopUpVC.xib; sourceTree = "<group>"; };
+		BCF8B6FC2F5AF019002B6839 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +407,7 @@
 				88AD25EC2F2A0FC5002DFA44 /* Toast in Frameworks */,
 				88FDACD92F2345C800983C39 /* SVProgressHUD in Frameworks */,
 				88FDACD02F23458200983C39 /* GoogleMaps in Frameworks */,
+				BCF8B6FB2F5AEFEF002B6839 /* SocketIO in Frameworks */,
 				0A61F6162F3C82DB00A8AC1E /* Kingfisher in Frameworks */,
 				BC929D2B2F27744D00A730A9 /* GooglePlacesSwift in Frameworks */,
 				0A6D0D202F433D3F00F374AF /* OneSignal in Frameworks */,
@@ -1662,6 +1666,7 @@
 			children = (
 				BC71219B2F067F940041E2F7 /* APIClient.swift */,
 				BC71219C2F067F940041E2F7 /* Constants.swift */,
+				BCF8B6FC2F5AF019002B6839 /* SocketManager.swift */,
 				BC71219D2F067F940041E2F7 /* NetConnection.swift */,
 			);
 			path = "API Manager";
@@ -1942,6 +1947,7 @@
 				0A6D0D0E2F43381900F374AF /* FirebaseAnalytics */,
 				0A6D0D102F43381900F374AF /* FirebaseCrashlytics */,
 				0A6D0D1F2F433D3F00F374AF /* OneSignal */,
+				BCF8B6FA2F5AEFEF002B6839 /* SocketIO */,
 			);
 			productName = "Fixmycar UAE";
 			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
@@ -1983,6 +1989,7 @@
 				0A61F6142F3C82DB00A8AC1E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				0A6D0D0D2F43381900F374AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				0A6D0D1E2F433D3F00F374AF /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
+				BCF8B6F92F5AEFEF002B6839 /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BC67730B2F067F4500B15653 /* Products */;
@@ -2191,6 +2198,7 @@
 				0A61F6262F3CA36100A8AC1E /* BookingHistoryResponse.swift in Sources */,
 				8809203C2F0F9AE800B55769 /* EditProfileVC.swift in Sources */,
 				889AD7822F232AD600F2271A /* NotifivationTblViewCell.swift in Sources */,
+				BCF8B6FD2F5AF019002B6839 /* SocketManager.swift in Sources */,
 				88B57DA32F0FA19F00D0CE84 /* ChangeLanguagePopUp.swift in Sources */,
 				0AF4EF152F557C4400DDBE35 /* DistanceMatrixResponse.swift in Sources */,
 				BC4100B02F0E81650062DC80 /* JumpStartVC.swift in Sources */,
@@ -2577,6 +2585,14 @@
 				minimumVersion = 1.5.0;
 			};
 		};
+		BCF8B6F92F5AEFEF002B6839 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 16.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2639,6 +2655,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BCA305D52F275DCC0036E322 /* XCRemoteSwiftPackageReference "UITextView-Placeholder" */;
 			productName = "UITextView-Placeholder";
+		};
+		BCF8B6FA2F5AEFEF002B6839 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF8B6F92F5AEFEF002B6839 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

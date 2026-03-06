@@ -112,10 +112,11 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         vc.chatDetailsVM.jobId = dicData.jobId ?? 0
         vc.profileImg = dicData.partnerImage ?? ""
         vc.profileName = dicData.chatPartner ?? ""
+        
+    
+        
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
+    }    
 }
 
 // MARK: - UITextFieldDelegate

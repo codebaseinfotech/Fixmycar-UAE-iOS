@@ -24,7 +24,7 @@ struct MessagesData: Codable {
 // MARK: - Message
 struct MessageDetails: Codable {
     let id: Int?
-    let job_id: Int?
+    let booking_id: Int?
     let sender_id: Int?
     let sender_name: String?
     let sender_role: String?

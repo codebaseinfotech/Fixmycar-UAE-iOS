@@ -22,6 +22,9 @@ class ChatListTVCell: UITableViewCell {
             imgProfile.loadFromUrlString(chatListData?.partnerImage ?? "", placeholder: "ic_placeholder_user".image)
             lblMsg.text = chatListData?.lastMessage ?? ""
             
+            let time = chatListData?.lastMessageTime?.toDisplayDate(displayFormat: "HH:mm", apiTimeZone: .current)
+            lblTime.text = time
+            
             viewMsgCount.isHidden = (chatListData?.unreadCount ?? 0) > 0 ? false : true
             lblMsgCount.text = "\(chatListData?.unreadCount ?? 0)"
         }

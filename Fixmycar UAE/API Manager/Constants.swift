@@ -18,6 +18,9 @@ enum AppEnviroment {
 let current: AppEnviroment = .dev
 let BASE_URL = current == .live ? "https://admin.torettorecovery.ae/api/" : "https://admin-dev.torettorecovery.ae/api/"
 
+// ************************* WEBSOCKET ***********************
+let SOCKET_URL = current == .live ? "https://ws.torettorecovery.ae" : "https://ws-dev.torettorecovery.ae"
+
 var isDebugPrint: Bool = true
 
 enum APIEndPoint: String {

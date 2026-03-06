@@ -52,11 +52,14 @@ class ChatDetailsVM {
     
     func sendMessageOnChat() {
         let param: [String: Any] = [
-            "job_id": jobId ?? 0,
+            "booking_id": jobId ?? 0,
             "message_type": "text",
             "message": message ?? ""
         ]
-        
+
+        print("[CHAT VM] sendMessageOnChat called")
+        print("[CHAT VM] Params: \(param)")
+
         APIClient.sharedInstance.request(
             method: .post,
             url: APIEndPoint.sendMessage,

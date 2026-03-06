@@ -26,7 +26,7 @@ class InboxItem: Codable {
     var unreadCount: Int?
     
     enum CodingKeys: String, CodingKey {
-        case jobId = "job_id"
+        case jobId = "booking_id"
         case chatPartner = "chat_partner"
         case partnerImage = "partner_image"
         case jobStatus = "job_status"

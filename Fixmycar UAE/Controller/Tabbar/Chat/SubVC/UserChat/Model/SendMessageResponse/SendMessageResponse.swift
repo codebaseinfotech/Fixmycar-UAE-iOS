@@ -7,12 +7,11 @@
 
 import Foundation
 
-// MARK: - Send Message Response
 struct SendMessageResponse: Codable {
     let status: Bool?
     let message: String?
     let data: ChatMessage?
-    let errors: String?   // safest
+    let errors: String?
 }
 
 struct ChatMessage: Codable {
@@ -28,10 +27,10 @@ struct ChatMessage: Codable {
     let readAt: String?
     let createdAt: String?
     let isMe: Bool?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
-        case jobId = "job_id"
+        case jobId = "booking_id"
         case senderId = "sender_id"
         case senderName = "sender_name"
         case senderRole = "sender_role"

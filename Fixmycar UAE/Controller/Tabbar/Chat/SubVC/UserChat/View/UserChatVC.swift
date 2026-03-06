@@ -44,24 +44,27 @@ class UserChatVC: UIViewController {
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if jobStatus == "rejected" || jobStatus == "cancelled" || jobStatus == "completed" {
-            self.viewBottomChat.isHidden = true
-        } else {
+
+//        if jobStatus == "rejected" || jobStatus == "cancelled" || jobStatus == "completed" {
+//            self.viewBottomChat.isHidden = true
+//        } else {
             self.viewBottomChat.isHidden = false
-        }
-        
+//        }
+
         imgProfile.loadFromUrlString(profileImg, placeholder: "ic_placeholder_user".image)
         lblName.text = profileName
-        
+
         setupBindings()
+        setupSocketListeners()
         chatDetailsVM.getChatDetails()
-        
+
         // Tap gesture to dismiss keyboard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         tblVIewList.addGestureRecognizer(tapGesture)
-        // Do any additional setup after loading the view.
+
+        // Connect socket and join room
+        connectSocket()
     }
     
     @objc func dismissKeyboard() {
@@ -88,6 +91,11 @@ class UserChatVC: UIViewController {
 
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+
+        // Leave socket room
+        if let jobId = chatDetailsVM.jobId {
+            FMSocketManager.shared.leaveRoom(jobId: jobId)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -128,12 +136,57 @@ class UserChatVC: UIViewController {
         }
         
         // Send Message
-        chatDetailsVM.successSendMessage = {
-            self.txtMessage.text = ""
-            self.chatDetailsVM.getChatDetails()
+        chatDetailsVM.successSendMessage = { [weak self] in
+            self?.txtMessage.text = ""
+            // Always refresh to get the sent message with correct is_me flag
+            self?.chatDetailsVM.getChatDetails()
         }
         chatDetailsVM.failureSendMessage = { msg in
             self.setUpMakeToast(msg: msg)
+        }
+    }
+
+    // MARK: - Socket Setup
+    private func connectSocket() {
+        if !FMSocketManager.shared.isConnected {
+            FMSocketManager.shared.connect()
+        } else {
+            // Already connected, join room directly
+            if let jobId = chatDetailsVM.jobId {
+                FMSocketManager.shared.joinRoom(jobId: jobId)
+            }
+        }
+    }
+
+    private func setupSocketListeners() {
+        // On socket connected
+        FMSocketManager.shared.onConnect = { [weak self] in
+            guard let self = self, let jobId = self.chatDetailsVM.jobId else { return }
+            FMSocketManager.shared.joinRoom(jobId: jobId)
+        }
+
+        // On message received - Only show messages from OTHER users (not our own)
+        FMSocketManager.shared.onMessageReceived = { [weak self] message in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                // Skip if it's our own message (is_me == true) - we already show it via API refresh
+                if message.is_me == true {
+                    print("[SOCKET] Skipping own message echo")
+                    return
+                }
+
+                // Avoid duplicates
+                if !self.chatDetailsVM.messageList.contains(where: { $0.id == message.id }) {
+                    self.chatDetailsVM.messageList.append(message)
+                    self.tblVIewList.reloadData()
+                    self.scrollToBottom(animated: true)
+                }
+            }
+        }
+
+        // On error
+        FMSocketManager.shared.onError = { [weak self] error in
+            print("Socket error: \(error)")
         }
     }
     
@@ -195,9 +248,25 @@ class UserChatVC: UIViewController {
     @IBAction func tappedVoice(_ sender: Any) {
     }
     @IBAction func tappedSend(_ sender: Any) {
-        guard let message = txtMessage.text, !message.isEmpty else { return }
+        guard let message = txtMessage.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+              !message.isEmpty else { return }
+
+        print("[CHAT] tappedSend called")
+        print("[CHAT] Message: \(message)")
+        print("[CHAT] Job ID: \(chatDetailsVM.jobId ?? -1)")
+        print("[CHAT] Socket Connected: \(FMSocketManager.shared.isConnected)")
+
         chatDetailsVM.message = message
-        
+
+        // Send via socket for real-time
+        if let jobId = chatDetailsVM.jobId {
+            print("[CHAT] Calling socket sendMessage...")
+            FMSocketManager.shared.sendMessage(jobId: jobId, message: message)
+        } else {
+            print("[CHAT] ERROR: jobId is nil!")
+        }
+
+        // Also send via API for persistence
         chatDetailsVM.sendMessageOnChat()
     }
     
@@ -233,16 +302,15 @@ extension UserChatVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - textFiled Deletegate
 extension UserChatVC: UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         let text = txtMessage.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
+
         if !text.isEmpty {
             chatDetailsVM.message = text
             chatDetailsVM.sendMessageOnChat()
         }
-        
+
         textField.resignFirstResponder()
         return true
     }
