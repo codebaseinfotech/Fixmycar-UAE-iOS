@@ -47,18 +47,21 @@ class FMSocketManager {
         }
 
         // Get auth token
-        let token = UserDefaults.standard.string(forKey: "access_token") ?? ""
-        log("Auth Token: \(token)...")
+        let token = FCUtilites.getCurrentUserToken()
+        log("Auth Token: \(token.isEmpty ? "EMPTY!" : "\(token.prefix(20))...")")
+
+        if token.isEmpty {
+            log("ERROR: No auth token available - user may not be logged in")
+            onError?("No authentication token available")
+            return
+        }
 
         let config: SocketIOClientConfiguration = [
-            .log(true),
+            .log(isDebugPrint),
             .compress,
             .forceWebsockets(true),
-            .connectParams([
-                "token": token
-            ]),
             .reconnects(true),
-            .reconnectAttempts(-1),
+            .reconnectAttempts(5),
             .reconnectWait(3)
         ]
 
@@ -66,10 +69,7 @@ class FMSocketManager {
         socket = manager?.defaultSocket
 
         setupEventListeners()
-        socket?.connect()
-
-        setupEventListeners()
-        socket?.connect()
+        socket?.connect(withPayload: ["token": token])
         log("Connection initiated...")
     }
 
