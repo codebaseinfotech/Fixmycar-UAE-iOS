@@ -113,6 +113,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             guard let payload = notification?.payload else { return }
             debugPrint("📩 payload", payload ?? "")
             debugPrint("📩 Notification Received:", payload.notificationID ?? "")
+            
+            if payload.type == "completed" {
+                if FCUtilites.getIsCurrentUser() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                        self.presentAdminAssignPopup(payload: payload)
+                    })
+                }
+            }
         }
  
         let openedBlock: OSHandleNotificationActionBlock = { result in
@@ -122,7 +130,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             debugPrint("📨 Notification Opened")
             debugPrint("Sound:", payload.sound ?? "default")
 
-           
+            if payload.type == "completed" {
+                if FCUtilites.getIsCurrentUser() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                        self.presentAdminAssignPopup(payload: payload)
+                    })
+                }
+            }
 //            switch actionId {
 //                case "accept":
 //                    debugPrint("✅ ACCEPT tapped")
@@ -171,6 +185,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         OneSignal.add(self as OSPermissionObserver)
         OneSignal.add(self as OSSubscriptionObserver)
     }
+    
+    // MARK: - Present
+    func presentAdminAssignPopup(payload: OSNotificationPayload) {
+        guard let topVC = UIApplication.shared.topMostViewController() else {
+            return
+        }
+
+        let vc = AddRateVC()
+        vc.modalPresentationStyle = .pageSheet
+
+        if let sheet = vc.sheetPresentationController {
+            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { _ in
+                return 300
+            }
+            sheet.detents = [fixedDetent]
+            sheet.prefersGrabberVisible = true
+        }
+
+        vc.sheetPresentationController?.delegate = self
+        vc.addRateVM.notificationPayload = payload
+
+        vc.tappedSubmit = { [weak self] in
+            
+            let successVC = BookingSuccessPopUpVC()
+            successVC.modalPresentationStyle = .pageSheet
+            
+            if let sheet = successVC.sheetPresentationController {
+                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed250")) { _ in
+                    return 280
+                }
+                sheet.detents = [fixedDetent]
+                sheet.prefersGrabberVisible = true
+            }
+            
+            successVC.sheetPresentationController?.delegate = self
+            successVC.strOpenFrom = "rate_driver"
+            topVC.present(successVC, animated: true)
+        }
+
+        topVC.present(vc, animated: true)
+    }
 
     // MARK: - Permission
     func requestNotificationPermission() {
@@ -213,3 +268,92 @@ extension AppDelegate: OSPermissionObserver, OSSubscriptionObserver {
         }
     }
 }
+
+// MARK: - OSNotificationPayload
+extension OSNotificationPayload {
+    var bookingId: Int? {
+        guard let rawPayload = rawPayload,
+              let custom = rawPayload["custom"] as? [String: Any],
+              let a = custom["a"] as? [String: Any] else {
+            return nil
+        }
+
+        if let id = a["booking_id"] as? Int {
+            return id
+        }
+
+        if let idStr = a["booking_id"] as? String {
+            return Int(idStr)
+        }
+
+        return nil
+    }
+    
+    var type: String? {
+        guard let rawPayload = rawPayload,
+              let custom = rawPayload["custom"] as? [String: Any],
+              let a = custom["a"] as? [String: Any] else {
+            return nil
+        }
+
+        if let id = a["type"] as? String {
+            return id
+        }
+
+        if let idStr = a["type"] as? String {
+            return idStr
+        }
+
+        return nil
+    }
+}
+
+// MARK: - topMostViewController
+extension UIApplication {
+    func topMostViewController(
+        base: UIViewController? = UIApplication.shared
+            .connectedScenes
+            .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+            .first?.rootViewController
+    ) -> UIViewController? {
+
+        if let nav = base as? UINavigationController {
+            return topMostViewController(base: nav.visibleViewController)
+        }
+
+        if let tab = base as? UITabBarController {
+            return topMostViewController(base: tab.selectedViewController)
+        }
+
+        if let presented = base?.presentedViewController {
+            return topMostViewController(base: presented)
+        }
+
+        return base
+    }
+}
+
+
+// MARK: - PresentSheet
+extension AppDelegate: UISheetPresentationControllerDelegate {
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+
+        guard let window = UIApplication.shared.connectedScenes
+                .compactMap({ ($0 as? UIWindowScene)?.windows.first }).first,
+              let rootView = window.rootViewController?.view else { return }
+
+        if let overlayView = rootView.viewWithTag(999) {
+
+            UIView.animate(withDuration: 0.1,
+                           delay: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                overlayView.alpha = 0
+            }) { _ in
+                overlayView.removeFromSuperview()
+            }
+        }
+    }
+}
+

@@ -234,7 +234,7 @@ class HomeVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func tappedJumpStart(_ sender: Any) {
-        /*let vc = JumpStartVC()
+        let vc = JumpStartVC()
         if let sheet = vc.sheetPresentationController {
             // Create a custom detent that returns a fixed height
             let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
@@ -244,40 +244,7 @@ class HomeVC: UIViewController {
             sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
         }
         vc.sheetPresentationController?.delegate = self
-        self.present(vc, animated: true)*/
-        let vc = AddRateVC()
-        vc.modalPresentationStyle = .pageSheet
-
-        if let sheet = vc.sheetPresentationController {
-            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { _ in
-                return 300
-            }
-            sheet.detents = [fixedDetent]
-            sheet.prefersGrabberVisible = true
-        }
-
-        vc.sheetPresentationController?.delegate = self
-
-        vc.tappedSubmit = { [weak self] in
-            
-            let successVC = BookingSuccessPopUpVC()
-            successVC.modalPresentationStyle = .pageSheet
-            
-            if let sheet = successVC.sheetPresentationController {
-                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed250")) { _ in
-                    return 280
-                }
-                sheet.detents = [fixedDetent]
-                sheet.prefersGrabberVisible = true
-            }
-            
-            successVC.sheetPresentationController?.delegate = self
-            successVC.strOpenFrom = "rate_driver"
-            self?.present(successVC, animated: true)
-        }
-
         self.present(vc, animated: true)
-
     }
     @IBAction func tappedViewAllRecentBooking(_ sender: Any) {
         tappedTHistory(self)

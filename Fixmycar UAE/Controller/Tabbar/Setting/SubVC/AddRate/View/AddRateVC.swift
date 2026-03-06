@@ -33,6 +33,7 @@ class AddRateVC: UIViewController {
     
     // MARK: - Action Method
     @IBAction func tappedRate(_ sender: HCSStarRatingView) {
+        valueRate = sender.value
     }
     @IBAction func tappedSubmit(_ sender: Any) {
         guard valueRate != 0.0 else {

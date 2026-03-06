@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OneSignal
 
 class AddRateVM {
     var successRate: (() -> Void)?
@@ -14,8 +15,10 @@ class AddRateVM {
     var rating: Int?
     var review: String?
     
+    var notificationPayload: OSNotificationPayload?
+    
     func addRate() {
-        let bookingId = RatingBooking.shared.bookingId ?? 0
+        let bookingId = notificationPayload?.bookingId ?? 0
         let pathComponet = "/" + "\(bookingId)" + "/" + "review"
         let params: [String: Any] = [
             "rating": rating ?? 0,
