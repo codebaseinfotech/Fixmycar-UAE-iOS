@@ -37,9 +37,9 @@ class ChatVM {
                     return
                 }
                 
-                self.chatList = (response.data ?? []).filter {
-                    ($0.lastMessage ?? "").isEmpty == false
-                }
+                self.chatList = (response.data ?? [])
+                    .filter { ($0.lastMessage ?? "").isEmpty == false }
+                    .sorted { ($0.lastMessageTime ?? "") > ($1.lastMessageTime ?? "") }
                 self.successChatList?()
             }
     }
