@@ -174,13 +174,15 @@ class UserChatVC: UIViewController {
                     print("[SOCKET] Skipping own message echo")
                     return
                 }
+                
+                self.chatDetailsVM.getChatDetails()
 
-                // Avoid duplicates
-                if !self.chatDetailsVM.messageList.contains(where: { $0.id == message.id }) {
-                    self.chatDetailsVM.messageList.append(message)
-                    self.tblVIewList.reloadData()
-                    self.scrollToBottom(animated: true)
-                }
+//                // Avoid duplicates
+//                if !self.chatDetailsVM.messageList.contains(where: { $0.id == message.id }) {
+//                    self.chatDetailsVM.messageList.append(message)
+//                    self.tblVIewList.reloadData()
+//                    self.scrollToBottom(animated: true)
+//                }
             }
         }
 
