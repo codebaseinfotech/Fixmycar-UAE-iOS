@@ -45,11 +45,11 @@ class UserChatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if jobStatus == "rejected" || jobStatus == "cancelled" || jobStatus == "completed" {
-//            self.viewBottomChat.isHidden = true
-//        } else {
+        if jobStatus == "rejected" || jobStatus == "cancelled" || jobStatus == "completed" {
+            self.viewBottomChat.isHidden = true
+        } else {
             self.viewBottomChat.isHidden = false
-//        }
+        }
 
         imgProfile.loadFromUrlString(profileImg, placeholder: "ic_placeholder_user".image)
         lblName.text = profileName
