@@ -124,7 +124,7 @@ extension PendingJobVC {
             let dLng = Double(d.dropoffLng ?? "") ?? 0
             
             guard pLat != 0, pLng != 0, dLat != 0, dLng != 0 else {
-                print("❌ Missing pickup/drop coords in booking details")
+                debugPrint("❌ Missing pickup/drop coords in booking details")
                 return
             }
             
@@ -135,7 +135,7 @@ extension PendingJobVC {
         }
         
         bookingVM.failureBookingDetails = { [weak self] msg in
-            print("❌ Booking details failed:", msg)
+            debugPrint("❌ Booking details failed:", msg)
             // self?.setUpMakeToast(msg: msg) // if you want
         }
         
@@ -193,7 +193,7 @@ extension PendingJobVC {
             let points = poly?["points"] as? String
             
             guard let points, let path = GMSPath(fromEncodedPath: points) else {
-                print("❌ No polyline points found")
+                debugPrint("❌ No polyline points found")
                 return
             }
             

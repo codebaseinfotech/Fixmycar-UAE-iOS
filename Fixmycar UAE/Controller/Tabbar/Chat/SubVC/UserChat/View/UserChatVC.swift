@@ -171,7 +171,7 @@ class UserChatVC: UIViewController {
             DispatchQueue.main.async {
                 // Skip if it's our own message (is_me == true) - we already show it via API refresh
                 if message.is_me == true {
-                    print("[SOCKET] Skipping own message echo")
+                    debugPrint("[SOCKET] Skipping own message echo")
                     return
                 }
                 
@@ -188,7 +188,7 @@ class UserChatVC: UIViewController {
 
         // On error
         FMSocketManager.shared.onError = { [weak self] error in
-            print("Socket error: \(error)")
+            debugPrint("Socket error: \(error)")
         }
     }
     
@@ -253,19 +253,19 @@ class UserChatVC: UIViewController {
         guard let message = txtMessage.text?.trimmingCharacters(in: .whitespacesAndNewlines),
               !message.isEmpty else { return }
 
-        print("[CHAT] tappedSend called")
-        print("[CHAT] Message: \(message)")
-        print("[CHAT] Job ID: \(chatDetailsVM.jobId ?? -1)")
-        print("[CHAT] Socket Connected: \(FMSocketManager.shared.isConnected)")
+        debugPrint("[CHAT] tappedSend called")
+        debugPrint("[CHAT] Message: \(message)")
+        debugPrint("[CHAT] Job ID: \(chatDetailsVM.jobId ?? -1)")
+        debugPrint("[CHAT] Socket Connected: \(FMSocketManager.shared.isConnected)")
 
         chatDetailsVM.message = message
 
         // Send via socket for real-time
         if let jobId = chatDetailsVM.jobId {
-            print("[CHAT] Calling socket sendMessage...")
+            debugPrint("[CHAT] Calling socket sendMessage...")
             FMSocketManager.shared.sendMessage(jobId: jobId, message: message)
         } else {
-            print("[CHAT] ERROR: jobId is nil!")
+            debugPrint("[CHAT] ERROR: jobId is nil!")
         }
 
         // Also send via API for persistence

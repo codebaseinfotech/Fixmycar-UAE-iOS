@@ -48,6 +48,7 @@ enum APIEndPoint: String {
     case chat_list = "v1/chat/inbox"
     case chatDetails = "v1/chat/jobs"
     case sendMessage = "v1/chat/send"
+    case chat_mark_read = "v1/chat/read"
     case lastLoginModify = "v1/modify-last-login"
     case checkAppStatus = "v1/common/check-app-status"
     case cancelBooking = "v1/bookings"

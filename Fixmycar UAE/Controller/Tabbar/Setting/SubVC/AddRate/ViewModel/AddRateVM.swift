@@ -25,7 +25,7 @@ class AddRateVM {
             "review": review ?? ""
         ]
         
-        print("rateing param", params)
+        debugPrint("rateing param", params)
         
         APIClient.sharedInstance.request(
             method: .post,

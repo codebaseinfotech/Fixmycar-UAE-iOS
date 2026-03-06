@@ -57,8 +57,8 @@ class ChatDetailsVM {
             "message": message ?? ""
         ]
 
-        print("[CHAT VM] sendMessageOnChat called")
-        print("[CHAT VM] Params: \(param)")
+        debugPrint("[CHAT VM] sendMessageOnChat called")
+        debugPrint("[CHAT VM] Params: \(param)")
 
         APIClient.sharedInstance.request(
             method: .post,

@@ -76,27 +76,25 @@ extension String {
     
     /// Convert API date string to Date object
     func toDate(withFormat format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = TimeZone(abbreviation: "UTC")!) -> Date? {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        formatter.timeZone = timeZone
-        return formatter.date(from: self)
-    }
-    
-    // =============================
-    /// Convert API date string to display string
-    func toDisplayDate(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
-                       displayFormat: String = "dd MMM, yyyy hh:mm a",
-                       apiTimeZone: TimeZone = TimeZone(abbreviation: "UTC")!,
-                       displayTimeZone: TimeZone = TimeZone(identifier: "Asia/Dubai")!) -> String {
-        
-        guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
-        
-        let displayFormatter = DateFormatter()
-        displayFormatter.dateFormat = displayFormat
-        displayFormatter.timeZone = displayTimeZone
-        
-        return displayFormatter.string(from: date)
-    }
+           let formatter = DateFormatter()
+           formatter.dateFormat = format
+           formatter.timeZone = timeZone
+           return formatter.date(from: self)
+       }
+       
+       /// Convert API date string to display string
+       func toDisplayDate(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
+                          displayFormat: String = "dd MMM, yyyy HH:mm",
+                          apiTimeZone: TimeZone = TimeZone(abbreviation: "UTC")!,
+                          displayTimeZone: TimeZone = TimeZone.current) -> String {
+           
+           guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
+           
+           let displayFormatter = DateFormatter()
+           displayFormatter.dateFormat = displayFormat
+           displayFormatter.timeZone = displayTimeZone
+           return displayFormatter.string(from: date)
+       }
 }
 
 extension String {

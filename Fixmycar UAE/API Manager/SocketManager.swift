@@ -31,7 +31,7 @@ class FMSocketManager {
 
     // MARK: - Debug Log
     private func log(_ message: String) {
-        print("[SOCKET] \(message)")
+        debugPrint("[SOCKET] \(message)")
     }
 
     // MARK: - Setup & Connect

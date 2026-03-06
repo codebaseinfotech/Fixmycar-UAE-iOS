@@ -16,7 +16,7 @@ class SenderChatTVCell: UITableViewCell {
         didSet {
             lblMessage.text = chatDetails?.message
             
-            let time = chatDetails?.created_at?.toDisplayDate(displayFormat: "hh:mm a")
+            let time = chatDetails?.created_at?.toDisplayDate(displayFormat: "HH:mm", apiTimeZone: .current)
             lblTime.text = time
         }
     }
