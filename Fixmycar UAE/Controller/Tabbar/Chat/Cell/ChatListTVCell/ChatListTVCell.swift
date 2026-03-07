@@ -11,20 +11,22 @@ class ChatListTVCell: UITableViewCell {
 
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblJobId: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var viewMsgCount: UIView!
     @IBOutlet weak var lblMsgCount: UILabel!
-    
+
     var chatListData: InboxItem? {
         didSet {
             lblName.text = chatListData?.chatPartner ?? ""
+            lblJobId.text = "Recovery Service #\(chatListData?.jobId ?? 0)"
             imgProfile.loadFromUrlString(chatListData?.partnerImage ?? "", placeholder: "ic_placeholder_user".image)
             lblMsg.text = chatListData?.lastMessage ?? ""
-            
+
             let time = chatListData?.lastMessageTime?.toDisplayDate(displayFormat: "HH:mm", apiTimeZone: .current)
             lblTime.text = time
-            
+
             viewMsgCount.isHidden = (chatListData?.unreadCount ?? 0) > 0 ? false : true
             lblMsgCount.text = "\(chatListData?.unreadCount ?? 0)"
         }
