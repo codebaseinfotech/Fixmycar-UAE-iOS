@@ -21,7 +21,7 @@ let BASE_URL = current == .live ? "https://admin.torettorecovery.ae/api/" : "htt
 // ************************* WEBSOCKET ***********************
 let SOCKET_URL = current == .live ? "https://ws.torettorecovery.ae" : "https://ws-dev.torettorecovery.ae"
 
-var isDebugPrint: Bool = false
+var isDebugPrint: Bool = true
 
 enum APIEndPoint: String {
     

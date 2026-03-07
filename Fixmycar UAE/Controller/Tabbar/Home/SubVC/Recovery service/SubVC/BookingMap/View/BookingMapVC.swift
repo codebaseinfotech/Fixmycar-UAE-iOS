@@ -330,7 +330,7 @@ extension BookingMapVC: UITextFieldDelegate {
 
         let filter = GMSAutocompleteFilter()
 
-        filter.countries = ["AE", "IN"]   // ✅ UAE restriction IN
+        filter.countries = ["AE"]   // ✅ UAE restriction IN
         filter.type = .noFilter     // better suggestions
 
         placesClient.findAutocompletePredictions(

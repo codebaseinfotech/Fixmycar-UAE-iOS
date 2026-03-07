@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
 
@@ -178,19 +179,19 @@ extension UIView {
 
 // MARK: - hour to min
 extension String {
-    
+
     func toMinutes() -> Int {
         var totalMinutes = 0
-        
+
         let lower = self.lowercased()
         let components = lower.components(separatedBy: " ")
-        
+
         for (index, value) in components.enumerated() {
             if let number = Int(value) {
-                
+
                 if index + 1 < components.count {
                     let unit = components[index + 1]
-                    
+
                     if unit.contains("hour") {
                         totalMinutes += number * 60
                     } else if unit.contains("mins") {
@@ -201,7 +202,90 @@ extension String {
                 }
             }
         }
-        
+
         return totalMinutes
+    }
+}
+
+// MARK: - UITextView HTML
+extension UITextView {
+
+    func setHTML(_ html: String, fontSize: CGFloat = 14, textColor: UIColor = .black) {
+        let fontName = "Satoshi-Regular"
+        let linkColor = UIColor(hexString: "#007AFF")
+
+        // Convert plain text phone numbers and emails to clickable links
+        var processedHTML = html
+
+        // Convert phone numbers to tel: links (handles formats like +971 523003423, +971-52-300-3423, etc.)
+        let phonePattern = #"(?<!</a>|href=[\"'])(\+?\d[\d\s\-]{8,}\d)(?![\"'])"#
+        if let phoneRegex = try? NSRegularExpression(pattern: phonePattern, options: []) {
+            let range = NSRange(processedHTML.startIndex..., in: processedHTML)
+            let matches = phoneRegex.matches(in: processedHTML, options: [], range: range)
+
+            // Process matches in reverse to maintain correct indices
+            for match in matches.reversed() {
+                if let matchRange = Range(match.range, in: processedHTML) {
+                    let phoneNumber = String(processedHTML[matchRange])
+                    let cleanPhone = phoneNumber.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
+                    let replacement = "<a href=\"tel:\(cleanPhone)\">\(phoneNumber)</a>"
+                    processedHTML.replaceSubrange(matchRange, with: replacement)
+                }
+            }
+        }
+
+        // Convert email addresses to mailto: links
+        let emailPattern = #"(?<!</a>|href=[\"'])([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(?![\"'])"#
+        if let emailRegex = try? NSRegularExpression(pattern: emailPattern, options: []) {
+            let range = NSRange(processedHTML.startIndex..., in: processedHTML)
+            processedHTML = emailRegex.stringByReplacingMatches(
+                in: processedHTML,
+                options: [],
+                range: range,
+                withTemplate: "<a href=\"mailto:$1\">$1</a>"
+            )
+        }
+
+        let styledHTML = """
+        <html>
+        <head>
+        <style>
+        body {
+            font-family: '\(fontName)', -apple-system, sans-serif;
+            font-size: \(fontSize)px;
+            color: \(textColor.hexString);
+            line-height: 1.5;
+        }
+        a {
+            color: \(linkColor.hexString);
+            text-decoration: none;
+        }
+        </style>
+        </head>
+        <body>\(processedHTML)</body>
+        </html>
+        """
+
+        guard let data = styledHTML.data(using: .utf8) else { return }
+
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+
+        if let attributedString = try? NSAttributedString(
+            data: data,
+            options: options,
+            documentAttributes: nil
+        ) {
+            self.attributedText = attributedString
+        }
+
+        // Enable clickable links
+        self.isEditable = false
+        self.isSelectable = true
+        self.linkTextAttributes = [
+            .foregroundColor: linkColor
+        ]
     }
 }

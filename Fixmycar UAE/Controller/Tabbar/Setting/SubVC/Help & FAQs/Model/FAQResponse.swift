@@ -17,14 +17,13 @@ struct FAQResponse: Codable {
 
 // MARK: - FAQData
 struct FAQData: Codable {
-    let category: String?
+    let title: String?
     let faqs: [FAQ]?
+    let type: String?
 }
 
 // MARK: - FAQ
 struct FAQ: Codable {
-    let id: Int?
     let question: String?
     let answer: String?
-    let category: String?
 }

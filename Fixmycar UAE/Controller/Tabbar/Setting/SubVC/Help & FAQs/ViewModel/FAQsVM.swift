@@ -13,7 +13,7 @@ class FAQsVM {
     var failuerFaqs: ((String?) -> Void)?
     
     var faqs: [FAQ] = []
-    var category: String = ""
+    var title: String = ""
     
     func getFaqs() {
         let pathCom = "?" + "category=customer"
@@ -54,7 +54,7 @@ class FAQsVM {
                 }
                 
                 self.faqs = data.faqs ?? []
-                self.category = data.category ?? ""
+                self.title = data.title ?? ""
                 
                 self.successFaqs?()
             }

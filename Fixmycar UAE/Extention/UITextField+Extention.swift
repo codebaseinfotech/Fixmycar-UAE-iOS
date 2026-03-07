@@ -54,22 +54,3 @@ extension UITextField {
     }
 }
 
-extension UITextView {
-
-    func setHTML(_ html: String) {
-        guard let data = html.data(using: .utf8) else { return }
-
-        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-            .documentType: NSAttributedString.DocumentType.html,
-            .characterEncoding: String.Encoding.utf8.rawValue
-        ]
-
-        if let attributedString = try? NSAttributedString(
-            data: data,
-            options: options,
-            documentAttributes: nil
-        ) {
-            self.attributedText = attributedString
-        }
-    }
-}
