@@ -30,9 +30,8 @@ class DeleteAccountVC: UIViewController {
     
     // MARK: - TV height set
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if(keyPath == "contentSize"){
-            if let newvalue = change?[.newKey] {
-                let newsize  = newvalue as! CGSize
+        if keyPath == "contentSize" {
+            if let newsize = change?[.newKey] as? CGSize {
                 self.heightConstTblView.constant = newsize.height
             }
         }
@@ -67,8 +66,10 @@ extension DeleteAccountVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tblViewReasonList.dequeueReusableCell(withIdentifier: "ReasonListTblViewCell") as! ReasonListTblViewCell
-        
+        guard let cell = self.tblViewReasonList.dequeueReusableCell(withIdentifier: "ReasonListTblViewCell") as? ReasonListTblViewCell else {
+            return UITableViewCell()
+        }
+
         cell.lblReason.text = arrReasonList[indexPath.row]
         
         cell.lblBottomLine.isHidden = (indexPath.row == arrReasonList.count - 1)

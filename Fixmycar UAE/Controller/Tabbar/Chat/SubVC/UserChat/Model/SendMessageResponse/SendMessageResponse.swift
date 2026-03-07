@@ -16,7 +16,7 @@ struct SendMessageResponse: Codable {
 
 struct ChatMessage: Codable {
     let id: Int?
-    let jobId: Int?
+    let bookingId: Int?
     let senderId: Int?
     let senderName: String?
     let senderRole: String?
@@ -30,7 +30,7 @@ struct ChatMessage: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id
-        case jobId = "booking_id"
+        case bookingId = "booking_id"
         case senderId = "sender_id"
         case senderName = "sender_name"
         case senderRole = "sender_role"

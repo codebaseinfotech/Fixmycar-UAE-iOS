@@ -144,8 +144,8 @@ class FMSocketManager {
     }
 
     // MARK: - Join Room
-    func joinRoom(jobId: Int) {
-        log("JOIN ROOM - Job ID: \(jobId)")
+    func joinRoom(bookingId: Int) {
+        log("JOIN ROOM - booking ID: \(bookingId)")
         log("Is Connected: \(isConnected)")
 
         guard isConnected else {
@@ -155,7 +155,7 @@ class FMSocketManager {
         }
 
         let roomData: [String: Any] = [
-            "booking_id": jobId
+            "booking_id": bookingId
         ]
 
         socket?.emit("join_room", roomData)
@@ -163,8 +163,8 @@ class FMSocketManager {
     }
 
     // MARK: - Leave Room
-    func leaveRoom(jobId: Int) {
-        log("LEAVE ROOM - Job ID: \(jobId)")
+    func leaveRoom(bookingId: Int) {
+        log("LEAVE ROOM - booking ID: \(bookingId)")
 
         guard isConnected else {
             log("Cannot leave room - Socket not connected")
@@ -172,7 +172,7 @@ class FMSocketManager {
         }
 
         let roomData: [String: Any] = [
-            "booking_id": jobId
+            "booking_id": bookingId
         ]
 
         socket?.emit("leave_room", roomData)
@@ -180,9 +180,9 @@ class FMSocketManager {
     }
 
     // MARK: - Send Message
-    func sendMessage(jobId: Int, message: String, messageType: String = "text") {
+    func sendMessage(bookingId: Int, message: String, messageType: String = "text") {
         log("SEND MESSAGE")
-        log("Job ID: \(jobId)")
+        log("Job ID: \(bookingId)")
         log("Message: \(message)")
         
         log("Socket Status: \(socket?.status.description ?? "nil")")
@@ -194,7 +194,7 @@ class FMSocketManager {
         }
 
         let messageData: [String: Any] = [
-            "booking_id": jobId,
+            "booking_id": bookingId,
             "message": message,
             "message_type": messageType
         ]

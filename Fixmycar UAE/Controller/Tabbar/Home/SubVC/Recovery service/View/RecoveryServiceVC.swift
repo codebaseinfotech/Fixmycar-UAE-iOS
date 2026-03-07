@@ -116,9 +116,8 @@ class RecoveryServiceVC: UIViewController {
     
     // MARK: - TV height set
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if(keyPath == "contentSize"){
-            if let newvalue = change?[.newKey] {
-                let newsize  = newvalue as! CGSize
+        if keyPath == "contentSize" {
+            if let newsize = change?[.newKey] as? CGSize {
                 self.heightTblViewVehicleType.constant = newsize.height
             }
         }
@@ -319,13 +318,15 @@ extension RecoveryServiceVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ReasonListTblViewCell.identifier) as! ReasonListTblViewCell
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReasonListTblViewCell.identifier) as? ReasonListTblViewCell else {
+            return UITableViewCell()
+        }
+
         cell.lblReason.text = recoveryVM.vehicleIssue?[indexPath.row].name
         cell.imgCheckBox.image = selectedVehicleIssueIndex == indexPath.item ? "ic_check".image : "ic_uncheck".image
-        
+
         cell.lblBottomLine.isHidden = tableView.isLastRow(at: indexPath) ? true : false
-        
+
         return cell
     }
     
@@ -347,15 +348,17 @@ extension RecoveryServiceVC: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VehicleTypeCVCell.identifier, for: indexPath) as! VehicleTypeCVCell
-        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VehicleTypeCVCell.identifier, for: indexPath) as? VehicleTypeCVCell else {
+            return UICollectionViewCell()
+        }
+
         let dicData = recoveryVM.vehicleType?[indexPath.item]
-        
+
         cell.imgPick.loadFromUrlString(dicData?.image)
         cell.lblName.text = dicData?.name
-        
+
         cell.viewMain.borderColor = selectedVehicleType == indexPath.row ? #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1) : #colorLiteral(red: 0.9215686275, green: 0.9215686275, blue: 0.9215686275, alpha: 1)
-        
+
         return cell
     }
     

@@ -15,11 +15,16 @@ enum AppEnviroment {
     case dev
 }
 
+// Auto-switch based on build configuration (Release = live, Debug = dev)
+#if DEBUG
 let current: AppEnviroment = .dev
-let BASE_URL = current == .live ? "https://admin.torettorecovery.ae/api/" : "https://admin-dev.torettorecovery.ae/api/"
-
-// ************************* WEBSOCKET ***********************
-let SOCKET_URL = current == .live ? "https://ws.torettorecovery.ae" : "https://ws-dev.torettorecovery.ae"
+let BASE_URL = "https://admin-dev.torettorecovery.ae/api/"
+let SOCKET_URL = "https://ws-dev.torettorecovery.ae"
+#else
+let current: AppEnviroment = .live
+let BASE_URL = "https://admin.torettorecovery.ae/api/"
+let SOCKET_URL = "https://ws.torettorecovery.ae"
+#endif
 
 var isDebugPrint: Bool = false
 

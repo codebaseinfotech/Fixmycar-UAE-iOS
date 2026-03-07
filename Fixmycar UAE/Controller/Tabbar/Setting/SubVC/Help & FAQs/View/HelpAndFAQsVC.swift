@@ -72,18 +72,20 @@ extension HelpAndFAQsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tblViewFAQs.dequeueReusableCell(withIdentifier: "FAQsTblViewCell") as! FAQsTblViewCell
-        
+        guard let cell = self.tblViewFAQs.dequeueReusableCell(withIdentifier: "FAQsTblViewCell") as? FAQsTblViewCell else {
+            return UITableViewCell()
+        }
+
         let item = faqList[indexPath.row]
-        
+
         cell.lblQuation.text = item.question
         cell.lblAnswer.text = item.answer
-        
+
         cell.lblAnswer.isHidden = !item.isExpanded
         cell.viewMiddelLine.isHidden = !item.isExpanded
         cell.imgPlus.image = UIImage(named: item.isExpanded ? "ic_minus" : "ic_plus")
         cell.viewMain.backgroundColor = item.isExpanded ? .grayBase2 : .white
-        
+
         return cell
     }
     

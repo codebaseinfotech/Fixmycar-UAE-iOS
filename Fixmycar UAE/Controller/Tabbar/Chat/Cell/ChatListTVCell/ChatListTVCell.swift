@@ -11,7 +11,7 @@ class ChatListTVCell: UITableViewCell {
 
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblJobId: UILabel!
+    @IBOutlet weak var lblBookingId: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var viewMsgCount: UIView!
@@ -20,7 +20,7 @@ class ChatListTVCell: UITableViewCell {
     var chatListData: InboxItem? {
         didSet {
             lblName.text = chatListData?.chatPartner ?? ""
-            lblJobId.text = "Recovery Service #\(chatListData?.jobId ?? 0)"
+            lblBookingId.text = "Recovery Service #\(chatListData?.bookingId ?? 0)"
             imgProfile.loadFromUrlString(chatListData?.partnerImage ?? "", placeholder: "ic_placeholder_user".image)
             lblMsg.text = chatListData?.lastMessage ?? ""
 

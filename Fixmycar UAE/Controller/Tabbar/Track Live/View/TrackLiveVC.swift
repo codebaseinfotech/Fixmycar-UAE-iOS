@@ -166,7 +166,7 @@ class TrackLiveVC: UIViewController {
     //MARK: - Action Method
     @IBAction func tappedChatWithDriver(_ sender: Any) {
         let vc = UserChatVC()
-        vc.chatDetailsVM.jobId = trackLiveVM.trackBookingDetails?.bookingID ?? 0
+        vc.chatDetailsVM.bookingId = trackLiveVM.trackBookingDetails?.bookingID ?? 0
         vc.profileName = trackLiveVM.trackBookingDetails?.driver?.name ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }

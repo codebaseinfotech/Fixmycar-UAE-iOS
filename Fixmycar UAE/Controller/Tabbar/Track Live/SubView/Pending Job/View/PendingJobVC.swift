@@ -22,7 +22,7 @@ class PendingJobVC: UIViewController {
     private var dropMarker: GMSMarker?
     private var routePolyline: GMSPolyline?
     
-    var activeJobId: Int = 0
+    var activeBookingId: Int = 0
     
     let bookingVM = BookingDetailsVM()
     var supportVM = JumpStartVM()
@@ -67,7 +67,7 @@ class PendingJobVC: UIViewController {
     }
     
     @IBAction func tappedYes(_ sender: Any) {
-        cancelBookingVM.bookingCancel(bookingId: activeJobId, reasonId: 1, notes: "Test")
+        cancelBookingVM.bookingCancel(bookingId: activeBookingId, reasonId: 1, notes: "Test")
         cancelBookingVM.successCancelBooking = { msg in
             AppDelegate.appDelegate.setUpHome()
             self.setUpMakeToast(msg: msg)
@@ -112,7 +112,7 @@ class PendingJobVC: UIViewController {
 extension PendingJobVC {
     
     func fetchBookingAndShowRoute() {
-        bookingVM.bookingid = activeJobId
+        bookingVM.bookingid = activeBookingId
         
         bookingVM.successBookingDetails = { [weak self] in
             guard let self else { return }

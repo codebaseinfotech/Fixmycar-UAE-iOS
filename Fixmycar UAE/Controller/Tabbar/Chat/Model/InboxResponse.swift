@@ -17,7 +17,7 @@ class InboxResponse: Codable {
 
 // MARK: - InboxItem
 class InboxItem: Codable {
-    var jobId: Int?
+    var bookingId: Int?
     var chatPartner: String?
     var partnerImage: String?
     var jobStatus: String?
@@ -26,7 +26,7 @@ class InboxItem: Codable {
     var unreadCount: Int?
     
     enum CodingKeys: String, CodingKey {
-        case jobId = "booking_id"
+        case bookingId = "booking_id"
         case chatPartner = "chat_partner"
         case partnerImage = "partner_image"
         case jobStatus = "job_status"

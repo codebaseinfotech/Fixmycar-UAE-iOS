@@ -100,11 +100,13 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatListTVCell.identifier) as! ChatListTVCell
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatListTVCell.identifier) as? ChatListTVCell else {
+            return UITableViewCell()
+        }
+
         let dicData = filteredChatList[indexPath.row]
         cell.chatListData = dicData
-        
+
         return cell
     }
     
@@ -113,7 +115,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         
         let vc = UserChatVC()
         vc.jobStatus = dicData.jobStatus ?? ""
-        vc.chatDetailsVM.jobId = dicData.jobId ?? 0
+        vc.chatDetailsVM.bookingId = dicData.bookingId ?? 0
         vc.profileImg = dicData.partnerImage ?? ""
         vc.profileName = dicData.chatPartner ?? ""
         

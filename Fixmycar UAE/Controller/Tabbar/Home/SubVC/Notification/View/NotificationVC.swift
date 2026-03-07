@@ -44,8 +44,9 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tblViewNotificationList.dequeueReusableCell(withIdentifier: "NotifivationTblViewCell") as! NotifivationTblViewCell
-        
+        guard let cell = self.tblViewNotificationList.dequeueReusableCell(withIdentifier: "NotifivationTblViewCell") as? NotifivationTblViewCell else {
+            return UITableViewCell()
+        }
         return cell
     }
     
@@ -55,9 +56,11 @@ extension NotificationVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
-        let header = tableView.dequeueReusableHeaderFooterView(
+        guard let header = tableView.dequeueReusableHeaderFooterView(
             withIdentifier: NotificationHeaderView.identifier
-        ) as! NotificationHeaderView
+        ) as? NotificationHeaderView else {
+            return nil
+        }
 
         if section == 0 {
             header.lblDuration.text = "Today"

@@ -19,11 +19,11 @@ class ChatDetailsVM {
 
     var messageList: [MessageDetails] = []
     
-    var jobId: Int?
+    var bookingId: Int?
     var message: String?
     
     func getChatDetails() {
-        let pathComponents = "/" + "\(jobId ?? 0)"
+        let pathComponents = "/" + "\(bookingId ?? 0)"
         
         APIClient.sharedInstance.request(
             method: .get,
@@ -55,7 +55,7 @@ class ChatDetailsVM {
     
     func sendMessageOnChat() {
         let param: [String: Any] = [
-            "booking_id": jobId ?? 0,
+            "booking_id": bookingId ?? 0,
             "message_type": "text",
             "message": message ?? ""
         ]
@@ -92,7 +92,7 @@ class ChatDetailsVM {
 
     func chatReedMessage() {
         let param: [String: Any] = [
-            "booking_id": jobId ?? 0
+            "booking_id": bookingId ?? 0
         ]
 
         APIClient.sharedInstance.request(

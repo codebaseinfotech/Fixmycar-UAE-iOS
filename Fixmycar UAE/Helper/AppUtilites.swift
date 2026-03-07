@@ -65,63 +65,78 @@ class AppUtilites: NSObject {
         // least one symbol
         //  min 8 characters total
 
-        value.trimmingCharacters(in: CharacterSet.whitespaces)
+        let trimmedValue = value.trimmingCharacters(in: CharacterSet.whitespaces)
         let passwordRegx = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$"
-        let passwordCheck = NSPredicate(format: "SELF MATCHES %@",passwordRegx)
-        return passwordCheck.evaluate(with: value)
+        let passwordCheck = NSPredicate(format: "SELF MATCHES %@", passwordRegx)
+        return passwordCheck.evaluate(with: trimmedValue)
     }
     
-    class func isPasswordValid(_ Password : String) -> Bool{
-        let Password = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Z](?=.*[0-9].{>6}$")
-        return Password.evaluate(with: Password)
+    class func isPasswordValid(_ password: String) -> Bool {
+        // At least one uppercase, one digit, minimum 6 characters
+        let passwordRegex = "^(?=.*[A-Z])(?=.*[0-9]).{6,}$"
+        let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return passwordPredicate.evaluate(with: password)
     }
 
     
+    // MARK: - Get Key Window (iOS 13+)
+
+    private class func getKeyWindow() -> UIWindow? {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .first { $0.isKeyWindow }
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
+
     // MARK: - AlertView
-    
+
     class func showAlert(title: String, message: String, cancelButtonTitle: String) {
-        
-        guard let window = UIApplication.shared.keyWindow else {
+
+        guard let window = getKeyWindow() else {
             return
         }
         let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertView.addAction(UIAlertAction(title: cancelButtonTitle, style: .default))
         window.visibleViewController?.present(alertView, animated: true)
-        
+
     }
-    
+
     class func showAlert(title: String, message: String, actionButtonTitle: String, completionHandler : @escaping () -> Void) {
-        
-        guard let window = UIApplication.shared.keyWindow else {
+
+        guard let window = getKeyWindow() else {
             return
         }
-        
+
         let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
+
         alertView.addAction(UIAlertAction(title: actionButtonTitle, style: .default, handler: { (_) in
             completionHandler()
         }))
-        
+
         window.visibleViewController?.present(alertView, animated: true)
-        
+
     }
-    
+
     class func showAlert(title: String, message: String, actionButtonTitle: String, cancelButtonTitle: String, completionHandler : @escaping () -> Void) {
-        
-        guard let window = UIApplication.shared.keyWindow else {
+
+        guard let window = getKeyWindow() else {
             return
         }
-        
+
         let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
+
         alertView.addAction(UIAlertAction(title: actionButtonTitle, style: .default, handler: { (_) in
             completionHandler()
         }))
-        
+
         alertView.addAction(UIAlertAction(title: cancelButtonTitle, style: .default, handler: nil))
-        
+
         window.visibleViewController?.present(alertView, animated: true)
-        
+
     }
     
 }
@@ -179,10 +194,10 @@ class Language : NSObject {
     }
     var isArabic:Bool {
         set {
-            UserDefaults.standard.set(newValue, forKey: "isLangugeSet")
+            UserDefaults.standard.set(newValue, forKey: "isLanguageSet")
         }
         get {
-            return UserDefaults.standard.bool(forKey: "isLangugeSet")
+            return UserDefaults.standard.bool(forKey: "isLanguageSet")
         }
     }
     
@@ -210,8 +225,10 @@ func setSemantricFlow() {
 
 extension String {
     func localizeString(string: String) -> String {
-        let path = Bundle.main.path(forResource: string, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+        guard let path = Bundle.main.path(forResource: string, ofType: "lproj"),
+              let bundle = Bundle(path: path) else {
+            return self
+        }
+        return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
     }
 }

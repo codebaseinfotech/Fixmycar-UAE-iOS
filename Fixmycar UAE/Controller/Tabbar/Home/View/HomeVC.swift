@@ -218,9 +218,8 @@ class HomeVC: UIViewController {
 
     // MARK: - TV height set
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if(keyPath == "contentSize"){
-            if let newvalue = change?[.newKey] {
-                let newsize  = newvalue as! CGSize
+        if keyPath == "contentSize" {
+            if let newsize = change?[.newKey] as? CGSize {
                 self.heightTVRecentBooking.constant = newsize.height
             }
         }
@@ -262,7 +261,7 @@ class HomeVC: UIViewController {
         
         if status == "pending" {
             let vc = PendingJobVC()
-            vc.activeJobId = bookingId
+            vc.activeBookingId = bookingId
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = TrackLiveVC()
@@ -294,13 +293,15 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RecentBookingTVCell.identifier) as! RecentBookingTVCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RecentBookingTVCell.identifier) as? RecentBookingTVCell else {
+            return UITableViewCell()
+        }
         cell.selectionStyle = .none
         cell.viewRecentBooking.config(type: "recent_booking")
 
         let dicData = homeVM.recentServiceList[indexPath.row]
         cell.recentBooking = dicData
-        
+
         return cell
     }
     

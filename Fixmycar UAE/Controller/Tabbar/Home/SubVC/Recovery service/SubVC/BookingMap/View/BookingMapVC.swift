@@ -81,9 +81,8 @@ class BookingMapVC: UIViewController {
     
     // MARK: - TV height set
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if(keyPath == "contentSize"){
-            if let newvalue = change?[.newKey] {
-                let newsize  = newvalue as! CGSize
+        if keyPath == "contentSize" {
+            if let newsize = change?[.newKey] as? CGSize {
                 self.heightTV.constant = newsize.height
             }
         }
@@ -129,14 +128,15 @@ extension BookingMapVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(
+        guard let cell = tableView.dequeueReusableCell(
             withIdentifier: PopularLocationTVCell.identifier,
             for: indexPath
-        ) as! PopularLocationTVCell
+        ) as? PopularLocationTVCell else {
+            return UITableViewCell()
+        }
 
         let item = predictions[indexPath.row]
 
-        // ✅ Full address
         cell.lblNam.text = item.attributedFullText.string
         cell.lblAddress.text = ""
 

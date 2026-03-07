@@ -93,8 +93,8 @@ class UserChatVC: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
 
         // Leave socket room
-        if let jobId = chatDetailsVM.jobId {
-            FMSocketManager.shared.leaveRoom(jobId: jobId)
+        if let bookingId = chatDetailsVM.bookingId {
+            FMSocketManager.shared.leaveRoom(bookingId: bookingId)
         }
     }
     
@@ -153,8 +153,8 @@ class UserChatVC: UIViewController {
             FMSocketManager.shared.connect()
         } else {
             // Already connected, join room directly
-            if let jobId = chatDetailsVM.jobId {
-                FMSocketManager.shared.joinRoom(jobId: jobId)
+            if let bookingId = chatDetailsVM.bookingId {
+                FMSocketManager.shared.joinRoom(bookingId: bookingId)
             }
         }
     }
@@ -162,8 +162,8 @@ class UserChatVC: UIViewController {
     private func setupSocketListeners() {
         // On socket connected
         FMSocketManager.shared.onConnect = { [weak self] in
-            guard let self = self, let jobId = self.chatDetailsVM.jobId else { return }
-            FMSocketManager.shared.joinRoom(jobId: jobId)
+            guard let self = self, let bookingId = self.chatDetailsVM.bookingId else { return }
+            FMSocketManager.shared.joinRoom(bookingId: bookingId)
         }
 
         // On message received - Only show messages from OTHER users (not our own)
@@ -256,17 +256,17 @@ class UserChatVC: UIViewController {
 
         debugPrint("[CHAT] tappedSend called")
         debugPrint("[CHAT] Message: \(message)")
-        debugPrint("[CHAT] Job ID: \(chatDetailsVM.jobId ?? -1)")
+        debugPrint("[CHAT] booking ID: \(chatDetailsVM.bookingId ?? -1)")
         debugPrint("[CHAT] Socket Connected: \(FMSocketManager.shared.isConnected)")
 
         chatDetailsVM.message = message
 
         // Send via socket for real-time
-        if let jobId = chatDetailsVM.jobId {
+        if let bookingId = chatDetailsVM.bookingId {
             debugPrint("[CHAT] Calling socket sendMessage...")
-            FMSocketManager.shared.sendMessage(jobId: jobId, message: message)
+            FMSocketManager.shared.sendMessage(bookingId: bookingId, message: message)
         } else {
-            debugPrint("[CHAT] ERROR: jobId is nil!")
+            debugPrint("[CHAT] ERROR: bookingId is nil!")
         }
 
         // Also send via API for persistence
@@ -284,20 +284,20 @@ extension UserChatVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dicData = chatDetailsVM.messageList[indexPath.row]
-        
+
         if dicData.is_me == true {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SenderChatTVCell.identifier) as! SenderChatTVCell
-            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SenderChatTVCell.identifier) as? SenderChatTVCell else {
+                return UITableViewCell()
+            }
             cell.chatDetails = dicData
-            
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ReciverChatTVCell.identifier) as! ReciverChatTVCell
-            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ReciverChatTVCell.identifier) as? ReciverChatTVCell else {
+                return UITableViewCell()
+            }
             cell.chatDetails = dicData
-            
             return cell
-        }        
+        }
     }
     
     

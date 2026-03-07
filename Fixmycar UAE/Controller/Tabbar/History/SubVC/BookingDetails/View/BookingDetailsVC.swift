@@ -184,7 +184,7 @@ class BookingDetailsVC: UIViewController {
         
         let vc = UserChatVC()
         vc.jobStatus = booking.status ?? ""
-        vc.chatDetailsVM.jobId = booking.id
+        vc.chatDetailsVM.bookingId = booking.id
         vc.profileImg = booking.driver?.image ?? ""
         vc.profileName = booking.driver?.name ?? ""
         
