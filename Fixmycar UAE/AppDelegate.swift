@@ -30,13 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     var configVM = ConfigVM()
     var loginVM = LoginVM()
+    var appDelegateVM = AppDelegateVM()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         
         getConfigData()
-        
+        callCheckApp()
+
         FirebaseApp.configure()
         Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
         
@@ -64,6 +66,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func getConfigData() {
         configVM.getGeneralSettings()
     }
+
+    // MARK: - callCheckAppStatus
+    func callCheckApp() {
+
+        appDelegateVM.onSuccess = { [weak self] in
+            guard let self = self else { return }
+            guard let data = self.appDelegateVM.dicCheckAppData else { return }
+
+            // Maintenance check
+            if data.isMaintenance == true {
+                DispatchQueue.main.async {
+                    self.setUpMaintenance()
+                }
+                return
+            }
+
+            // Update available
+            if data.updateAvailable == true {
+                guard let topVC = UIApplication.shared.topMostViewController() else { return }
+
+                // Prevent duplicate popup
+                if topVC is NewVersionAvailablePopup { return }
+
+                let vc = NewVersionAvailablePopup()
+                vc.modalPresentationStyle = .overFullScreen
+                vc.isForceUpdate = data.forceUpdate ?? false
+                vc.onLater = {
+                    FCUtilites.getIsCurrentUser() ? self.setUpHome() : self.setUpLogin()
+                }
+                vc.onUpdateNow = {
+                    guard let url = URL(string: data.appLink ?? "") else { return }
+                    UIApplication.shared.open(url)
+                }
+                topVC.present(vc, animated: false)
+                return
+            }
+
+            debugPrint("App status OK")
+        }
+
+        appDelegateVM.onFailure = { error in
+            debugPrint("Check app failed:", error)
+        }
+
+        appDelegateVM.checkAppStatusApi()
+    }
+
+    // MARK: - setUp Maintenance
+    func setUpMaintenance() {
+        let maintenance = AppMaintenanceVC()
+        let nav = UINavigationController(rootViewController: maintenance)
+        nav.navigationBar.isHidden = true
+        self.window?.rootViewController = nav
+        self.window?.makeKeyAndVisible()
+    }
     
     func callModifyLogin() {
         if FCUtilites.getIsCurrentUser() {
@@ -73,17 +130,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         callModifyLogin()
-        //callCheckApp()
+        callCheckApp()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         callModifyLogin()
-       // callCheckApp()
+        callCheckApp()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         callModifyLogin()
-       // callCheckApp()
+        callCheckApp()
     }
     
     // MARK: - setUp Home

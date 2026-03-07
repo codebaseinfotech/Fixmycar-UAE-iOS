@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppMaintenanceVC" customModule="Fixmycar_UAE" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxG-em-Rlg" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
+                    <rect key="frame" x="238" y="118" width="135" height="30"/>
+                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Need Help? 24/7">
+                        <color key="titleColor" name="primery_black"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="21"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tappedGetHelp:" destination="-1" eventType="touchUpInside" id="dY4-2h-UxP"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G74-zm-WQD">
+                    <rect key="frame" x="20" y="271" width="353" height="310"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SC0-9y-sxu">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="310"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Heg-Rr-G2f">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="220"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_maintenance" translatesAutoresizingMaskIntoConstraints="NO" id="wdk-3n-VtD">
+                                            <rect key="frame" x="66.666666666666686" y="0.0" width="220" height="220"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="220" id="dnH-cd-Gbx"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="wdk-3n-VtD" firstAttribute="centerX" secondItem="Heg-Rr-G2f" secondAttribute="centerX" id="5R9-tc-J9G"/>
+                                        <constraint firstItem="wdk-3n-VtD" firstAttribute="top" secondItem="Heg-Rr-G2f" secondAttribute="top" id="PtG-Yz-YBO"/>
+                                        <constraint firstAttribute="height" constant="220" id="ZT4-ej-2jk"/>
+                                        <constraint firstAttribute="bottom" secondItem="wdk-3n-VtD" secondAttribute="bottom" id="lRi-uV-fgb"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-NX-03s">
+                                    <rect key="frame" x="0.0" y="240" width="353" height="70"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The app is under maintenance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1x-yP-xen">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="25"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="20"/>
+                                            <color key="textColor" name="primery_black"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are currently performing scheduled maintenance. Please check back soon." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ku-J2-2N9" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="25" width="353" height="45"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="18"/>
+                                            <color key="textColor" name="Gray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="SC0-9y-sxu" secondAttribute="bottom" id="HRj-fQ-Q59"/>
+                        <constraint firstItem="SC0-9y-sxu" firstAttribute="leading" secondItem="G74-zm-WQD" secondAttribute="leading" id="LkF-rF-9he"/>
+                        <constraint firstItem="SC0-9y-sxu" firstAttribute="top" secondItem="G74-zm-WQD" secondAttribute="top" id="qgP-Hz-SrN"/>
+                        <constraint firstAttribute="trailing" secondItem="SC0-9y-sxu" secondAttribute="trailing" id="s6r-xV-kRt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="G74-zm-WQD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8rb-QA-ft3"/>
+                <constraint firstItem="G74-zm-WQD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9vM-YM-rgR"/>
+                <constraint firstItem="VxG-em-Rlg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="t7g-qd-oka"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G74-zm-WQD" secondAttribute="trailing" constant="20" id="ttU-la-aFW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VxG-em-Rlg" secondAttribute="trailing" constant="20" id="wus-Vk-7ob"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="114"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_maintenance" width="220" height="220"/>
+        <namedColor name="Gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
