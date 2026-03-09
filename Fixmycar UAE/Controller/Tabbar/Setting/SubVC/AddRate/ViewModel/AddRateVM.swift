@@ -48,7 +48,7 @@ class AddRateVM {
                         return
                     }
                     
-                    guard response.status == false else {
+                    guard response.status == true else {
                         self.failureRate?(response.message ?? "")
                         return
                     }

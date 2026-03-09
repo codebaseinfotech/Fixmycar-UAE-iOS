@@ -14,23 +14,23 @@ struct AddReviewResponse: Codable {
 }
 
 struct ReviewData: Codable {
-    let id: Int?
-    let bookingID: Int?
-    let customerID: Int?
-    let driverID: Int?
+    let bookingId: Int?
+    let customerId: Int?
+    let driverId: Int?
     let rating: Int?
     let review: String?
-    let createdAt: String?
     let updatedAt: String?
+    let createdAt: String?
+    let id: Int?
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case bookingID = "booking_id"
-        case customerID = "customer_id"
-        case driverID = "driver_id"
+        case bookingId = "booking_id"
+        case customerId = "customer_id"
+        case driverId = "driver_id"
         case rating
         case review
-        case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case createdAt = "created_at"
+        case id
     }
 }

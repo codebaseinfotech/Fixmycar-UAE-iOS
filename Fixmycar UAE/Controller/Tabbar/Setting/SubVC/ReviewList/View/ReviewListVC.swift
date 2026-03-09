@@ -74,6 +74,7 @@ extension ReviewListVC: UITableViewDelegate, UITableViewDataSource {
         cell.viewRating.value = CGFloat(dicData.rating ?? 0)
         cell.lblDescription.text = dicData.review
         cell.lblTime.text = dicData.createdAt?.timeAgo() ?? ""
+        cell.lblRating.text = "\(dicData.rating ?? 0)"
         
         return cell
     }
