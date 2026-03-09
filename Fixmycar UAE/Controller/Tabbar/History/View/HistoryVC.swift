@@ -69,8 +69,8 @@ class HistoryVC: UIViewController {
 
         targetView.addSubview(badge)
         NSLayoutConstraint.activate([
-            badge.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 4),
-            badge.trailingAnchor.constraint(equalTo: targetView.trailingAnchor, constant: -10),
+            badge.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 8),
+            badge.trailingAnchor.constraint(equalTo: targetView.trailingAnchor, constant: -15),
             badge.widthAnchor.constraint(greaterThanOrEqualToConstant: 18),
             badge.heightAnchor.constraint(equalToConstant: 18)
         ])
