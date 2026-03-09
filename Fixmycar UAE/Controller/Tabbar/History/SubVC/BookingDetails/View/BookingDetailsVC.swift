@@ -39,6 +39,15 @@ class BookingDetailsVC: UIViewController {
     @IBOutlet weak var lblPlatformFee: UILabel!
     @IBOutlet weak var lblTax: UILabel!
     @IBOutlet weak var lblTotalAmount: UILabel!
+    @IBOutlet weak var viewMainDriver: UIView!
+    @IBOutlet weak var viewLineBottomLocation: UIView!
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.isHidden = true
+        }
+    }
+    @IBOutlet weak var lblCancelBu: UILabel!
+    @IBOutlet weak var lblCancelReasib: UILabel!
     
     var bookingVM = BookingDetailsVM()
     var chatVM = ChatVM()
@@ -49,6 +58,9 @@ class BookingDetailsVC: UIViewController {
         
         bookingVM.getBookingDetails()
         bookingVM.successBookingDetails = { [self] in
+            
+            scrollView.isHidden = false
+            
             lblServiceTitle.text = bookingVM.bookingDetails?.serviceType
             lblTime.text = bookingVM.bookingDetails?.createdAt?.toDisplayDate()
             lblPickup.text = bookingVM.bookingDetails?.pickupAddress
@@ -144,6 +156,15 @@ class BookingDetailsVC: UIViewController {
                 lblStatus.textColor = UIColor.AppColor.cancelled_border
             }
             
+            viewMainDriver.isHidden = bookingVM.bookingDetails?.driver != nil ? false : true            
+            lblCancelBu.isHidden = bookingVM.bookingDetails?.cancelReason != nil ? false : true
+            lblCancelReasib.isHidden = bookingVM.bookingDetails?.cancelReason != nil ? false : true
+            
+            
+            let reason = bookingVM.bookingDetails?.cancelledBy == "customer" ? "Cancelled by you" : "Cancelled by the \(bookingVM.bookingDetails?.cancelledBy ?? "")"
+            lblCancelBu.text = reason
+            lblCancelReasib.text = "Reason:" + " " + (bookingVM.bookingDetails?.cancelReason ?? "")
+            
             lblUserName.text = bookingVM.bookingDetails?.driver?.name
             imgUser.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
             lblRating.text = bookingVM.bookingDetails?.driver?.rating ?? "0.0"
@@ -168,7 +189,7 @@ class BookingDetailsVC: UIViewController {
     
     
     @IBAction func clickedInvoice(_ sender: Any) {
-        let link = bookingVM.bookingDetails?.invoiceURL ?? ""
+        let link = bookingVM.bookingDetails?.invoiceUrl ?? ""
         guard let url = URL(string: link) else {
             debugPrint("Invalid URL")
             return

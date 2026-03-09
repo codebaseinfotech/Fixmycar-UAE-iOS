@@ -56,6 +56,7 @@ enum APIEndPoint: String {
     case lastLoginModify = "v1/modify-last-login"
     case checkAppStatus = "v1/common/check-app-status"
     case cancelBooking = "v1/bookings"
+    case reviewList = "v1/reviews-list"
 }
 
 

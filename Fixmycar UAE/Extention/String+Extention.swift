@@ -77,25 +77,39 @@ extension String {
     
     /// Convert API date string to Date object
     func toDate(withFormat format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = TimeZone(abbreviation: "UTC")!) -> Date? {
-           let formatter = DateFormatter()
-           formatter.dateFormat = format
-           formatter.timeZone = timeZone
-           return formatter.date(from: self)
-       }
-       
-       /// Convert API date string to display string
-       func toDisplayDate(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
-                          displayFormat: String = "dd MMM, yyyy HH:mm",
-                          apiTimeZone: TimeZone = TimeZone(abbreviation: "UTC")!,
-                          displayTimeZone: TimeZone = TimeZone.current) -> String {
-           
-           guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
-           
-           let displayFormatter = DateFormatter()
-           displayFormatter.dateFormat = displayFormat
-           displayFormatter.timeZone = displayTimeZone
-           return displayFormatter.string(from: date)
-       }
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.timeZone = timeZone
+        return formatter.date(from: self)
+    }
+    
+    /// Convert API date string to display string
+    func toDisplayDate(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
+                       displayFormat: String = "dd MMM, yyyy HH:mm",
+                       apiTimeZone: TimeZone = TimeZone(abbreviation: "UTC")!,
+                       displayTimeZone: TimeZone = TimeZone.current) -> String {
+        
+        guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
+        
+        let displayFormatter = DateFormatter()
+        displayFormatter.dateFormat = displayFormat
+        displayFormatter.timeZone = displayTimeZone
+        return displayFormatter.string(from: date)
+    }
+    
+    func timeAgo() -> String {
+        
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        formatter.timeZone = TimeZone(secondsFromGMT: 0) // UTC
+        
+        guard let date = formatter.date(from: self) else { return "" }
+        
+        let relativeFormatter = RelativeDateTimeFormatter()
+        relativeFormatter.unitsStyle = .full
+        
+        return relativeFormatter.localizedString(for: date, relativeTo: Date())
+    }
 }
 
 extension String {

@@ -19,9 +19,19 @@ class ReviewListVC: UIViewController {
     }
     @IBOutlet weak var heightTblView: NSLayoutConstraint!
     
+    var reviewVM = ReviewVM()
+    
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        reviewVM.getReviewList()
+        reviewVM.successReviewList = {
+            self.tblView.reloadData()
+        }
+        reviewVM.failureReviewList = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -46,13 +56,21 @@ class ReviewListVC: UIViewController {
 // MARK: - tblView Delegate & DataSource
 extension ReviewListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return reviewVM.reviewList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewListTVCell.identifier) as? ReviewListTVCell else {
             return UITableViewCell()
         }
+        
+        let dicData = reviewVM.reviewList[indexPath.row]
+        cell.imgPic.loadFromUrlString(dicData.customer?.avatar ?? "")
+        cell.lblName.text = dicData.customer?.name
+        cell.viewRating.value = CGFloat(dicData.rating ?? 0)
+        cell.lblDescription.text = dicData.review
+        cell.lblTime.text = dicData.createdAt?.timeAgo() ?? ""
+        
         return cell
     }
     
