@@ -40,6 +40,15 @@ class ChatVM {
                 self.chatList = (response.data ?? [])
                     .filter { ($0.lastMessage ?? "").isEmpty == false }
                     .sorted { ($0.lastMessageTime ?? "") > ($1.lastMessageTime ?? "") }
+
+                // Calculate total unread count and broadcast
+                let totalUnread = self.chatList.reduce(0) { $0 + ($1.unreadCount ?? 0) }
+                NotificationCenter.default.post(
+                    name: .chatUnreadCountUpdated,
+                    object: nil,
+                    userInfo: ["count": totalUnread]
+                )
+
                 self.successChatList?()
             }
     }

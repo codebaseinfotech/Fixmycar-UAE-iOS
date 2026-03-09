@@ -9,6 +9,9 @@ import UIKit
 
 class HistoryVC: UIViewController {
 
+    // MARK: - Chat Badge Outlet (Connect this outlet to your Chat tab view in Interface Builder)
+    @IBOutlet weak var viewTChatMain: UIView!
+
     @IBOutlet weak var tblViewBookingList: UITableView! {
         didSet {
             tblViewBookingList.register(RecentBookingTVCell.nib, forCellReuseIdentifier: RecentBookingTVCell.identifier)
@@ -21,14 +24,89 @@ class HistoryVC: UIViewController {
         }
     }
     @IBOutlet weak var viewNoHisotryFound: UIView!
-    
+
     var historyBookingVM = HistoryBookingVM()
+    var chatVM = ChatVM()
+    private var lblChatBadge: UILabel?
     
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Chat badge observer
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(updateChatBadge(_:)),
+            name: .chatUnreadCountUpdated,
+            object: nil
+        )
+        setupChatBadge()
+        chatVM.getChatList()
+
         // Do any additional setup after loading the view.
+    }
+
+    // MARK: - Chat Badge
+    private func setupChatBadge() {
+        // Try outlet first, otherwise find chat button programmatically
+        var chatView: UIView? = viewTChatMain
+
+        if chatView == nil {
+            chatView = findChatButtonParentView()
+        }
+
+        guard let targetView = chatView else { return }
+
+        let badge = UILabel()
+        badge.backgroundColor = UIColor(named: "primary_red") ?? .red
+        badge.textColor = .white
+        badge.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        badge.textAlignment = .center
+        badge.layer.cornerRadius = 9
+        badge.layer.masksToBounds = true
+        badge.isHidden = true
+        badge.translatesAutoresizingMaskIntoConstraints = false
+
+        targetView.addSubview(badge)
+        NSLayoutConstraint.activate([
+            badge.topAnchor.constraint(equalTo: targetView.topAnchor, constant: 4),
+            badge.trailingAnchor.constraint(equalTo: targetView.trailingAnchor, constant: -10),
+            badge.widthAnchor.constraint(greaterThanOrEqualToConstant: 18),
+            badge.heightAnchor.constraint(equalToConstant: 18)
+        ])
+        lblChatBadge = badge
+    }
+
+    private func findChatButtonParentView() -> UIView? {
+        return findButtonParentView(in: view, action: #selector(tappedTChat(_:)))
+    }
+
+    private func findButtonParentView(in view: UIView, action: Selector) -> UIView? {
+        for subview in view.subviews {
+            if let button = subview as? UIButton {
+                if let actions = button.actions(forTarget: self, forControlEvent: .touchUpInside) {
+                    if actions.contains(NSStringFromSelector(action)) {
+                        return button.superview
+                    }
+                }
+            }
+            if let found = findButtonParentView(in: subview, action: action) {
+                return found
+            }
+        }
+        return nil
+    }
+
+    @objc private func updateChatBadge(_ notification: Notification) {
+        guard let count = notification.userInfo?["count"] as? Int else { return }
+        DispatchQueue.main.async {
+            if count > 0 {
+                self.lblChatBadge?.text = count > 99 ? "99+" : "\(count)"
+                self.lblChatBadge?.isHidden = false
+            } else {
+                self.lblChatBadge?.isHidden = true
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

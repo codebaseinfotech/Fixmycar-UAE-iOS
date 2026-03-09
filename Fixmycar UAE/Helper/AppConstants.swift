@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+// MARK: - Notifications
+extension Notification.Name {
+    static let chatUnreadCountUpdated = Notification.Name("chatUnreadCountUpdated")
+    static let socketMessageReceived = Notification.Name("socketMessageReceived")
+    static let socketConnected = Notification.Name("socketConnected")
+}
+
 // MARK: - debugPrint
 
 func debugPrint(_ items: Any...) {

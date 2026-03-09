@@ -98,17 +98,49 @@ extension String {
     }
     
     func timeAgo() -> String {
-        
+
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         formatter.timeZone = TimeZone(secondsFromGMT: 0) // UTC
-        
+
         guard let date = formatter.date(from: self) else { return "" }
-        
+
         let relativeFormatter = RelativeDateTimeFormatter()
         relativeFormatter.unitsStyle = .full
-        
+
         return relativeFormatter.localizedString(for: date, relativeTo: Date())
+    }
+
+    /// Convert API date string to relative time (e.g., "5 mins ago", "2 hours ago")
+    func toRelativeTime(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
+                        apiTimeZone: TimeZone = TimeZone(abbreviation: "UTC")!) -> String {
+
+        guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
+
+        let now = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.minute, .hour, .day, .weekOfYear, .month, .year], from: date, to: now)
+
+        if let years = components.year, years > 0 {
+            return years == 1 ? "1 year ago" : "\(years) years ago"
+        }
+        if let months = components.month, months > 0 {
+            return months == 1 ? "1 month ago" : "\(months) months ago"
+        }
+        if let weeks = components.weekOfYear, weeks > 0 {
+            return weeks == 1 ? "1 week ago" : "\(weeks) weeks ago"
+        }
+        if let days = components.day, days > 0 {
+            return days == 1 ? "1 day ago" : "\(days) days ago"
+        }
+        if let hours = components.hour, hours > 0 {
+            return hours == 1 ? "1 hour ago" : "\(hours) hours ago"
+        }
+        if let minutes = components.minute, minutes > 0 {
+            return minutes == 1 ? "1 min ago" : "\(minutes) mins ago"
+        }
+
+        return "Just now"
     }
 }
 

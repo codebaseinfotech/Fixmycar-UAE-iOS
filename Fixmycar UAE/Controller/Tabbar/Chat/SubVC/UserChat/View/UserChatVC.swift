@@ -45,11 +45,11 @@ class UserChatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if jobStatus == "rejected" || jobStatus == "cancelled" || jobStatus == "completed" {
-            self.viewBottomChat.isHidden = true
-        } else {
+//        if jobStatus == "rejected" || jobStatus == "cancelled" || jobStatus == "completed" {
+//            self.viewBottomChat.isHidden = true
+//        } else {
             self.viewBottomChat.isHidden = false
-        }
+//        }
 
         imgProfile.loadFromUrlString(profileImg, placeholder: "ic_placeholder_user".image)
         lblName.text = profileName
@@ -91,11 +91,11 @@ class UserChatVC: UIViewController {
 
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .socketConnected, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .socketMessageReceived, object: nil)
 
-        // Leave socket room
-        if let bookingId = chatDetailsVM.bookingId {
-            FMSocketManager.shared.leaveRoom(bookingId: bookingId)
-        }
+        // Don't leave room - keep it joined for global message updates
+        // AppDelegate handles global room membership
     }
     
     override func viewDidLayoutSubviews() {
@@ -160,36 +160,39 @@ class UserChatVC: UIViewController {
     }
 
     private func setupSocketListeners() {
-        // On socket connected
-        FMSocketManager.shared.onConnect = { [weak self] in
-            guard let self = self, let bookingId = self.chatDetailsVM.bookingId else { return }
-            FMSocketManager.shared.joinRoom(bookingId: bookingId)
+        // Listen for socket connected via NotificationCenter (doesn't overwrite global listeners)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleSocketConnected),
+            name: .socketConnected,
+            object: nil
+        )
+
+        // Listen for socket messages via NotificationCenter (doesn't overwrite global listeners)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleSocketMessage(_:)),
+            name: .socketMessageReceived,
+            object: nil
+        )
+    }
+
+    @objc private func handleSocketConnected() {
+        guard let bookingId = chatDetailsVM.bookingId else { return }
+        FMSocketManager.shared.joinRoom(bookingId: bookingId)
+    }
+
+    @objc private func handleSocketMessage(_ notification: Notification) {
+        guard let message = notification.userInfo?["message"] as? MessageDetails else { return }
+
+        // Skip if it's our own message (is_me == true) - we already show it via API refresh
+        if message.is_me == true {
+            debugPrint("[SOCKET] Skipping own message echo")
+            return
         }
 
-        // On message received - Only show messages from OTHER users (not our own)
-        FMSocketManager.shared.onMessageReceived = { [weak self] message in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                // Skip if it's our own message (is_me == true) - we already show it via API refresh
-                if message.is_me == true {
-                    debugPrint("[SOCKET] Skipping own message echo")
-                    return
-                }
-                
-                self.chatDetailsVM.getChatDetails()
-
-//                // Avoid duplicates
-//                if !self.chatDetailsVM.messageList.contains(where: { $0.id == message.id }) {
-//                    self.chatDetailsVM.messageList.append(message)
-//                    self.tblVIewList.reloadData()
-//                    self.scrollToBottom(animated: true)
-//                }
-            }
-        }
-
-        // On error
-        FMSocketManager.shared.onError = { [weak self] error in
-            debugPrint("Socket error: \(error)")
+        DispatchQueue.main.async {
+            self.chatDetailsVM.getChatDetails()
         }
     }
     

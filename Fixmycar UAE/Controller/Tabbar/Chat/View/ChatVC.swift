@@ -32,10 +32,10 @@ class ChatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-        chatVM.successChatList = {
+        chatVM.successChatList = { [weak self] in
+            guard let self = self else { return }
             self.filteredChatList = self.chatVM.chatList
-            
+
             if self.chatVM.chatList.count > 0 {
                 self.viewNoChatFound.isHidden = true
                 self.tblViewList.isHidden = false
@@ -43,20 +43,58 @@ class ChatVC: UIViewController {
                 self.viewNoChatFound.isHidden = true
                 self.tblViewList.isHidden = true
             }
-            
+
             self.tblViewList.reloadData()
         }
-        chatVM.failureChatList = { msg in
-            self.setUpMakeToast(msg: msg)
+        chatVM.failureChatList = { [weak self] msg in
+            self?.setUpMakeToast(msg: msg)
         }
-        
+
         txtSearch.delegate = self
         txtSearch.addTarget(self, action: #selector(searchTextChanged(_:)), for: .editingChanged)
+
+        // Listen for real-time socket messages
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleSocketMessage(_:)),
+            name: .socketMessageReceived,
+            object: nil
+        )
+
+        // Pull to refresh
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+        tblViewList.refreshControl = refreshControl
+
         // Do any additional setup after loading the view.
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         chatVM.getChatList()
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // MARK: - Real-time Socket Message Handler
+    @objc private func handleSocketMessage(_ notification: Notification) {
+        guard let message = notification.userInfo?["message"] as? MessageDetails else { return }
+
+        // Skip own messages
+        if message.is_me == true { return }
+
+        // Refresh chat list when new message arrives
+        DispatchQueue.main.async {
+            self.chatVM.getChatList()
+        }
+    }
+
+    @objc private func pullToRefresh(_ sender: UIRefreshControl) {
+        chatVM.getChatList()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            sender.endRefreshing()
+        }
     }
 
     // MARK: - Action Method

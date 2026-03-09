@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var configVM = ConfigVM()
     var loginVM = LoginVM()
     var appDelegateVM = AppDelegateVM()
+    var chatVM = ChatVM()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -145,11 +146,79 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     // MARK: - setUp Home
     func setUpHome() {
+        setupGlobalSocketListener()
+        connectSocketAndJoinAllRooms()
         let home = HomeVC()
         let homeNavigation = UINavigationController(rootViewController: home)
         homeNavigation.navigationBar.isHidden = true
         self.window?.rootViewController = homeNavigation
         self.window?.makeKeyAndVisible()
+    }
+
+    // MARK: - Socket Setup
+    func connectSocketAndJoinAllRooms() {
+        FMSocketManager.shared.connect()
+    }
+
+    @objc private func handleSocketConnected() {
+        debugPrint("[SOCKET-GLOBAL] Socket connected, joining all chat rooms...")
+        joinAllChatRooms()
+    }
+
+    func joinAllChatRooms() {
+        chatVM.successChatList = { [weak self] in
+            guard let self = self else { return }
+
+            debugPrint("[SOCKET-GLOBAL] Joining \(self.chatVM.chatList.count) chat rooms")
+
+            for chat in self.chatVM.chatList {
+                if let bookingId = chat.bookingId {
+                    FMSocketManager.shared.joinRoom(bookingId: bookingId)
+                    debugPrint("[SOCKET-GLOBAL] Joined room for booking: \(bookingId)")
+                }
+            }
+        }
+        chatVM.getChatList()
+    }
+
+    // MARK: - Global Socket Listener
+    func setupGlobalSocketListener() {
+        // Listen for socket connected
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleSocketConnected),
+            name: .socketConnected,
+            object: nil
+        )
+
+        // Listen for socket messages
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleSocketMessage(_:)),
+            name: .socketMessageReceived,
+            object: nil
+        )
+    }
+
+    @objc private func handleSocketMessage(_ notification: Notification) {
+        guard let message = notification.userInfo?["message"] as? MessageDetails else { return }
+
+        debugPrint("[SOCKET-GLOBAL] New message received via notification")
+
+        // Skip if it's our own message
+        if message.is_me == true {
+            debugPrint("[SOCKET-GLOBAL] Skipping own message echo")
+            return
+        }
+
+        // Refresh chat list to update badge count
+        DispatchQueue.main.async {
+            self.refreshChatBadge()
+        }
+    }
+
+    func refreshChatBadge() {
+        chatVM.getChatList()
     }
 
     // MARK: - setUp Login

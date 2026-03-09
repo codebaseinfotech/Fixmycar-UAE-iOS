@@ -92,6 +92,12 @@ class FMSocketManager {
             self?.log("CONNECTED SUCCESSFULLY!")
             self?.log("Socket ID: \(self?.socket?.sid ?? "unknown")")
             self?.log("========================================")
+
+            // Post notification for all listeners
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .socketConnected, object: nil)
+            }
+
             self?.onConnect?()
         }
 
@@ -226,6 +232,17 @@ class FMSocketManager {
             let jsonData = try JSONSerialization.data(withJSONObject: messageDict)
             let message = try JSONDecoder().decode(MessageDetails.self, from: jsonData)
             log("Successfully decoded message: \(message.message ?? "")")
+
+            // Post notification for all listeners (AppDelegate, UserChatVC, etc.)
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(
+                    name: .socketMessageReceived,
+                    object: nil,
+                    userInfo: ["message": message]
+                )
+            }
+
+            // Also call callback for backward compatibility
             onMessageReceived?(message)
         } catch {
             log("ERROR: Failed to decode message: \(error)")
