@@ -32,7 +32,8 @@ class BookingPaymentVM {
             "total_price": CreateBooking.shared.finalPrice ?? "",
             "platform_fee": CreateBooking.shared.platform_fee ?? "",
             "tax": CreateBooking.shared.tax ?? "",
-            "price": CreateBooking.shared.price ?? ""
+            "price": CreateBooking.shared.price ?? "",
+            "route_polyline": CreateBooking.shared.route_polyline ?? ""
         ]
         
         if CreateBooking.shared.promotion_id != 0 {

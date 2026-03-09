@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var currentLongitude: Double = 0.0
     
     var configVM = ConfigVM()
-    var loginVM = LoginVM()
+    var loginVM = VerifyOtpVM()
     var appDelegateVM = AppDelegateVM()
     var chatVM = ChatVM()
 

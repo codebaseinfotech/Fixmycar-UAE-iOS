@@ -57,6 +57,7 @@ class GoogleDistanceVM {
                 self.duration = duration.replacingOccurrences(of: " mins", with: "")
                 
                 self.resultPolyline = response.routes?.first?.overviewPolyline?.points ?? ""
+                CreateBooking.shared.route_polyline = response.routes?.first?.overviewPolyline?.points ?? ""
 
                 self.successGoogleDistance?()
             }

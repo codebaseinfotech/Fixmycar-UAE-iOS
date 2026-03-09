@@ -41,6 +41,7 @@ class CreateBooking {
     var total_price: String?
     var platform_fee: String?
     var tax: String?
+    var route_polyline: String?
 }
 
 // MARK: - rating Booking

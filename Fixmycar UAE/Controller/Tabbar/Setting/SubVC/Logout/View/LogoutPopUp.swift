@@ -17,7 +17,7 @@ class LogoutPopUp: UIViewController {
     var isOpenLogout: Bool = true
     
     var viewModel = LogoutVM()
-    var loginVM = LoginVM()
+    var loginVM = VerifyOtpVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()

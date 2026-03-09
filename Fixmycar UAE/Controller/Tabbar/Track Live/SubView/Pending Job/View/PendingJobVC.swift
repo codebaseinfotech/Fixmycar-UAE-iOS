@@ -166,8 +166,10 @@ extension PendingJobVC {
         let padding = UIEdgeInsets(top: 80, left: 40, bottom: 260, right: 40)
         mapView.animate(with: GMSCameraUpdate.fit(bounds, with: padding))
         
+        self.drawRoute(resultPolyline: self.bookingVM.bookingDetails?.routePolyline ?? "")
+
         // Route polyline
-        drawRoute(from: pickup, to: drop)
+//        drawRoute(from: pickup, to: drop)
     }
     
     func drawRoute(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
@@ -206,4 +208,29 @@ extension PendingJobVC {
             }
         }.resume()
     }
+    
+    func drawRoute(resultPolyline: String?) {
+        // old polyline remove
+        //            routePolyline?.map = nil
+        //            routePolyline = nil
+        guard let encoded = resultPolyline,
+              !encoded.isEmpty,
+              let path = GMSPath(fromEncodedPath: encoded) else {
+            return
+        }
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeColor = .black
+        polyline.strokeWidth = 4
+        polyline.geodesic = true
+        polyline.map = mapView
+        //            routePolyline = polyline
+        // fit bounds like Laravel/JS
+        var bounds = GMSCoordinateBounds()
+        for i in 0..<path.count() {
+            bounds = bounds.includingCoordinate(path.coordinate(at: i))
+        }
+        let update = GMSCameraUpdate.fit(bounds, withPadding: 40)
+        mapView.animate(with: update)
+    }
+
 }

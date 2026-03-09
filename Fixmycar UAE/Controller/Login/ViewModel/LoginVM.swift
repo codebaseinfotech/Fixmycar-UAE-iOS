@@ -47,7 +47,6 @@ class LoginVM {
             }
             
             if response.status == true {
-                self.lastLoginModify(role: FCUtilites.getRoleName())
                 self.loginResponse = response
                 self.successLogin?()
             } else {
@@ -56,27 +55,7 @@ class LoginVM {
         }
     }
     
-    func lastLoginModify(role: String) {
-        
-        let parameters: [String: Any] = [
-            "role": role
-        ]
-        
-        APIClient.sharedInstance.request(
-            method: .post,
-            url: APIEndPoint.lastLoginModify,
-            parameters: parameters,
-            responseType: ModifyLastLoginResponse.self) { [self] response, errorMessage, statusCode in
-                
-                if let response = response {
-                    debugPrint("SUCCESS:", response.message)
-                    
-                } else {
-                    debugPrint("ERROR:", errorMessage ?? "")
-                    failureLogin?(errorMessage ?? "")
-                }
-            }
-    }
+    
 }
 
 struct ModifyLastLoginResponse: Codable {

@@ -45,6 +45,7 @@ class VerifyOtpVM {
                         FCUtilites.saveCurrentUser(response?.data?.user)
                     }
                     
+                    self.lastLoginModify(role: FCUtilites.getRoleName())
                     successVerify?()
                 } else {
                     failureVerify?(response?.message ?? "")
@@ -53,5 +54,27 @@ class VerifyOtpVM {
                 failureVerify?(response?.message ?? "")
             }
         }
+    }
+    
+    func lastLoginModify(role: String) {
+        
+        let parameters: [String: Any] = [
+            "role": role
+        ]
+        
+        APIClient.sharedInstance.request(
+            method: .post,
+            url: APIEndPoint.lastLoginModify,
+            parameters: parameters,
+            responseType: ModifyLastLoginResponse.self) { [self] response, errorMessage, statusCode in
+                
+                if let response = response {
+                    debugPrint("SUCCESS:", response.message)
+                    
+                } else {
+                    debugPrint("ERROR:", errorMessage ?? "")
+                    failureVerify?(errorMessage ?? "")
+                }
+            }
     }
 }

@@ -160,7 +160,6 @@ class BookingDetailsVC: UIViewController {
             lblCancelBu.isHidden = bookingVM.bookingDetails?.cancelReason != nil ? false : true
             lblCancelReasib.isHidden = bookingVM.bookingDetails?.cancelReason != nil ? false : true
             
-            
             let reason = bookingVM.bookingDetails?.cancelledBy == "customer" ? "Cancelled by you" : "Cancelled by the \(bookingVM.bookingDetails?.cancelledBy ?? "")"
             lblCancelBu.text = reason
             lblCancelReasib.text = "Reason:" + " " + (bookingVM.bookingDetails?.cancelReason ?? "")
@@ -169,11 +168,11 @@ class BookingDetailsVC: UIViewController {
             imgUser.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
             lblRating.text = bookingVM.bookingDetails?.driver?.rating ?? "0.0"
             
-            lblBaseFare.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.basePrice ?? 0.0)"
-            lblDiscount.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.discountAmount ?? 0.0)"
-            lblPlatformFee.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.platformFee ?? 0)"
-            lblTax.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.tax ?? 0)"
-            lblTotalAmount.text = "\(bookingVM.bookingDetails?.currency ?? "") \(bookingVM.bookingDetails?.finalPrice ?? 0)"
+            lblBaseFare.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.baseFare ?? 0.0)"
+            lblDiscount.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.discount ?? 0.0)"
+            lblPlatformFee.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.platformFee ?? 0)"
+            lblTax.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.tax ?? 0)"
+            lblTotalAmount.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.totalAmount ?? 0)"
         }
         
         bookingVM.failureBookingDetails = { msg in
