@@ -13,13 +13,18 @@
         <array key="Satoshi-Bold.otf">
             <string>Satoshi-Bold</string>
         </array>
+        <array key="Satoshi-Medium.otf">
+            <string>Satoshi-Medium</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewListVC" customModule="Fixmycar_UAE" customModuleProvider="target">
             <connections>
                 <outlet property="heightTblView" destination="Uvm-kp-Vwc" id="qoW-49-Nax"/>
+                <outlet property="scrollView" destination="coL-SV-EI5" id="2oZ-ai-cni"/>
                 <outlet property="tblView" destination="Wmh-bg-0yS" id="rg9-2Y-3ow"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewNoDataFound" destination="Dsb-qc-Oca" id="tql-hb-4CI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -112,15 +117,59 @@
                         <constraint firstItem="zvQ-oT-m5K" firstAttribute="width" secondItem="coL-SV-EI5" secondAttribute="width" id="wjx-MP-74l"/>
                     </constraints>
                 </scrollView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dsb-qc-Oca">
+                    <rect key="frame" x="0.0" y="158" width="393" height="694"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rn6-pf-nCG">
+                            <rect key="frame" x="20" y="231.66666666666669" width="353" height="231"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_no_review" translatesAutoresizingMaskIntoConstraints="NO" id="VSu-ZQ-qrL">
+                                    <rect key="frame" x="60" y="0.0" width="233" height="140"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="140" id="Deo-6K-5rB"/>
+                                        <constraint firstAttribute="width" constant="233" id="c1g-Mh-K6Q"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NA4-b7-3KM">
+                                    <rect key="frame" x="30.333333333333343" y="159.99999999999994" width="292.66666666666663" height="71"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Reviews Yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHr-Rj-i7I">
+                                            <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="25"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer reviews will appear here once feedback is submitted." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgG-ig-UF8">
+                                            <rect key="frame" x="0.0" y="31" width="292.66666666666669" height="40"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
+                                            <color key="textColor" name="Gray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="rn6-pf-nCG" firstAttribute="centerY" secondItem="Dsb-qc-Oca" secondAttribute="centerY" id="MOK-8q-Am8"/>
+                        <constraint firstAttribute="trailing" secondItem="rn6-pf-nCG" secondAttribute="trailing" constant="20" id="NaD-4F-Vpx"/>
+                        <constraint firstItem="rn6-pf-nCG" firstAttribute="leading" secondItem="Dsb-qc-Oca" secondAttribute="leading" constant="20" id="ckd-za-Xjr"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Dsb-qc-Oca" firstAttribute="top" secondItem="4HO-Tc-I7T" secondAttribute="bottom" id="1ay-kD-EiN"/>
                 <constraint firstItem="coL-SV-EI5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2TP-lj-E9I"/>
                 <constraint firstItem="4HO-Tc-I7T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5P2-TG-egh"/>
                 <constraint firstItem="4HO-Tc-I7T" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="N5x-kD-VbR"/>
+                <constraint firstItem="Dsb-qc-Oca" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NsR-LK-RsK"/>
+                <constraint firstAttribute="bottom" secondItem="Dsb-qc-Oca" secondAttribute="bottom" id="RFg-bN-cKm"/>
                 <constraint firstItem="coL-SV-EI5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Txd-f0-QSw"/>
                 <constraint firstItem="coL-SV-EI5" firstAttribute="top" secondItem="4HO-Tc-I7T" secondAttribute="bottom" id="q1L-yy-OVa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dsb-qc-Oca" secondAttribute="trailing" id="w5i-LP-9aG"/>
                 <constraint firstAttribute="trailing" secondItem="4HO-Tc-I7T" secondAttribute="trailing" id="wsk-Xq-95L"/>
                 <constraint firstAttribute="bottom" secondItem="coL-SV-EI5" secondAttribute="bottom" id="yMg-eC-FB4"/>
             </constraints>
@@ -129,6 +178,10 @@
     </objects>
     <resources>
         <image name="ic_back_arrow" width="24" height="24"/>
+        <image name="ic_no_review" width="223" height="168"/>
+        <namedColor name="Gray">
+            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Storke">
             <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

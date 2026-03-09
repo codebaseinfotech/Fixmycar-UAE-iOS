@@ -18,6 +18,8 @@ class ReviewListVC: UIViewController {
         }
     }
     @IBOutlet weak var heightTblView: NSLayoutConstraint!
+    @IBOutlet weak var viewNoDataFound: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var reviewVM = ReviewVM()
     
@@ -27,6 +29,8 @@ class ReviewListVC: UIViewController {
         
         reviewVM.getReviewList()
         reviewVM.successReviewList = {
+            self.viewNoDataFound.isHidden = self.reviewVM.reviewList.count > 0 ? true : false
+            self.scrollView.isHidden = self.reviewVM.reviewList.count > 0 ? false : true
             self.tblView.reloadData()
         }
         reviewVM.failureReviewList = { msg in
