@@ -168,6 +168,9 @@ class BookingDetailsVC: UIViewController {
             imgUser.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
             lblRating.text = bookingVM.bookingDetails?.driver?.rating ?? "0.0"
             
+            lblVehicleType.text = bookingVM.bookingDetails?.driver?.vehicleModel ?? "-"
+            lblVehicleNum.text = bookingVM.bookingDetails?.driver?.vehicleNumber ?? "-"
+            
             lblBaseFare.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.baseFare ?? 0.0)"
             lblDiscount.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.discount ?? 0.0)"
             lblPlatformFee.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.platformFee ?? 0)"
