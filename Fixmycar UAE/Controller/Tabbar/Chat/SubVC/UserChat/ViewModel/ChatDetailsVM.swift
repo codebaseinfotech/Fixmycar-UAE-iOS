@@ -7,10 +7,17 @@
 
 import Foundation
 
+// MARK: - Grouped Messages by Date
+struct MessageSection {
+    let dateKey: String
+    let headerTitle: String
+    var messages: [MessageDetails]
+}
+
 class ChatDetailsVM {
     var successChatDetails: (()->Void)?
     var failureChatDetails: ((String)->Void)?
-    
+
     var successSendMessage: (()->Void)?
     var failureSendMessage: ((String)->Void)?
 
@@ -18,9 +25,30 @@ class ChatDetailsVM {
     var failureReadMessage: ((String)->Void)?
 
     var messageList: [MessageDetails] = []
-    
+    var groupedMessages: [MessageSection] = []
+
     var bookingId: Int?
     var message: String?
+
+    /// Group messages by date for section headers
+    func groupMessagesByDate() {
+        var sections: [String: MessageSection] = [:]
+
+        for message in messageList {
+            let dateKey = message.created_at?.toDateKey() ?? "Unknown"
+            let headerTitle = message.created_at?.toChatSectionHeader() ?? "Unknown"
+
+            if var section = sections[dateKey] {
+                section.messages.append(message)
+                sections[dateKey] = section
+            } else {
+                sections[dateKey] = MessageSection(dateKey: dateKey, headerTitle: headerTitle, messages: [message])
+            }
+        }
+
+        // Sort sections by date (oldest first for chat)
+        groupedMessages = sections.values.sorted { $0.dateKey < $1.dateKey }
+    }
     
     func getChatDetails() {
         let pathComponents = "/" + "\(bookingId ?? 0)"

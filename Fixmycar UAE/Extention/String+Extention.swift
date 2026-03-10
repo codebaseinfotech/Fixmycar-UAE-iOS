@@ -142,6 +142,95 @@ extension String {
 
         return "Just now"
     }
+
+    /// Convert API date string to WhatsApp-style format
+    /// - Today: "12:10 PM"
+    /// - Yesterday: "Yesterday"
+    /// - This week: "Monday", "Tuesday", etc.
+    /// - Older: "07/03/26"
+    func toWhatsAppStyleDate(apiFormat: String = "dd/MM/yy hh:mm a",
+                              apiTimeZone: TimeZone = TimeZone.current) -> String {
+
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = apiFormat
+        inputFormatter.timeZone = apiTimeZone
+        inputFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+        guard let date = inputFormatter.date(from: self) else { return self }
+
+        let calendar = Calendar.current
+        let now = Date()
+
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+
+        // Check if today
+        if calendar.isDateInToday(date) {
+            formatter.dateFormat = "HH:mm"
+            return formatter.string(from: date)
+        }
+
+        // Check if yesterday
+        if calendar.isDateInYesterday(date) {
+            return "Yesterday"
+        }
+
+        // Check if within last 7 days
+        let daysAgo = calendar.dateComponents([.day], from: date, to: now).day ?? 0
+        if daysAgo < 7 {
+            formatter.dateFormat = "EEEE" // Full day name (Monday, Tuesday, etc.)
+            return formatter.string(from: date)
+        }
+
+        // Older than a week - show date
+        formatter.dateFormat = "dd/MM/yy"
+        return formatter.string(from: date)
+    }
+
+    /// Get date key for grouping messages (returns just the date portion: "2026-03-10")
+    func toDateKey(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
+                   apiTimeZone: TimeZone = TimeZone.current) -> String {
+        guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = .current
+        return formatter.string(from: date)
+    }
+
+    /// Get WhatsApp-style section header for chat (Today, Yesterday, Monday, or date)
+    func toChatSectionHeader(apiFormat: String = "yyyy-MM-dd HH:mm:ss",
+                              apiTimeZone: TimeZone = TimeZone.current) -> String {
+        guard let date = self.toDate(withFormat: apiFormat, timeZone: apiTimeZone) else { return self }
+
+        let calendar = Calendar.current
+        let now = Date()
+
+        // Check if today
+        if calendar.isDateInToday(date) {
+            return "Today"
+        }
+
+        // Check if yesterday
+        if calendar.isDateInYesterday(date) {
+            return "Yesterday"
+        }
+
+        // Check if within last 7 days
+        let daysAgo = calendar.dateComponents([.day], from: date, to: now).day ?? 0
+        if daysAgo < 7 {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEEE" // Full day name
+            formatter.timeZone = .current
+            return formatter.string(from: date)
+        }
+
+        // Older than a week - show date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yy"
+        formatter.timeZone = .current
+        return formatter.string(from: date)
+    }
 }
 
 extension String {

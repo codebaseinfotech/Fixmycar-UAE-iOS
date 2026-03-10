@@ -110,8 +110,8 @@ class UserChatVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        if chatDetailsVM.messageList.count > 0 {
+
+        if chatDetailsVM.groupedMessages.count > 0 {
             scrollToBottom(animated: false)
         }
     }
@@ -130,7 +130,10 @@ class UserChatVC: UIViewController {
                     $0.created_at?.toDate() ?? Date() <
                         $1.created_at?.toDate() ?? Date()
                 }
-                
+
+                // Group messages by date for section headers
+                self.chatDetailsVM.groupMessagesByDate()
+
                 self.tblVIewList.reloadData()
 
                 self.chatDetailsVM.chatReedMessage()
@@ -208,12 +211,15 @@ class UserChatVC: UIViewController {
     
     // MARK: - Scroll
     private func scrollToBottom(animated: Bool = true) {
-        
-        let count = chatDetailsVM.messageList.count
-        guard count > 0 else { return }
-        
-        let indexPath = IndexPath(row: count - 1, section: 0)
-        
+        let sections = chatDetailsVM.groupedMessages.count
+        guard sections > 0 else { return }
+
+        let lastSection = sections - 1
+        let rowCount = chatDetailsVM.groupedMessages[lastSection].messages.count
+        guard rowCount > 0 else { return }
+
+        let indexPath = IndexPath(row: rowCount - 1, section: lastSection)
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.tblVIewList.scrollToRow(at: indexPath,
                                          at: .bottom,
@@ -291,12 +297,17 @@ class UserChatVC: UIViewController {
 }
 
 extension UserChatVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatDetailsVM.messageList.count
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return chatDetailsVM.groupedMessages.count
     }
-    
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatDetailsVM.groupedMessages[section].messages.count
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dicData = chatDetailsVM.messageList[indexPath.row]
+        let dicData = chatDetailsVM.groupedMessages[indexPath.section].messages[indexPath.row]
 
         if dicData.is_me == true {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SenderChatTVCell.identifier) as? SenderChatTVCell else {
@@ -312,8 +323,43 @@ extension UserChatVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
-    
-    
+
+    // MARK: - Section Header (WhatsApp-style date)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+
+        let containerView = UIView()
+        containerView.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
+        containerView.layer.cornerRadius = 8
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+
+        let label = UILabel()
+        label.text = chatDetailsVM.groupedMessages[section].headerTitle
+        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        label.textColor = UIColor.darkGray
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        containerView.addSubview(label)
+        headerView.addSubview(containerView)
+
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 4),
+            label.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -4),
+            label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
+            label.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -12),
+
+            containerView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            containerView.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+        ])
+
+        return headerView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
+    }
 }
 
 // MARK: - textFiled Deletegate

@@ -35,13 +35,18 @@ class ChatVC: UIViewController {
 
         chatVM.successChatList = { [weak self] in
             guard let self = self else { return }
-            self.filteredChatList = self.chatVM.chatList
+            // Filter out chats with no last message
+            let chatsWithMessages = self.chatVM.chatList.filter { item in
+                let message = item.lastMessage?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                return !message.isEmpty
+            }
+            self.filteredChatList = chatsWithMessages
 
-            if self.chatVM.chatList.count > 0 {
+            if chatsWithMessages.count > 0 {
                 self.viewNoChatFound.isHidden = true
                 self.tblViewList.isHidden = false
             } else {
-                self.viewNoChatFound.isHidden = true
+                self.viewNoChatFound.isHidden = false
                 self.tblViewList.isHidden = true
             }
 
@@ -116,12 +121,18 @@ class ChatVC: UIViewController {
     @objc func searchTextChanged(_ textField: UITextField) {
         let searchText = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
 
+        // Only include chats with last message
+        let chatsWithMessages = chatVM.chatList.filter { item in
+            let message = item.lastMessage?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            return !message.isEmpty
+        }
+
         if searchText.isEmpty {
             isSearching = false
-            filteredChatList = chatVM.chatList
+            filteredChatList = chatsWithMessages
         } else {
             isSearching = true
-            filteredChatList = chatVM.chatList.filter { item in
+            filteredChatList = chatsWithMessages.filter { item in
                 let name = item.chatPartner?.lowercased() ?? ""
                 return name.contains(searchText)
             }
