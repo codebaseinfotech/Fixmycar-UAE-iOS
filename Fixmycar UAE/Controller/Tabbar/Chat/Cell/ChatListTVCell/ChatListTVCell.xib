@@ -28,10 +28,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5J-Ru-3N8">
-                        <rect key="frame" x="0.0" y="8" width="320" height="79"/>
+                        <rect key="frame" x="20" y="8" width="280" height="79"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HGM-Gg-mqM">
-                                <rect key="frame" x="12" y="12" width="296" height="55"/>
+                                <rect key="frame" x="12" y="12" width="256" height="55"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dummy_user" translatesAutoresizingMaskIntoConstraints="NO" id="WlK-9m-1Nd">
                                         <rect key="frame" x="0.0" y="5.6666666666666679" width="44" height="44"/>
@@ -46,19 +46,19 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C7t-Yg-G3t">
-                                        <rect key="frame" x="54" y="0.0" width="242" height="55"/>
+                                        <rect key="frame" x="54" y="0.0" width="202" height="55"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pQW-AG-PGZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="242" height="15"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="202" height="15"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Abdurrahman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTm-i7-0Qp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="189.66666666666666" height="15"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="149.66666666666666" height="15"/>
                                                         <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                         <color key="textColor" name="primery_black"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="12:15 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="TGK-Vq-LRk">
-                                                        <rect key="frame" x="194.66666666666669" y="0.0" width="47.333333333333343" height="15"/>
+                                                        <rect key="frame" x="154.66666666666666" y="0.0" width="47.333333333333343" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="time-width-max"/>
                                                         </constraints>
@@ -69,22 +69,22 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovery Service #123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-job-id">
-                                                <rect key="frame" x="0.0" y="20" width="242" height="12"/>
+                                                <rect key="frame" x="0.0" y="20" width="202" height="12"/>
                                                 <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="12"/>
                                                 <color key="textColor" name="Gray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OXw-I2-nWT">
-                                                <rect key="frame" x="0.0" y="37" width="242" height="18"/>
+                                                <rect key="frame" x="0.0" y="37" width="202" height="18"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Thank you, I'm here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-8F-FqL">
-                                                        <rect key="frame" x="0.0" y="1.6666666666666643" width="219" height="15"/>
+                                                        <rect key="frame" x="0.0" y="1.6666666666666643" width="179" height="15"/>
                                                         <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
                                                         <color key="textColor" name="Gray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="5eq-Gt-gM4">
-                                                        <rect key="frame" x="224" y="0.0" width="18" height="18"/>
+                                                        <rect key="frame" x="184" y="0.0" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7np-nu-gPp">
                                                                 <rect key="frame" x="7.3333333333333153" y="2.6666666666666634" width="3.666666666666667" height="12.666666666666664"/>
@@ -135,8 +135,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Y5J-Ru-3N8" secondAttribute="bottom" constant="8" id="F8I-gm-M2f"/>
-                    <constraint firstItem="Y5J-Ru-3N8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Hnq-cb-uuo"/>
-                    <constraint firstAttribute="trailing" secondItem="Y5J-Ru-3N8" secondAttribute="trailing" id="LLP-Cw-aM7"/>
+                    <constraint firstItem="Y5J-Ru-3N8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Hnq-cb-uuo"/>
+                    <constraint firstAttribute="trailing" secondItem="Y5J-Ru-3N8" secondAttribute="trailing" constant="20" id="LLP-Cw-aM7"/>
                     <constraint firstItem="Y5J-Ru-3N8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="y9M-Hb-zn1"/>
                 </constraints>
             </tableViewCellContentView>

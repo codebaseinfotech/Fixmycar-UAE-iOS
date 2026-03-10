@@ -34,6 +34,10 @@ class UserChatVC: UIViewController {
         }
     }
     @IBOutlet weak var viewBottomChat: UIStackView!
+    @IBOutlet weak var btnSendMessage: UIButton!
+    @IBOutlet weak var svMessage: UIStackView!
+    @IBOutlet weak var lblNoChatMessage: UILabel!
+    @IBOutlet weak var viewNoChatMessgae: UIView!
     
     var chatDetailsVM = ChatDetailsVM()
     
@@ -45,11 +49,17 @@ class UserChatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if jobStatus == "rejected" || jobStatus == "cancelled" || jobStatus == "completed" {
-//            self.viewBottomChat.isHidden = true
-//        } else {
-            self.viewBottomChat.isHidden = false
-//        }
+        if jobStatus == "rejected" || jobStatus == "cancelled" {
+            self.svMessage.isHidden = true
+            self.lblNoChatMessage.isHidden = false
+            self.lblNoChatMessage.text = "This towing service request has been cancelled.\nThe chat has been closed and no further messages can be sent."
+            self.viewNoChatMessgae.isHidden = false
+        } else if jobStatus == "completed" {
+            self.svMessage.isHidden = true
+            self.lblNoChatMessage.isHidden = false
+            self.lblNoChatMessage.text = "Your vehicle towing service has been completed successfully.\nThank you for choosing our service."
+            self.viewNoChatMessgae.isHidden = false
+        }
 
         imgProfile.loadFromUrlString(profileImg, placeholder: "ic_placeholder_user".image)
         lblName.text = profileName

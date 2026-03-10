@@ -32,74 +32,98 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-cj-PWL">
-                    <rect key="frame" x="20" y="118" width="353" height="734"/>
+                    <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za3-Mz-JxZ" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="353" height="22.666666666666668"/>
-                            <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
-                            <color key="textColor" name="primery_black"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWe-L9-gUK">
-                            <rect key="frame" x="0.0" y="36.666666666666657" width="353" height="42"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYd-un-TJ1">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="37.666666666666664"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_search" translatesAutoresizingMaskIntoConstraints="NO" id="ScQ-fH-EsS">
-                                    <rect key="frame" x="10" y="9" width="24" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="24" id="UM4-aJ-XbY"/>
-                                        <constraint firstAttribute="height" constant="24" id="j0c-lb-Hjc"/>
-                                    </constraints>
-                                </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jXW-Z9-N47">
-                                    <rect key="frame" x="40" y="0.0" width="307" height="42"/>
-                                    <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Za3-Mz-JxZ" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="10.000000000000002" width="353" height="22.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
+                                    <color key="textColor" name="primery_black"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
-                            <color key="backgroundColor" name="gray_base"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="jXW-Z9-N47" firstAttribute="top" secondItem="CWe-L9-gUK" secondAttribute="top" id="5jy-0Y-EBz"/>
-                                <constraint firstItem="ScQ-fH-EsS" firstAttribute="leading" secondItem="CWe-L9-gUK" secondAttribute="leading" constant="10" id="CLK-Pt-PwR"/>
-                                <constraint firstAttribute="trailing" secondItem="jXW-Z9-N47" secondAttribute="trailing" constant="6" id="VNv-Dm-JAF"/>
-                                <constraint firstItem="jXW-Z9-N47" firstAttribute="leading" secondItem="ScQ-fH-EsS" secondAttribute="trailing" constant="6" id="gQD-F1-E5T"/>
-                                <constraint firstAttribute="height" constant="42" id="nVB-Qx-hKH"/>
-                                <constraint firstItem="ScQ-fH-EsS" firstAttribute="centerY" secondItem="CWe-L9-gUK" secondAttribute="centerY" id="wtE-HV-qPv"/>
-                                <constraint firstAttribute="bottom" secondItem="jXW-Z9-N47" secondAttribute="bottom" id="xOQ-Kl-gV1"/>
+                                <constraint firstItem="Za3-Mz-JxZ" firstAttribute="leading" secondItem="HYd-un-TJ1" secondAttribute="leading" constant="20" id="Tl2-56-EJ1"/>
+                                <constraint firstAttribute="bottom" secondItem="Za3-Mz-JxZ" secondAttribute="bottom" constant="5" id="XsA-rI-vGJ"/>
+                                <constraint firstItem="Za3-Mz-JxZ" firstAttribute="top" secondItem="HYd-un-TJ1" secondAttribute="top" constant="10" id="gCd-kp-sSE"/>
+                                <constraint firstAttribute="trailing" secondItem="Za3-Mz-JxZ" secondAttribute="trailing" constant="20" id="tDH-2i-wFR"/>
                             </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="21"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqX-5a-6cd">
+                            <rect key="frame" x="0.0" y="51.666666666666657" width="393" height="42"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWe-L9-gUK">
+                                    <rect key="frame" x="20" y="0.0" width="353" height="42"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_search" translatesAutoresizingMaskIntoConstraints="NO" id="ScQ-fH-EsS">
+                                            <rect key="frame" x="10" y="9" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="UM4-aJ-XbY"/>
+                                                <constraint firstAttribute="height" constant="24" id="j0c-lb-Hjc"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jXW-Z9-N47">
+                                            <rect key="frame" x="40" y="0.0" width="307" height="42"/>
+                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" name="gray_base"/>
+                                    <constraints>
+                                        <constraint firstItem="jXW-Z9-N47" firstAttribute="top" secondItem="CWe-L9-gUK" secondAttribute="top" id="5jy-0Y-EBz"/>
+                                        <constraint firstItem="ScQ-fH-EsS" firstAttribute="leading" secondItem="CWe-L9-gUK" secondAttribute="leading" constant="10" id="CLK-Pt-PwR"/>
+                                        <constraint firstAttribute="trailing" secondItem="jXW-Z9-N47" secondAttribute="trailing" constant="6" id="VNv-Dm-JAF"/>
+                                        <constraint firstItem="jXW-Z9-N47" firstAttribute="leading" secondItem="ScQ-fH-EsS" secondAttribute="trailing" constant="6" id="gQD-F1-E5T"/>
+                                        <constraint firstAttribute="height" constant="42" id="nVB-Qx-hKH"/>
+                                        <constraint firstItem="ScQ-fH-EsS" firstAttribute="centerY" secondItem="CWe-L9-gUK" secondAttribute="centerY" id="wtE-HV-qPv"/>
+                                        <constraint firstAttribute="bottom" secondItem="jXW-Z9-N47" secondAttribute="bottom" id="xOQ-Kl-gV1"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="21"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="CWe-L9-gUK" firstAttribute="top" secondItem="YqX-5a-6cd" secondAttribute="top" id="HSu-6H-Oxw"/>
+                                <constraint firstAttribute="trailing" secondItem="CWe-L9-gUK" secondAttribute="trailing" constant="20" id="NZo-JP-V0J"/>
+                                <constraint firstItem="CWe-L9-gUK" firstAttribute="leading" secondItem="YqX-5a-6cd" secondAttribute="leading" constant="20" id="d32-FB-khU"/>
+                                <constraint firstAttribute="bottom" secondItem="CWe-L9-gUK" secondAttribute="bottom" id="z80-D7-5oP"/>
+                            </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3KD-m9-Icf">
-                            <rect key="frame" x="0.0" y="92.666666666666686" width="353" height="611.33333333333326"/>
+                            <rect key="frame" x="0.0" y="107.66666666666669" width="393" height="611.33333333333326"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-hO-MEc">
-                            <rect key="frame" x="0.0" y="718" width="353" height="16"/>
+                            <rect key="frame" x="0.0" y="733" width="393" height="1"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HxT-ps-66R">
-                                    <rect key="frame" x="20" y="213.33333333333337" width="313" height="231"/>
+                                    <rect key="frame" x="20" y="213.33333333333337" width="353" height="231"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty_history_list" translatesAutoresizingMaskIntoConstraints="NO" id="O0h-Zo-JTi">
-                                            <rect key="frame" x="86.666666666666686" y="0.0" width="140" height="140"/>
+                                            <rect key="frame" x="106.66666666666669" y="0.0" width="140" height="140"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="140" id="Z86-og-eab"/>
                                                 <constraint firstAttribute="width" constant="140" id="nbB-Mx-aMs"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="avS-Db-PME">
-                                            <rect key="frame" x="26.666666666666657" y="160" width="259.66666666666674" height="71"/>
+                                            <rect key="frame" x="2.6666666666666572" y="160" width="348" height="71"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No chats yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zG-a9-nts">
-                                                    <rect key="frame" x="0.0" y="0.0" width="259.66666666666669" height="25"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="348" height="25"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your conversations with drivers and support will appear here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSe-Cu-4kh">
-                                                    <rect key="frame" x="0.0" y="31" width="259.66666666666669" height="40"/>
+                                                    <rect key="frame" x="0.0" y="31" width="348" height="40"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
@@ -136,7 +160,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="VfV-hb-kEF"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5P-YO-8ev" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5P-YO-8ev" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="38" height="17.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
@@ -173,7 +197,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="Unf-uK-d29"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuv-hx-8al" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuv-hx-8al" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="44.666666666666664" height="17.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
@@ -210,7 +234,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="xTe-pL-Z17"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-YV-OFm" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-YV-OFm" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="31.333333333333332" height="17.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="White"/>
@@ -244,7 +268,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="T7r-bJ-qOd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJs-8u-zSI" customClass="AppLabel" customModule="Toretto_Recovery_UAE" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJs-8u-zSI" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="25" width="50.666666666666664" height="17.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
@@ -297,8 +321,8 @@
                 <constraint firstAttribute="bottom" secondItem="Lg8-Vd-hMc" secondAttribute="bottom" id="IHj-Xj-4T6"/>
                 <constraint firstItem="Lg8-Vd-hMc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KfW-fu-2NV"/>
                 <constraint firstItem="Lg8-Vd-hMc" firstAttribute="top" secondItem="OO7-cj-PWL" secondAttribute="bottom" constant="-80" id="dDs-5q-K02"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OO7-cj-PWL" secondAttribute="trailing" constant="20" id="dm1-4F-AjB"/>
-                <constraint firstItem="OO7-cj-PWL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jRz-jd-yne"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OO7-cj-PWL" secondAttribute="trailing" id="dm1-4F-AjB"/>
+                <constraint firstItem="OO7-cj-PWL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jRz-jd-yne"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="153.52112676056339"/>
         </view>
