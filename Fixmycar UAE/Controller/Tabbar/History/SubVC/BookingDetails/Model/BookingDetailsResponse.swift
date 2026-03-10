@@ -57,7 +57,7 @@ struct BookingDetails: Codable {
     let routePolyline: String?
 
     let isAvalabRating: Bool?
-    let driverReview: String?
+    let driverReview: DriverReview?
 
     let invoice: Invoice?
     let driver: Driver?
@@ -183,5 +183,29 @@ struct Driver: Codable {
         case vehicleNumber = "vehicle_number"
         case image
         case phone
+    }
+}
+
+// MARK: - DriverReview
+struct DriverReview: Codable {
+
+    let id: Int?
+    let bookingId: Int?
+    let customerId: Int?
+    let driverId: Int?
+    let rating: Int?
+    let review: String?
+    let createdAt: String?
+    let updatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case bookingId = "booking_id"
+        case customerId = "customer_id"
+        case driverId = "driver_id"
+        case rating
+        case review
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
     }
 }
