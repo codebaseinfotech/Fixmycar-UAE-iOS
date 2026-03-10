@@ -40,10 +40,12 @@ class UserChatVC: UIViewController {
     @IBOutlet weak var viewNoChatMessgae: UIView!
     
     var chatDetailsVM = ChatDetailsVM()
-    
+
     var profileImg: String?
     var profileName: String?
     var jobStatus = ""
+
+    private var hasScrolledToBottom = false
     
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -111,7 +113,9 @@ class UserChatVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        if chatDetailsVM.groupedMessages.count > 0 {
+        // Only scroll to bottom once when view first loads
+        if !hasScrolledToBottom && chatDetailsVM.groupedMessages.count > 0 {
+            hasScrolledToBottom = true
             scrollToBottom(animated: false)
         }
     }
