@@ -69,8 +69,8 @@ extension ReviewListVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         let dicData = reviewVM.reviewList[indexPath.row]
-        cell.imgPic.loadFromUrlString(dicData.customer?.avatar ?? "")
-        cell.lblName.text = dicData.customer?.name
+        cell.imgPic.loadFromUrlString(dicData.driver?.profilePhoto ?? "")
+        cell.lblName.text = dicData.driver?.fullName
         cell.viewRating.value = CGFloat(dicData.rating ?? 0)
         cell.lblDescription.text = dicData.review
         cell.lblTime.text = dicData.createdAt?.timeAgo() ?? ""

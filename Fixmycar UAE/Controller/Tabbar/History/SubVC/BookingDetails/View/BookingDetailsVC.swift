@@ -49,6 +49,16 @@ class BookingDetailsVC: UIViewController {
     @IBOutlet weak var lblCancelBu: UILabel!
     @IBOutlet weak var lblCancelReasib: UILabel!
     
+    @IBOutlet weak var imgDriverReview: UIImageView!
+    @IBOutlet weak var lblDriverName: UILabel!
+    @IBOutlet weak var viewReviewDriver: HCSStarRatingView!
+    @IBOutlet weak var lblCountReview: UILabel!
+    @IBOutlet weak var lblReviewTime: UILabel!
+    @IBOutlet weak var lblReviewDis: UILabel!
+    @IBOutlet weak var btnGiveReview: UIButton!
+    @IBOutlet weak var viewMainRatingDetail: UIView!
+    @IBOutlet weak var lblBookingID: UILabel!
+    
     var bookingVM = BookingDetailsVM()
     var chatVM = ChatVM()
     
@@ -162,7 +172,7 @@ class BookingDetailsVC: UIViewController {
             
             let reason = bookingVM.bookingDetails?.cancelledBy == "customer" ? "Cancelled by you" : "Cancelled by the \(bookingVM.bookingDetails?.cancelledBy ?? "")"
             lblCancelBu.text = reason
-            lblCancelReasib.text = "Reason:" + " " + (bookingVM.bookingDetails?.cancelReason ?? "")
+            lblCancelReasib.text = "Reason:".localized + " " + (bookingVM.bookingDetails?.cancelReason ?? "")
             
             lblUserName.text = bookingVM.bookingDetails?.driver?.name
             imgUser.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
@@ -170,6 +180,21 @@ class BookingDetailsVC: UIViewController {
             
             lblVehicleType.text = bookingVM.bookingDetails?.driver?.vehicleModel ?? "-"
             lblVehicleNum.text = bookingVM.bookingDetails?.driver?.vehicleNumber ?? "-"
+            
+            lblBookingID.text = "Booking ID".localized + ":" + " " + "\(bookingVM.bookingDetails?.bookingId ?? 0)"
+            
+            imgDriverReview.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
+            lblDriverName.text = bookingVM.bookingDetails?.driver?.name ?? ""
+            lblReviewDis.text = bookingVM.bookingDetails?.driverReview?.review ?? ""
+            viewReviewDriver.value = CGFloat(bookingVM.bookingDetails?.driverReview?.rating ?? 0)
+            lblCountReview.text = "\(bookingVM.bookingDetails?.driverReview?.rating ?? 0)"
+            lblReviewTime.text = bookingVM.bookingDetails?.driverReview?.createdAt?.timeAgo() ?? ""
+            
+            let hasReview = bookingVM.bookingDetails?.driverReview != nil
+            let canRate = bookingVM.bookingDetails?.isAvalabRating ?? false
+
+            viewMainRatingDetail.isHidden = !hasReview
+            btnGiveReview.isHidden = hasReview || !canRate
             
             lblBaseFare.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.baseFare ?? 0.0)"
             lblDiscount.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.discount ?? 0.0)"
@@ -214,4 +239,54 @@ class BookingDetailsVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func tappedGiveReview(_ sender: Any) {
+        let vc = AddRateVC()
+        if let sheet = vc.sheetPresentationController {
+            // Create a custom detent that returns a fixed height
+            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                return 330
+            }
+            sheet.detents = [fixedDetent]
+            sheet.prefersGrabberVisible = true
+        }
+        vc.sheetPresentationController?.delegate = self
+        vc.addRateVM.bookingId = bookingVM.bookingDetails?.bookingId ?? 0
+        vc.tappedSubmit = { [weak self] in
+            
+            let successVC = BookingSuccessPopUpVC()
+            successVC.modalPresentationStyle = .pageSheet
+            
+            successVC.onReviewSuccess = { [weak self] in
+                self?.bookingVM.getBookingDetails()
+            }
+            
+            if let sheet = successVC.sheetPresentationController {
+                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed250")) { _ in
+                    return 280
+                }
+                sheet.detents = [fixedDetent]
+                sheet.prefersGrabberVisible = true
+            }
+            
+            successVC.sheetPresentationController?.delegate = self
+            successVC.strOpenFrom = "rate_driver_customer"
+            self?.present(successVC, animated: true)
+        }
+        self.present(vc, animated: true)
+    }
+    
+}
+
+// MARK: - UISheetPresentationControllerDelegate
+extension BookingDetailsVC: UISheetPresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if let overlayView = view.viewWithTag(999) {
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
+                overlayView.alpha = 0
+            }, completion: { _ in
+                overlayView.removeFromSuperview()
+            })
+            
+        }
+    }
 }

@@ -13,6 +13,7 @@ class BookingSuccessPopUpVC: UIViewController {
     @IBOutlet weak var lblMessage: AppLabel!
     
     var strOpenFrom: String = ""
+    var onReviewSuccess: (() -> Void)?
     
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -34,6 +35,15 @@ class BookingSuccessPopUpVC: UIViewController {
             lblMessage.text = "Your review has been posted successfully. We truly appreciate your time and valuable feedback."
             
             setUpHome()
+        case "rate_driver_customer":
+            lblTitle.text = "Thank You for Your Feedback!"
+            lblMessage.text = "Your review has been posted successfully. We truly appreciate your time and valuable feedback."
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+                self?.dismiss(animated: true, completion: {
+                    self?.onReviewSuccess?()
+                })
+            }
         default:
             break
         }
