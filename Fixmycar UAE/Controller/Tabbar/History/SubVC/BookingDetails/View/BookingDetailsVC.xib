@@ -87,7 +87,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovery service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jem-cM-ZhH">
-                            <rect key="frame" x="127.66666666666667" y="9.6666666666666714" width="137.66666666666663" height="21"/>
+                            <rect key="frame" x="125.33333333333333" y="8.6666666666666732" width="142.66666666666669" height="22.666666666666671"/>
                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
                             <color key="textColor" name="primery_black"/>
                             <nil key="highlightedColor"/>
@@ -228,16 +228,16 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Id : 111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myn-gT-eDl">
-                                                                            <rect key="frame" x="10" y="54" width="303" height="17.666666666666671"/>
+                                                                            <rect key="frame" x="10" y="54.000000000000007" width="303" height="78.666666666666686"/>
                                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="15"/>
                                                                             <color key="textColor" name="Gray"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAh-ns-TeS">
-                                                                            <rect key="frame" x="10" y="81.666666666666686" width="313" height="121.33333333333331"/>
+                                                                            <rect key="frame" x="10" y="142.66666666666669" width="313" height="60.333333333333343"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFV-2S-nlQ">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="18" height="121.33333333333333"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="18" height="60.333333333333336"/>
                                                                                     <subviews>
                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pick_location" translatesAutoresizingMaskIntoConstraints="NO" id="Nbf-ka-vSa">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -247,14 +247,14 @@
                                                                                             </constraints>
                                                                                         </imageView>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIL-rC-bkj">
-                                                                                            <rect key="frame" x="8.6666666666666643" y="20" width="1" height="81.333333333333329"/>
+                                                                                            <rect key="frame" x="8.6666666666666643" y="20" width="1" height="20.333333333333329"/>
                                                                                             <color key="backgroundColor" name="Gray"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" constant="1" id="YzM-nm-95w"/>
                                                                                             </constraints>
                                                                                         </view>
                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_recent_address" translatesAutoresizingMaskIntoConstraints="NO" id="FEL-ZG-CIa">
-                                                                                            <rect key="frame" x="0.0" y="103.33333333333331" width="18" height="18"/>
+                                                                                            <rect key="frame" x="0.0" y="42.333333333333314" width="18" height="18"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" constant="18" id="ojI-hc-9G2"/>
                                                                                                 <constraint firstAttribute="height" constant="18" id="xlF-hx-Pjg"/>
@@ -276,13 +276,13 @@
                                                                                     </constraints>
                                                                                 </view>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Al Barsha, Dubai" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHz-uz-kDb">
-                                                                                    <rect key="frame" x="28" y="1" width="275" height="80"/>
+                                                                                    <rect key="frame" x="28" y="1" width="275" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="Gray"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS3-Ev-1ql">
-                                                                                    <rect key="frame" x="28" y="92" width="275" height="1"/>
+                                                                                    <rect key="frame" x="28" y="29.666666666666629" width="275" height="1"/>
                                                                                     <color key="backgroundColor" name="Storke"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="1" id="KJw-s7-S8K"/>
@@ -292,7 +292,7 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Al Barsha, Dubai" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1k-vr-VE7">
-                                                                                    <rect key="frame" x="28" y="104" width="275" height="16.333333333333329"/>
+                                                                                    <rect key="frame" x="28" y="41.666666666666629" width="275" height="17.666666666666671"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="Gray"/>
                                                                                     <nil key="highlightedColor"/>
@@ -354,13 +354,13 @@
                                                                             <rect key="frame" x="10" y="0.0" width="303" height="228"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Aug, 2025 09:15 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXn-cC-kzW">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="303" height="47.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="303" height="46.333333333333336"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="15"/>
                                                                                     <color key="textColor" name="primary_red"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Yz-Vwq">
-                                                                                    <rect key="frame" x="0.0" y="57.666666666666636" width="303" height="16.333333333333336"/>
+                                                                                    <rect key="frame" x="0.0" y="56.333333333333364" width="303" height="17.666666666666664"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="Gray"/>
                                                                                     <nil key="highlightedColor"/>
@@ -375,13 +375,13 @@
                                                                                             </constraints>
                                                                                         </imageView>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gulfside towing services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtB-Dr-hDh">
-                                                                                            <rect key="frame" x="54" y="0.0" width="239" height="18.666666666666668"/>
+                                                                                            <rect key="frame" x="54" y="0.0" width="239" height="20"/>
                                                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                                                             <color key="textColor" name="primery_black"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Since 1995" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56V-2e-8kD">
-                                                                                            <rect key="frame" x="54" y="30" width="239" height="14"/>
+                                                                                            <rect key="frame" x="54" y="29" width="239" height="15"/>
                                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
                                                                                             <color key="textColor" name="Gray"/>
                                                                                             <nil key="highlightedColor"/>
@@ -430,7 +430,7 @@
                                                                                                             </userDefinedRuntimeAttributes>
                                                                                                         </imageView>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lebron jones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dA-2e-y76">
-                                                                                                            <rect key="frame" x="54" y="2" width="93" height="18.666666666666668"/>
+                                                                                                            <rect key="frame" x="54" y="2" width="96" height="20"/>
                                                                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                                                                             <color key="textColor" name="primery_black"/>
                                                                                                             <nil key="highlightedColor"/>
@@ -443,7 +443,7 @@
                                                                                                             </constraints>
                                                                                                         </imageView>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmt-ze-zET">
-                                                                                                            <rect key="frame" x="66" y="29.333333333333375" width="14" height="11.666666666666668"/>
+                                                                                                            <rect key="frame" x="66" y="28.666666666666632" width="14.666666666666671" height="12.666666666666668"/>
                                                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="10"/>
                                                                                                             <color key="textColor" name="primery_black"/>
                                                                                                             <nil key="highlightedColor"/>
@@ -459,7 +459,7 @@
                                                                                                                     </constraints>
                                                                                                                 </imageView>
                                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4W1-SV-uz6">
-                                                                                                                    <rect key="frame" x="38" y="9.9999999999999982" width="30" height="16.333333333333329"/>
+                                                                                                                    <rect key="frame" x="38" y="9.333333333333373" width="31.333333333333329" height="17.666666666666671"/>
                                                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                                                     <color key="textColor" name="primery_black"/>
                                                                                                                     <nil key="highlightedColor"/>
@@ -520,25 +520,25 @@
                                                                                                     <rect key="frame" x="0.0" y="64" width="283" height="60"/>
                                                                                                     <subviews>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJG-VU-zNt">
-                                                                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="14"/>
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="66" height="15"/>
                                                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
                                                                                                             <color key="textColor" name="Gray"/>
                                                                                                             <nil key="highlightedColor"/>
                                                                                                         </label>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cN-ED-fvV">
-                                                                                                            <rect key="frame" x="200.33333333333334" y="0.0" width="82.666666666666657" height="14"/>
+                                                                                                            <rect key="frame" x="198.33333333333334" y="0.0" width="84.666666666666657" height="15"/>
                                                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
                                                                                                             <color key="textColor" name="Gray"/>
                                                                                                             <nil key="highlightedColor"/>
                                                                                                         </label>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White ford Truck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkJ-i8-Cbd">
-                                                                                                            <rect key="frame" x="0.0" y="41.333333333333371" width="117.33333333333333" height="18.666666666666671"/>
+                                                                                                            <rect key="frame" x="0.0" y="40" width="125" height="20"/>
                                                                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                                                                             <color key="textColor" name="primery_black"/>
                                                                                                             <nil key="highlightedColor"/>
                                                                                                         </label>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6PYV308" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPZ-wc-8V1">
-                                                                                                            <rect key="frame" x="216.66666666666669" y="41.333333333333371" width="66.333333333333314" height="18.666666666666671"/>
+                                                                                                            <rect key="frame" x="210.66666666666669" y="40" width="72.333333333333314" height="20"/>
                                                                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                                                                             <color key="textColor" name="primery_black"/>
                                                                                                             <nil key="highlightedColor"/>
@@ -641,7 +641,7 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="14"/>
                                                                                             <subviews>
                                                                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1K-i5-7tv" customClass="HCSStarRatingView">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="14"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="56" height="14"/>
                                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                                     <userDefinedRuntimeAttributes>
                                                                                                         <userDefinedRuntimeAttribute type="image" keyPath="filledStarImage" value="ic_star"/>
@@ -661,7 +661,7 @@
                                                                                                     </userDefinedRuntimeAttributes>
                                                                                                 </view>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpa-9I-d5N">
-                                                                                                    <rect key="frame" x="63" y="0.0" width="17" height="14"/>
+                                                                                                    <rect key="frame" x="62" y="0.0" width="18" height="14"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="16" id="hHs-gO-cBO"/>
                                                                                                     </constraints>
@@ -751,7 +751,7 @@
                                                                             <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="19.666666666666668"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydO-YF-Nhj">
-                                                                                    <rect key="frame" x="5" y="1.6666666666666288" width="136.33333333333334" height="16.333333333333332"/>
+                                                                                    <rect key="frame" x="5" y="1" width="136.33333333333334" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="primery_black"/>
                                                                                     <nil key="highlightedColor"/>
@@ -779,7 +779,7 @@
                                                                             <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="20"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smg-gA-929">
-                                                                                    <rect key="frame" x="5" y="1.6666666666667425" width="136.33333333333334" height="16.333333333333332"/>
+                                                                                    <rect key="frame" x="5" y="1" width="136.33333333333334" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="primery_black"/>
                                                                                     <nil key="highlightedColor"/>
@@ -807,7 +807,7 @@
                                                                             <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="19.666666666666668"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfW-if-402">
-                                                                                    <rect key="frame" x="5" y="1.6666666666667425" width="136.33333333333334" height="16.333333333333332"/>
+                                                                                    <rect key="frame" x="5" y="1" width="136.33333333333334" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="primery_black"/>
                                                                                     <nil key="highlightedColor"/>
@@ -835,7 +835,7 @@
                                                                             <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="19.666666666666668"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceN-3W-hPA">
-                                                                                    <rect key="frame" x="5" y="1.6666666666666288" width="136.33333333333334" height="16.333333333333332"/>
+                                                                                    <rect key="frame" x="5" y="1" width="136.33333333333334" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="primery_black"/>
                                                                                     <nil key="highlightedColor"/>
@@ -875,7 +875,7 @@
                                                                     <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="22"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="103.13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-We-fZK">
-                                                                            <rect key="frame" x="5" y="3" width="136.33333333333334" height="16.333333333333332"/>
+                                                                            <rect key="frame" x="5" y="2.3333333333332575" width="136.33333333333334" height="17.666666666666668"/>
                                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                             <color key="textColor" name="primery_black"/>
                                                                             <nil key="highlightedColor"/>
@@ -921,6 +921,9 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQr-UU-BuN">
                                                             <rect key="frame" x="0.0" y="0.0" width="323" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="MEj-zg-cjg"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="15"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <state key="normal" title="Give Review">
@@ -942,9 +945,6 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="Y75-x8-DQW"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
@@ -1011,7 +1011,7 @@
         <image name="ic_placeholder_user" width="80" height="80"/>
         <image name="ic_recent_address" width="18" height="18"/>
         <image name="ic_recent_recovery" width="44" height="44"/>
-        <image name="ic_star" width="18" height="18"/>
+        <image name="ic_star" width="10" height="10"/>
         <image name="ic_star_empty" width="18" height="18"/>
         <image name="ic_towing_service" width="44" height="44"/>
         <namedColor name="Gray">

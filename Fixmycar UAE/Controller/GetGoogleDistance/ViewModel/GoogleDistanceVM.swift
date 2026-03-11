@@ -50,7 +50,9 @@ class GoogleDistanceVM {
                 
                 let distance = response.routes?.first?.legs?.first?.distance?.text ?? ""
                 self.distanceWithName = distance
-                self.distance = distance.replacingOccurrences(of: " km", with: "")
+                
+                let strDistance = distance.contains(" m") == true ? distance.replacingOccurrences(of: " m", with: "") : distance.replacingOccurrences(of: " km", with: "")
+                self.distance = strDistance
                 
                 let duration = response.routes?.first?.legs?.first?.durationInTraffic?.text ?? ""
                 self.durationWithName = duration
