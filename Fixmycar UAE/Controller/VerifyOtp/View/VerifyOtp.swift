@@ -171,6 +171,8 @@ class VerifyOtp: UIViewController {
     func startTimer() {
         // Hide button while counting
         btnResend.isEnabled = false
+        btnResend.alpha = 0.4
+        
         timeLabel.isHidden = false
         
         totalSeconds = 59
@@ -195,6 +197,7 @@ class VerifyOtp: UIViewController {
             // Show button again
             timeLabel.isHidden = true
             btnResend.isEnabled = true
+            btnResend.alpha = 1.0
         }
     }
     

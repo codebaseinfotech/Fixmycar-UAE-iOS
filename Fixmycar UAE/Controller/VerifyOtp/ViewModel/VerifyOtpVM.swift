@@ -39,13 +39,15 @@ class VerifyOtpVM {
 
                 if response?.status == true {
                     if response?.data?.isRegistered == true {
+                        self.lastLoginModify(role: FCUtilites.getRoleName())
+                        
                         FCUtilites.saveCurrentUserToken(response?.data?.accessToken ?? "")
                         FCUtilites.saveIsGetCurrentUser(true)
                         FCUtilites.saveRoleName(response?.data?.roleName ?? "")
                         FCUtilites.saveCurrentUser(response?.data?.user)
                     }
                     
-                    self.lastLoginModify(role: FCUtilites.getRoleName())
+                   
                     successVerify?()
                 } else {
                     failureVerify?(response?.message ?? "")
