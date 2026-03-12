@@ -11,7 +11,11 @@ import CoreLocation
 
 class TrackLiveVC: UIViewController {
     
-    @IBOutlet weak var viewMap: UIView!
+    @IBOutlet weak var viewMap: UIView! {
+        didSet {
+            viewMap.isHidden = true
+        }
+    }
     @IBOutlet weak var lblTitle: AppLabel!
     @IBOutlet weak var lblTimeDis: AppLabel!
     @IBOutlet weak var imgFilledRoad: UIImageView!
@@ -36,7 +40,11 @@ class TrackLiveVC: UIViewController {
     
     @IBOutlet weak var viewCall: UIView!
     @IBOutlet weak var viewChat: UIView!
-    @IBOutlet weak var viewMain: AllSideCornerView!
+    @IBOutlet weak var viewMain: AllSideCornerView! {
+        didSet {
+            viewMain.isHidden = true
+        }
+    }
     @IBOutlet weak var viewMainTop: NSLayoutConstraint!
     @IBOutlet weak var svTitleDetails: UIStackView!
     
@@ -75,6 +83,8 @@ class TrackLiveVC: UIViewController {
         setupBottomSheet()
         viewMainTop.constant = collapsedTop
         
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshBooking(_notification:)), name: NSNotification.Name.refrechData, object: nil)
+        
         trackLiveVM.getTrackLiveDetails()
         trackLiveVM.successTrackLive = {
             let dicData = self.trackLiveVM.trackBookingDetails
@@ -87,6 +97,8 @@ class TrackLiveVC: UIViewController {
             self.lblCarName.text = dicData?.vehicleType ?? ""
             self.lblPlateNumber.text = dicData?.vehicleNumber
             self.lblCarName.text = dicData?.vehicleType ?? ""
+            
+            self.lblRemainigAmount.text = "AED" + " " + "\(dicData?.finalPrice ?? 0.0)"
             
             let jobStatus = dicData?.status
             if jobStatus == "pickup_completed" || jobStatus == "on_the_way_to_delivery" || jobStatus == "near_delivery" || jobStatus == "arrived_at_delivery" {
@@ -102,6 +114,8 @@ class TrackLiveVC: UIViewController {
                 
                 self.imgTruck.image = "ic_truck".image
             }
+            self.viewMain.isHidden = false
+            self.viewMap.isHidden = false
         }
         trackLiveVM.failureTrackLive = { msg in
             self.setUpMakeToast(msg: msg)
@@ -109,6 +123,11 @@ class TrackLiveVC: UIViewController {
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - refreshBooking
+    @objc func refreshBooking(_notification: NSNotification){
+        trackLiveVM.getTrackLiveDetails()
     }
     
     // MARK: - setUp Bottom Popup

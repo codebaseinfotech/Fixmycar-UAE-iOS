@@ -13,6 +13,9 @@ extension Notification.Name {
     static let chatUnreadCountUpdated = Notification.Name("chatUnreadCountUpdated")
     static let socketMessageReceived = Notification.Name("socketMessageReceived")
     static let socketConnected = Notification.Name("socketConnected")
+    static let createNewBooking = Notification.Name("createNewBooking")
+    static let refrechData = Notification.Name("refrechData")
+
 }
 
 // MARK: - debugPrint

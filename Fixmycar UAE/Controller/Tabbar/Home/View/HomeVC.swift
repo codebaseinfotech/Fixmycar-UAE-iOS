@@ -74,6 +74,9 @@ class HomeVC: UIViewController {
             name: .createNewBooking,
             object: nil
         )
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshBooking(_notification:)), name: NSNotification.Name.refrechData, object: nil)
+        
 
         // Chat badge observer
         NotificationCenter.default.addObserver(
@@ -86,6 +89,11 @@ class HomeVC: UIViewController {
         chatVM.getChatList()
 
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - refreshBooking
+    @objc func refreshBooking(_notification: NSNotification){
+        homeVM.getHomeData()
     }
 
     // MARK: - Chat Badge

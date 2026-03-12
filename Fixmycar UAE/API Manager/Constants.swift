@@ -58,9 +58,3 @@ enum APIEndPoint: String {
     case cancelBooking = "v1/bookings"
     case reviewList = "v1/reviews-list"
 }
-
-
-// MARK: - Set Notification
-extension Notification.Name {
-    static let createNewBooking = Notification.Name("createNewBooking")
-}

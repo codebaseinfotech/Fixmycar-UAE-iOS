@@ -178,7 +178,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 }
             }
         }
-        chatVM.getChatList()
+        
+        if FCUtilites.getIsCurrentUser() {
+            chatVM.getChatList()
+        }
+        
     }
 
     // MARK: - Global Socket Listener
@@ -218,7 +222,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     func refreshChatBadge() {
-        chatVM.getChatList()
+        if FCUtilites.getIsCurrentUser() {
+            chatVM.getChatList()
+        }
     }
 
     // MARK: - setUp Login
@@ -242,10 +248,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             if payload.type == "completed" {
                 if FCUtilites.getIsCurrentUser() {
+                    NotificationCenter.default.post(name: .refrechData, object: nil)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
                         self.presentAdminAssignPopup(payload: payload)
                     })
                 }
+            } else if payload.type == "job_accepted" ||
+                        payload.type == "started" ||
+                        payload.type == "on_the_way_to_pickup" ||
+                        payload.type == "near_pickup" ||
+                        payload.type == "arrived_at_pickup" ||
+                        payload.type == "pickup_completed" ||
+                        payload.type == "on_the_way_to_delivery" ||
+                        payload.type == "near_delivery" ||
+                        payload.type == "arrived_at_delivery" {
+                
+                NotificationCenter.default.post(name: .refrechData, object: nil)
+                print("Driver going to pickup")
             }
         }
  

@@ -18,8 +18,12 @@ class FareBreakupVC: UIViewController {
     @IBOutlet weak var lblTotalAmount: AppLabel!
     @IBOutlet weak var btnApply: AppButton!
     
-    var fareBreakupVM = FareBreakupVM()
+    @IBOutlet weak var btnCOD: UIButton!
+    @IBOutlet weak var btnLink: UIButton!
     
+    var fareBreakupVM = FareBreakupVM()
+    var bookingPaymentVM = BookingPaymentVM()
+
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,29 @@ class FareBreakupVC: UIViewController {
             self.setUpBookingAmount(isDiscount: true)
         }
         fareBreakupVM.failurePromoCode = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
+        bookingPaymentVM.successCreateBooking = {
+            let vc = BookingSuccessPopUpVC()
+            if let sheet = vc.sheetPresentationController {
+                // Create a custom detent that returns a fixed height
+                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                    return 250
+                }
+                sheet.detents = [fixedDetent]
+                sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+            }
+            vc.sheetPresentationController?.delegate = self
+            if CreateBooking.shared.isScheduleBooking {
+                vc.strOpenFrom = "schedule_service"
+            } else {
+                vc.strOpenFrom = "create_booking"
+            }
+            self.present(vc, animated: true)
+        }
+        
+        bookingPaymentVM.failureCreateBooking = { msg in
             self.setUpMakeToast(msg: msg)
         }
         // Do any additional setup after loading the view.
@@ -91,11 +118,51 @@ class FareBreakupVC: UIViewController {
             fareBreakupVM.getPromoCode(promoCode: promoCode)
         }
     }
-    @IBAction func tappedProceedToPay(_ sender: Any) {        
-        let vc = BookingPaymentVC()
-        navigationController?.pushViewController(vc, animated: true)
+    @IBAction func tappedProceedToPay(_ sender: Any) {
+        let vc = BookingConfirmationPopupVC()
+        if let sheet = vc.sheetPresentationController {
+            // Create a custom detent that returns a fixed height
+            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                return 200
+            }
+            sheet.detents = [fixedDetent]
+            sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+        }
+        vc.sheetPresentationController?.delegate = self
+        vc.isConfirmSchedule = false
+        
+        vc.onTappedConfirmBooking = {
+            /*let vc = BookingPaymentVC()
+            self.navigationController?.pushViewController(vc, animated: true)*/
+            
+            self.bookingPaymentVM.createBooking()
+        }
+        
+        self.present(vc, animated: true)
     }
     
+    @IBAction func tappedCOD(_ sender: Any) {
+        btnCOD.setImage("ic_check".image, for: [])
+        btnLink.setImage("ic_uncheck".image, for: [])
+    }
+    @IBAction func tappledPayLink(_ sender: Any) {
+        btnCOD.setImage("ic_uncheck".image, for: [])
+        btnLink.setImage("ic_check".image, for: [])
+    }
     
 
+}
+
+// MARK: - UISheetPresentationControllerDelegate
+extension FareBreakupVC: UISheetPresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if let overlayView = view.viewWithTag(999) {
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
+                overlayView.alpha = 0
+            }, completion: { _ in
+                overlayView.removeFromSuperview()
+            })
+            
+        }
+    }
 }

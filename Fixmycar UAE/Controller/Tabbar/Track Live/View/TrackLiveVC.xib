@@ -225,23 +225,23 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwt-Jq-bg5">
                                     <rect key="frame" x="0.0" y="208" width="353" height="66"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay your remaining amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjt-Gb-MBl" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                            <rect key="frame" x="12" y="12" width="239" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your remaining amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjt-Gb-MBl" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                            <rect key="frame" x="12" y="12" width="331" height="20"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                             <color key="textColor" name="primery_black"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You paid D 30 remaining amount is D 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzg-Tz-fZg" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                            <rect key="frame" x="12" y="39" width="239" height="15"/>
+                                            <rect key="frame" x="12" y="39" width="331" height="15"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
                                             <color key="textColor" name="Gray"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJO-To-0HB" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                            <rect key="frame" x="261" y="17.666666666666629" width="80" height="31"/>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJO-To-0HB" customClass="AppButton" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                            <rect key="frame" x="353" y="17.666666666666629" width="0.0" height="31"/>
                                             <color key="backgroundColor" name="dark_green"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="7Xk-pS-alz"/>
+                                                <constraint firstAttribute="width" id="7Xk-pS-alz"/>
                                                 <constraint firstAttribute="height" constant="31" id="AN1-KY-uBX"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -261,7 +261,7 @@
                                         <constraint firstItem="Gjt-Gb-MBl" firstAttribute="leading" secondItem="iwt-Jq-bg5" secondAttribute="leading" constant="12" id="8Il-T5-b4e"/>
                                         <constraint firstItem="MJO-To-0HB" firstAttribute="leading" secondItem="Gjt-Gb-MBl" secondAttribute="trailing" constant="10" id="LDA-t1-AaK"/>
                                         <constraint firstItem="Gjt-Gb-MBl" firstAttribute="top" secondItem="iwt-Jq-bg5" secondAttribute="top" constant="12" id="RwB-Fu-aHG"/>
-                                        <constraint firstAttribute="trailing" secondItem="MJO-To-0HB" secondAttribute="trailing" constant="12" id="Zmc-o2-T5r"/>
+                                        <constraint firstAttribute="trailing" secondItem="MJO-To-0HB" secondAttribute="trailing" id="Zmc-o2-T5r"/>
                                         <constraint firstAttribute="height" constant="66" id="fNC-VR-ZzE"/>
                                         <constraint firstItem="Lzg-Tz-fZg" firstAttribute="leading" secondItem="iwt-Jq-bg5" secondAttribute="leading" constant="12" id="oHV-2r-mrR"/>
                                         <constraint firstAttribute="bottom" secondItem="Lzg-Tz-fZg" secondAttribute="bottom" constant="12" id="q74-ZM-cse"/>
