@@ -73,18 +73,21 @@ class TrackLiveVC: UIViewController {
     }
     
     var trackLiveVM = TrackLiveVM()
-    
+    private var currentBookingId: Int?
+
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocation()
-        
+
         setupGoogleMap()
         setupBottomSheet()
         viewMainTop.constant = collapsedTop
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(refreshBooking(_notification:)), name: NSNotification.Name.refrechData, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBookingStatusUpdated(_:)), name: .bookingStatusUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSocketConnected), name: .socketConnected, object: nil)
+
         trackLiveVM.getTrackLiveDetails()
         trackLiveVM.successTrackLive = {
             let dicData = self.trackLiveVM.trackBookingDetails
@@ -116,6 +119,12 @@ class TrackLiveVC: UIViewController {
             }
             self.viewMain.isHidden = false
             self.viewMap.isHidden = false
+
+            // Store booking ID and join socket room
+            if let bookingId = dicData?.bookingID {
+                self.currentBookingId = bookingId
+                self.joinSocketRoomIfConnected()
+            }
         }
         trackLiveVM.failureTrackLive = { msg in
             self.setUpMakeToast(msg: msg)
@@ -124,10 +133,56 @@ class TrackLiveVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Leave socket room when leaving the screen
+        if let bookingId = currentBookingId {
+            FMSocketManager.shared.leaveRoom(bookingId: bookingId)
+        }
+
+        // Remove socket connected observer
+        NotificationCenter.default.removeObserver(self, name: .socketConnected, object: nil)
+    }
+
     // MARK: - refreshBooking
     @objc func refreshBooking(_notification: NSNotification){
         trackLiveVM.getTrackLiveDetails()
+    }
+
+    // MARK: - handleBookingStatusUpdated
+    @objc func handleBookingStatusUpdated(_ notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+              let bookingId = userInfo["booking_id"] as? Int else {
+            return
+        }
+
+        // Only refresh if this is for the current booking
+        if bookingId == trackLiveVM.trackBookingDetails?.bookingID {
+            debugPrint("[SOCKET] Booking status updated for booking: \(bookingId)")
+            trackLiveVM.getTrackLiveDetails()
+        }
+    }
+
+    // MARK: - Socket Room Management
+    @objc func handleSocketConnected() {
+        debugPrint("[SOCKET] Socket connected - joining room if needed")
+        joinSocketRoomIfConnected()
+    }
+
+    private func joinSocketRoomIfConnected() {
+        guard let bookingId = currentBookingId else {
+            debugPrint("[SOCKET] No booking ID to join room")
+            return
+        }
+
+        if FMSocketManager.shared.isConnected {
+            debugPrint("[SOCKET] Joining room for booking: \(bookingId)")
+            FMSocketManager.shared.joinRoom(bookingId: bookingId)
+        } else {
+            debugPrint("[SOCKET] Socket not connected yet, will join when connected")
+        }
     }
     
     // MARK: - setUp Bottom Popup

@@ -143,6 +143,12 @@ class FMSocketManager {
             self?.log("SERVER ERROR: \(data)")
         }
 
+        // Booking status updated event
+        socket?.on("booking_status_updated") { [weak self] data, ack in
+            self?.log("BOOKING STATUS UPDATED: \(data)")
+            self?.handleBookingStatusUpdated(data)
+        }
+
         // Listen to all events for debugging
         socket?.onAny { [weak self] event in
             self?.log("EVENT: \(event.event) | DATA: \(event.items ?? [])")
@@ -246,6 +252,29 @@ class FMSocketManager {
             onMessageReceived?(message)
         } catch {
             log("ERROR: Failed to decode message: \(error)")
+        }
+    }
+
+    // MARK: - Handle Booking Status Updated
+    private func handleBookingStatusUpdated(_ data: [Any]) {
+        log("PROCESSING BOOKING STATUS UPDATE...")
+        log("Raw data: \(data)")
+
+        guard let statusDict = data.first as? [String: Any] else {
+            log("ERROR: Invalid booking status format - not a dictionary")
+            log("Data type: \(type(of: data.first))")
+            return
+        }
+
+        log("Status dict: \(statusDict)")
+
+        // Post notification for all listeners
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(
+                name: .bookingStatusUpdated,
+                object: nil,
+                userInfo: statusDict
+            )
         }
     }
 

@@ -15,7 +15,7 @@ extension Notification.Name {
     static let socketConnected = Notification.Name("socketConnected")
     static let createNewBooking = Notification.Name("createNewBooking")
     static let refrechData = Notification.Name("refrechData")
-
+    static let bookingStatusUpdated = Notification.Name("bookingStatusUpdated")
 }
 
 // MARK: - debugPrint
