@@ -16,7 +16,7 @@ enum AppEnviroment {
 }
 
 let current: AppEnviroment = .dev
-var isDebugPrint: Bool = false
+var isDebugPrint: Bool = true
 
 
 // ************************* LIVE ***********************

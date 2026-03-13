@@ -118,6 +118,8 @@ class TrackLiveVC: UIViewController {
                 
                 self.imgTruck.image = "ic_truck".image
             }
+            self.setupDeliveryText(jobStatus: jobStatus ?? "")
+            
             self.viewMain.isHidden = false
             self.viewMap.isHidden = false
 
@@ -153,6 +155,39 @@ class TrackLiveVC: UIViewController {
         trackLiveVM.getTrackLiveDetails()
     }
 
+    // MARK: - setupTextDelivery
+    func setupDeliveryText(jobStatus: String) {
+        let jobStatus: JobStatus = JobStatus(rawValue: jobStatus) ?? .accepted
+        let dicData = self.trackLiveVM.trackBookingDetails
+
+        var title = ""
+        var subtitle = ""
+        
+        /*switch jobStatus {
+        case .pending: break
+        case .accepted: break
+        case .started:
+            title = "Your driver is arriving soon!"
+            subtitle = "Your ride is booked." + " " + (dicData?.driver?.name ?? "") + " " + "will pick you up in 10–15 minutes."
+        case .onTheWayToPickup:
+            <#code#>
+        case .nearPickup:
+            <#code#>
+        case .arrivedAtPickup:
+            <#code#>
+        case .pickupCompleted:
+            <#code#>
+        case .onTheWayToDelivery:
+            <#code#>
+        case .nearDelivery:
+            <#code#>
+        case .arrivedAtDelivery:
+            <#code#>
+        case .completed: break
+        case .cancelled: break
+        }*/
+    }
+    
     // MARK: - handleBookingStatusUpdated
     @objc func handleBookingStatusUpdated(_ notification: NSNotification) {
         guard let userInfo = notification.userInfo,
