@@ -87,6 +87,7 @@ class TrackLiveVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(refreshBooking(_notification:)), name: NSNotification.Name.refrechData, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleBookingStatusUpdated(_:)), name: .bookingStatusUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleSocketConnected), name: .socketConnected, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDriverLocationUpdated(_:)), name: .driverLocationUpdated, object: nil)
 
         trackLiveVM.getTrackLiveDetails()
         trackLiveVM.successTrackLive = {
@@ -142,8 +143,9 @@ class TrackLiveVC: UIViewController {
             FMSocketManager.shared.leaveRoom(bookingId: bookingId)
         }
 
-        // Remove socket connected observer
+        // Remove socket observers
         NotificationCenter.default.removeObserver(self, name: .socketConnected, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .driverLocationUpdated, object: nil)
     }
 
     // MARK: - refreshBooking
@@ -184,7 +186,32 @@ class TrackLiveVC: UIViewController {
             debugPrint("[SOCKET] Socket not connected yet, will join when connected")
         }
     }
-    
+
+    // MARK: - Handle Driver Location Updated (Live Tracking)
+    @objc func handleDriverLocationUpdated(_ notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+              let bookingId = userInfo["booking_id"] as? Int,
+              let lat = userInfo["lat"] as? Double,
+              let lng = userInfo["lng"] as? Double else {
+            return
+        }
+
+        // Only update if this is for the current booking
+        guard bookingId == currentBookingId else { return }
+
+        let heading = userInfo["heading"] as? Double ?? 0
+        let speed = userInfo["speed"] as? Double ?? 0
+
+        debugPrint("[SOCKET] Driver location updated - lat: \(lat), lng: \(lng), heading: \(heading), speed: \(speed)")
+
+        // Update driver marker position with animation
+        currentDriverCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        updateDriverLocation(lat: lat, lng: lng, heading: heading)
+
+        // Redraw route from new driver position
+        updateRoute()
+    }
+
     // MARK: - setUp Bottom Popup
     private func setupBottomSheet() {
         let panGesture = UIPanGestureRecognizer(

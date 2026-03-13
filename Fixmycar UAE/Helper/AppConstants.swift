@@ -16,6 +16,7 @@ extension Notification.Name {
     static let createNewBooking = Notification.Name("createNewBooking")
     static let refrechData = Notification.Name("refrechData")
     static let bookingStatusUpdated = Notification.Name("bookingStatusUpdated")
+    static let driverLocationUpdated = Notification.Name("driverLocationUpdated")
 }
 
 // MARK: - debugPrint

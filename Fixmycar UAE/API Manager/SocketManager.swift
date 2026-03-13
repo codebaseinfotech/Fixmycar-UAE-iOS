@@ -149,6 +149,12 @@ class FMSocketManager {
             self?.handleBookingStatusUpdated(data)
         }
 
+        // Driver location updated event (live tracking)
+        socket?.on("driver_location_updated") { [weak self] data, ack in
+            self?.log("DRIVER LOCATION UPDATED: \(data)")
+            self?.handleDriverLocationUpdated(data)
+        }
+
         // Listen to all events for debugging
         socket?.onAny { [weak self] event in
             self?.log("EVENT: \(event.event) | DATA: \(event.items ?? [])")
@@ -274,6 +280,29 @@ class FMSocketManager {
                 name: .bookingStatusUpdated,
                 object: nil,
                 userInfo: statusDict
+            )
+        }
+    }
+
+    // MARK: - Handle Driver Location Updated
+    private func handleDriverLocationUpdated(_ data: [Any]) {
+        log("PROCESSING DRIVER LOCATION UPDATE...")
+        log("Raw data: \(data)")
+
+        guard let locationDict = data.first as? [String: Any] else {
+            log("ERROR: Invalid driver location format - not a dictionary")
+            log("Data type: \(type(of: data.first))")
+            return
+        }
+
+        log("Location dict: \(locationDict)")
+
+        // Post notification for TrackLiveVC to update driver marker
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(
+                name: .driverLocationUpdated,
+                object: nil,
+                userInfo: locationDict
             )
         }
     }
