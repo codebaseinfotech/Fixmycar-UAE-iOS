@@ -20,6 +20,8 @@ class GoogleDistanceVM {
     var durationWithName: String = ""
     var resultPolyline: String?
     
+    var dicResponse: DirectionResponse?
+    
     func getDistance(originLat: Double,
                      originLng: Double,
                      destLat: Double,
@@ -61,6 +63,7 @@ class GoogleDistanceVM {
                 self.resultPolyline = response.routes?.first?.overviewPolyline?.points ?? ""
                 CreateBooking.shared.route_polyline = response.routes?.first?.overviewPolyline?.points ?? ""
 
+                self.dicResponse = response
                 self.successGoogleDistance?()
             }
     }

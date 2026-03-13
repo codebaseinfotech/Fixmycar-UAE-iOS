@@ -73,6 +73,8 @@ class TrackLiveVC: UIViewController {
     }
     
     var trackLiveVM = TrackLiveVM()
+    var googleMapVM = GoogleDistanceVM()
+    
     private var currentBookingId: Int?
 
     // MARK: - view Cycle
@@ -111,6 +113,7 @@ class TrackLiveVC: UIViewController {
                 self.lblTherdStatus.text = "Delivered"
                 
                 self.imgTruck.image = "ic_drop_truck".image
+                
             } else {
                 self.lblFirstStatus.text = "Accepted"
                 self.lblSecondStatus.text = "On the way"
@@ -133,6 +136,10 @@ class TrackLiveVC: UIViewController {
             self.setUpMakeToast(msg: msg)
         }
         
+        
+        googleMapVM.successGoogleDistance = {
+            self.setupDeliveryText(jobStatus: self.trackLiveVM.trackBookingDetails?.status ?? "")
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -159,33 +166,58 @@ class TrackLiveVC: UIViewController {
     func setupDeliveryText(jobStatus: String) {
         let jobStatus: JobStatus = JobStatus(rawValue: jobStatus) ?? .accepted
         let dicData = self.trackLiveVM.trackBookingDetails
+        let timer = googleMapVM.dicResponse?.routes?.first?.legs?.first?.durationInTraffic?.text ?? ""
 
         var title = ""
         var subtitle = ""
         
-        /*switch jobStatus {
+        switch jobStatus {
         case .pending: break
-        case .accepted: break
+        case .accepted:
+            title = "Driver accepted your ride"
+            subtitle = (dicData?.driver?.name ?? "") + " " + "has accepted your request and will arrive at" + " " + timer + "."
+
         case .started:
             title = "Your driver is arriving soon!"
-            subtitle = "Your ride is booked." + " " + (dicData?.driver?.name ?? "") + " " + "will pick you up in 10–15 minutes."
+            subtitle = "Your ride is booked." + " " + (dicData?.driver?.name ?? "") + " " + "will pick you up in" + " " + timer + "."
+            
         case .onTheWayToPickup:
-            <#code#>
+            title = "Driver is on the way"
+            subtitle = (dicData?.driver?.name ?? "") + " " + "is heading to your pickup location. Pickup at" + " " + timer + "."
+            
         case .nearPickup:
-            <#code#>
+            title = "Driver is near your pickup"
+            subtitle = (dicData?.driver?.name ?? "") + " " + "is almost there. Please be ready for pickup."
+            
         case .arrivedAtPickup:
-            <#code#>
+            title = "Driver has arrived"
+            subtitle = (dicData?.driver?.name ?? "") + " " + "has arrived at your pickup location."
+            
         case .pickupCompleted:
-            <#code#>
+            title = "Pickup completed"
+            subtitle = "You are on the way to your destination with" + " " + (dicData?.driver?.name ?? "") + "."
+            
         case .onTheWayToDelivery:
-            <#code#>
+            title = "Heading to destination"
+            subtitle = (dicData?.driver?.name ?? "") + " " + "is driving you to your drop-off location."
+            
         case .nearDelivery:
-            <#code#>
+            title = "Almost at destination"
+            subtitle = "You are near your drop-off point."
+            
         case .arrivedAtDelivery:
-            <#code#>
-        case .completed: break
+            title = "Arrived at destination"
+            subtitle = "You have reached your destination."
+            
+        case .completed:
+            title = "Ride completed"
+            subtitle = "Thank you for riding with us! Dropped at"
+            
         case .cancelled: break
-        }*/
+        }
+        
+        lblTitle.text = title
+        lblTimeDis.text = subtitle
     }
     
     // MARK: - handleBookingStatusUpdated
@@ -402,6 +434,12 @@ class TrackLiveVC: UIViewController {
                 dropMarker?.map = mapView
             }
             
+            self.googleMapVM.getDistance(
+                originLat: booking.driver?.location?.lat ?? 0,
+                originLng: booking.driver?.location?.lng ?? 0,
+                destLat: booking.dropAddress?.lat ?? 0,
+                destLng: booking.dropAddress?.lng ?? 0)
+            
         } else {
             
             // 📍 PICKUP PHASE
@@ -413,6 +451,12 @@ class TrackLiveVC: UIViewController {
                 pickupMarker?.title = "Pickup"
                 pickupMarker?.map = mapView
             }
+            
+            self.googleMapVM.getDistance(
+                originLat: booking.driver?.location?.lat ?? 0,
+                originLng: booking.driver?.location?.lng ?? 0,
+                destLat: booking.pickupAddress?.lat ?? 0,
+                destLng: booking.pickupAddress?.lng ?? 0)
         }
         
         updateDriverLocation(lat: booking.driver?.location?.lat ?? 0, lng: booking.driver?.location?.lng ?? 0, heading: 0)
