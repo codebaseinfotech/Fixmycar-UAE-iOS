@@ -106,6 +106,15 @@ class TrackLiveVC: UIViewController {
             
             self.lblRemainigAmount.text = "AED" + " " + "\(dicData?.finalPrice ?? 0.0)"
             
+            if !FMSocketManager.shared.isConnected {
+                FMSocketManager.shared.connect()
+            } else {
+                // Already connected, join room directly
+                if let bookingId = dicData?.bookingID {
+                    FMSocketManager.shared.joinRoom(bookingId: bookingId)
+                }
+            }
+            
             let jobStatus = dicData?.status
             if jobStatus == "pickup_completed" || jobStatus == "on_the_way_to_delivery" || jobStatus == "near_delivery" || jobStatus == "arrived_at_delivery" {
                 self.lblFirstStatus.text = "At pickup"

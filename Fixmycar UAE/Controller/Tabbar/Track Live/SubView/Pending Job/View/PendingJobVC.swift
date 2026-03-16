@@ -141,6 +141,15 @@ extension PendingJobVC {
             let drop = CLLocationCoordinate2D(latitude: dLat, longitude: dLng)
             
             self.showPickupDropAndRoute(pickup: pickup, drop: drop)
+            
+            if !FMSocketManager.shared.isConnected {
+                FMSocketManager.shared.connect()
+            } else {
+                // Already connected, join room directly
+                if let bookingId = d.id {
+                    FMSocketManager.shared.joinRoom(bookingId: bookingId)
+                }
+            }
         }
         
         bookingVM.failureBookingDetails = { [weak self] msg in
