@@ -263,12 +263,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         payload.type == "near_delivery" ||
                         payload.type == "arrived_at_delivery" ||
                         payload.type == "trip_booked_by_admin" ||
-                        payload.type == "trip_cancelled" {
+                        payload.type == "trip_cancelled" ||
+                        payload.type == "trip_cancelled_by_admin" {
                 
                 NotificationCenter.default.post(
                     name: .refrechData,
                     object: nil,
-                    userInfo: ["type": payload.type]
+                    userInfo: ["type": payload.type ?? ""]
                 )
                 print("Driver going to pickup")
             }

@@ -159,7 +159,8 @@ class TrackLiveVC: UIViewController {
 
     // MARK: - refreshBooking
     @objc func refreshBooking(_ notification: NSNotification){
-        if let type = notification.userInfo?["type"] as? String, type == "trip_cancelled" {
+        let type = notification.userInfo?["type"] as? String ?? ""
+        if type == "trip_cancelled" || type == "trip_cancelled_by_admin" {
             tappedBack(self)
         }
         trackLiveVM.getTrackLiveDetails()

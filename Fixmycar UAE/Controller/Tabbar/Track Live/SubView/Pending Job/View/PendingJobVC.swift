@@ -31,12 +31,21 @@ class PendingJobVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshBooking(_:)), name: NSNotification.Name.refrechData, object: nil)
+
         viewBottomPopup.layer.cornerRadius = 20
         viewBottomPopup.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         setupGoogleMap()
         fetchBookingAndShowRoute()
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - refreshBooking
+    @objc func refreshBooking(_ notification: NSNotification){
+        if let type = notification.userInfo?["type"] as? String, type == "job_accepted" {
+            tappedBack(self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
