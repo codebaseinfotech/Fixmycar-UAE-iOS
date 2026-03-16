@@ -462,7 +462,21 @@ class TrackLiveVC: UIViewController {
                 destLng: booking.pickupAddress?.lng ?? 0)
         }
         
-        updateDriverLocation(lat: booking.driver?.location?.lat ?? 0, lng: booking.driver?.location?.lng ?? 0, heading: 0)
+        // Calculate heading from driver to destination
+        let driverCoord = CLLocationCoordinate2D(
+            latitude: booking.driver?.location?.lat ?? 0,
+            longitude: booking.driver?.location?.lng ?? 0
+        )
+
+        let destinationCoord: CLLocationCoordinate2D
+        if isDeliveryPhase(status: booking.status ?? "") {
+            destinationCoord = drop
+        } else {
+            destinationCoord = pickup
+        }
+
+        let bearing = calculateBearing(from: driverCoord, to: destinationCoord)
+        updateDriverLocation(lat: booking.driver?.location?.lat ?? 0, lng: booking.driver?.location?.lng ?? 0, heading: bearing)
         updateRoute()
         
         
@@ -654,9 +668,9 @@ extension TrackLiveVC: CLLocationManagerDelegate {
     func updateDriverLocation(lat: Double,
                               lng: Double,
                               heading: Double?) {
-        
+
         let newPosition = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-        
+
         if driverMarker == nil {
             driverMarker = GMSMarker(position: newPosition)
             driverMarker?.icon = UIImage(named: "ic_truck_1")
@@ -664,14 +678,33 @@ extension TrackLiveVC: CLLocationManagerDelegate {
             driverMarker?.isFlat = true
             driverMarker?.map = mapView
         }
-        
+
         CATransaction.begin()
         CATransaction.setAnimationDuration(1.0)
-        
+
         driverMarker?.position = newPosition
-        driverMarker?.rotation = heading ?? 0
-        
+        if let heading = heading {
+            // GMSMarker rotation is clockwise from north
+            // Truck image faces DOWN (south) at rotation 0, so subtract 180
+            driverMarker?.rotation = heading - 180
+        }
+
         CATransaction.commit()
+    }
+
+    // MARK: - Calculate Bearing
+    func calculateBearing(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double {
+        let lat1 = from.latitude * .pi / 180
+        let lat2 = to.latitude * .pi / 180
+        let deltaLng = (to.longitude - from.longitude) * .pi / 180
+
+        let x = sin(deltaLng) * cos(lat2)
+        let y = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(deltaLng)
+
+        var bearing = atan2(x, y) * 180 / .pi
+        bearing = fmod(bearing + 360, 360)
+
+        return bearing
     }
     
 }
