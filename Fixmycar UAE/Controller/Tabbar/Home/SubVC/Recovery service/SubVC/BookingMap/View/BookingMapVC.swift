@@ -75,8 +75,20 @@ class BookingMapVC: UIViewController {
         
         setupMap()
         setupSearchField()
-
+        addCenterPin()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func addCenterPin() {
+
+        let pinImage = UIImageView(image: "live_location_icon".image)
+        pinImage.frame = CGRect(x: 0, y: 0, width: 45, height: 45)
+
+        pinImage.center = view.center
+        pinImage.contentMode = .scaleAspectFit
+
+        view.addSubview(pinImage)
     }
     
     // MARK: - TV height set
@@ -198,6 +210,7 @@ extension BookingMapVC: CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
 
+        mapView.delegate = self
 //        mapView.settings.myLocationButton = true
     }
 
@@ -209,7 +222,7 @@ extension BookingMapVC: CLLocationManagerDelegate {
         let camera = GMSCameraPosition.camera(
             withLatitude: location.coordinate.latitude,
             longitude: location.coordinate.longitude,
-            zoom: 15
+            zoom: 17
         )
 
         mapView.animate(to: camera)
@@ -249,7 +262,7 @@ extension BookingMapVC {
             locationMarker?.groundAnchor = CGPoint(x: 0.5, y: 0.5)
         }
 
-        locationMarker?.map = mapView
+//        locationMarker?.map = mapView
     }
 }
 
@@ -350,3 +363,31 @@ extension BookingMapVC: UITextFieldDelegate {
 }
 
 
+
+extension BookingMapVC: GMSMapViewDelegate {
+
+    /*func mapView(_ mapView: GMSMapView, didBeginDragging marker: GMSMarker) {
+        print("Start dragging marker")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didDrag marker: GMSMarker) {
+        print("Dragging marker")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
+        print("Marker drag finished")
+    }*/
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+
+        let coordinate = position.target
+
+        // Update marker position
+        showMarker(at: coordinate)
+
+        // Save selected coordinate
+        selectedCoordinate = coordinate
+
+        // Get address for new pin location
+        getAddressFromCoordinate(coordinate)
+    }
+}

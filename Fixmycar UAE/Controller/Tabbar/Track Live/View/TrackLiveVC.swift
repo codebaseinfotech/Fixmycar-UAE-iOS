@@ -86,7 +86,7 @@ class TrackLiveVC: UIViewController {
         setupBottomSheet()
         viewMainTop.constant = collapsedTop
 
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshBooking(_notification:)), name: NSNotification.Name.refrechData, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshBooking(_:)), name: NSNotification.Name.refrechData, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleBookingStatusUpdated(_:)), name: .bookingStatusUpdated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleSocketConnected), name: .socketConnected, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleDriverLocationUpdated(_:)), name: .driverLocationUpdated, object: nil)
@@ -158,7 +158,10 @@ class TrackLiveVC: UIViewController {
     }
 
     // MARK: - refreshBooking
-    @objc func refreshBooking(_notification: NSNotification){
+    @objc func refreshBooking(_ notification: NSNotification){
+        if let type = notification.userInfo?["type"] as? String, type == "trip_cancelled" {
+            tappedBack(self)
+        }
         trackLiveVM.getTrackLiveDetails()
     }
 
