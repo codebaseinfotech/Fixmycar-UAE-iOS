@@ -64,7 +64,7 @@ class LoginVC: UIViewController {
         )
         
         text.append(NSAttributedString(
-            string: "Fixmycar UAE",
+            string: "FixMyCar UAE",
             attributes: [
                 .font: UIFont.AppFont.black(30),
                 .foregroundColor: #colorLiteral(red: 0.8196078431, green: 0, blue: 0.04705882353, alpha: 1)

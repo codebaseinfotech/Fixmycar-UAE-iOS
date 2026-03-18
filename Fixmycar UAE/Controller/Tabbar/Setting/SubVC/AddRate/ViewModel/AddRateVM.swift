@@ -19,7 +19,14 @@ class AddRateVM {
     var bookingId: Int?
     
     func addRate() {
-        let bookingId = bookingId != 0 ? bookingId ?? 0 : notificationPayload?.bookingId ?? 0
+        var bookingId = 0
+        
+        if notificationPayload != nil {
+            bookingId = notificationPayload?.bookingId ?? 0
+        } else {
+            bookingId = self.bookingId ?? 0
+        }
+        
         let pathComponet = "/" + "\(bookingId)" + "/" + "review"
         let params: [String: Any] = [
             "rating": rating ?? 0,

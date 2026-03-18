@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A0DCFAE0-F79E-427C-A845-60D249D4760A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/Controller/Tabbar/Home/SubVC/Recovery service/SubVC/BookingPayment/ViewModel/BookingPaymentVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "createBooking()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4E5A81F9-9D91-4F7A-87AF-85395A6E5BB4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -34,6 +18,36 @@
             endingLineNumber = "44"
             landmarkName = "getBookingDetails()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4E5A81F9-9D91-4F7A-87AF-85395A6E5BB4 - d1b962736ecbf964"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Fixmycar_UAE.BookingDetailsResponse&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in Fixmycar_UAE.BookingDetailsVM.getBookingDetails() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/History/SubVC/BookingDetails/ViewModel/BookingDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44">
+               </Location>
+               <Location
+                  uuid = "4E5A81F9-9D91-4F7A-87AF-85395A6E5BB4 - 1d18e94efd2719c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FixMyCar_UAE.BookingDetailsResponse&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in FixMyCar_UAE.BookingDetailsVM.getBookingDetails() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/History/SubVC/BookingDetails/ViewModel/BookingDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -50,6 +64,36 @@
             endingLineNumber = "38"
             landmarkName = "getBookingDetails()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "160600CB-B840-41FD-8598-6CFCA4F1611E - d1b962736ecbfe3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Fixmycar_UAE.BookingDetailsResponse&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in Fixmycar_UAE.BookingDetailsVM.getBookingDetails() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/History/SubVC/BookingDetails/ViewModel/BookingDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+               <Location
+                  uuid = "160600CB-B840-41FD-8598-6CFCA4F1611E - 1d18e94efd271e9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FixMyCar_UAE.BookingDetailsResponse&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in FixMyCar_UAE.BookingDetailsVM.getBookingDetails() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/History/SubVC/BookingDetails/ViewModel/BookingDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -66,134 +110,36 @@
             endingLineNumber = "32"
             landmarkName = "getBookingDetails()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1AD98D53-9E88-45FF-A480-CFB45ACF8478"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "handleReceiveMessage(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6F491198-0B1A-4E24-8F2F-78BD2EC33416"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "handleReceiveMessage(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A945B375-EF33-434B-BF57-F49536C001F7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "sendMessage(bookingId:message:messageType:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9566255B-7EBF-4A40-956E-C3D138FE0763"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "sendMessage(bookingId:message:messageType:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D245B6BD-B77D-41AA-A8F3-7D83357290FF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "sendMessage(bookingId:message:messageType:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1EAA078F-DFE4-4757-A914-CAA4BED8107B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "sendMessage(bookingId:message:messageType:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C763FF7-7FB6-47E2-8CD5-3EC00D1C933A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "sendMessage(bookingId:message:messageType:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A27F927E-6D62-41B2-9A52-1D28AFFC2EB3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "sendMessage(bookingId:message:messageType:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C04C39FC-F17F-4775-9280-85D11745E622 - d1b962736ecbfff0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Fixmycar_UAE.BookingDetailsResponse&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in Fixmycar_UAE.BookingDetailsVM.getBookingDetails() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/History/SubVC/BookingDetails/ViewModel/BookingDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32">
+               </Location>
+               <Location
+                  uuid = "C04C39FC-F17F-4775-9280-85D11745E622 - 1d18e94efd271f50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FixMyCar_UAE.BookingDetailsResponse&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in FixMyCar_UAE.BookingDetailsVM.getBookingDetails() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/History/SubVC/BookingDetails/ViewModel/BookingDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -226,38 +172,36 @@
             endingLineNumber = "78"
             landmarkName = "disconnect()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "76D88F89-C578-4EFA-A412-1A5C7C6B4CEF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "connectSocketAndJoinAllRooms()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C42F66F3-D5DD-4225-AA7E-8DBE4EB3D0F7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "joinAllChatRooms()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7063F108-45DA-492C-8ABE-C6F6BD142B4B - 3621c65f933ff28f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.FMSocketManager.disconnect() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/API%20Manager/SocketManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78">
+               </Location>
+               <Location
+                  uuid = "7063F108-45DA-492C-8ABE-C6F6BD142B4B - e1d620ba4c6eb50f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.FMSocketManager.disconnect() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/API%20Manager/SocketManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -274,6 +218,36 @@
             endingLineNumber = "170"
             landmarkName = "connectSocket()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71608059-A43F-44C9-93AD-618C59436C70 - 7057a590f1fb9ae5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.UserChatVC.connectSocket() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170">
+               </Location>
+               <Location
+                  uuid = "71608059-A43F-44C9-93AD-618C59436C70 - 28f33cf6dac95ae5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.UserChatVC.connectSocket() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -290,6 +264,36 @@
             endingLineNumber = "174"
             landmarkName = "connectSocket()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "59B55470-6C73-4C79-A1C4-D5134E067799 - 7057a590f1fb9a69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.UserChatVC.connectSocket() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174">
+               </Location>
+               <Location
+                  uuid = "59B55470-6C73-4C79-A1C4-D5134E067799 - 28f33cf6dac95a69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.UserChatVC.connectSocket() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -306,6 +310,36 @@
             endingLineNumber = "199"
             landmarkName = "handleSocketConnected()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6D1BB123-E74C-4DB2-8E01-3BD4322B9E0E - f99a99d75d98f185"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.UserChatVC.handleSocketConnected() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199">
+               </Location>
+               <Location
+                  uuid = "6D1BB123-E74C-4DB2-8E01-3BD4322B9E0E - cf6bb554c203185"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.UserChatVC.handleSocketConnected() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -322,6 +356,36 @@
             endingLineNumber = "282"
             landmarkName = "tappedSend(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "928930AB-F87A-4316-9CD9-7D707A88B140 - 506471abb0540b10"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.UserChatVC.tappedSend(Any) -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282">
+               </Location>
+               <Location
+                  uuid = "928930AB-F87A-4316-9CD9-7D707A88B140 - 8c448ab9862ca90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.UserChatVC.tappedSend(Any) -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -338,54 +402,404 @@
             endingLineNumber = "290"
             landmarkName = "tappedSend(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C127AF5-25FA-461A-B55D-65D3E44A77E0 - 506471abb0540c18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.UserChatVC.tappedSend(Any) -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "290"
+                  endingLineNumber = "290">
+               </Location>
+               <Location
+                  uuid = "4C127AF5-25FA-461A-B55D-65D3E44A77E0 - 8c448ab9862cd98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.UserChatVC.tappedSend(Any) -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Chat/SubVC/UserChat/View/UserChatVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "290"
+                  endingLineNumber = "290">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CD49F712-FC06-434D-8905-311963A43E8D"
+            uuid = "575506AD-0804-4963-90E2-236ACEDDB502"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
+            filePath = "Fixmycar UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "joinRoom(bookingId:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "addRate()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "575506AD-0804-4963-90E2-236ACEDDB502 - 2d758d1a821a84d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36">
+               </Location>
+               <Location
+                  uuid = "575506AD-0804-4963-90E2-236ACEDDB502 - 3c21fa2be427f4d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EF026F6B-2B38-43C8-A882-C74E1D0FF704"
+            uuid = "609269EC-EBB8-43BF-B1D8-5159365E9EEE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fixmycar UAE/API Manager/SocketManager.swift"
+            filePath = "Fixmycar UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "joinRoom(bookingId:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "addRate()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "609269EC-EBB8-43BF-B1D8-5159365E9EEE - 2d758d1a821a850b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+               <Location
+                  uuid = "609269EC-EBB8-43BF-B1D8-5159365E9EEE - 3c21fa2be427f50b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38A0F60A-5B68-4588-84B8-47EA16512926"
+            uuid = "A0829161-5C18-407E-872A-EEB4714F8888"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fixmycar UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "addRate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A0829161-5C18-407E-872A-EEB4714F8888 - 2d758d1a821a8412"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+               <Location
+                  uuid = "A0829161-5C18-407E-872A-EEB4714F8888 - 3c21fa2be427f412"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "171F011A-27A6-45F6-9943-BF92AE054ABC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fixmycar UAE/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "handleSocketConnected()"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "setupOneSignal(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "171F011A-27A6-45F6-9943-BF92AE054ABC - 8e931af673f409bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.OSNotification&gt;) -&gt; () in Fixmycar_UAE.AppDelegate.setupOneSignal(Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "253"
+                  endingLineNumber = "253">
+               </Location>
+               <Location
+                  uuid = "171F011A-27A6-45F6-9943-BF92AE054ABC - e9289e23da02493c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.OSNotification&gt;) -&gt; () in FixMyCar_UAE.AppDelegate.setupOneSignal(Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "253"
+                  endingLineNumber = "253">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E3B4221-17CB-45D0-88A7-40978C50E021"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fixmycar UAE/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
+            landmarkName = "setupOneSignal(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2E3B4221-17CB-45D0-88A7-40978C50E021 - 241c29eb3145614b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;__C.OSNotificationOpenedResult&gt;) -&gt; () in Fixmycar_UAE.AppDelegate.setupOneSignal(Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "288"
+                  endingLineNumber = "288">
+               </Location>
+               <Location
+                  uuid = "2E3B4221-17CB-45D0-88A7-40978C50E021 - 9e756b97c25da54b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;__C.OSNotificationOpenedResult&gt;) -&gt; () in FixMyCar_UAE.AppDelegate.setupOneSignal(Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "288"
+                  endingLineNumber = "288">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0185B5D8-0E5F-455A-A799-E4BC237DBA90"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fixmycar UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "addRate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0185B5D8-0E5F-455A-A799-E4BC237DBA90 - 2d758d1a821a84d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36">
+               </Location>
+               <Location
+                  uuid = "0185B5D8-0E5F-455A-A799-E4BC237DBA90 - 3c21fa2be427f4d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5FBF453-3DF6-405F-BD9E-C20F71706DA5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fixmycar UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "addRate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F5FBF453-3DF6-405F-BD9E-C20F71706DA5 - 2d758d1a821a858f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+               <Location
+                  uuid = "F5FBF453-3DF6-405F-BD9E-C20F71706DA5 - 3c21fa2be427f58f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27AEC399-05B6-4FF7-854C-6F8934A2982F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fixmycar UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "addRate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "27AEC399-05B6-4FF7-854C-6F8934A2982F - 2d758d1a821a824d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fixmycar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "Fixmycar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+               <Location
+                  uuid = "27AEC399-05B6-4FF7-854C-6F8934A2982F - 3c21fa2be427f24d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FixMyCar_UAE.AddRateVM.addRate() -&gt; ()"
+                  moduleName = "FixMyCar UAE.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenil/Documents/2026%20Project/iOS_Fixmycar_UAE/Fixmycar%20UAE/Controller/Tabbar/Setting/SubVC/AddRate/ViewModel/AddRateVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

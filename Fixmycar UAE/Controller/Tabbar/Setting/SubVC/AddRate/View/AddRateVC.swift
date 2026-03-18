@@ -25,6 +25,8 @@ class AddRateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("bookingIDReview: ", addRateVM.notificationPayload?.bookingId ?? 0)
+        
         txtRateVie.delegate = self
         txtRateVie.isScrollEnabled = false
 
