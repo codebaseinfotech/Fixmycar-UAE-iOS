@@ -7,15 +7,13 @@
 
 import Foundation
 
-let google_place_key = "AIzaSyD4Fl5fv1u4g-96GrYYGCJmqCtTx6fs_CI"
-var ONE_SINGNAL_ID = "7c0b8947-9a28-4b72-ad45-87403b4676f2"
 
 enum AppEnviroment {
     case live
     case dev
 }
 
-let current: AppEnviroment = .dev
+let current: AppEnviroment = .live
 var isDebugPrint: Bool = true
 
 
@@ -25,7 +23,11 @@ let BASE_URL = current == .live ? "https://admin.torettorecovery.ae/api/" : "htt
 // ************************* WEBSOCKET ***********************
 let SOCKET_URL = current == .live ? "https://ws.torettorecovery.ae" : "https://ws-dev.torettorecovery.ae"
 
+// ************************* ONE_SINGNAL_ID ***********************
+let ONE_SINGNAL_ID = current == .live ? "1028df7f-db8a-4a2e-845c-185f5d2be0ea" : "7c0b8947-9a28-4b72-ad45-87403b4676f2"
 
+
+let google_place_key = "AIzaSyD4Fl5fv1u4g-96GrYYGCJmqCtTx6fs_CI"
 
 enum APIEndPoint: String {
     
