@@ -281,6 +281,8 @@ class TrackLiveVC: UIViewController {
 
         let heading = userInfo["heading"] as? Double ?? 0
         let speed = userInfo["speed"] as? Double ?? 0
+        let route_polyline = userInfo["route_polyline"] as? String ?? ""
+        debugPrint("Driver polylines: \(route_polyline)")
 
         debugPrint("[SOCKET] Driver location updated - lat: \(lat), lng: \(lng), heading: \(heading), speed: \(speed)")
 
