@@ -176,7 +176,7 @@ class BookingDetailsVC: UIViewController {
             
             lblUserName.text = bookingVM.bookingDetails?.driver?.name
             imgUser.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
-            lblRating.text = bookingVM.bookingDetails?.driver?.rating ?? "0.0"
+            lblRating.text = "\(bookingVM.bookingDetails?.driverAverageRating ?? 0.0)"
             
             lblVehicleType.text = bookingVM.bookingDetails?.driver?.vehicleModel ?? "-"
             lblVehicleNum.text = bookingVM.bookingDetails?.driver?.vehicleNumber ?? "-"
@@ -216,7 +216,7 @@ class BookingDetailsVC: UIViewController {
     
     
     @IBAction func clickedInvoice(_ sender: Any) {
-        let link = bookingVM.bookingDetails?.invoiceUrl ?? ""
+        let link = bookingVM.bookingDetails?.invoiceURL ?? ""
         guard let url = URL(string: link) else {
             debugPrint("Invalid URL")
             return

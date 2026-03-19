@@ -11,7 +11,7 @@ class BookingDetailsVM {
     var successBookingDetails: (() -> Void)?
     var failureBookingDetails: ((String) -> Void)?
     
-    var bookingDetails: BookingDetails?
+    var bookingDetails: BookingDetailData?
     
     var bookingid: Int?
     func getBookingDetails() {
@@ -22,7 +22,7 @@ class BookingDetailsVM {
             method: .get,
             url: APIEndPoint.bookingList,
             pathComponent: pathComponents,
-            responseType: BookingDetailsResponse.self,
+            responseType: BookingDetailResponse.self,
             parameterEncoding: .url) { [weak self] response, error, statusCode in
                 
                 guard let self = self else { return }
