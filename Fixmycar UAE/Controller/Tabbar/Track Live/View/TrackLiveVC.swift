@@ -698,8 +698,7 @@ extension TrackLiveVC: CLLocationManagerDelegate {
         driverMarker?.position = newPosition
         if let heading = heading {
             // GMSMarker rotation is clockwise from north
-            // Truck image faces DOWN (south) at rotation 0, so subtract 180
-            driverMarker?.rotation = heading - 180
+            driverMarker?.rotation = heading
         }
 
         CATransaction.commit()
