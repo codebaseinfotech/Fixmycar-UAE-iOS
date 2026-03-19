@@ -248,7 +248,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             if payload.type == "completed" {
                 if FCUtilites.getIsCurrentUser() {
-                    NotificationCenter.default.post(name: .refrechData, object: nil)
+                    NotificationCenter.default.post(
+                        name: .refrechData,
+                        object: nil,
+                        userInfo: ["type": payload.type ?? ""]
+                    )
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
                         self.presentAdminAssignPopup(payload: payload)
                     })

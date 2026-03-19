@@ -99,6 +99,7 @@ class TrackLiveVC: UIViewController {
             self.lblTitle.text = "Your request is assigned to \(dicData?.driver?.name ?? "")"
             self.lblTimeDis.text = "Your ride request is assigned to the \(dicData?.driver?.name ?? ""). arriving soon for pick up."
             self.lblUserName.text = dicData?.driver?.name
+            self.imgUser.loadFromUrlString(dicData?.driver?.image ?? "")
             self.lblRate.text = "\(dicData?.driver?.rating ?? 0.0)"
             self.lblCarName.text = dicData?.vehicleType ?? ""
             self.lblPlateNumber.text = dicData?.vehicleNumber
@@ -169,7 +170,7 @@ class TrackLiveVC: UIViewController {
     // MARK: - refreshBooking
     @objc func refreshBooking(_ notification: NSNotification){
         let type = notification.userInfo?["type"] as? String ?? ""
-        if type == "trip_cancelled" || type == "trip_cancelled_by_admin" {
+        if type == "trip_cancelled" || type == "trip_cancelled_by_admin" || type == "completed" {
             tappedBack(self)
         }
         trackLiveVM.getTrackLiveDetails()

@@ -52,6 +52,7 @@ struct TrackLiveDriver: Codable {
     let id: Int?
     let name: String?
     let phone: String?
+    let image: String?
     let rating: Double?
     let location: TrackLiveDriverLocation?
 }
