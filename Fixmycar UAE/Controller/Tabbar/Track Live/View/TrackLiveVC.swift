@@ -9,8 +9,8 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class TrackLiveVC: UIViewController {
-    
+class TrackLiveVC: UIViewController, GMSMapViewDelegate {
+
     @IBOutlet weak var viewMap: UIView! {
         didSet {
             viewMap.isHidden = true
@@ -63,6 +63,10 @@ class TrackLiveVC: UIViewController {
     private var dropMarker: GMSMarker?
     private var currentDriverCoordinate: CLLocationCoordinate2D?
     var polyline: GMSPolyline?
+
+    // Track user interaction with map
+    private var isUserInteracting: Bool = false
+    private var lastDriverHeading: Double = 0
     
     var collapsedTop: CGFloat {
         view.safeAreaLayoutGuide.layoutFrame.height * 0.15
@@ -397,16 +401,37 @@ class TrackLiveVC: UIViewController {
     }
     
     func setupGoogleMap() {
-        
+
         let camera = GMSCameraPosition.camera(
             withLatitude: 23.1368,
             longitude: 72.5526,
-            zoom: 16
+            zoom: 17
         )
-        
+
         mapView = GMSMapView(frame: viewMap.bounds, camera: camera)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        // Enable map gestures for manual control
+        mapView.settings.rotateGestures = true
+        mapView.settings.scrollGestures = true
+        mapView.settings.zoomGestures = true
+        mapView.settings.tiltGestures = true
+
+        // Set delegate for user interaction detection
+        mapView.delegate = self
+
         viewMap.addSubview(mapView)
+    }
+
+    // MARK: - GMSMapViewDelegate
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        if gesture {
+            isUserInteracting = true
+        }
+    }
+
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        // Map stopped moving
     }
     
     private func setupMap() {
@@ -432,11 +457,9 @@ class TrackLiveVC: UIViewController {
         )
         currentDriverCoordinate = driver
         
-        let camera = GMSCameraPosition.camera(
-            withTarget: driver,
-            zoom: 16
-        )
-        mapView.animate(to: camera)
+        // Animate camera to driver location
+        mapView.animate(toLocation: driver)
+        mapView.animate(toZoom: 17)
         
         if isDeliveryPhase(status: booking.status ?? "") {
             
@@ -684,11 +707,17 @@ extension TrackLiveVC: CLLocationManagerDelegate {
 
         let newPosition = CLLocationCoordinate2D(latitude: lat, longitude: lng)
 
+        // Store heading
+        if let heading = heading {
+            lastDriverHeading = heading
+        }
+
         if driverMarker == nil {
             driverMarker = GMSMarker(position: newPosition)
             driverMarker?.icon = UIImage(named: "ic_truck_1")
             driverMarker?.groundAnchor = CGPoint(x: 0.5, y: 0.5)
             driverMarker?.isFlat = true
+            driverMarker?.rotation = lastDriverHeading
             driverMarker?.map = mapView
         }
 
@@ -696,12 +725,23 @@ extension TrackLiveVC: CLLocationManagerDelegate {
         CATransaction.setAnimationDuration(1.0)
 
         driverMarker?.position = newPosition
-        if let heading = heading {
-            // GMSMarker rotation is clockwise from north
-            driverMarker?.rotation = heading
-        }
+        driverMarker?.rotation = lastDriverHeading
 
         CATransaction.commit()
+
+        // Camera follows driver (only if user is not manually controlling)
+        if !isUserInteracting {
+            mapView.animate(toLocation: newPosition)
+        }
+    }
+
+    // MARK: - Re-center to driver
+    @IBAction func tappedReCenter(_ sender: Any) {
+        isUserInteracting = false
+        if let coord = currentDriverCoordinate {
+            mapView.animate(toLocation: coord)
+            mapView.animate(toZoom: 17)
+        }
     }
 
     // MARK: - Calculate Bearing
