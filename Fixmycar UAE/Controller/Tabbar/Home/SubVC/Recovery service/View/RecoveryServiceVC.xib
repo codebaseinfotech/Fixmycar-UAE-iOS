@@ -170,10 +170,10 @@
                     <rect key="frame" x="0.0" y="209" width="393" height="507"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLE-Ye-gYj">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="972"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="977"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zMT-xc-AA6">
-                                    <rect key="frame" x="20" y="0.0" width="353" height="952"/>
+                                    <rect key="frame" x="20" y="0.0" width="353" height="957"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy8-GC-1Nm">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="141"/>
@@ -501,7 +501,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RHD-XD-vA5">
                                                     <rect key="frame" x="0.0" y="0.0" width="353" height="71"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rg-7e-qXw" customClass="AppLabel" customModule="FixMyCar_UAE" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rg-7e-qXw" customClass="AppLabel" customModule="FixMyCar_UAE" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="19" id="koz-nf-6wC"/>
@@ -616,10 +616,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rD-Fw-FEB">
-                                            <rect key="frame" x="0.0" y="637" width="353" height="155"/>
+                                            <rect key="frame" x="0.0" y="637" width="353" height="160"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tzd-ul-nEu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="155"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="160"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbE-O2-PGz" customClass="AppLabel" customModule="FixMyCar_UAE" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="20"/>
@@ -628,10 +628,10 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8Ve-hR-AUb">
-                                                            <rect key="frame" x="0.0" y="30" width="353" height="125"/>
+                                                            <rect key="frame" x="0.0" y="30" width="353" height="130"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="125" id="xE4-hl-tKw"/>
+                                                                <constraint firstAttribute="height" constant="130" id="xE4-hl-tKw"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TdW-pA-hWg">
                                                                 <size key="itemSize" width="128" height="128"/>
@@ -652,7 +652,7 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Crb-Co-Y7P">
-                                            <rect key="frame" x="0.0" y="822" width="353" height="130"/>
+                                            <rect key="frame" x="0.0" y="827" width="353" height="130"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="XS9-G2-EAz">
                                                     <rect key="frame" x="0.0" y="0.0" width="353" height="20"/>

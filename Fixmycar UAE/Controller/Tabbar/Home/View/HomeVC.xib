@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -43,7 +42,7 @@
                     <rect key="frame" x="0.0" y="96" width="414" height="60"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Vqg-7M-jEM">
-                            <rect key="frame" x="20" y="0.0" width="102" height="56"/>
+                            <rect key="frame" x="20" y="0.0" width="102" height="54"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NIO-zm-A61">
                                     <rect key="frame" x="0.0" y="0.0" width="102" height="20"/>
@@ -71,10 +70,10 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYO-2y-4GP">
-                                    <rect key="frame" x="0.0" y="26" width="64" height="30"/>
+                                    <rect key="frame" x="0.0" y="26" width="61.5" height="28"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbh-kF-Yhq">
-                                            <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="61.5" height="28"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="24"/>
                                             <color key="textColor" name="primery_black"/>
                                             <nil key="highlightedColor"/>
@@ -140,10 +139,10 @@
                     <rect key="frame" x="0.0" y="159" width="414" height="707"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BdR-N6-ZF2">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="484"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="482.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xd7-ep-cCR">
-                                    <rect key="frame" x="20" y="20" width="374" height="444"/>
+                                    <rect key="frame" x="20" y="20" width="374" height="442.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVP-kE-uVG">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="148"/>
@@ -152,7 +151,7 @@
                                                     <rect key="frame" x="188" y="0.0" width="186" height="148"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMY-37-TLW">
-                                                    <rect key="frame" x="20" y="20" width="188.5" height="40"/>
+                                                    <rect key="frame" x="20" y="20" width="182" height="37.5"/>
                                                     <string key="text">Get AED 20 OFF on your 
 first recovery</string>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
@@ -200,10 +199,10 @@ first recovery</string>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-LH-sTH">
-                                            <rect key="frame" x="0.0" y="168" width="374" height="165.5"/>
+                                            <rect key="frame" x="0.0" y="168" width="374" height="164"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovQ-6X-dCd" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
                                                     <color key="textColor" name="primery_black"/>
                                                     <nil key="highlightedColor"/>
@@ -212,7 +211,7 @@ first recovery</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ep4-cv-nUZ">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="133"/>
+                                                    <rect key="frame" x="0.0" y="31" width="374" height="133"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfq-YY-KyB">
                                                             <rect key="frame" x="0.0" y="0.0" width="179.5" height="133"/>
@@ -232,7 +231,7 @@ first recovery</string>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW7-MS-dI9" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                                    <rect key="frame" x="12" y="101" width="69.5" height="20"/>
+                                                                    <rect key="frame" x="12" y="101.5" width="67.5" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                                     <color key="textColor" name="primery_black"/>
                                                                     <nil key="highlightedColor"/>
@@ -285,7 +284,7 @@ first recovery</string>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jump start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYD-AT-YlK" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                                    <rect key="frame" x="12" y="101" width="80.5" height="20"/>
+                                                                    <rect key="frame" x="12" y="101.5" width="77" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                                                     <color key="textColor" name="primery_black"/>
                                                                     <nil key="highlightedColor"/>
@@ -328,29 +327,29 @@ first recovery</string>
                                             </subviews>
                                         </stackView>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doK-RC-mBL">
-                                            <rect key="frame" x="0.0" y="343.5" width="374" height="285"/>
+                                            <rect key="frame" x="0.0" y="342" width="374" height="285"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ4-vh-0di" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="21"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
                                                     <color key="textColor" name="primery_black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuD-FS-LX4">
-                                                    <rect key="frame" x="0.0" y="36.5" width="374" height="248.5"/>
+                                                    <rect key="frame" x="0.0" y="35" width="374" height="250"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vrN-M4-j1c">
-                                                            <rect key="frame" x="12" y="12" width="350" height="224.5"/>
+                                                            <rect key="frame" x="12" y="12" width="350" height="226"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gZ-2A-gHF" customClass="RecentBookingsView" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="178.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="180"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLv-yv-pYb">
-                                                                    <rect key="frame" x="0.0" y="188.5" width="350" height="36"/>
+                                                                    <rect key="frame" x="0.0" y="190" width="350" height="36"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Tracking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOH-Ro-P6L" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                                            <rect key="frame" x="129" y="9.5" width="92" height="17.5"/>
+                                                                            <rect key="frame" x="132" y="10" width="86.5" height="16.5"/>
                                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                             <color key="textColor" name="White"/>
                                                                             <nil key="highlightedColor"/>
@@ -374,7 +373,7 @@ first recovery</string>
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0q2-1K-WB4">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="248.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <connections>
                                                                 <action selector="tappedActiveJob:" destination="-1" eventType="touchUpInside" id="Sfa-4P-FCm"/>
@@ -417,12 +416,12 @@ first recovery</string>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="shq-OP-GOy">
-                                            <rect key="frame" x="0.0" y="353.5" width="374" height="90.5"/>
+                                            <rect key="frame" x="0.0" y="352" width="374" height="90.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnf-DE-763">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59A-3o-CL5" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59A-3o-CL5" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="314" height="26.5"/>
                                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="18"/>
                                                             <color key="textColor" name="primery_black"/>
@@ -472,16 +471,16 @@ first recovery</string>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Iho-4Q-57s">
-                                                            <rect key="frame" x="14" y="160" width="346" height="6"/>
+                                                            <rect key="frame" x="15.5" y="160" width="343.5" height="6"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No history found yet !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zek-jp-TEE">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="346" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="343.5" height="0.0"/>
                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your first recovery request to get started." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXj-d4-j6k">
-                                                                    <rect key="frame" x="0.0" y="6" width="346" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="6" width="343.5" height="0.0"/>
                                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="16"/>
                                                                     <color key="textColor" name="Gray"/>
                                                                     <nil key="highlightedColor"/>
@@ -522,16 +521,16 @@ first recovery</string>
                                     <rect key="frame" x="0.0" y="0.0" width="91" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9V9-0W-f8B">
-                                            <rect key="frame" x="26" y="19" width="39" height="42.5"/>
+                                            <rect key="frame" x="26.5" y="19.5" width="38" height="41.5"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_s_home" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-d7-7IB">
-                                                    <rect key="frame" x="8.5" y="0.0" width="22" height="22"/>
+                                                    <rect key="frame" x="8" y="0.0" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="UPX-yp-ahW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfX-eo-3rj" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="39" height="17.5"/>
+                                                    <rect key="frame" x="0.0" y="25" width="38" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="White"/>
                                                     <nil key="highlightedColor"/>
@@ -556,7 +555,7 @@ first recovery</string>
                                     <rect key="frame" x="101" y="0.0" width="91" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-tY-JGN">
-                                            <rect key="frame" x="23.5" y="19" width="44.5" height="42.5"/>
+                                            <rect key="frame" x="23.5" y="19.5" width="44.5" height="41.5"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_history" translatesAutoresizingMaskIntoConstraints="NO" id="vPv-rP-aSs">
                                                     <rect key="frame" x="11" y="0.0" width="22" height="22"/>
@@ -565,7 +564,7 @@ first recovery</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSM-2Z-7i1" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="44.5" height="17.5"/>
+                                                    <rect key="frame" x="0.0" y="25" width="44.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
@@ -593,7 +592,7 @@ first recovery</string>
                                     <rect key="frame" x="202" y="0.0" width="91" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="s4H-Xl-Yn9">
-                                            <rect key="frame" x="30.5" y="19" width="30.5" height="42.5"/>
+                                            <rect key="frame" x="30.5" y="19.5" width="30" height="41.5"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_chat" translatesAutoresizingMaskIntoConstraints="NO" id="Ok7-VI-kNG">
                                                     <rect key="frame" x="4" y="0.0" width="22" height="22"/>
@@ -602,7 +601,7 @@ first recovery</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq5-mU-hxQ" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="30.5" height="17.5"/>
+                                                    <rect key="frame" x="0.0" y="25" width="30" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>
@@ -630,7 +629,7 @@ first recovery</string>
                                     <rect key="frame" x="303" y="0.0" width="91" height="80"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="umt-bs-hUV">
-                                            <rect key="frame" x="20" y="19" width="51" height="42.5"/>
+                                            <rect key="frame" x="20" y="19.5" width="51.5" height="41.5"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_un_settings" translatesAutoresizingMaskIntoConstraints="NO" id="NWG-i3-YBQ">
                                                     <rect key="frame" x="14.5" y="0.0" width="22" height="22"/>
@@ -639,7 +638,7 @@ first recovery</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cja-PO-8qE" customClass="AppLabel" customModule="Fixmycar_UAE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="25" width="51" height="17.5"/>
+                                                    <rect key="frame" x="0.0" y="25" width="51.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                     <color key="textColor" name="Gray"/>
                                                     <nil key="highlightedColor"/>

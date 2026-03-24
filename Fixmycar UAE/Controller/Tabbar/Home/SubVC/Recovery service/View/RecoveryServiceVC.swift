@@ -144,8 +144,11 @@ class RecoveryServiceVC: UIViewController {
             debugPrint("Selected item: \(item) at index: \(index)")
 
             self.lblVehicleMake.text = item
-            self.lblVehicleModel.text = "Select Model"
+            self.lblVehicleMake.textColor = .black
             
+            self.lblVehicleModel.text = "Select Model"
+            self.lblVehicleModel.textColor = UIColor(hexString: "#828282")
+
             for obj in recoveryVM.vehicleMake! {
                 if obj.name == item {
                     self.recoveryVM.getVehicelModel(id: obj.id ?? 0)
@@ -181,6 +184,7 @@ class RecoveryServiceVC: UIViewController {
             debugPrint("Selected item: \(item) at index: \(index)")
 
             self.lblVehicleModel.text = item
+            self.lblVehicleModel.textColor = .black
         }
         
         dropDownVehicleModel.bottomOffset = CGPoint(x: 0, y: viewVehicleModel.bounds.height)
@@ -506,6 +510,7 @@ extension RecoveryServiceVC: UICollectionViewDelegate, UICollectionViewDataSourc
 
             return cell
             
+            
         case collectionViewVehicleImage:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VehicleImageCVCell.identifier, for: indexPath) as? VehicleImageCVCell else {
                 return UICollectionViewCell()
@@ -513,10 +518,12 @@ extension RecoveryServiceVC: UICollectionViewDelegate, UICollectionViewDataSourc
             
             if indexPath.section == 0 {
                 cell.btnClose.isHidden = true
+                cell.imgClose.isHidden = true
                 cell.viewMainUpload.isHidden = false
                 cell.viewVehicleImageMain.isHidden = true
             } else {
                 cell.btnClose.isHidden = false
+                cell.imgClose.isHidden = false
                 cell.viewMainUpload.isHidden = true
                 cell.viewVehicleImageMain.isHidden = false
                 
@@ -572,7 +579,7 @@ extension RecoveryServiceVC: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 90, height: 115)
             
         case collectionViewVehicleImage:
-            return CGSize(width: 123, height: 125)
+            return CGSize(width: 128, height: 130)
             
         default:
             return CGSize()
