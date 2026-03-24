@@ -42,6 +42,9 @@ class CreateBooking {
     var platform_fee: String?
     var tax: String?
     var route_polyline: String?
+    var vehicle_make: String?
+    var vehicle_model: String?
+    var vehical_image: [UIImage]?
 }
 
 // MARK: - rating Booking

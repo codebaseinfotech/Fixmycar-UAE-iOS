@@ -135,7 +135,7 @@ class FareBreakupVC: UIViewController {
             /*let vc = BookingPaymentVC()
             self.navigationController?.pushViewController(vc, animated: true)*/
             
-            self.bookingPaymentVM.createBooking()
+            self.bookingPaymentVM.createBookingImg()
         }
         
         self.present(vc, animated: true)

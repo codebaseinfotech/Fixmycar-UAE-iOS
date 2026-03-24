@@ -14,8 +14,16 @@ class RecoveryServiceVM {
     var successVehicleIssue: (() -> Void)?
     var failureVehicleIssue: ((String) -> Void)?
     
+    var successVehicleMake: (() -> Void)?
+    var failureVehicleMake: ((String) -> Void)?
+    
+    var successVehicleModel: (() -> Void)?
+    var failureVehicleModel: ((String) -> Void)?
+    
     var vehicleType: [VehicleType]?
     var vehicleIssue: [VehicleIssue]?
+    var vehicleMake: [VehicleMake]?
+    var vehicleModel: [VehicleModel]?
     
     func getVehicleType() {
         APIClient.sharedInstance.request(
@@ -76,6 +84,69 @@ class RecoveryServiceVM {
                 
                 self.vehicleIssue = response.data
                 self.successVehicleIssue?()
+            }
+    }
+    
+    func getVehicelMake() {
+        APIClient.sharedInstance.request(
+            method: .get,
+            url: APIEndPoint.vehicelMake,
+            responseType: VehicleMakeListResponse.self,
+            parameterEncoding: .url) { [weak self] response, error, statusCode in
+                guard let self = self else { return }
+                
+                // 🔴 If error
+                if let error = error {
+                    self.failureVehicleMake?(error)
+                    return
+                }
+                
+                // 🔴 If response is nil
+                guard let response = response else {
+                    self.failureVehicleMake?("Something went wrong")
+                    return
+                }
+                
+                // 🔴 If API status false
+                if response.status == false {
+                    self.failureVehicleMake?(response.message ?? "Failed")
+                    return
+                }
+                
+                self.vehicleMake = response.data
+                self.successVehicleMake?()
+            }
+    }
+    
+    func getVehicelModel(id: Int) {
+        APIClient.sharedInstance.request(
+            method: .get,
+            url: APIEndPoint.vehicleModel,
+            pathComponent: "\(id)",
+            responseType: ModelListResponse.self,
+            parameterEncoding: .url) { [weak self] response, error, statusCode in
+                guard let self = self else { return }
+                
+                // 🔴 If error
+                if let error = error {
+                    self.failureVehicleModel?(error)
+                    return
+                }
+                
+                // 🔴 If response is nil
+                guard let response = response else {
+                    self.failureVehicleModel?("Something went wrong")
+                    return
+                }
+                
+                // 🔴 If API status false
+                if response.status == false {
+                    self.failureVehicleModel?(response.message ?? "Failed")
+                    return
+                }
+                
+                self.vehicleModel = response.data
+                self.successVehicleModel?()
             }
     }
 }

@@ -187,7 +187,7 @@ class APIClient: NSObject {
         urlString: APIEndPoint,
         method: String = "POST",
         needUserToken: Bool = true,
-        parameters: [String: String],
+        parameters: Parameters = [:],
         files: [MultipartFile],
         completion: @escaping (Result<Data, Error>) -> Void
     ) {

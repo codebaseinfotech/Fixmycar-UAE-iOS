@@ -70,7 +70,7 @@ class BookingPaymentVC: UIViewController {
         btnPayFull.setImage("ic_uncheck".image, for: [])
     }
     @IBAction func tappedPayNow(_ sender: Any) {
-        bookingPaymentVM.createBooking()
+        bookingPaymentVM.createBookingImg()
     }
     
     // MARK: - setUpText 30 PayNow

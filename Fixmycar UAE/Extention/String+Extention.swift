@@ -424,3 +424,29 @@ extension UITextView {
         ]
     }
 }
+
+extension KeyedDecodingContainer {
+    
+    func decodeFlexibleInt(forKey key: K) -> Int? {
+        if let int = try? decode(Int.self, forKey: key) {
+            return int
+        }
+        if let string = try? decode(String.self, forKey: key) {
+            return Int(string)
+        }
+        return nil
+    }
+    
+    func decodeFlexibleDouble(forKey key: K) -> Double? {
+        if let double = try? decode(Double.self, forKey: key) {
+            return double
+        }
+        if let string = try? decode(String.self, forKey: key) {
+            return Double(string)
+        }
+        if let int = try? decode(Int.self, forKey: key) {
+            return Double(int)
+        }
+        return nil
+    }
+}

