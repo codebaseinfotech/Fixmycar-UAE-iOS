@@ -30,6 +30,7 @@ class FareBreakupVC: UIViewController {
         
         self.setUpBookingAmount()
         
+        CreateBooking.shared.payment_method = "cash"
         fareBreakupVM.successPromoCode = {
             self.btnApply.setTitle("Remove", for: [])
             self.txtPromoCode.isUserInteractionEnabled = false
@@ -142,10 +143,12 @@ class FareBreakupVC: UIViewController {
     }
     
     @IBAction func tappedCOD(_ sender: Any) {
+        CreateBooking.shared.payment_method = "cash"
         btnCOD.setImage("ic_check".image, for: [])
         btnLink.setImage("ic_uncheck".image, for: [])
     }
     @IBAction func tappledPayLink(_ sender: Any) {
+        CreateBooking.shared.payment_method = "payment_link"
         btnCOD.setImage("ic_uncheck".image, for: [])
         btnLink.setImage("ic_check".image, for: [])
     }

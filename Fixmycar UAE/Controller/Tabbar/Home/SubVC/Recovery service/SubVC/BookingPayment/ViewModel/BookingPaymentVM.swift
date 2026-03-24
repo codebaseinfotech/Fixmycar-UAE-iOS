@@ -35,7 +35,8 @@ class BookingPaymentVM {
             "price": CreateBooking.shared.price ?? "",
             "route_polyline": CreateBooking.shared.route_polyline ?? "",
             "vehicle_model": CreateBooking.shared.vehicle_model ?? "",
-            "vehicle_make": CreateBooking.shared.vehicle_make ?? ""
+            "vehicle_make": CreateBooking.shared.vehicle_make ?? "",
+            "payment_method": CreateBooking.shared.payment_method ?? ""
         ]
         
         if CreateBooking.shared.promotion_id != 0 {
@@ -117,7 +118,8 @@ class BookingPaymentVM {
             "price": CreateBooking.shared.price ?? "",
             "route_polyline": CreateBooking.shared.route_polyline ?? "",
             "vehicle_model": CreateBooking.shared.vehicle_model ?? "",
-            "vehicle_make": CreateBooking.shared.vehicle_make ?? ""
+            "vehicle_make": CreateBooking.shared.vehicle_make ?? "",
+            "payment_method": CreateBooking.shared.payment_method ?? ""
         ]
         
         if CreateBooking.shared.promotion_id != 0 {
