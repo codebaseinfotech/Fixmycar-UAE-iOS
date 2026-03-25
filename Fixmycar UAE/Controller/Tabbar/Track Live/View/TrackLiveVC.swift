@@ -388,11 +388,11 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
             preferredStyle: .alert
         )
         
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        let okAction = UIAlertAction(title: "Yes", style: .default) { _ in
             self.cancelVM.bookingCancel(bookingId: self.trackLiveVM.bookingId ?? 0, reasonId: 1, notes: "")
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
         
         alert.addAction(okAction)
         alert.addAction(cancelAction)
