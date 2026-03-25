@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var currentLatitude: Double = 0.0
     var currentLongitude: Double = 0.0
     
+    var bannerPromoCode: String = ""
+    
     var configVM = ConfigVM()
     var loginVM = VerifyOtpVM()
     var appDelegateVM = AppDelegateVM()

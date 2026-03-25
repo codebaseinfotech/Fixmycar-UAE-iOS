@@ -61,4 +61,5 @@ enum APIEndPoint: String {
     case reviewList = "v1/reviews-list"
     case vehicelMake = "v1/vehicle/makes"
     case vehicleModel = "v1/vehicle/models/"
+    case cancelTrip = "v1/bookings/"
 }

@@ -28,6 +28,11 @@ class FareBreakupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if AppDelegate.appDelegate.bannerPromoCode != "" {
+            txtPromoCode.text = AppDelegate.appDelegate.bannerPromoCode
+            fareBreakupVM.getPromoCode(promoCode: AppDelegate.appDelegate.bannerPromoCode)
+        }
+        
         self.setUpBookingAmount()
         
         CreateBooking.shared.payment_method = "cash"
@@ -105,6 +110,11 @@ class FareBreakupVC: UIViewController {
     }
     @IBAction func tappedApply(_ sender: UIButton) {
         if sender.titleLabel?.text == "Remove" {
+            
+            if AppDelegate.appDelegate.bannerPromoCode != "" {
+                AppDelegate.appDelegate.bannerPromoCode = ""
+            }
+            
             self.btnApply.setTitle("Apply", for: [])
             self.txtPromoCode.isUserInteractionEnabled = true
             txtPromoCode.text = ""

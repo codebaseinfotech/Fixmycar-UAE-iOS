@@ -28,7 +28,7 @@ class HomeVC: UIViewController {
 
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblUserName: UILabel!
-
+    
     // MARK: - Chat Badge Outlet (Connect this outlet to your Chat tab view in Interface Builder)
     @IBOutlet weak var viewTChatMain: UIView!
     
@@ -55,6 +55,20 @@ class HomeVC: UIViewController {
     @IBOutlet weak var viewActiveBooking: RecentBookingsView!
     @IBOutlet weak var viewActiveStatus: UIView!
     @IBOutlet weak var lblActiveStatus: AppLabel!
+    @IBOutlet weak var collectionViewBanner: UICollectionView! {
+        didSet {
+            collectionViewBanner.register(HomeBannerCVCell.nib, forCellWithReuseIdentifier: HomeBannerCVCell.identifier)
+            collectionViewBanner.delegate = self
+            collectionViewBanner.dataSource = self
+        }
+    }
+    @IBOutlet weak var collectionViewServices: UICollectionView! {
+        didSet {
+            collectionViewServices.register(HomeServicesCVCell.nib, forCellWithReuseIdentifier: HomeServicesCVCell.identifier)
+            collectionViewServices.delegate = self
+            collectionViewServices.dataSource = self
+        }
+    }
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
@@ -62,12 +76,17 @@ class HomeVC: UIViewController {
     var homeVM = HomeVM()
     var chatVM = ChatVM()
     private var lblChatBadge: UILabel?
+    let refreshControl = UIRefreshControl()
     
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         lblUserName.text = "Hello, " + (FCUtilites.getCurrentUser()?.name ?? "")
 
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        
+        scrollView.refreshControl = refreshControl
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(refreshPageData(_:)),
@@ -89,6 +108,14 @@ class HomeVC: UIViewController {
         chatVM.getChatList()
 
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - pull to refresh API
+    @objc func refreshData() {
+        print("Refreshing...")
+        
+        // Call API or reload data here
+        homeVM.getHomeData()
     }
     
     // MARK: - refreshBooking
@@ -165,10 +192,12 @@ class HomeVC: UIViewController {
         homeVM.getHomeData()
         viewActiveBooking.config(type: "active_job")
         homeVM.successHomeData = { [weak self] in
-            self?.svNoBookingFound.isHidden = self?.homeVM.recentServiceList.count == 0 ? false : true
-            self?.tblViewRecentBooking.isHidden = self?.homeVM.recentServiceList.count == 0 ? true : false
+            self?.svNoBookingFound.isHidden = self?.homeVM.homeData?.activeBooking?.count == 0 ? false : true
+            self?.tblViewRecentBooking.isHidden = self?.homeVM.recentServiceList.count == 0 ? true : true
             
             self?.tblViewRecentBooking.reloadData()
+            self?.collectionViewBanner.reloadData()
+            self?.collectionViewServices.reloadData()
             
             self?.viewMainActiveBooking.isHidden = self?.homeVM.homeData?.activeBooking?.count == 0 ? true : false
             
@@ -180,6 +209,10 @@ class HomeVC: UIViewController {
             guard let activeBooking = homeData.activeBooking, !activeBooking.isEmpty else {
                 debugPrint("❌ activeBooking empty or nil")
                 return
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self?.refreshControl.endRefreshing()
             }
             
             self?.viewActiveBooking.lblType.text = activeBooking[0].serviceName
@@ -313,9 +346,7 @@ class HomeVC: UIViewController {
     }
 
     // MARK: - Action Method
-    @IBAction func tappedApplyCode(_ sender: Any) {
-    }
-    @IBAction func tappedRecovery(_ sender: Any) {
+    /*@IBAction func tappedRecovery(_ sender: Any) {
         let vc = RecoveryServiceVC()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -331,7 +362,7 @@ class HomeVC: UIViewController {
         }
         vc.sheetPresentationController?.delegate = self
         self.present(vc, animated: true)
-    }
+    }*/
     @IBAction func tappedViewAllRecentBooking(_ sender: Any) {
         tappedTHistory(self)
     }
@@ -370,6 +401,155 @@ class HomeVC: UIViewController {
         let vc = SettingVC()
         self.navigationController?.pushViewController(vc, animated: false)
     }
+    
+}
+
+// MARK: - collectionView Delegate & DataSource
+extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch collectionView {
+        case collectionViewBanner:
+            return homeVM.homeBanner.count
+        case collectionViewServices:
+            return homeVM.homeServices.count
+        default:
+            return 0
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch collectionView {
+        case collectionViewBanner:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeBannerCVCell", for: indexPath) as! HomeBannerCVCell
+            
+            
+            return cell
+            
+        case collectionViewServices:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeServicesCVCell", for: indexPath) as! HomeServicesCVCell
+            
+            let dicData = homeVM.homeServices[indexPath.item]
+            
+            cell.lblName.text = dicData.name?.replacingOccurrences(of: " Service", with: "")
+            
+            return cell
+            
+        default:
+            return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case collectionViewBanner:
+            let dicData = homeVM.homeBanner[indexPath.item]
+            
+            if dicData.buttonText == "Book Now" {
+                AppDelegate.appDelegate.bannerPromoCode = dicData.promoCode ?? ""
+                
+                let vc = RecoveryServiceVC()
+                navigationController?.pushViewController(vc, animated: true)
+                
+            } else {
+                let vc = JumpStartVC()
+                if let sheet = vc.sheetPresentationController {
+                    // Create a custom detent that returns a fixed height
+                    let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                        return 220
+                    }
+                    sheet.detents = [fixedDetent]
+                    sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+                }
+                vc.sheetPresentationController?.delegate = self
+                vc.isHomeOpen = false
+                self.present(vc, animated: true)
+                
+            }
+            
+        case collectionViewServices:
+            let dicData = homeVM.homeServices[indexPath.item]
+            
+            let name = dicData.name?.replacingOccurrences(of: " Service", with: "")
+            
+            if name == "Recovery" {
+                let vc = RecoveryServiceVC()
+                navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let vc = JumpStartVC()
+                if let sheet = vc.sheetPresentationController {
+                    // Create a custom detent that returns a fixed height
+                    let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                        return 300
+                    }
+                    sheet.detents = [fixedDetent]
+                    sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+                }
+                vc.sheetPresentationController?.delegate = self
+                self.present(vc, animated: true)
+                
+            }
+            
+        default:
+            break
+        }
+    }
+    
+    
+}
+
+extension HomeVC: UICollectionViewDelegateFlowLayout {
+    // MARK:- Section Insets
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .zero
+    }
+    // MARK:- Minimum Line Spacing (Vertical)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        switch collectionView {
+        case collectionViewServices:
+            return 15
+        default:
+            return .zero
+        }
+    }
+    
+    // MARK:- Minimum Interitem Spacing (Horizontal)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        switch collectionView {
+        case collectionViewServices:
+            return 15
+        default:
+            return .zero
+        }
+    }
+    
+    // MARK:- sizeForItemAt
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        switch collectionView {
+        case collectionViewBanner:
+            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+            
+        case collectionViewServices:
+            
+            let width = (collectionView.frame.width-15) / 2
+            return CGSize(width: width, height: collectionView.frame.height)
+            
+        default:
+            return .zero
+        }
+        
+    }
+    
+    
     
 }
 

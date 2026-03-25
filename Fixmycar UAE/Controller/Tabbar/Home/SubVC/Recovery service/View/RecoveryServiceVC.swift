@@ -208,6 +208,11 @@ class RecoveryServiceVC: UIViewController {
 
     // MARK: - Action Method
     @IBAction func tappedBack(_ sender: Any) {
+        
+        if AppDelegate.appDelegate.bannerPromoCode != "" {
+            AppDelegate.appDelegate.bannerPromoCode = ""
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
     

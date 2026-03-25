@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Satoshi-Bold.otf">
+            <string>Satoshi-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeServicesCVCell" customModule="FixMyCar_UAE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="133"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="133"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lr-a6-KPp">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="133"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_recovery" translatesAutoresizingMaskIntoConstraints="NO" id="CDJ-TI-zBl">
+                                <rect key="frame" x="23.666666666666671" y="12" width="113.00000000000001" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="VJH-Lo-cG4"/>
+                                    <constraint firstAttribute="height" constant="87" id="jmW-Bh-WDk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_right_top_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="YX1-Eu-1go">
+                                <rect key="frame" x="128" y="101" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="9Ci-Tw-p4c"/>
+                                    <constraint firstAttribute="width" constant="20" id="9SH-L8-8v0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikM-xC-j6m" customClass="AppLabel" customModule="FixMyCar_UAE" customModuleProvider="target">
+                                <rect key="frame" x="12" y="101" width="69.666666666666671" height="20"/>
+                                <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
+                                <color key="textColor" name="primery_black"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="recovery"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="gray_base"/>
+                        <constraints>
+                            <constraint firstItem="CDJ-TI-zBl" firstAttribute="top" secondItem="7Lr-a6-KPp" secondAttribute="top" constant="12" id="5Bv-MQ-H2e"/>
+                            <constraint firstItem="ikM-xC-j6m" firstAttribute="leading" secondItem="7Lr-a6-KPp" secondAttribute="leading" constant="12" id="Ahe-kv-KCE"/>
+                            <constraint firstItem="CDJ-TI-zBl" firstAttribute="centerX" secondItem="7Lr-a6-KPp" secondAttribute="centerX" id="JV7-e5-yY5"/>
+                            <constraint firstAttribute="bottom" secondItem="YX1-Eu-1go" secondAttribute="bottom" constant="12" id="jSM-HW-ds7"/>
+                            <constraint firstAttribute="trailing" secondItem="YX1-Eu-1go" secondAttribute="trailing" constant="12" id="uAv-iB-8lh"/>
+                            <constraint firstItem="ikM-xC-j6m" firstAttribute="centerY" secondItem="YX1-Eu-1go" secondAttribute="centerY" id="x6s-XK-YNB"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="7Lr-a6-KPp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GCv-BP-nJg"/>
+                <constraint firstAttribute="bottom" secondItem="7Lr-a6-KPp" secondAttribute="bottom" id="TFt-gF-yLb"/>
+                <constraint firstAttribute="trailing" secondItem="7Lr-a6-KPp" secondAttribute="trailing" id="eQn-K8-0pb"/>
+                <constraint firstItem="7Lr-a6-KPp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wVc-id-m5t"/>
+            </constraints>
+            <connections>
+                <outlet property="imgPic" destination="CDJ-TI-zBl" id="9Y7-et-Ldx"/>
+                <outlet property="lblName" destination="ikM-xC-j6m" id="xOq-OZ-xDA"/>
+            </connections>
+            <point key="canvasLocation" x="125" y="120"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_recovery" width="113" height="87"/>
+        <image name="ic_right_top_arrow" width="20" height="20"/>
+        <namedColor name="gray_base">
+            <color red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primery_black">
+            <color red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

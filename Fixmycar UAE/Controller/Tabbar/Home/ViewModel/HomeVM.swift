@@ -15,6 +15,9 @@ class HomeVM {
     var homeData: HomeData?
     var recentServiceList: [HomeBooking] = []
     
+    var homeBanner: [HomeBanner] = []
+    var homeServices: [HomeService] = []
+    
     func getHomeData() {
         
         APIClient.sharedInstance.request(
@@ -52,6 +55,8 @@ class HomeVM {
                 } else {
                     self.homeData = response.data
                     self.recentServiceList = response.data?.recentRequests ?? []
+                    self.homeBanner = response.data?.banners ?? []
+                    self.homeServices = response.data?.services ?? []
                     self.successHomeData?()
                 }
                 

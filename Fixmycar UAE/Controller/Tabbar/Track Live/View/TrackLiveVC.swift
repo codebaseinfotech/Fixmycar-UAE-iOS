@@ -52,6 +52,8 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var filledWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var truckLeadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var viewCancel: UIView!
+    
     // MARK: - Markers & Route
     private var mapView: GMSMapView!
     private let locationManager = CLLocationManager()
@@ -78,6 +80,7 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
     
     var trackLiveVM = TrackLiveVM()
     var googleMapVM = GoogleDistanceVM()
+    var cancelVM = CancelBookingVM()
     
     private var currentBookingId: Int?
 
@@ -95,6 +98,15 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(handleSocketConnected), name: .socketConnected, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleDriverLocationUpdated(_:)), name: .driverLocationUpdated, object: nil)
 
+        cancelVM.successCancelBooking = { msg in
+            self.tappedBack(self)
+            self.setUpMakeToast(msg: msg)
+            
+        }
+        cancelVM.failureCancelBooking = { msg in
+            self.setUpMakeToast(msg: msg)
+        }
+        
         trackLiveVM.getTrackLiveDetails()
         trackLiveVM.successTrackLive = {
             let dicData = self.trackLiveVM.trackBookingDetails
@@ -128,12 +140,16 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
                 
                 self.imgTruck.image = "ic_drop_truck".image
                 
+                self.viewCancel.isHidden = true
+                
             } else {
                 self.lblFirstStatus.text = "Accepted"
                 self.lblSecondStatus.text = "On the way"
                 self.lblTherdStatus.text = "At pickup"
                 
                 self.imgTruck.image = "ic_truck".image
+                
+                self.viewCancel.isHidden = false
             }
             self.setupDeliveryText(jobStatus: jobStatus ?? "")
             
@@ -364,6 +380,25 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
     }
     @IBAction func tappedBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func tappedCancelTrip(_ sender: Any) {
+        let alert = UIAlertController(
+            title: "Trip Cancel",
+            message: "Are you sure you want to cancel trip?",
+            preferredStyle: .alert
+        )
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.cancelVM.bookingCancel(bookingId: self.trackLiveVM.bookingId ?? 0, reasonId: 1, notes: "")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true)
+        
     }
     
     // MARK: - Call Driver

