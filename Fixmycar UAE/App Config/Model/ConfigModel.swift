@@ -42,6 +42,8 @@ struct GeneralSettings: Codable {
     let platformFeeAmount: Double?
     let showTax: Bool
     let taxAmount: Double?
+    let isPaymentLink: Bool?
+    let isCODEnabale: Bool?
     
     enum CodingKeys: String, CodingKey {
         case showRegisterFee = "show_register_fee"
@@ -50,5 +52,7 @@ struct GeneralSettings: Codable {
         case platformFeeAmount = "platform_fee_amount"
         case showTax = "show_tax"
         case taxAmount = "tax_amount"
+        case isPaymentLink = "is_payment_link"
+        case isCODEnabale = "is_COD_enabale"
     }
 }

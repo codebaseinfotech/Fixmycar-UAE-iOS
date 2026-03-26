@@ -9,6 +9,9 @@ import UIKit
 
 class BookingDetailsVC: UIViewController {
 
+    
+    @IBOutlet weak var viewIncoice1: UIView!
+    
     @IBOutlet weak var lblInvoiceName: UILabel!
     @IBOutlet weak var imgRecovery: UIImageView!
     @IBOutlet weak var lblServiceTitle: UILabel!
@@ -153,6 +156,8 @@ class BookingDetailsVC: UIViewController {
             case .completed:
                 lblStatus.text = "Completed"
                 
+                viewIncoice1.isHidden = false
+                
                 viewStatus.backgroundColor = UIColor.AppColor.completrd_bg
                 viewStatus.borderColor = UIColor.AppColor.completrd_border
                 
@@ -182,6 +187,8 @@ class BookingDetailsVC: UIViewController {
             lblVehicleNum.text = bookingVM.bookingDetails?.driver?.vehicleNumber ?? "-"
             
             lblBookingID.text = "Booking ID".localized + ":" + " " + "\(bookingVM.bookingDetails?.bookingId ?? 0)"
+            
+            lblInvoiceName.text = bookingVM.bookingDetails?.invoiceNumber ?? ""
             
             imgDriverReview.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
             lblDriverName.text = bookingVM.bookingDetails?.driver?.name ?? ""

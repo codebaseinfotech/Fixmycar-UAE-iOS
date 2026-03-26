@@ -22,6 +22,7 @@ struct BookingDetailData: Codable {
     let status: String?
     let paymentStatus: String?
     let invoiceURL: String?
+    let invoiceNumber: String?
     let createdAt: String?
     
     let serviceType: String?
@@ -71,6 +72,7 @@ struct BookingDetailData: Codable {
         case status
         case paymentStatus = "payment_status"
         case invoiceURL = "invoice_url"
+        case invoiceNumber = "invoice_number"
         case createdAt = "created_at"
         case serviceType = "service_type"
         case vehicleType = "vehicle_type"

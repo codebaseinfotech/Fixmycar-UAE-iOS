@@ -423,7 +423,10 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         case collectionViewBanner:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeBannerCVCell", for: indexPath) as! HomeBannerCVCell
             
-            
+            let dicData = homeVM.homeBanner[indexPath.item]
+
+            cell.imgPic.loadFromUrlString(dicData.imageURL ?? "", placeholder: "ic_dummy_banner".image)
+
             return cell
             
         case collectionViewServices:
@@ -431,7 +434,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             
             let dicData = homeVM.homeServices[indexPath.item]
             
-            cell.lblName.text = dicData.name?.replacingOccurrences(of: " Service", with: "")
+            cell.lblName.text = dicData.name ?? ""
             
             return cell
             

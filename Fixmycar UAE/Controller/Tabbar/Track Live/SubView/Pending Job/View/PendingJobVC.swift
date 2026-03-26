@@ -76,7 +76,7 @@ class PendingJobVC: UIViewController {
     }
     
     @IBAction func tappedYes(_ sender: Any) {
-        cancelBookingVM.bookingCancel(bookingId: activeBookingId, reasonId: 1, notes: "Test")
+        cancelBookingVM.bookingCancel(bookingId: activeBookingId, reasonId: 7, notes: "Test")
         cancelBookingVM.successCancelBooking = { msg in
             AppDelegate.appDelegate.setUpHome()
             self.setUpMakeToast(msg: msg)

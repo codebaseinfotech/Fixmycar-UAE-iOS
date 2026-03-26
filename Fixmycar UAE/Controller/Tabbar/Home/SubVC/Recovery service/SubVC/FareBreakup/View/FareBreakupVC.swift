@@ -21,6 +21,10 @@ class FareBreakupVC: UIViewController {
     @IBOutlet weak var btnCOD: UIButton!
     @IBOutlet weak var btnLink: UIButton!
     
+    @IBOutlet weak var svCod: UIStackView!
+    @IBOutlet weak var scPaybyLink: UIStackView!
+    @IBOutlet weak var lblLinePayment: AppLabel!
+    
     var fareBreakupVM = FareBreakupVM()
     var bookingPaymentVM = BookingPaymentVM()
 
@@ -28,6 +32,13 @@ class FareBreakupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let genralSetting = AppDelegate.appDelegate.configVM.configResponse?.generalSettings
+        svCod.isHidden = !(genralSetting?.isCODEnabale == true)
+        scPaybyLink.isHidden = !(genralSetting?.isPaymentLink == true)
+
+        // Show line only when both are visible
+        lblLinePayment.isHidden = svCod.isHidden || scPaybyLink.isHidden
+
         if AppDelegate.appDelegate.bannerPromoCode != "" {
             txtPromoCode.text = AppDelegate.appDelegate.bannerPromoCode
             fareBreakupVM.getPromoCode(promoCode: AppDelegate.appDelegate.bannerPromoCode)
