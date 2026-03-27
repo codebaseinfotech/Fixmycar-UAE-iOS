@@ -48,6 +48,8 @@ class CreateAccountVC: UIViewController {
         super.viewDidLoad()
 
         txtMobileNumber.text = phoneNumber
+        txtMobileNumber.maxLength = 9
+
         setupCallbacks()
         // Do any additional setup after loading the view.
     }

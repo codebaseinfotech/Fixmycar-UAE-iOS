@@ -58,7 +58,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         txtFullName.text = FCUtilites.getCurrentUser()?.firstName ?? ""
         txtNumber.text = FCUtilites.getCurrentUser()?.phone ?? ""
         txtEmail.text = FCUtilites.getCurrentUser()?.email ?? ""
-        
+        txtNumber.maxLength = 9
         imgUser.loadFromUrlString(FCUtilites.getCurrentUser()?.avatar ?? "", placeholder: "ic_placeholder_user".image)
                
         // Do any additional setup after loading the view.
