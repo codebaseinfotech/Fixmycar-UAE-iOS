@@ -194,13 +194,17 @@ class HomeVC: UIViewController {
         homeVM.successHomeData = { [weak self] in
             self?.svNoBookingFound.isHidden = self?.homeVM.homeData?.activeBooking?.count == 0 ? false : true
             self?.tblViewRecentBooking.isHidden = self?.homeVM.recentServiceList.count == 0 ? true : true
-            
+
             self?.tblViewRecentBooking.reloadData()
             self?.collectionViewBanner.reloadData()
             self?.collectionViewServices.reloadData()
-            
+
             self?.viewMainActiveBooking.isHidden = self?.homeVM.homeData?.activeBooking?.count == 0 ? true : false
-            
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self?.refreshControl.endRefreshing()
+            }
+
             guard let homeData = self?.homeVM.homeData else {
                 debugPrint("❌ homeData is nil")
                 return
@@ -209,10 +213,6 @@ class HomeVC: UIViewController {
             guard let activeBooking = homeData.activeBooking, !activeBooking.isEmpty else {
                 debugPrint("❌ activeBooking empty or nil")
                 return
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                self?.refreshControl.endRefreshing()
             }
             
             self?.viewActiveBooking.lblType.text = activeBooking[0].serviceName
@@ -317,6 +317,7 @@ class HomeVC: UIViewController {
         homeVM.failureHomeData = { [weak self] msg in
             self?.svNoBookingFound.isHidden = self?.homeVM.recentServiceList.count == 0 ? false : true
             self?.tblViewRecentBooking.isHidden = self?.homeVM.recentServiceList.count == 0 ? true : false
+            self?.refreshControl.endRefreshing()
             self?.setUpMakeToast(msg: msg)
         }
     }
