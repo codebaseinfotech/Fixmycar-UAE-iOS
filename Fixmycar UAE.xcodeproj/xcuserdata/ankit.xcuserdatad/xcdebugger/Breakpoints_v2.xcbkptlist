@@ -240,7 +240,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "275"
             endingLineNumber = "275"
-            landmarkName = "handleDriverLocationUpdated(_:)"
+            landmarkName = "handleSocketConnected()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -256,7 +256,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "262"
             endingLineNumber = "262"
-            landmarkName = "handleDriverLocationUpdated(_:)"
+            landmarkName = "handleBookingStatusUpdated(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

