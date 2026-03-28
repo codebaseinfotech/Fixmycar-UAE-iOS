@@ -43,7 +43,28 @@ class HistoryVC: UIViewController {
         setupChatBadge()
         chatVM.getChatList()
 
-        // Do any additional setup after loading the view.
+        // Setup callbacks for history API
+        historyBookingVM.successHistoryData = { [weak self] in
+            guard let self = self else { return }
+            self.updateUI()
+            self.tblViewBookingList.reloadData()
+        }
+
+        historyBookingVM.failureHistoryData = { [weak self] msg in
+            guard let self = self else { return }
+            self.setUpMakeToast(msg: msg)
+            self.updateUI()
+        }
+    }
+
+    private func updateUI() {
+        if historyBookingVM.historyBookingList.count == 0 {
+            tblViewBookingList.isHidden = true
+            viewNoHisotryFound.isHidden = false
+        } else {
+            tblViewBookingList.isHidden = false
+            viewNoHisotryFound.isHidden = true
+        }
     }
 
     // MARK: - Chat Badge
@@ -110,30 +131,9 @@ class HistoryVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        historyBookingVM.getHistoryBookingData()
-        
-        historyBookingVM.successHistoryData = {
-            
-            if self.historyBookingVM.historyBookingList.count == 0 {
-                self.tblViewBookingList.isHidden = true
-                self.viewNoHisotryFound.isHidden = false
-            } else {
-                self.tblViewBookingList.isHidden = false
-                self.viewNoHisotryFound.isHidden = true
-            }
-            
-            self.tblViewBookingList.reloadData()
-        }
-        historyBookingVM.failureHistoryData = { msg in
-            self.setUpMakeToast(msg: msg)
-            
-            if self.historyBookingVM.historyBookingList.count == 0 {
-                self.tblViewBookingList.isHidden = true
-                self.viewNoHisotryFound.isHidden = false
-            } else {
-                self.tblViewBookingList.isHidden = false
-                self.viewNoHisotryFound.isHidden = true
-            }
+        // Only fetch if no data loaded yet (first time)
+        if historyBookingVM.historyBookingList.isEmpty {
+            historyBookingVM.getHistoryBookingData()
         }
     }
 
@@ -182,5 +182,12 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
         let vc = BookingDetailsVC()
         vc.bookingVM.bookingid = dicData.bookingID ?? 0
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastIndex = historyBookingVM.historyBookingList.count - 3
+        if indexPath.row >= lastIndex && !historyBookingVM.isLoading && historyBookingVM.hasMorePages {
+            historyBookingVM.getHistoryBookingData(isLoadMore: true)
+        }
     }
 }
