@@ -171,13 +171,31 @@ class BookingDetailsVC: UIViewController {
                 lblStatus.textColor = UIColor.AppColor.cancelled_border
             }
             
-            viewMainDriver.isHidden = bookingVM.bookingDetails?.driver != nil ? false : true            
+            viewMainDriver.isHidden = bookingVM.bookingDetails?.driver != nil ? false : true
+            
             lblCancelBu.isHidden = bookingVM.bookingDetails?.cancelReason != nil ? false : true
             lblCancelReasib.isHidden = bookingVM.bookingDetails?.cancelReason != nil ? false : true
             
-            let reason = bookingVM.bookingDetails?.cancelledBy == "customer" ? "Cancelled by you" : "Cancelled by the \(bookingVM.bookingDetails?.cancelledBy ?? "")"
+            let cancelReason = bookingVM.bookingDetails?.cancelReason ?? ""
+            let cancelReasonText = bookingVM.bookingDetails?.cancelReasonText ?? ""
+             
+            lblCancelBu.isHidden = cancelReason != "" || cancelReasonText != "" ? false : true
+            lblCancelReasib.isHidden = cancelReason != "" || cancelReasonText != "" ? false : true
+            
+            var reason = ""
+            
+            if bookingVM.bookingDetails?.cancelledBy == "customer" {
+                reason = "Cancelled by you"
+            } else if bookingVM.bookingDetails?.cancelledBy == "driver" {
+                reason = "Cancelled by the \(bookingVM.bookingDetails?.cancelledBy ?? "")"
+            } else {
+                reason = "Cancelled by the" + " " + "Auto cancelled"
+            }
+            
             lblCancelBu.text = reason
-            lblCancelReasib.text = "Reason:".localized + " " + (bookingVM.bookingDetails?.cancelReason ?? "")
+            
+            let cancelText = cancelReasonText != "" ? cancelReasonText : cancelReason
+            lblCancelReasib.text = "Reason:".localized + " " + cancelText
             
             lblUserName.text = bookingVM.bookingDetails?.driver?.name
             imgUser.loadFromUrlString(bookingVM.bookingDetails?.driver?.image ?? "", placeholder: "ic_placeholder_user".image)
