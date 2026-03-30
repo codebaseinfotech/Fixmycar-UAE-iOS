@@ -424,7 +424,9 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
             return
         }
         
-        let phone = sanitizePhone(phoneRaw)
+        let countryCode = trackLiveVM.trackBookingDetails?.driver?.country_code ?? ""
+        
+        let phone = sanitizePhone(countryCode + phoneRaw)
         
         guard !phone.isEmpty, let url = URL(string: "tel://\(phone)") else {
             setUpMakeToast(msg: "Invalid phone number")

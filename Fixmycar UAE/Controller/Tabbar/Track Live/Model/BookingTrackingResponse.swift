@@ -57,6 +57,7 @@ struct TrackLiveDriver: Codable {
     let image: String?
     let rating: Double?
     let location: TrackLiveDriverLocation?
+    let country_code: String?
 }
 
 // MARK: - Driver Location

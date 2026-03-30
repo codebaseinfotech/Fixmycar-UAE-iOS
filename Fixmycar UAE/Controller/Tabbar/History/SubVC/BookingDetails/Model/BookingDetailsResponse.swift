@@ -180,6 +180,7 @@ struct Driver: Codable {
     let vehicleNumber: String?
     let image: String?
     let phone: String?
+    let countryCode: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -189,5 +190,6 @@ struct Driver: Codable {
         case vehicleNumber = "vehicle_number"
         case image
         case phone
+        case countryCode = "country_code"
     }
 }
