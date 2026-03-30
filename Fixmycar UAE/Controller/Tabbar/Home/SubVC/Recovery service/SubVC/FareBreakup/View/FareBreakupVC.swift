@@ -59,7 +59,6 @@ class FareBreakupVC: UIViewController {
         
         self.setUpBookingAmount()
         
-        CreateBooking.shared.payment_method = "cash"
         fareBreakupVM.successPromoCode = {
             self.btnApply.setTitle("Remove", for: [])
             self.txtPromoCode.isUserInteractionEnabled = false
