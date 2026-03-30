@@ -53,6 +53,7 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var truckLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var viewCancel: UIView!
+    @IBOutlet weak var viewPaymentMain: UIView!
     
     // MARK: - Markers & Route
     private var mapView: GMSMapView!
@@ -81,6 +82,7 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
     var trackLiveVM = TrackLiveVM()
     var googleMapVM = GoogleDistanceVM()
     var cancelVM = CancelBookingVM()
+    var jobStatus: JobStatus = .accepted
     
     private var currentBookingId: Int?
 
@@ -111,6 +113,8 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
         trackLiveVM.successTrackLive = {
             let dicData = self.trackLiveVM.trackBookingDetails
             self.updateProgressFromAPI(statusString: dicData?.status ?? "")
+            
+            self.jobStatus = JobStatus(rawValue: dicData?.status ?? "") ?? .accepted
             self.setupMap()
             self.lblTitle.text = "Your request is assigned to \(dicData?.driver?.name ?? "")"
             self.lblTimeDis.text = "Your ride request is assigned to the \(dicData?.driver?.name ?? ""). arriving soon for pick up."
@@ -121,7 +125,13 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
             self.lblPlateNumber.text = dicData?.vehicleNumber
             self.lblCarName.text = dicData?.vehicleType ?? ""
             
-            self.lblRemainigAmount.text = "AED" + " " + "\(dicData?.finalPrice ?? 0.0)"
+            if dicData?.paymentType == "pending" {
+                self.lblRemaining.text = "Pay your remaining amount"
+            } else {
+                self.lblRemaining.text = "Payment completed"
+            }
+            
+            self.lblRemainigAmount.text = "Trip Amount:" + " " + "AED" + " " + "\(dicData?.finalPrice ?? 0.0)"
             
             if !FMSocketManager.shared.isConnected {
                 FMSocketManager.shared.connect()
@@ -363,6 +373,7 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
         
         DispatchQueue.main.async { [self] in
             svTitleDetails.isHidden = expand ? true : false
+            viewPaymentMain.isHidden = expand ? true : false
         }
         
     }
@@ -746,14 +757,24 @@ extension TrackLiveVC: CLLocationManagerDelegate {
         if let heading = heading {
             lastDriverHeading = heading
         }
-
+        
         if driverMarker == nil {
             driverMarker = GMSMarker(position: newPosition)
-            driverMarker?.icon = UIImage(named: "ic_truck_1")
             driverMarker?.groundAnchor = CGPoint(x: 0.5, y: 0.5)
             driverMarker?.isFlat = true
             driverMarker?.rotation = lastDriverHeading
             driverMarker?.map = mapView
+        }
+        
+        // Always update icon based on job status
+        if jobStatus == .pickupCompleted ||
+           jobStatus == .onTheWayToDelivery ||
+           jobStatus == .nearDelivery ||
+           jobStatus == .arrivedAtDelivery {
+
+            driverMarker?.icon = UIImage(named: "ic_drpp_truck_1")
+        } else {
+            driverMarker?.icon = UIImage(named: "ic_truck_1")
         }
 
         CATransaction.begin()

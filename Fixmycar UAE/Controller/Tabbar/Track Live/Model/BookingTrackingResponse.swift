@@ -26,6 +26,7 @@ struct BookingTrackingData: Codable {
     let driver: TrackLiveDriver?
     let distanceKm: Double?
     let finalPrice: Double?
+    let paymentType: String?
     
     enum CodingKeys: String, CodingKey {
         case bookingID = "booking_id"
@@ -37,6 +38,7 @@ struct BookingTrackingData: Codable {
         case driver
         case distanceKm = "distance_km"
         case finalPrice = "final_price"
+        case paymentType = "payment_type"
     }
 }
 

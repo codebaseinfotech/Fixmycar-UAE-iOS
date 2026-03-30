@@ -270,7 +270,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         payload.type == "arrived_at_delivery" ||
                         payload.type == "trip_booked_by_admin" ||
                         payload.type == "trip_cancelled" ||
-                        payload.type == "trip_cancelled_by_admin" {
+                        payload.type == "trip_cancelled_by_admin" ||
+                        payload.type == "booking_accepted" {
                 
                 NotificationCenter.default.post(
                     name: .refrechData,
