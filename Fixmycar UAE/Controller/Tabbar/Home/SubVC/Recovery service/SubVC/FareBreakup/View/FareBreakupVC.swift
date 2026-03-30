@@ -35,6 +35,19 @@ class FareBreakupVC: UIViewController {
         let genralSetting = AppDelegate.appDelegate.configVM.configResponse?.generalSettings
         svCod.isHidden = !(genralSetting?.isCODEnabale == true)
         scPaybyLink.isHidden = !(genralSetting?.isPaymentLink == true)
+        
+        if genralSetting?.isCODEnabale == true {
+            btnCOD.setImage("ic_check".image, for: [])
+            btnLink.setImage("ic_uncheck".image, for: [])
+            CreateBooking.shared.payment_method = "cash"
+
+        } else if genralSetting?.isPaymentLink == true {
+            btnCOD.setImage("ic_uncheck".image, for: [])
+            btnLink.setImage("ic_check".image, for: [])
+
+            CreateBooking.shared.payment_method = "payment_link"
+        }
+        
 
         // Show line only when both are visible
         lblLinePayment.isHidden = svCod.isHidden || scPaybyLink.isHidden
