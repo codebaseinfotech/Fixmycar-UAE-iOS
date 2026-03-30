@@ -13,7 +13,7 @@ enum AppEnviroment {
     case dev
 }
 
-let current: AppEnviroment = .live
+let current: AppEnviroment = .dev
 var isDebugPrint: Bool = true
 
 
