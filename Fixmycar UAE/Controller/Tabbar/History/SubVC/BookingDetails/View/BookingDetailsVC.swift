@@ -39,6 +39,8 @@ class BookingDetailsVC: UIViewController {
     @IBOutlet weak var lblAmount: UILabel!
     @IBOutlet weak var lblBaseFare: UILabel!
     @IBOutlet weak var lblDiscount: UILabel!
+    @IBOutlet weak var lblAdminDiscount: UILabel!
+
     @IBOutlet weak var lblPlatformFee: UILabel!
     @IBOutlet weak var lblTax: UILabel!
     @IBOutlet weak var lblTotalAmount: UILabel!
@@ -223,6 +225,7 @@ class BookingDetailsVC: UIViewController {
             
             lblBaseFare.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.baseFare ?? 0.0)"
             lblDiscount.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.discount ?? 0.0)"
+            lblAdminDiscount.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.manual_discount_price ?? 0.0)"
             lblPlatformFee.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.platformFee ?? 0)"
             lblTax.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.tax ?? 0)"
             lblTotalAmount.text = "\(bookingVM.bookingDetails?.invoice?.currency ?? "") \(bookingVM.bookingDetails?.invoice?.totalAmount ?? 0)"

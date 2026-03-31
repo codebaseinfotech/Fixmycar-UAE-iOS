@@ -136,6 +136,7 @@ struct DriverReview: Codable {
 struct Invoice: Codable {
     let baseFare: Double?
     let discount: Double?
+    let manual_discount_price: Double?
     let platformFee: Double?
     let tax: Double?
     let totalAmount: Double?
@@ -154,6 +155,7 @@ struct Invoice: Codable {
     enum CodingKeys: String, CodingKey {
         case baseFare = "base_fare"
         case discount
+        case manual_discount_price
         case platformFee = "platform_fee"
         case tax
         case totalAmount = "total_amount"

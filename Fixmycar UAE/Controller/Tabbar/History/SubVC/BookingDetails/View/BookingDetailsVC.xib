@@ -27,6 +27,7 @@
                 <outlet property="imgDriverReview" destination="1Xk-Zd-6fK" id="Gr7-qp-8Ms"/>
                 <outlet property="imgRecovery" destination="AoF-2j-Sta" id="yBn-jr-Lnj"/>
                 <outlet property="imgUser" destination="Rwq-yP-OIr" id="lGl-DX-krT"/>
+                <outlet property="lblAdminDiscount" destination="JYL-eY-wNU" id="EUD-xV-8Pm"/>
                 <outlet property="lblAmount" destination="Fjy-26-Gh7" id="TZF-bO-QKz"/>
                 <outlet property="lblBaseFare" destination="ydO-YF-Nhj" id="Joj-nM-m1u"/>
                 <outlet property="lblBookingID" destination="Myn-gT-eDl" id="s9n-7r-fJe"/>
@@ -113,13 +114,13 @@
                     <rect key="frame" x="0.0" y="184" width="393" height="668"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01w-uE-3UT">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="990"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="1010"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZi-dG-rnG">
-                                    <rect key="frame" x="20" y="20" width="353" height="950"/>
+                                    <rect key="frame" x="20" y="20" width="353" height="970"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="drL-7e-JLz">
-                                            <rect key="frame" x="15" y="15" width="323" height="920"/>
+                                            <rect key="frame" x="15" y="15" width="323" height="940"/>
                                             <subviews>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYr-tl-vF4">
                                                     <rect key="frame" x="0.0" y="-22" width="323" height="22"/>
@@ -711,7 +712,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhl-Bu-OFe">
-                                                    <rect key="frame" x="0.0" y="651" width="323" height="214"/>
+                                                    <rect key="frame" x="0.0" y="651" width="323" height="234"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4cl-yO-fTo">
                                                             <rect key="frame" x="10" y="10" width="303" height="19"/>
@@ -734,22 +735,22 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JzE-RD-2X6">
-                                                            <rect key="frame" x="10" y="39" width="303" height="115"/>
+                                                            <rect key="frame" x="10" y="39" width="303" height="135"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ew0-mM-1u3">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="303" height="19.666666666666668"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="303" height="17.333333333333332"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base fare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fo-3J-aZm">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="19.666666666666668"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="17.333333333333332"/>
                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                                             <color key="textColor" name="Gray"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDZ-Bw-Hk0">
-                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="19.666666666666668"/>
+                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="17.333333333333332"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydO-YF-Nhj">
-                                                                                    <rect key="frame" x="5" y="1" width="136.33333333333334" height="17.666666666666668"/>
+                                                                                    <rect key="frame" x="5" y="0.0" width="136.33333333333334" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="primery_black"/>
                                                                                     <nil key="highlightedColor"/>
@@ -765,19 +766,19 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zWG-7v-nWq">
-                                                                    <rect key="frame" x="0.0" y="31.666666666666629" width="303" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="29.333333333333371" width="303" height="17.333333333333329"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUp-bd-QuI">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="20"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="17.333333333333332"/>
                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                                             <color key="textColor" name="Gray"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWM-2n-SZH">
-                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="20"/>
+                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="17.333333333333332"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smg-gA-929">
-                                                                                    <rect key="frame" x="5" y="1" width="136.33333333333334" height="17.666666666666668"/>
+                                                                                    <rect key="frame" x="5" y="0.0" width="136.33333333333334" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="primery_black"/>
                                                                                     <nil key="highlightedColor"/>
@@ -792,20 +793,48 @@
                                                                         </view>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jCP-Iv-wOS">
+                                                                    <rect key="frame" x="0.0" y="58.666666666666622" width="303" height="17.666666666666664"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMs-KI-ruc">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="17.666666666666668"/>
+                                                                            <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
+                                                                            <color key="textColor" name="Gray"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-8e-6an">
+                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="17.666666666666668"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYL-eY-wNU">
+                                                                                    <rect key="frame" x="5" y="0.0" width="136.33333333333334" height="17.666666666666668"/>
+                                                                                    <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
+                                                                                    <color key="textColor" name="primery_black"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                            <constraints>
+                                                                                <constraint firstItem="JYL-eY-wNU" firstAttribute="leading" secondItem="TSg-8e-6an" secondAttribute="leading" constant="5" id="8wN-Wu-Mc9"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="JYL-eY-wNU" secondAttribute="trailing" id="SQo-TX-c9t"/>
+                                                                                <constraint firstItem="JYL-eY-wNU" firstAttribute="centerY" secondItem="TSg-8e-6an" secondAttribute="centerY" id="Vc0-dW-2Tk"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                    </subviews>
+                                                                </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="X8z-ZG-FcK">
-                                                                    <rect key="frame" x="0.0" y="63.666666666666622" width="303" height="19.666666666666664"/>
+                                                                    <rect key="frame" x="0.0" y="88.333333333333371" width="303" height="17.333333333333329"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platform fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-Ik-BkE">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="19.666666666666668"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="17.333333333333332"/>
                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                                             <color key="textColor" name="Gray"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfa-ak-gaI">
-                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="19.666666666666668"/>
+                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="17.333333333333332"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfW-if-402">
-                                                                                    <rect key="frame" x="5" y="1" width="136.33333333333334" height="17.666666666666668"/>
+                                                                                    <rect key="frame" x="5" y="-0.33333333333337123" width="136.33333333333334" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="primery_black"/>
                                                                                     <nil key="highlightedColor"/>
@@ -821,19 +850,19 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="clQ-Ie-7H5">
-                                                                    <rect key="frame" x="0.0" y="95.333333333333371" width="303" height="19.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="117.66666666666674" width="303" height="17.333333333333343"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n90-8b-BQj">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="19.666666666666668"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="17.333333333333332"/>
                                                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="14"/>
                                                                             <color key="textColor" name="Gray"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhU-x8-mjj">
-                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="19.666666666666668"/>
+                                                                            <rect key="frame" x="161.66666666666663" y="0.0" width="141.33333333333337" height="17.333333333333332"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceN-3W-hPA">
-                                                                                    <rect key="frame" x="5" y="1" width="136.33333333333334" height="17.666666666666668"/>
+                                                                                    <rect key="frame" x="5" y="-0.33333333333348492" width="136.33333333333334" height="17.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="14"/>
                                                                                     <color key="textColor" name="primery_black"/>
                                                                                     <nil key="highlightedColor"/>
@@ -850,18 +879,18 @@
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="115" id="ITf-dL-Yt5"/>
+                                                                <constraint firstAttribute="height" constant="135" id="ITf-dL-Yt5"/>
                                                             </constraints>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCf-qD-xlf">
-                                                            <rect key="frame" x="10" y="166" width="303" height="1"/>
+                                                            <rect key="frame" x="10" y="186" width="303" height="1"/>
                                                             <color key="backgroundColor" name="Storke"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="EpN-Xw-rIw"/>
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VBu-rt-yNF">
-                                                            <rect key="frame" x="10" y="182" width="303" height="22"/>
+                                                            <rect key="frame" x="10" y="202" width="303" height="22"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bd3-QS-2ol">
                                                                     <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="22"/>
@@ -915,7 +944,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZl-gf-Bke">
-                                                    <rect key="frame" x="0.0" y="880" width="323" height="40"/>
+                                                    <rect key="frame" x="0.0" y="900" width="323" height="40"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQr-UU-BuN">
                                                             <rect key="frame" x="0.0" y="0.0" width="323" height="40"/>
