@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OneSignal
 
 class VerifyOtpVM {
     
@@ -43,7 +44,12 @@ class VerifyOtpVM {
                         FCUtilites.saveIsGetCurrentUser(true)
                         FCUtilites.saveRoleName(response?.data?.roleName ?? "")
                         FCUtilites.saveCurrentUser(response?.data?.user)
-                        
+
+                        // Set OneSignal external user ID for push notifications
+                        if let userId = response?.data?.user?.id {
+                            OneSignal.setExternalUserId("\(userId)")
+                        }
+
                         self.lastLoginModify(role: FCUtilites.getRoleName())
                     }
                     successVerify?()

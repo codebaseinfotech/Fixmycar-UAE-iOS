@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OneSignal
 
 class CreateAccountVM {
     
@@ -56,7 +57,12 @@ class CreateAccountVM {
                     FCUtilites.saveIsGetCurrentUser(true)
                     FCUtilites.saveRoleName(response?.data?.roleName ?? "")
                     FCUtilites.saveCurrentUser(response?.data?.user)
-                    
+
+                    // Set OneSignal external user ID for push notifications
+                    if let userId = response?.data?.user?.id {
+                        OneSignal.setExternalUserId("\(userId)")
+                    }
+
                     self.successRegister?()
                     
                 } else {

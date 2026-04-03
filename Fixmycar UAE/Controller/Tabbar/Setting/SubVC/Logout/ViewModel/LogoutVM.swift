@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OneSignal
 
 class LogoutVM {
     
@@ -26,6 +27,10 @@ class LogoutVM {
                 APIClient.sharedInstance.hideIndicator()
                 
                 let _ = response?.message ?? ""
+
+                // Remove OneSignal external user ID to stop receiving notifications for this user
+                OneSignal.removeExternalUserId()
+
                 if statusCode == 200 {
                     if let status = response?.status, status {
                         FCUtilites.saveCurrentUserToken("")
@@ -69,12 +74,15 @@ class LogoutVM {
                 let _ = response?.message ?? ""
                 if statusCode == 200 {
                     if let status = response?.status, status {
-                        
+
+                        // Remove OneSignal external user ID
+                        OneSignal.removeExternalUserId()
+
                         FCUtilites.saveCurrentUserToken("")
                         FCUtilites.saveIsGetCurrentUser(false)
                         FCUtilites.saveRoleName("")
                         FCUtilites.saveCurrentUser(nil)
-                        
+
                         successDeleteAccount?()
                     } else {
                         failureDeleteAccount?(error ?? "")
