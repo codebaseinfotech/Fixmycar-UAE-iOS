@@ -29,6 +29,10 @@ let ONE_SINGNAL_ID = current == .live ? "1028df7f-db8a-4a2e-845c-185f5d2be0ea" :
 
 let google_place_key = "AIzaSyD4Fl5fv1u4g-96GrYYGCJmqCtTx6fs_CI"
 
+// ************************* STRIPE KEYS ***********************
+let STRIPE_PUBLISHABLE_KEY = "pk_test_51SsqRpBOWZhhJtvviFhs2HoL8zWzmQxVULXht06OvVN3xWc9cO2t6TZhKNXCggeJLHRedGWRjXncbff9SsGmsLzj00zvn83Mb0"
+let STRIPE_SECRET_KEY = "sk_test_51SsqRpBOWZhhJtvvpIZv2KIMqs6Gr8CShe4FdrQOpJUE8UY4sQW4LEJGVJTKHccZxqF2rivZ794r0PCveBgnLqda00VCkFgzV4"
+
 enum APIEndPoint: String {
     
     case loginUser = "v1/customer/login"
@@ -62,4 +66,5 @@ enum APIEndPoint: String {
     case vehicelMake = "v1/vehicle/makes"
     case vehicleModel = "v1/vehicle/models/"
     case cancelTrip = "v1/bookings/"
+    case createPaymentIntent = "v1/customer/payment/create-intent"
 }

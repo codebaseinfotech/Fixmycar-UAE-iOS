@@ -10,10 +10,70 @@ import Foundation
 class BookingPaymentVM {
     var successCreateBooking: (() -> Void)?
     var failureCreateBooking: ((String) -> Void)?
+
+    // Stripe Payment Intent callbacks
+    var successPaymentIntent: ((PaymentIntentData) -> Void)?
+    var failurePaymentIntent: ((String) -> Void)?
+
+    // Store payment type and amount for booking
+    var currentPaymentType: String = "full"
+    var currentPaymentAmount: Double = 0.0
+
+    // MARK: - Create Payment Intent
+    func createPaymentIntent(amount: Double, paymentType: String) {
+        APIClient.sharedInstance.showIndicaor()
+
+        // Store for later use when creating booking
+        self.currentPaymentType = paymentType
+        self.currentPaymentAmount = amount
+
+        let params: [String: Any] = [
+            "amount": amount,
+            "currency": CreateBooking.shared.currency ?? "AED",
+            "payment_type": paymentType  // full or partial
+        ]
+
+        debugPrint("Payment Intent Param: ", params)
+
+        APIClient.sharedInstance.request(
+            method: .post,
+            url: APIEndPoint.createPaymentIntent,
+            parameters: params,
+            responseType: PaymentIntentResponse.self
+        ) { [weak self] response, error, statusCode in
+            APIClient.sharedInstance.hideIndicator()
+            guard let self = self else { return }
+
+            if let error = error {
+                self.failurePaymentIntent?(error)
+                return
+            }
+
+            guard let response = response else {
+                self.failurePaymentIntent?("Something went wrong")
+                return
+            }
+
+            if response.status == false {
+                self.failurePaymentIntent?(response.message ?? "Failed to create payment")
+                return
+            }
+
+            guard let data = response.data else {
+                self.failurePaymentIntent?("Invalid payment data")
+                return
+            }
+
+            self.successPaymentIntent?(data)
+        }
+    }
     
     func createBookingImg() {
         APIClient.sharedInstance.showIndicaor()
         
+        let totalPrice = CreateBooking.shared.finalPrice ?? 0.0
+        let pendingAmount = totalPrice - currentPaymentAmount
+
         var params: [String: Any] = [
             "service_type_id": CreateBooking.shared.service_type_id,
             "pickup_address": CreateBooking.shared.pickup_address ?? "",
@@ -36,20 +96,23 @@ class BookingPaymentVM {
             "route_polyline": CreateBooking.shared.route_polyline ?? "",
             "vehicle_model": CreateBooking.shared.vehicle_model ?? "",
             "vehicle_make": CreateBooking.shared.vehicle_make ?? "",
-            "payment_method": CreateBooking.shared.payment_method ?? ""
+            "payment_method": CreateBooking.shared.payment_method ?? "",
+            "payment_type": currentPaymentType,           // full or partial
+            "paid_amount": currentPaymentAmount,          // Amount paid now
+            "pending_amount": pendingAmount               // Remaining amount to pay
         ]
-        
+
         if CreateBooking.shared.promotion_id != 0 {
             params["promotion_id"] = CreateBooking.shared.promotion_id
         }
-        
+
         if CreateBooking.shared.isScheduleBooking {
             let date = CreateBooking.shared.scheduled_at?.toDisplayDate(apiFormat: "dd MMM yyyy hh:mm a", displayFormat: "yyyy-MM-dd HH:mm:ss")
             params["scheduled_at"] = date
         }
-        
+
         debugPrint("Create Booking Param: ", params)
-        
+
         var files: [MultipartFile] = []
         
         if let images = CreateBooking.shared.vehical_image {
