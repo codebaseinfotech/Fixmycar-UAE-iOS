@@ -153,7 +153,10 @@ class FareBreakupVC: UIViewController {
         }
     }
     @IBAction func tappedProceedToPay(_ sender: Any) {
-        let vc = BookingConfirmationPopupVC()
+        let vc = BookingPaymentVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        /*let vc = BookingConfirmationPopupVC()
         if let sheet = vc.sheetPresentationController {
             // Create a custom detent that returns a fixed height
             let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
@@ -172,7 +175,7 @@ class FareBreakupVC: UIViewController {
             self.bookingPaymentVM.createBookingImg()
         }
         
-        self.present(vc, animated: true)
+        self.present(vc, animated: true)*/
     }
     
     @IBAction func tappedCOD(_ sender: Any) {

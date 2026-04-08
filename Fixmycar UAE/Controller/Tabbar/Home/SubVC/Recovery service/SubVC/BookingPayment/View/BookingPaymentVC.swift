@@ -70,7 +70,24 @@ class BookingPaymentVC: UIViewController {
         btnPayFull.setImage("ic_uncheck".image, for: [])
     }
     @IBAction func tappedPayNow(_ sender: Any) {
-        bookingPaymentVM.createBookingImg()
+        
+        let vc = BookingConfirmationPopupVC()
+        if let sheet = vc.sheetPresentationController {
+            // Create a custom detent that returns a fixed height
+            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                return 200
+            }
+            sheet.detents = [fixedDetent]
+            sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+        }
+        vc.sheetPresentationController?.delegate = self
+        vc.isConfirmSchedule = false
+        
+        vc.onTappedConfirmBooking = {
+            self.bookingPaymentVM.createBookingImg()
+        }
+        
+        self.present(vc, animated: true)
     }
     
     // MARK: - setUpText 30 PayNow
