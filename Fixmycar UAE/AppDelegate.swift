@@ -13,7 +13,6 @@ import Firebase
 import FirebaseAnalytics
 import OneSignal
 import UserNotifications
-import StripePaymentSheet
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -39,10 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
-
-        // Configure Stripe
-        StripeManager.shared.configure()
-
+        
         getConfigData()
         callCheckApp()
 
