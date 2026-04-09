@@ -230,9 +230,12 @@ class RecoveryServiceVC: UIViewController {
             self.lblVehicelTYpe.text = item
             self.lblVehicelTYpe.textColor = .black
 
-            // Store selected vehicle type ID
+            // Store selected vehicle type ID and recovery_types_id
             if let selectedType = self.recoveryVM.recoveryTypes?[index] {
                 CreateBooking.shared.vehicle_type = selectedType.id
+                if let idString = selectedType.id, let idInt = Int(idString) {
+                    CreateBooking.shared.recovery_types_id = idInt
+                }
             }
         }
 

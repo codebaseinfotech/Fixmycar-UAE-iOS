@@ -46,6 +46,8 @@ class CreateBooking {
     var vehicle_model: String?
     var payment_method: String?
     var vehical_image: [UIImage]?
+    var recovery_types_id: Int?
+    var vehical_image_urls: [String]?
 }
 
 // MARK: - rating Booking

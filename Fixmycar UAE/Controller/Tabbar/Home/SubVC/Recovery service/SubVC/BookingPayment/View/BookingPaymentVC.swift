@@ -30,29 +30,6 @@ class BookingPaymentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblAmount.text = "\(CreateBooking.shared.currency ?? "") \(CreateBooking.shared.finalPrice ?? 0.0)"
-        
-        bookingPaymentVM.successCreateBooking = {
-            let vc = BookingSuccessPopUpVC()
-            if let sheet = vc.sheetPresentationController {
-                // Create a custom detent that returns a fixed height
-                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
-                    return 250
-                }
-                sheet.detents = [fixedDetent]
-                sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
-            }
-            vc.sheetPresentationController?.delegate = self
-            if CreateBooking.shared.isScheduleBooking {
-                vc.strOpenFrom = "schedule_service"
-            } else {
-                vc.strOpenFrom = "create_booking"
-            }
-            self.present(vc, animated: true)
-        }
-        
-        bookingPaymentVM.failureCreateBooking = { msg in
-            self.setUpMakeToast(msg: msg)
-        }
 
         bookingPaymentVM.successCheckoutUrl = { [weak self] checkoutUrl in
             self?.openStripeCheckout(url: checkoutUrl)
@@ -148,7 +125,7 @@ class BookingPaymentVC: UIViewController {
             let amount = self.isFullPaymentSelected
                 ? (CreateBooking.shared.finalPrice ?? 0.0)
                 : self.minimumPartialAmount
-            self.bookingPaymentVM.getStripeCheckoutUrl(amount: amount)
+            self.bookingPaymentVM.getTripPrepaymentUrl(amount: amount)
         }
 
         self.present(vc, animated: true)

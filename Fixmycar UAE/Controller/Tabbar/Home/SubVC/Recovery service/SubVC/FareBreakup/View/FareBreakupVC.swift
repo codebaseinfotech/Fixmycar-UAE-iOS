@@ -70,28 +70,6 @@ class FareBreakupVC: UIViewController {
             self.setUpMakeToast(msg: msg)
         }
         
-        bookingPaymentVM.successCreateBooking = {
-            let vc = BookingSuccessPopUpVC()
-            if let sheet = vc.sheetPresentationController {
-                // Create a custom detent that returns a fixed height
-                let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
-                    return 250
-                }
-                sheet.detents = [fixedDetent]
-                sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
-            }
-            vc.sheetPresentationController?.delegate = self
-            if CreateBooking.shared.isScheduleBooking {
-                vc.strOpenFrom = "schedule_service"
-            } else {
-                vc.strOpenFrom = "create_booking"
-            }
-            self.present(vc, animated: true)
-        }
-        
-        bookingPaymentVM.failureCreateBooking = { msg in
-            self.setUpMakeToast(msg: msg)
-        }
         // Do any additional setup after loading the view.
     }
     
