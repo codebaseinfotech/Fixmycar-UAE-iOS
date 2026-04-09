@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import SafariServices
 
 class TrackLiveVC: UIViewController, GMSMapViewDelegate {
 
@@ -83,8 +84,9 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
     var googleMapVM = GoogleDistanceVM()
     var cancelVM = CancelBookingVM()
     var jobStatus: JobStatus = .accepted
-    
+
     private var currentBookingId: Int?
+    private var safariVC: SFSafariViewController?
 
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -103,11 +105,37 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
         cancelVM.successCancelBooking = { msg in
             self.tappedBack(self)
             self.setUpMakeToast(msg: msg)
-            
+
         }
         cancelVM.failureCancelBooking = { msg in
             self.setUpMakeToast(msg: msg)
         }
+
+        // Payment callbacks
+        trackLiveVM.successCheckoutUrl = { [weak self] checkoutUrl in
+            self?.openStripeCheckout(url: checkoutUrl)
+        }
+
+        trackLiveVM.failureCheckoutUrl = { [weak self] msg in
+            self?.setUpMakeToast(msg: msg)
+        }
+
+        trackLiveVM.successPaymentStatus = { [weak self] in
+            self?.setUpMakeToast(msg: "Payment completed successfully!")
+            self?.trackLiveVM.getTrackLiveDetails()
+        }
+
+        trackLiveVM.failurePaymentStatus = { [weak self] msg in
+            self?.setUpMakeToast(msg: msg)
+        }
+
+        // Listen for payment redirect from URL scheme
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handlePaymentRedirect(_:)),
+            name: .paymentRedirectReceived,
+            object: nil
+        )
         
         trackLiveVM.getTrackLiveDetails()
         trackLiveVM.successTrackLive = {
@@ -125,12 +153,15 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
             self.lblPlateNumber.text = dicData?.vehicleNumber
             self.lblCarName.text = dicData?.vehicleType ?? ""
             
-            if dicData?.paymentType == "pending" {
+            let paymentType = dicData?.paymentType ?? ""
+            if paymentType == "partial" || paymentType == "pending" {
                 self.lblRemaining.text = "Pay your remaining amount"
+                self.btnPayNow.isHidden = false
             } else {
                 self.lblRemaining.text = "Payment completed"
+                self.btnPayNow.isHidden = true
             }
-            
+
             self.lblRemainigAmount.text = "Trip Amount:" + " " + "AED" + " " + "\(dicData?.finalPrice ?? 0.0)"
             
             if !FMSocketManager.shared.isConnected {
@@ -195,6 +226,7 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
         // Remove socket observers
         NotificationCenter.default.removeObserver(self, name: .socketConnected, object: nil)
         NotificationCenter.default.removeObserver(self, name: .driverLocationUpdated, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .paymentRedirectReceived, object: nil)
     }
 
     // MARK: - refreshBooking
@@ -392,6 +424,29 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
     @IBAction func tappedBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func tappedPayNow(_ sender: Any) {
+        trackLiveVM.getStripeCheckoutUrl()
+    }
+
+    // MARK: - Handle Payment Redirect
+    @objc private func handlePaymentRedirect(_ notification: Notification) {
+        // Dismiss Safari and check payment status
+        safariVC?.dismiss(animated: true) { [weak self] in
+            self?.trackLiveVM.checkPaymentStatus()
+        }
+    }
+
+    // MARK: - Open Stripe Checkout
+    private func openStripeCheckout(url: String) {
+        guard let checkoutUrl = URL(string: url) else {
+            setUpMakeToast(msg: "Invalid checkout URL")
+            return
+        }
+        safariVC = SFSafariViewController(url: checkoutUrl)
+        safariVC?.delegate = self
+        present(safariVC!, animated: true)
+    }
+
     @IBAction func tappedCancelTrip(_ sender: Any) {
         let alert = UIAlertController(
             title: "Trip Cancel",
@@ -816,5 +871,13 @@ extension TrackLiveVC: CLLocationManagerDelegate {
 
         return bearing
     }
-    
+
+}
+
+// MARK: - SFSafariViewControllerDelegate
+extension TrackLiveVC: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        // User closed Safari - check payment status
+        trackLiveVM.checkPaymentStatus()
+    }
 }

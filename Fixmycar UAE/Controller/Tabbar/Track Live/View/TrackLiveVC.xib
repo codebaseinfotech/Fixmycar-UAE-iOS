@@ -228,23 +228,23 @@
                                     <rect key="frame" x="0.0" y="208" width="353" height="66"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your remaining amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjt-Gb-MBl" customClass="AppLabel" customModule="FixMyCar_UAE" customModuleProvider="target">
-                                            <rect key="frame" x="12" y="12" width="331" height="20"/>
+                                            <rect key="frame" x="12" y="12" width="239" height="20"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Bold" family="Satoshi" pointSize="16"/>
                                             <color key="textColor" name="primery_black"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You paid D 30 remaining amount is D 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzg-Tz-fZg" customClass="AppLabel" customModule="FixMyCar_UAE" customModuleProvider="target">
-                                            <rect key="frame" x="12" y="37" width="331" height="15"/>
+                                            <rect key="frame" x="12" y="37" width="239" height="15"/>
                                             <fontDescription key="fontDescription" name="Satoshi-Medium" family="Satoshi" pointSize="12"/>
                                             <color key="textColor" name="Gray"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJO-To-0HB" customClass="AppButton" customModule="FixMyCar_UAE" customModuleProvider="target">
-                                            <rect key="frame" x="353" y="17.666666666666629" width="0.0" height="31"/>
+                                            <rect key="frame" x="261" y="15.666666666666629" width="80" height="35"/>
                                             <color key="backgroundColor" name="dark_green"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" id="7Xk-pS-alz"/>
-                                                <constraint firstAttribute="height" constant="31" id="AN1-KY-uBX"/>
+                                                <constraint firstAttribute="width" constant="80" id="7Xk-pS-alz"/>
+                                                <constraint firstAttribute="height" constant="35" id="AN1-KY-uBX"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -253,9 +253,12 @@
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="15.5"/>
+                                                    <real key="value" value="17.5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tappedPayNow:" destination="-1" eventType="touchUpInside" id="ZeB-9E-has"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -263,7 +266,7 @@
                                         <constraint firstItem="Gjt-Gb-MBl" firstAttribute="leading" secondItem="iwt-Jq-bg5" secondAttribute="leading" constant="12" id="8Il-T5-b4e"/>
                                         <constraint firstItem="MJO-To-0HB" firstAttribute="leading" secondItem="Gjt-Gb-MBl" secondAttribute="trailing" constant="10" id="LDA-t1-AaK"/>
                                         <constraint firstItem="Gjt-Gb-MBl" firstAttribute="top" secondItem="iwt-Jq-bg5" secondAttribute="top" constant="12" id="RwB-Fu-aHG"/>
-                                        <constraint firstAttribute="trailing" secondItem="MJO-To-0HB" secondAttribute="trailing" id="Zmc-o2-T5r"/>
+                                        <constraint firstAttribute="trailing" secondItem="MJO-To-0HB" secondAttribute="trailing" constant="12" id="Zmc-o2-T5r"/>
                                         <constraint firstAttribute="height" constant="66" id="fNC-VR-ZzE"/>
                                         <constraint firstItem="Lzg-Tz-fZg" firstAttribute="leading" secondItem="iwt-Jq-bg5" secondAttribute="leading" constant="12" id="oHV-2r-mrR"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Lzg-Tz-fZg" secondAttribute="bottom" constant="12" id="q74-ZM-cse"/>
@@ -583,7 +586,7 @@
         <image name="ic_chat" width="18" height="18"/>
         <image name="ic_dummy_user" width="44" height="44"/>
         <image name="ic_empty_track_live" width="139" height="140"/>
-        <image name="ic_star" width="18" height="18"/>
+        <image name="ic_star" width="10" height="10"/>
         <image name="ic_truck" width="63" height="22"/>
         <image name="img_road_empty" width="335" height="10"/>
         <image name="img_road_filled" width="335" height="10"/>
