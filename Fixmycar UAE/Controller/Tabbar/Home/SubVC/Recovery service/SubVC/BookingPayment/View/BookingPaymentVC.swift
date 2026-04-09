@@ -6,19 +6,25 @@
 //
 
 import UIKit
+import SafariServices
 
 class BookingPaymentVC: UIViewController {
 
     @IBOutlet weak var btnPayFull: UIButton!
     @IBOutlet weak var btnPay30: UIButton!
-    @IBOutlet weak var lblAmount: AppLabel! 
+    @IBOutlet weak var lblAmount: AppLabel!
     @IBOutlet weak var lbl30Description: AppLabel! {
         didSet {
             setBulletText(label: lbl30Description)
         }
     }
-    
+
     var bookingPaymentVM = BookingPaymentVM()
+
+    /// true = full payment, false = partial (50 AED minimum)
+    private var isFullPaymentSelected: Bool = true
+    private let minimumPartialAmount: Double = 50.0
+    private var safariVC: SFSafariViewController?
 
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -48,7 +54,60 @@ class BookingPaymentVC: UIViewController {
             self.setUpMakeToast(msg: msg)
         }
 
-        // Do any additional setup after loading the view.
+        bookingPaymentVM.successCheckoutUrl = { [weak self] checkoutUrl in
+            self?.openStripeCheckout(url: checkoutUrl)
+        }
+
+        bookingPaymentVM.failureCheckoutUrl = { [weak self] msg in
+            self?.setUpMakeToast(msg: msg)
+        }
+
+        bookingPaymentVM.successPaymentStatus = { [weak self] in
+            self?.showBookingSuccessPopup()
+        }
+
+        bookingPaymentVM.failurePaymentStatus = { [weak self] msg in
+            self?.setUpMakeToast(msg: msg)
+        }
+
+        // Listen for payment redirect from URL scheme
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handlePaymentRedirect(_:)),
+            name: .paymentRedirectReceived,
+            object: nil
+        )
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // MARK: - Handle Payment Redirect
+    @objc private func handlePaymentRedirect(_ notification: Notification) {
+        // Dismiss Safari and check payment status
+        safariVC?.dismiss(animated: true) { [weak self] in
+            self?.bookingPaymentVM.checkPaymentStatus()
+        }
+    }
+
+    // MARK: - Show Booking Success Popup
+    private func showBookingSuccessPopup() {
+        let vc = BookingSuccessPopUpVC()
+        if let sheet = vc.sheetPresentationController {
+            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                return 250
+            }
+            sheet.detents = [fixedDetent]
+            sheet.prefersGrabberVisible = true
+        }
+        vc.sheetPresentationController?.delegate = self
+        if CreateBooking.shared.isScheduleBooking {
+            vc.strOpenFrom = "schedule_service"
+        } else {
+            vc.strOpenFrom = "create_booking"
+        }
+        self.present(vc, animated: true)
     }
 
     // MARK: - Action Method
@@ -62,32 +121,48 @@ class BookingPaymentVC: UIViewController {
         UIApplication.shared.windows.first?.addSubview(popup)
     }
     @IBAction func tappedPayFullAmout(_ sender: Any) {
+        isFullPaymentSelected = true
         btnPayFull.setImage("ic_check".image, for: [])
         btnPay30.setImage("ic_uncheck".image, for: [])
     }
     @IBAction func tappedPay30(_ sender: Any) {
+        isFullPaymentSelected = false
         btnPay30.setImage("ic_check".image, for: [])
         btnPayFull.setImage("ic_uncheck".image, for: [])
     }
     @IBAction func tappedPayNow(_ sender: Any) {
-        
+
         let vc = BookingConfirmationPopupVC()
         if let sheet = vc.sheetPresentationController {
-            // Create a custom detent that returns a fixed height
             let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
                 return 200
             }
             sheet.detents = [fixedDetent]
-            sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+            sheet.prefersGrabberVisible = true
         }
         vc.sheetPresentationController?.delegate = self
         vc.isConfirmSchedule = false
-        
-        vc.onTappedConfirmBooking = {
-            self.bookingPaymentVM.createBookingImg()
+
+        vc.onTappedConfirmBooking = { [weak self] in
+            guard let self = self else { return }
+            let amount = self.isFullPaymentSelected
+                ? (CreateBooking.shared.finalPrice ?? 0.0)
+                : self.minimumPartialAmount
+            self.bookingPaymentVM.getStripeCheckoutUrl(amount: amount)
         }
-        
+
         self.present(vc, animated: true)
+    }
+
+    // MARK: - Open Stripe Checkout
+    private func openStripeCheckout(url: String) {
+        guard let checkoutUrl = URL(string: url) else {
+            setUpMakeToast(msg: "Invalid checkout URL")
+            return
+        }
+        safariVC = SFSafariViewController(url: checkoutUrl)
+        safariVC?.delegate = self
+        present(safariVC!, animated: true)
     }
     
     // MARK: - setUpText 30 PayNow
@@ -170,7 +245,14 @@ extension BookingPaymentVC: UISheetPresentationControllerDelegate {
             }, completion: { _ in
                 overlayView.removeFromSuperview()
             })
-            
         }
+    }
+}
+
+// MARK: - SFSafariViewControllerDelegate
+extension BookingPaymentVC: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        // User closed Safari - check payment status
+        bookingPaymentVM.checkPaymentStatus()
     }
 }

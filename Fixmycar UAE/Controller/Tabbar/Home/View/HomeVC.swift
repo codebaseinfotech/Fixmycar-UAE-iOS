@@ -77,6 +77,11 @@ class HomeVC: UIViewController {
     var chatVM = ChatVM()
     private var lblChatBadge: UILabel?
     let refreshControl = UIRefreshControl()
+
+    // MARK: - Banner Page Control & Auto Scroll
+    @IBOutlet weak var bannerPageControl: UIPageControl!
+    private var bannerAutoScrollTimer: Timer?
+    private var currentBannerIndex: Int = 0
     
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -107,7 +112,57 @@ class HomeVC: UIViewController {
         setupChatBadge()
         chatVM.getChatList()
 
+        // Setup banner page control
+        setupBannerPageControl()
+
         // Do any additional setup after loading the view.
+    }
+
+    // MARK: - Setup Banner Page Control
+    private func setupBannerPageControl() {
+        bannerPageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
+    }
+
+    @objc private func pageControlTapped(_ sender: UIPageControl) {
+        let page = sender.currentPage
+        let indexPath = IndexPath(item: page, section: 0)
+        collectionViewBanner.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        currentBannerIndex = page
+    }
+
+    // MARK: - Banner Auto Scroll
+    private func startBannerAutoScroll() {
+        stopBannerAutoScroll()
+        guard homeVM.homeBanner.count > 1 else { return }
+
+        bannerAutoScrollTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self] _ in
+            self?.scrollToNextBanner()
+        }
+    }
+
+    private func stopBannerAutoScroll() {
+        bannerAutoScrollTimer?.invalidate()
+        bannerAutoScrollTimer = nil
+    }
+
+    private func scrollToNextBanner() {
+        guard homeVM.homeBanner.count > 0 else { return }
+
+        currentBannerIndex += 1
+        if currentBannerIndex >= homeVM.homeBanner.count {
+            currentBannerIndex = 0
+        }
+
+        let indexPath = IndexPath(item: currentBannerIndex, section: 0)
+        collectionViewBanner.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        bannerPageControl.currentPage = currentBannerIndex
+    }
+
+    private func updateBannerPageControl() {
+        bannerPageControl.numberOfPages = homeVM.homeBanner.count
+        bannerPageControl.currentPage = currentBannerIndex
+        bannerPageControl.isHidden = homeVM.homeBanner.count <= 1
+        startBannerAutoScroll()
     }
     
     // MARK: - pull to refresh API
@@ -198,6 +253,7 @@ class HomeVC: UIViewController {
             self?.tblViewRecentBooking.reloadData()
             self?.collectionViewBanner.reloadData()
             self?.collectionViewServices.reloadData()
+            self?.updateBannerPageControl()
 
             self?.viewMainActiveBooking.isHidden = self?.homeVM.homeData?.activeBooking?.count == 0 ? true : false
 
@@ -321,7 +377,12 @@ class HomeVC: UIViewController {
             self?.setUpMakeToast(msg: msg)
         }
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopBannerAutoScroll()
+    }
+
     func setupLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -498,8 +559,29 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             break
         }
     }
-    
-    
+
+    // MARK: - ScrollView Delegate for Banner
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == collectionViewBanner {
+            let pageWidth = scrollView.frame.width
+            let page = Int(scrollView.contentOffset.x / pageWidth)
+            currentBannerIndex = page
+            bannerPageControl.currentPage = page
+            startBannerAutoScroll()
+        }
+    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if scrollView == collectionViewBanner {
+            stopBannerAutoScroll()
+        }
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView == collectionViewBanner && !decelerate {
+            startBannerAutoScroll()
+        }
+    }
 }
 
 extension HomeVC: UICollectionViewDelegateFlowLayout {

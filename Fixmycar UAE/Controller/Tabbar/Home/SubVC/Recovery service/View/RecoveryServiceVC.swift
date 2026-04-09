@@ -14,6 +14,10 @@ struct VehicleTypeModel {
 
 class RecoveryServiceVC: UIViewController {
 
+    
+    @IBOutlet weak var lblVehicelTYpe: AppLabel!
+    @IBOutlet weak var btnVehicelType: UIButton!
+    
     @IBOutlet weak var lblBookService: AppLabel!
     @IBOutlet weak var lblLineBookService: UILabel!
     @IBOutlet weak var lblScheduleLater: AppLabel!
@@ -84,6 +88,7 @@ class RecoveryServiceVC: UIViewController {
     
     var dropDownVehicleMake = DropDown()
     var dropDownVehicleModel = DropDown()
+    var dropDownVehicleTypes = DropDown()
     
     // MARK: - view Cycle
     override func viewDidLoad() {
@@ -92,6 +97,7 @@ class RecoveryServiceVC: UIViewController {
         recoveryVM.getVehicleType()
         recoveryVM.getVehicleIssue()
         recoveryVM.getVehicelMake()
+        recoveryVM.getRecoveryTypes()
         
         recoveryVM.successVehicleType = {
             self.collectionViewVehicleType.reloadData()
@@ -119,7 +125,14 @@ class RecoveryServiceVC: UIViewController {
         recoveryVM.failureVehicleModel = { (message) in
             self.setUpMakeToast(msg: message)
         }
-        
+
+        recoveryVM.successRecoveryTypes = {
+            self.setDropDownVehicleTypes()
+        }
+        recoveryVM.failureRecoveryTypes = { (message) in
+            self.setUpMakeToast(msg: message)
+        }
+
         selectBookService()
         // Do any additional setup after loading the view.
     }
@@ -186,15 +199,51 @@ class RecoveryServiceVC: UIViewController {
             self.lblVehicleModel.text = item
             self.lblVehicleModel.textColor = .black
         }
-        
+
         dropDownVehicleModel.bottomOffset = CGPoint(x: 0, y: viewVehicleModel.bounds.height)
         dropDownVehicleModel.topOffset = CGPoint(x: 0, y: -viewVehicleModel.bounds.height)
         dropDownVehicleModel.dismissMode = .onTap
         dropDownVehicleModel.textColor = UIColor.black
         dropDownVehicleModel.backgroundColor = UIColor(red: 255/255, green:  255/255, blue:  255/255, alpha: 1)
         dropDownVehicleModel.selectionBackgroundColor = UIColor.clear
-        
+
         dropDownVehicleModel.reloadAllComponents()
+    }
+
+    // MARK: - setUpDropDown Vehicle Types
+    func setDropDownVehicleTypes() {
+        var arrVehicleTypes: [String] = []
+
+        guard let types = recoveryVM.recoveryTypes else { return }
+        for obj in types {
+            arrVehicleTypes.append(obj.name ?? "")
+        }
+
+        dropDownVehicleTypes.dataSource = arrVehicleTypes
+        dropDownVehicleTypes.anchorView = btnVehicelType
+        dropDownVehicleTypes.direction = .bottom
+
+        dropDownVehicleTypes.selectionAction = { [weak self] (index: Int, item: String) in
+            guard let self = self else { return }
+            debugPrint("Selected Vehicle Type: \(item) at index: \(index)")
+
+            self.lblVehicelTYpe.text = item
+            self.lblVehicelTYpe.textColor = .black
+
+            // Store selected vehicle type ID
+            if let selectedType = self.recoveryVM.recoveryTypes?[index] {
+                CreateBooking.shared.vehicle_type = selectedType.id
+            }
+        }
+
+        dropDownVehicleTypes.bottomOffset = CGPoint(x: 0, y: btnVehicelType.bounds.height)
+        dropDownVehicleTypes.topOffset = CGPoint(x: 0, y: -btnVehicelType.bounds.height)
+        dropDownVehicleTypes.dismissMode = .onTap
+        dropDownVehicleTypes.textColor = UIColor.black
+        dropDownVehicleTypes.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        dropDownVehicleTypes.selectionBackgroundColor = UIColor.clear
+
+        dropDownVehicleTypes.reloadAllComponents()
     }
     
     // MARK: - TV height set
@@ -336,6 +385,10 @@ class RecoveryServiceVC: UIViewController {
         dropDownVehicleModel.show()
     }
     
+    @IBAction func clickedVEhicelType(_ sender: Any) {
+        dropDownVehicleTypes.show()
+    }
+    
     // MARK: - validate
     func validateBooking(isShedule: Bool = false) -> Bool {
         
@@ -356,25 +409,31 @@ class RecoveryServiceVC: UIViewController {
             return false
         }
         
-        guard let vehicleType = selectedVehicleType, vehicleType >= 0 else {
+//        guard let vehicleType = selectedVehicleType, vehicleType >= 0 else {
+//            self.setUpMakeToast(msg: "Please select vehicle type")
+//            return false
+//        }
+        
+        guard let vehicleMake = lblVehicelTYpe.text, vehicleMake != "Select vehicle type" else{
             self.setUpMakeToast(msg: "Please select vehicle type")
             return false
         }
+
         
         guard let vehicleIssue = selectedVehicleIssueIndex, vehicleIssue >= 0 else {
             self.setUpMakeToast(msg: "Please select vehicle issue")
             return false
         }
         
-        guard let vehicleMake = lblVehicleMake.text, vehicleMake != "Select Make" else{
-            self.setUpMakeToast(msg: "Please select vehicle make")
-            return false
-        }
-        
-        guard let vehicleModel = lblVehicleModel.text, vehicleModel != "Select Model" else{
-            self.setUpMakeToast(msg: "Please select vehicle model")
-            return false
-        }
+//        guard let vehicleMake = lblVehicleMake.text, vehicleMake != "Select Make" else{
+//            self.setUpMakeToast(msg: "Please select vehicle make")
+//            return false
+//        }
+//        
+//        guard let vehicleModel = lblVehicleModel.text, vehicleModel != "Select Model" else{
+//            self.setUpMakeToast(msg: "Please select vehicle model")
+//            return false
+//        }
         
         guard arrVehicleImage.count > 0 else {
             self.setUpMakeToast(msg: "Please upload vehicle images")

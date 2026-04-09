@@ -12,7 +12,14 @@ struct BookingResponseModel: Codable {
     let status: Bool?
     let message: String?
     let data: BookingData?
-    let errors: String?
+    let errors: [String: [String]]?
+
+    /// Returns a formatted string of all validation errors
+    var errorMessage: String? {
+        guard let errors = errors, !errors.isEmpty else { return message }
+        let allErrors = errors.values.flatMap { $0 }.joined(separator: "\n")
+        return allErrors.isEmpty ? message : allErrors
+    }
 }
 
 // MARK: - Booking Data
@@ -174,5 +181,174 @@ struct CreateBookingDetails: Codable {
         id = try? container.decode(Int.self, forKey: .id)
         
         promotionCode = try? container.decode(String.self, forKey: .promotionCode)
+    }
+}
+
+// MARK: - Stripe Checkout Response
+struct StripeCheckoutResponse: Codable {
+    let status: Bool?
+    let message: String?
+    let data: StripeCheckoutData?
+    let errors: [String: [String]]?
+
+    var errorMessage: String? {
+        guard let errors = errors, !errors.isEmpty else { return message }
+        let allErrors = errors.values.flatMap { $0 }.joined(separator: "\n")
+        return allErrors.isEmpty ? message : allErrors
+    }
+}
+
+struct StripeCheckoutData: Codable {
+    let paymentId: Int?
+    let serviceRequestId: Int?
+    let checkoutSessionId: String?
+    let paymentIntentId: String?
+    let checkoutUrl: String?
+    let successUrl: String?
+    let cancelUrl: String?
+    let currency: String?
+    let amount: Double?
+    let status: String?
+    let requestedAmount: Double?
+    let bookingTotalAmount: Double?
+    let alreadyPaidAmount: Double?
+    let remainingAmount: Double?
+    let isPartialAttempt: Bool?
+    let minimumPartialAmount: Double?
+
+    enum CodingKeys: String, CodingKey {
+        case paymentId = "payment_id"
+        case serviceRequestId = "service_request_id"
+        case checkoutSessionId = "checkout_session_id"
+        case paymentIntentId = "payment_intent_id"
+        case checkoutUrl = "checkout_url"
+        case successUrl = "success_url"
+        case cancelUrl = "cancel_url"
+        case currency
+        case amount
+        case status
+        case requestedAmount = "requested_amount"
+        case bookingTotalAmount = "booking_total_amount"
+        case alreadyPaidAmount = "already_paid_amount"
+        case remainingAmount = "remaining_amount"
+        case isPartialAttempt = "is_partial_attempt"
+        case minimumPartialAmount = "minimum_partial_amount"
+    }
+}
+
+// MARK: - Payment Status Response
+struct PaymentStatusResponse: Codable {
+    let status: Bool?
+    let message: String?
+    let data: PaymentStatusData?
+    let errors: String?
+
+    var errorMessage: String? {
+        guard let errors = errors, !errors.isEmpty else { return message }
+        let allErrors = errors
+        return allErrors.isEmpty ? message : allErrors
+    }
+}
+
+struct PaymentStatusData: Codable {
+    let serviceRequestId: Int?
+    let bookingStatus: String?
+    let bookingPaymentStatus: String?
+    let bookingPaymentMethod: String?
+    let bookingTotalAmount: Double?
+    let alreadyPaidAmount: Double?
+    let totalPaidAmount: Double?
+    let remainingAmount: Double?
+    let isPaid: Bool?
+    let isPartialPaid: Bool?
+    let canPayMore: Bool?
+    let minimumPartialAmount: Double?
+    let latestPayment: LatestPaymentData?
+
+    enum CodingKeys: String, CodingKey {
+        case serviceRequestId = "service_request_id"
+        case bookingStatus = "booking_status"
+        case bookingPaymentStatus = "booking_payment_status"
+        case bookingPaymentMethod = "booking_payment_method"
+        case bookingTotalAmount = "booking_total_amount"
+        case alreadyPaidAmount = "already_paid_amount"
+        case totalPaidAmount = "total_paid_amount"
+        case remainingAmount = "remaining_amount"
+        case isPaid = "is_paid"
+        case isPartialPaid = "is_partial_paid"
+        case canPayMore = "can_pay_more"
+        case minimumPartialAmount = "minimum_partial_amount"
+        case latestPayment = "latest_payment"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        serviceRequestId = try? container.decode(Int.self, forKey: .serviceRequestId)
+        bookingStatus = try? container.decode(String.self, forKey: .bookingStatus)
+        bookingPaymentStatus = try? container.decode(String.self, forKey: .bookingPaymentStatus)
+        bookingPaymentMethod = try? container.decode(String.self, forKey: .bookingPaymentMethod)
+
+        bookingTotalAmount = container.decodeFlexibleDouble(forKey: .bookingTotalAmount)
+        alreadyPaidAmount = container.decodeFlexibleDouble(forKey: .alreadyPaidAmount)
+        totalPaidAmount = container.decodeFlexibleDouble(forKey: .totalPaidAmount)
+        remainingAmount = container.decodeFlexibleDouble(forKey: .remainingAmount)
+        minimumPartialAmount = container.decodeFlexibleDouble(forKey: .minimumPartialAmount)
+
+        isPaid = try? container.decode(Bool.self, forKey: .isPaid)
+        isPartialPaid = try? container.decode(Bool.self, forKey: .isPartialPaid)
+        canPayMore = try? container.decode(Bool.self, forKey: .canPayMore)
+
+        latestPayment = try? container.decode(LatestPaymentData.self, forKey: .latestPayment)
+    }
+}
+
+struct LatestPaymentData: Codable {
+    let paymentId: Int?
+    let status: String?
+    let paymentMethod: String?
+    let gateway: String?
+    let amount: Double?
+    let currency: String?
+    let failureCode: String?
+    let failureMessage: String?
+    let checkoutSessionId: String?
+    let paymentIntentId: String?
+    let stripeStatus: String?
+    let attemptedAt: String?
+    let paidAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case paymentId = "payment_id"
+        case status
+        case paymentMethod = "payment_method"
+        case gateway
+        case amount
+        case currency
+        case failureCode = "failure_code"
+        case failureMessage = "failure_message"
+        case checkoutSessionId = "checkout_session_id"
+        case paymentIntentId = "payment_intent_id"
+        case stripeStatus = "stripe_status"
+        case attemptedAt = "attempted_at"
+        case paidAt = "paid_at"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        paymentId = try? container.decode(Int.self, forKey: .paymentId)
+        status = try? container.decode(String.self, forKey: .status)
+        paymentMethod = try? container.decode(String.self, forKey: .paymentMethod)
+        gateway = try? container.decode(String.self, forKey: .gateway)
+        amount = container.decodeFlexibleDouble(forKey: .amount)
+        currency = try? container.decode(String.self, forKey: .currency)
+        failureCode = try? container.decode(String.self, forKey: .failureCode)
+        failureMessage = try? container.decode(String.self, forKey: .failureMessage)
+        checkoutSessionId = try? container.decode(String.self, forKey: .checkoutSessionId)
+        paymentIntentId = try? container.decode(String.self, forKey: .paymentIntentId)
+        stripeStatus = try? container.decode(String.self, forKey: .stripeStatus)
+        attemptedAt = try? container.decode(String.self, forKey: .attemptedAt)
+        paidAt = try? container.decode(String.self, forKey: .paidAt)
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import GoogleMaps
 
-class BookingFareAmountVC: UIViewController {
+class BookingFareAmountVC: UIViewController, UISheetPresentationControllerDelegate {
 
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var lblDistance: UILabel!
@@ -108,8 +108,56 @@ class BookingFareAmountVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func tappedContinue(_ sender: Any) {
+        // Check if drivers are available
+       // if viewModel.availableDrivers.isEmpty {
+            showNoDriversPopup()
+//        } else {
+//            proceedToFareBreakup()
+//        }
+    }
+
+    // MARK: - Show No Drivers Popup
+    private func showNoDriversPopup() {
+        let popup = NoDriversAvailablePopup()
+        popup.modalPresentationStyle = .overFullScreen
+        popup.modalTransitionStyle = .crossDissolve
+
+        popup.onContinueBooking = { [weak self] in
+            self?.proceedToFareBreakup()
+        }
+
+        popup.onContactSupport = { [weak self] in
+            self?.contactSupport()
+        }
+
+        popup.onCancel = { [weak self] in
+            // Navigate to home page
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
+
+        present(popup, animated: true)
+    }
+
+    // MARK: - Proceed to Fare Breakup
+    private func proceedToFareBreakup() {
         let vc = FareBreakupVC()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    // MARK: - Contact Support
+    private func contactSupport() {
+        let vc = JumpStartVC()
+        if let sheet = vc.sheetPresentationController {
+            // Create a custom detent that returns a fixed height
+            let fixedDetent = UISheetPresentationController.Detent.custom(identifier: .init("fixed326")) { context in
+                return 220
+            }
+            sheet.detents = [fixedDetent]
+            sheet.prefersGrabberVisible = true // Optional: adds a grabber bar at top
+        }
+        vc.sheetPresentationController?.delegate = self
+        vc.isHomeOpen = false
+        self.present(vc, animated: true)
     }
     
     // MARK: - setUp Map
@@ -190,8 +238,157 @@ class BookingFareAmountVC: UIViewController {
     }*/
 
 
-    
-    
 
+
+
+}
+
+// MARK: - No Drivers Available Popup
+class NoDriversAvailablePopup: UIViewController {
+
+    // MARK: - Callbacks
+    var onContinueBooking: (() -> Void)?
+    var onContactSupport: (() -> Void)?
+    var onCancel: (() -> Void)?
+
+    // MARK: - UI Elements
+    private let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 16
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "⚠️ Sorry! No Drivers Available"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private let messageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "We don’t have any drivers available in your area for the next 30 minutes.\n\nIf your trip isn’t urgent, you can continue booking.\nFor immediate assistance, please contact support."
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .darkGray
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var continueButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Continue Booking", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .primeryBlack
+        button.layer.cornerRadius = 8
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(continueBookingTapped), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var contactSupportButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Contact Support", for: .normal)
+        button.setTitleColor(.primeryBlack, for: .normal)
+        button.backgroundColor = .clear
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.primeryBlack.cgColor
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(contactSupportTapped), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var cancelButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Cancel", for: .normal)
+        button.setTitleColor(.systemRed, for: .normal)
+        button.backgroundColor = .clear
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        return button
+    }()
+
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+
+    // MARK: - Setup UI
+    private func setupUI() {
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+
+        view.addSubview(containerView)
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(messageLabel)
+        containerView.addSubview(continueButton)
+        containerView.addSubview(contactSupportButton)
+        containerView.addSubview(cancelButton)
+
+        NSLayoutConstraint.activate([
+            // Container
+            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+
+            // Title
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24),
+            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+
+            // Message
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+            messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+
+            // Continue Button
+            continueButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 24),
+            continueButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            continueButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+            continueButton.heightAnchor.constraint(equalToConstant: 48),
+
+            // Contact Support Button
+            contactSupportButton.topAnchor.constraint(equalTo: continueButton.bottomAnchor, constant: 12),
+            contactSupportButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            contactSupportButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+            contactSupportButton.heightAnchor.constraint(equalToConstant: 48),
+
+            // Cancel Button
+            cancelButton.topAnchor.constraint(equalTo: contactSupportButton.bottomAnchor, constant: 12),
+            cancelButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            cancelButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+            cancelButton.heightAnchor.constraint(equalToConstant: 44),
+            cancelButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16)
+        ])
+    }
+
+    // MARK: - Actions
+    @objc private func continueBookingTapped() {
+        dismiss(animated: true) { [weak self] in
+            self?.onContinueBooking?()
+        }
+    }
+
+    @objc private func contactSupportTapped() {
+        dismiss(animated: true) { [weak self] in
+            self?.onContactSupport?()
+        }
+    }
+
+    @objc private func cancelTapped() {
+        dismiss(animated: true) { [weak self] in
+            self?.onCancel?()
+        }
+    }
 }
 

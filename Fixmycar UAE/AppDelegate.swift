@@ -131,6 +131,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    // MARK: - Handle URL Scheme (Stripe Payment Redirect)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        // Handle trolley:// URL scheme for payment callbacks
+        if url.scheme == "trolley" {
+            NotificationCenter.default.post(name: .paymentRedirectReceived, object: nil, userInfo: ["url": url])
+            return true
+        }
+        return false
+    }
+
     func applicationDidBecomeActive(_ application: UIApplication) {
         callModifyLogin()
         callCheckApp()

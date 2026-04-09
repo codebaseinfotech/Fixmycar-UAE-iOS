@@ -19,11 +19,15 @@ class RecoveryServiceVM {
     
     var successVehicleModel: (() -> Void)?
     var failureVehicleModel: ((String) -> Void)?
-    
+
+    var successRecoveryTypes: (() -> Void)?
+    var failureRecoveryTypes: ((String) -> Void)?
+
     var vehicleType: [VehicleType]?
     var vehicleIssue: [VehicleIssue]?
     var vehicleMake: [VehicleMake]?
     var vehicleModel: [VehicleModel]?
+    var recoveryTypes: [RecoveryTypeOption]?
     
     func getVehicleType() {
         APIClient.sharedInstance.request(
@@ -147,6 +151,38 @@ class RecoveryServiceVM {
                 
                 self.vehicleModel = response.data
                 self.successVehicleModel?()
+            }
+    }
+
+    // MARK: - Get Recovery Types (for Vehicle Type dropdown)
+    func getRecoveryTypes() {
+        let params: [String: Any] = ["audience": "customer"]
+
+        APIClient.sharedInstance.request(
+            method: .get,
+            url: APIEndPoint.recoveryTypes,
+            parameters: params,
+            responseType: RecoveryTypesResponse.self,
+            parameterEncoding: .url) { [weak self] response, error, statusCode in
+                guard let self = self else { return }
+
+                if let error = error {
+                    self.failureRecoveryTypes?(error)
+                    return
+                }
+
+                guard let response = response else {
+                    self.failureRecoveryTypes?("Something went wrong")
+                    return
+                }
+
+                if response.status == false {
+                    self.failureRecoveryTypes?(response.message ?? "Failed")
+                    return
+                }
+
+                self.recoveryTypes = response.data?.nameOptions
+                self.successRecoveryTypes?()
             }
     }
 }

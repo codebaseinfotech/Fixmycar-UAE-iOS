@@ -22,3 +22,26 @@ class VehicleType: Codable {
     var name: String?
     var image: String?
 }
+
+// MARK: - RecoveryTypesResponse
+struct RecoveryTypesResponse: Codable {
+    var status: Bool?
+    var message: String?
+    var data: RecoveryTypesData?
+    var errors: String?
+}
+
+// MARK: - RecoveryTypesData
+struct RecoveryTypesData: Codable {
+    var nameOptions: [RecoveryTypeOption]?
+
+    enum CodingKeys: String, CodingKey {
+        case nameOptions = "name_options"
+    }
+}
+
+// MARK: - RecoveryTypeOption
+struct RecoveryTypeOption: Codable {
+    var id: String?
+    var name: String?
+}

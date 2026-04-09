@@ -62,4 +62,7 @@ enum APIEndPoint: String {
     case vehicelMake = "v1/vehicle/makes"
     case vehicleModel = "v1/vehicle/models/"
     case cancelTrip = "v1/bookings/"
+    case stripeCheckoutUrl = "v1/customer/payments/stripe/checkout-url"
+    case paymentStatus = "v1/customer/payments/booking/"
+    case recoveryTypes = "v1/common/recovery-types"
 }
