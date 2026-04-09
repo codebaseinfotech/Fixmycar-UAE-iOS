@@ -16,9 +16,14 @@ class BookingFareAmountVM {
     
     var successAvailableDrivers: (() -> Void)?
     var failureAvailableDrivers: ((String) -> Void)?
-    
+
+    var successDriversAvailabilityStatus: (() -> Void)?
+    var failureDriversAvailabilityStatus: ((String) -> Void)?
+
     var priceData: PriceData?
     var availableDrivers: [DriverData] = []
+    var isDriversAvailable: Bool = true
+    var driversAvailabilityMessage: String = ""
     
     func getCalculatePrice(km: String, minutes: Int) {
         let latitude = AppDelegate.appDelegate.currentLatitude
@@ -95,5 +100,58 @@ class BookingFareAmountVM {
                 self.successAvailableDrivers?()
             }
     }
-    
+
+    // MARK: - Check Drivers Availability Status
+    func checkDriversAvailabilityStatus() {
+        let params: [String: Any] = [
+            "pickup_lat": CreateBooking.shared.pickup_lat ?? 0.0,
+            "pickup_lng": CreateBooking.shared.pickup_lng ?? 0.0
+        ]
+
+        APIClient.sharedInstance.request(
+            method: .post,
+            url: APIEndPoint.driversAvailabilityStatus,
+            parameters: params,
+            responseType: DriversAvailabilityResponse.self) { [weak self] response, error, statusCode in
+
+                guard let self = self else { return }
+
+                if let error = error {
+                    self.failureDriversAvailabilityStatus?(error)
+                    return
+                }
+
+                guard let response = response else {
+                    self.failureDriversAvailabilityStatus?("Something went wrong")
+                    return
+                }
+
+                if response.status == false {
+                    self.failureDriversAvailabilityStatus?(response.message ?? "Failed")
+                    return
+                }
+
+                self.isDriversAvailable = response.data?.isDriversStatus ?? false
+                self.driversAvailabilityMessage = response.message ?? ""
+                self.successDriversAvailabilityStatus?()
+            }
+    }
+}
+
+// MARK: - Drivers Availability Response
+struct DriversAvailabilityResponse: Codable {
+    var status: Bool?
+    var message: String?
+    var data: DriversAvailabilityData?
+    var errors: String?
+}
+
+struct DriversAvailabilityData: Codable {
+    var isDriversStatus: Bool?
+    var matchedWindowMinutes: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case isDriversStatus = "is_drives_status"
+        case matchedWindowMinutes = "matched_window_minutes"
+    }
 }

@@ -23,6 +23,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookingFareAmountVC" customModule="Fixmycar_UAE" customModuleProvider="target">
             <connections>
+                <outlet property="btnBookService" destination="ika-CH-K4D" id="btn-BS-out"/>
                 <outlet property="lblDistance" destination="6CE-os-4qZ" id="7G3-18-a8X"/>
                 <outlet property="lblEstimatedTime" destination="qig-Db-GeJ" id="XYz-14-e7z"/>
                 <outlet property="lblPrice" destination="AP3-ZI-KdQ" id="9gL-yp-sCx"/>

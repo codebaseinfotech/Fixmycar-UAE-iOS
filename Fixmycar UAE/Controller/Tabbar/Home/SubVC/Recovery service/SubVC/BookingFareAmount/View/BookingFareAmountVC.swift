@@ -16,26 +16,35 @@ class BookingFareAmountVC: UIViewController, UISheetPresentationControllerDelega
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var txtPickup: UITextField!
     @IBOutlet weak var txtDrop: UITextField!
-    
+    @IBOutlet weak var btnBookService: UIButton!
+
     var viewModel = BookingFareAmountVM()
     var googleMapVM = GoogleDistanceVM()
+    var isDriversStatusChecked: Bool = false
     
     // MARK: - view Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Disable button until availability check is complete
+        btnBookService.isEnabled = false
+        btnBookService.alpha = 0.5
+
         txtPickup.text = CreateBooking.shared.pickup_address
         txtDrop.text = CreateBooking.shared.dropoff_address
-         
+
         setupMap()
         addMarkers()
-        
+
         debugPrint("pickup_lat", CreateBooking.shared.pickup_lat ?? 0.0)
         debugPrint("pickup_lng", CreateBooking.shared.pickup_lng ?? 0.0)
         debugPrint("dropoff_lat", CreateBooking.shared.dropoff_lat ?? 0.0)
         debugPrint("dropoff_lng", CreateBooking.shared.dropoff_lng ?? 0.0)
 
         calculateDistance()
+
+        // Call drivers availability API on screen load
+        viewModel.checkDriversAvailabilityStatus()
         
         viewModel.successCalculatePrice = {
 //            let rounded = Double(String(format: "%.3f", self.viewModel.priceData?.distanceKm ?? 0.0))!
@@ -58,7 +67,20 @@ class BookingFareAmountVC: UIViewController, UISheetPresentationControllerDelega
         viewModel.failureAvailableDrivers = { msg in
             self.setUpMakeToast(msg: msg)
         }
-        
+
+        // Drivers Availability Status callbacks
+        viewModel.successDriversAvailabilityStatus = {
+            self.isDriversStatusChecked = true
+            self.btnBookService.isEnabled = true
+            self.btnBookService.alpha = 1.0
+        }
+        viewModel.failureDriversAvailabilityStatus = { msg in
+            self.isDriversStatusChecked = true
+            self.btnBookService.isEnabled = true
+            self.btnBookService.alpha = 1.0
+            self.setUpMakeToast(msg: msg)
+        }
+
         // Do any additional setup after loading the view.
     }
     
@@ -108,12 +130,14 @@ class BookingFareAmountVC: UIViewController, UISheetPresentationControllerDelega
         navigationController?.popViewController(animated: true)
     }
     @IBAction func tappedContinue(_ sender: Any) {
-        // Check if drivers are available
-       // if viewModel.availableDrivers.isEmpty {
+        // Check drivers availability status (already fetched on screen load)
+        if viewModel.isDriversAvailable {
+            // Drivers available - proceed to next screen
+            proceedToFareBreakup()
+        } else {
+            // Drivers not available - show popup
             showNoDriversPopup()
-//        } else {
-//            proceedToFareBreakup()
-//        }
+        }
     }
 
     // MARK: - Show No Drivers Popup
