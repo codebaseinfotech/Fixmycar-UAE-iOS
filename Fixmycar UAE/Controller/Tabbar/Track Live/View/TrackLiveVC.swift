@@ -218,6 +218,12 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
+        // Only cleanup if actually leaving screen (not when Safari opens)
+        guard isMovingFromParent || isBeingDismissed else {
+            debugPrint("[DEEPLINK] viewWillDisappear but not leaving - keeping observers")
+            return
+        }
+
         // Leave socket room when leaving the screen
         if let bookingId = currentBookingId {
             FMSocketManager.shared.leaveRoom(bookingId: bookingId)
@@ -430,8 +436,14 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
 
     // MARK: - Handle Payment Redirect
     @objc private func handlePaymentRedirect(_ notification: Notification) {
+        debugPrint("[DEEPLINK] TrackLiveVC received paymentRedirectReceived notification")
+        if let url = notification.userInfo?["url"] as? URL {
+            debugPrint("[DEEPLINK] URL: \(url.absoluteString)")
+        }
+
         // Dismiss Safari and check payment status
         safariVC?.dismiss(animated: true) { [weak self] in
+            debugPrint("[DEEPLINK] Safari dismissed, checking payment status")
             self?.trackLiveVM.checkPaymentStatus()
         }
     }

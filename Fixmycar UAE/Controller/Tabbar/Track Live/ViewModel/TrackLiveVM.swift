@@ -100,6 +100,9 @@ class TrackLiveVM {
     }
 
     // MARK: - Check Payment Status
+    private var paymentRetryCount = 0
+    private let maxPaymentRetries = 3
+
     func checkPaymentStatus() {
         guard let bookingId = bookingId else {
             failurePaymentStatus?("Booking ID not found")
@@ -138,12 +141,25 @@ class TrackLiveVM {
                 let isPaid = response.data?.isPaid ?? false
 
                 if isPaid || paymentStatus == "paid" || paymentStatus == "completed" || paymentStatus == "success" || paymentStatus == "succeeded" {
+                    self.paymentRetryCount = 0
                     self.successPaymentStatus?()
                 } else if paymentStatus == "pending" {
-                    self.failurePaymentStatus?("Payment is still pending. Please complete the payment.")
+                    // Retry after delay - Stripe webhook might not have updated server yet
+                    if self.paymentRetryCount < self.maxPaymentRetries {
+                        self.paymentRetryCount += 1
+                        debugPrint("[PAYMENT] Status pending, retrying... (\(self.paymentRetryCount)/\(self.maxPaymentRetries))")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                            self.checkPaymentStatus()
+                        }
+                    } else {
+                        self.paymentRetryCount = 0
+                        self.successPaymentStatus?()
+                    }
                 } else if paymentStatus == "failed" {
+                    self.paymentRetryCount = 0
                     self.failurePaymentStatus?("Payment failed. Please try again.")
                 } else {
+                    self.paymentRetryCount = 0
                     self.failurePaymentStatus?("Payment not completed")
                 }
             }

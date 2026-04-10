@@ -133,8 +133,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     // MARK: - Handle URL Scheme (Stripe Payment Redirect)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        debugPrint("[DEEPLINK] AppDelegate received URL: \(url.absoluteString)")
+        debugPrint("[DEEPLINK] URL scheme: \(url.scheme ?? "nil")")
+
         // Handle trolley:// URL scheme for payment callbacks
         if url.scheme == "trolley" {
+            debugPrint("[DEEPLINK] Posting paymentRedirectReceived notification")
             NotificationCenter.default.post(name: .paymentRedirectReceived, object: nil, userInfo: ["url": url])
             return true
         }
