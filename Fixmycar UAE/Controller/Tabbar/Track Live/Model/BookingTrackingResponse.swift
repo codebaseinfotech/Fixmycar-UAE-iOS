@@ -27,7 +27,8 @@ struct BookingTrackingData: Codable {
     let distanceKm: Double?
     let finalPrice: Double?
     let paymentType: String?
-    
+    let paymentSummary: PaymentSummary?
+
     enum CodingKeys: String, CodingKey {
         case bookingID = "booking_id"
         case status
@@ -39,6 +40,22 @@ struct BookingTrackingData: Codable {
         case distanceKm = "distance_km"
         case finalPrice = "final_price"
         case paymentType = "payment_type"
+        case paymentSummary = "payment_summary"
+    }
+}
+
+// MARK: - Payment Summary
+struct PaymentSummary: Codable {
+    let paymentStatus: String?
+    let totalAmount: Double?
+    let paidAmount: Double?
+    let remainingAmount: Double?
+
+    enum CodingKeys: String, CodingKey {
+        case paymentStatus = "payment_status"
+        case totalAmount = "total_amount"
+        case paidAmount = "paid_amount"
+        case remainingAmount = "remaining_amount"
     }
 }
 

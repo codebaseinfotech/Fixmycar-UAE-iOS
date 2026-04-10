@@ -153,16 +153,26 @@ class TrackLiveVC: UIViewController, GMSMapViewDelegate {
             self.lblPlateNumber.text = dicData?.vehicleNumber
             self.lblCarName.text = dicData?.vehicleType ?? ""
             
-            let paymentType = dicData?.paymentType ?? ""
-            if paymentType == "partial" || paymentType == "pending" {
-                self.lblRemaining.text = "Pay your remaining amount"
-                self.btnPayNow.isHidden = false
-            } else {
-                self.lblRemaining.text = "Payment completed"
-                self.btnPayNow.isHidden = true
-            }
+            // Payment Summary
+            let paymentSummary = dicData?.paymentSummary
+            let paymentStatus = paymentSummary?.paymentStatus ?? dicData?.paymentType ?? ""
+            let totalAmount = paymentSummary?.totalAmount ?? dicData?.finalPrice ?? 0.0
+            let paidAmount = paymentSummary?.paidAmount ?? 0.0
+            let remainingAmount = paymentSummary?.remainingAmount ?? totalAmount
 
-            self.lblRemainigAmount.text = "Trip Amount:" + " " + "AED" + " " + "\(dicData?.finalPrice ?? 0.0)"
+            if paymentStatus == "partial" || paymentStatus == "pending" {
+                self.lblRemaining.text = "Pay your remaining amount"
+                self.lblRemainigAmount.text = "AED \(remainingAmount) remaining"
+                self.btnPayNow.isHidden = false
+            } else if paymentStatus == "paid" || paymentStatus == "completed" {
+                self.lblRemaining.text = "Payment completed"
+                self.lblRemainigAmount.text = "No outstanding amount"
+                self.btnPayNow.isHidden = true
+            } else {
+                self.lblRemaining.text = "Pay your remaining amount"
+                self.lblRemainigAmount.text = "AED \(remainingAmount) remaining"
+                self.btnPayNow.isHidden = false
+            }
             
             if !FMSocketManager.shared.isConnected {
                 FMSocketManager.shared.connect()
