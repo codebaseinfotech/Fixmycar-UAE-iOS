@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -260,13 +260,35 @@
                                         </stackView>
                                     </subviews>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="web-iH-b00">
+                                    <rect key="frame" x="12" y="12" width="329" height="72"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="tappedPayFullAmout:" destination="-1" eventType="touchUpInside" id="DYC-WR-jr2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeC-wH-cYJ">
+                                    <rect key="frame" x="12" y="109" width="329" height="66"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="tappedPay30:" destination="-1" eventType="touchUpInside" id="CA0-K9-MX8"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="web-iH-b00" firstAttribute="trailing" secondItem="fN4-wO-gVd" secondAttribute="trailing" id="58q-tz-OjZ"/>
                                 <constraint firstAttribute="trailing" secondItem="LMd-Dl-Az8" secondAttribute="trailing" constant="12" id="E3T-rH-fxa"/>
+                                <constraint firstItem="zeC-wH-cYJ" firstAttribute="trailing" secondItem="OFy-6c-NdA" secondAttribute="trailing" id="LPE-jO-VrF"/>
+                                <constraint firstItem="web-iH-b00" firstAttribute="leading" secondItem="fN4-wO-gVd" secondAttribute="leading" id="NDc-XG-tCB"/>
                                 <constraint firstAttribute="bottom" secondItem="LMd-Dl-Az8" secondAttribute="bottom" constant="12" id="V3Y-Cj-nDf"/>
+                                <constraint firstItem="web-iH-b00" firstAttribute="top" secondItem="fN4-wO-gVd" secondAttribute="top" id="Ygt-bi-r9f"/>
                                 <constraint firstItem="LMd-Dl-Az8" firstAttribute="top" secondItem="gZY-1b-0Ei" secondAttribute="top" constant="12" id="Yh8-JI-xkS"/>
+                                <constraint firstItem="zeC-wH-cYJ" firstAttribute="bottom" secondItem="OFy-6c-NdA" secondAttribute="bottom" id="d5V-lP-fg1"/>
+                                <constraint firstItem="zeC-wH-cYJ" firstAttribute="top" secondItem="OFy-6c-NdA" secondAttribute="top" id="dPp-a0-2AO"/>
+                                <constraint firstItem="web-iH-b00" firstAttribute="bottom" secondItem="fN4-wO-gVd" secondAttribute="bottom" id="fCa-Ag-98X"/>
                                 <constraint firstItem="LMd-Dl-Az8" firstAttribute="leading" secondItem="gZY-1b-0Ei" secondAttribute="leading" constant="12" id="tX5-bf-ZJh"/>
+                                <constraint firstItem="zeC-wH-cYJ" firstAttribute="leading" secondItem="OFy-6c-NdA" secondAttribute="leading" id="uH2-lY-BMo"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
