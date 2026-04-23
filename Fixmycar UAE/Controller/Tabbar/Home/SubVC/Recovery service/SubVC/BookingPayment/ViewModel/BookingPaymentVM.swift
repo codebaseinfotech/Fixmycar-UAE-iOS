@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class BookingPaymentVM {
     var successCheckoutUrl: ((String) -> Void)?
@@ -28,10 +29,19 @@ class BookingPaymentVM {
             recoveryTypesIds.append(recoveryTypeId)
         }
 
-        // Build vehical_image array from uploaded URLs
-        var vehicalImageUrls: [String] = []
-        if let urls = CreateBooking.shared.vehical_image_urls {
-            vehicalImageUrls = urls
+        // Build vehical_image files for multipart upload
+        var files: [MultipartFile] = []
+        if let images = CreateBooking.shared.vehical_image {
+            for (index, image) in images.enumerated() {
+                if let data = image.jpegData(compressionQuality: 0.7) {
+                    files.append(MultipartFile(
+                        key: "vehical_image[\(index)]",
+                        fileName: "image_\(index).jpg",
+                        data: data,
+                        mimeType: "image/jpeg"
+                    ))
+                }
+            }
         }
 
         var params: [String: Any] = [
@@ -47,16 +57,13 @@ class BookingPaymentVM {
             "booking_type": CreateBooking.shared.booking_type ?? "immediate",
             "payment_method": "payment_link",
             "prepayment_amount": amount,
-          //  "vehicle_type": Int(CreateBooking.shared.vehicle_type ?? "0") ?? 0,
             "issue": CreateBooking.shared.issue ?? 0,
-            "additional_notes": CreateBooking.shared.additional_notes ?? "",
-         //   "vehicle_make": CreateBooking.shared.vehicle_make ?? "",
-         //   "vehicle_model": CreateBooking.shared.vehicle_model ?? "",
-            "recovery_types_id": recoveryTypesIds
+            "additional_notes": CreateBooking.shared.additional_notes ?? ""
         ]
 
-        if !vehicalImageUrls.isEmpty {
-            params["vehical_image"] = vehicalImageUrls
+        // Add recovery_types_id as flattened array params for multipart
+        for (index, typeId) in recoveryTypesIds.enumerated() {
+            params["recovery_types_id[\(index)]"] = typeId
         }
 
         if CreateBooking.shared.isScheduleBooking {
@@ -65,42 +72,50 @@ class BookingPaymentVM {
         }
 
         debugPrint("Trip Prepayment Params: ", params)
+        debugPrint("Trip Prepayment Files Count: ", files.count)
 
-        APIClient.sharedInstance.request(
-            method: .post,
-            url: APIEndPoint.tripPrepayments,
+        APIClient.sharedInstance.uploadMultipart(
+            urlString: .tripPrepayments,
             parameters: params,
-            responseType: TripPrepaymentResponse.self) { [weak self] response, error, statusCode in
+            files: files) { [weak self] result in
                 APIClient.sharedInstance.hideIndicator()
                 guard let self = self else { return }
 
-                if let error = error {
-                    self.failureCheckoutUrl?(error)
-                    return
-                }
+                switch result {
+                case .success(let data):
+                    // Debug: Print raw response
+                    if let rawResponse = String(data: data, encoding: .utf8) {
+                        debugPrint("📦 Raw Response: \(rawResponse)")
+                    }
 
-                guard let response = response else {
-                    self.failureCheckoutUrl?("Something went wrong")
-                    return
-                }
+                    do {
+                        let response = try JSONDecoder().decode(TripPrepaymentResponse.self, from: data)
 
-                if response.status == false {
-                    self.failureCheckoutUrl?(response.errorMessage ?? "Failed to create prepayment")
-                    return
-                }
+                        if response.status == false {
+                            self.failureCheckoutUrl?(response.errorMessage ?? "Failed to create prepayment")
+                            return
+                        }
 
-                guard let checkoutUrl = response.data?.checkoutUrl, !checkoutUrl.isEmpty else {
-                    self.failureCheckoutUrl?("Checkout URL not available")
-                    return
-                }
+                        guard let checkoutUrl = response.data?.checkoutUrl, !checkoutUrl.isEmpty else {
+                            self.failureCheckoutUrl?("Checkout URL not available")
+                            return
+                        }
 
-                // Store prepayment ID for status check
-                if let prepaymentId = response.data?.prepaymentId {
-                    self.currentPrepaymentId = prepaymentId
-                    debugPrint("Stored prepaymentId: \(prepaymentId)")
-                }
+                        // Store prepayment ID for status check
+                        if let prepaymentId = response.data?.prepaymentId {
+                            self.currentPrepaymentId = prepaymentId
+                            debugPrint("Stored prepaymentId: \(prepaymentId)")
+                        }
 
-                self.successCheckoutUrl?(checkoutUrl)
+                        self.successCheckoutUrl?(checkoutUrl)
+                    } catch {
+                        debugPrint("Decoding error: \(error)")
+                        self.failureCheckoutUrl?("Something went wrong")
+                    }
+
+                case .failure(let error):
+                    self.failureCheckoutUrl?(error.localizedDescription)
+                }
             }
     }
 
