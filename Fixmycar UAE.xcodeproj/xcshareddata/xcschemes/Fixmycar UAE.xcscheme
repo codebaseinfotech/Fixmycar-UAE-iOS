@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC6773092F067F4500B15653"
-               BuildableName = "FixMyCar UAE.app"
-               BlueprintName = "FixMyCar UAE"
+               BuildableName = "Toretto Recovery.app"
+               BlueprintName = "Toretto Recovery"
                ReferencedContainer = "container:Fixmycar UAE.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC6773092F067F4500B15653"
-            BuildableName = "FixMyCar UAE.app"
-            BlueprintName = "FixMyCar UAE"
+            BuildableName = "Toretto Recovery.app"
+            BlueprintName = "Toretto Recovery"
             ReferencedContainer = "container:Fixmycar UAE.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC6773092F067F4500B15653"
-            BuildableName = "FixMyCar UAE.app"
-            BlueprintName = "FixMyCar UAE"
+            BuildableName = "Toretto Recovery.app"
+            BlueprintName = "Toretto Recovery"
             ReferencedContainer = "container:Fixmycar UAE.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
