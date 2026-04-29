@@ -498,6 +498,8 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
             
             cell.lblName.text = dicData.name ?? ""
             
+            cell.imgPic.image = indexPath.item == 0 ? "ic_recovery".image : "ic_jump_start".image
+            
             return cell
             
         default:
